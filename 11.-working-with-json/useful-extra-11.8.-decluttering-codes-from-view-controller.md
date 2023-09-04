@@ -233,10 +233,10 @@ extension ViewController:ContactsProtocol{
 
 ### The file structure of the project now looks like this:
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-05-29 at 2.32.25 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-05-29 at 2.32.25 PM (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, the code is more modular and more manageable.
 
 **Note: You can make it even more modular by putting the table view protocol codes into a separate file from ViewController.**
 
-{% file src="../.gitbook/assets/App11_modular.zip" %}
+{% file src="../.gitbook/assets/App11_modular (1).zip" %}

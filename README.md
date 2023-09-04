@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # Welcome!
 
 ## Welcome to iOS Development

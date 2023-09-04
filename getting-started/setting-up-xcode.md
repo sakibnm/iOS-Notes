@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # Setting up Xcode
 
 Setting up Xcode is also very simple. Let's open Safari (or any browser you use) and type in [https://developer.apple.com/xcode/](https://developer.apple.com/xcode/).
@@ -16,9 +20,9 @@ Let's wait until it downloads and installs Xcode.
 
 Once it's done, let's open the Launchpad and search for Xcode:
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-05-06 at 12.04.26 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-05-06 at 12.04.26 PM (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-05-06 at 12.05.50 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-05-06 at 12.05.50 PM.png" alt=""><figcaption></figcaption></figure>
 
 Press `return` and open Xcode!
 
@@ -34,7 +38,7 @@ If you click on "**Create a new Xcode project,**" it should show you:
 
 Select **App** and click **Next.** You should see:
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-05-06 165841 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-05-06 165841.png" alt=""><figcaption></figcaption></figure>
 
 You need to Add an account now. It is the iCloud account. Sign in with your iCloud account, and that's it!
 

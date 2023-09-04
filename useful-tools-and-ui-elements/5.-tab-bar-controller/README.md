@@ -2,7 +2,7 @@
 
 We often see apps with bottom navigation bars, where you can tap on an icon from the bottom bar, and the app loads different screens for different buttons pressed like the following:
 
-<figure><img src="../../.gitbook/assets/5.one.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/5.one (1).gif" alt=""><figcaption></figcaption></figure>
 
 iOS gives us an easy-to-use and customizable tool called UITabBarController to build such screens. In this module, we will create an app that uses a Tab Bar.
 

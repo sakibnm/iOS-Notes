@@ -18,7 +18,7 @@ Give your project a name. If you have not already signed in to an Apple ID, sign
 
 Here is where you'll choose where to save your project. Click on **Create.** It will create a new project for you, and you will see the following:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-05-09 at 11.05.36 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-05-09 at 11.05.36 AM (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, your first project is ready to be built.
 

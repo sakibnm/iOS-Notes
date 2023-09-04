@@ -4,7 +4,7 @@ You probably have seen apps where you tap a button, and a page sheet pops up fro
 
 In this short module, we will build the following app:
 
-<figure><img src="../../.gitbook/assets/7.sixty.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/7.sixty (1).gif" alt=""><figcaption></figcaption></figure>
 
 Basically, we build this app on top of the app in the [6.-search-bar](../6.-search-bar/ "mention") module. We will implement SearchBar on a bottom sheet view.
 

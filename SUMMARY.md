@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Welcome!](README.md)
+* [Syllabi](syllabi.md)
 
 ## Getting Started
 

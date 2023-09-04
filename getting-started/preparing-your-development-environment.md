@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # Preparing your Development Environment
 
 ### <mark style="color:red;">I recommend using a Macbook or an Apple Computer for this course. You do not need an iPhone/iPad for this course. If you do not have a Macbook, you can try MacInCloud, or even try borrowing Macbooks from the library (I am not sure for how long you can borrow a computer from there).</mark>

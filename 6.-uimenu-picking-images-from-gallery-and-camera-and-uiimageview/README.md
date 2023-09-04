@@ -14,4 +14,4 @@ Our goal here is to:
 
 App6 would look something like this:
 
-<figure><img src="../.gitbook/assets/6.1.one (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/6.1.one.gif" alt=""><figcaption></figcaption></figure>
