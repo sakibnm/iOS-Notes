@@ -1,6 +1,5 @@
 ---
 coverY: 0
-layout: editorial
 ---
 
 # 1. Variables, Data types, and more.

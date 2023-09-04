@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # 7. Bottom Sheet View: Modal Presentation
 
 You probably have seen apps where you tap a button, and a page sheet pops up from the bottom. You can then interact with that page sheet and work with the app. We can use Swift's SheetPresentationController for building the bottom sheet views.&#x20;

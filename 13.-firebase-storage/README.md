@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # 13. Firebase Storage
 
 In this module, we will extend App12 to store images in FIrebase storage. Please review [https://github.com/sakibnm/iOS/blob/main/12.-firebase-authentication-and-firestore](https://github.com/sakibnm/iOS/blob/main/12.-firebase-authentication-and-firestore "mention") section to set up your Firebase Storage service in your Firebase services.

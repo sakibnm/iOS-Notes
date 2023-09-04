@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # 6. Search Bar
 
 The Search Bar in iOS is a very common UI element, and it is very useful to filter or search data from a list of data. In this module, we will build a demo app with a search bar. The app would look like the following:

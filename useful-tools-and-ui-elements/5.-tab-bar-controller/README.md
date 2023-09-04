@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # 5. Tab Bar Controller
 
 We often see apps with bottom navigation bars, where you can tap on an icon from the bottom bar, and the app loads different screens for different buttons pressed like the following:
