@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # 9. Cocoa Pods
 
 UIKit has thousands of modules, and we cannot learn all of them (you don't even need to). You only need to learn the most important, common, and useful ones. Then you can learn the others if you need them to solve a problem you are facing in real life.

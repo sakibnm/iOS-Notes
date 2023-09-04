@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # 3. Our first Multi-screen App
 
 At this point, we will make a multi-screen application. After the end of lesson 3, we will understand the basics of Navigation Controller, UIImageViews, and Image Assets.

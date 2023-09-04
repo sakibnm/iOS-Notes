@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # 7. Closures
 
 _<mark style="color:purple;">**This concept might look like a weird one. Do not worry, you'll understand it eventually, and I will keep it simple here.**</mark>_

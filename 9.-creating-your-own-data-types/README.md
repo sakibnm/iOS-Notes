@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # 9. Creating your own data types
 
 Swift allows you to create your own data types in two ways:

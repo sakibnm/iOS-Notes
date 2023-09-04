@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # 10. Protocols
 
 Protocols in Swift are similar to Interfaces in many other languages like Java.

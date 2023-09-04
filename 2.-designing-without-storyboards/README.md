@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # 2. Designing without Storyboards
 
 In our first app, we dragged and dropped the UI elements on Storyboard and set up the constraints using the Interface Builder's tools. Now, I said we would ditch this approach and start designing the UI with codes.

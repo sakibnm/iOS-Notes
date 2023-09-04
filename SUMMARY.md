@@ -1,7 +1,6 @@
 # Table of contents
 
 * [Welcome!](README.md)
-* [Syllabi](syllabi.md)
 
 ## Getting Started
 
@@ -150,7 +149,7 @@
   * [10.7. Posting Data with AlamoFire: POST](10.-making-the-app-communicate-over-the-internet/10.7.-posting-data-with-alamofire-post.md)
   * [10.8. Fetching Data with AlamoFire: 'details' endpoint](10.-making-the-app-communicate-over-the-internet/10.8.-fetching-data-with-alamofire-details-endpoint.md)
   * [10.9. Reference Code](10.-making-the-app-communicate-over-the-internet/10.9.-reference-code.md)
-* [11. Working with JSON](11.-working-with-json/README.md)
+* [11. Working with APIs and JSON](11.-working-with-json/README.md)
   * [11.1. The JSON API for the Contact App](11.-working-with-json/11.1.-the-json-api-for-the-contact-app.md)
   * [11.2. App11: Getting All the Contact Names (getall endpoint)](11.-working-with-json/11.2.-app11-getting-all-the-contact-names-getall-endpoint.md)
   * [11.3. App11: Getting the Details of a Selected Contact (details endpoint)](11.-working-with-json/11.3.-app11-getting-the-details-of-a-selected-contact-details-endpoint.md)

@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # 8. UIScrollView
 
 So far, we have worked with screens that do not scroll. I think all of you faced a similar issue: if you rotate the screen, the UI elements get outside the bottom edge. The reason behind it is that the screen is not scrollable. So here, we will implement a scrollable view.

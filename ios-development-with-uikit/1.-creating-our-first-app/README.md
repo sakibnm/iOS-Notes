@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # 1. Creating our first app
 
 Press `Command (⌘) + Space` together on your Mac computer. It opens up Spotlight search. Search 'Xcode' there, and open Xcode. It opens the following window:

@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # 6. UIMenu, Picking Images from Gallery and Camera, and UIImageView
 
 ## App6: Adding more features on App5

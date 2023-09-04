@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # 12. Firebase Authentication and Firestore
 
 Firebase is a Google service portal through which Google provides users with many useful Cloud services. Firebase services are very fast, reliable, and easy to use. They have comprehensive guides for developers to integrate and build systems using their services on a plethora of platforms, like, iOS, Android, NodeJS, Flutter, Unity, etc.

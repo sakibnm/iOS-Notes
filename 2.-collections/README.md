@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # 2. Collections
 
 So far, we have discussed a few simple Data types like String, Int, Double, etc. **Now, we will move into learning a few useful Collections like Arrays, Sets, Tuples, and Dictionaries.**

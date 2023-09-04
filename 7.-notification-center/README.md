@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # 7. Notification Center
 
 <mark style="color:purple;">**(Do not confuse it with the push notifications)**</mark>

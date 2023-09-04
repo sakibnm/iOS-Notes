@@ -1,4 +1,8 @@
-# 11. Working with JSON
+---
+coverY: 0
+---
+
+# 11. Working with APIs and JSON
 
 JSON stands for JavaScript Object Notation. It is a standard text-based format for representing structured data. It follows the JavaScript object syntax. It is the most popular standard of text data for web APIs nowadays. That means almost all the APIs you will work with or build will be structured in JSON. So it is paramount to learn how to parse JSON data and use them in iOS.
 

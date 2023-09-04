@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # 4. Separating the View from the Controller code
 
 One of the better ways of coding is to separate the Views (front-end codes) from the Controllers (back-end codes). That way, we can make ViewControllers less cluttered.
