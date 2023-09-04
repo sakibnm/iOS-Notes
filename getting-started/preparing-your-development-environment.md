@@ -16,4 +16,4 @@ coverY: 0
 
 There are a few options to rent a cloud MacOS VM, like, Mac Stadium, AWS, and Mac in Cloud. I personally prefer **Mac In Cloud** ([https://macincloud.com](https://www.macincloud.com)). Please watch the following video to set up a Mac In Cloud instance and start using it on your Windows or Linux computer.
 
-{% embed url="https://www.youtube.com/watch?v=XMzekUX9SQE" %}
+{% embed url="https://youtu.be/mOuH4u0rlyM" %}
