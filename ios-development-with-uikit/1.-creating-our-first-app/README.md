@@ -24,6 +24,12 @@ Here is where you'll choose where to save your project. Click on **Create.** It 
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-05-09 at 11.05.36 AM (1).png" alt=""><figcaption></figcaption></figure>
 
+Here, you need to select a simulator. Please click on the top middle panel as indicated in the following image:
+
+<figure><img src="../../.gitbook/assets/1.1.1.png" alt=""><figcaption></figcaption></figure>
+
+Select an iPhone simulator of your choice. **Do not select 'This Mac.'**
+
 Now, your first project is ready to be built.
 
 Press the Play :arrow\_forward: button from the top left corner.
