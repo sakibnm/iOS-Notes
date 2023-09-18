@@ -187,7 +187,7 @@
 ## Useful Tools and UI Elements
 
 * [1. Hiding Keyboard when tapped outside](useful-tools-and-ui-elements/1.-hiding-keyboard-when-tapped-outside.md)
-* [2. Slide Up the View to Accommodate the On-screen Keyboard](useful-tools-and-ui-elements/2.-slide-up-the-view-to-accommodate-the-on-screen-keyboard.md)
+* [2. Slide Up the View for On-screen Keyboard](useful-tools-and-ui-elements/2.-slide-up-the-view-to-accommodate-the-on-screen-keyboard.md)
 * [3. Saving small data when the App is not running (session or other state variables)](useful-tools-and-ui-elements/3.-saving-small-data-when-the-app-is-not-running-session-or-other-state-variables.md)
 * [4. Stack View](useful-tools-and-ui-elements/4.-stack-view.md)
 * [5. Tab Bar Controller](useful-tools-and-ui-elements/5.-tab-bar-controller/README.md)
