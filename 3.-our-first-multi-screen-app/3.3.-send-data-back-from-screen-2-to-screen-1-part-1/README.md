@@ -1,4 +1,4 @@
-# 3.3. Send data back from Screen 2 to Screen 1, Part 1
+# 3.3. Send data back from Screen 2 to Screen 1
 
 So, here is the goal for the extension of our current app:
 
@@ -168,7 +168,7 @@ Then we place the `moodPicker` and finally put `buttonSendMood` at the bottom.
 
 If we run the app now, we will see:
 
-<figure><img src="../.gitbook/assets/nine (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/nine (1).gif" alt=""><figcaption></figcaption></figure>
 
 Here, we do not see the two elements we added to ViewController, because `labelMood` and `imageMood` doesn't have anything to display.
 
