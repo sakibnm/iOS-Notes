@@ -22,7 +22,7 @@ layout:
 
 ### CS 4520/5520
 
-### Fall 2023
+### Spring 2023
 
 <mark style="color:purple;">(This website is under cumulative construction. I will be updating the site frequently.)</mark>
 
