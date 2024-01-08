@@ -8,7 +8,7 @@ Setting up Xcode is also very simple. Let's open Safari (or any browser you use)
 
 Click on Download (on the top right) -> Mac App Store
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-05-06 at 11.43.19 AM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-01-08 at 10.08.45 AM.png" alt=""><figcaption></figcaption></figure>
 
 It opens up the AppStore application on your Mac. Sign in to your iCloud account. And click on the Download icon.
 
