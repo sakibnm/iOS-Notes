@@ -10,6 +10,8 @@ Press `Command (⌘) + Space` together on your Mac computer. It opens up Spotlig
 
 Click on **'Create a new Xcode project.'** You will see the following:
 
+**Make sure you select iOS from the top template chooser. **<mark style="color:red;">**Do not choose multiplatform or macOS.**</mark>
+
 <figure><img src="../../.gitbook/assets/Screenshot 2023-05-09 at 10.55.45 AM (1).png" alt=""><figcaption></figcaption></figure>
 
 Select **App** and press **Next.**
