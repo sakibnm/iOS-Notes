@@ -11,6 +11,7 @@ So, here is the goal for the extension of our current app:
 
 **On ViewController,** we will add a new Label and an ImageView, as follows:
 
+{% code lineNumbers="true" %}
 ```swift
 //
 //  ViewController.swift
@@ -80,11 +81,13 @@ class ViewController: UIViewController {
     }
 }
 ```
+{% endcode %}
 
 The `labelMood` will show the mood the user selected on ShowViewController, and the ImageView `imageMood` will show an image corresponding to the mood.
 
 **Now on ShowViewController,** we will add a new Label, a PickerView, and a Button, as follows:
 
+{% code lineNumbers="true" %}
 ```swift
 //
 //  ShowViewController.swift
@@ -161,6 +164,7 @@ class ShowViewController: UIViewController {
     }
 }    
 ```
+{% endcode %}
 
 Here, `labelMoodInstructions` shows the message: "How are you feeling today?"
 
