@@ -30,8 +30,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         //MARK: initializing the UI elements...
-        setupTextFieldMessage()
-        setupButtonSend()
+        
+        // code in between is omitted...
         setupLabelMood()
         setupImageMood()
         
