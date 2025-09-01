@@ -8,7 +8,7 @@ Setting up Xcode is also very simple. Let's open Safari (or any browser you use)
 
 Click on Download (on the top right) -> Mac App Store
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-01-08 at 10.08.45 AM.png" alt=""><figcaption></figcaption></figure>
+{% file src="../.gitbook/assets/Screenshot 2025-09-01 at 11.19.55 AM.png" %}
 
 It opens up the AppStore application on your Mac. Sign in to your iCloud account. And click on the Download icon. Download Xcode 15, not beta.&#x20;
 
