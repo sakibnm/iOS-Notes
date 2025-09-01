@@ -1,19 +1,5 @@
 ---
 coverY: 0
-layout:
-  cover:
-    visible: true
-    size: full
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: false
-  pagination:
-    visible: true
 ---
 
 # Welcome!
@@ -22,7 +8,7 @@ layout:
 
 ### CS 4520/5520
 
-### Fall 2024
+### Fall 2025
 
 <mark style="color:purple;">(This website is under cumulative construction. I will be updating the site frequently.)</mark>
 
