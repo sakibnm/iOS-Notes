@@ -64,6 +64,7 @@
   * [9.1. Structs](9.-creating-your-own-data-types/9.1.-structs/README.md)
     * [9.1.1. Functions (methods) inside structs](9.-creating-your-own-data-types/9.1.-structs/9.1.1.-functions-methods-inside-structs.md)
     * [9.1.2. Initializing structs with different initializers](9.-creating-your-own-data-types/9.1.-structs/9.1.2.-initializing-structs-with-different-initializers.md)
+    * [9.1.3. Manipulating object properties inherently in a struct](9.-creating-your-own-data-types/9.1.-structs/9.1.3.-manipulating-object-properties-inherently-in-a-struct.md)
   * [9.2. Classes](9.-creating-your-own-data-types/9.2.-classes/README.md)
     * [9.2.1. Inheritance](9.-creating-your-own-data-types/9.2.-classes/9.2.1.-inheritance.md)
     * [9.2.2. Value vs. Reference](9.-creating-your-own-data-types/9.2.-classes/9.2.2.-value-vs.-reference.md)
