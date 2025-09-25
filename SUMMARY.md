@@ -93,7 +93,7 @@
   * [2.1. Converting the storyboard to code](2.-designing-without-storyboards/2.1.-converting-the-storyboard-to-code.md)
   * [2.2. Reference Code](2.-designing-without-storyboards/2.2.-reference-code.md)
 * [3. Our first Multi-screen App](3.-our-first-multi-screen-app/README.md)
-  * [3.1. Navigation Controller](3.-our-first-multi-screen-app/3.1.-navigation-controller.md)
+  * [3.1. Navigation Controller and UI setup](3.-our-first-multi-screen-app/3.1.-navigation-controller.md)
   * [3.2. Send data from Screen 1 (ViewController) to Screen2 (ShowViewController)](3.-our-first-multi-screen-app/3.2.-send-data-from-screen-1-viewcontroller-to-screen2-showviewcontroller.md)
   * [3.3. Send data back from Screen 2 to Screen 1](3.-our-first-multi-screen-app/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/README.md)
     * [3.3.1. Send data back from Screen 2 to Screen 1: UIPickerView](3.-our-first-multi-screen-app/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/3.4.-send-data-back-from-screen-2-to-screen-1-part-2-uipickerview.md)
