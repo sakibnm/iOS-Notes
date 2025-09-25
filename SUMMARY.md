@@ -89,7 +89,7 @@
 
 ***
 
-* [2. Designing without Storyboards](2.-designing-without-storyboards/README.md)
+* [2. Designing without Drag and Drop](2.-designing-without-storyboards/README.md)
   * [2.1. Converting the storyboard to code](2.-designing-without-storyboards/2.1.-converting-the-storyboard-to-code.md)
   * [2.2. Reference Code](2.-designing-without-storyboards/2.2.-reference-code.md)
 * [3. Our first Multi-screen App](3.-our-first-multi-screen-app/README.md)
