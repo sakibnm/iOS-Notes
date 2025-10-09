@@ -189,6 +189,7 @@
 
 * [Hiding Keyboard when tapped outside](useful-tools-and-ui-elements/1.-hiding-keyboard-when-tapped-outside.md)
 * [Slide Up the View for On-screen Keyboard](useful-tools-and-ui-elements/2.-slide-up-the-view-to-accommodate-the-on-screen-keyboard.md)
+* [Embed Navigation Controller from code (Not Storyboard)](useful-tools-and-ui-elements/embed-navigation-controller-from-code-not-storyboard.md)
 * [Saving small data when the App is not running (session or other state variables)](useful-tools-and-ui-elements/3.-saving-small-data-when-the-app-is-not-running-session-or-other-state-variables.md)
 * [Stack View](useful-tools-and-ui-elements/4.-stack-view.md)
 * [Tab Bar Controller](useful-tools-and-ui-elements/5.-tab-bar-controller/README.md)
@@ -208,7 +209,3 @@
   * [3. Main Screen](useful-tools-and-ui-elements/bottom-sheet-view-modal-presentation/3.-main-screen.md)
   * [4. Sending data back to Main Screen](useful-tools-and-ui-elements/bottom-sheet-view-modal-presentation/4.-sending-data-back-to-main-screen.md)
   * [5. Reference Code](useful-tools-and-ui-elements/bottom-sheet-view-modal-presentation/5.-reference-code.md)
-
-***
-
-* [Embed Navigation Controller from code (Not Storyboard)](embed-navigation-controller-from-code-not-storyboard.md)
