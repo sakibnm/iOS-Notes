@@ -1,6 +1,6 @@
 # Embed Navigation Controller from code (Not Storyboard)
 
-So far you have noticed, we embed the Navigation Controller using the Storyboard (refer to [embed-navigation-controller-from-code-not-storyboard.md](embed-navigation-controller-from-code-not-storyboard.md "mention")). What about we want to remove that process and want to add Navigation Controller by writing code? That way it'll be easy to change the name of the default "ViewController.swift" file to a more appropriate name.&#x20;
+So far you have noticed, we embed the Navigation Controller using the Storyboard (refer to [3.1.-navigation-controller.md](../3.-our-first-multi-screen-app/3.1.-navigation-controller.md "mention") ). What about we want to remove that process and want to add Navigation Controller by writing code? That way it'll be easy to change the name of the default "ViewController.swift" file to a more appropriate name.&#x20;
 
 To start, we will create a new iOS project in Xcode named, "NavConFromCode."&#x20;
 
