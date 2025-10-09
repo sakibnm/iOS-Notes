@@ -49,6 +49,24 @@ Then on lines 14 through 16, we setup the window of the app.&#x20;
 
 Now, if we run the app, it should run as the FirstScreenViewController being the main view controller.
 
+
+
+### Deleting the Main.storyboard
+
+1. Delete the storyboard file from file explorer.
+2. Open project's Info.plist
+   1. Select your project in the Project Navigator
+   2. Select your app target
+   3. Go to the "Info" tab
+   4. Expand "Application Scene Manifest"
+   5. Expand "Scene Configuration"
+   6. Expand "Application Session Role"
+   7. Expand "Item 0"
+   8. Delete the row: "Storyboard Name" (value: "Main")
+3. Remove from Target Settings
+   1. Find "Main storyboard file base name" or "Main Interface"
+   2. Delete the value (set it to empty)
+
 ### Resource Files
 
 {% file src="../.gitbook/assets/NavConFromCode.zip" %}
