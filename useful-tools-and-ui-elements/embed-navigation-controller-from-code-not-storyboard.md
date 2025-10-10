@@ -63,9 +63,7 @@ Now, if we run the app, it should run as the FirstScreenViewController being the
    6. Expand "Application Session Role"
    7. Expand "Item 0"
    8. Delete the row: "Storyboard Name" (value: "Main")
-3. Remove from Target Settings
-   1. Find "Main storyboard file base name" or "Main Interface"
-   2. Delete the value (set it to empty)
+   9. Find "Main storyboard file base name" or "Main Interface". Delete the value (set it to empty)
 
 ### Resource Files
 
