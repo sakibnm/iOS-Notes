@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # (Useful extra) 11.8. Decluttering codes from View Controller
 
 If you noticed, we have 281 lines of code in ViewController.swift. It looks like a mess of codes. And in many ways, it's hard to read when you'll return to it after a week.
@@ -239,4 +243,5 @@ Now, the code is more modular and more manageable.
 
 **Note: You can make it even more modular by putting the table view protocol codes into a separate file from ViewController.**
 
-{% file src="../.gitbook/assets/App11_modular (1).zip" %}
+{% file src="../.gitbook/assets/App11_modular (2).zip" %}
+
