@@ -185,6 +185,10 @@
   * [14.4. Phase 4: Display Searched Places on Map](14.-uimapkit-working-with-location-and-maps/14.4.-phase-4-display-searched-places-on-map.md)
   * [14.5. Reference Code](14.-uimapkit-working-with-location-and-maps/14.5.-reference-code.md)
 
+## Decluttering Code
+
+* [1. Writing clean code for Asynchronous operations](decluttering-code/1.-writing-clean-code-for-asynchronous-operations.md)
+
 ## Useful Tools and UI Elements
 
 * [Hiding Keyboard when tapped outside](useful-tools-and-ui-elements/1.-hiding-keyboard-when-tapped-outside.md)
