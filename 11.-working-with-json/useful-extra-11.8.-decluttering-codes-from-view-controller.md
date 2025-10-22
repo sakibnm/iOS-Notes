@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # (Useful extra) 11.8. Decluttering codes from View Controller
 
 If you noticed, we have 281 lines of code in ViewController.swift. It looks like a mess of codes. And in many ways, it's hard to read when you'll return to it after a week.
