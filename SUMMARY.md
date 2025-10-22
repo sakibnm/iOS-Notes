@@ -158,7 +158,7 @@
   * [11.5. App11: Add a new Contact](11.-working-with-json/11.5.-app11-add-a-new-contact.md)
   * [11.6. Adding Accessory Button to Table View (Edit/Delete a Contact)](11.-working-with-json/11.6.-adding-accessory-button-to-table-view-edit-delete-a-contact.md)
   * [11.7. Reference Code](11.-working-with-json/11.7.-reference-code.md)
-  * [(Useful extra) 11.8. Decluttering codes from View Controller](11.-working-with-json/useful-extra-11.8.-decluttering-codes-from-view-controller.md)
+  * [11.8. Decluttering codes from View Controller (Recommended Read)](11.-working-with-json/useful-extra-11.8.-decluttering-codes-from-view-controller.md)
 * [12. Firebase Authentication and Firestore](12.-firebase-authentication-and-firestore/README.md)
   * [12.1. App 12 with Firebase](12.-firebase-authentication-and-firestore/12.1.-app-12-with-firebase.md)
   * [12.2. Setting up the Main Screen View](12.-firebase-authentication-and-firestore/12.2.-setting-up-the-main-screen-view.md)

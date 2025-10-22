@@ -1,12 +1,12 @@
-# (Useful extra) 11.8. Decluttering codes from View Controller
+# 11.8. Decluttering codes from View Controller (Recommended Read)
 
-If you noticed, we have 281 lines of code in ViewController.swift. It looks like a mess of codes. And in many ways, it's hard to read when you'll return to it after a week.
+If you noticed, we have 281 lines of code in ViewController.swift. It appears to be a jumble of code. And in many ways, it's hard to read when you'll return to it after a week.
 
-We can use protocols and extensions to put the code into multiple files to make it more modular.
+We can utilize protocols and extensions to break the code into multiple files, making it more modular.
 
-## Separating the API calls from Controller
+## Separating the API calls from the Controller
 
-Let's first separate the codes we used to call the Contacts API. The methods we have related to the Contacts API are:
+Let's first separate the code we used to call the Contacts API. The methods we have related to the Contacts API are:
 
 * getAllContacts()
 * addANewContact(contact: Contact)
@@ -35,7 +35,7 @@ protocol ContactsProtocol{
 
 ### Adopting the Protocol
 
-Awesome, now that we have a protocol, let's create another Swift file ContactsAPICalls.swift, in the MainScreen folder. Import UIKit, and Alamofire in this file. Let's write the following code in the file:
+Awesome, now that we have a protocol, let's create another Swift file, ContactsAPICalls.swift, in the MainScreen folder. Import UIKit and Alamofire in this file. Let's write the following code in the file:
 
 ```swift
 //
@@ -49,13 +49,14 @@ import Foundation
 import UIKit
 import Alamofire
 
-extension ViewController:ContactsProtocol{
+extension ViewController: ContactsProtocol{
     
 }
 ```
 
 In the above code, we use the extension magic to adopt the ContactsProtocol from ViewController. Now, it's time to move the methods from ViewController.swift to ContactsAPICalls.swift.
 
+{% code lineNumbers="true" %}
 ```swift
 //
 //  ContactsAPICalls.swift
@@ -230,6 +231,7 @@ extension ViewController:ContactsProtocol{
 }
 
 ```
+{% endcode %}
 
 ### The file structure of the project now looks like this:
 
@@ -237,7 +239,7 @@ extension ViewController:ContactsProtocol{
 
 Now, the code is more modular and more manageable.
 
-**Note: You can make it even more modular by putting the table view protocol codes into a separate file from ViewController.**
+**Note: You can make it even more modular by putting the table view protocol codes into a separate file from the ViewController.**
 
 {% file src="../.gitbook/assets/App11_modular (2).zip" %}
 
