@@ -1,10 +1,10 @@
 # 1. Writing clean code for Asynchronous operations
 
-In this section, we will rewrite the code for App 11 (JSON API). We will have options for displaying, adding, deleting, and editing contacts using our same API (please refer to:[11.1.-the-json-api-for-the-contact-app.md](../11.-working-with-json/11.1.-the-json-api-for-the-contact-app.md "mention")). We took small steps in[useful-extra-11.8.-decluttering-codes-from-view-controller.md](../11.-working-with-json/useful-extra-11.8.-decluttering-codes-from-view-controller.md "mention") section to separate the API calls from the control code. This time, we will break the chain of nested asynchronous API calls with async-await blocks of code to make our code cleaner.&#x20;
+In this section, we will rewrite the code for App 11 (JSON API). We will have options for displaying, adding, deleting, and editing contacts using our same API (please refer to:[11.1.-the-json-api-for-the-contact-app.md](../../11.-working-with-json/11.1.-the-json-api-for-the-contact-app.md "mention")). We took small steps in[useful-extra-11.8.-decluttering-codes-from-view-controller.md](../../11.-working-with-json/useful-extra-11.8.-decluttering-codes-from-view-controller.md "mention") section to separate the API calls from the control code. This time, we will break the chain of nested asynchronous API calls with async-await blocks of code to make our code cleaner.&#x20;
 
 ## 1. Asynchronous calls
 
-So far, what we have seen in our API calls is that, for a sequence of asynchronous tasks, we must wait for the previous task to complete before executing the next task. We wrote _**spaghetti**_ code there and made the next API call from the callback of the first API call (if the response was a 200-level code, refer to [11.5.-app11-add-a-new-contact.md](../11.-working-with-json/11.5.-app11-add-a-new-contact.md "mention") ). However, it renders our code largely unusable for future use. What if we could write the code such that we could call the async calls one after another, but the code would not execute in parallel? Wouldn't it be great to instruct the code to wait for the call to complete and then move to the next line? That way, we can keep our code cleaner and highly reusable for future use. &#x20;
+So far, what we have seen in our API calls is that, for a sequence of asynchronous tasks, we must wait for the previous task to complete before executing the next task. We wrote _**spaghetti**_ code there and made the next API call from the callback of the first API call (if the response was a 200-level code, refer to [11.5.-app11-add-a-new-contact.md](../../11.-working-with-json/11.5.-app11-add-a-new-contact.md "mention") ). However, it renders our code largely unusable for future use. What if we could write the code such that we could call the async calls one after another, but the code would not execute in parallel? Wouldn't it be great to instruct the code to wait for the call to complete and then move to the next line? That way, we can keep our code cleaner and highly reusable for future use. &#x20;
 
 Let's examine an example using pseudocode.
 
@@ -83,7 +83,7 @@ Let's look at what we have here:
 
 Now, if we run the code, you will see the following:
 
-<figure><img src="../.gitbook/assets/one (5).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/one (5).gif" alt=""><figcaption></figcaption></figure>
 
 Now, if we change the code like this:
 

@@ -187,7 +187,8 @@
 
 ## Decluttering Code
 
-* [1. Writing clean code for Asynchronous operations](decluttering-code/1.-writing-clean-code-for-asynchronous-operations.md)
+* [1. Writing clean code for Asynchronous operations](decluttering-code/1.-writing-clean-code-for-asynchronous-operations/README.md)
+  * [1.1. Decluttering our App11 (Contacts App with JSON)](decluttering-code/1.-writing-clean-code-for-asynchronous-operations/1.1.-decluttering-our-app11-contacts-app-with-json.md)
 
 ## Useful Tools and UI Elements
 
