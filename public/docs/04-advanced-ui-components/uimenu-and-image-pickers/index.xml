@@ -1,1 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UIMenu &amp; Image Pickers on iOS UIKit Course</title><link>/docs/04-advanced-ui-components/uimenu-and-image-pickers/</link><description>Recent content in UIMenu &amp; Image Pickers on iOS UIKit Course</description><generator>Hugo</generator><language>en-us</language><atom:link href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>UIMenu &amp; Image Pickers on iOS UIKit Course</title>
+    <link>//localhost:1313/docs/04-advanced-ui-components/uimenu-and-image-pickers/</link>
+    <description>Recent content in UIMenu &amp; Image Pickers on iOS UIKit Course</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="//localhost:1313/docs/04-advanced-ui-components/uimenu-and-image-pickers/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

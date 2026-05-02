@@ -1,59 +1,1374 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
-{< hint info >} 🎯 Topic Mission: In this module, we will explore this topic and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {< /hint >}
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
+{&lt; hint info &gt;} 🎯 Topic Mission: In this module, we will explore this topic and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {&lt; /hint &gt;}
 Learning Objectives# By the end of this session, you will be able to:
 Understand the core concepts of this topic. Implement this topic in an Xcode project. Apply best practices to ensure clean and maintainable code. The Story So Far…# We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into this topic. Open your current Xcode project or start a new Playground to follow along with the hands-on material.
-"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./"><meta property="og:site_name" content="iOS UIKit Course"><meta property="og:title" content="iOS UIKit Course"><meta property="og:description" content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
-{< hint info >} 🎯 Topic Mission: In this module, we will explore this topic and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {< /hint >}
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="//localhost:1313/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./">
+  <meta property="og:site_name" content="iOS UIKit Course">
+  <meta property="og:title" content="iOS UIKit Course">
+  <meta property="og:description" content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
+{&lt; hint info &gt;} 🎯 Topic Mission: In this module, we will explore this topic and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {&lt; /hint &gt;}
 Learning Objectives# By the end of this session, you will be able to:
-Understand the core concepts of this topic. Implement this topic in an Xcode project. Apply best practices to ensure clean and maintainable code. The Story So Far…# We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into this topic. Open your current Xcode project or start a new Playground to follow along with the hands-on material."><meta property="og:locale" content="en_us"><meta property="og:type" content="website"><meta itemprop=name content="iOS UIKit Course"><meta itemprop=description content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
-{< hint info >} 🎯 Topic Mission: In this module, we will explore this topic and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {< /hint >}
+Understand the core concepts of this topic. Implement this topic in an Xcode project. Apply best practices to ensure clean and maintainable code. The Story So Far…# We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into this topic. Open your current Xcode project or start a new Playground to follow along with the hands-on material.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+
+  <meta itemprop="name" content="iOS UIKit Course">
+  <meta itemprop="description" content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
+{&lt; hint info &gt;} 🎯 Topic Mission: In this module, we will explore this topic and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {&lt; /hint &gt;}
 Learning Objectives# By the end of this session, you will be able to:
-Understand the core concepts of this topic. Implement this topic in an Xcode project. Apply best practices to ensure clean and maintainable code. The Story So Far…# We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into this topic. Open your current Xcode project or start a new Playground to follow along with the hands-on material."><meta itemprop=wordCount content="2029"><title>1. Variables Data Types and More. | iOS UIKit Course</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./><link rel=stylesheet href=/book.min.27b623a68e5ed421a2c09e9cb252a5df26e9f6d074ae994704e46b8381284e76.css><script defer src=/fuse.min.js></script><script defer src=/en.search.min.c3bff94c145f7dd3a7e62b59a68c4f2ce3b661716f44112170089aae22b73bf0.js></script><link rel=alternate type=application/rss+xml href=/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./index.xml title="iOS UIKit Course"></head><body dir=ltr class="book-kind-section book-type-docs"><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>iOS UIKit Course</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href=/docs/01-getting-started/>Module 1: Getting Started</a><ul><li><a href=/docs/01-getting-started/getting-started/>Getting Started</a><ul></ul></li></ul></li><li><a href=/docs/02-swift-fundamentals/>Module 2: Swift Fundamentals</a><ul><li><a href=/docs/02-swift-fundamentals/swift-the-programming-language/>Variables & Data Types</a><ul><li><a href=/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./ class=active>1. Variables Data Types and More.</a><ul></ul></li></ul></li><li><a href=/docs/02-swift-fundamentals/collections/>Collections</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/operators/>Operators</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/conditionals/>Conditionals</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/loops/>Loops</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/functions/>Functions</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/closures/>Closures</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/optionals/>Optionals</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/custom-data-types/>Custom Data Types</a><ul><li><a href=/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/>9.1. Structs</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/custom-data-types/9.2.-classes/>9.2. Classes</a><ul></ul></li></ul></li><li><a href=/docs/02-swift-fundamentals/protocols/>Protocols</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/sorting-arrays/>Sorting Arrays</a><ul></ul></li></ul></li><li><a href=/docs/03-introduction-to-uikit/>Module 3: Introduction to UIKit</a><ul><li><a href=/docs/03-introduction-to-uikit/creating-our-first-app/>Creating Our First App</a><ul><li><a href=/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/>1. Creating Our First App</a><ul></ul></li></ul></li><li><a href=/docs/03-introduction-to-uikit/designing-without-storyboards/>Designing Without Storyboards</a><ul></ul></li><li><a href=/docs/03-introduction-to-uikit/multi-screen-apps/>Multi-Screen Apps</a><ul><li><a href=/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/>3.3. Send data back from Screen 2 to Screen 1</a><ul></ul></li></ul></li><li><a href=/docs/03-introduction-to-uikit/mvc-architecture/>MVC Architecture</a><ul></ul></li></ul></li><li><a href=/docs/04-advanced-ui-components/>Module 4: Advanced UI Components</a><ul><li><a href=/docs/04-advanced-ui-components/uitableview/>UITableView</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/uiscrollview/>UIScrollView</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/uimenu-and-image-pickers/>UIMenu & Image Pickers</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/>Useful UI Elements</a><ul><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/>5. Tab Bar Controller</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/>6. Search Bar</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/>Bottom Sheet View Modal Presentation</a><ul></ul></li></ul></li></ul></li><li><a href=/docs/05-networking-and-apis/>Module 5: Networking & APIs</a><ul><li><a href=/docs/05-networking-and-apis/http-and-networking/>HTTP & Networking</a><ul></ul></li><li><a href=/docs/05-networking-and-apis/working-with-json/>Working with JSON</a><ul></ul></li></ul></li><li><a href=/docs/06-data-persistence-and-architecture/>Module 6: Architecture & Data Flow</a><ul><li><a href=/docs/06-data-persistence-and-architecture/notification-center/>Notification Center</a><ul></ul></li><li><a href=/docs/06-data-persistence-and-architecture/clean-code-and-async/>Clean Code & Async</a><ul><li><a href=/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/>1. Writing Clean Code For Asynchronous Operations</a><ul></ul></li></ul></li></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/>Module 7: Cloud Integrations & Maps</a><ul><li><a href=/docs/07-cloud-integrations-and-maps/cocoapods/>CocoaPods</a><ul></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/>Firebase Auth & Firestore</a><ul><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/>12.5. Implementing Register and Sign In</a><ul></ul></li></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-storage/>Firebase Storage</a><ul></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/mapkit-and-location/>MapKit & Location</a><ul></ul></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><label for=menu-control><img src=/icons/menu.svg class=book-icon alt=Menu></label><h3>1. Variables Data Types and More.</h3><label for=toc-control><img src=/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#learning-objectives>Learning Objectives</a></li><li><a href=#the-story-so-far>The Story So Far&mldr;</a></li><li><a href=#walkthrough-exploring-this-topic>Walkthrough: Exploring this topic</a></li></ul><ul><li><a href=#video>Video</a></li></ul><ul><li><a href=#video-1>Video</a></li></ul><ul><li><a href=#video-2>Video</a></li></ul><ul><li><a href=#video-3>Video</a></li></ul><ul><li><a href=#video-4>Video</a></li></ul><ul><li><a href=#guided-practice-challenges>Guided Practice Challenges</a><ul><li><a href=#challenge-1-experimentation>Challenge 1: Experimentation</a></li><li><a href=#challenge-2-from-scratch>Challenge 2: From Scratch</a></li></ul></li><li><a href=#references>References</a></li><li><a href=#getting-help>Getting Help</a></li></ul></nav></aside></header><article class="markdown book-article"><p><strong>Estimated effort:</strong> 1-2 hours this topic
+Understand the core concepts of this topic. Implement this topic in an Xcode project. Apply best practices to ensure clean and maintainable code. The Story So Far…# We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into this topic. Open your current Xcode project or start a new Playground to follow along with the hands-on material.">
+  <meta itemprop="wordCount" content="2029">
+
+<title>1. Variables Data Types and More. | iOS UIKit Course</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="//localhost:1313/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./">
+<link rel="stylesheet" href="/book.min.27b623a68e5ed421a2c09e9cb252a5df26e9f6d074ae994704e46b8381284e76.css" integrity="sha256-J7Yjpo5e1CGiwJ6cslKl3ybp9tB0rplHBORrg4EoTnY=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.c3bff94c145f7dd3a7e62b59a68c4f2ce3b661716f44112170089aae22b73bf0.js" integrity="sha256-w7/5TBRffdOn5itZpoxPLOO2YXFvRBEhcAiariK3O/A=" crossorigin="anonymous"></script>
+
+
+<link rel="alternate" type="application/rss+xml" href="//localhost:1313/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./index.xml" title="iOS UIKit Course" />
+
+  
+</head>
+<body dir="ltr" class="book-kind-section book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>iOS UIKit Course</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/01-getting-started/" class="">
+      Module 1: Getting Started</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/01-getting-started/getting-started/" class="">
+      Getting Started</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/" class="">
+      Module 2: Swift Fundamentals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/" class="">
+      Variables &amp; Data Types</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./" class="active">
+      1. Variables Data Types and More.</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/collections/" class="">
+      Collections</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/operators/" class="">
+      Operators</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/conditionals/" class="">
+      Conditionals</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/loops/" class="">
+      Loops</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/functions/" class="">
+      Functions</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/closures/" class="">
+      Closures</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/optionals/" class="">
+      Optionals</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/custom-data-types/" class="">
+      Custom Data Types</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/" class="">
+      9.1. Structs</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/custom-data-types/9.2.-classes/" class="">
+      9.2. Classes</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/protocols/" class="">
+      Protocols</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/sorting-arrays/" class="">
+      Sorting Arrays</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/" class="">
+      Module 3: Introduction to UIKit</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/" class="">
+      Creating Our First App</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/" class="">
+      1. Creating Our First App</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/designing-without-storyboards/" class="">
+      Designing Without Storyboards</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/" class="">
+      Multi-Screen Apps</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/" class="">
+      3.3. Send data back from Screen 2 to Screen 1</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/mvc-architecture/" class="">
+      MVC Architecture</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/" class="">
+      Module 4: Advanced UI Components</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uitableview/" class="">
+      UITableView</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uiscrollview/" class="">
+      UIScrollView</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/" class="">
+      UIMenu &amp; Image Pickers</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/" class="">
+      Useful UI Elements</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/" class="">
+      5. Tab Bar Controller</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/" class="">
+      6. Search Bar</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/" class="">
+      Bottom Sheet View Modal Presentation</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/" class="">
+      Module 5: Networking &amp; APIs</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/http-and-networking/" class="">
+      HTTP &amp; Networking</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/working-with-json/" class="">
+      Working with JSON</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/" class="">
+      Module 6: Architecture &amp; Data Flow</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/notification-center/" class="">
+      Notification Center</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/clean-code-and-async/" class="">
+      Clean Code &amp; Async</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/" class="">
+      1. Writing Clean Code For Asynchronous Operations</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/" class="">
+      Module 7: Cloud Integrations &amp; Maps</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/cocoapods/" class="">
+      CocoaPods</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/" class="">
+      Firebase Auth &amp; Firestore</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/" class="">
+      12.5. Implementing Register and Sign In</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-storage/" class="">
+      Firebase Storage</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/mapkit-and-location/" class="">
+      MapKit &amp; Location</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>1. Variables Data Types and More.</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#learning-objectives">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-this-topic">Walkthrough: Exploring this topic</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#video">Video</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#video-1">Video</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#video-2">Video</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#video-3">Video</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#video-4">Video</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#guided-practice-challenges">Guided Practice Challenges</a>
+      <ul>
+        <li><a href="#challenge-1-experimentation">Challenge 1: Experimentation</a></li>
+        <li><a href="#challenge-2-from-scratch">Challenge 2: From Scratch</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a></li>
+    <li><a href="#getting-help">Getting Help</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
-<strong>Prerequisites:</strong> Previous iOS topics</p><p>{&lt; hint info >}
+<strong>Prerequisites:</strong> Previous iOS topics</p>
+<p>{&lt; hint info &gt;}
 <strong>🎯 Topic Mission:</strong>
 In this module, we will explore <strong>this topic</strong> and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{&lt; /hint >}</p><hr><h2 id=learning-objectives>Learning Objectives<a class=anchor href=#learning-objectives>#</a></h2><p>By the end of this session, you will be able to:</p><ol><li>Understand the core concepts of this topic.</li><li>Implement this topic in an Xcode project.</li><li>Apply best practices to ensure clean and maintainable code.</li></ol><hr><h2 id=the-story-so-far>The Story So Far&mldr;<a class=anchor href=#the-story-so-far>#</a></h2><p>We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into this topic.
-Open your current Xcode project or start a new Playground to follow along with the hands-on material.</p><hr><h2 id=walkthrough-exploring-this-topic>Walkthrough: Exploring this topic<a class=anchor href=#walkthrough-exploring-this-topic>#</a></h2><blockquote class=book-hint><p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p></blockquote><h1 id=1-variables-data-types-and-more>1. Variables, Data types, and more.<a class=anchor href=#1-variables-data-types-and-more>#</a></h1><p>This is where we begin our journey with Swift. In this book section, we will go through the simple data types in Swift and see how to work with them. Please go to the next page to start!!!</p><h1 id=11-creating-a-swift-playground>1.1. Creating a Swift Playground<a class=anchor href=#11-creating-a-swift-playground>#</a></h1><p>Open Xcode from your Launchpad. You should be seeing something like the following:</p><figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 11.46.52 AM (1).png" alt><figcaption><p>Xcode launch screen</p></figcaption></figure><p>Do not create an Xcode project yet; click on <em><strong>File -> New -> Playground</strong></em>. Select <em><strong>Blank</strong>,</em> click <em><strong>Next</strong></em>, give the playground a name, and click on <em>Create.</em> If you see something like the following, you are good to go! That is the first step toward learning Swift!!!</p><figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 12.01.56 PM (2).png" alt><figcaption><p>Playground</p></figcaption></figure><h2 id=video>Video<a class=anchor href=#video>#</a></h2><p>{% embed url=&ldquo;<a href="https://www.youtube.com/watch?v=IG9nba_A7Z4%22">https://www.youtube.com/watch?v=IG9nba_A7Z4"</a> %}
+{&lt; /hint &gt;}</p>
+<hr>
+<h2 id="learning-objectives">Learning Objectives<a class="anchor" href="#learning-objectives">#</a></h2>
+<p>By the end of this session, you will be able to:</p>
+<ol>
+<li>Understand the core concepts of this topic.</li>
+<li>Implement this topic in an Xcode project.</li>
+<li>Apply best practices to ensure clean and maintainable code.</li>
+</ol>
+<hr>
+<h2 id="the-story-so-far">The Story So Far&hellip;<a class="anchor" href="#the-story-so-far">#</a></h2>
+<p>We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into this topic.
+Open your current Xcode project or start a new Playground to follow along with the hands-on material.</p>
+<hr>
+<h2 id="walkthrough-exploring-this-topic">Walkthrough: Exploring this topic<a class="anchor" href="#walkthrough-exploring-this-topic">#</a></h2>
+<blockquote class='book-hint '>
+<p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
+</blockquote><h1 id="1-variables-data-types-and-more">1. Variables, Data types, and more.<a class="anchor" href="#1-variables-data-types-and-more">#</a></h1>
+<p>This is where we begin our journey with Swift. In this book section, we will go through the simple data types in Swift and see how to work with them. Please go to the next page to start!!!</p>
+<!-- Merged from 1.1.-creating-a-swift-playground.md -->
+<h1 id="11-creating-a-swift-playground">1.1. Creating a Swift Playground<a class="anchor" href="#11-creating-a-swift-playground">#</a></h1>
+<p>Open Xcode from your Launchpad. You should be seeing something like the following:</p>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 11.46.52 AM (1).png" alt=""><figcaption><p>Xcode launch screen</p></figcaption></figure>
+<p>Do not create an Xcode project yet; click on <em><strong>File -&gt; New -&gt; Playground</strong></em>. Select <em><strong>Blank</strong>,</em> click <em><strong>Next</strong></em>, give the playground a name, and click on <em>Create.</em> If you see something like the following, you are good to go! That is the first step toward learning Swift!!!</p>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 12.01.56 PM (2).png" alt=""><figcaption><p>Playground</p></figcaption></figure>
+<h2 id="video">Video<a class="anchor" href="#video">#</a></h2>
+<p>{% embed url=&ldquo;<a href="https://www.youtube.com/watch?v=IG9nba_A7Z4%22">https://www.youtube.com/watch?v=IG9nba_A7Z4"</a> %}
 Demo
-{% endembed %}</p><h1 id=12-variables>1.2. Variables<a class=anchor href=#12-variables>#</a></h1><p>We will write our &ldquo;Hello World&rdquo; code here. In very short, variables are the places in your code where you can store program data while the program is running. They are called variables because you can change (vary) their values.</p><p>Now the Playground you created comes with a line of code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>var</span> greeting = <span style=color:#e6db74>&#34;Hello, playground&#34;</span></span></span></code></pre></div><p>It creates a new variable called <em>greeting</em>, and gives it the value &ldquo;Hello, playground&rdquo;.</p><figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 12.31.15 PM (1).png" alt><figcaption></figcaption></figure><p>After you click on the play button, you&rsquo;ll see &ldquo;Hello, playground&rdquo; on the right side, which is the output area of the Playground.</p><p>Since greeting is a variable, we can always change it from the code, right? So let&rsquo;s change the value to something else like:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span>greeting = <span style=color:#e6db74>&#34;Hello, Bonobos!!!!&#34;</span></span></span></code></pre></div><p>Now, you can see the new values showing on the output area!</p><figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 12.35.08 PM (1).png" alt><figcaption></figcaption></figure><p>Since greeting is a variable, we can change the values without creating a new variable for the new value!</p><h2 id=video-1>Video<a class=anchor href=#video-1>#</a></h2><p>{% embed url=&ldquo;<a href=https://youtu.be/_a2NJAJg-WM%22>https://youtu.be/_a2NJAJg-WM"</a> %}</p><h1 id=13-type-safety>1.3. Type safety<a class=anchor href=#13-type-safety>#</a></h1><p>Swift is a type-safe language. It means that once you create a variable, it is stuck with a specific data type, and you cannot change the data type of it. Every variable has to have a particular data type.</p><p>So far in our code, we have a variable <em><strong>greeting</strong></em> having the value &ldquo;Hello, Bonobos!!!&rdquo;. What if we try to set the value of <em><strong>greeting</strong></em> to 12? Let&rsquo;s try it!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span>greeting = <span style=color:#ae81ff>12</span></span></span></code></pre></div><p>And click on play! We will see something like the following:</p><figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 1.06.02 PM (1).png" alt><figcaption></figcaption></figure><p>It says, &ldquo;Cannot assign the value of type <strong>&lsquo;Int&rsquo;</strong> to <strong>&lsquo;String&rsquo;</strong>. So it means that Swift automatically sets the type of the variable <em><strong>greeting</strong></em> to a String when it creates the variable with a String. Now that the type is already assigned, when I wanted to change the value to an integer 12, it yelled at me.</p><p>Ok, let&rsquo;s create another variable to hold the integer.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>var</span> count = <span style=color:#ae81ff>12</span></span></span></code></pre></div><p>Here it creates a variable named count, then finds that the value I am initially setting (12) is of type <strong>Int</strong> (integer). So, <em><strong>count</strong></em> can only hold <strong>Int</strong>s after the creation.</p><p>There is a <em>swift</em> and usable trick for large integers. For example, if you want to store 1 million (1000000) in a variable, It is hard to read/type when you deal with a stream of consecutive zeroes together. Swift uses underscores as thousand separators. Like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>var</span> million = <span style=color:#ae81ff>1_000_000</span></span></span></code></pre></div><p><strong>To sum up, you need to be very careful about the data types of variables. You must not mix up data types for a particular variable.</strong></p><h2 id=video-2>Video<a class=anchor href=#video-2>#</a></h2><p>{% embed url=&ldquo;<a href=https://youtu.be/XrHRxOiLX_o%22>https://youtu.be/XrHRxOiLX_o"</a> %}</p><h1 id=14-strings-and-print-to-console>1.4. Strings and print to console<a class=anchor href=#14-strings-and-print-to-console>#</a></h1><p>Swift allows you to write strings in two ways. The first one is, of course, the age-old String we declare inside <strong>&rdquo; &ldquo;</strong>. The next one is multiline strings which you can write inside <strong>&rdquo;&rdquo;&rdquo; &ldquo;&rdquo;&rdquo;</strong> (triple quotes on both sides).</p><p>An example of the first type is the <em><strong>greeting</strong></em> variable we have. Let&rsquo;s try to see what a multi-line string is.</p><p>Let&rsquo;s create a string like the following:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>var</span> multiline = <span style=color:#e6db74>&#34;&#34;&#34;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>I am a multiline String.
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>I might look weird, but I am really very simple.
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>At times I could be very useful!
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;&#34;&#34;</span></span></span></code></pre></div><p>After you define the String, if you look at the output area, you&rsquo;ll see that a character <strong>&rsquo;\n&rsquo; is</strong> added between two lines. <strong>&rsquo;\n&rsquo;</strong> denotes a new line. It means that the variable multiline contains a String that will be logically multiline and follows the exact format the user put in.</p><p>Now, you can use the command <strong>print()</strong> to display the output to the console. Let&rsquo;s put the following line of code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span>print(multiline)</span></span></code></pre></div><p>It should display the following at the bottom (console output) of Xcode:</p><figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 1.55.07 PM (1).png" alt><figcaption></figcaption></figure><p>Now you get the full view of how a multiline String would get displayed.</p><h2 id=video-3>Video<a class=anchor href=#video-3>#</a></h2><p>{% embed url=&ldquo;<a href=https://youtu.be/FEoQh4CarpM%22>https://youtu.be/FEoQh4CarpM"</a> %}</p><h1 id=15-floating-point-numbers-and-type-annotation>1.5. Floating point numbers and Type annotation<a class=anchor href=#15-floating-point-numbers-and-type-annotation>#</a></h1><p>Two basic data types in Swift handle the floating point numbers (fractional values): <strong>Double</strong> and <strong>Float.</strong></p><p><strong>Double</strong> is short for &ldquo;double-precision floating point number.&rdquo; It is a 64-bit floating point number. Long story short, it can hold very large fractional values. Swift uses <strong>Double</strong> as its default data type for floating point literals.</p><p>On the other hand, <strong>Float</strong> is a 32-bit floating point number, which is less precise than <strong>Double,</strong> and you do not need to use it unless you are building games or graphics applications.</p><p>So now, let&rsquo;s write a Double variable:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>var</span> myNum = <span style=color:#ae81ff>12.5</span>
-</span></span><span style=display:flex><span>print(myNum)
-</span></span><span style=display:flex><span>print(type(of: myNum))</span></span></code></pre></div><p>Here Swift automatically sets the type of the variable myNum to <strong>Double</strong> since I put a fractional value to it. The above code outputs the following:</p><figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 3.21.10 PM (1) (1).png" alt><figcaption></figcaption></figure><p>The first print() outputs the value of <em><strong>myNum</strong></em>, and the second print outputs the type of the variable <em><strong>myNum</strong></em>.</p><p>Now, if you need to define a <strong>Float</strong> at some point**,** how would you do it? Remember, Swift, by default, uses <strong>Double</strong> for fractional values. That&rsquo;s where we will learn how to create a variable with a predefined type. For example, in the following code, I am creating a <strong>Float</strong> variable:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>var</span> myFloat:Float = <span style=color:#ae81ff>13</span>
-</span></span><span style=display:flex><span>print(myFloat)
-</span></span><span style=display:flex><span>print(type(of: myFloat))</span></span></code></pre></div><p>Here, I am writing &lsquo;var&rsquo; to say the next one is a variable, as earlier. I give the variable a name, &lsquo;myFloat&rsquo;, and then I put a colon(:), <strong>followed by the type of the variable (Float),</strong> and finally, I assign a value, 13. This is a standard way of defining a variable in Swift. We will eventually learn about a more concrete way of declaring and defining the variables. Now the output of the code is:</p><figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 3.34.11 PM (3).png" alt><figcaption></figcaption></figure><p>One thing to note is that I put the value as 13 for myFloat, which would be interpreted as an Int if I did not specifically predefine it as a <strong>Float.</strong> If you look at the output, 13 became 13.0, which is a fractional number.</p><h2 id=video-4>Video<a class=anchor href=#video-4>#</a></h2><p>{% embed url=&ldquo;<a href=https://youtu.be/TU-5-RWzJMs%22>https://youtu.be/TU-5-RWzJMs"</a> %}</p><h1 id=16-more-print-string-interpolation>1.6. More print, String interpolation<a class=anchor href=#16-more-print-string-interpolation>#</a></h1><p>Swift allows you to insert values of variables into a String. String interpolation is useful for creating dynamic texts (labels, error messages, debug information, etc.) and formatting texts.</p><p>In Swift, String interpolation is done using <code>\(...)</code> notation. Let&rsquo;s look into an example. So far, what we have in our playground are a few variables, such as <code>myNum</code>, <code>myFloat</code>, and <code>multiline</code>. (<code>myNum</code> is a Double, <code>myFloat</code> is a Float, and <code>multiline</code> is a string.)</p><p>So let&rsquo;s add the following lines of code to your Playground:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>var</span> myString = 
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;My Double number is </span><span style=color:#e6db74>\(</span>myNum<span style=color:#e6db74>)</span><span style=color:#e6db74>. My Float number is </span><span style=color:#e6db74>\(</span>myFloat<span style=color:#e6db74>)</span><span style=color:#e6db74>. And, my multiline string is </span><span style=color:#e6db74>\(</span>multiline<span style=color:#e6db74>)</span><span style=color:#e6db74>&#34;</span>
-</span></span><span style=display:flex><span>print(myString)</span></span></code></pre></div><p>If you run the code, the output would be:</p><pre tabindex=0><code>My Double number is 12.5. My Float number is 13.0. And, my multiline string is I am a multiline String.
+{% endembed %}</p>
+<!-- Merged from 1.2.-variables.md -->
+<h1 id="12-variables">1.2. Variables<a class="anchor" href="#12-variables">#</a></h1>
+<p>We will write our &ldquo;Hello World&rdquo; code here. In very short, variables are the places in your code where you can store program data while the program is running. They are called variables because you can change (vary) their values.</p>
+<p>Now the Playground you created comes with a line of code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> greeting = <span style="color:#e6db74">&#34;Hello, playground&#34;</span></span></span></code></pre></div><p>It creates a new variable called <em>greeting</em>, and gives it the value &ldquo;Hello, playground&rdquo;.</p>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 12.31.15 PM (1).png" alt=""><figcaption></figcaption></figure>
+<p>After you click on the play button, you&rsquo;ll see &ldquo;Hello, playground&rdquo; on the right side, which is the output area of the Playground.</p>
+<p>Since greeting is a variable, we can always change it from the code, right? So let&rsquo;s change the value to something else like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>greeting = <span style="color:#e6db74">&#34;Hello, Bonobos!!!!&#34;</span></span></span></code></pre></div><p>Now, you can see the new values showing on the output area!</p>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 12.35.08 PM (1).png" alt=""><figcaption></figcaption></figure>
+<p>Since greeting is a variable, we can change the values without creating a new variable for the new value!</p>
+<h2 id="video-1">Video<a class="anchor" href="#video-1">#</a></h2>
+<p>{% embed url=&ldquo;<a href="https://youtu.be/_a2NJAJg-WM%22">https://youtu.be/_a2NJAJg-WM"</a> %}</p>
+<!-- Merged from 1.3.-type-safety.md -->
+<h1 id="13-type-safety">1.3. Type safety<a class="anchor" href="#13-type-safety">#</a></h1>
+<p>Swift is a type-safe language. It means that once you create a variable, it is stuck with a specific data type, and you cannot change the data type of it. Every variable has to have a particular data type.</p>
+<p>So far in our code, we have a variable <em><strong>greeting</strong></em> having the value &ldquo;Hello, Bonobos!!!&rdquo;. What if we try to set the value of <em><strong>greeting</strong></em> to 12? Let&rsquo;s try it!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>greeting = <span style="color:#ae81ff">12</span></span></span></code></pre></div><p>And click on play! We will see something like the following:</p>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 1.06.02 PM (1).png" alt=""><figcaption></figcaption></figure>
+<p>It says, &ldquo;Cannot assign the value of type <strong>&lsquo;Int&rsquo;</strong> to <strong>&lsquo;String&rsquo;</strong>. So it means that Swift automatically sets the type of the variable <em><strong>greeting</strong></em> to a String when it creates the variable with a String. Now that the type is already assigned, when I wanted to change the value to an integer 12, it yelled at me.</p>
+<p>Ok, let&rsquo;s create another variable to hold the integer.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> count = <span style="color:#ae81ff">12</span></span></span></code></pre></div><p>Here it creates a variable named count, then finds that the value I am initially setting (12) is of type <strong>Int</strong> (integer). So, <em><strong>count</strong></em> can only hold <strong>Int</strong>s after the creation.</p>
+<p>There is a <em>swift</em> and usable trick for large integers. For example, if you want to store 1 million (1000000) in a variable, It is hard to read/type when you deal with a stream of consecutive zeroes together. Swift uses underscores as thousand separators. Like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> million = <span style="color:#ae81ff">1_000_000</span></span></span></code></pre></div><p><strong>To sum up, you need to be very careful about the data types of variables. You must not mix up data types for a particular variable.</strong></p>
+<h2 id="video-2">Video<a class="anchor" href="#video-2">#</a></h2>
+<p>{% embed url=&ldquo;<a href="https://youtu.be/XrHRxOiLX_o%22">https://youtu.be/XrHRxOiLX_o"</a> %}</p>
+<!-- Merged from 1.4.-strings-and-print-to-console.md -->
+<h1 id="14-strings-and-print-to-console">1.4. Strings and print to console<a class="anchor" href="#14-strings-and-print-to-console">#</a></h1>
+<p>Swift allows you to write strings in two ways. The first one is, of course, the age-old String we declare inside <strong>&rdquo; &ldquo;</strong>. The next one is multiline strings which you can write inside <strong>&rdquo;&rdquo;&rdquo; &ldquo;&rdquo;&rdquo;</strong> (triple quotes on both sides).</p>
+<p>An example of the first type is the <em><strong>greeting</strong></em> variable we have. Let&rsquo;s try to see what a multi-line string is.</p>
+<p>Let&rsquo;s create a string like the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> multiline = <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">I am a multiline String.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">I might look weird, but I am really very simple.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">At times I could be very useful!
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span></span></span></code></pre></div><p>After you define the String, if you look at the output area, you&rsquo;ll see that a character <strong>&rsquo;\n&rsquo; is</strong> added between two lines. <strong>&rsquo;\n&rsquo;</strong> denotes a new line. It means that the variable multiline contains a String that will be logically multiline and follows the exact format the user put in.</p>
+<p>Now, you can use the command <strong>print()</strong> to display the output to the console. Let&rsquo;s put the following line of code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>print(multiline)</span></span></code></pre></div><p>It should display the following at the bottom (console output) of Xcode:</p>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 1.55.07 PM (1).png" alt=""><figcaption></figcaption></figure>
+<p>Now you get the full view of how a multiline String would get displayed.</p>
+<h2 id="video-3">Video<a class="anchor" href="#video-3">#</a></h2>
+<p>{% embed url=&ldquo;<a href="https://youtu.be/FEoQh4CarpM%22">https://youtu.be/FEoQh4CarpM"</a> %}</p>
+<!-- Merged from 1.5.-floating-point-numbers-and-type-annotation.md -->
+<h1 id="15-floating-point-numbers-and-type-annotation">1.5. Floating point numbers and Type annotation<a class="anchor" href="#15-floating-point-numbers-and-type-annotation">#</a></h1>
+<p>Two basic data types in Swift handle the floating point numbers (fractional values): <strong>Double</strong> and <strong>Float.</strong></p>
+<p><strong>Double</strong> is short for &ldquo;double-precision floating point number.&rdquo; It is a 64-bit floating point number. Long story short, it can hold very large fractional values. Swift uses <strong>Double</strong> as its default data type for floating point literals.</p>
+<p>On the other hand, <strong>Float</strong> is a 32-bit floating point number, which is less precise than <strong>Double,</strong> and you do not need to use it unless you are building games or graphics applications.</p>
+<p>So now, let&rsquo;s write a Double variable:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> myNum = <span style="color:#ae81ff">12.5</span>
+</span></span><span style="display:flex;"><span>print(myNum)
+</span></span><span style="display:flex;"><span>print(type(of: myNum))</span></span></code></pre></div><p>Here Swift automatically sets the type of the variable myNum to <strong>Double</strong> since I put a fractional value to it. The above code outputs the following:</p>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 3.21.10 PM (1) (1).png" alt=""><figcaption></figcaption></figure>
+<p>The first print() outputs the value of <em><strong>myNum</strong></em>, and the second print outputs the type of the variable <em><strong>myNum</strong></em>.</p>
+<p>Now, if you need to define a <strong>Float</strong> at some point**,** how would you do it? Remember, Swift, by default, uses <strong>Double</strong> for fractional values. That&rsquo;s where we will learn how to create a variable with a predefined type. For example, in the following code, I am creating a <strong>Float</strong> variable:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> myFloat:Float = <span style="color:#ae81ff">13</span>
+</span></span><span style="display:flex;"><span>print(myFloat)
+</span></span><span style="display:flex;"><span>print(type(of: myFloat))</span></span></code></pre></div><p>Here, I am writing &lsquo;var&rsquo; to say the next one is a variable, as earlier. I give the variable a name, &lsquo;myFloat&rsquo;, and then I put a colon(:), <strong>followed by the type of the variable (Float),</strong> and finally, I assign a value, 13. This is a standard way of defining a variable in Swift. We will eventually learn about a more concrete way of declaring and defining the variables. Now the output of the code is:</p>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 3.34.11 PM (3).png" alt=""><figcaption></figcaption></figure>
+<p>One thing to note is that I put the value as 13 for myFloat, which would be interpreted as an Int if I did not specifically predefine it as a <strong>Float.</strong> If you look at the output, 13 became 13.0, which is a fractional number.</p>
+<h2 id="video-4">Video<a class="anchor" href="#video-4">#</a></h2>
+<p>{% embed url=&ldquo;<a href="https://youtu.be/TU-5-RWzJMs%22">https://youtu.be/TU-5-RWzJMs"</a> %}</p>
+<!-- Merged from 1.6.-more-print-string-interpolation.md -->
+<h1 id="16-more-print-string-interpolation">1.6. More print, String interpolation<a class="anchor" href="#16-more-print-string-interpolation">#</a></h1>
+<p>Swift allows you to insert values of variables into a String. String interpolation is useful for creating dynamic texts (labels, error messages, debug information, etc.) and formatting texts.</p>
+<p>In Swift, String interpolation is done using <code>\(...)</code> notation. Let&rsquo;s look into an example. So far, what we have in our playground are a few variables, such as <code>myNum</code>, <code>myFloat</code>, and <code>multiline</code>. (<code>myNum</code> is a Double, <code>myFloat</code> is a Float, and <code>multiline</code> is a string.)</p>
+<p>So let&rsquo;s add the following lines of code to your Playground:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> myString = 
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;My Double number is </span><span style="color:#e6db74">\(</span>myNum<span style="color:#e6db74">)</span><span style="color:#e6db74">. My Float number is </span><span style="color:#e6db74">\(</span>myFloat<span style="color:#e6db74">)</span><span style="color:#e6db74">. And, my multiline string is </span><span style="color:#e6db74">\(</span>multiline<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>print(myString)</span></span></code></pre></div><p>If you run the code, the output would be:</p>
+<pre tabindex="0"><code>My Double number is 12.5. My Float number is 13.0. And, my multiline string is I am a multiline String.
 I might look weird, but I am really very simple.
-At times I could be very useful!</code></pre><p><strong>Here, You can see that <code>myNum</code>(a Double), <code>myFloat</code> (a Float), and <code>multiline</code> (even a String) have been interpolated into <code>myString</code>.</strong></p><p>Now, If we change the code to the following:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>var</span> myString = <span style=color:#e6db74>&#34;&#34;&#34;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>My Double number is </span><span style=color:#e6db74>\(</span>myNum<span style=color:#e6db74>)</span><span style=color:#e6db74>.
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>My Float number is </span><span style=color:#e6db74>\(</span>myFloat<span style=color:#e6db74>)</span><span style=color:#e6db74>.
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>And, my multiline string is
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>\(</span>multiline<span style=color:#e6db74>)</span><span style=color:#e6db74>
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;&#34;&#34;</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>print(myString)</span></span></code></pre></div><p>The output becomes:</p><pre tabindex=0><code>My Double number is 12.5.
+At times I could be very useful!</code></pre><p><strong>Here, You can see that <code>myNum</code>(a Double), <code>myFloat</code> (a Float), and <code>multiline</code> (even a String) have been interpolated into <code>myString</code>.</strong></p>
+<p>Now, If we change the code to the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> myString = <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">My Double number is </span><span style="color:#e6db74">\(</span>myNum<span style="color:#e6db74">)</span><span style="color:#e6db74">.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">My Float number is </span><span style="color:#e6db74">\(</span>myFloat<span style="color:#e6db74">)</span><span style="color:#e6db74">.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">And, my multiline string is
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">\(</span>multiline<span style="color:#e6db74">)</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(myString)</span></span></code></pre></div><p>The output becomes:</p>
+<pre tabindex="0"><code>My Double number is 12.5.
 My Float number is 13.0.
 And, my multiline string is
 I am a multiline String.
 I might look weird, but I am really very simple.
-At times I could be very useful!</code></pre><p>Here we see how multiline Strings and String interpolation can be used together to format the texts.</p><p><strong>Question:</strong></p><ul><li><em>Can you print the same output by calling the <code>print()</code> function without creating the <code>myString</code> variable?</em></li></ul><h1 id=17-constants>1.7. Constants<a class=anchor href=#17-constants>#</a></h1><p>So far, we talked about variables. Just as a refresher, you can always change the values of a variable, maintaining the <strong>type-safety</strong>. However, in many cases, you would not want a value to be changeable and keep it unchanged while the program runs. These are called <strong>constants.</strong></p><p>To write a constant in Swift, you need to use the keyword <code>let</code>. You write, <code>let</code> <code>variableName</code> : <code>DataType</code> = <code>value</code>. (Recall Type annotations?)</p><p>For example, let&rsquo;s add the following line of code in our Playground:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>let</span> myConstant:Int = <span style=color:#ae81ff>14</span>
-</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;My constant is </span><span style=color:#e6db74>\(</span>myConstant<span style=color:#e6db74>)</span><span style=color:#e6db74>&#34;</span>)</span></span></code></pre></div><p>It will output the following:</p><pre tabindex=0><code>My constant is 14</code></pre><p>Now, let&rsquo;s try to set a new value <code>20</code> to <code>myConstant</code>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span>myConstant = <span style=color:#ae81ff>20</span></span></span></code></pre></div><p>But now you will see the following error:</p><figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 10.56.02 PM.png" alt><figcaption></figcaption></figure><p><strong>So, <code>myConstant</code> is not changeable (not mutable).</strong></p><p>**Please note: when you will be building iOS apps, **<mark style=color:red><strong>use constants as much as possible.</strong></mark> It is suggested that you should declare everything as constants using <code>let</code> and then selectively change them to variables when needed.</p><h1 id=18-type-annotations-revisited>1.8. Type annotations (revisited)<a class=anchor href=#18-type-annotations-revisited>#</a></h1><p>As we have already discussed a couple of times, we can predefine the data type for a variable when you are creating it. This is called <strong>Type annotations.</strong></p><p>The general format of type annotations is as follows: <code>let</code> <code>variableName</code> : <code>DataType</code> = <code>value</code>.</p><p>A few examples could be:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>let</span> myName:String = <span style=color:#e6db74>&#34;Sakib Miazi&#34;</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> myAge:Int = <span style=color:#ae81ff>10</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> iUseIPhone:Bool = <span style=color:#66d9ef>false</span></span></span></code></pre></div><h1 id=19-comments>1.9. Comments<a class=anchor href=#19-comments>#</a></h1><p>We often need to write texts that are not executable programming instructions, just plain text instructions or documentation of our code. These are called comments. In swift, we can write comments in two ways.</p><ul><li>For a single-line comment, we use <code>//</code>.</li><li>For multiline comments, we use <code>/* ... */</code></li></ul><p>For example,</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>// This is a single-line comment before I create a variable...</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> str:String = <span style=color:#e6db74>&#34;Nothing&#34;</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>/* This is a multi-line comment describing the following:
-</span></span></span><span style=display:flex><span><span style=color:#75715e> myNum is a Double.
-</span></span></span><span style=display:flex><span><span style=color:#75715e> myFloat is a Float.
-</span></span></span><span style=display:flex><span><span style=color:#75715e>*/</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> myNum = <span style=color:#ae81ff>12.5</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> myFloat:Float = <span style=color:#ae81ff>13</span></span></span></code></pre></div><h1 id=110-reference-code>1.10. Reference Code<a class=anchor href=#110-reference-code>#</a></h1><p>{% file src="/gitbook-assets/MyPlayground.playground (1).zip&rdquo; %}</p><hr><h2 id=guided-practice-challenges>Guided Practice Challenges<a class=anchor href=#guided-practice-challenges>#</a></h2><p>Before moving on to the next topic, try these low-stakes practice challenges in Xcode. They will build the exact muscle memory you need:</p><h3 id=challenge-1-experimentation>Challenge 1: Experimentation<a class=anchor href=#challenge-1-experimentation>#</a></h3><p><strong>The Scenario:</strong> You&rsquo;ve just learned about this topic.
-<strong>The Task:</strong> Experiment with the code snippets provided above. Can you alter the behavior by changing the parameters or combining it with concepts from previous modules?</p><h3 id=challenge-2-from-scratch>Challenge 2: From Scratch<a class=anchor href=#challenge-2-from-scratch>#</a></h3><p><strong>The Task:</strong> Try implementing the core feature of this module in a completely blank Xcode project without looking at the reference code. Rely on Xcode&rsquo;s autocomplete and standard Apple documentation.</p><hr><h2 id=references>References<a class=anchor href=#references>#</a></h2><ol><li><a href=https://developer.apple.com/documentation/>Apple Developer Documentation</a></li><li><a href=https://docs.swift.org/swift-book/>Swift Language Guide</a></li><li><a href=https://developer.apple.com/design/human-interface-guidelines/>Human Interface Guidelines</a></li></ol><hr><h2 id=getting-help>Getting Help<a class=anchor href=#getting-help>#</a></h2><p>Because this course is fully asynchronous, here&rsquo;s how to get unstuck:</p><ul><li><strong>Piazza</strong> is the primary help channel. When asking a question, include: (1) what you&rsquo;re trying to do, (2) what you&rsquo;ve tried, (3) the exact Xcode error message.</li><li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li><li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li></ul></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=/docs/02-swift-fundamentals/swift-the-programming-language/ class="flex align-center"><img src=/icons/backward.svg class=book-icon alt=Backward>
-<span>Variables & Data Types</span>
-</a></span><span><a href=/docs/02-swift-fundamentals/collections/ class="flex align-center"><span>Collections</span>
-<img src=/icons/forward.svg class=book-icon alt=Forward></a></span></div><div class=book-comments></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#learning-objectives>Learning Objectives</a></li><li><a href=#the-story-so-far>The Story So Far&mldr;</a></li><li><a href=#walkthrough-exploring-this-topic>Walkthrough: Exploring this topic</a></li></ul><ul><li><a href=#video>Video</a></li></ul><ul><li><a href=#video-1>Video</a></li></ul><ul><li><a href=#video-2>Video</a></li></ul><ul><li><a href=#video-3>Video</a></li></ul><ul><li><a href=#video-4>Video</a></li></ul><ul><li><a href=#guided-practice-challenges>Guided Practice Challenges</a><ul><li><a href=#challenge-1-experimentation>Challenge 1: Experimentation</a></li><li><a href=#challenge-2-from-scratch>Challenge 2: From Scratch</a></li></ul></li><li><a href=#references>References</a></li><li><a href=#getting-help>Getting Help</a></li></ul></nav></div></aside></main></body></html>
+At times I could be very useful!</code></pre><p>Here we see how multiline Strings and String interpolation can be used together to format the texts.</p>
+<p><strong>Question:</strong></p>
+<ul>
+<li><em>Can you print the same output by calling the <code>print()</code> function without creating the <code>myString</code> variable?</em></li>
+</ul>
+<!-- Merged from 1.7.-constants.md -->
+<h1 id="17-constants">1.7. Constants<a class="anchor" href="#17-constants">#</a></h1>
+<p>So far, we talked about variables. Just as a refresher, you can always change the values of a variable, maintaining the <strong>type-safety</strong>. However, in many cases, you would not want a value to be changeable and keep it unchanged while the program runs. These are called <strong>constants.</strong></p>
+<p>To write a constant in Swift, you need to use the keyword <code>let</code>. You write, <code>let</code> <code>variableName</code> : <code>DataType</code> = <code>value</code>. (Recall Type annotations?)</p>
+<p>For example, let&rsquo;s add the following line of code in our Playground:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> myConstant:Int = <span style="color:#ae81ff">14</span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;My constant is </span><span style="color:#e6db74">\(</span>myConstant<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)</span></span></code></pre></div><p>It will output the following:</p>
+<pre tabindex="0"><code>My constant is 14</code></pre><p>Now, let&rsquo;s try to set a new value <code>20</code> to <code>myConstant</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>myConstant = <span style="color:#ae81ff">20</span></span></span></code></pre></div><p>But now you will see the following error:</p>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 10.56.02 PM.png" alt=""><figcaption></figcaption></figure>
+<p><strong>So, <code>myConstant</code> is not changeable (not mutable).</strong></p>
+<p>**Please note: when you will be building iOS apps, **<mark style="color:red;"><strong>use constants as much as possible.</strong></mark> It is suggested that you should declare everything as constants using <code>let</code> and then selectively change them to variables when needed.</p>
+<!-- Merged from 1.8.-type-annotations-revisited.md -->
+<h1 id="18-type-annotations-revisited">1.8. Type annotations (revisited)<a class="anchor" href="#18-type-annotations-revisited">#</a></h1>
+<p>As we have already discussed a couple of times, we can predefine the data type for a variable when you are creating it. This is called <strong>Type annotations.</strong></p>
+<p>The general format of type annotations is as follows: <code>let</code> <code>variableName</code> : <code>DataType</code> = <code>value</code>.</p>
+<p>A few examples could be:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> myName:String = <span style="color:#e6db74">&#34;Sakib Miazi&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> myAge:Int = <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> iUseIPhone:Bool = <span style="color:#66d9ef">false</span></span></span></code></pre></div><!-- Merged from 1.9.-comments.md -->
+<h1 id="19-comments">1.9. Comments<a class="anchor" href="#19-comments">#</a></h1>
+<p>We often need to write texts that are not executable programming instructions, just plain text instructions or documentation of our code. These are called comments. In swift, we can write comments in two ways.</p>
+<ul>
+<li>For a single-line comment, we use <code>//</code>.</li>
+<li>For multiline comments, we use <code>/* ... */</code></li>
+</ul>
+<p>For example,</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">// This is a single-line comment before I create a variable...</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> str:String = <span style="color:#e6db74">&#34;Nothing&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* This is a multi-line comment describing the following:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> myNum is a Double.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> myFloat is a Float.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> myNum = <span style="color:#ae81ff">12.5</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> myFloat:Float = <span style="color:#ae81ff">13</span></span></span></code></pre></div><!-- Merged from 1.10.-reference-code.md -->
+<h1 id="110-reference-code">1.10. Reference Code<a class="anchor" href="#110-reference-code">#</a></h1>
+<p>{% file src=&quot;/gitbook-assets/MyPlayground.playground (1).zip&rdquo; %}</p>
+<hr>
+<h2 id="guided-practice-challenges">Guided Practice Challenges<a class="anchor" href="#guided-practice-challenges">#</a></h2>
+<p>Before moving on to the next topic, try these low-stakes practice challenges in Xcode. They will build the exact muscle memory you need:</p>
+<h3 id="challenge-1-experimentation">Challenge 1: Experimentation<a class="anchor" href="#challenge-1-experimentation">#</a></h3>
+<p><strong>The Scenario:</strong> You&rsquo;ve just learned about this topic.
+<strong>The Task:</strong> Experiment with the code snippets provided above. Can you alter the behavior by changing the parameters or combining it with concepts from previous modules?</p>
+<h3 id="challenge-2-from-scratch">Challenge 2: From Scratch<a class="anchor" href="#challenge-2-from-scratch">#</a></h3>
+<p><strong>The Task:</strong> Try implementing the core feature of this module in a completely blank Xcode project without looking at the reference code. Rely on Xcode&rsquo;s autocomplete and standard Apple documentation.</p>
+<hr>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
+<ol>
+<li><a href="https://developer.apple.com/documentation/">Apple Developer Documentation</a></li>
+<li><a href="https://docs.swift.org/swift-book/">Swift Language Guide</a></li>
+<li><a href="https://developer.apple.com/design/human-interface-guidelines/">Human Interface Guidelines</a></li>
+</ol>
+<hr>
+<h2 id="getting-help">Getting Help<a class="anchor" href="#getting-help">#</a></h2>
+<p>Because this course is fully asynchronous, here&rsquo;s how to get unstuck:</p>
+<ul>
+<li><strong>Piazza</strong> is the primary help channel. When asking a question, include: (1) what you&rsquo;re trying to do, (2) what you&rsquo;ve tried, (3) the exact Xcode error message.</li>
+<li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
+<li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/02-swift-fundamentals/swift-the-programming-language/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Variables &amp; Data Types</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/02-swift-fundamentals/collections/" class="flex align-center">
+        <span>Collections</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#learning-objectives">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-this-topic">Walkthrough: Exploring this topic</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#video">Video</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#video-1">Video</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#video-2">Video</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#video-3">Video</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#video-4">Video</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#guided-practice-challenges">Guided Practice Challenges</a>
+      <ul>
+        <li><a href="#challenge-1-experimentation">Challenge 1: Experimentation</a></li>
+        <li><a href="#challenge-2-from-scratch">Challenge 2: From Scratch</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a></li>
+    <li><a href="#getting-help">Getting Help</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

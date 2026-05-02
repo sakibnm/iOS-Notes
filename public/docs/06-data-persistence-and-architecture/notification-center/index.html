@@ -1,399 +1,1761 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
-{< hint info >} 🎯 Topic Mission: In this module, we will explore Notification Center and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {< /hint >}
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
+{&lt; hint info &gt;} 🎯 Topic Mission: In this module, we will explore Notification Center and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {&lt; /hint &gt;}
 Learning Objectives# By the end of this session, you will be able to:
 Understand the core concepts of Notification Center. Implement Notification Center in an Xcode project. Apply best practices to ensure clean and maintainable code. The Story So Far…# We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Notification Center. Open your current Xcode project or start a new Playground to follow along with the hands-on material.
-"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="/docs/06-data-persistence-and-architecture/notification-center/"><meta property="og:site_name" content="iOS UIKit Course"><meta property="og:title" content="Notification Center"><meta property="og:description" content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
-{< hint info >} 🎯 Topic Mission: In this module, we will explore Notification Center and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {< /hint >}
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="//localhost:1313/docs/06-data-persistence-and-architecture/notification-center/">
+  <meta property="og:site_name" content="iOS UIKit Course">
+  <meta property="og:title" content="Notification Center">
+  <meta property="og:description" content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
+{&lt; hint info &gt;} 🎯 Topic Mission: In this module, we will explore Notification Center and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {&lt; /hint &gt;}
 Learning Objectives# By the end of this session, you will be able to:
-Understand the core concepts of Notification Center. Implement Notification Center in an Xcode project. Apply best practices to ensure clean and maintainable code. The Story So Far…# We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Notification Center. Open your current Xcode project or start a new Playground to follow along with the hands-on material."><meta property="og:locale" content="en_us"><meta property="og:type" content="website"><meta itemprop=name content="Notification Center"><meta itemprop=description content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
-{< hint info >} 🎯 Topic Mission: In this module, we will explore Notification Center and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {< /hint >}
+Understand the core concepts of Notification Center. Implement Notification Center in an Xcode project. Apply best practices to ensure clean and maintainable code. The Story So Far…# We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Notification Center. Open your current Xcode project or start a new Playground to follow along with the hands-on material.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+
+  <meta itemprop="name" content="Notification Center">
+  <meta itemprop="description" content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
+{&lt; hint info &gt;} 🎯 Topic Mission: In this module, we will explore Notification Center and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {&lt; /hint &gt;}
 Learning Objectives# By the end of this session, you will be able to:
-Understand the core concepts of Notification Center. Implement Notification Center in an Xcode project. Apply best practices to ensure clean and maintainable code. The Story So Far…# We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Notification Center. Open your current Xcode project or start a new Playground to follow along with the hands-on material."><meta itemprop=wordCount content="2404"><title>Notification Center | iOS UIKit Course</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=/docs/06-data-persistence-and-architecture/notification-center/><link rel=stylesheet href=/book.min.27b623a68e5ed421a2c09e9cb252a5df26e9f6d074ae994704e46b8381284e76.css><script defer src=/fuse.min.js></script><script defer src=/en.search.min.c3bff94c145f7dd3a7e62b59a68c4f2ce3b661716f44112170089aae22b73bf0.js></script><link rel=alternate type=application/rss+xml href=/docs/06-data-persistence-and-architecture/notification-center/index.xml title="iOS UIKit Course"></head><body dir=ltr class="book-kind-section book-type-docs"><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>iOS UIKit Course</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href=/docs/01-getting-started/>Module 1: Getting Started</a><ul><li><a href=/docs/01-getting-started/getting-started/>Getting Started</a><ul></ul></li></ul></li><li><a href=/docs/02-swift-fundamentals/>Module 2: Swift Fundamentals</a><ul><li><a href=/docs/02-swift-fundamentals/swift-the-programming-language/>Variables & Data Types</a><ul><li><a href=/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./>1. Variables Data Types and More.</a><ul></ul></li></ul></li><li><a href=/docs/02-swift-fundamentals/collections/>Collections</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/operators/>Operators</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/conditionals/>Conditionals</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/loops/>Loops</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/functions/>Functions</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/closures/>Closures</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/optionals/>Optionals</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/custom-data-types/>Custom Data Types</a><ul><li><a href=/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/>9.1. Structs</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/custom-data-types/9.2.-classes/>9.2. Classes</a><ul></ul></li></ul></li><li><a href=/docs/02-swift-fundamentals/protocols/>Protocols</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/sorting-arrays/>Sorting Arrays</a><ul></ul></li></ul></li><li><a href=/docs/03-introduction-to-uikit/>Module 3: Introduction to UIKit</a><ul><li><a href=/docs/03-introduction-to-uikit/creating-our-first-app/>Creating Our First App</a><ul><li><a href=/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/>1. Creating Our First App</a><ul></ul></li></ul></li><li><a href=/docs/03-introduction-to-uikit/designing-without-storyboards/>Designing Without Storyboards</a><ul></ul></li><li><a href=/docs/03-introduction-to-uikit/multi-screen-apps/>Multi-Screen Apps</a><ul><li><a href=/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/>3.3. Send data back from Screen 2 to Screen 1</a><ul></ul></li></ul></li><li><a href=/docs/03-introduction-to-uikit/mvc-architecture/>MVC Architecture</a><ul></ul></li></ul></li><li><a href=/docs/04-advanced-ui-components/>Module 4: Advanced UI Components</a><ul><li><a href=/docs/04-advanced-ui-components/uitableview/>UITableView</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/uiscrollview/>UIScrollView</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/uimenu-and-image-pickers/>UIMenu & Image Pickers</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/>Useful UI Elements</a><ul><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/>5. Tab Bar Controller</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/>6. Search Bar</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/>Bottom Sheet View Modal Presentation</a><ul></ul></li></ul></li></ul></li><li><a href=/docs/05-networking-and-apis/>Module 5: Networking & APIs</a><ul><li><a href=/docs/05-networking-and-apis/http-and-networking/>HTTP & Networking</a><ul></ul></li><li><a href=/docs/05-networking-and-apis/working-with-json/>Working with JSON</a><ul></ul></li></ul></li><li><a href=/docs/06-data-persistence-and-architecture/>Module 6: Architecture & Data Flow</a><ul><li><a href=/docs/06-data-persistence-and-architecture/notification-center/ class=active>Notification Center</a><ul></ul></li><li><a href=/docs/06-data-persistence-and-architecture/clean-code-and-async/>Clean Code & Async</a><ul><li><a href=/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/>1. Writing Clean Code For Asynchronous Operations</a><ul></ul></li></ul></li></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/>Module 7: Cloud Integrations & Maps</a><ul><li><a href=/docs/07-cloud-integrations-and-maps/cocoapods/>CocoaPods</a><ul></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/>Firebase Auth & Firestore</a><ul><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/>12.5. Implementing Register and Sign In</a><ul></ul></li></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-storage/>Firebase Storage</a><ul></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/mapkit-and-location/>MapKit & Location</a><ul></ul></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><label for=menu-control><img src=/icons/menu.svg class=book-icon alt=Menu></label><h3>Notification Center</h3><label for=toc-control><img src=/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#learning-objectives>Learning Objectives</a></li><li><a href=#the-story-so-far>The Story So Far&mldr;</a></li><li><a href=#walkthrough-exploring-notification-center>Walkthrough: Exploring Notification Center</a></li></ul><ul><li><ul><li><a href=#initializing-the-notification-center>Initializing the Notification Center</a></li><li><a href=#setting-up-an-observer>Setting up an observer</a></li></ul></li></ul><ul><li><ul><li><a href=#creating-a-new-app-app7>Creating a new app, App7</a></li><li><a href=#first-screen>First Screen:</a></li><li><a href=#second-screen>Second Screen:</a></li></ul></li></ul><ul><li><ul><li><a href=#posting-data-to-notification-center>Posting data to Notification Center</a></li><li><a href=#notes>Notes:</a></li></ul></li></ul><ul><li><ul><li><a href=#addobserver-method>addObserver() method:</a></li><li><a href=#post-method>post() method:</a></li></ul></li></ul><ul><li><a href=#guided-practice-challenges>Guided Practice Challenges</a><ul><li><a href=#challenge-1-experimentation>Challenge 1: Experimentation</a></li><li><a href=#challenge-2-from-scratch>Challenge 2: From Scratch</a></li></ul></li><li><a href=#references>References</a></li><li><a href=#getting-help>Getting Help</a></li></ul></nav></aside></header><article class="markdown book-article"><p><strong>Estimated effort:</strong> 1-2 hours this topic
+Understand the core concepts of Notification Center. Implement Notification Center in an Xcode project. Apply best practices to ensure clean and maintainable code. The Story So Far…# We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Notification Center. Open your current Xcode project or start a new Playground to follow along with the hands-on material.">
+  <meta itemprop="wordCount" content="2404">
+
+<title>Notification Center | iOS UIKit Course</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="//localhost:1313/docs/06-data-persistence-and-architecture/notification-center/">
+<link rel="stylesheet" href="/book.min.27b623a68e5ed421a2c09e9cb252a5df26e9f6d074ae994704e46b8381284e76.css" integrity="sha256-J7Yjpo5e1CGiwJ6cslKl3ybp9tB0rplHBORrg4EoTnY=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.c3bff94c145f7dd3a7e62b59a68c4f2ce3b661716f44112170089aae22b73bf0.js" integrity="sha256-w7/5TBRffdOn5itZpoxPLOO2YXFvRBEhcAiariK3O/A=" crossorigin="anonymous"></script>
+
+
+<link rel="alternate" type="application/rss+xml" href="//localhost:1313/docs/06-data-persistence-and-architecture/notification-center/index.xml" title="iOS UIKit Course" />
+
+  
+</head>
+<body dir="ltr" class="book-kind-section book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>iOS UIKit Course</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/01-getting-started/" class="">
+      Module 1: Getting Started</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/01-getting-started/getting-started/" class="">
+      Getting Started</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/" class="">
+      Module 2: Swift Fundamentals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/" class="">
+      Variables &amp; Data Types</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./" class="">
+      1. Variables Data Types and More.</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/collections/" class="">
+      Collections</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/operators/" class="">
+      Operators</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/conditionals/" class="">
+      Conditionals</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/loops/" class="">
+      Loops</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/functions/" class="">
+      Functions</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/closures/" class="">
+      Closures</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/optionals/" class="">
+      Optionals</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/custom-data-types/" class="">
+      Custom Data Types</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/" class="">
+      9.1. Structs</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/custom-data-types/9.2.-classes/" class="">
+      9.2. Classes</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/protocols/" class="">
+      Protocols</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/sorting-arrays/" class="">
+      Sorting Arrays</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/" class="">
+      Module 3: Introduction to UIKit</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/" class="">
+      Creating Our First App</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/" class="">
+      1. Creating Our First App</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/designing-without-storyboards/" class="">
+      Designing Without Storyboards</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/" class="">
+      Multi-Screen Apps</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/" class="">
+      3.3. Send data back from Screen 2 to Screen 1</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/mvc-architecture/" class="">
+      MVC Architecture</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/" class="">
+      Module 4: Advanced UI Components</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uitableview/" class="">
+      UITableView</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uiscrollview/" class="">
+      UIScrollView</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/" class="">
+      UIMenu &amp; Image Pickers</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/" class="">
+      Useful UI Elements</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/" class="">
+      5. Tab Bar Controller</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/" class="">
+      6. Search Bar</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/" class="">
+      Bottom Sheet View Modal Presentation</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/" class="">
+      Module 5: Networking &amp; APIs</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/http-and-networking/" class="">
+      HTTP &amp; Networking</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/working-with-json/" class="">
+      Working with JSON</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/" class="">
+      Module 6: Architecture &amp; Data Flow</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/notification-center/" class="active">
+      Notification Center</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/clean-code-and-async/" class="">
+      Clean Code &amp; Async</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/" class="">
+      1. Writing Clean Code For Asynchronous Operations</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/" class="">
+      Module 7: Cloud Integrations &amp; Maps</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/cocoapods/" class="">
+      CocoaPods</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/" class="">
+      Firebase Auth &amp; Firestore</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/" class="">
+      12.5. Implementing Register and Sign In</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-storage/" class="">
+      Firebase Storage</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/mapkit-and-location/" class="">
+      MapKit &amp; Location</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Notification Center</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#learning-objectives">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-notification-center">Walkthrough: Exploring Notification Center</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#initializing-the-notification-center">Initializing the Notification Center</a></li>
+        <li><a href="#setting-up-an-observer">Setting up an observer</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#creating-a-new-app-app7">Creating a new app, App7</a></li>
+        <li><a href="#first-screen">First Screen:</a></li>
+        <li><a href="#second-screen">Second Screen:</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#posting-data-to-notification-center">Posting data to Notification Center</a></li>
+        <li><a href="#notes">Notes:</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#addobserver-method">addObserver() method:</a></li>
+        <li><a href="#post-method">post() method:</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#guided-practice-challenges">Guided Practice Challenges</a>
+      <ul>
+        <li><a href="#challenge-1-experimentation">Challenge 1: Experimentation</a></li>
+        <li><a href="#challenge-2-from-scratch">Challenge 2: From Scratch</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a></li>
+    <li><a href="#getting-help">Getting Help</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
-<strong>Prerequisites:</strong> Previous iOS topics</p><p>{&lt; hint info >}
+<strong>Prerequisites:</strong> Previous iOS topics</p>
+<p>{&lt; hint info &gt;}
 <strong>🎯 Topic Mission:</strong>
 In this module, we will explore <strong>Notification Center</strong> and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{&lt; /hint >}</p><hr><h2 id=learning-objectives>Learning Objectives<a class=anchor href=#learning-objectives>#</a></h2><p>By the end of this session, you will be able to:</p><ol><li>Understand the core concepts of Notification Center.</li><li>Implement Notification Center in an Xcode project.</li><li>Apply best practices to ensure clean and maintainable code.</li></ol><hr><h2 id=the-story-so-far>The Story So Far&mldr;<a class=anchor href=#the-story-so-far>#</a></h2><p>We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Notification Center.
-Open your current Xcode project or start a new Playground to follow along with the hands-on material.</p><hr><h2 id=walkthrough-exploring-notification-center>Walkthrough: Exploring Notification Center<a class=anchor href=#walkthrough-exploring-notification-center>#</a></h2><blockquote class=book-hint><p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p></blockquote><h1 id=7-notification-center>7. Notification Center<a class=anchor href=#7-notification-center>#</a></h1><p><mark style=color:purple><strong>(Do not confuse it with the push notifications)</strong></mark></p><p>NotificationCenter is a very useful utility for iOS to handle data independent of the lifecycles of the screens.</p><p>According to Apple Developer: It is <em>a notification dispatch mechanism that enables the broadcast of information to registered observers.</em> Sounds confusing? Luckily, it is not that confusing, though.</p><p>Simply put, NotificationCenter is a central dispatcher of data to broadcast data from one part of the app to another. A &lsquo;part&rsquo; of an app could be any Swift class.</p><p>For example, there are two screens in an app. Screen2 takes text input from the user, and it has to send the text to Screen1 and display the text in a Label. Here is how it can be handled using a NotificationCenter:</p><ul><li>NotificationCenter works as a separate mediator. A class can post data to or observe data from the NotificationCenter.</li><li>Screen2 can post the text. And Screen1 can observe the text.</li><li>When Screen2 posts a new text, the NotificationCenter detects an update of data been made and broadcasts the notifications to all the observers of that particular data.</li><li>At this point, Screen1, as an observer of that particular text, receives the notification that the text has been updated.</li><li>Finally, Screen1 reacts to the notification and updates it&rsquo;s local UI elements accordingly, such as updating it&rsquo;s Label with the updated text.</li></ul><p>So, let&rsquo;s build a small App to test it out.</p><h1 id=71-add-an-observer>7.1. Add an Observer<a class=anchor href=#71-add-an-observer>#</a></h1><p>We are sending data from the second screen to the first screen. So, we need to observe the Notification Center for any notifications sent from the Second Screen.</p><h3 id=initializing-the-notification-center>Initializing the Notification Center<a class=anchor href=#initializing-the-notification-center>#</a></h3><p>We initialize the notification center in the first screen by adding the following line of code in ViewController.swift:</p><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  ViewController.swift</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  App7</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  Created by Sakib Miazi on 5/22/23.</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>UIKit</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ViewController</span>: UIViewController {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> firstScreen = FirstScreenView()
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> instantiating the Notification center...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> notificationCenter = NotificationCenter.<span style=color:#66d9ef>default</span>
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//codes omitted...</span>
-</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>{% endcode %}</p><h3 id=setting-up-an-observer>Setting up an observer<a class=anchor href=#setting-up-an-observer>#</a></h3><p>Then we should start observing for a particular notification. We will use the following method: <code>notificationCenter.addObserver(observer: Any, selector: Selector, name: NSNotification.Name?, object: Any?)</code></p><p>So let&rsquo;s add the following lines of code in <code>viewDidLoad()</code> method:</p><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ViewController</span>: UIViewController {
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//codes omitted...</span>
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>viewDidLoad</span>() {
-</span></span><span style=display:flex><span>        <span style=color:#75715e>//codes omitted...</span>
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> observing text if it is updated in NotificationCenter...</span>
-</span></span><span style=display:flex><span>        notificationCenter.addObserver(
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>self</span>, 
-</span></span><span style=display:flex><span>            selector: <span style=color:#66d9ef>#selector</span>(notificationReceivedForTextChanged(notification:)),
-</span></span><span style=display:flex><span>            name: Notification.Name(<span style=color:#e6db74>&#34;textFromSecondScreen&#34;</span>),
-</span></span><span style=display:flex><span>            object: <span style=color:#66d9ef>nil</span>)
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//codes omitted...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>@objc</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>notificationReceivedForTextChanged</span>(notification: Notification){
-</span></span><span style=display:flex><span>        firstScreen.labelReceivedText.text = (notification.object <span style=color:#66d9ef>as</span>! String)
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>{% endcode %}</p><p>Here what we are doing is:</p><ul><li>Setting the observer to self. This means this screen is observing for a notification.</li><li>We need to add a selector method to handle the data we get back as part of the notification. Here, we define <code>notificationReceivedForTextChanged()</code> method to handle the notification. Inside that method, you can see that we are setting the <code>labelReceivedText</code>&rsquo;s text to the received object.</li><li>We also need to give an identifier to the notification using the <code>name</code> parameter. We set the identifier as &ldquo;textFromSecondScreen.&rdquo; It means I am just observing a notification of the name: &ldquo;textFromSecondScreen.&rdquo;</li><li>The object parameter is <code>nil</code>. It means the first screen will not send any object; it will just listen.</li></ul><p>Here is the entire code of the ViewController.swift:</p><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  ViewController.swift</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  App7</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  Created by Sakib Miazi on 5/22/23.</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>UIKit</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ViewController</span>: UIViewController {
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> firstScreen = FirstScreenView()
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> instantiating the Notification center...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> notificationCenter = NotificationCenter.<span style=color:#66d9ef>default</span>
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>loadView</span>() {
-</span></span><span style=display:flex><span>        view = firstScreen
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>viewDidLoad</span>() {
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>super</span>.viewDidLoad()
-</span></span><span style=display:flex><span>        title = <span style=color:#e6db74>&#34;First Screen&#34;</span>
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> buttonSend target...</span>
-</span></span><span style=display:flex><span>        firstScreen.buttonFetch.addTarget(<span style=color:#66d9ef>self</span>, action: <span style=color:#66d9ef>#selector</span>(onButtonFetchTapped), <span style=color:#66d9ef>for</span>: .touchUpInside)
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> observing text if it is updated in NotificationCenter...</span>
-</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> observing text if it is updated in NotificationCenter...</span>
-</span></span><span style=display:flex><span>        notificationCenter.addObserver(
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>self</span>, 
-</span></span><span style=display:flex><span>            selector: <span style=color:#66d9ef>#selector</span>(notificationReceivedForTextChanged(notification:)),
-</span></span><span style=display:flex><span>            name: Notification.Name(<span style=color:#e6db74>&#34;textFromSecondScreen&#34;</span>),
-</span></span><span style=display:flex><span>            object: <span style=color:#66d9ef>nil</span>)
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>@objc</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>onButtonFetchTapped</span>(){
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>let</span> secondScrren = SecondScreenViewController()
-</span></span><span style=display:flex><span>        navigationController?.pushViewController(secondScrren, animated: <span style=color:#66d9ef>true</span>)
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>@objc</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>notificationReceivedForTextChanged</span>(notification: Notification){
-</span></span><span style=display:flex><span>        firstScreen.labelReceivedText.text = (notification.object <span style=color:#66d9ef>as</span>! String)
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>{% endcode %}</p><p>Now, our first screen will listen to any notification named &ldquo;textFromSecondScreen&rdquo; and deal with it in <code>notificationReceivedForTextChanged()</code> method.</p><h1 id=71-app-7>7.1. App 7<a class=anchor href=#71-app-7>#</a></h1><p>We will build the following app in this module.</p><figure><img src=/gitbook-assets/app7.1.1.1.gif alt><figcaption></figcaption></figure><p>Here,</p><ul><li>The first screen contains a button to fetch text from the second screen.</li><li>If the user taps the button, it takes the user to the second screen.</li><li>The second screen contains a TextField where a user can put some text. This screen also contains a button.</li><li>If the user puts some text and taps the button, it returns to the first screen, and the user will see the text on the first screen.</li><li>So, we have to send the text back to the first screen from the second screen. We will use the Notification Center to do that.</li><li>The first screen will observe the text, and the second screen will post updates to the text.</li></ul><h3 id=creating-a-new-app-app7>Creating a new app, App7<a class=anchor href=#creating-a-new-app-app7>#</a></h3><p>Now, let&rsquo;s create a new app in Xcode and name it &lsquo;App7.&rsquo; Add the views and controllers of two screens:</p><p><img src=/gitbook-assets/Screenshot%202023-05-22%20at%205.02.27%20PM%20%281%29.png alt></p><h3 id=first-screen>First Screen:<a class=anchor href=#first-screen>#</a></h3><h4 id=firstscreenviewswift>FirstScreenView.swift<a class=anchor href=#firstscreenviewswift>#</a></h4><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  FirstScreen.swift</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  App7</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  Created by Sakib Miazi on 5/22/23.</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>UIKit</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>FirstScreenView</span>: UIView {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> buttonFetch:UIButton!
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> labelReceivedText:UILabel!
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>init</span>(frame: CGRect) {
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>super</span>.<span style=color:#66d9ef>init</span>(frame: frame)
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>self</span>.backgroundColor = .white
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        setupButtonFetch()
-</span></span><span style=display:flex><span>        setupLabelReceivedText()
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        initConstraints()
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> initializing UI elements...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupButtonFetch</span>(){
-</span></span><span style=display:flex><span>        buttonFetch = UIButton(type: .system)
-</span></span><span style=display:flex><span>        buttonFetch.setTitle(<span style=color:#e6db74>&#34;Fetch Text from Second Screen&#34;</span>, <span style=color:#66d9ef>for</span>: .normal)
-</span></span><span style=display:flex><span>        buttonFetch.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>self</span>.addSubview(buttonFetch)
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupLabelReceivedText</span>(){
-</span></span><span style=display:flex><span>        labelReceivedText = UILabel()
-</span></span><span style=display:flex><span>        labelReceivedText.text = <span style=color:#e6db74>&#34;Will receive text from Screen 2&#34;</span>
-</span></span><span style=display:flex><span>        labelReceivedText.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>self</span>.addSubview(labelReceivedText)
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> setting up constraints...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>initConstraints</span>(){
-</span></span><span style=display:flex><span>        NSLayoutConstraint.activate([
-</span></span><span style=display:flex><span>            buttonFetch.topAnchor.constraint(equalTo: <span style=color:#66d9ef>self</span>.safeAreaLayoutGuide.topAnchor, constant: <span style=color:#ae81ff>32</span>),
-</span></span><span style=display:flex><span>            buttonFetch.centerXAnchor.constraint(equalTo: <span style=color:#66d9ef>self</span>.safeAreaLayoutGuide.centerXAnchor),
-</span></span><span style=display:flex><span>            
-</span></span><span style=display:flex><span>            labelReceivedText.topAnchor.constraint(equalTo: buttonFetch.bottomAnchor, constant: <span style=color:#ae81ff>32</span>),
-</span></span><span style=display:flex><span>            labelReceivedText.centerXAnchor.constraint(equalTo: <span style=color:#66d9ef>self</span>.safeAreaLayoutGuide.centerXAnchor),
-</span></span><span style=display:flex><span>        ])
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> unused methods...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>required</span> <span style=color:#66d9ef>init</span>?(coder: NSCoder) {
-</span></span><span style=display:flex><span>        fatalError(<span style=color:#e6db74>&#34;init(coder:) has not been implemented&#34;</span>)
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>{% endcode %}</p><h4 id=viewcontrollerswift>ViewController.swift<a class=anchor href=#viewcontrollerswift>#</a></h4><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  ViewController.swift</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  App7</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  Created by Sakib Miazi on 5/22/23.</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>UIKit</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ViewController</span>: UIViewController {
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> firstScreen = FirstScreenView()
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>loadView</span>() {
-</span></span><span style=display:flex><span>        view = firstScreen
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>viewDidLoad</span>() {
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>super</span>.viewDidLoad()
-</span></span><span style=display:flex><span>        title = <span style=color:#e6db74>&#34;First Screen&#34;</span>
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> buttonSend target...</span>
-</span></span><span style=display:flex><span>        firstScreen.buttonFetch
-</span></span><span style=display:flex><span>            .addTarget(<span style=color:#66d9ef>self</span>, action: <span style=color:#66d9ef>#selector</span>(onButtonFetchTapped), <span style=color:#66d9ef>for</span>: .touchUpInside)
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>@objc</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>onButtonFetchTapped</span>(){
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>let</span> secondScrren = SecondScreenViewController()
-</span></span><span style=display:flex><span>        navigationController?.pushViewController(secondScrren, animated: <span style=color:#66d9ef>true</span>)
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>{% endcode %}</p><h3 id=second-screen>Second Screen:<a class=anchor href=#second-screen>#</a></h3><h4 id=secondscreenviewswift>SecondScreenView.swift<a class=anchor href=#secondscreenviewswift>#</a></h4><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  SecondScreenView.swift</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  App7</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  Created by Sakib Miazi on 5/22/23.</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>UIKit</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>SecondScreenView</span>: UIView {
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> labelInfo: UILabel!
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> textFieldSendBack: UITextField!
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> buttonSendBack: UIButton!
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>init</span>(frame: CGRect) {
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>super</span>.<span style=color:#66d9ef>init</span>(frame: frame)
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>self</span>.backgroundColor = .white
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        setupLabelInfo()
-</span></span><span style=display:flex><span>        setupTextFieldSendBack()
-</span></span><span style=display:flex><span>        setupButtonSendBack()
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        initConstraints()
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> setting up UI elements...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupLabelInfo</span>(){
-</span></span><span style=display:flex><span>        labelInfo = UILabel()
-</span></span><span style=display:flex><span>        labelInfo.text = <span style=color:#e6db74>&#34;Type to send back:&#34;</span>
-</span></span><span style=display:flex><span>        labelInfo.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>self</span>.addSubview(labelInfo)
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupTextFieldSendBack</span>(){
-</span></span><span style=display:flex><span>        textFieldSendBack = UITextField()
-</span></span><span style=display:flex><span>        textFieldSendBack.placeholder = <span style=color:#e6db74>&#34;Put text to send back to screen 1&#34;</span>
-</span></span><span style=display:flex><span>        textFieldSendBack.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>self</span>.addSubview(textFieldSendBack)
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupButtonSendBack</span>(){
-</span></span><span style=display:flex><span>        buttonSendBack = UIButton(type: .system)
-</span></span><span style=display:flex><span>        buttonSendBack.setTitle(<span style=color:#e6db74>&#34;Send Back&#34;</span>, <span style=color:#66d9ef>for</span>: .normal)
-</span></span><span style=display:flex><span>        buttonSendBack.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>self</span>.addSubview(buttonSendBack)
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> initializing constraints...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>initConstraints</span>(){
-</span></span><span style=display:flex><span>        NSLayoutConstraint.activate([
-</span></span><span style=display:flex><span>            labelInfo.topAnchor.constraint(equalTo: <span style=color:#66d9ef>self</span>.safeAreaLayoutGuide.topAnchor, constant: <span style=color:#ae81ff>32</span>),
-</span></span><span style=display:flex><span>            labelInfo.centerXAnchor.constraint(equalTo: <span style=color:#66d9ef>self</span>.safeAreaLayoutGuide.centerXAnchor),
-</span></span><span style=display:flex><span>            
-</span></span><span style=display:flex><span>            textFieldSendBack.topAnchor.constraint(equalTo: labelInfo.bottomAnchor, constant: <span style=color:#ae81ff>16</span>),
-</span></span><span style=display:flex><span>            textFieldSendBack.centerXAnchor.constraint(equalTo: <span style=color:#66d9ef>self</span>.safeAreaLayoutGuide.centerXAnchor),
-</span></span><span style=display:flex><span>            
-</span></span><span style=display:flex><span>            buttonSendBack.topAnchor.constraint(equalTo: textFieldSendBack.bottomAnchor, constant: <span style=color:#ae81ff>8</span>),
-</span></span><span style=display:flex><span>            buttonSendBack.centerXAnchor.constraint(equalTo: <span style=color:#66d9ef>self</span>.safeAreaLayoutGuide.centerXAnchor),
-</span></span><span style=display:flex><span>        ])
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>required</span> <span style=color:#66d9ef>init</span>?(coder: NSCoder) {
-</span></span><span style=display:flex><span>        fatalError(<span style=color:#e6db74>&#34;init(coder:) has not been implemented&#34;</span>)
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>{% endcode %}</p><h4 id=secondscreenviewcontrollerswift>SecondScreenViewController.swift<a class=anchor href=#secondscreenviewcontrollerswift>#</a></h4><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  SecondScreenViewController.swift</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  App7</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  Created by Sakib Miazi on 5/22/23.</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>UIKit</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>SecondScreenViewController</span>: UIViewController {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> secondScreen = SecondScreenView()
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>loadView</span>() {
-</span></span><span style=display:flex><span>        view = secondScreen
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>viewDidLoad</span>() {
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>super</span>.viewDidLoad()
-</span></span><span style=display:flex><span>        title = <span style=color:#e6db74>&#34;Second Screen&#34;</span>
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        secondScreen.buttonSendBack
-</span></span><span style=display:flex><span>            .addTarget(<span style=color:#66d9ef>self</span>, action: <span style=color:#66d9ef>#selector</span>(onButtonSendBackTapped), <span style=color:#66d9ef>for</span>: .touchUpInside)
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>@objc</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>onButtonSendBackTapped</span>(){
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#66d9ef>let</span> text = secondScreen.textFieldSendBack.text{
-</span></span><span style=display:flex><span>            <span style=color:#75715e>//Send text to First Screen...</span>
-</span></span><span style=display:flex><span>        }<span style=color:#66d9ef>else</span>{
-</span></span><span style=display:flex><span>            <span style=color:#75715e>//Alert invalid input...</span>
-</span></span><span style=display:flex><span>        }
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>{% endcode %}</p><h1 id=72-posting-data-to-notification-center>7.2. Posting Data to Notification Center<a class=anchor href=#72-posting-data-to-notification-center>#</a></h1><p>Now, let&rsquo;s open up the SecondScreenViewController.swift file. We need to initialize the Notification Center here as well. Let&rsquo;s add the following code:</p><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  SecondScreenViewController.swift</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  App7</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  Created by Sakib Miazi on 5/22/23.</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>UIKit</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>SecondScreenViewController</span>: UIViewController {
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//codes omitted...</span>
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> instantiating the Notification center...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> notificationCenter = NotificationCenter.<span style=color:#66d9ef>default</span>
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>   <span style=color:#75715e>//codes omitted...</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>{% endcode %}</p><h3 id=posting-data-to-notification-center>Posting data to Notification Center<a class=anchor href=#posting-data-to-notification-center>#</a></h3><p>Now, when the user puts some text in <code>textFieldSendBack</code>, and taps <code>buttonSendBack</code>, we need to fetch the text and post the text to Notification Center. So, let&rsquo;s write the following codes in <code>onButtonSendBackTapped()</code> method:</p><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  SecondScreenViewController.swift</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  App7</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  Created by Sakib Miazi on 5/22/23.</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>UIKit</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>SecondScreenViewController</span>: UIViewController {
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//codes omitted...</span>
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>viewDidLoad</span>() {
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>super</span>.viewDidLoad()
-</span></span><span style=display:flex><span>        <span style=color:#75715e>//codes omitted...</span>
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        secondScreen.buttonSendBack.addTarget(<span style=color:#66d9ef>self</span>, action: <span style=color:#66d9ef>#selector</span>(onButtonSendBackTapped), <span style=color:#66d9ef>for</span>: .touchUpInside)
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>@objc</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>onButtonSendBackTapped</span>(){
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#66d9ef>let</span> text = secondScreen.textFieldSendBack.text{
-</span></span><span style=display:flex><span>            <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> posting text to NotificationCenter...</span>
-</span></span><span style=display:flex><span>            notificationCenter.post(
-</span></span><span style=display:flex><span>                name: Notification.Name(<span style=color:#e6db74>&#34;textFromSecondScreen&#34;</span>),
-</span></span><span style=display:flex><span>                object: text)
-</span></span><span style=display:flex><span>            navigationController?.popViewController(animated: <span style=color:#66d9ef>true</span>)
-</span></span><span style=display:flex><span>        }<span style=color:#66d9ef>else</span>{
-</span></span><span style=display:flex><span>            <span style=color:#75715e>//Alert invalid input...</span>
-</span></span><span style=display:flex><span>        }
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>{% endcode %}</p><p>In <code>notificationCenter.post()</code> method, we are passing two parameters.</p><ul><li><strong>name:</strong> The same identifier we used to observe the data.</li><li><strong>object:</strong> The object we are sending to Notification Center. Here, the object is the text the user puts in.</li></ul><p>So now let&rsquo;s look into the whole code of SecondScreenViewController.swift:</p><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  SecondScreenViewController.swift</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  App7</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  Created by Sakib Miazi on 5/22/23.</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>UIKit</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>SecondScreenViewController</span>: UIViewController {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> secondScreen = SecondScreenView()
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> instantiating the Notification center...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> notificationCenter = NotificationCenter.<span style=color:#66d9ef>default</span>
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>loadView</span>() {
-</span></span><span style=display:flex><span>        view = secondScreen
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>viewDidLoad</span>() {
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>super</span>.viewDidLoad()
-</span></span><span style=display:flex><span>        title = <span style=color:#e6db74>&#34;Second Screen&#34;</span>
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        secondScreen.buttonSendBack.addTarget(<span style=color:#66d9ef>self</span>, action: <span style=color:#66d9ef>#selector</span>(onButtonSendBackTapped), <span style=color:#66d9ef>for</span>: .touchUpInside)
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>@objc</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>onButtonSendBackTapped</span>(){
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#66d9ef>let</span> text = secondScreen.textFieldSendBack.text{
-</span></span><span style=display:flex><span>            <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> posting text to NotificationCenter...</span>
-</span></span><span style=display:flex><span>            notificationCenter.post(
-</span></span><span style=display:flex><span>                name: Notification.Name(<span style=color:#e6db74>&#34;textFromSecondScreen&#34;</span>),
-</span></span><span style=display:flex><span>                object: text)
-</span></span><span style=display:flex><span>            navigationController?.popViewController(animated: <span style=color:#66d9ef>true</span>)
-</span></span><span style=display:flex><span>        }<span style=color:#66d9ef>else</span>{
-</span></span><span style=display:flex><span>            <span style=color:#75715e>//Alert invalid input...</span>
-</span></span><span style=display:flex><span>        }
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>{% endcode %}</p><p>Now let&rsquo;s run the app.</p><figure><img src=/gitbook-assets/app7.1.1.1.gif alt><figcaption></figcaption></figure><h3 id=notes>Notes:<a class=anchor href=#notes>#</a></h3><ul><li>We can use Notification Center to send data between screens.</li><li>We did not use delegates here. The observer method takes care of that.</li><li>The Notification Center is just like a separate highway of data, independent of the lifecycle of the screens.</li><li>It is a great way of data exchange, where you do not have to worry about handling data while carefully taking care of the Navigation Stack.</li></ul><p><strong>There is a caveat, though. What if I want to send data from the first screen to the second screen?</strong></p><ul><li>The Notification Center is Asynchronous, so a real-time data transfer is desirable (almost always, the data transfer happens in real-time), yet not guaranteed.</li><li>The Notification Center can broadcast data as long as the observer is alive. It cannot send the data before the observer is created or after it is killed.</li><li>You need to set an observer before you send the data. So, when you create the second screen from the first screen, you logically (according to the lifecycle of a screen) post the data from the first screen even before the second screen is created, and the observer is set. So, even if the data is posted, the observer from the second screen can&rsquo;t receive it.</li><li>Therefore, to send data from the parent screen to a child screen while creating the child screen, you should use the old way of sending data; usually Notification Center can&rsquo;t deliver the data.</li></ul><h1 id=73-defining-the-names-identifiers-of-the-notifications-in-a-better-way>7.3. Defining the names (identifiers) of the Notifications in a Better Way<a class=anchor href=#73-defining-the-names-identifiers-of-the-notifications-in-a-better-way>#</a></h1><p>In real life, the Notification Center is used very frequently, especially when we fetch data from the internet and wait for data to update. Oftentimes, it&rsquo;s pretty common to create tens of observers in a single app. So, just writing the names/identifiers of the notifications, as we did before, is not a good way of dealing with it. If the names do not match on both sides, notifications won&rsquo;t work. So, keeping the names in a separate class as static variables is better.</p><p>So, let&rsquo;s create a new Swift file (not a Cocoa touch class) called NotificationNames.swift.</p><p><img src=/gitbook-assets/Screenshot%202023-05-22%20at%207.42.36%20PM%20%281%29.png alt></p><p>Write the following code inside it:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  NotificationNames.swift</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  App7</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  Created by Sakib Miazi on 5/22/23.</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>Foundation</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>extension</span> <span style=color:#a6e22e>Notification</span>.Name{
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>let</span> textFromScondScreen = Notification.Name(<span style=color:#e6db74>&#34;textFromSecondScreen&#34;</span>)
-</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>Here we are extending <code>Notification.Name</code> class, and defining new static names inside it. We used only one observer with the identity/name &ldquo;textFromSecondScreen.&rdquo; <code>textFromSecondScreen</code> static constant is holding that identifier. So, now we will update the <code>addObserver()</code> and <code>post()</code> methods as follows:</p><h3 id=addobserver-method>addObserver() method:<a class=anchor href=#addobserver-method>#</a></h3><p><strong>Previously we had:</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> observing text if it is updated in NotificationCenter...</span>
-</span></span><span style=display:flex><span>notificationCenter.addObserver(
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>self</span>, selector: <span style=color:#66d9ef>#selector</span>(notificationReceivedForTextChanged(notification:)),
-</span></span><span style=display:flex><span>    name: Notification.Name(<span style=color:#e6db74>&#34;textFromSecondScreen&#34;</span>),
-</span></span><span style=display:flex><span>    object: <span style=color:#66d9ef>nil</span>)</span></span></code></pre></div><p><strong>We can now write:</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> observing text if it is updated in NotificationCenter...</span>
-</span></span><span style=display:flex><span>notificationCenter.addObserver(
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>self</span>, selector: <span style=color:#66d9ef>#selector</span>(notificationReceivedForTextChanged(notification:)),
-</span></span><span style=display:flex><span>    name: .textFromScondScreen,
-</span></span><span style=display:flex><span>    object: <span style=color:#66d9ef>nil</span>)</span></span></code></pre></div><h3 id=post-method>post() method:<a class=anchor href=#post-method>#</a></h3><p><strong>Previously we had:</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> posting text to NotificationCenter...</span>
-</span></span><span style=display:flex><span>notificationCenter.post(
-</span></span><span style=display:flex><span>    name: Notification.Name(<span style=color:#e6db74>&#34;textFromSecondScreen&#34;</span>),
-</span></span><span style=display:flex><span>    object: text)</span></span></code></pre></div><h4 id=now-we-can-write>Now we can write:<a class=anchor href=#now-we-can-write>#</a></h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> posting text to NotificationCenter...</span>
-</span></span><span style=display:flex><span>notificationCenter.post(
-</span></span><span style=display:flex><span>    name: .textFromScondScreen,
-</span></span><span style=display:flex><span>    object: text)</span></span></code></pre></div><p><em><strong>This way, we can easily store multiple identifiers/names without worrying about fogetting and mismatching them.</strong></em></p><h1 id=74-reference-code>7.4. Reference Code<a class=anchor href=#74-reference-code>#</a></h1><p>{% file src="/gitbook-assets/App7 (1).zip" %}</p><hr><h2 id=guided-practice-challenges>Guided Practice Challenges<a class=anchor href=#guided-practice-challenges>#</a></h2><p>Before moving on to the next topic, try these low-stakes practice challenges in Xcode. They will build the exact muscle memory you need:</p><h3 id=challenge-1-experimentation>Challenge 1: Experimentation<a class=anchor href=#challenge-1-experimentation>#</a></h3><p><strong>The Scenario:</strong> You&rsquo;ve just learned about Notification Center.
-<strong>The Task:</strong> Experiment with the code snippets provided above. Can you alter the behavior by changing the parameters or combining it with concepts from previous modules?</p><h3 id=challenge-2-from-scratch>Challenge 2: From Scratch<a class=anchor href=#challenge-2-from-scratch>#</a></h3><p><strong>The Task:</strong> Try implementing the core feature of this module in a completely blank Xcode project without looking at the reference code. Rely on Xcode&rsquo;s autocomplete and standard Apple documentation.</p><hr><h2 id=references>References<a class=anchor href=#references>#</a></h2><ol><li><a href=https://developer.apple.com/documentation/>Apple Developer Documentation</a></li><li><a href=https://docs.swift.org/swift-book/>Swift Language Guide</a></li><li><a href=https://developer.apple.com/design/human-interface-guidelines/>Human Interface Guidelines</a></li></ol><hr><h2 id=getting-help>Getting Help<a class=anchor href=#getting-help>#</a></h2><p>Because this course is fully asynchronous, here&rsquo;s how to get unstuck:</p><ul><li><strong>Piazza</strong> is the primary help channel. When asking a question, include: (1) what you&rsquo;re trying to do, (2) what you&rsquo;ve tried, (3) the exact Xcode error message.</li><li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li><li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li></ul></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=/docs/06-data-persistence-and-architecture/ class="flex align-center"><img src=/icons/backward.svg class=book-icon alt=Backward>
-<span>Module 6: Architecture & Data Flow</span>
-</a></span><span><a href=/docs/06-data-persistence-and-architecture/clean-code-and-async/ class="flex align-center"><span>Clean Code & Async</span>
-<img src=/icons/forward.svg class=book-icon alt=Forward></a></span></div><div class=book-comments></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#learning-objectives>Learning Objectives</a></li><li><a href=#the-story-so-far>The Story So Far&mldr;</a></li><li><a href=#walkthrough-exploring-notification-center>Walkthrough: Exploring Notification Center</a></li></ul><ul><li><ul><li><a href=#initializing-the-notification-center>Initializing the Notification Center</a></li><li><a href=#setting-up-an-observer>Setting up an observer</a></li></ul></li></ul><ul><li><ul><li><a href=#creating-a-new-app-app7>Creating a new app, App7</a></li><li><a href=#first-screen>First Screen:</a></li><li><a href=#second-screen>Second Screen:</a></li></ul></li></ul><ul><li><ul><li><a href=#posting-data-to-notification-center>Posting data to Notification Center</a></li><li><a href=#notes>Notes:</a></li></ul></li></ul><ul><li><ul><li><a href=#addobserver-method>addObserver() method:</a></li><li><a href=#post-method>post() method:</a></li></ul></li></ul><ul><li><a href=#guided-practice-challenges>Guided Practice Challenges</a><ul><li><a href=#challenge-1-experimentation>Challenge 1: Experimentation</a></li><li><a href=#challenge-2-from-scratch>Challenge 2: From Scratch</a></li></ul></li><li><a href=#references>References</a></li><li><a href=#getting-help>Getting Help</a></li></ul></nav></div></aside></main></body></html>
+{&lt; /hint &gt;}</p>
+<hr>
+<h2 id="learning-objectives">Learning Objectives<a class="anchor" href="#learning-objectives">#</a></h2>
+<p>By the end of this session, you will be able to:</p>
+<ol>
+<li>Understand the core concepts of Notification Center.</li>
+<li>Implement Notification Center in an Xcode project.</li>
+<li>Apply best practices to ensure clean and maintainable code.</li>
+</ol>
+<hr>
+<h2 id="the-story-so-far">The Story So Far&hellip;<a class="anchor" href="#the-story-so-far">#</a></h2>
+<p>We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Notification Center.
+Open your current Xcode project or start a new Playground to follow along with the hands-on material.</p>
+<hr>
+<h2 id="walkthrough-exploring-notification-center">Walkthrough: Exploring Notification Center<a class="anchor" href="#walkthrough-exploring-notification-center">#</a></h2>
+<blockquote class='book-hint '>
+<p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
+</blockquote><h1 id="7-notification-center">7. Notification Center<a class="anchor" href="#7-notification-center">#</a></h1>
+<p><mark style="color:purple;"><strong>(Do not confuse it with the push notifications)</strong></mark></p>
+<p>NotificationCenter is a very useful utility for iOS to handle data independent of the lifecycles of the screens.</p>
+<p>According to Apple Developer: It is <em>a notification dispatch mechanism that enables the broadcast of information to registered observers.</em> Sounds confusing? Luckily, it is not that confusing, though.</p>
+<p>Simply put, NotificationCenter is a central dispatcher of data to broadcast data from one part of the app to another. A &lsquo;part&rsquo; of an app could be any Swift class.</p>
+<p>For example, there are two screens in an app. Screen2 takes text input from the user, and it has to send the text to Screen1 and display the text in a Label. Here is how it can be handled using a NotificationCenter:</p>
+<ul>
+<li>NotificationCenter works as a separate mediator. A class can post data to or observe data from the NotificationCenter.</li>
+<li>Screen2 can post the text. And Screen1 can observe the text.</li>
+<li>When Screen2 posts a new text, the NotificationCenter detects an update of data been made and broadcasts the notifications to all the observers of that particular data.</li>
+<li>At this point, Screen1, as an observer of that particular text, receives the notification that the text has been updated.</li>
+<li>Finally, Screen1 reacts to the notification and updates it&rsquo;s local UI elements accordingly, such as updating it&rsquo;s Label with the updated text.</li>
+</ul>
+<p>So, let&rsquo;s build a small App to test it out.</p>
+<!-- Merged from 7.1.-add-an-observer.md -->
+<h1 id="71-add-an-observer">7.1. Add an Observer<a class="anchor" href="#71-add-an-observer">#</a></h1>
+<p>We are sending data from the second screen to the first screen. So, we need to observe the Notification Center for any notifications sent from the Second Screen.</p>
+<h3 id="initializing-the-notification-center">Initializing the Notification Center<a class="anchor" href="#initializing-the-notification-center">#</a></h3>
+<p>We initialize the notification center in the first screen by adding the following line of code in ViewController.swift:</p>
+<p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  ViewController.swift</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  App7</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  Created by Sakib Miazi on 5/22/23.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ViewController</span>: UIViewController {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> firstScreen = FirstScreenView()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> instantiating the Notification center...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> notificationCenter = NotificationCenter.<span style="color:#66d9ef">default</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//codes omitted...</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>{% endcode %}</p>
+<h3 id="setting-up-an-observer">Setting up an observer<a class="anchor" href="#setting-up-an-observer">#</a></h3>
+<p>Then we should start observing for a particular notification. We will use the following method: <code>notificationCenter.addObserver(observer: Any, selector: Selector, name: NSNotification.Name?, object: Any?)</code></p>
+<p>So let&rsquo;s add the following lines of code in <code>viewDidLoad()</code> method:</p>
+<p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ViewController</span>: UIViewController {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//codes omitted...</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">viewDidLoad</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//codes omitted...</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> observing text if it is updated in NotificationCenter...</span>
+</span></span><span style="display:flex;"><span>        notificationCenter.addObserver(
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">self</span>, 
+</span></span><span style="display:flex;"><span>            selector: <span style="color:#66d9ef">#selector</span>(notificationReceivedForTextChanged(notification:)),
+</span></span><span style="display:flex;"><span>            name: Notification.Name(<span style="color:#e6db74">&#34;textFromSecondScreen&#34;</span>),
+</span></span><span style="display:flex;"><span>            object: <span style="color:#66d9ef">nil</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//codes omitted...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@objc</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">notificationReceivedForTextChanged</span>(notification: Notification){
+</span></span><span style="display:flex;"><span>        firstScreen.labelReceivedText.text = (notification.object <span style="color:#66d9ef">as</span>! String)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>{% endcode %}</p>
+<p>Here what we are doing is:</p>
+<ul>
+<li>Setting the observer to self. This means this screen is observing for a notification.</li>
+<li>We need to add a selector method to handle the data we get back as part of the notification. Here, we define <code>notificationReceivedForTextChanged()</code> method to handle the notification. Inside that method, you can see that we are setting the <code>labelReceivedText</code>&rsquo;s text to the received object.</li>
+<li>We also need to give an identifier to the notification using the <code>name</code> parameter. We set the identifier as &ldquo;textFromSecondScreen.&rdquo; It means I am just observing a notification of the name: &ldquo;textFromSecondScreen.&rdquo;</li>
+<li>The object parameter is <code>nil</code>. It means the first screen will not send any object; it will just listen.</li>
+</ul>
+<p>Here is the entire code of the ViewController.swift:</p>
+<p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  ViewController.swift</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  App7</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  Created by Sakib Miazi on 5/22/23.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ViewController</span>: UIViewController {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> firstScreen = FirstScreenView()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> instantiating the Notification center...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> notificationCenter = NotificationCenter.<span style="color:#66d9ef">default</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">loadView</span>() {
+</span></span><span style="display:flex;"><span>        view = firstScreen
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">viewDidLoad</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.viewDidLoad()
+</span></span><span style="display:flex;"><span>        title = <span style="color:#e6db74">&#34;First Screen&#34;</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> buttonSend target...</span>
+</span></span><span style="display:flex;"><span>        firstScreen.buttonFetch.addTarget(<span style="color:#66d9ef">self</span>, action: <span style="color:#66d9ef">#selector</span>(onButtonFetchTapped), <span style="color:#66d9ef">for</span>: .touchUpInside)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> observing text if it is updated in NotificationCenter...</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> observing text if it is updated in NotificationCenter...</span>
+</span></span><span style="display:flex;"><span>        notificationCenter.addObserver(
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">self</span>, 
+</span></span><span style="display:flex;"><span>            selector: <span style="color:#66d9ef">#selector</span>(notificationReceivedForTextChanged(notification:)),
+</span></span><span style="display:flex;"><span>            name: Notification.Name(<span style="color:#e6db74">&#34;textFromSecondScreen&#34;</span>),
+</span></span><span style="display:flex;"><span>            object: <span style="color:#66d9ef">nil</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@objc</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">onButtonFetchTapped</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> secondScrren = SecondScreenViewController()
+</span></span><span style="display:flex;"><span>        navigationController?.pushViewController(secondScrren, animated: <span style="color:#66d9ef">true</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@objc</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">notificationReceivedForTextChanged</span>(notification: Notification){
+</span></span><span style="display:flex;"><span>        firstScreen.labelReceivedText.text = (notification.object <span style="color:#66d9ef">as</span>! String)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>{% endcode %}</p>
+<p>Now, our first screen will listen to any notification named &ldquo;textFromSecondScreen&rdquo; and deal with it in <code>notificationReceivedForTextChanged()</code> method.</p>
+<!-- Merged from 7.1.-app-7.md -->
+<h1 id="71-app-7">7.1. App 7<a class="anchor" href="#71-app-7">#</a></h1>
+<p>We will build the following app in this module.</p>
+<figure><img src="/gitbook-assets/app7.1.1.1.gif" alt=""><figcaption></figcaption></figure>
+<p>Here,</p>
+<ul>
+<li>The first screen contains a button to fetch text from the second screen.</li>
+<li>If the user taps the button, it takes the user to the second screen.</li>
+<li>The second screen contains a TextField where a user can put some text. This screen also contains a button.</li>
+<li>If the user puts some text and taps the button, it returns to the first screen, and the user will see the text on the first screen.</li>
+<li>So, we have to send the text back to the first screen from the second screen. We will use the Notification Center to do that.</li>
+<li>The first screen will observe the text, and the second screen will post updates to the text.</li>
+</ul>
+<h3 id="creating-a-new-app-app7">Creating a new app, App7<a class="anchor" href="#creating-a-new-app-app7">#</a></h3>
+<p>Now, let&rsquo;s create a new app in Xcode and name it &lsquo;App7.&rsquo; Add the views and controllers of two screens:</p>
+<p><img src="/gitbook-assets/Screenshot%202023-05-22%20at%205.02.27%20PM%20%281%29.png" alt="" /></p>
+<h3 id="first-screen">First Screen:<a class="anchor" href="#first-screen">#</a></h3>
+<h4 id="firstscreenviewswift">FirstScreenView.swift<a class="anchor" href="#firstscreenviewswift">#</a></h4>
+<p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  FirstScreen.swift</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  App7</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  Created by Sakib Miazi on 5/22/23.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FirstScreenView</span>: UIView {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> buttonFetch:UIButton!
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> labelReceivedText:UILabel!
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">init</span>(frame: CGRect) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.<span style="color:#66d9ef">init</span>(frame: frame)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.backgroundColor = .white
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        setupButtonFetch()
+</span></span><span style="display:flex;"><span>        setupLabelReceivedText()
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        initConstraints()
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> initializing UI elements...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setupButtonFetch</span>(){
+</span></span><span style="display:flex;"><span>        buttonFetch = UIButton(type: .system)
+</span></span><span style="display:flex;"><span>        buttonFetch.setTitle(<span style="color:#e6db74">&#34;Fetch Text from Second Screen&#34;</span>, <span style="color:#66d9ef">for</span>: .normal)
+</span></span><span style="display:flex;"><span>        buttonFetch.translatesAutoresizingMaskIntoConstraints = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.addSubview(buttonFetch)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setupLabelReceivedText</span>(){
+</span></span><span style="display:flex;"><span>        labelReceivedText = UILabel()
+</span></span><span style="display:flex;"><span>        labelReceivedText.text = <span style="color:#e6db74">&#34;Will receive text from Screen 2&#34;</span>
+</span></span><span style="display:flex;"><span>        labelReceivedText.translatesAutoresizingMaskIntoConstraints = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.addSubview(labelReceivedText)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> setting up constraints...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">initConstraints</span>(){
+</span></span><span style="display:flex;"><span>        NSLayoutConstraint.activate([
+</span></span><span style="display:flex;"><span>            buttonFetch.topAnchor.constraint(equalTo: <span style="color:#66d9ef">self</span>.safeAreaLayoutGuide.topAnchor, constant: <span style="color:#ae81ff">32</span>),
+</span></span><span style="display:flex;"><span>            buttonFetch.centerXAnchor.constraint(equalTo: <span style="color:#66d9ef">self</span>.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            labelReceivedText.topAnchor.constraint(equalTo: buttonFetch.bottomAnchor, constant: <span style="color:#ae81ff">32</span>),
+</span></span><span style="display:flex;"><span>            labelReceivedText.centerXAnchor.constraint(equalTo: <span style="color:#66d9ef">self</span>.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style="display:flex;"><span>        ])
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> unused methods...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">required</span> <span style="color:#66d9ef">init</span>?(coder: NSCoder) {
+</span></span><span style="display:flex;"><span>        fatalError(<span style="color:#e6db74">&#34;init(coder:) has not been implemented&#34;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>{% endcode %}</p>
+<h4 id="viewcontrollerswift">ViewController.swift<a class="anchor" href="#viewcontrollerswift">#</a></h4>
+<p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  ViewController.swift</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  App7</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  Created by Sakib Miazi on 5/22/23.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ViewController</span>: UIViewController {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> firstScreen = FirstScreenView()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">loadView</span>() {
+</span></span><span style="display:flex;"><span>        view = firstScreen
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">viewDidLoad</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.viewDidLoad()
+</span></span><span style="display:flex;"><span>        title = <span style="color:#e6db74">&#34;First Screen&#34;</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> buttonSend target...</span>
+</span></span><span style="display:flex;"><span>        firstScreen.buttonFetch
+</span></span><span style="display:flex;"><span>            .addTarget(<span style="color:#66d9ef">self</span>, action: <span style="color:#66d9ef">#selector</span>(onButtonFetchTapped), <span style="color:#66d9ef">for</span>: .touchUpInside)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@objc</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">onButtonFetchTapped</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> secondScrren = SecondScreenViewController()
+</span></span><span style="display:flex;"><span>        navigationController?.pushViewController(secondScrren, animated: <span style="color:#66d9ef">true</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>{% endcode %}</p>
+<h3 id="second-screen">Second Screen:<a class="anchor" href="#second-screen">#</a></h3>
+<h4 id="secondscreenviewswift">SecondScreenView.swift<a class="anchor" href="#secondscreenviewswift">#</a></h4>
+<p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  SecondScreenView.swift</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  App7</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  Created by Sakib Miazi on 5/22/23.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SecondScreenView</span>: UIView {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> labelInfo: UILabel!
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> textFieldSendBack: UITextField!
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> buttonSendBack: UIButton!
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">init</span>(frame: CGRect) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.<span style="color:#66d9ef">init</span>(frame: frame)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.backgroundColor = .white
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        setupLabelInfo()
+</span></span><span style="display:flex;"><span>        setupTextFieldSendBack()
+</span></span><span style="display:flex;"><span>        setupButtonSendBack()
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        initConstraints()
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> setting up UI elements...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setupLabelInfo</span>(){
+</span></span><span style="display:flex;"><span>        labelInfo = UILabel()
+</span></span><span style="display:flex;"><span>        labelInfo.text = <span style="color:#e6db74">&#34;Type to send back:&#34;</span>
+</span></span><span style="display:flex;"><span>        labelInfo.translatesAutoresizingMaskIntoConstraints = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.addSubview(labelInfo)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setupTextFieldSendBack</span>(){
+</span></span><span style="display:flex;"><span>        textFieldSendBack = UITextField()
+</span></span><span style="display:flex;"><span>        textFieldSendBack.placeholder = <span style="color:#e6db74">&#34;Put text to send back to screen 1&#34;</span>
+</span></span><span style="display:flex;"><span>        textFieldSendBack.translatesAutoresizingMaskIntoConstraints = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.addSubview(textFieldSendBack)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setupButtonSendBack</span>(){
+</span></span><span style="display:flex;"><span>        buttonSendBack = UIButton(type: .system)
+</span></span><span style="display:flex;"><span>        buttonSendBack.setTitle(<span style="color:#e6db74">&#34;Send Back&#34;</span>, <span style="color:#66d9ef">for</span>: .normal)
+</span></span><span style="display:flex;"><span>        buttonSendBack.translatesAutoresizingMaskIntoConstraints = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.addSubview(buttonSendBack)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> initializing constraints...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">initConstraints</span>(){
+</span></span><span style="display:flex;"><span>        NSLayoutConstraint.activate([
+</span></span><span style="display:flex;"><span>            labelInfo.topAnchor.constraint(equalTo: <span style="color:#66d9ef">self</span>.safeAreaLayoutGuide.topAnchor, constant: <span style="color:#ae81ff">32</span>),
+</span></span><span style="display:flex;"><span>            labelInfo.centerXAnchor.constraint(equalTo: <span style="color:#66d9ef">self</span>.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            textFieldSendBack.topAnchor.constraint(equalTo: labelInfo.bottomAnchor, constant: <span style="color:#ae81ff">16</span>),
+</span></span><span style="display:flex;"><span>            textFieldSendBack.centerXAnchor.constraint(equalTo: <span style="color:#66d9ef">self</span>.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            buttonSendBack.topAnchor.constraint(equalTo: textFieldSendBack.bottomAnchor, constant: <span style="color:#ae81ff">8</span>),
+</span></span><span style="display:flex;"><span>            buttonSendBack.centerXAnchor.constraint(equalTo: <span style="color:#66d9ef">self</span>.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style="display:flex;"><span>        ])
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">required</span> <span style="color:#66d9ef">init</span>?(coder: NSCoder) {
+</span></span><span style="display:flex;"><span>        fatalError(<span style="color:#e6db74">&#34;init(coder:) has not been implemented&#34;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>{% endcode %}</p>
+<h4 id="secondscreenviewcontrollerswift">SecondScreenViewController.swift<a class="anchor" href="#secondscreenviewcontrollerswift">#</a></h4>
+<p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  SecondScreenViewController.swift</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  App7</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  Created by Sakib Miazi on 5/22/23.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SecondScreenViewController</span>: UIViewController {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> secondScreen = SecondScreenView()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">loadView</span>() {
+</span></span><span style="display:flex;"><span>        view = secondScreen
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">viewDidLoad</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.viewDidLoad()
+</span></span><span style="display:flex;"><span>        title = <span style="color:#e6db74">&#34;Second Screen&#34;</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        secondScreen.buttonSendBack
+</span></span><span style="display:flex;"><span>            .addTarget(<span style="color:#66d9ef">self</span>, action: <span style="color:#66d9ef">#selector</span>(onButtonSendBackTapped), <span style="color:#66d9ef">for</span>: .touchUpInside)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@objc</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">onButtonSendBackTapped</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> text = secondScreen.textFieldSendBack.text{
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//Send text to First Screen...</span>
+</span></span><span style="display:flex;"><span>        }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//Alert invalid input...</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>{% endcode %}</p>
+<!-- Merged from 7.2.-posting-data-to-notification-center.md -->
+<h1 id="72-posting-data-to-notification-center">7.2. Posting Data to Notification Center<a class="anchor" href="#72-posting-data-to-notification-center">#</a></h1>
+<p>Now, let&rsquo;s open up the SecondScreenViewController.swift file. We need to initialize the Notification Center here as well. Let&rsquo;s add the following code:</p>
+<p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  SecondScreenViewController.swift</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  App7</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  Created by Sakib Miazi on 5/22/23.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SecondScreenViewController</span>: UIViewController {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//codes omitted...</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> instantiating the Notification center...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> notificationCenter = NotificationCenter.<span style="color:#66d9ef">default</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">//codes omitted...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>{% endcode %}</p>
+<h3 id="posting-data-to-notification-center">Posting data to Notification Center<a class="anchor" href="#posting-data-to-notification-center">#</a></h3>
+<p>Now, when the user puts some text in <code>textFieldSendBack</code>, and taps <code>buttonSendBack</code>, we need to fetch the text and post the text to Notification Center. So, let&rsquo;s write the following codes in <code>onButtonSendBackTapped()</code> method:</p>
+<p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  SecondScreenViewController.swift</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  App7</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  Created by Sakib Miazi on 5/22/23.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SecondScreenViewController</span>: UIViewController {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//codes omitted...</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">viewDidLoad</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.viewDidLoad()
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//codes omitted...</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        secondScreen.buttonSendBack.addTarget(<span style="color:#66d9ef">self</span>, action: <span style="color:#66d9ef">#selector</span>(onButtonSendBackTapped), <span style="color:#66d9ef">for</span>: .touchUpInside)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@objc</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">onButtonSendBackTapped</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> text = secondScreen.textFieldSendBack.text{
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> posting text to NotificationCenter...</span>
+</span></span><span style="display:flex;"><span>            notificationCenter.post(
+</span></span><span style="display:flex;"><span>                name: Notification.Name(<span style="color:#e6db74">&#34;textFromSecondScreen&#34;</span>),
+</span></span><span style="display:flex;"><span>                object: text)
+</span></span><span style="display:flex;"><span>            navigationController?.popViewController(animated: <span style="color:#66d9ef">true</span>)
+</span></span><span style="display:flex;"><span>        }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//Alert invalid input...</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>{% endcode %}</p>
+<p>In <code>notificationCenter.post()</code> method, we are passing two parameters.</p>
+<ul>
+<li><strong>name:</strong> The same identifier we used to observe the data.</li>
+<li><strong>object:</strong> The object we are sending to Notification Center. Here, the object is the text the user puts in.</li>
+</ul>
+<p>So now let&rsquo;s look into the whole code of SecondScreenViewController.swift:</p>
+<p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  SecondScreenViewController.swift</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  App7</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  Created by Sakib Miazi on 5/22/23.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SecondScreenViewController</span>: UIViewController {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> secondScreen = SecondScreenView()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> instantiating the Notification center...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> notificationCenter = NotificationCenter.<span style="color:#66d9ef">default</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">loadView</span>() {
+</span></span><span style="display:flex;"><span>        view = secondScreen
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">viewDidLoad</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.viewDidLoad()
+</span></span><span style="display:flex;"><span>        title = <span style="color:#e6db74">&#34;Second Screen&#34;</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        secondScreen.buttonSendBack.addTarget(<span style="color:#66d9ef">self</span>, action: <span style="color:#66d9ef">#selector</span>(onButtonSendBackTapped), <span style="color:#66d9ef">for</span>: .touchUpInside)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@objc</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">onButtonSendBackTapped</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> text = secondScreen.textFieldSendBack.text{
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> posting text to NotificationCenter...</span>
+</span></span><span style="display:flex;"><span>            notificationCenter.post(
+</span></span><span style="display:flex;"><span>                name: Notification.Name(<span style="color:#e6db74">&#34;textFromSecondScreen&#34;</span>),
+</span></span><span style="display:flex;"><span>                object: text)
+</span></span><span style="display:flex;"><span>            navigationController?.popViewController(animated: <span style="color:#66d9ef">true</span>)
+</span></span><span style="display:flex;"><span>        }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//Alert invalid input...</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>{% endcode %}</p>
+<p>Now let&rsquo;s run the app.</p>
+<figure><img src="/gitbook-assets/app7.1.1.1.gif" alt=""><figcaption></figcaption></figure>
+<h3 id="notes">Notes:<a class="anchor" href="#notes">#</a></h3>
+<ul>
+<li>We can use Notification Center to send data between screens.</li>
+<li>We did not use delegates here. The observer method takes care of that.</li>
+<li>The Notification Center is just like a separate highway of data, independent of the lifecycle of the screens.</li>
+<li>It is a great way of data exchange, where you do not have to worry about handling data while carefully taking care of the Navigation Stack.</li>
+</ul>
+<p><strong>There is a caveat, though. What if I want to send data from the first screen to the second screen?</strong></p>
+<ul>
+<li>The Notification Center is Asynchronous, so a real-time data transfer is desirable (almost always, the data transfer happens in real-time), yet not guaranteed.</li>
+<li>The Notification Center can broadcast data as long as the observer is alive. It cannot send the data before the observer is created or after it is killed.</li>
+<li>You need to set an observer before you send the data. So, when you create the second screen from the first screen, you logically (according to the lifecycle of a screen) post the data from the first screen even before the second screen is created, and the observer is set. So, even if the data is posted, the observer from the second screen can&rsquo;t receive it.</li>
+<li>Therefore, to send data from the parent screen to a child screen while creating the child screen, you should use the old way of sending data; usually Notification Center can&rsquo;t deliver the data.</li>
+</ul>
+<!-- Merged from 7.3.-defining-the-names-identifiers-of-the-notifications-in-a-better-way.md -->
+<h1 id="73-defining-the-names-identifiers-of-the-notifications-in-a-better-way">7.3. Defining the names (identifiers) of the Notifications in a Better Way<a class="anchor" href="#73-defining-the-names-identifiers-of-the-notifications-in-a-better-way">#</a></h1>
+<p>In real life, the Notification Center is used very frequently, especially when we fetch data from the internet and wait for data to update. Oftentimes, it&rsquo;s pretty common to create tens of observers in a single app. So, just writing the names/identifiers of the notifications, as we did before, is not a good way of dealing with it. If the names do not match on both sides, notifications won&rsquo;t work. So, keeping the names in a separate class as static variables is better.</p>
+<p>So, let&rsquo;s create a new Swift file (not a Cocoa touch class) called NotificationNames.swift.</p>
+<p><img src="/gitbook-assets/Screenshot%202023-05-22%20at%207.42.36%20PM%20%281%29.png" alt="" /></p>
+<p>Write the following code inside it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  NotificationNames.swift</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  App7</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  Created by Sakib Miazi on 5/22/23.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Foundation</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">Notification</span>.Name{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">let</span> textFromScondScreen = Notification.Name(<span style="color:#e6db74">&#34;textFromSecondScreen&#34;</span>)
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Here we are extending <code>Notification.Name</code> class, and defining new static names inside it. We used only one observer with the identity/name &ldquo;textFromSecondScreen.&rdquo; <code>textFromSecondScreen</code> static constant is holding that identifier. So, now we will update the <code>addObserver()</code> and <code>post()</code> methods as follows:</p>
+<h3 id="addobserver-method">addObserver() method:<a class="anchor" href="#addobserver-method">#</a></h3>
+<p><strong>Previously we had:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> observing text if it is updated in NotificationCenter...</span>
+</span></span><span style="display:flex;"><span>notificationCenter.addObserver(
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">self</span>, selector: <span style="color:#66d9ef">#selector</span>(notificationReceivedForTextChanged(notification:)),
+</span></span><span style="display:flex;"><span>    name: Notification.Name(<span style="color:#e6db74">&#34;textFromSecondScreen&#34;</span>),
+</span></span><span style="display:flex;"><span>    object: <span style="color:#66d9ef">nil</span>)</span></span></code></pre></div><p><strong>We can now write:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> observing text if it is updated in NotificationCenter...</span>
+</span></span><span style="display:flex;"><span>notificationCenter.addObserver(
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">self</span>, selector: <span style="color:#66d9ef">#selector</span>(notificationReceivedForTextChanged(notification:)),
+</span></span><span style="display:flex;"><span>    name: .textFromScondScreen,
+</span></span><span style="display:flex;"><span>    object: <span style="color:#66d9ef">nil</span>)</span></span></code></pre></div><h3 id="post-method">post() method:<a class="anchor" href="#post-method">#</a></h3>
+<p><strong>Previously we had:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> posting text to NotificationCenter...</span>
+</span></span><span style="display:flex;"><span>notificationCenter.post(
+</span></span><span style="display:flex;"><span>    name: Notification.Name(<span style="color:#e6db74">&#34;textFromSecondScreen&#34;</span>),
+</span></span><span style="display:flex;"><span>    object: text)</span></span></code></pre></div><h4 id="now-we-can-write">Now we can write:<a class="anchor" href="#now-we-can-write">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> posting text to NotificationCenter...</span>
+</span></span><span style="display:flex;"><span>notificationCenter.post(
+</span></span><span style="display:flex;"><span>    name: .textFromScondScreen,
+</span></span><span style="display:flex;"><span>    object: text)</span></span></code></pre></div><p><em><strong>This way, we can easily store multiple identifiers/names without worrying about fogetting and mismatching them.</strong></em></p>
+<!-- Merged from 7.4.-reference-code.md -->
+<h1 id="74-reference-code">7.4. Reference Code<a class="anchor" href="#74-reference-code">#</a></h1>
+<p>{% file src=&quot;/gitbook-assets/App7 (1).zip&quot; %}</p>
+<hr>
+<h2 id="guided-practice-challenges">Guided Practice Challenges<a class="anchor" href="#guided-practice-challenges">#</a></h2>
+<p>Before moving on to the next topic, try these low-stakes practice challenges in Xcode. They will build the exact muscle memory you need:</p>
+<h3 id="challenge-1-experimentation">Challenge 1: Experimentation<a class="anchor" href="#challenge-1-experimentation">#</a></h3>
+<p><strong>The Scenario:</strong> You&rsquo;ve just learned about Notification Center.
+<strong>The Task:</strong> Experiment with the code snippets provided above. Can you alter the behavior by changing the parameters or combining it with concepts from previous modules?</p>
+<h3 id="challenge-2-from-scratch">Challenge 2: From Scratch<a class="anchor" href="#challenge-2-from-scratch">#</a></h3>
+<p><strong>The Task:</strong> Try implementing the core feature of this module in a completely blank Xcode project without looking at the reference code. Rely on Xcode&rsquo;s autocomplete and standard Apple documentation.</p>
+<hr>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
+<ol>
+<li><a href="https://developer.apple.com/documentation/">Apple Developer Documentation</a></li>
+<li><a href="https://docs.swift.org/swift-book/">Swift Language Guide</a></li>
+<li><a href="https://developer.apple.com/design/human-interface-guidelines/">Human Interface Guidelines</a></li>
+</ol>
+<hr>
+<h2 id="getting-help">Getting Help<a class="anchor" href="#getting-help">#</a></h2>
+<p>Because this course is fully asynchronous, here&rsquo;s how to get unstuck:</p>
+<ul>
+<li><strong>Piazza</strong> is the primary help channel. When asking a question, include: (1) what you&rsquo;re trying to do, (2) what you&rsquo;ve tried, (3) the exact Xcode error message.</li>
+<li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
+<li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/06-data-persistence-and-architecture/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Module 6: Architecture &amp; Data Flow</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/06-data-persistence-and-architecture/clean-code-and-async/" class="flex align-center">
+        <span>Clean Code &amp; Async</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#learning-objectives">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-notification-center">Walkthrough: Exploring Notification Center</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#initializing-the-notification-center">Initializing the Notification Center</a></li>
+        <li><a href="#setting-up-an-observer">Setting up an observer</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#creating-a-new-app-app7">Creating a new app, App7</a></li>
+        <li><a href="#first-screen">First Screen:</a></li>
+        <li><a href="#second-screen">Second Screen:</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#posting-data-to-notification-center">Posting data to Notification Center</a></li>
+        <li><a href="#notes">Notes:</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#addobserver-method">addObserver() method:</a></li>
+        <li><a href="#post-method">post() method:</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#guided-practice-challenges">Guided Practice Challenges</a>
+      <ul>
+        <li><a href="#challenge-1-experimentation">Challenge 1: Experimentation</a></li>
+        <li><a href="#challenge-2-from-scratch">Challenge 2: From Scratch</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a></li>
+    <li><a href="#getting-help">Getting Help</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

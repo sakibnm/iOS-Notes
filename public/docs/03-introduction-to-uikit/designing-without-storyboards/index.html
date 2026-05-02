@@ -1,326 +1,1629 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
-{< hint info >} 🎯 Topic Mission: In this module, we will explore Designing Without Storyboards and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {< /hint >}
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
+{&lt; hint info &gt;} 🎯 Topic Mission: In this module, we will explore Designing Without Storyboards and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {&lt; /hint &gt;}
 Learning Objectives# By the end of this session, you will be able to:
-"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="/docs/03-introduction-to-uikit/designing-without-storyboards/"><meta property="og:site_name" content="iOS UIKit Course"><meta property="og:title" content="Designing Without Storyboards"><meta property="og:description" content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
-{< hint info >} 🎯 Topic Mission: In this module, we will explore Designing Without Storyboards and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {< /hint >}
-Learning Objectives# By the end of this session, you will be able to:"><meta property="og:locale" content="en_us"><meta property="og:type" content="website"><meta itemprop=name content="Designing Without Storyboards"><meta itemprop=description content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
-{< hint info >} 🎯 Topic Mission: In this module, we will explore Designing Without Storyboards and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {< /hint >}
-Learning Objectives# By the end of this session, you will be able to:"><meta itemprop=wordCount content="2357"><title>Designing Without Storyboards | iOS UIKit Course</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=/docs/03-introduction-to-uikit/designing-without-storyboards/><link rel=stylesheet href=/book.min.27b623a68e5ed421a2c09e9cb252a5df26e9f6d074ae994704e46b8381284e76.css><script defer src=/fuse.min.js></script><script defer src=/en.search.min.c3bff94c145f7dd3a7e62b59a68c4f2ce3b661716f44112170089aae22b73bf0.js></script><link rel=alternate type=application/rss+xml href=/docs/03-introduction-to-uikit/designing-without-storyboards/index.xml title="iOS UIKit Course"></head><body dir=ltr class="book-kind-section book-type-docs"><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>iOS UIKit Course</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href=/docs/01-getting-started/>Module 1: Getting Started</a><ul><li><a href=/docs/01-getting-started/getting-started/>Getting Started</a><ul></ul></li></ul></li><li><a href=/docs/02-swift-fundamentals/>Module 2: Swift Fundamentals</a><ul><li><a href=/docs/02-swift-fundamentals/swift-the-programming-language/>Variables & Data Types</a><ul><li><a href=/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./>1. Variables Data Types and More.</a><ul></ul></li></ul></li><li><a href=/docs/02-swift-fundamentals/collections/>Collections</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/operators/>Operators</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/conditionals/>Conditionals</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/loops/>Loops</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/functions/>Functions</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/closures/>Closures</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/optionals/>Optionals</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/custom-data-types/>Custom Data Types</a><ul><li><a href=/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/>9.1. Structs</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/custom-data-types/9.2.-classes/>9.2. Classes</a><ul></ul></li></ul></li><li><a href=/docs/02-swift-fundamentals/protocols/>Protocols</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/sorting-arrays/>Sorting Arrays</a><ul></ul></li></ul></li><li><a href=/docs/03-introduction-to-uikit/>Module 3: Introduction to UIKit</a><ul><li><a href=/docs/03-introduction-to-uikit/creating-our-first-app/>Creating Our First App</a><ul><li><a href=/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/>1. Creating Our First App</a><ul></ul></li></ul></li><li><a href=/docs/03-introduction-to-uikit/designing-without-storyboards/ class=active>Designing Without Storyboards</a><ul></ul></li><li><a href=/docs/03-introduction-to-uikit/multi-screen-apps/>Multi-Screen Apps</a><ul><li><a href=/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/>3.3. Send data back from Screen 2 to Screen 1</a><ul></ul></li></ul></li><li><a href=/docs/03-introduction-to-uikit/mvc-architecture/>MVC Architecture</a><ul></ul></li></ul></li><li><a href=/docs/04-advanced-ui-components/>Module 4: Advanced UI Components</a><ul><li><a href=/docs/04-advanced-ui-components/uitableview/>UITableView</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/uiscrollview/>UIScrollView</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/uimenu-and-image-pickers/>UIMenu & Image Pickers</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/>Useful UI Elements</a><ul><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/>5. Tab Bar Controller</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/>6. Search Bar</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/>Bottom Sheet View Modal Presentation</a><ul></ul></li></ul></li></ul></li><li><a href=/docs/05-networking-and-apis/>Module 5: Networking & APIs</a><ul><li><a href=/docs/05-networking-and-apis/http-and-networking/>HTTP & Networking</a><ul></ul></li><li><a href=/docs/05-networking-and-apis/working-with-json/>Working with JSON</a><ul></ul></li></ul></li><li><a href=/docs/06-data-persistence-and-architecture/>Module 6: Architecture & Data Flow</a><ul><li><a href=/docs/06-data-persistence-and-architecture/notification-center/>Notification Center</a><ul></ul></li><li><a href=/docs/06-data-persistence-and-architecture/clean-code-and-async/>Clean Code & Async</a><ul><li><a href=/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/>1. Writing Clean Code For Asynchronous Operations</a><ul></ul></li></ul></li></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/>Module 7: Cloud Integrations & Maps</a><ul><li><a href=/docs/07-cloud-integrations-and-maps/cocoapods/>CocoaPods</a><ul></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/>Firebase Auth & Firestore</a><ul><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/>12.5. Implementing Register and Sign In</a><ul></ul></li></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-storage/>Firebase Storage</a><ul></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/mapkit-and-location/>MapKit & Location</a><ul></ul></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><label for=menu-control><img src=/icons/menu.svg class=book-icon alt=Menu></label><h3>Designing Without Storyboards</h3><label for=toc-control><img src=/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#learning-objectives>Learning Objectives</a></li><li><a href=#the-story-so-far>The Story So Far&mldr;</a></li><li><a href=#walkthrough-exploring-designing-without-storyboards>Walkthrough: Exploring Designing Without Storyboards</a></li></ul><ul><li><ul><li><a href=#why-dont-we-use-storyboards>Why don&rsquo;t we use storyboards?</a></li><li><a href=#understanding-the-constraint-notations>Understanding the constraint notations</a></li></ul></li></ul><ul><li><a href=#understanding-the-attributes>Understanding the attributes</a><ul><li><a href=#label-attributes>Label attributes</a></li></ul></li><li><a href=#setting-the-constraints>Setting the constraints</a></li><li><a href=#adding-button-action>Adding button action</a></li></ul><ul><li><a href=#guided-practice-challenges>Guided Practice Challenges</a><ul><li><a href=#challenge-1-experimentation>Challenge 1: Experimentation</a></li><li><a href=#challenge-2-from-scratch>Challenge 2: From Scratch</a></li></ul></li><li><a href=#references>References</a></li><li><a href=#getting-help>Getting Help</a></li></ul></nav></aside></header><article class="markdown book-article"><p><strong>Estimated effort:</strong> 1-2 hours this topic
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="//localhost:1313/docs/03-introduction-to-uikit/designing-without-storyboards/">
+  <meta property="og:site_name" content="iOS UIKit Course">
+  <meta property="og:title" content="Designing Without Storyboards">
+  <meta property="og:description" content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
+{&lt; hint info &gt;} 🎯 Topic Mission: In this module, we will explore Designing Without Storyboards and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {&lt; /hint &gt;}
+Learning Objectives# By the end of this session, you will be able to:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+
+  <meta itemprop="name" content="Designing Without Storyboards">
+  <meta itemprop="description" content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
+{&lt; hint info &gt;} 🎯 Topic Mission: In this module, we will explore Designing Without Storyboards and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {&lt; /hint &gt;}
+Learning Objectives# By the end of this session, you will be able to:">
+  <meta itemprop="wordCount" content="2357">
+
+<title>Designing Without Storyboards | iOS UIKit Course</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="//localhost:1313/docs/03-introduction-to-uikit/designing-without-storyboards/">
+<link rel="stylesheet" href="/book.min.27b623a68e5ed421a2c09e9cb252a5df26e9f6d074ae994704e46b8381284e76.css" integrity="sha256-J7Yjpo5e1CGiwJ6cslKl3ybp9tB0rplHBORrg4EoTnY=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.c3bff94c145f7dd3a7e62b59a68c4f2ce3b661716f44112170089aae22b73bf0.js" integrity="sha256-w7/5TBRffdOn5itZpoxPLOO2YXFvRBEhcAiariK3O/A=" crossorigin="anonymous"></script>
+
+
+<link rel="alternate" type="application/rss+xml" href="//localhost:1313/docs/03-introduction-to-uikit/designing-without-storyboards/index.xml" title="iOS UIKit Course" />
+
+  
+</head>
+<body dir="ltr" class="book-kind-section book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>iOS UIKit Course</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/01-getting-started/" class="">
+      Module 1: Getting Started</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/01-getting-started/getting-started/" class="">
+      Getting Started</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/" class="">
+      Module 2: Swift Fundamentals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/" class="">
+      Variables &amp; Data Types</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./" class="">
+      1. Variables Data Types and More.</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/collections/" class="">
+      Collections</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/operators/" class="">
+      Operators</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/conditionals/" class="">
+      Conditionals</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/loops/" class="">
+      Loops</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/functions/" class="">
+      Functions</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/closures/" class="">
+      Closures</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/optionals/" class="">
+      Optionals</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/custom-data-types/" class="">
+      Custom Data Types</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/" class="">
+      9.1. Structs</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/custom-data-types/9.2.-classes/" class="">
+      9.2. Classes</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/protocols/" class="">
+      Protocols</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/sorting-arrays/" class="">
+      Sorting Arrays</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/" class="">
+      Module 3: Introduction to UIKit</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/" class="">
+      Creating Our First App</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/" class="">
+      1. Creating Our First App</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/designing-without-storyboards/" class="active">
+      Designing Without Storyboards</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/" class="">
+      Multi-Screen Apps</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/" class="">
+      3.3. Send data back from Screen 2 to Screen 1</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/mvc-architecture/" class="">
+      MVC Architecture</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/" class="">
+      Module 4: Advanced UI Components</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uitableview/" class="">
+      UITableView</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uiscrollview/" class="">
+      UIScrollView</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/" class="">
+      UIMenu &amp; Image Pickers</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/" class="">
+      Useful UI Elements</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/" class="">
+      5. Tab Bar Controller</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/" class="">
+      6. Search Bar</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/" class="">
+      Bottom Sheet View Modal Presentation</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/" class="">
+      Module 5: Networking &amp; APIs</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/http-and-networking/" class="">
+      HTTP &amp; Networking</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/working-with-json/" class="">
+      Working with JSON</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/" class="">
+      Module 6: Architecture &amp; Data Flow</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/notification-center/" class="">
+      Notification Center</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/clean-code-and-async/" class="">
+      Clean Code &amp; Async</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/" class="">
+      1. Writing Clean Code For Asynchronous Operations</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/" class="">
+      Module 7: Cloud Integrations &amp; Maps</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/cocoapods/" class="">
+      CocoaPods</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/" class="">
+      Firebase Auth &amp; Firestore</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/" class="">
+      12.5. Implementing Register and Sign In</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-storage/" class="">
+      Firebase Storage</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/mapkit-and-location/" class="">
+      MapKit &amp; Location</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Designing Without Storyboards</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#learning-objectives">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-designing-without-storyboards">Walkthrough: Exploring Designing Without Storyboards</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#why-dont-we-use-storyboards">Why don&rsquo;t we use storyboards?</a></li>
+        <li><a href="#understanding-the-constraint-notations">Understanding the constraint notations</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#understanding-the-attributes">Understanding the attributes</a>
+      <ul>
+        <li><a href="#label-attributes">Label attributes</a></li>
+      </ul>
+    </li>
+    <li><a href="#setting-the-constraints">Setting the constraints</a></li>
+    <li><a href="#adding-button-action">Adding button action</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#guided-practice-challenges">Guided Practice Challenges</a>
+      <ul>
+        <li><a href="#challenge-1-experimentation">Challenge 1: Experimentation</a></li>
+        <li><a href="#challenge-2-from-scratch">Challenge 2: From Scratch</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a></li>
+    <li><a href="#getting-help">Getting Help</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
-<strong>Prerequisites:</strong> Previous iOS topics</p><p>{&lt; hint info >}
+<strong>Prerequisites:</strong> Previous iOS topics</p>
+<p>{&lt; hint info &gt;}
 <strong>🎯 Topic Mission:</strong>
 In this module, we will explore <strong>Designing Without Storyboards</strong> and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{&lt; /hint >}</p><hr><h2 id=learning-objectives>Learning Objectives<a class=anchor href=#learning-objectives>#</a></h2><p>By the end of this session, you will be able to:</p><ol><li>Understand the core concepts of Designing Without Storyboards.</li><li>Implement Designing Without Storyboards in an Xcode project.</li><li>Apply best practices to ensure clean and maintainable code.</li></ol><hr><h2 id=the-story-so-far>The Story So Far&mldr;<a class=anchor href=#the-story-so-far>#</a></h2><p>We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Designing Without Storyboards.
-Open your current Xcode project or start a new Playground to follow along with the hands-on material.</p><hr><h2 id=walkthrough-exploring-designing-without-storyboards>Walkthrough: Exploring Designing Without Storyboards<a class=anchor href=#walkthrough-exploring-designing-without-storyboards>#</a></h2><blockquote class=book-hint><p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p></blockquote><h1 id=2-designing-without-storyboards>2. Designing without Storyboards<a class=anchor href=#2-designing-without-storyboards>#</a></h1><p>In our first app, we dragged and dropped the UI elements on Storyboard and set up the constraints using the Interface Builder&rsquo;s tools. Now, I said we would ditch this approach and start designing the UI with codes.</p><h3 id=why-dont-we-use-storyboards>Why don&rsquo;t we use storyboards?<a class=anchor href=#why-dont-we-use-storyboards>#</a></h3><p>There are several reasons for it, as this blog post discusses: <a href=https://kissdigital.com/blog/why-we-stopped-using-storyboards>https://kissdigital.com/blog/why-we-stopped-using-storyboards</a>. However, long story short, Storyboards automatically create the XML tags for the UI elements. Since they are machine generated, the resource IDs of the UI elements change very frequently. So, if you run your friend&rsquo;s code on your computer, the IDs will change. Think about you are collaborating with a friend using GitHub. It will probably be fine if you do not work concurrently in different branches. However, it will be a massive pain if you work on the same project concurrently and want to merge the updates. Using codes to generate the UIs programmatically doesn&rsquo;t have this issue.</p><p><strong>Constraints and Attributes</strong></p><p>Before we start, let&rsquo;s have a quick look at the UI we had from &lsquo;App1&rsquo;:</p><p><img src=/gitbook-assets/Screenshot%202023-05-09%20at%2010.25.49%20PM.png alt></p><p>Let&rsquo;s look into the constraints of the UI:</p><p><img src=/gitbook-assets/Screenshot%202023-05-09%20at%2010.50.48%20PM%20%281%29%20%281%29.png alt></p><p>So the Label (&ldquo;Hello World!&rdquo;) has two constraints:</p><ul><li>Centered to the x-axis (horizontal axis).</li><li>There is a gap of 32 points between the screen&rsquo;s top edge and the Label&rsquo;s top edge.</li></ul><p>The TextField (&ldquo;Put some text&rdquo;) has two constraints:</p><ul><li>Centered to the x-axis (horizontal axis).</li><li>There is a gap of 16 points between the Label&rsquo;s bottom edge and the TextField&rsquo;s top edge.</li></ul><p>Similarly, the Button (&ldquo;Click me!&rdquo;) has two constraints:</p><ul><li>Centered to the x-axis (horizontal axis).</li><li>There is a gap of 16 points between TextField&rsquo;s bottom edge and Button&rsquo;s top edge.</li></ul><h3 id=understanding-the-constraint-notations>Understanding the constraint notations<a class=anchor href=#understanding-the-constraint-notations>#</a></h3><p>Let&rsquo;s look at the following grid:</p><figure><img src="/gitbook-assets/grid (2).png" alt><figcaption><p>The grid on a screen</p></figcaption></figure><p>The above grid is similar to a mobile screen. <strong>The origin of the grid <code>(0, 0)</code> above is the top-left point,</strong> unlike to the regular grid we use in our regular visualizations. So, when we want to anchor the object on the screen, there are four constraints we may need to set:</p><ul><li>Leading constraint - how far the object is from the reference point at its left.</li><li>Trailing constraint - how far the object is from the reference point at its right.</li><li>Top constraint - how far the object is from the reference point above it.</li><li>Bottom constraint - how far the object is from the reference point below it.</li></ul><p>Please note you do not need to add all four constraints to anchor an object on the screen. For example, the UI elements of &lsquo;App1&rsquo; do not have all four anchors. They all have top, leading, and trailing anchors. <em>Centering an element takes care of two constraints: leading and trailing together.</em></p><h1 id=21-converting-the-storyboard-to-code>2.1. Converting the storyboard to code<a class=anchor href=#21-converting-the-storyboard-to-code>#</a></h1><p>So, let&rsquo;s convert the Storyboard to Swift code!</p><p>The following image is how the grid on the device screen is defined.</p><figure><img src="/gitbook-assets/grid (1) (1).png" alt><figcaption><p>Grid of a screen</p></figcaption></figure><figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 10.50.48 PM (2).png" alt width=375><figcaption><p>App1 design</p></figcaption></figure><p>In the above image, we can see how the UI elements are placed on the device&rsquo;s screen in our App1.</p><p>We will add the code directly to ViewController.</p><h2 id=understanding-the-attributes>Understanding the attributes<a class=anchor href=#understanding-the-attributes>#</a></h2><h3 id=label-attributes>Label attributes<a class=anchor href=#label-attributes>#</a></h3><p>If you remember, In App1, we dragged and dropped a Label from the Objects Library and changed a few things. Let&rsquo;s go back to the Storyboard and click on the &ldquo;Hello World!&rdquo; label.</p><figure><img src="/gitbook-assets/Screenshot 2023-05-10 at 10.09.48 AM.png" alt><figcaption></figcaption></figure><ul><li>We changed the text to &ldquo;Hello World!&rdquo;</li><li>The color of the text is Blue (accent color).</li><li>The font is the system&rsquo;s default font, and the size is 24.</li></ul><p>There are many other attributes we have in a Label that we can edit.</p><p>Okay, let&rsquo;s programmatically create a Label. And then set the Attributes. For this purpose, we will create a new project named &ldquo;App_NoStory.&rdquo; We will not touch the Main storyboard here.</p><p>Open the ViewController code directly and add a variable <code>labelHello</code> of the <code>UILabel.</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  ViewController.swift</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  App1_NoStory</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  Created by Sakib Miazi on 5/9/23.</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>UIKit</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ViewController</span>: UIViewController {
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> declaring the UI elements...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> labelHello:UILabel! <span style=color:#75715e>//&#34;Hello World!&#34; Label...</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>viewDidLoad</span>() {
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>super</span>.viewDidLoad()
-</span></span><span style=display:flex><span>        <span style=color:#75715e>// Do any additional setup after loading the view.</span>
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>Then inside <code>viewDidLoad()</code> we will have to define the attributes for <code>labelHello</code>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>UIKit</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ViewController</span>: UIViewController {
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> declaring the UI elements...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> labelHello:UILabel! <span style=color:#75715e>//&#34;Hello World!&#34; Label...</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>viewDidLoad</span>() {
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>super</span>.viewDidLoad()
-</span></span><span style=display:flex><span>        <span style=color:#75715e>// Do any additional setup after loading the view.</span>
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> call methods to setup the attributes of UI elements...</span>
-</span></span><span style=display:flex><span>        setupLabelHello()
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//Defining the Label attributes...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupLabelHello</span>(){
-</span></span><span style=display:flex><span>        labelHello = UILabel()
-</span></span><span style=display:flex><span>        labelHello.text = <span style=color:#e6db74>&#34;Hello World!&#34;</span>
-</span></span><span style=display:flex><span>        labelHello.font = UIFont.systemFont(ofSize: <span style=color:#ae81ff>24</span>)
-</span></span><span style=display:flex><span>        labelHello.textColor = .systemBlue
-</span></span><span style=display:flex><span>        labelHello.textAlignment = .center
-</span></span><span style=display:flex><span>        labelHello.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
-</span></span><span style=display:flex><span>        view.addSubview(labelHello)
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>In the above code, we defined the attributes for the label:</p><ul><li><code>labelHello.text</code> is the text inside the Label.</li><li><code>labelHello.font</code> is the font of the Label. We created a UIFont object with the system&rsquo;s default font of size <code>24.0</code>. Then set the Label&rsquo;s font to that object.</li><li><code>labelHello.textColor</code> is the color of the text of the Label. We set the color to system&rsquo;s default Blue color. You can put a <code>.</code> and choose other options.</li><li><code>labelHello.textAlignment</code> is the alignment of the text. We set the alignment to center. You can put a <code>.</code> and choose other options.</li><li><code>labelHello.translatesAutoresizingMaskIntoConstraints</code> is set to <code>false</code> which is a default and fail-safe attribute for all the UI elements. The storyboard sets it automatically. If you write codes to edit the attributes, you have to set it to <code>false</code> manually for every UI element. This attribute says to the iOS system that you are dynamically using your own constraints to display the contents on the screen. Otherwise, the system will try to pack all the UI elements together to display them on the screen without your choices.</li><li><code>view.addSubview(labelHello)</code> is where you add the logical view of <code>labelHello</code> you created as a subview of the screen. Here <code>view</code> is the logical view of the screen. Since <code>labelHello</code> is a child view of <code>view</code>, we write this line of code.</li></ul><h2 id=setting-the-constraints>Setting the constraints<a class=anchor href=#setting-the-constraints>#</a></h2><p>Now that we have created a logical view of <code>labelHello</code>, we have to define the constraints. We can use <code>NSLayoutConstraint</code> system class to set the constraints. <code>NSLayoutConstraint.activate()</code> takes in an array of constraints and activate them on the current view. We know that <code>labelHello</code> has two constraints:</p><ul><li>Centered to the x-axis (horizontal axis).</li><li>There is a gap of 32 points between the screen&rsquo;s top edge and the Label&rsquo;s top edge.</li></ul><p>So, we can create the array of constraints with the above constraints and activate them by writing:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span>NSLayoutConstraint.activate(
-</span></span><span style=display:flex><span>    [
-</span></span><span style=display:flex><span>        labelHello.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: <span style=color:#ae81ff>32</span>),
-</span></span><span style=display:flex><span>        labelHello.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
-</span></span><span style=display:flex><span>    ]
-</span></span><span style=display:flex><span>)</span></span></code></pre></div><p><code>labelHello.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32)</code> means:</p><ul><li>Set the <code>labelHello</code>&rsquo;s top anchor to the top anchor of the <em><strong>safe area.</strong> (Remember,</em> <a href=../ios-development-with-uikit/1.-creating-our-first-app/1.2.-uilabel-our-first-ui-element.md><em>&lsquo;safe area&rsquo;</em></a><em>?)</em> We wanted to have a 32 points gap, <code>constant</code> is the gap here.</li><li>Set the <code>centerXAnchor</code> (horizontal center point) of <code>labelHello</code> to the horizontal center point of the safe area.</li></ul><p>Now let&rsquo;s see the entire code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>UIKit</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ViewController</span>: UIViewController {
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> declaring the UI elements...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> labelHello:UILabel! <span style=color:#75715e>//&#34;Hello World!&#34; Label...</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>viewDidLoad</span>() {
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>super</span>.viewDidLoad()
-</span></span><span style=display:flex><span>        <span style=color:#75715e>// Do any additional setup after loading the view.</span>
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> call methods to setup the attributes of UI elements...</span>
-</span></span><span style=display:flex><span>        setupLabelHello()
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> initializing the constraints...</span>
-</span></span><span style=display:flex><span>        initConstraints()
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//Defining the Label attributes...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupLabelHello</span>(){
-</span></span><span style=display:flex><span>        labelHello = UILabel()
-</span></span><span style=display:flex><span>        labelHello.text = <span style=color:#e6db74>&#34;Hello World!&#34;</span>
-</span></span><span style=display:flex><span>        labelHello.font = UIFont.systemFont(ofSize: <span style=color:#ae81ff>24</span>)
-</span></span><span style=display:flex><span>        labelHello.textColor = .systemBlue
-</span></span><span style=display:flex><span>        labelHello.textAlignment = .center
-</span></span><span style=display:flex><span>        labelHello.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
-</span></span><span style=display:flex><span>        view.addSubview(labelHello)
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//Initializing the constraints...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>initConstraints</span>(){
-</span></span><span style=display:flex><span>        NSLayoutConstraint.activate(
-</span></span><span style=display:flex><span>            [
-</span></span><span style=display:flex><span>                <span style=color:#75715e>//Constraints for labelHello....</span>
-</span></span><span style=display:flex><span>                labelHello.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: <span style=color:#ae81ff>32</span>),
-</span></span><span style=display:flex><span>                labelHello.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
-</span></span><span style=display:flex><span>            ]
-</span></span><span style=display:flex><span>        )
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>So we write a separate method <code>initConstraints()</code> to activate the constraints and call it from <code>viewDidLoad()</code>. Now let&rsquo;s run the app:</p><p><img src=/gitbook-assets/Screenshot%202023-05-10%20at%2011.20.58%20AM%20%281%29.png alt></p><p>So, our program rendered a &ldquo;Hello World!&rdquo; label on screen!</p><p>Now, let&rsquo;s add all the constraints for the other two UI elements.</p><p>Let&rsquo;s see the code after we add all the constraints:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  ViewController.swift</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  App1_NoStory</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  Created by Sakib Miazi on 5/9/23.</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>UIKit</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ViewController</span>: UIViewController {
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> declaring the UI elements...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> labelHello:UILabel! <span style=color:#75715e>//&#34;Hello World!&#34; Label...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> textFieldUser: UITextField! <span style=color:#75715e>//TextField...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> buttonClickMe: UIButton! <span style=color:#75715e>//Button...</span>
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>viewDidLoad</span>() {
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>super</span>.viewDidLoad()
-</span></span><span style=display:flex><span>        <span style=color:#75715e>// Do any additional setup after loading the view.</span>
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> setting up UI elements...</span>
-</span></span><span style=display:flex><span>        setupLabelHello()
-</span></span><span style=display:flex><span>        setupTextFieldUser()
-</span></span><span style=display:flex><span>        setupButtonClickMe()
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> initializing the constraints...</span>
-</span></span><span style=display:flex><span>        initConstraints()
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//Defining the Label attributes...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupLabelHello</span>(){
-</span></span><span style=display:flex><span>        labelHello = UILabel()
-</span></span><span style=display:flex><span>        labelHello.text = <span style=color:#e6db74>&#34;Hello World!&#34;</span>
-</span></span><span style=display:flex><span>        labelHello.font = UIFont.systemFont(ofSize: <span style=color:#ae81ff>24</span>)
-</span></span><span style=display:flex><span>        labelHello.textColor = .systemBlue
-</span></span><span style=display:flex><span>        labelHello.textAlignment = .center
-</span></span><span style=display:flex><span>        labelHello.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
-</span></span><span style=display:flex><span>        view.addSubview(labelHello)
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//Defining the TextField attributes...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupTextFieldUser</span>(){
-</span></span><span style=display:flex><span>        textFieldUser = UITextField()
-</span></span><span style=display:flex><span>        textFieldUser.placeholder = <span style=color:#e6db74>&#34;Put some text&#34;</span>
-</span></span><span style=display:flex><span>        textFieldUser.borderStyle = .roundedRect
-</span></span><span style=display:flex><span>        textFieldUser.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
-</span></span><span style=display:flex><span>        view.addSubview(textFieldUser)
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//Defining the Button attributes...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupButtonClickMe</span>(){
-</span></span><span style=display:flex><span>        buttonClickMe = UIButton(type: .system) <span style=color:#75715e>//You need to set the type when you create a Button. We use default system button...</span>
-</span></span><span style=display:flex><span>        buttonClickMe.setTitle(<span style=color:#e6db74>&#34;Click Me!&#34;</span>, <span style=color:#66d9ef>for</span>: .normal)
-</span></span><span style=display:flex><span>        buttonClickMe.tintColor = .systemBlue
-</span></span><span style=display:flex><span>        buttonClickMe.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
-</span></span><span style=display:flex><span>        view.addSubview(buttonClickMe)
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> Initializing the constraints...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>initConstraints</span>(){
-</span></span><span style=display:flex><span>        NSLayoutConstraint.activate(
-</span></span><span style=display:flex><span>            [
-</span></span><span style=display:flex><span>                <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> constraints for labelHello...</span>
-</span></span><span style=display:flex><span>                labelHello.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: <span style=color:#ae81ff>32</span>),
-</span></span><span style=display:flex><span>                labelHello.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-</span></span><span style=display:flex><span>                
-</span></span><span style=display:flex><span>                <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> constraints for textFieldUser...</span>
-</span></span><span style=display:flex><span>                textFieldUser.topAnchor.constraint(equalTo: labelHello.bottomAnchor, constant: <span style=color:#ae81ff>16</span>),
-</span></span><span style=display:flex><span>                textFieldUser.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-</span></span><span style=display:flex><span>                
-</span></span><span style=display:flex><span>                <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> constraints for buttonClickMe...</span>
-</span></span><span style=display:flex><span>                buttonClickMe.topAnchor.constraint(equalTo: textFieldUser.bottomAnchor, constant: <span style=color:#ae81ff>16</span>),
-</span></span><span style=display:flex><span>                buttonClickMe.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
-</span></span><span style=display:flex><span>            ]
-</span></span><span style=display:flex><span>        )
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>So, we call the methods to define the attributes of UI elements first, then activate the constraints.</p><p><strong>Hint:</strong> <em>You can still use the Storyboard to check what attributes to set up. When you are designing by coding for the first time, you can go to the Storyboard, place a UI element from the Objects Library on the Storyboard, and design it as you like. Then, use the attributes you edited to setup the design programmatically in ViewController. Then, delete the object from the storyboard. The Storyboard potentially becomes your draft design pad.</em></p><h2 id=adding-button-action>Adding button action<a class=anchor href=#adding-button-action>#</a></h2><p>Remember, we added an event listener for the button tap using <code>buttonClickMe.addtarget()</code>? Where do you think we should add that target?</p><p>We can do that in the <code>viewDidLoad()</code> method since that is the logical Controller of the app:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>viewDidLoad</span>() {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>super</span>.viewDidLoad()
-</span></span><span style=display:flex><span>    <span style=color:#75715e>// Do any additional setup after loading the view.</span>
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> setting up UI elements...</span>
-</span></span><span style=display:flex><span>    setupLabelHello()
-</span></span><span style=display:flex><span>    setupTextFieldUser()
-</span></span><span style=display:flex><span>    setupButtonClickMe()
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> adding action...</span>
-</span></span><span style=display:flex><span>    buttonClickMe.addTarget(<span style=color:#66d9ef>self</span>, 
-</span></span><span style=display:flex><span>        action: <span style=color:#66d9ef>#selector</span>(onButtonClickMeTapped), 
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span>: .touchUpInside
-</span></span><span style=display:flex><span>    )
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> initializing the constraints...</span>
-</span></span><span style=display:flex><span>    initConstraints()
-</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>And then, we use the same methods we wrote in &lsquo;App1&rsquo;.</p><p>So the full code is:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  ViewController.swift</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  App1_NoStory</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//  Created by Sakib Miazi on 5/9/23.</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>UIKit</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ViewController</span>: UIViewController {
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> declaring the UI elements...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> labelHello:UILabel! <span style=color:#75715e>//&#34;Hello World!&#34; Label...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> textFieldUser: UITextField! <span style=color:#75715e>//TextField...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> buttonClickMe: UIButton! <span style=color:#75715e>//Button...</span>
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>viewDidLoad</span>() {
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>super</span>.viewDidLoad()
-</span></span><span style=display:flex><span>        <span style=color:#75715e>// Do any additional setup after loading the view.</span>
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> setting up UI elements...</span>
-</span></span><span style=display:flex><span>        setupLabelHello()
-</span></span><span style=display:flex><span>        setupTextFieldUser()
-</span></span><span style=display:flex><span>        setupButtonClickMe()
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> adding action...</span>
-</span></span><span style=display:flex><span>        buttonClickMe.addTarget(<span style=color:#66d9ef>self</span>, 
-</span></span><span style=display:flex><span>            action: <span style=color:#66d9ef>#selector</span>(onButtonClickMeTapped), 
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>for</span>: .touchUpInside
-</span></span><span style=display:flex><span>        )
-</span></span><span style=display:flex><span>           
-</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> initializing the constraints...</span>
-</span></span><span style=display:flex><span>        initConstraints()
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//Defining the Label attributes...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupLabelHello</span>(){
-</span></span><span style=display:flex><span>        labelHello = UILabel()
-</span></span><span style=display:flex><span>        labelHello.text = <span style=color:#e6db74>&#34;Hello World!&#34;</span>
-</span></span><span style=display:flex><span>        labelHello.font = UIFont.systemFont(ofSize: <span style=color:#ae81ff>24</span>)
-</span></span><span style=display:flex><span>        labelHello.textColor = .systemBlue
-</span></span><span style=display:flex><span>        labelHello.textAlignment = .center
-</span></span><span style=display:flex><span>        labelHello.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
-</span></span><span style=display:flex><span>        view.addSubview(labelHello)
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//Defining the TextField attributes...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupTextFieldUser</span>(){
-</span></span><span style=display:flex><span>        textFieldUser = UITextField()
-</span></span><span style=display:flex><span>        textFieldUser.placeholder = <span style=color:#e6db74>&#34;Put some text&#34;</span>
-</span></span><span style=display:flex><span>        textFieldUser.borderStyle = .roundedRect
-</span></span><span style=display:flex><span>        textFieldUser.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
-</span></span><span style=display:flex><span>        view.addSubview(textFieldUser)
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//Defining the Button attributes...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupButtonClickMe</span>(){
-</span></span><span style=display:flex><span>        buttonClickMe = UIButton(type: .system) <span style=color:#75715e>//You need to set the type when you create a Button. We use default system button...</span>
-</span></span><span style=display:flex><span>        buttonClickMe.setTitle(<span style=color:#e6db74>&#34;Click Me!&#34;</span>, <span style=color:#66d9ef>for</span>: .normal)
-</span></span><span style=display:flex><span>        buttonClickMe.tintColor = .systemBlue
-</span></span><span style=display:flex><span>        buttonClickMe.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
-</span></span><span style=display:flex><span>        view.addSubview(buttonClickMe)
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> Initializing the constraints...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>initConstraints</span>(){
-</span></span><span style=display:flex><span>        NSLayoutConstraint.activate(
-</span></span><span style=display:flex><span>            [
-</span></span><span style=display:flex><span>                <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> constraints for labelHello...</span>
-</span></span><span style=display:flex><span>                labelHello.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: <span style=color:#ae81ff>32</span>),
-</span></span><span style=display:flex><span>                labelHello.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-</span></span><span style=display:flex><span>                
-</span></span><span style=display:flex><span>                <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> constraints for textFieldUser...</span>
-</span></span><span style=display:flex><span>                textFieldUser.topAnchor.constraint(equalTo: labelHello.bottomAnchor, constant: <span style=color:#ae81ff>16</span>),
-</span></span><span style=display:flex><span>                textFieldUser.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-</span></span><span style=display:flex><span>                
-</span></span><span style=display:flex><span>                <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> constraints for buttonClickMe...</span>
-</span></span><span style=display:flex><span>                buttonClickMe.topAnchor.constraint(equalTo: textFieldUser.bottomAnchor, constant: <span style=color:#ae81ff>16</span>),
-</span></span><span style=display:flex><span>                buttonClickMe.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
-</span></span><span style=display:flex><span>            ]
-</span></span><span style=display:flex><span>        )
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> buttonClickMe tap action...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>@objc</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>onButtonClickMeTapped</span>(){
-</span></span><span style=display:flex><span>        <span style=color:#75715e>//print(&#34;Button Clicked!!&#34;)</span>
-</span></span><span style=display:flex><span>        <span style=color:#75715e>// </span><span style=color:#75715e>MARK:</span><span style=color:#75715e> fetching the text the user typed...</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>let</span> text = textFieldUser.text
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        <span style=color:#75715e>//Unwrapping the optional text...</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#66d9ef>let</span> unwrappedText = text{
-</span></span><span style=display:flex><span>            <span style=color:#75715e>//print(unwrappedText)</span>
-</span></span><span style=display:flex><span>            
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span>(unwrappedText.isEmpty){ <span style=color:#75715e>//The user didn&#39;t put anything...</span>
-</span></span><span style=display:flex><span>                showErrorAlert()
-</span></span><span style=display:flex><span>            } <span style=color:#66d9ef>else</span>{ <span style=color:#75715e>//The user put some texts...</span>
-</span></span><span style=display:flex><span>                showAlertText(text: unwrappedText)
-</span></span><span style=display:flex><span>            }
-</span></span><span style=display:flex><span>        }
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> Alert controller logics...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>showErrorAlert</span>(){
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>let</span> alert = UIAlertController(title: <span style=color:#e6db74>&#34;Error!&#34;</span>, message: <span style=color:#e6db74>&#34;Text Field must not be empty!&#34;</span>, preferredStyle: .alert)
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        alert.addAction(UIAlertAction(title: <span style=color:#e6db74>&#34;OK&#34;</span>, style: .<span style=color:#66d9ef>default</span>))
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>self</span>.present(alert, animated: <span style=color:#66d9ef>true</span>)
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>showAlertText</span>(text:String){
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>let</span> alert = UIAlertController(title: <span style=color:#e6db74>&#34;You said:&#34;</span>, message: <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>\(</span>text<span style=color:#e6db74>)</span><span style=color:#e6db74>&#34;</span>, preferredStyle: .alert)
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        alert.addAction(UIAlertAction(title: <span style=color:#e6db74>&#34;OK&#34;</span>, style: .<span style=color:#66d9ef>default</span>))
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>self</span>.present(alert, animated: <span style=color:#66d9ef>true</span>)
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>If you run the app, you can see that we replicated the whole App1 by just writing codes. You should start practicing this early since almost everyone in the industry got rid of Storyboards.</p><h1 id=22-reference-code>2.2. Reference Code<a class=anchor href=#22-reference-code>#</a></h1><p>{% file src="/gitbook-assets/App1_NoStory.zip" %}</p><hr><h2 id=guided-practice-challenges>Guided Practice Challenges<a class=anchor href=#guided-practice-challenges>#</a></h2><p>Before moving on to the next topic, try these low-stakes practice challenges in Xcode. They will build the exact muscle memory you need:</p><h3 id=challenge-1-experimentation>Challenge 1: Experimentation<a class=anchor href=#challenge-1-experimentation>#</a></h3><p><strong>The Scenario:</strong> You&rsquo;ve just learned about Designing Without Storyboards.
-<strong>The Task:</strong> Experiment with the code snippets provided above. Can you alter the behavior by changing the parameters or combining it with concepts from previous modules?</p><h3 id=challenge-2-from-scratch>Challenge 2: From Scratch<a class=anchor href=#challenge-2-from-scratch>#</a></h3><p><strong>The Task:</strong> Try implementing the core feature of this module in a completely blank Xcode project without looking at the reference code. Rely on Xcode&rsquo;s autocomplete and standard Apple documentation.</p><hr><h2 id=references>References<a class=anchor href=#references>#</a></h2><ol><li><a href=https://developer.apple.com/documentation/>Apple Developer Documentation</a></li><li><a href=https://docs.swift.org/swift-book/>Swift Language Guide</a></li><li><a href=https://developer.apple.com/design/human-interface-guidelines/>Human Interface Guidelines</a></li></ol><hr><h2 id=getting-help>Getting Help<a class=anchor href=#getting-help>#</a></h2><p>Because this course is fully asynchronous, here&rsquo;s how to get unstuck:</p><ul><li><strong>Piazza</strong> is the primary help channel. When asking a question, include: (1) what you&rsquo;re trying to do, (2) what you&rsquo;ve tried, (3) the exact Xcode error message.</li><li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li><li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li></ul></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/ class="flex align-center"><img src=/icons/backward.svg class=book-icon alt=Backward>
-<span>1. Creating Our First App</span>
-</a></span><span><a href=/docs/03-introduction-to-uikit/multi-screen-apps/ class="flex align-center"><span>Multi-Screen Apps</span>
-<img src=/icons/forward.svg class=book-icon alt=Forward></a></span></div><div class=book-comments></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#learning-objectives>Learning Objectives</a></li><li><a href=#the-story-so-far>The Story So Far&mldr;</a></li><li><a href=#walkthrough-exploring-designing-without-storyboards>Walkthrough: Exploring Designing Without Storyboards</a></li></ul><ul><li><ul><li><a href=#why-dont-we-use-storyboards>Why don&rsquo;t we use storyboards?</a></li><li><a href=#understanding-the-constraint-notations>Understanding the constraint notations</a></li></ul></li></ul><ul><li><a href=#understanding-the-attributes>Understanding the attributes</a><ul><li><a href=#label-attributes>Label attributes</a></li></ul></li><li><a href=#setting-the-constraints>Setting the constraints</a></li><li><a href=#adding-button-action>Adding button action</a></li></ul><ul><li><a href=#guided-practice-challenges>Guided Practice Challenges</a><ul><li><a href=#challenge-1-experimentation>Challenge 1: Experimentation</a></li><li><a href=#challenge-2-from-scratch>Challenge 2: From Scratch</a></li></ul></li><li><a href=#references>References</a></li><li><a href=#getting-help>Getting Help</a></li></ul></nav></div></aside></main></body></html>
+{&lt; /hint &gt;}</p>
+<hr>
+<h2 id="learning-objectives">Learning Objectives<a class="anchor" href="#learning-objectives">#</a></h2>
+<p>By the end of this session, you will be able to:</p>
+<ol>
+<li>Understand the core concepts of Designing Without Storyboards.</li>
+<li>Implement Designing Without Storyboards in an Xcode project.</li>
+<li>Apply best practices to ensure clean and maintainable code.</li>
+</ol>
+<hr>
+<h2 id="the-story-so-far">The Story So Far&hellip;<a class="anchor" href="#the-story-so-far">#</a></h2>
+<p>We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Designing Without Storyboards.
+Open your current Xcode project or start a new Playground to follow along with the hands-on material.</p>
+<hr>
+<h2 id="walkthrough-exploring-designing-without-storyboards">Walkthrough: Exploring Designing Without Storyboards<a class="anchor" href="#walkthrough-exploring-designing-without-storyboards">#</a></h2>
+<blockquote class='book-hint '>
+<p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
+</blockquote><h1 id="2-designing-without-storyboards">2. Designing without Storyboards<a class="anchor" href="#2-designing-without-storyboards">#</a></h1>
+<p>In our first app, we dragged and dropped the UI elements on Storyboard and set up the constraints using the Interface Builder&rsquo;s tools. Now, I said we would ditch this approach and start designing the UI with codes.</p>
+<h3 id="why-dont-we-use-storyboards">Why don&rsquo;t we use storyboards?<a class="anchor" href="#why-dont-we-use-storyboards">#</a></h3>
+<p>There are several reasons for it, as this blog post discusses: <a href="https://kissdigital.com/blog/why-we-stopped-using-storyboards">https://kissdigital.com/blog/why-we-stopped-using-storyboards</a>. However, long story short, Storyboards automatically create the XML tags for the UI elements. Since they are machine generated, the resource IDs of the UI elements change very frequently. So, if you run your friend&rsquo;s code on your computer, the IDs will change. Think about you are collaborating with a friend using GitHub. It will probably be fine if you do not work concurrently in different branches. However, it will be a massive pain if you work on the same project concurrently and want to merge the updates. Using codes to generate the UIs programmatically doesn&rsquo;t have this issue.</p>
+<p><strong>Constraints and Attributes</strong></p>
+<p>Before we start, let&rsquo;s have a quick look at the UI we had from &lsquo;App1&rsquo;:</p>
+<p><img src="/gitbook-assets/Screenshot%202023-05-09%20at%2010.25.49%20PM.png" alt="" /></p>
+<p>Let&rsquo;s look into the constraints of the UI:</p>
+<p><img src="/gitbook-assets/Screenshot%202023-05-09%20at%2010.50.48%20PM%20%281%29%20%281%29.png" alt="" /></p>
+<p>So the Label (&ldquo;Hello World!&rdquo;) has two constraints:</p>
+<ul>
+<li>Centered to the x-axis (horizontal axis).</li>
+<li>There is a gap of 32 points between the screen&rsquo;s top edge and the Label&rsquo;s top edge.</li>
+</ul>
+<p>The TextField (&ldquo;Put some text&rdquo;) has two constraints:</p>
+<ul>
+<li>Centered to the x-axis (horizontal axis).</li>
+<li>There is a gap of 16 points between the Label&rsquo;s bottom edge and the TextField&rsquo;s top edge.</li>
+</ul>
+<p>Similarly, the Button (&ldquo;Click me!&rdquo;) has two constraints:</p>
+<ul>
+<li>Centered to the x-axis (horizontal axis).</li>
+<li>There is a gap of 16 points between TextField&rsquo;s bottom edge and Button&rsquo;s top edge.</li>
+</ul>
+<h3 id="understanding-the-constraint-notations">Understanding the constraint notations<a class="anchor" href="#understanding-the-constraint-notations">#</a></h3>
+<p>Let&rsquo;s look at the following grid:</p>
+<figure><img src="/gitbook-assets/grid (2).png" alt=""><figcaption><p>The grid on a screen</p></figcaption></figure>
+<p>The above grid is similar to a mobile screen. <strong>The origin of the grid <code>(0, 0)</code> above is the top-left point,</strong> unlike to the regular grid we use in our regular visualizations. So, when we want to anchor the object on the screen, there are four constraints we may need to set:</p>
+<ul>
+<li>Leading constraint - how far the object is from the reference point at its left.</li>
+<li>Trailing constraint - how far the object is from the reference point at its right.</li>
+<li>Top constraint - how far the object is from the reference point above it.</li>
+<li>Bottom constraint - how far the object is from the reference point below it.</li>
+</ul>
+<p>Please note you do not need to add all four constraints to anchor an object on the screen. For example, the UI elements of &lsquo;App1&rsquo; do not have all four anchors. They all have top, leading, and trailing anchors. <em>Centering an element takes care of two constraints: leading and trailing together.</em></p>
+<!-- Merged from 2.1.-converting-the-storyboard-to-code.md -->
+<h1 id="21-converting-the-storyboard-to-code">2.1. Converting the storyboard to code<a class="anchor" href="#21-converting-the-storyboard-to-code">#</a></h1>
+<p>So, let&rsquo;s convert the Storyboard to Swift code!</p>
+<p>The following image is how the grid on the device screen is defined.</p>
+<figure><img src="/gitbook-assets/grid (1) (1).png" alt=""><figcaption><p>Grid of a screen</p></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 10.50.48 PM (2).png" alt="" width="375"><figcaption><p>App1 design</p></figcaption></figure>
+<p>In the above image, we can see how the UI elements are placed on the device&rsquo;s screen in our App1.</p>
+<p>We will add the code directly to ViewController.</p>
+<h2 id="understanding-the-attributes">Understanding the attributes<a class="anchor" href="#understanding-the-attributes">#</a></h2>
+<h3 id="label-attributes">Label attributes<a class="anchor" href="#label-attributes">#</a></h3>
+<p>If you remember, In App1, we dragged and dropped a Label from the Objects Library and changed a few things. Let&rsquo;s go back to the Storyboard and click on the &ldquo;Hello World!&rdquo; label.</p>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-10 at 10.09.48 AM.png" alt=""><figcaption></figcaption></figure>
+<ul>
+<li>We changed the text to &ldquo;Hello World!&rdquo;</li>
+<li>The color of the text is Blue (accent color).</li>
+<li>The font is the system&rsquo;s default font, and the size is 24.</li>
+</ul>
+<p>There are many other attributes we have in a Label that we can edit.</p>
+<p>Okay, let&rsquo;s programmatically create a Label. And then set the Attributes. For this purpose, we will create a new project named &ldquo;App_NoStory.&rdquo; We will not touch the Main storyboard here.</p>
+<p>Open the ViewController code directly and add a variable <code>labelHello</code> of the <code>UILabel.</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  ViewController.swift</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  App1_NoStory</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  Created by Sakib Miazi on 5/9/23.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ViewController</span>: UIViewController {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> declaring the UI elements...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> labelHello:UILabel! <span style="color:#75715e">//&#34;Hello World!&#34; Label...</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">viewDidLoad</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.viewDidLoad()
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Do any additional setup after loading the view.</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Then inside <code>viewDidLoad()</code> we will have to define the attributes for <code>labelHello</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ViewController</span>: UIViewController {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> declaring the UI elements...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> labelHello:UILabel! <span style="color:#75715e">//&#34;Hello World!&#34; Label...</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">viewDidLoad</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.viewDidLoad()
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Do any additional setup after loading the view.</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> call methods to setup the attributes of UI elements...</span>
+</span></span><span style="display:flex;"><span>        setupLabelHello()
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Defining the Label attributes...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setupLabelHello</span>(){
+</span></span><span style="display:flex;"><span>        labelHello = UILabel()
+</span></span><span style="display:flex;"><span>        labelHello.text = <span style="color:#e6db74">&#34;Hello World!&#34;</span>
+</span></span><span style="display:flex;"><span>        labelHello.font = UIFont.systemFont(ofSize: <span style="color:#ae81ff">24</span>)
+</span></span><span style="display:flex;"><span>        labelHello.textColor = .systemBlue
+</span></span><span style="display:flex;"><span>        labelHello.textAlignment = .center
+</span></span><span style="display:flex;"><span>        labelHello.translatesAutoresizingMaskIntoConstraints = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>        view.addSubview(labelHello)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>In the above code, we defined the attributes for the label:</p>
+<ul>
+<li><code>labelHello.text</code> is the text inside the Label.</li>
+<li><code>labelHello.font</code> is the font of the Label. We created a UIFont object with the system&rsquo;s default font of size <code>24.0</code>. Then set the Label&rsquo;s font to that object.</li>
+<li><code>labelHello.textColor</code> is the color of the text of the Label. We set the color to system&rsquo;s default Blue color. You can put a <code>.</code> and choose other options.</li>
+<li><code>labelHello.textAlignment</code> is the alignment of the text. We set the alignment to center. You can put a <code>.</code> and choose other options.</li>
+<li><code>labelHello.translatesAutoresizingMaskIntoConstraints</code> is set to <code>false</code> which is a default and fail-safe attribute for all the UI elements. The storyboard sets it automatically. If you write codes to edit the attributes, you have to set it to <code>false</code> manually for every UI element. This attribute says to the iOS system that you are dynamically using your own constraints to display the contents on the screen. Otherwise, the system will try to pack all the UI elements together to display them on the screen without your choices.</li>
+<li><code>view.addSubview(labelHello)</code> is where you add the logical view of <code>labelHello</code> you created as a subview of the screen. Here <code>view</code> is the logical view of the screen. Since <code>labelHello</code> is a child view of <code>view</code>, we write this line of code.</li>
+</ul>
+<h2 id="setting-the-constraints">Setting the constraints<a class="anchor" href="#setting-the-constraints">#</a></h2>
+<p>Now that we have created a logical view of <code>labelHello</code>, we have to define the constraints. We can use <code>NSLayoutConstraint</code> system class to set the constraints. <code>NSLayoutConstraint.activate()</code> takes in an array of constraints and activate them on the current view. We know that <code>labelHello</code> has two constraints:</p>
+<ul>
+<li>Centered to the x-axis (horizontal axis).</li>
+<li>There is a gap of 32 points between the screen&rsquo;s top edge and the Label&rsquo;s top edge.</li>
+</ul>
+<p>So, we can create the array of constraints with the above constraints and activate them by writing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>NSLayoutConstraint.activate(
+</span></span><span style="display:flex;"><span>    [
+</span></span><span style="display:flex;"><span>        labelHello.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: <span style="color:#ae81ff">32</span>),
+</span></span><span style="display:flex;"><span>        labelHello.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>)</span></span></code></pre></div><p><code>labelHello.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32)</code> means:</p>
+<ul>
+<li>Set the <code>labelHello</code>&rsquo;s top anchor to the top anchor of the <em><strong>safe area.</strong> (Remember,</em> <a href="../ios-development-with-uikit/1.-creating-our-first-app/1.2.-uilabel-our-first-ui-element.md"><em>&lsquo;safe area&rsquo;</em></a><em>?)</em> We wanted to have a 32 points gap, <code>constant</code> is the gap here.</li>
+<li>Set the <code>centerXAnchor</code> (horizontal center point) of <code>labelHello</code> to the horizontal center point of the safe area.</li>
+</ul>
+<p>Now let&rsquo;s see the entire code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ViewController</span>: UIViewController {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> declaring the UI elements...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> labelHello:UILabel! <span style="color:#75715e">//&#34;Hello World!&#34; Label...</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">viewDidLoad</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.viewDidLoad()
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Do any additional setup after loading the view.</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> call methods to setup the attributes of UI elements...</span>
+</span></span><span style="display:flex;"><span>        setupLabelHello()
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> initializing the constraints...</span>
+</span></span><span style="display:flex;"><span>        initConstraints()
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Defining the Label attributes...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setupLabelHello</span>(){
+</span></span><span style="display:flex;"><span>        labelHello = UILabel()
+</span></span><span style="display:flex;"><span>        labelHello.text = <span style="color:#e6db74">&#34;Hello World!&#34;</span>
+</span></span><span style="display:flex;"><span>        labelHello.font = UIFont.systemFont(ofSize: <span style="color:#ae81ff">24</span>)
+</span></span><span style="display:flex;"><span>        labelHello.textColor = .systemBlue
+</span></span><span style="display:flex;"><span>        labelHello.textAlignment = .center
+</span></span><span style="display:flex;"><span>        labelHello.translatesAutoresizingMaskIntoConstraints = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>        view.addSubview(labelHello)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Initializing the constraints...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">initConstraints</span>(){
+</span></span><span style="display:flex;"><span>        NSLayoutConstraint.activate(
+</span></span><span style="display:flex;"><span>            [
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">//Constraints for labelHello....</span>
+</span></span><span style="display:flex;"><span>                labelHello.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: <span style="color:#ae81ff">32</span>),
+</span></span><span style="display:flex;"><span>                labelHello.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>So we write a separate method <code>initConstraints()</code> to activate the constraints and call it from <code>viewDidLoad()</code>. Now let&rsquo;s run the app:</p>
+<p><img src="/gitbook-assets/Screenshot%202023-05-10%20at%2011.20.58%20AM%20%281%29.png" alt="" /></p>
+<p>So, our program rendered a &ldquo;Hello World!&rdquo; label on screen!</p>
+<p>Now, let&rsquo;s add all the constraints for the other two UI elements.</p>
+<p>Let&rsquo;s see the code after we add all the constraints:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  ViewController.swift</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  App1_NoStory</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  Created by Sakib Miazi on 5/9/23.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ViewController</span>: UIViewController {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> declaring the UI elements...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> labelHello:UILabel! <span style="color:#75715e">//&#34;Hello World!&#34; Label...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> textFieldUser: UITextField! <span style="color:#75715e">//TextField...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> buttonClickMe: UIButton! <span style="color:#75715e">//Button...</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">viewDidLoad</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.viewDidLoad()
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Do any additional setup after loading the view.</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> setting up UI elements...</span>
+</span></span><span style="display:flex;"><span>        setupLabelHello()
+</span></span><span style="display:flex;"><span>        setupTextFieldUser()
+</span></span><span style="display:flex;"><span>        setupButtonClickMe()
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> initializing the constraints...</span>
+</span></span><span style="display:flex;"><span>        initConstraints()
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Defining the Label attributes...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setupLabelHello</span>(){
+</span></span><span style="display:flex;"><span>        labelHello = UILabel()
+</span></span><span style="display:flex;"><span>        labelHello.text = <span style="color:#e6db74">&#34;Hello World!&#34;</span>
+</span></span><span style="display:flex;"><span>        labelHello.font = UIFont.systemFont(ofSize: <span style="color:#ae81ff">24</span>)
+</span></span><span style="display:flex;"><span>        labelHello.textColor = .systemBlue
+</span></span><span style="display:flex;"><span>        labelHello.textAlignment = .center
+</span></span><span style="display:flex;"><span>        labelHello.translatesAutoresizingMaskIntoConstraints = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>        view.addSubview(labelHello)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Defining the TextField attributes...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setupTextFieldUser</span>(){
+</span></span><span style="display:flex;"><span>        textFieldUser = UITextField()
+</span></span><span style="display:flex;"><span>        textFieldUser.placeholder = <span style="color:#e6db74">&#34;Put some text&#34;</span>
+</span></span><span style="display:flex;"><span>        textFieldUser.borderStyle = .roundedRect
+</span></span><span style="display:flex;"><span>        textFieldUser.translatesAutoresizingMaskIntoConstraints = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>        view.addSubview(textFieldUser)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Defining the Button attributes...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setupButtonClickMe</span>(){
+</span></span><span style="display:flex;"><span>        buttonClickMe = UIButton(type: .system) <span style="color:#75715e">//You need to set the type when you create a Button. We use default system button...</span>
+</span></span><span style="display:flex;"><span>        buttonClickMe.setTitle(<span style="color:#e6db74">&#34;Click Me!&#34;</span>, <span style="color:#66d9ef">for</span>: .normal)
+</span></span><span style="display:flex;"><span>        buttonClickMe.tintColor = .systemBlue
+</span></span><span style="display:flex;"><span>        buttonClickMe.translatesAutoresizingMaskIntoConstraints = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>        view.addSubview(buttonClickMe)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> Initializing the constraints...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">initConstraints</span>(){
+</span></span><span style="display:flex;"><span>        NSLayoutConstraint.activate(
+</span></span><span style="display:flex;"><span>            [
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> constraints for labelHello...</span>
+</span></span><span style="display:flex;"><span>                labelHello.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: <span style="color:#ae81ff">32</span>),
+</span></span><span style="display:flex;"><span>                labelHello.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> constraints for textFieldUser...</span>
+</span></span><span style="display:flex;"><span>                textFieldUser.topAnchor.constraint(equalTo: labelHello.bottomAnchor, constant: <span style="color:#ae81ff">16</span>),
+</span></span><span style="display:flex;"><span>                textFieldUser.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> constraints for buttonClickMe...</span>
+</span></span><span style="display:flex;"><span>                buttonClickMe.topAnchor.constraint(equalTo: textFieldUser.bottomAnchor, constant: <span style="color:#ae81ff">16</span>),
+</span></span><span style="display:flex;"><span>                buttonClickMe.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>So, we call the methods to define the attributes of UI elements first, then activate the constraints.</p>
+<p><strong>Hint:</strong> <em>You can still use the Storyboard to check what attributes to set up. When you are designing by coding for the first time, you can go to the Storyboard, place a UI element from the Objects Library on the Storyboard, and design it as you like. Then, use the attributes you edited to setup the design programmatically in ViewController. Then, delete the object from the storyboard. The Storyboard potentially becomes your draft design pad.</em></p>
+<h2 id="adding-button-action">Adding button action<a class="anchor" href="#adding-button-action">#</a></h2>
+<p>Remember, we added an event listener for the button tap using <code>buttonClickMe.addtarget()</code>? Where do you think we should add that target?</p>
+<p>We can do that in the <code>viewDidLoad()</code> method since that is the logical Controller of the app:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">viewDidLoad</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>.viewDidLoad()
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Do any additional setup after loading the view.</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> setting up UI elements...</span>
+</span></span><span style="display:flex;"><span>    setupLabelHello()
+</span></span><span style="display:flex;"><span>    setupTextFieldUser()
+</span></span><span style="display:flex;"><span>    setupButtonClickMe()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> adding action...</span>
+</span></span><span style="display:flex;"><span>    buttonClickMe.addTarget(<span style="color:#66d9ef">self</span>, 
+</span></span><span style="display:flex;"><span>        action: <span style="color:#66d9ef">#selector</span>(onButtonClickMeTapped), 
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span>: .touchUpInside
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> initializing the constraints...</span>
+</span></span><span style="display:flex;"><span>    initConstraints()
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>And then, we use the same methods we wrote in &lsquo;App1&rsquo;.</p>
+<p>So the full code is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  ViewController.swift</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  App1_NoStory</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  Created by Sakib Miazi on 5/9/23.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ViewController</span>: UIViewController {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> declaring the UI elements...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> labelHello:UILabel! <span style="color:#75715e">//&#34;Hello World!&#34; Label...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> textFieldUser: UITextField! <span style="color:#75715e">//TextField...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> buttonClickMe: UIButton! <span style="color:#75715e">//Button...</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">viewDidLoad</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.viewDidLoad()
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Do any additional setup after loading the view.</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> setting up UI elements...</span>
+</span></span><span style="display:flex;"><span>        setupLabelHello()
+</span></span><span style="display:flex;"><span>        setupTextFieldUser()
+</span></span><span style="display:flex;"><span>        setupButtonClickMe()
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> adding action...</span>
+</span></span><span style="display:flex;"><span>        buttonClickMe.addTarget(<span style="color:#66d9ef">self</span>, 
+</span></span><span style="display:flex;"><span>            action: <span style="color:#66d9ef">#selector</span>(onButtonClickMeTapped), 
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span>: .touchUpInside
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>           
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> initializing the constraints...</span>
+</span></span><span style="display:flex;"><span>        initConstraints()
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Defining the Label attributes...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setupLabelHello</span>(){
+</span></span><span style="display:flex;"><span>        labelHello = UILabel()
+</span></span><span style="display:flex;"><span>        labelHello.text = <span style="color:#e6db74">&#34;Hello World!&#34;</span>
+</span></span><span style="display:flex;"><span>        labelHello.font = UIFont.systemFont(ofSize: <span style="color:#ae81ff">24</span>)
+</span></span><span style="display:flex;"><span>        labelHello.textColor = .systemBlue
+</span></span><span style="display:flex;"><span>        labelHello.textAlignment = .center
+</span></span><span style="display:flex;"><span>        labelHello.translatesAutoresizingMaskIntoConstraints = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>        view.addSubview(labelHello)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Defining the TextField attributes...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setupTextFieldUser</span>(){
+</span></span><span style="display:flex;"><span>        textFieldUser = UITextField()
+</span></span><span style="display:flex;"><span>        textFieldUser.placeholder = <span style="color:#e6db74">&#34;Put some text&#34;</span>
+</span></span><span style="display:flex;"><span>        textFieldUser.borderStyle = .roundedRect
+</span></span><span style="display:flex;"><span>        textFieldUser.translatesAutoresizingMaskIntoConstraints = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>        view.addSubview(textFieldUser)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Defining the Button attributes...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setupButtonClickMe</span>(){
+</span></span><span style="display:flex;"><span>        buttonClickMe = UIButton(type: .system) <span style="color:#75715e">//You need to set the type when you create a Button. We use default system button...</span>
+</span></span><span style="display:flex;"><span>        buttonClickMe.setTitle(<span style="color:#e6db74">&#34;Click Me!&#34;</span>, <span style="color:#66d9ef">for</span>: .normal)
+</span></span><span style="display:flex;"><span>        buttonClickMe.tintColor = .systemBlue
+</span></span><span style="display:flex;"><span>        buttonClickMe.translatesAutoresizingMaskIntoConstraints = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>        view.addSubview(buttonClickMe)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> Initializing the constraints...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">initConstraints</span>(){
+</span></span><span style="display:flex;"><span>        NSLayoutConstraint.activate(
+</span></span><span style="display:flex;"><span>            [
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> constraints for labelHello...</span>
+</span></span><span style="display:flex;"><span>                labelHello.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: <span style="color:#ae81ff">32</span>),
+</span></span><span style="display:flex;"><span>                labelHello.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> constraints for textFieldUser...</span>
+</span></span><span style="display:flex;"><span>                textFieldUser.topAnchor.constraint(equalTo: labelHello.bottomAnchor, constant: <span style="color:#ae81ff">16</span>),
+</span></span><span style="display:flex;"><span>                textFieldUser.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> constraints for buttonClickMe...</span>
+</span></span><span style="display:flex;"><span>                buttonClickMe.topAnchor.constraint(equalTo: textFieldUser.bottomAnchor, constant: <span style="color:#ae81ff">16</span>),
+</span></span><span style="display:flex;"><span>                buttonClickMe.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> buttonClickMe tap action...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@objc</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">onButtonClickMeTapped</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//print(&#34;Button Clicked!!&#34;)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// </span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> fetching the text the user typed...</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> text = textFieldUser.text
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Unwrapping the optional text...</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> unwrappedText = text{
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//print(unwrappedText)</span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span>(unwrappedText.isEmpty){ <span style="color:#75715e">//The user didn&#39;t put anything...</span>
+</span></span><span style="display:flex;"><span>                showErrorAlert()
+</span></span><span style="display:flex;"><span>            } <span style="color:#66d9ef">else</span>{ <span style="color:#75715e">//The user put some texts...</span>
+</span></span><span style="display:flex;"><span>                showAlertText(text: unwrappedText)
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> Alert controller logics...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">showErrorAlert</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> alert = UIAlertController(title: <span style="color:#e6db74">&#34;Error!&#34;</span>, message: <span style="color:#e6db74">&#34;Text Field must not be empty!&#34;</span>, preferredStyle: .alert)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        alert.addAction(UIAlertAction(title: <span style="color:#e6db74">&#34;OK&#34;</span>, style: .<span style="color:#66d9ef">default</span>))
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.present(alert, animated: <span style="color:#66d9ef">true</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">showAlertText</span>(text:String){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> alert = UIAlertController(title: <span style="color:#e6db74">&#34;You said:&#34;</span>, message: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">\(</span>text<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>, preferredStyle: .alert)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        alert.addAction(UIAlertAction(title: <span style="color:#e6db74">&#34;OK&#34;</span>, style: .<span style="color:#66d9ef">default</span>))
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.present(alert, animated: <span style="color:#66d9ef">true</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>If you run the app, you can see that we replicated the whole App1 by just writing codes. You should start practicing this early since almost everyone in the industry got rid of Storyboards.</p>
+<!-- Merged from 2.2.-reference-code.md -->
+<h1 id="22-reference-code">2.2. Reference Code<a class="anchor" href="#22-reference-code">#</a></h1>
+<p>{% file src=&quot;/gitbook-assets/App1_NoStory.zip&quot; %}</p>
+<hr>
+<h2 id="guided-practice-challenges">Guided Practice Challenges<a class="anchor" href="#guided-practice-challenges">#</a></h2>
+<p>Before moving on to the next topic, try these low-stakes practice challenges in Xcode. They will build the exact muscle memory you need:</p>
+<h3 id="challenge-1-experimentation">Challenge 1: Experimentation<a class="anchor" href="#challenge-1-experimentation">#</a></h3>
+<p><strong>The Scenario:</strong> You&rsquo;ve just learned about Designing Without Storyboards.
+<strong>The Task:</strong> Experiment with the code snippets provided above. Can you alter the behavior by changing the parameters or combining it with concepts from previous modules?</p>
+<h3 id="challenge-2-from-scratch">Challenge 2: From Scratch<a class="anchor" href="#challenge-2-from-scratch">#</a></h3>
+<p><strong>The Task:</strong> Try implementing the core feature of this module in a completely blank Xcode project without looking at the reference code. Rely on Xcode&rsquo;s autocomplete and standard Apple documentation.</p>
+<hr>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
+<ol>
+<li><a href="https://developer.apple.com/documentation/">Apple Developer Documentation</a></li>
+<li><a href="https://docs.swift.org/swift-book/">Swift Language Guide</a></li>
+<li><a href="https://developer.apple.com/design/human-interface-guidelines/">Human Interface Guidelines</a></li>
+</ol>
+<hr>
+<h2 id="getting-help">Getting Help<a class="anchor" href="#getting-help">#</a></h2>
+<p>Because this course is fully asynchronous, here&rsquo;s how to get unstuck:</p>
+<ul>
+<li><strong>Piazza</strong> is the primary help channel. When asking a question, include: (1) what you&rsquo;re trying to do, (2) what you&rsquo;ve tried, (3) the exact Xcode error message.</li>
+<li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
+<li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>1. Creating Our First App</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/03-introduction-to-uikit/multi-screen-apps/" class="flex align-center">
+        <span>Multi-Screen Apps</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#learning-objectives">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-designing-without-storyboards">Walkthrough: Exploring Designing Without Storyboards</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#why-dont-we-use-storyboards">Why don&rsquo;t we use storyboards?</a></li>
+        <li><a href="#understanding-the-constraint-notations">Understanding the constraint notations</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#understanding-the-attributes">Understanding the attributes</a>
+      <ul>
+        <li><a href="#label-attributes">Label attributes</a></li>
+      </ul>
+    </li>
+    <li><a href="#setting-the-constraints">Setting the constraints</a></li>
+    <li><a href="#adding-button-action">Adding button action</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#guided-practice-challenges">Guided Practice Challenges</a>
+      <ul>
+        <li><a href="#challenge-1-experimentation">Challenge 1: Experimentation</a></li>
+        <li><a href="#challenge-2-from-scratch">Challenge 2: From Scratch</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a></li>
+    <li><a href="#getting-help">Getting Help</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

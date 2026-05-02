@@ -1,1 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>/docs/07-cloud-integrations-and-maps/cocoapods/</loc></url><url><loc>/docs/03-introduction-to-uikit/creating-our-first-app/</loc></url><url><loc>/docs/01-getting-started/getting-started/</loc></url><url><loc>/docs/05-networking-and-apis/http-and-networking/</loc></url><url><loc>/docs/06-data-persistence-and-architecture/notification-center/</loc></url><url><loc>/docs/04-advanced-ui-components/uitableview/</loc></url><url><loc>/docs/02-swift-fundamentals/swift-the-programming-language/</loc></url><url><loc>/docs/06-data-persistence-and-architecture/clean-code-and-async/</loc></url><url><loc>/docs/02-swift-fundamentals/collections/</loc></url><url><loc>/docs/03-introduction-to-uikit/designing-without-storyboards/</loc></url><url><loc>/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/</loc></url><url><loc>/docs/04-advanced-ui-components/uiscrollview/</loc></url><url><loc>/docs/05-networking-and-apis/working-with-json/</loc></url><url><loc>/docs/07-cloud-integrations-and-maps/firebase-storage/</loc></url><url><loc>/docs/03-introduction-to-uikit/multi-screen-apps/</loc></url><url><loc>/docs/02-swift-fundamentals/operators/</loc></url><url><loc>/docs/04-advanced-ui-components/uimenu-and-image-pickers/</loc></url><url><loc>/docs/02-swift-fundamentals/conditionals/</loc></url><url><loc>/docs/07-cloud-integrations-and-maps/mapkit-and-location/</loc></url><url><loc>/docs/03-introduction-to-uikit/mvc-architecture/</loc></url><url><loc>/docs/04-advanced-ui-components/useful-ui-elements/</loc></url><url><loc>/docs/02-swift-fundamentals/loops/</loc></url><url><loc>/docs/02-swift-fundamentals/functions/</loc></url><url><loc>/docs/02-swift-fundamentals/closures/</loc></url><url><loc>/docs/02-swift-fundamentals/optionals/</loc></url><url><loc>/docs/02-swift-fundamentals/custom-data-types/</loc></url><url><loc>/docs/01-getting-started/</loc></url><url><loc>/docs/02-swift-fundamentals/protocols/</loc></url><url><loc>/docs/02-swift-fundamentals/sorting-arrays/</loc></url><url><loc>/docs/02-swift-fundamentals/</loc></url><url><loc>/docs/03-introduction-to-uikit/</loc></url><url><loc>/docs/04-advanced-ui-components/</loc></url><url><loc>/docs/05-networking-and-apis/</loc></url><url><loc>/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/</loc></url><url><loc>/docs/02-swift-fundamentals/custom-data-types/9.2.-classes/</loc></url><url><loc>/docs/06-data-persistence-and-architecture/</loc></url><url><loc>/docs/07-cloud-integrations-and-maps/</loc></url><url><loc>/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/</loc></url><url><loc>/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/</loc></url><url><loc>/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./</loc></url><url><loc>/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/</loc></url><url><loc>/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/</loc></url><url><loc>/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/</loc></url><url><loc>/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/</loc></url><url><loc>/docs/</loc></url><url><loc>/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/</loc></url><url><loc>/categories/</loc></url><url><loc>/</loc></url><url><loc>/tags/</loc></url></urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>//localhost:1313/docs/01-getting-started/</loc>
+  </url><url>
+    <loc>//localhost:1313/docs/02-swift-fundamentals/</loc>
+  </url><url>
+    <loc>//localhost:1313/docs/03-introduction-to-uikit/</loc>
+  </url><url>
+    <loc>//localhost:1313/docs/04-advanced-ui-components/</loc>
+  </url><url>
+    <loc>//localhost:1313/docs/05-networking-and-apis/</loc>
+  </url><url>
+    <loc>//localhost:1313/docs/06-data-persistence-and-architecture/</loc>
+  </url><url>
+    <loc>//localhost:1313/docs/07-cloud-integrations-and-maps/</loc>
+  </url><url>
+    <loc>//localhost:1313/docs/</loc>
+  </url><url>
+    <loc>//localhost:1313/categories/</loc>
+  </url><url>
+    <loc>//localhost:1313/</loc>
+  </url><url>
+    <loc>//localhost:1313/tags/</loc>
+  </url>
+</urlset>

@@ -1,92 +1,1329 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
-{< hint info >} 🎯 Topic Mission: In this module, we will explore Sorting Arrays and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {< /hint >}
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
+{&lt; hint info &gt;} 🎯 Topic Mission: In this module, we will explore Sorting Arrays and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {&lt; /hint &gt;}
 Learning Objectives# By the end of this session, you will be able to:
 Understand the core concepts of Sorting Arrays. Implement Sorting Arrays in an Xcode project. Apply best practices to ensure clean and maintainable code. The Story So Far…# We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Sorting Arrays. Open your current Xcode project or start a new Playground to follow along with the hands-on material.
-"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="/docs/02-swift-fundamentals/sorting-arrays/"><meta property="og:site_name" content="iOS UIKit Course"><meta property="og:title" content="Sorting Arrays"><meta property="og:description" content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
-{< hint info >} 🎯 Topic Mission: In this module, we will explore Sorting Arrays and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {< /hint >}
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="//localhost:1313/docs/02-swift-fundamentals/sorting-arrays/">
+  <meta property="og:site_name" content="iOS UIKit Course">
+  <meta property="og:title" content="Sorting Arrays">
+  <meta property="og:description" content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
+{&lt; hint info &gt;} 🎯 Topic Mission: In this module, we will explore Sorting Arrays and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {&lt; /hint &gt;}
 Learning Objectives# By the end of this session, you will be able to:
-Understand the core concepts of Sorting Arrays. Implement Sorting Arrays in an Xcode project. Apply best practices to ensure clean and maintainable code. The Story So Far…# We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Sorting Arrays. Open your current Xcode project or start a new Playground to follow along with the hands-on material."><meta property="og:locale" content="en_us"><meta property="og:type" content="website"><meta itemprop=name content="Sorting Arrays"><meta itemprop=description content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
-{< hint info >} 🎯 Topic Mission: In this module, we will explore Sorting Arrays and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {< /hint >}
+Understand the core concepts of Sorting Arrays. Implement Sorting Arrays in an Xcode project. Apply best practices to ensure clean and maintainable code. The Story So Far…# We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Sorting Arrays. Open your current Xcode project or start a new Playground to follow along with the hands-on material.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+
+  <meta itemprop="name" content="Sorting Arrays">
+  <meta itemprop="description" content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
+{&lt; hint info &gt;} 🎯 Topic Mission: In this module, we will explore Sorting Arrays and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {&lt; /hint &gt;}
 Learning Objectives# By the end of this session, you will be able to:
-Understand the core concepts of Sorting Arrays. Implement Sorting Arrays in an Xcode project. Apply best practices to ensure clean and maintainable code. The Story So Far…# We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Sorting Arrays. Open your current Xcode project or start a new Playground to follow along with the hands-on material."><meta itemprop=wordCount content="1122"><title>Sorting Arrays | iOS UIKit Course</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=/docs/02-swift-fundamentals/sorting-arrays/><link rel=stylesheet href=/book.min.27b623a68e5ed421a2c09e9cb252a5df26e9f6d074ae994704e46b8381284e76.css><script defer src=/fuse.min.js></script><script defer src=/en.search.min.c3bff94c145f7dd3a7e62b59a68c4f2ce3b661716f44112170089aae22b73bf0.js></script><link rel=alternate type=application/rss+xml href=/docs/02-swift-fundamentals/sorting-arrays/index.xml title="iOS UIKit Course"></head><body dir=ltr class="book-kind-section book-type-docs"><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>iOS UIKit Course</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href=/docs/01-getting-started/>Module 1: Getting Started</a><ul><li><a href=/docs/01-getting-started/getting-started/>Getting Started</a><ul></ul></li></ul></li><li><a href=/docs/02-swift-fundamentals/>Module 2: Swift Fundamentals</a><ul><li><a href=/docs/02-swift-fundamentals/swift-the-programming-language/>Variables & Data Types</a><ul><li><a href=/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./>1. Variables Data Types and More.</a><ul></ul></li></ul></li><li><a href=/docs/02-swift-fundamentals/collections/>Collections</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/operators/>Operators</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/conditionals/>Conditionals</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/loops/>Loops</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/functions/>Functions</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/closures/>Closures</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/optionals/>Optionals</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/custom-data-types/>Custom Data Types</a><ul><li><a href=/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/>9.1. Structs</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/custom-data-types/9.2.-classes/>9.2. Classes</a><ul></ul></li></ul></li><li><a href=/docs/02-swift-fundamentals/protocols/>Protocols</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/sorting-arrays/ class=active>Sorting Arrays</a><ul></ul></li></ul></li><li><a href=/docs/03-introduction-to-uikit/>Module 3: Introduction to UIKit</a><ul><li><a href=/docs/03-introduction-to-uikit/creating-our-first-app/>Creating Our First App</a><ul><li><a href=/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/>1. Creating Our First App</a><ul></ul></li></ul></li><li><a href=/docs/03-introduction-to-uikit/designing-without-storyboards/>Designing Without Storyboards</a><ul></ul></li><li><a href=/docs/03-introduction-to-uikit/multi-screen-apps/>Multi-Screen Apps</a><ul><li><a href=/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/>3.3. Send data back from Screen 2 to Screen 1</a><ul></ul></li></ul></li><li><a href=/docs/03-introduction-to-uikit/mvc-architecture/>MVC Architecture</a><ul></ul></li></ul></li><li><a href=/docs/04-advanced-ui-components/>Module 4: Advanced UI Components</a><ul><li><a href=/docs/04-advanced-ui-components/uitableview/>UITableView</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/uiscrollview/>UIScrollView</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/uimenu-and-image-pickers/>UIMenu & Image Pickers</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/>Useful UI Elements</a><ul><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/>5. Tab Bar Controller</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/>6. Search Bar</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/>Bottom Sheet View Modal Presentation</a><ul></ul></li></ul></li></ul></li><li><a href=/docs/05-networking-and-apis/>Module 5: Networking & APIs</a><ul><li><a href=/docs/05-networking-and-apis/http-and-networking/>HTTP & Networking</a><ul></ul></li><li><a href=/docs/05-networking-and-apis/working-with-json/>Working with JSON</a><ul></ul></li></ul></li><li><a href=/docs/06-data-persistence-and-architecture/>Module 6: Architecture & Data Flow</a><ul><li><a href=/docs/06-data-persistence-and-architecture/notification-center/>Notification Center</a><ul></ul></li><li><a href=/docs/06-data-persistence-and-architecture/clean-code-and-async/>Clean Code & Async</a><ul><li><a href=/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/>1. Writing Clean Code For Asynchronous Operations</a><ul></ul></li></ul></li></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/>Module 7: Cloud Integrations & Maps</a><ul><li><a href=/docs/07-cloud-integrations-and-maps/cocoapods/>CocoaPods</a><ul></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/>Firebase Auth & Firestore</a><ul><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/>12.5. Implementing Register and Sign In</a><ul></ul></li></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-storage/>Firebase Storage</a><ul></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/mapkit-and-location/>MapKit & Location</a><ul></ul></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><label for=menu-control><img src=/icons/menu.svg class=book-icon alt=Menu></label><h3>Sorting Arrays</h3><label for=toc-control><img src=/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#learning-objectives>Learning Objectives</a></li><li><a href=#the-story-so-far>The Story So Far&mldr;</a></li><li><a href=#walkthrough-exploring-sorting-arrays>Walkthrough: Exploring Sorting Arrays</a></li></ul><ul><li><ul><li></li><li></li></ul></li></ul><ul><li><ul><li><a href=#do-it-using-closures-not-functions>Do it using closures (not functions)</a></li></ul></li></ul><ul><li><a href=#guided-practice-challenges>Guided Practice Challenges</a><ul><li><a href=#challenge-1-experimentation>Challenge 1: Experimentation</a></li><li><a href=#challenge-2-from-scratch>Challenge 2: From Scratch</a></li></ul></li><li><a href=#references>References</a></li><li><a href=#getting-help>Getting Help</a></li></ul></nav></aside></header><article class="markdown book-article"><p><strong>Estimated effort:</strong> 1-2 hours this topic
+Understand the core concepts of Sorting Arrays. Implement Sorting Arrays in an Xcode project. Apply best practices to ensure clean and maintainable code. The Story So Far…# We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Sorting Arrays. Open your current Xcode project or start a new Playground to follow along with the hands-on material.">
+  <meta itemprop="wordCount" content="1122">
+
+<title>Sorting Arrays | iOS UIKit Course</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="//localhost:1313/docs/02-swift-fundamentals/sorting-arrays/">
+<link rel="stylesheet" href="/book.min.27b623a68e5ed421a2c09e9cb252a5df26e9f6d074ae994704e46b8381284e76.css" integrity="sha256-J7Yjpo5e1CGiwJ6cslKl3ybp9tB0rplHBORrg4EoTnY=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.c3bff94c145f7dd3a7e62b59a68c4f2ce3b661716f44112170089aae22b73bf0.js" integrity="sha256-w7/5TBRffdOn5itZpoxPLOO2YXFvRBEhcAiariK3O/A=" crossorigin="anonymous"></script>
+
+
+<link rel="alternate" type="application/rss+xml" href="//localhost:1313/docs/02-swift-fundamentals/sorting-arrays/index.xml" title="iOS UIKit Course" />
+
+  
+</head>
+<body dir="ltr" class="book-kind-section book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>iOS UIKit Course</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/01-getting-started/" class="">
+      Module 1: Getting Started</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/01-getting-started/getting-started/" class="">
+      Getting Started</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/" class="">
+      Module 2: Swift Fundamentals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/" class="">
+      Variables &amp; Data Types</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./" class="">
+      1. Variables Data Types and More.</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/collections/" class="">
+      Collections</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/operators/" class="">
+      Operators</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/conditionals/" class="">
+      Conditionals</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/loops/" class="">
+      Loops</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/functions/" class="">
+      Functions</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/closures/" class="">
+      Closures</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/optionals/" class="">
+      Optionals</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/custom-data-types/" class="">
+      Custom Data Types</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/" class="">
+      9.1. Structs</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/custom-data-types/9.2.-classes/" class="">
+      9.2. Classes</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/protocols/" class="">
+      Protocols</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/sorting-arrays/" class="active">
+      Sorting Arrays</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/" class="">
+      Module 3: Introduction to UIKit</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/" class="">
+      Creating Our First App</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/" class="">
+      1. Creating Our First App</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/designing-without-storyboards/" class="">
+      Designing Without Storyboards</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/" class="">
+      Multi-Screen Apps</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/" class="">
+      3.3. Send data back from Screen 2 to Screen 1</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/mvc-architecture/" class="">
+      MVC Architecture</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/" class="">
+      Module 4: Advanced UI Components</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uitableview/" class="">
+      UITableView</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uiscrollview/" class="">
+      UIScrollView</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/" class="">
+      UIMenu &amp; Image Pickers</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/" class="">
+      Useful UI Elements</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/" class="">
+      5. Tab Bar Controller</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/" class="">
+      6. Search Bar</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/" class="">
+      Bottom Sheet View Modal Presentation</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/" class="">
+      Module 5: Networking &amp; APIs</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/http-and-networking/" class="">
+      HTTP &amp; Networking</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/working-with-json/" class="">
+      Working with JSON</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/" class="">
+      Module 6: Architecture &amp; Data Flow</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/notification-center/" class="">
+      Notification Center</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/clean-code-and-async/" class="">
+      Clean Code &amp; Async</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/" class="">
+      1. Writing Clean Code For Asynchronous Operations</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/" class="">
+      Module 7: Cloud Integrations &amp; Maps</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/cocoapods/" class="">
+      CocoaPods</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/" class="">
+      Firebase Auth &amp; Firestore</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/" class="">
+      12.5. Implementing Register and Sign In</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-storage/" class="">
+      Firebase Storage</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/mapkit-and-location/" class="">
+      MapKit &amp; Location</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Sorting Arrays</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#learning-objectives">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-sorting-arrays">Walkthrough: Exploring Sorting Arrays</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#do-it-using-closures-not-functions">Do it using closures (not functions)</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#guided-practice-challenges">Guided Practice Challenges</a>
+      <ul>
+        <li><a href="#challenge-1-experimentation">Challenge 1: Experimentation</a></li>
+        <li><a href="#challenge-2-from-scratch">Challenge 2: From Scratch</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a></li>
+    <li><a href="#getting-help">Getting Help</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
-<strong>Prerequisites:</strong> Previous iOS topics</p><p>{&lt; hint info >}
+<strong>Prerequisites:</strong> Previous iOS topics</p>
+<p>{&lt; hint info &gt;}
 <strong>🎯 Topic Mission:</strong>
 In this module, we will explore <strong>Sorting Arrays</strong> and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{&lt; /hint >}</p><hr><h2 id=learning-objectives>Learning Objectives<a class=anchor href=#learning-objectives>#</a></h2><p>By the end of this session, you will be able to:</p><ol><li>Understand the core concepts of Sorting Arrays.</li><li>Implement Sorting Arrays in an Xcode project.</li><li>Apply best practices to ensure clean and maintainable code.</li></ol><hr><h2 id=the-story-so-far>The Story So Far&mldr;<a class=anchor href=#the-story-so-far>#</a></h2><p>We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Sorting Arrays.
-Open your current Xcode project or start a new Playground to follow along with the hands-on material.</p><hr><h2 id=walkthrough-exploring-sorting-arrays>Walkthrough: Exploring Sorting Arrays<a class=anchor href=#walkthrough-exploring-sorting-arrays>#</a></h2><blockquote class=book-hint><p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p></blockquote><h1 id=11-sorting-arrays>11. Sorting Arrays<a class=anchor href=#11-sorting-arrays>#</a></h1><p>Here we will talk about one of the most useful lessons while developing iOS apps, sorting. First, we will start with sorting a very simple array, and then we will look into how to sort arrays of custom struct/class objects.</p><h1 id=111-increasing-order>11.1. Increasing order<a class=anchor href=#111-increasing-order>#</a></h1><p>We can call <code>sorted()</code> function to sort an array with the increasing order of it&rsquo;s values.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>var</span> arrayOfInt:[Int] = [<span style=color:#ae81ff>1</span>,<span style=color:#ae81ff>56</span>,<span style=color:#ae81ff>89</span>,<span style=color:#ae81ff>23</span>,<span style=color:#ae81ff>4</span>,<span style=color:#ae81ff>6</span>]
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>print(arrayOfInt.sorted())
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>// prints: [1, 4, 6, 23, 56, 89]</span></span></span></code></pre></div><p>Let&rsquo;s try to sort an array of Strings.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//array of Strings ...</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> arrayOfStrings = [<span style=color:#e6db74>&#34;apple&#34;</span>, <span style=color:#e6db74>&#34;orange&#34;</span>, <span style=color:#e6db74>&#34;pineapple&#34;</span>, <span style=color:#e6db74>&#34;a&#34;</span>, <span style=color:#e6db74>&#34;b&#34;</span>]
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>print(arrayOfStrings.sorted())
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//prints: [&#34;a&#34;, &#34;apple&#34;, &#34;b&#34;, &#34;orange&#34;, &#34;pineapple&#34;]</span></span></span></code></pre></div><p>The above code sorted the array in a lexicographical order (like how the words in a dictionary are sorted).</p><h3><a class=anchor href=#>#</a></h3><h3><a class=anchor href=#>#</a></h3><h1 id=112-decreasing-order>11.2. Decreasing order<a class=anchor href=#112-decreasing-order>#</a></h1><p>Unfortunately, it is not as simple to sort an array in a reversed (decreasing) order as it is to sort it in an increasing order. We need to write a comparator function or closure and use <code>sort(by: &lt;comparator>))</code> to do it.</p><p>Think about how you would sort an array of items.</p><ul><li>You&rsquo;d probably iterate through the array and compare each item with the other items to see where to put the current item. You need to compare two values to figure out which one is bigger or which one is smaller.</li><li>Now, sorting in increasing order is the default behavior, so you do not need to modify the comparator logic of Swift. However, sorting in decreasing is not a default behavior, so you need to specify how you would compare each pair of values.</li></ul><p>Let&rsquo;s define our compare function <code>decreasing()</code> as follows:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//function to compare two values to find which if value1 is greater than value2...</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>decreasing</span>(value1:Int, value2:Int)-&gt;Bool{
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> value1 <span style=color:#f92672>&gt;</span> value2
-</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>In increasing order, the comparator checks if the first value of a pair of values is smaller than the second value. If yes, then do not swap; else, swap. In the above code, we are reversing the order. So we are checking if the first value is greater than the second value, then do not swap; they are in the correct order.</p><p>Then we call the <code>sort(by: ..)</code> as follows:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>var</span> arrayOfInt:[Int] = [<span style=color:#ae81ff>1</span>,<span style=color:#ae81ff>56</span>,<span style=color:#ae81ff>89</span>,<span style=color:#ae81ff>23</span>,<span style=color:#ae81ff>4</span>,<span style=color:#ae81ff>6</span>]
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//sort the array by using the comparator function decreasing...</span>
-</span></span><span style=display:flex><span>arrayOfInt.sort(by: decreasing)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>print(arrayOfInt)
-</span></span><span style=display:flex><span><span style=color:#75715e>//prints: [89, 56, 23, 6, 4, 1]</span></span></span></code></pre></div><h3 id=do-it-using-closures-not-functions>Do it using closures (not functions)<a class=anchor href=#do-it-using-closures-not-functions>#</a></h3><p>We can concisely write code without writing a different function using closures. And it would be best if you got used to this style. As we have seen, we can use a function as a variable, or conversely, we can write code inline instead of a variable. So let&rsquo;s write a closure directly inside the <code>sort(by: ...)</code> as follows:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span>arrayOfIntC.sort(by: { (value1:Int, value2:Int) -&gt; Bool <span style=color:#66d9ef>in</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> value1 <span style=color:#f92672>&gt;</span> value2
-</span></span><span style=display:flex><span>})</span></span></code></pre></div><p>The difference between the previous code and the above code is that instead of writing a separate function <code>decreasing()</code>, we are writing the closure inside the <code>sort(by:..)</code> call.</p><p>Now let&rsquo;s see what happens:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>var</span> arrayOfIntC = [<span style=color:#ae81ff>34</span>,<span style=color:#ae81ff>6</span>,<span style=color:#ae81ff>89</span>,<span style=color:#ae81ff>56</span>,<span style=color:#ae81ff>78</span>,<span style=color:#ae81ff>14</span>]
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>print(arrayOfIntC)
-</span></span><span style=display:flex><span><span style=color:#75715e>//prints: [89, 78, 56, 34, 14, 6]</span></span></span></code></pre></div><p>You can shorten it even more. I did not want to give you an overdose yet. :joy:</p><h1 id=11-3-sorting-an-array-of-custom-data>11. 3. Sorting an array of custom data<a class=anchor href=#11-3-sorting-an-array-of-custom-data>#</a></h1><p>Let&rsquo;s look at the following example:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>UIKit</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>User</span>{
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> name: String
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> age: Int
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> city: String
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> users = [
-</span></span><span style=display:flex><span>    User(name: <span style=color:#e6db74>&#34;Alice&#34;</span>, age: <span style=color:#ae81ff>12</span>, city: <span style=color:#e6db74>&#34;Boston&#34;</span>),
-</span></span><span style=display:flex><span>    User(name: <span style=color:#e6db74>&#34;Bob&#34;</span>, age: <span style=color:#ae81ff>21</span>, city: <span style=color:#e6db74>&#34;Charlotte&#34;</span>),
-</span></span><span style=display:flex><span>    User(name: <span style=color:#e6db74>&#34;Chris&#34;</span>, age: <span style=color:#ae81ff>45</span>, city: <span style=color:#e6db74>&#34;NYC&#34;</span>),
-</span></span><span style=display:flex><span>    User(name: <span style=color:#e6db74>&#34;David&#34;</span>, age: <span style=color:#ae81ff>23</span>, city: <span style=color:#e6db74>&#34;Boston&#34;</span>),
-</span></span><span style=display:flex><span>    User(name: <span style=color:#e6db74>&#34;Dillon&#34;</span>, age: <span style=color:#ae81ff>89</span>, city: <span style=color:#e6db74>&#34;San Francisco&#34;</span>),
-</span></span><span style=display:flex><span>]
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> sort by name in decreasing order</span>
-</span></span><span style=display:flex><span>users.sort(by: { (user1:User, user2:User)-&gt; Bool <span style=color:#66d9ef>in</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> user1.name <span style=color:#f92672>&gt;</span> user2.name
-</span></span><span style=display:flex><span>})
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> user <span style=color:#66d9ef>in</span> users{
-</span></span><span style=display:flex><span>    print(user)
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span><span style=color:#75715e>/*prints:
-</span></span></span><span style=display:flex><span><span style=color:#75715e>User(name: &#34;Dillon&#34;, age: 89, city: &#34;San Francisco&#34;)
-</span></span></span><span style=display:flex><span><span style=color:#75715e>User(name: &#34;David&#34;, age: 23, city: &#34;Boston&#34;)
-</span></span></span><span style=display:flex><span><span style=color:#75715e>User(name: &#34;Chris&#34;, age: 45, city: &#34;NYC&#34;)
-</span></span></span><span style=display:flex><span><span style=color:#75715e>User(name: &#34;Bob&#34;, age: 21, city: &#34;Charlotte&#34;)
-</span></span></span><span style=display:flex><span><span style=color:#75715e>User(name: &#34;Alice&#34;, age: 12, city: &#34;Boston&#34;)
-</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> sort by age in increasing order</span>
-</span></span><span style=display:flex><span>users.sort(by: { (user1:User, user2:User)-&gt; Bool <span style=color:#66d9ef>in</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> user1.age <span style=color:#f92672>&lt;</span> user2.age
-</span></span><span style=display:flex><span>})
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> user <span style=color:#66d9ef>in</span> users{
-</span></span><span style=display:flex><span>    print(user)
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span><span style=color:#75715e>/* prints:
-</span></span></span><span style=display:flex><span><span style=color:#75715e>User(name: &#34;Alice&#34;, age: 12, city: &#34;Boston&#34;)
-</span></span></span><span style=display:flex><span><span style=color:#75715e>User(name: &#34;Bob&#34;, age: 21, city: &#34;Charlotte&#34;)
-</span></span></span><span style=display:flex><span><span style=color:#75715e>User(name: &#34;David&#34;, age: 23, city: &#34;Boston&#34;)
-</span></span></span><span style=display:flex><span><span style=color:#75715e>User(name: &#34;Chris&#34;, age: 45, city: &#34;NYC&#34;)
-</span></span></span><span style=display:flex><span><span style=color:#75715e>User(name: &#34;Dillon&#34;, age: 89, city: &#34;San Francisco&#34;)
-</span></span></span><span style=display:flex><span><span style=color:#75715e>*/</span></span></span></code></pre></div><p>This example is pretty self-explanatory. We have a struct to create our custom data type, <code>User</code>. Each user has <code>name</code>, <code>age</code>, and <code>city</code>.</p><p>We first want to sort the array of <code>User</code>s based on their name in decreasing order. So, wrote a closure that takes in a pair of <code>User</code> objects. Then compared their names.</p><p>The next task is to sort the users in increasing order of their age. The next closure takes care of it.</p><p><strong>That&rsquo;s pretty much it about the basics of sorting in Swift.</strong></p><hr><h2 id=guided-practice-challenges>Guided Practice Challenges<a class=anchor href=#guided-practice-challenges>#</a></h2><p>Before moving on to the next topic, try these low-stakes practice challenges in Xcode. They will build the exact muscle memory you need:</p><h3 id=challenge-1-experimentation>Challenge 1: Experimentation<a class=anchor href=#challenge-1-experimentation>#</a></h3><p><strong>The Scenario:</strong> You&rsquo;ve just learned about Sorting Arrays.
-<strong>The Task:</strong> Experiment with the code snippets provided above. Can you alter the behavior by changing the parameters or combining it with concepts from previous modules?</p><h3 id=challenge-2-from-scratch>Challenge 2: From Scratch<a class=anchor href=#challenge-2-from-scratch>#</a></h3><p><strong>The Task:</strong> Try implementing the core feature of this module in a completely blank Xcode project without looking at the reference code. Rely on Xcode&rsquo;s autocomplete and standard Apple documentation.</p><hr><h2 id=references>References<a class=anchor href=#references>#</a></h2><ol><li><a href=https://developer.apple.com/documentation/>Apple Developer Documentation</a></li><li><a href=https://docs.swift.org/swift-book/>Swift Language Guide</a></li><li><a href=https://developer.apple.com/design/human-interface-guidelines/>Human Interface Guidelines</a></li></ol><hr><h2 id=getting-help>Getting Help<a class=anchor href=#getting-help>#</a></h2><p>Because this course is fully asynchronous, here&rsquo;s how to get unstuck:</p><ul><li><strong>Piazza</strong> is the primary help channel. When asking a question, include: (1) what you&rsquo;re trying to do, (2) what you&rsquo;ve tried, (3) the exact Xcode error message.</li><li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li><li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li></ul></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=/docs/02-swift-fundamentals/protocols/ class="flex align-center"><img src=/icons/backward.svg class=book-icon alt=Backward>
-<span>Protocols</span>
-</a></span><span><a href=/docs/03-introduction-to-uikit/ class="flex align-center"><span>Module 3: Introduction to UIKit</span>
-<img src=/icons/forward.svg class=book-icon alt=Forward></a></span></div><div class=book-comments></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#learning-objectives>Learning Objectives</a></li><li><a href=#the-story-so-far>The Story So Far&mldr;</a></li><li><a href=#walkthrough-exploring-sorting-arrays>Walkthrough: Exploring Sorting Arrays</a></li></ul><ul><li><ul><li></li><li></li></ul></li></ul><ul><li><ul><li><a href=#do-it-using-closures-not-functions>Do it using closures (not functions)</a></li></ul></li></ul><ul><li><a href=#guided-practice-challenges>Guided Practice Challenges</a><ul><li><a href=#challenge-1-experimentation>Challenge 1: Experimentation</a></li><li><a href=#challenge-2-from-scratch>Challenge 2: From Scratch</a></li></ul></li><li><a href=#references>References</a></li><li><a href=#getting-help>Getting Help</a></li></ul></nav></div></aside></main></body></html>
+{&lt; /hint &gt;}</p>
+<hr>
+<h2 id="learning-objectives">Learning Objectives<a class="anchor" href="#learning-objectives">#</a></h2>
+<p>By the end of this session, you will be able to:</p>
+<ol>
+<li>Understand the core concepts of Sorting Arrays.</li>
+<li>Implement Sorting Arrays in an Xcode project.</li>
+<li>Apply best practices to ensure clean and maintainable code.</li>
+</ol>
+<hr>
+<h2 id="the-story-so-far">The Story So Far&hellip;<a class="anchor" href="#the-story-so-far">#</a></h2>
+<p>We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Sorting Arrays.
+Open your current Xcode project or start a new Playground to follow along with the hands-on material.</p>
+<hr>
+<h2 id="walkthrough-exploring-sorting-arrays">Walkthrough: Exploring Sorting Arrays<a class="anchor" href="#walkthrough-exploring-sorting-arrays">#</a></h2>
+<blockquote class='book-hint '>
+<p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
+</blockquote><h1 id="11-sorting-arrays">11. Sorting Arrays<a class="anchor" href="#11-sorting-arrays">#</a></h1>
+<p>Here we will talk about one of the most useful lessons while developing iOS apps, sorting. First, we will start with sorting a very simple array, and then we will look into how to sort arrays of custom struct/class objects.</p>
+<!-- Merged from 11.1.-increasing-order.md -->
+<h1 id="111-increasing-order">11.1. Increasing order<a class="anchor" href="#111-increasing-order">#</a></h1>
+<p>We can call <code>sorted()</code> function to sort an array with the increasing order of it&rsquo;s values.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> arrayOfInt:[Int] = [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">56</span>,<span style="color:#ae81ff">89</span>,<span style="color:#ae81ff">23</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">6</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(arrayOfInt.sorted())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// prints: [1, 4, 6, 23, 56, 89]</span></span></span></code></pre></div><p>Let&rsquo;s try to sort an array of Strings.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//array of Strings ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> arrayOfStrings = [<span style="color:#e6db74">&#34;apple&#34;</span>, <span style="color:#e6db74">&#34;orange&#34;</span>, <span style="color:#e6db74">&#34;pineapple&#34;</span>, <span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(arrayOfStrings.sorted())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//prints: [&#34;a&#34;, &#34;apple&#34;, &#34;b&#34;, &#34;orange&#34;, &#34;pineapple&#34;]</span></span></span></code></pre></div><p>The above code sorted the array in a lexicographical order (like how the words in a dictionary are sorted).</p>
+<h3 id=""><a class="anchor" href="#">#</a></h3>
+<h3 id=""><a class="anchor" href="#">#</a></h3>
+<!-- Merged from 11.2.-decreasing-order.md -->
+<h1 id="112-decreasing-order">11.2. Decreasing order<a class="anchor" href="#112-decreasing-order">#</a></h1>
+<p>Unfortunately, it is not as simple to sort an array in a reversed (decreasing) order as it is to sort it in an increasing order. We need to write a comparator function or closure and use <code>sort(by: &lt;comparator&gt;))</code> to do it.</p>
+<p>Think about how you would sort an array of items.</p>
+<ul>
+<li>You&rsquo;d probably iterate through the array and compare each item with the other items to see where to put the current item. You need to compare two values to figure out which one is bigger or which one is smaller.</li>
+<li>Now, sorting in increasing order is the default behavior, so you do not need to modify the comparator logic of Swift. However, sorting in decreasing is not a default behavior, so you need to specify how you would compare each pair of values.</li>
+</ul>
+<p>Let&rsquo;s define our compare function <code>decreasing()</code> as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//function to compare two values to find which if value1 is greater than value2...</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">decreasing</span>(value1:Int, value2:Int)-&gt;Bool{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> value1 <span style="color:#f92672">&gt;</span> value2
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>In increasing order, the comparator checks if the first value of a pair of values is smaller than the second value. If yes, then do not swap; else, swap. In the above code, we are reversing the order. So we are checking if the first value is greater than the second value, then do not swap; they are in the correct order.</p>
+<p>Then we call the <code>sort(by: ..)</code> as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> arrayOfInt:[Int] = [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">56</span>,<span style="color:#ae81ff">89</span>,<span style="color:#ae81ff">23</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">6</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//sort the array by using the comparator function decreasing...</span>
+</span></span><span style="display:flex;"><span>arrayOfInt.sort(by: decreasing)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(arrayOfInt)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//prints: [89, 56, 23, 6, 4, 1]</span></span></span></code></pre></div><h3 id="do-it-using-closures-not-functions">Do it using closures (not functions)<a class="anchor" href="#do-it-using-closures-not-functions">#</a></h3>
+<p>We can concisely write code without writing a different function using closures. And it would be best if you got used to this style. As we have seen, we can use a function as a variable, or conversely, we can write code inline instead of a variable. So let&rsquo;s write a closure directly inside the <code>sort(by: ...)</code> as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>arrayOfIntC.sort(by: { (value1:Int, value2:Int) -&gt; Bool <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> value1 <span style="color:#f92672">&gt;</span> value2
+</span></span><span style="display:flex;"><span>})</span></span></code></pre></div><p>The difference between the previous code and the above code is that instead of writing a separate function <code>decreasing()</code>, we are writing the closure inside the <code>sort(by:..)</code> call.</p>
+<p>Now let&rsquo;s see what happens:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> arrayOfIntC = [<span style="color:#ae81ff">34</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">89</span>,<span style="color:#ae81ff">56</span>,<span style="color:#ae81ff">78</span>,<span style="color:#ae81ff">14</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(arrayOfIntC)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//prints: [89, 78, 56, 34, 14, 6]</span></span></span></code></pre></div><p>You can shorten it even more. I did not want to give you an overdose yet. :joy:</p>
+<!-- Merged from 11.-3.-sorting-an-array-of-custom-data.md -->
+<h1 id="11-3-sorting-an-array-of-custom-data">11. 3. Sorting an array of custom data<a class="anchor" href="#11-3-sorting-an-array-of-custom-data">#</a></h1>
+<p>Let&rsquo;s look at the following example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">User</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> name: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> age: Int
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> city: String
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> users = [
+</span></span><span style="display:flex;"><span>    User(name: <span style="color:#e6db74">&#34;Alice&#34;</span>, age: <span style="color:#ae81ff">12</span>, city: <span style="color:#e6db74">&#34;Boston&#34;</span>),
+</span></span><span style="display:flex;"><span>    User(name: <span style="color:#e6db74">&#34;Bob&#34;</span>, age: <span style="color:#ae81ff">21</span>, city: <span style="color:#e6db74">&#34;Charlotte&#34;</span>),
+</span></span><span style="display:flex;"><span>    User(name: <span style="color:#e6db74">&#34;Chris&#34;</span>, age: <span style="color:#ae81ff">45</span>, city: <span style="color:#e6db74">&#34;NYC&#34;</span>),
+</span></span><span style="display:flex;"><span>    User(name: <span style="color:#e6db74">&#34;David&#34;</span>, age: <span style="color:#ae81ff">23</span>, city: <span style="color:#e6db74">&#34;Boston&#34;</span>),
+</span></span><span style="display:flex;"><span>    User(name: <span style="color:#e6db74">&#34;Dillon&#34;</span>, age: <span style="color:#ae81ff">89</span>, city: <span style="color:#e6db74">&#34;San Francisco&#34;</span>),
+</span></span><span style="display:flex;"><span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> sort by name in decreasing order</span>
+</span></span><span style="display:flex;"><span>users.sort(by: { (user1:User, user2:User)-&gt; Bool <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> user1.name <span style="color:#f92672">&gt;</span> user2.name
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> user <span style="color:#66d9ef">in</span> users{
+</span></span><span style="display:flex;"><span>    print(user)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*prints:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">User(name: &#34;Dillon&#34;, age: 89, city: &#34;San Francisco&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">User(name: &#34;David&#34;, age: 23, city: &#34;Boston&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">User(name: &#34;Chris&#34;, age: 45, city: &#34;NYC&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">User(name: &#34;Bob&#34;, age: 21, city: &#34;Charlotte&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">User(name: &#34;Alice&#34;, age: 12, city: &#34;Boston&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> sort by age in increasing order</span>
+</span></span><span style="display:flex;"><span>users.sort(by: { (user1:User, user2:User)-&gt; Bool <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> user1.age <span style="color:#f92672">&lt;</span> user2.age
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> user <span style="color:#66d9ef">in</span> users{
+</span></span><span style="display:flex;"><span>    print(user)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* prints:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">User(name: &#34;Alice&#34;, age: 12, city: &#34;Boston&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">User(name: &#34;Bob&#34;, age: 21, city: &#34;Charlotte&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">User(name: &#34;David&#34;, age: 23, city: &#34;Boston&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">User(name: &#34;Chris&#34;, age: 45, city: &#34;NYC&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">User(name: &#34;Dillon&#34;, age: 89, city: &#34;San Francisco&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span></span></span></code></pre></div><p>This example is pretty self-explanatory. We have a struct to create our custom data type, <code>User</code>. Each user has <code>name</code>, <code>age</code>, and <code>city</code>.</p>
+<p>We first want to sort the array of <code>User</code>s based on their name in decreasing order. So, wrote a closure that takes in a pair of <code>User</code> objects. Then compared their names.</p>
+<p>The next task is to sort the users in increasing order of their age. The next closure takes care of it.</p>
+<p><strong>That&rsquo;s pretty much it about the basics of sorting in Swift.</strong></p>
+<hr>
+<h2 id="guided-practice-challenges">Guided Practice Challenges<a class="anchor" href="#guided-practice-challenges">#</a></h2>
+<p>Before moving on to the next topic, try these low-stakes practice challenges in Xcode. They will build the exact muscle memory you need:</p>
+<h3 id="challenge-1-experimentation">Challenge 1: Experimentation<a class="anchor" href="#challenge-1-experimentation">#</a></h3>
+<p><strong>The Scenario:</strong> You&rsquo;ve just learned about Sorting Arrays.
+<strong>The Task:</strong> Experiment with the code snippets provided above. Can you alter the behavior by changing the parameters or combining it with concepts from previous modules?</p>
+<h3 id="challenge-2-from-scratch">Challenge 2: From Scratch<a class="anchor" href="#challenge-2-from-scratch">#</a></h3>
+<p><strong>The Task:</strong> Try implementing the core feature of this module in a completely blank Xcode project without looking at the reference code. Rely on Xcode&rsquo;s autocomplete and standard Apple documentation.</p>
+<hr>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
+<ol>
+<li><a href="https://developer.apple.com/documentation/">Apple Developer Documentation</a></li>
+<li><a href="https://docs.swift.org/swift-book/">Swift Language Guide</a></li>
+<li><a href="https://developer.apple.com/design/human-interface-guidelines/">Human Interface Guidelines</a></li>
+</ol>
+<hr>
+<h2 id="getting-help">Getting Help<a class="anchor" href="#getting-help">#</a></h2>
+<p>Because this course is fully asynchronous, here&rsquo;s how to get unstuck:</p>
+<ul>
+<li><strong>Piazza</strong> is the primary help channel. When asking a question, include: (1) what you&rsquo;re trying to do, (2) what you&rsquo;ve tried, (3) the exact Xcode error message.</li>
+<li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
+<li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/02-swift-fundamentals/protocols/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Protocols</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/03-introduction-to-uikit/" class="flex align-center">
+        <span>Module 3: Introduction to UIKit</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#learning-objectives">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-sorting-arrays">Walkthrough: Exploring Sorting Arrays</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#do-it-using-closures-not-functions">Do it using closures (not functions)</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#guided-practice-challenges">Guided Practice Challenges</a>
+      <ul>
+        <li><a href="#challenge-1-experimentation">Challenge 1: Experimentation</a></li>
+        <li><a href="#challenge-2-from-scratch">Challenge 2: From Scratch</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a></li>
+    <li><a href="#getting-help">Getting Help</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

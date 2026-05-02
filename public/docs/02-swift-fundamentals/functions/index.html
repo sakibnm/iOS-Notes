@@ -1,69 +1,1349 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
-{< hint info >} 🎯 Topic Mission: In this module, we will explore Functions and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {< /hint >}
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
+{&lt; hint info &gt;} 🎯 Topic Mission: In this module, we will explore Functions and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {&lt; /hint &gt;}
 Learning Objectives# By the end of this session, you will be able to:
 Understand the core concepts of Functions. Implement Functions in an Xcode project. Apply best practices to ensure clean and maintainable code. The Story So Far…# We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Functions. Open your current Xcode project or start a new Playground to follow along with the hands-on material.
-"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="/docs/02-swift-fundamentals/functions/"><meta property="og:site_name" content="iOS UIKit Course"><meta property="og:title" content="Functions"><meta property="og:description" content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
-{< hint info >} 🎯 Topic Mission: In this module, we will explore Functions and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {< /hint >}
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="//localhost:1313/docs/02-swift-fundamentals/functions/">
+  <meta property="og:site_name" content="iOS UIKit Course">
+  <meta property="og:title" content="Functions">
+  <meta property="og:description" content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
+{&lt; hint info &gt;} 🎯 Topic Mission: In this module, we will explore Functions and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {&lt; /hint &gt;}
 Learning Objectives# By the end of this session, you will be able to:
-Understand the core concepts of Functions. Implement Functions in an Xcode project. Apply best practices to ensure clean and maintainable code. The Story So Far…# We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Functions. Open your current Xcode project or start a new Playground to follow along with the hands-on material."><meta property="og:locale" content="en_us"><meta property="og:type" content="website"><meta itemprop=name content="Functions"><meta itemprop=description content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
-{< hint info >} 🎯 Topic Mission: In this module, we will explore Functions and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {< /hint >}
+Understand the core concepts of Functions. Implement Functions in an Xcode project. Apply best practices to ensure clean and maintainable code. The Story So Far…# We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Functions. Open your current Xcode project or start a new Playground to follow along with the hands-on material.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+
+  <meta itemprop="name" content="Functions">
+  <meta itemprop="description" content="Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
+{&lt; hint info &gt;} 🎯 Topic Mission: In this module, we will explore Functions and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {&lt; /hint &gt;}
 Learning Objectives# By the end of this session, you will be able to:
-Understand the core concepts of Functions. Implement Functions in an Xcode project. Apply best practices to ensure clean and maintainable code. The Story So Far…# We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Functions. Open your current Xcode project or start a new Playground to follow along with the hands-on material."><meta itemprop=wordCount content="1365"><title>Functions | iOS UIKit Course</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=/docs/02-swift-fundamentals/functions/><link rel=stylesheet href=/book.min.27b623a68e5ed421a2c09e9cb252a5df26e9f6d074ae994704e46b8381284e76.css><script defer src=/fuse.min.js></script><script defer src=/en.search.min.c3bff94c145f7dd3a7e62b59a68c4f2ce3b661716f44112170089aae22b73bf0.js></script><link rel=alternate type=application/rss+xml href=/docs/02-swift-fundamentals/functions/index.xml title="iOS UIKit Course"></head><body dir=ltr class="book-kind-section book-type-docs"><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>iOS UIKit Course</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href=/docs/01-getting-started/>Module 1: Getting Started</a><ul><li><a href=/docs/01-getting-started/getting-started/>Getting Started</a><ul></ul></li></ul></li><li><a href=/docs/02-swift-fundamentals/>Module 2: Swift Fundamentals</a><ul><li><a href=/docs/02-swift-fundamentals/swift-the-programming-language/>Variables & Data Types</a><ul><li><a href=/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./>1. Variables Data Types and More.</a><ul></ul></li></ul></li><li><a href=/docs/02-swift-fundamentals/collections/>Collections</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/operators/>Operators</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/conditionals/>Conditionals</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/loops/>Loops</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/functions/ class=active>Functions</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/closures/>Closures</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/optionals/>Optionals</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/custom-data-types/>Custom Data Types</a><ul><li><a href=/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/>9.1. Structs</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/custom-data-types/9.2.-classes/>9.2. Classes</a><ul></ul></li></ul></li><li><a href=/docs/02-swift-fundamentals/protocols/>Protocols</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/sorting-arrays/>Sorting Arrays</a><ul></ul></li></ul></li><li><a href=/docs/03-introduction-to-uikit/>Module 3: Introduction to UIKit</a><ul><li><a href=/docs/03-introduction-to-uikit/creating-our-first-app/>Creating Our First App</a><ul><li><a href=/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/>1. Creating Our First App</a><ul></ul></li></ul></li><li><a href=/docs/03-introduction-to-uikit/designing-without-storyboards/>Designing Without Storyboards</a><ul></ul></li><li><a href=/docs/03-introduction-to-uikit/multi-screen-apps/>Multi-Screen Apps</a><ul><li><a href=/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/>3.3. Send data back from Screen 2 to Screen 1</a><ul></ul></li></ul></li><li><a href=/docs/03-introduction-to-uikit/mvc-architecture/>MVC Architecture</a><ul></ul></li></ul></li><li><a href=/docs/04-advanced-ui-components/>Module 4: Advanced UI Components</a><ul><li><a href=/docs/04-advanced-ui-components/uitableview/>UITableView</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/uiscrollview/>UIScrollView</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/uimenu-and-image-pickers/>UIMenu & Image Pickers</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/>Useful UI Elements</a><ul><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/>5. Tab Bar Controller</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/>6. Search Bar</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/>Bottom Sheet View Modal Presentation</a><ul></ul></li></ul></li></ul></li><li><a href=/docs/05-networking-and-apis/>Module 5: Networking & APIs</a><ul><li><a href=/docs/05-networking-and-apis/http-and-networking/>HTTP & Networking</a><ul></ul></li><li><a href=/docs/05-networking-and-apis/working-with-json/>Working with JSON</a><ul></ul></li></ul></li><li><a href=/docs/06-data-persistence-and-architecture/>Module 6: Architecture & Data Flow</a><ul><li><a href=/docs/06-data-persistence-and-architecture/notification-center/>Notification Center</a><ul></ul></li><li><a href=/docs/06-data-persistence-and-architecture/clean-code-and-async/>Clean Code & Async</a><ul><li><a href=/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/>1. Writing Clean Code For Asynchronous Operations</a><ul></ul></li></ul></li></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/>Module 7: Cloud Integrations & Maps</a><ul><li><a href=/docs/07-cloud-integrations-and-maps/cocoapods/>CocoaPods</a><ul></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/>Firebase Auth & Firestore</a><ul><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/>12.5. Implementing Register and Sign In</a><ul></ul></li></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-storage/>Firebase Storage</a><ul></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/mapkit-and-location/>MapKit & Location</a><ul></ul></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><label for=menu-control><img src=/icons/menu.svg class=book-icon alt=Menu></label><h3>Functions</h3><label for=toc-control><img src=/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#learning-objectives>Learning Objectives</a></li><li><a href=#the-story-so-far>The Story So Far&mldr;</a></li><li><a href=#walkthrough-exploring-functions>Walkthrough: Exploring Functions</a></li></ul><ul><li><ul><li><a href=#simple-functions>Simple functions</a></li></ul></li></ul><ul><li><a href=#parameter-labels>Parameter labels</a></li><li><a href=#omitting-parameter-labels>Omitting parameter labels</a></li><li><a href=#default-parameters>Default parameters</a></li><li><a href=#why-and-where-do-we-use-internal-and-external-names-in-swift-functions><mark>Why and where do we use internal and external names in Swift functions?</mark></a><ul><li><a href=#scenarios-where-internal-and-external-names-are-useful>Scenarios where internal and external names are useful</a></li></ul></li></ul><ul><li><a href=#guided-practice-challenges>Guided Practice Challenges</a><ul><li><a href=#challenge-1-experimentation>Challenge 1: Experimentation</a></li><li><a href=#challenge-2-from-scratch>Challenge 2: From Scratch</a></li></ul></li><li><a href=#references>References</a></li><li><a href=#getting-help>Getting Help</a></li></ul></nav></aside></header><article class="markdown book-article"><p><strong>Estimated effort:</strong> 1-2 hours this topic
+Understand the core concepts of Functions. Implement Functions in an Xcode project. Apply best practices to ensure clean and maintainable code. The Story So Far…# We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Functions. Open your current Xcode project or start a new Playground to follow along with the hands-on material.">
+  <meta itemprop="wordCount" content="1365">
+
+<title>Functions | iOS UIKit Course</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="//localhost:1313/docs/02-swift-fundamentals/functions/">
+<link rel="stylesheet" href="/book.min.27b623a68e5ed421a2c09e9cb252a5df26e9f6d074ae994704e46b8381284e76.css" integrity="sha256-J7Yjpo5e1CGiwJ6cslKl3ybp9tB0rplHBORrg4EoTnY=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.c3bff94c145f7dd3a7e62b59a68c4f2ce3b661716f44112170089aae22b73bf0.js" integrity="sha256-w7/5TBRffdOn5itZpoxPLOO2YXFvRBEhcAiariK3O/A=" crossorigin="anonymous"></script>
+
+
+<link rel="alternate" type="application/rss+xml" href="//localhost:1313/docs/02-swift-fundamentals/functions/index.xml" title="iOS UIKit Course" />
+
+  
+</head>
+<body dir="ltr" class="book-kind-section book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>iOS UIKit Course</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/01-getting-started/" class="">
+      Module 1: Getting Started</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/01-getting-started/getting-started/" class="">
+      Getting Started</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/" class="">
+      Module 2: Swift Fundamentals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/" class="">
+      Variables &amp; Data Types</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./" class="">
+      1. Variables Data Types and More.</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/collections/" class="">
+      Collections</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/operators/" class="">
+      Operators</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/conditionals/" class="">
+      Conditionals</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/loops/" class="">
+      Loops</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/functions/" class="active">
+      Functions</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/closures/" class="">
+      Closures</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/optionals/" class="">
+      Optionals</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/custom-data-types/" class="">
+      Custom Data Types</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/" class="">
+      9.1. Structs</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/custom-data-types/9.2.-classes/" class="">
+      9.2. Classes</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/protocols/" class="">
+      Protocols</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/sorting-arrays/" class="">
+      Sorting Arrays</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/" class="">
+      Module 3: Introduction to UIKit</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/" class="">
+      Creating Our First App</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/" class="">
+      1. Creating Our First App</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/designing-without-storyboards/" class="">
+      Designing Without Storyboards</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/" class="">
+      Multi-Screen Apps</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/" class="">
+      3.3. Send data back from Screen 2 to Screen 1</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/mvc-architecture/" class="">
+      MVC Architecture</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/" class="">
+      Module 4: Advanced UI Components</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uitableview/" class="">
+      UITableView</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uiscrollview/" class="">
+      UIScrollView</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/" class="">
+      UIMenu &amp; Image Pickers</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/" class="">
+      Useful UI Elements</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/" class="">
+      5. Tab Bar Controller</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/" class="">
+      6. Search Bar</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/" class="">
+      Bottom Sheet View Modal Presentation</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/" class="">
+      Module 5: Networking &amp; APIs</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/http-and-networking/" class="">
+      HTTP &amp; Networking</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/working-with-json/" class="">
+      Working with JSON</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/" class="">
+      Module 6: Architecture &amp; Data Flow</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/notification-center/" class="">
+      Notification Center</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/clean-code-and-async/" class="">
+      Clean Code &amp; Async</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/" class="">
+      1. Writing Clean Code For Asynchronous Operations</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/" class="">
+      Module 7: Cloud Integrations &amp; Maps</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/cocoapods/" class="">
+      CocoaPods</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/" class="">
+      Firebase Auth &amp; Firestore</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/" class="">
+      12.5. Implementing Register and Sign In</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-storage/" class="">
+      Firebase Storage</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/mapkit-and-location/" class="">
+      MapKit &amp; Location</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Functions</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#learning-objectives">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-functions">Walkthrough: Exploring Functions</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#simple-functions">Simple functions</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#parameter-labels">Parameter labels</a></li>
+    <li><a href="#omitting-parameter-labels">Omitting parameter labels</a></li>
+    <li><a href="#default-parameters">Default parameters</a></li>
+    <li><a href="#why-and-where-do-we-use-internal-and-external-names-in-swift-functions"><mark>Why and where do we use internal and external names in Swift functions?</mark></a>
+      <ul>
+        <li><a href="#scenarios-where-internal-and-external-names-are-useful">Scenarios where internal and external names are useful</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#guided-practice-challenges">Guided Practice Challenges</a>
+      <ul>
+        <li><a href="#challenge-1-experimentation">Challenge 1: Experimentation</a></li>
+        <li><a href="#challenge-2-from-scratch">Challenge 2: From Scratch</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a></li>
+    <li><a href="#getting-help">Getting Help</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
-<strong>Prerequisites:</strong> Previous iOS topics</p><p>{&lt; hint info >}
+<strong>Prerequisites:</strong> Previous iOS topics</p>
+<p>{&lt; hint info &gt;}
 <strong>🎯 Topic Mission:</strong>
 In this module, we will explore <strong>Functions</strong> and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{&lt; /hint >}</p><hr><h2 id=learning-objectives>Learning Objectives<a class=anchor href=#learning-objectives>#</a></h2><p>By the end of this session, you will be able to:</p><ol><li>Understand the core concepts of Functions.</li><li>Implement Functions in an Xcode project.</li><li>Apply best practices to ensure clean and maintainable code.</li></ol><hr><h2 id=the-story-so-far>The Story So Far&mldr;<a class=anchor href=#the-story-so-far>#</a></h2><p>We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Functions.
-Open your current Xcode project or start a new Playground to follow along with the hands-on material.</p><hr><h2 id=walkthrough-exploring-functions>Walkthrough: Exploring Functions<a class=anchor href=#walkthrough-exploring-functions>#</a></h2><blockquote class=book-hint><p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p></blockquote><h1 id=6-functions>6. Functions<a class=anchor href=#6-functions>#</a></h1><p>Functions are the best tools for writing reusable code blocks. Whenever we write codes, we often see that we need to execute the same task in multiple places in our program. What if we could separate the code for that particular task from the main code block and call it every time we need to do it instead of writing the same code again?</p><p>So, in short, a function is a code block where we can do certain tasks. We can provide it with data and receive a result from it.</p><h1 id=61-writing-functions>6.1. Writing functions<a class=anchor href=#61-writing-functions>#</a></h1><p>To write a function in Swift, we use the keyword <code>func</code> followed by the function&rsquo;s name, parameter list, return data type, and body (the code block). A general structure of a Swift function is:</p><pre tabindex=0><code>func functionName(parameter1:DataType, parameter2:DataType, ...) -&gt; ReturnDataType{
+{&lt; /hint &gt;}</p>
+<hr>
+<h2 id="learning-objectives">Learning Objectives<a class="anchor" href="#learning-objectives">#</a></h2>
+<p>By the end of this session, you will be able to:</p>
+<ol>
+<li>Understand the core concepts of Functions.</li>
+<li>Implement Functions in an Xcode project.</li>
+<li>Apply best practices to ensure clean and maintainable code.</li>
+</ol>
+<hr>
+<h2 id="the-story-so-far">The Story So Far&hellip;<a class="anchor" href="#the-story-so-far">#</a></h2>
+<p>We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Functions.
+Open your current Xcode project or start a new Playground to follow along with the hands-on material.</p>
+<hr>
+<h2 id="walkthrough-exploring-functions">Walkthrough: Exploring Functions<a class="anchor" href="#walkthrough-exploring-functions">#</a></h2>
+<blockquote class='book-hint '>
+<p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
+</blockquote><h1 id="6-functions">6. Functions<a class="anchor" href="#6-functions">#</a></h1>
+<p>Functions are the best tools for writing reusable code blocks. Whenever we write codes, we often see that we need to execute the same task in multiple places in our program. What if we could separate the code for that particular task from the main code block and call it every time we need to do it instead of writing the same code again?</p>
+<p>So, in short, a function is a code block where we can do certain tasks. We can provide it with data and receive a result from it.</p>
+<!-- Merged from 6.1.-writing-functions.md -->
+<h1 id="61-writing-functions">6.1. Writing functions<a class="anchor" href="#61-writing-functions">#</a></h1>
+<p>To write a function in Swift, we use the keyword <code>func</code> followed by the function&rsquo;s name, parameter list, return data type, and body (the code block). A general structure of a Swift function is:</p>
+<pre tabindex="0"><code>func functionName(parameter1:DataType, parameter2:DataType, ...) -&gt; ReturnDataType{
     //code block
-}</code></pre><h3 id=simple-functions>Simple functions<a class=anchor href=#simple-functions>#</a></h3><p>For a function, the list of parameters can be empty, meaning if our function does not require any data from us to run, we do not need to define any parameters. For example, a function to print &ldquo;Hello World&rdquo; could be:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>printHelloWorld</span>(){
-</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;Hello World!&#34;</span>)
-</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>You can call the function from your code like:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span>printHelloWorld()</span></span></code></pre></div><h1 id=62-functions-with-parameters>6.2. Functions with parameters<a class=anchor href=#62-functions-with-parameters>#</a></h1><p>Now, let&rsquo;s write a function that accepts parameters and do some tasks. The following code accepts the name and age of a person as parameters and prints the details.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//function definition...</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>printDetails</span>(name:String, age:Int){
-</span></span><span style=display:flex><span>    print(
-</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;&#34;&#34;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>        The user&#39;s name is: </span><span style=color:#e6db74>\(</span>name<span style=color:#e6db74>)</span><span style=color:#e6db74>.
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>        The user&#39;s age is: </span><span style=color:#e6db74>\(</span>age<span style=color:#e6db74>)</span><span style=color:#e6db74>.
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>        </span><span style=color:#e6db74>\(</span>name<span style=color:#e6db74>)</span><span style=color:#e6db74> is awesome!
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>        &#34;&#34;&#34;</span>
-</span></span><span style=display:flex><span>    )
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//calling the function...</span>
-</span></span><span style=display:flex><span>printDetails(name: <span style=color:#e6db74>&#34;Donald&#34;</span>, age: <span style=color:#ae81ff>25</span>)</span></span></code></pre></div><p>It prints:</p><pre tabindex=0><code>The user&#39;s name is: Donald.
+}</code></pre><h3 id="simple-functions">Simple functions<a class="anchor" href="#simple-functions">#</a></h3>
+<p>For a function, the list of parameters can be empty, meaning if our function does not require any data from us to run, we do not need to define any parameters. For example, a function to print &ldquo;Hello World&rdquo; could be:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">printHelloWorld</span>(){
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Hello World!&#34;</span>)
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>You can call the function from your code like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>printHelloWorld()</span></span></code></pre></div><!-- Merged from 6.2.-functions-with-parameters.md -->
+<h1 id="62-functions-with-parameters">6.2. Functions with parameters<a class="anchor" href="#62-functions-with-parameters">#</a></h1>
+<p>Now, let&rsquo;s write a function that accepts parameters and do some tasks. The following code accepts the name and age of a person as parameters and prints the details.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//function definition...</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">printDetails</span>(name:String, age:Int){
+</span></span><span style="display:flex;"><span>    print(
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        The user&#39;s name is: </span><span style="color:#e6db74">\(</span>name<span style="color:#e6db74">)</span><span style="color:#e6db74">.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        The user&#39;s age is: </span><span style="color:#e6db74">\(</span>age<span style="color:#e6db74">)</span><span style="color:#e6db74">.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        </span><span style="color:#e6db74">\(</span>name<span style="color:#e6db74">)</span><span style="color:#e6db74"> is awesome!
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//calling the function...</span>
+</span></span><span style="display:flex;"><span>printDetails(name: <span style="color:#e6db74">&#34;Donald&#34;</span>, age: <span style="color:#ae81ff">25</span>)</span></span></code></pre></div><p>It prints:</p>
+<pre tabindex="0"><code>The user&#39;s name is: Donald.
 The user&#39;s age is: 25.
-Donald is awesome!</code></pre><h1 id=63-functions-that-return-a-value>6.3. Functions that return a value<a class=anchor href=#63-functions-that-return-a-value>#</a></h1><p>Now, let&rsquo;s think about a function that accepts an array of integers as a parameter and returns the sum of the integers.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>sumOf</span>(array:[Int]) -&gt; Int{
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> sum = <span style=color:#ae81ff>0</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> item <span style=color:#66d9ef>in</span> array{
-</span></span><span style=display:flex><span>        sum <span style=color:#f92672>+=</span> item
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//returns the value...</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> sum
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//calling the function with an integer array</span>
-</span></span><span style=display:flex><span>print(sumOf(array: [<span style=color:#ae81ff>1</span>,<span style=color:#ae81ff>2</span>,<span style=color:#ae81ff>3</span>,<span style=color:#ae81ff>4</span>,<span style=color:#ae81ff>5</span>]))</span></span></code></pre></div><p>It prints:</p><pre tabindex=0><code>15</code></pre><p>You can get the returned value and store it to a constant or variable:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>let</span> sum = sumOf(array: [<span style=color:#ae81ff>1</span>,<span style=color:#ae81ff>2</span>,<span style=color:#ae81ff>3</span>,<span style=color:#ae81ff>4</span>,<span style=color:#ae81ff>5</span>])</span></span></code></pre></div><h1 id=64-more-on-function-parameters>6.4. More on function parameters<a class=anchor href=#64-more-on-function-parameters>#</a></h1><h2 id=parameter-labels>Parameter labels<a class=anchor href=#parameter-labels>#</a></h2><p>Swift functions have the ability to have completely separate internal and external parameter names. Instead of having a single parameter name, the function below has two. The first one, <code>with</code> is an external parameter name, which is the name that will refer to the parameter when we call the function. The second one, <code>vehicle</code> is the internal parameter name which is the name we’ll use when we need to use the parameter within the function.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//function definition...</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>navigate</span>(with vehicle:String, from source:String, to destination:String) -&gt; String{
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;The user will use a </span><span style=color:#e6db74>\(</span>vehicle<span style=color:#e6db74>)</span><span style=color:#e6db74> to travel from </span><span style=color:#e6db74>\(</span>source<span style=color:#e6db74>)</span><span style=color:#e6db74> to </span><span style=color:#e6db74>\(</span>destination<span style=color:#e6db74>)</span><span style=color:#e6db74>.&#34;</span>
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//calling the function</span>
-</span></span><span style=display:flex><span>print(navigate(with: <span style=color:#e6db74>&#34;car&#34;</span>, from: <span style=color:#e6db74>&#34;Boston&#34;</span>, to: <span style=color:#e6db74>&#34;NYC&#34;</span>))</span></span></code></pre></div><p>It prints:</p><pre tabindex=0><code>The user will use a car to travel from Boston to NYC.</code></pre><p>Let&rsquo;s look at the first <code>String</code> parameter the <code>navigate</code> function accepts. Here, <code>with</code> is the external name or label, and <code>vehicle</code> is the internal label for the first parameter. When we are calling the function from outside, we are using <code>with</code>, and internally we are using <code>vehicle</code>.</p><p>We can use this feature to write and call a function creatively.</p><h2 id=omitting-parameter-labels>Omitting parameter labels<a class=anchor href=#omitting-parameter-labels>#</a></h2><p>We can also omit the external parameter name to call our function just by passing in a value without mentioning the parameter&rsquo;s name. We achieve this by simply replacing the external name with the underscore. Now we can call our function without using a parameter name at all. Instead, we can pass in a value that we want to use as the input.</p><p>Remember <code>underscores</code>? We can use it to define the external name of a parameter to omit the need to type the parameter name when we call the function:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//function definition...</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>printHello</span>(<span style=color:#66d9ef>_</span> name:String){
-</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;Hello </span><span style=color:#e6db74>\(</span>name<span style=color:#e6db74>)</span><span style=color:#e6db74>!&#34;</span>)
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//Calling the function...</span>
-</span></span><span style=display:flex><span>printHello(<span style=color:#e6db74>&#34;Sakib&#34;</span>)</span></span></code></pre></div><h2 id=default-parameters>Default parameters<a class=anchor href=#default-parameters>#</a></h2><p>Sometimes we want to have default values for our parameters. The default value gets activated if we do not pass any value through the parameters. We can set a default value by writing a <code>=</code> after the parameter&rsquo;s type followed by the default value. Like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//function definition</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>printHello2</span>(<span style=color:#66d9ef>_</span> name:String = <span style=color:#e6db74>&#34;Unknown&#34;</span>){
-</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;Hello </span><span style=color:#e6db74>\(</span>name<span style=color:#e6db74>)</span><span style=color:#e6db74>!&#34;</span>)
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span><span style=color:#75715e>//calling function...</span>
-</span></span><span style=display:flex><span>printHello2()</span></span></code></pre></div><p>It will print:</p><pre tabindex=0><code>Hello Unknown!</code></pre><p>Because the default is already set to &ldquo;Unknown.&rdquo;</p><h2 id=why-and-where-do-we-use-internal-and-external-names-in-swift-functions><mark style=color:orange>Why and where do we use internal and external names in Swift functions?</mark><a class=anchor href=#why-and-where-do-we-use-internal-and-external-names-in-swift-functions>#</a></h2><ol><li><p><strong>Improved Clarity in Function Calls:</strong></p><p>When a function has descriptive external parameter names, it becomes clear what each argument represents when calling it. This helps understand each argument&rsquo;s purpose and makes the function call more readable.</p></li><li><p><strong>Self-Documenting Code:</strong></p><p>By providing meaningful external names, you can make your code self-documenting. This means that someone reading your code can understand the purpose and intent of the function just by looking at the function signature and the way it&rsquo;s called.</p></li><li><p><strong>Avoiding Ambiguity:</strong><br>In some cases, functions may have parameters with similar data types. Using external names allows you to disambiguate these parameters, making the function call unambiguous and reducing the risk of passing incorrect arguments.</p></li><li><p><strong>Improved Readability and Maintenance:</strong></p><p>By using external names, you can create functions with expressive, almost sentence-like function calls, which can be beneficial when reading and maintaining code.</p></li></ol><h3 id=scenarios-where-internal-and-external-names-are-useful>Scenarios where internal and external names are useful<a class=anchor href=#scenarios-where-internal-and-external-names-are-useful>#</a></h3><ol><li><p><strong>Public API Design:</strong></p><p>When designing public APIs, using external names helps ensure that the function calls are clear and self-explanatory for your framework or library users. You can find examples in Apple Documentation.</p></li><li><p><strong>Functions with Multiple Parameters:</strong></p><p>Functions with multiple parameters benefit from external names as they clarify the purpose of each parameter.</p></li><li><p><strong>Methods in Classes and Structures:</strong></p><p>In object-oriented programming, methods in classes and structures should use external names to indicate the role of each parameter in the context of the object.</p></li></ol><p>In summary, using internal and external names in Swift functions is a good practice for writing clean, expressive, and self-documenting code, especially when designing public APIs or functions with multiple parameters. They enhance code readability and help prevent confusion and errors when calling functions.</p><p><em>These are the very basics of functions in Swift. Eventually, we will learn more about functions and their various uses.</em></p><h1 id=65-reference-code>6.5. Reference Code<a class=anchor href=#65-reference-code>#</a></h1><p>{% file src="/gitbook-assets/MyPlayground6.playground (1).zip" %}</p><hr><h2 id=guided-practice-challenges>Guided Practice Challenges<a class=anchor href=#guided-practice-challenges>#</a></h2><p>Before moving on to the next topic, try these low-stakes practice challenges in Xcode. They will build the exact muscle memory you need:</p><h3 id=challenge-1-experimentation>Challenge 1: Experimentation<a class=anchor href=#challenge-1-experimentation>#</a></h3><p><strong>The Scenario:</strong> You&rsquo;ve just learned about Functions.
-<strong>The Task:</strong> Experiment with the code snippets provided above. Can you alter the behavior by changing the parameters or combining it with concepts from previous modules?</p><h3 id=challenge-2-from-scratch>Challenge 2: From Scratch<a class=anchor href=#challenge-2-from-scratch>#</a></h3><p><strong>The Task:</strong> Try implementing the core feature of this module in a completely blank Xcode project without looking at the reference code. Rely on Xcode&rsquo;s autocomplete and standard Apple documentation.</p><hr><h2 id=references>References<a class=anchor href=#references>#</a></h2><ol><li><a href=https://developer.apple.com/documentation/>Apple Developer Documentation</a></li><li><a href=https://docs.swift.org/swift-book/>Swift Language Guide</a></li><li><a href=https://developer.apple.com/design/human-interface-guidelines/>Human Interface Guidelines</a></li></ol><hr><h2 id=getting-help>Getting Help<a class=anchor href=#getting-help>#</a></h2><p>Because this course is fully asynchronous, here&rsquo;s how to get unstuck:</p><ul><li><strong>Piazza</strong> is the primary help channel. When asking a question, include: (1) what you&rsquo;re trying to do, (2) what you&rsquo;ve tried, (3) the exact Xcode error message.</li><li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li><li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li></ul></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=/docs/02-swift-fundamentals/loops/ class="flex align-center"><img src=/icons/backward.svg class=book-icon alt=Backward>
-<span>Loops</span>
-</a></span><span><a href=/docs/02-swift-fundamentals/closures/ class="flex align-center"><span>Closures</span>
-<img src=/icons/forward.svg class=book-icon alt=Forward></a></span></div><div class=book-comments></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#learning-objectives>Learning Objectives</a></li><li><a href=#the-story-so-far>The Story So Far&mldr;</a></li><li><a href=#walkthrough-exploring-functions>Walkthrough: Exploring Functions</a></li></ul><ul><li><ul><li><a href=#simple-functions>Simple functions</a></li></ul></li></ul><ul><li><a href=#parameter-labels>Parameter labels</a></li><li><a href=#omitting-parameter-labels>Omitting parameter labels</a></li><li><a href=#default-parameters>Default parameters</a></li><li><a href=#why-and-where-do-we-use-internal-and-external-names-in-swift-functions><mark>Why and where do we use internal and external names in Swift functions?</mark></a><ul><li><a href=#scenarios-where-internal-and-external-names-are-useful>Scenarios where internal and external names are useful</a></li></ul></li></ul><ul><li><a href=#guided-practice-challenges>Guided Practice Challenges</a><ul><li><a href=#challenge-1-experimentation>Challenge 1: Experimentation</a></li><li><a href=#challenge-2-from-scratch>Challenge 2: From Scratch</a></li></ul></li><li><a href=#references>References</a></li><li><a href=#getting-help>Getting Help</a></li></ul></nav></div></aside></main></body></html>
+Donald is awesome!</code></pre><!-- Merged from 6.3.-functions-that-return-a-value.md -->
+<h1 id="63-functions-that-return-a-value">6.3. Functions that return a value<a class="anchor" href="#63-functions-that-return-a-value">#</a></h1>
+<p>Now, let&rsquo;s think about a function that accepts an array of integers as a parameter and returns the sum of the integers.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sumOf</span>(array:[Int]) -&gt; Int{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> sum = <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> item <span style="color:#66d9ef">in</span> array{
+</span></span><span style="display:flex;"><span>        sum <span style="color:#f92672">+=</span> item
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//returns the value...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> sum
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//calling the function with an integer array</span>
+</span></span><span style="display:flex;"><span>print(sumOf(array: [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>]))</span></span></code></pre></div><p>It prints:</p>
+<pre tabindex="0"><code>15</code></pre><p>You can get the returned value and store it to a constant or variable:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> sum = sumOf(array: [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>])</span></span></code></pre></div><!-- Merged from 6.4.-more-on-function-parameters.md -->
+<h1 id="64-more-on-function-parameters">6.4. More on function parameters<a class="anchor" href="#64-more-on-function-parameters">#</a></h1>
+<h2 id="parameter-labels">Parameter labels<a class="anchor" href="#parameter-labels">#</a></h2>
+<p>Swift functions have the ability to have completely separate internal and external parameter names. Instead of having a single parameter name, the function below has two. The first one, <code>with</code> is an external parameter name, which is the name that will refer to the parameter when we call the function. The second one, <code>vehicle</code> is the internal parameter name which is the name we’ll use when we need to use the parameter within the function.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//function definition...</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">navigate</span>(with vehicle:String, from source:String, to destination:String) -&gt; String{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;The user will use a </span><span style="color:#e6db74">\(</span>vehicle<span style="color:#e6db74">)</span><span style="color:#e6db74"> to travel from </span><span style="color:#e6db74">\(</span>source<span style="color:#e6db74">)</span><span style="color:#e6db74"> to </span><span style="color:#e6db74">\(</span>destination<span style="color:#e6db74">)</span><span style="color:#e6db74">.&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//calling the function</span>
+</span></span><span style="display:flex;"><span>print(navigate(with: <span style="color:#e6db74">&#34;car&#34;</span>, from: <span style="color:#e6db74">&#34;Boston&#34;</span>, to: <span style="color:#e6db74">&#34;NYC&#34;</span>))</span></span></code></pre></div><p>It prints:</p>
+<pre tabindex="0"><code>The user will use a car to travel from Boston to NYC.</code></pre><p>Let&rsquo;s look at the first <code>String</code> parameter the <code>navigate</code> function accepts. Here, <code>with</code> is the external name or label, and <code>vehicle</code> is the internal label for the first parameter. When we are calling the function from outside, we are using <code>with</code>, and internally we are using <code>vehicle</code>.</p>
+<p>We can use this feature to write and call a function creatively.</p>
+<h2 id="omitting-parameter-labels">Omitting parameter labels<a class="anchor" href="#omitting-parameter-labels">#</a></h2>
+<p>We can also omit the external parameter name to call our function just by passing in a value without mentioning the parameter&rsquo;s name. We achieve this by simply replacing the external name with the underscore. Now we can call our function without using a parameter name at all. Instead, we can pass in a value that we want to use as the input.</p>
+<p>Remember <code>underscores</code>? We can use it to define the external name of a parameter to omit the need to type the parameter name when we call the function:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//function definition...</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">printHello</span>(<span style="color:#66d9ef">_</span> name:String){
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Hello </span><span style="color:#e6db74">\(</span>name<span style="color:#e6db74">)</span><span style="color:#e6db74">!&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//Calling the function...</span>
+</span></span><span style="display:flex;"><span>printHello(<span style="color:#e6db74">&#34;Sakib&#34;</span>)</span></span></code></pre></div><h2 id="default-parameters">Default parameters<a class="anchor" href="#default-parameters">#</a></h2>
+<p>Sometimes we want to have default values for our parameters. The default value gets activated if we do not pass any value through the parameters. We can set a default value by writing a <code>=</code> after the parameter&rsquo;s type followed by the default value. Like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//function definition</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">printHello2</span>(<span style="color:#66d9ef">_</span> name:String = <span style="color:#e6db74">&#34;Unknown&#34;</span>){
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Hello </span><span style="color:#e6db74">\(</span>name<span style="color:#e6db74">)</span><span style="color:#e6db74">!&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//calling function...</span>
+</span></span><span style="display:flex;"><span>printHello2()</span></span></code></pre></div><p>It will print:</p>
+<pre tabindex="0"><code>Hello Unknown!</code></pre><p>Because the default is already set to &ldquo;Unknown.&rdquo;</p>
+<h2 id="why-and-where-do-we-use-internal-and-external-names-in-swift-functions"><mark style="color:orange;">Why and where do we use internal and external names in Swift functions?</mark><a class="anchor" href="#why-and-where-do-we-use-internal-and-external-names-in-swift-functions">#</a></h2>
+<ol>
+<li>
+<p><strong>Improved Clarity in Function Calls:</strong></p>
+<p>When a function has descriptive external parameter names, it becomes clear what each argument represents when calling it. This helps understand each argument&rsquo;s purpose and makes the function call more readable.</p>
+</li>
+<li>
+<p><strong>Self-Documenting Code:</strong></p>
+<p>By providing meaningful external names, you can make your code self-documenting. This means that someone reading your code can understand the purpose and intent of the function just by looking at the function signature and the way it&rsquo;s called.</p>
+</li>
+<li>
+<p><strong>Avoiding Ambiguity:</strong> <br>
+In some cases, functions may have parameters with similar data types. Using external names allows you to disambiguate these parameters, making the function call unambiguous and reducing the risk of passing incorrect arguments.</p>
+</li>
+<li>
+<p><strong>Improved Readability and Maintenance:</strong></p>
+<p>By using external names, you can create functions with expressive, almost sentence-like function calls, which can be beneficial when reading and maintaining code.</p>
+</li>
+</ol>
+<h3 id="scenarios-where-internal-and-external-names-are-useful">Scenarios where internal and external names are useful<a class="anchor" href="#scenarios-where-internal-and-external-names-are-useful">#</a></h3>
+<ol>
+<li>
+<p><strong>Public API Design:</strong></p>
+<p>When designing public APIs, using external names helps ensure that the function calls are clear and self-explanatory for your framework or library users. You can find examples in Apple Documentation.</p>
+</li>
+<li>
+<p><strong>Functions with Multiple Parameters:</strong></p>
+<p>Functions with multiple parameters benefit from external names as they clarify the purpose of each parameter.</p>
+</li>
+<li>
+<p><strong>Methods in Classes and Structures:</strong></p>
+<p>In object-oriented programming, methods in classes and structures should use external names to indicate the role of each parameter in the context of the object.</p>
+</li>
+</ol>
+<p>In summary, using internal and external names in Swift functions is a good practice for writing clean, expressive, and self-documenting code, especially when designing public APIs or functions with multiple parameters. They enhance code readability and help prevent confusion and errors when calling functions.</p>
+<p><em>These are the very basics of functions in Swift. Eventually, we will learn more about functions and their various uses.</em></p>
+<!-- Merged from 6.5.-reference-code.md -->
+<h1 id="65-reference-code">6.5. Reference Code<a class="anchor" href="#65-reference-code">#</a></h1>
+<p>{% file src=&quot;/gitbook-assets/MyPlayground6.playground (1).zip&quot; %}</p>
+<hr>
+<h2 id="guided-practice-challenges">Guided Practice Challenges<a class="anchor" href="#guided-practice-challenges">#</a></h2>
+<p>Before moving on to the next topic, try these low-stakes practice challenges in Xcode. They will build the exact muscle memory you need:</p>
+<h3 id="challenge-1-experimentation">Challenge 1: Experimentation<a class="anchor" href="#challenge-1-experimentation">#</a></h3>
+<p><strong>The Scenario:</strong> You&rsquo;ve just learned about Functions.
+<strong>The Task:</strong> Experiment with the code snippets provided above. Can you alter the behavior by changing the parameters or combining it with concepts from previous modules?</p>
+<h3 id="challenge-2-from-scratch">Challenge 2: From Scratch<a class="anchor" href="#challenge-2-from-scratch">#</a></h3>
+<p><strong>The Task:</strong> Try implementing the core feature of this module in a completely blank Xcode project without looking at the reference code. Rely on Xcode&rsquo;s autocomplete and standard Apple documentation.</p>
+<hr>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
+<ol>
+<li><a href="https://developer.apple.com/documentation/">Apple Developer Documentation</a></li>
+<li><a href="https://docs.swift.org/swift-book/">Swift Language Guide</a></li>
+<li><a href="https://developer.apple.com/design/human-interface-guidelines/">Human Interface Guidelines</a></li>
+</ol>
+<hr>
+<h2 id="getting-help">Getting Help<a class="anchor" href="#getting-help">#</a></h2>
+<p>Because this course is fully asynchronous, here&rsquo;s how to get unstuck:</p>
+<ul>
+<li><strong>Piazza</strong> is the primary help channel. When asking a question, include: (1) what you&rsquo;re trying to do, (2) what you&rsquo;ve tried, (3) the exact Xcode error message.</li>
+<li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
+<li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/02-swift-fundamentals/loops/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Loops</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/02-swift-fundamentals/closures/" class="flex align-center">
+        <span>Closures</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#learning-objectives">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-functions">Walkthrough: Exploring Functions</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#simple-functions">Simple functions</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#parameter-labels">Parameter labels</a></li>
+    <li><a href="#omitting-parameter-labels">Omitting parameter labels</a></li>
+    <li><a href="#default-parameters">Default parameters</a></li>
+    <li><a href="#why-and-where-do-we-use-internal-and-external-names-in-swift-functions"><mark>Why and where do we use internal and external names in Swift functions?</mark></a>
+      <ul>
+        <li><a href="#scenarios-where-internal-and-external-names-are-useful">Scenarios where internal and external names are useful</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#guided-practice-challenges">Guided Practice Challenges</a>
+      <ul>
+        <li><a href="#challenge-1-experimentation">Challenge 1: Experimentation</a></li>
+        <li><a href="#challenge-2-from-scratch">Challenge 2: From Scratch</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a></li>
+    <li><a href="#getting-help">Getting Help</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
