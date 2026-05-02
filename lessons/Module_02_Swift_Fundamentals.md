@@ -18,10 +18,10 @@
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **Collections** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -377,7 +377,7 @@ let mazdaCount = carCounts["Mazda"]
 
 ### Reference Code
 
-{% file src="/gitbook-assets/MyPlayground2.playground.zip" %}
+[Download Project Archive](/gitbook-assets/MyPlayground2.playground.zip)
 
 ---
 
@@ -417,10 +417,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **Operators** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -510,7 +510,7 @@ _What do you think will happen?_
 
 It should show something like the following:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-02 at 3.34.04 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-02 at 3.34.04 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Remember, `Double` is a 64-bits long number and `Int` is a 32-bits long number? We are trying to add an `Int`(`myInt`) and a `Double`(`myDouble`) together and put the result into an `Int`(`sum`). First of all, if you add an `Int` and a `Double` together, it results in a `Double` value, since `Double` has the largest capacity of the two. Now, we are trying to put that `Double` value into the constant `sum`, which is and `Int`. An `Int` doesn't have the capacity to hold a `Double`. So, it is yelling at us :man\_facepalming:
 
@@ -647,7 +647,7 @@ Comparison operators are widely used in Conditionals, Loops, and many other plac
 
 ### Reference Code
 
-{% file src="/gitbook-assets/MyPlayground3.playground (1).zip" %}
+[Download Project Archive](/gitbook-assets/MyPlayground3.playground (1).zip)
 
 ---
 
@@ -687,10 +687,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **Conditionals** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -800,7 +800,7 @@ default:
 }
 ```
 
-**Please note:**
+> **Please note:**
 
 * Each `case` in a `switch` statement is the same as `if` or `else if` in `if-else if-else` chain.
 * The `default` block in a `switch` statement is the same as the `else` block in `if-else` statements.
@@ -859,7 +859,7 @@ It means that if the value of `today` is in the range 1 to 5 (including 5), `tod
 
 ### Reference Code
 
-{% file src="/gitbook-assets/MyPlayground4.playground.zip" %}
+[Download Project Archive](/gitbook-assets/MyPlayground4.playground.zip)
 
 ---
 
@@ -899,10 +899,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **Loops** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -1135,7 +1135,7 @@ Here, we wanted to print the odd integers between 1 and 10. So, we are running a
 
 ### Reference Code
 
-{% file src="/gitbook-assets/MyPlayground5.playground.zip" %}
+[Download Project Archive](/gitbook-assets/MyPlayground5.playground.zip)
 
 ---
 
@@ -1175,10 +1175,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **Functions** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -1366,7 +1366,7 @@ Hello Unknown!
 
 Because the default is already set to "Unknown."
 
-### <mark style="color:orange;">Why and where do we use internal and external names in Swift functions?</mark>
+### Why and where do we use internal and external names in Swift functions?
 
 1.  **Improved Clarity in Function Calls:**
 
@@ -1400,7 +1400,7 @@ _These are the very basics of functions in Swift. Eventually, we will learn more
 
 ### Reference Code
 
-{% file src="/gitbook-assets/MyPlayground6.playground (1).zip" %}
+[Download Project Archive](/gitbook-assets/MyPlayground6.playground (1).zip)
 
 ---
 
@@ -1440,10 +1440,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **Closures** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -1469,7 +1469,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 ### Closures
 
-_<mark style="color:purple;">**This concept might look like a weird one. Do not worry, you'll understand it eventually, and I will keep it simple here.**</mark>_
+_**This concept might look like a weird one. Do not worry, you'll understand it eventually, and I will keep it simple here.**_
 
 Swift allows us to define a function just like a Data Type like `Int` , `String`, etc. It means you can define and use functions like constants or variables. These functions are called closures.&#x20;
 
@@ -1653,7 +1653,7 @@ So far, we have covered the basics of closures. You need to get used to the clos
 
 ### Reference Code
 
-{% file src="/gitbook-assets/MyPlayground7.playground.zip" %}
+[Download Project Archive](/gitbook-assets/MyPlayground7.playground.zip)
 
 ---
 
@@ -1693,10 +1693,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **Optionals** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -1731,7 +1731,7 @@ print(myInt)
 
 It will give us an error:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-04 at 12.01.22 AM.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-04 at 12.01.22 AM.png" alt="Educational illustration for iOS concept" width="563"><figcaption></figcaption></figure>
 
 So, we cannot use a variable without initializing it, right?. Well, sort of. Swift allows us to keep the variables uninitialized. It is done using a special data structure called `Optional`. Optionals are declared by adding a `?` at the end, like the following:
 
@@ -1802,13 +1802,13 @@ print(myInt!)
 // prints 10
 ```
 
-<mark style="color:red;">**Which will unwrap the value of**</mark><mark style="color:red;">**&#x20;**</mark><mark style="color:red;">**`myInt`**</mark><mark style="color:red;">**&#x20;**</mark><mark style="color:red;">**forcefully, even if it is**</mark><mark style="color:red;">**&#x20;**</mark><mark style="color:red;">**`nil`**</mark><mark style="color:red;">**.**</mark> \ <mark style="color:red;">**So you should refrain from using**</mark><mark style="color:red;">**&#x20;**</mark><mark style="color:red;">**`!`**</mark><mark style="color:red;">**&#x20;**</mark><mark style="color:red;">**unless you are absolutely sure that the value is not**</mark><mark style="color:red;">**&#x20;**</mark><mark style="color:red;">**`nil`**</mark><mark style="color:red;">**.**</mark>
+**Which will unwrap the value of****&#x20;****`myInt`****&#x20;****forcefully, even if it is****&#x20;****`nil`****.** \ **So you should refrain from using****&#x20;****`!`****&#x20;****unless you are absolutely sure that the value is not****&#x20;****`nil`****.**
 
 **The usage of optionals is very common in Swift, and eventually, we will have more examples down the road.**
 
 ### Source code
 
-{% file src="/gitbook-assets/MyPlayground8.playground (1).zip" %}
+[Download Project Archive](/gitbook-assets/MyPlayground8.playground (1).zip)
 
 ---
 
@@ -1865,10 +1865,10 @@ We will first talk about structs and then move into classes.
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **Protocols** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -1933,7 +1933,7 @@ protocol USBMad{
 }
 ```
 
-_<mark style="color:orange;">You might be confused about</mark>_ _<mark style="color:orange;">`{get}`</mark>_ _<mark style="color:orange;">declarations you see in the code. It means the property is a gettable property when implemented. You can also declare a property both gettable and settable by declaring</mark>_ _<mark style="color:orange;">`{get set}`</mark><mark style="color:orange;">. I will not dig deeper into these declarations; for now, I will just use</mark>_ _<mark style="color:orange;">`{get}`</mark><mark style="color:orange;">. For more information,</mark>_ [_you can read this article_](https://chetan-aggarwal.medium.com/swift-protocols-properties-distinction-get-get-set-32a34a7f16e9)_._
+_You might be confused about_ _`{get}`_ _declarations you see in the code. It means the property is a gettable property when implemented. You can also declare a property both gettable and settable by declaring_ _`{get set}`. I will not dig deeper into these declarations; for now, I will just use_ _`{get}`. For more information,_ [_you can read this article_](https://chetan-aggarwal.medium.com/swift-protocols-properties-distinction-get-get-set-32a34a7f16e9)_._
 
 Now, let's adopt our USBMad protocol in our `MyLaptop` struct:
 
@@ -1964,7 +1964,7 @@ Here, we are defining our struct `MyLaptop` where we adopt the `USBMad` protocol
 
 So we can create an instance of `MyLaptop` like the following:
 
-{% code overflow="wrap" %}
+
 ```swift
 let myLaptop = MyLaptop(
     name: "Sakib's Macbook",
@@ -1980,7 +1980,7 @@ myLaptop.chargeAccessories()
 myLaptop.transferData()
 //prints: You can send/receive data to/from me!
 ```
-{% endcode %}
+
 
 See, we not only have to initialize `MyLaptop`'s own properties but must also initialize the properties `MyLaptop` adopts from `USBMad`.
 
@@ -2036,7 +2036,7 @@ These are the CliffsNotes version of adopting/confirming a protocol. You will se
 
 ### Reference code
 
-{% file src="/gitbook-assets/MyPlayground10.1.playground.zip" %}
+[Download Project Archive](/gitbook-assets/MyPlayground10.1.playground.zip)
 
 
 
@@ -2131,7 +2131,7 @@ class UndergradTA: Student, TeachingAssistant{
 
 ```
 
-<mark style="color:orange;">**Please note: a class can only inherit one superclass, but it can adopt as many protocols as it needs. So if there is a superclass to be inherited, the class is written as the first one after**</mark><mark style="color:orange;">\*\*</mark> `:` <mark style="color:orange;">**(like**</mark> <mark style="color:orange;">**`Student`**</mark> <mark style="color:orange;">**in this example)**</mark> <mark style="color:orange;">**followed by the protocols separated by**</mark> `,`(comma).\*\*
+**Please note: a class can only inherit one superclass, but it can adopt as many protocols as it needs. So if there is a superclass to be inherited, the class is written as the first one after**\*\* `:` **(like** **`Student`** **in this example)** **followed by the protocols separated by** `,`(comma).\*\*
 
 Here, in the above code, we can see `UndergradTA` the inherited `Student` class and adopted `TeachingAssistant` protocol. We have a new variable `course` in `UndergradTA`, so we write an `init()` method to initialize both the variable `course` and the variable `name` in the superclass `Student`.
 
@@ -2162,7 +2162,7 @@ So now we have a basic understanding of how classes work with other classes and 
 
 ### Reference code
 
-{% file src="/gitbook-assets/MyPlayground10.3.playground (1).zip" %}
+[Download Project Archive](/gitbook-assets/MyPlayground10.3.playground (1).zip)
 
 ---
 
@@ -2202,10 +2202,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **Sorting Arrays** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -2426,10 +2426,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **9.1. Structs** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -2465,9 +2465,9 @@ struct Person{
 }
 ```
 
-Here the struct `Person` holds three properties <mark style="color:purple;">(we call the variables inside structs properties)</mark>: two strings `name` and `city`, and one integer `age`. **Please note that** in Swift the name of a struct or class should start with an uppercase character, like <mark style="color:blue;">**P**</mark>**erson.**
+Here the struct `Person` holds three properties (we call the variables inside structs properties): two strings `name` and `city`, and one integer `age`. **Please note that** in Swift the name of a struct or class should start with an uppercase character, like **P****erson.**
 
-Now since struct creates a custom data type for us, we can use `Person` as a data type everywhere. So, let's create a new variable (<mark style="color:purple;">or instance, more appropriately</mark>) of type `Person`.
+Now since struct creates a custom data type for us, we can use `Person` as a data type everywhere. So, let's create a new variable (or instance, more appropriately) of type `Person`.
 
 ```swift
 var newPerson: Person = Person(name: "Bob Smith", age: 30, city: "Boston")
@@ -2682,11 +2682,11 @@ Happy coding!
 
 So, we can create an instance of a struct with default values by writing `init()` method. Then we have to set the values later.
 
-<mark style="color:purple;">**Please note: you need to write**</mark><mark style="color:purple;">\*\*</mark> `init()` \*\*<mark style="color:purple;">**method before all the other methods and computed properties.**</mark>
+**Please note: you need to write**\*\* `init()` \*\***method before all the other methods and computed properties.**
 
 ### Source code
 
-{% file src="/gitbook-assets/MyPlayground9.1.1.playground (1).zip" %}
+[Download Project Archive](/gitbook-assets/MyPlayground9.1.1.playground (1).zip)
 
 
 
@@ -2746,7 +2746,7 @@ struct Car{
 }
 ```
 
-_<mark style="color:purple;">Do you see the</mark>_ _<mark style="color:purple;">`self`</mark>_ _<mark style="color:purple;">keyword? What do you think it is? -</mark>_ `self` is used to refer to the current instance of `Car`. See, we are using the same names for the parameters the method accepts as the properties of `Car`. By writing `self.make = make`, we are instructing the program to set the value of the current instance's `make` property to the value of the parameter `make` accepted by the `init()` method.
+_Do you see the_ _`self`_ _keyword? What do you think it is? -_ `self` is used to refer to the current instance of `Car`. See, we are using the same names for the parameters the method accepts as the properties of `Car`. By writing `self.make = make`, we are instructing the program to set the value of the current instance's `make` property to the value of the parameter `make` accepted by the `init()` method.
 
 Now, we can create an instance of `Car` by calling the new `init(make:String, model:String, year:Int)` method. Let's try:
 
@@ -2778,7 +2778,7 @@ init(make:String, model:String){
 
 If we add this method, we will see an error:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-04 at 2.01.14 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-04 at 2.01.14 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 So it is saying that we need to initialize all stored properties (`year` is not initialized). Now, how can we initialize `make` and `model` without initializing `year`?
 
@@ -2819,7 +2819,7 @@ Do you see an issue? `year` is wrapped with Optional. So if you want to use it a
 
 ### Source code
 
-{% file src="/gitbook-assets/MyPlayground9.1.2.playground (1).zip" %}
+[Download Project Archive](/gitbook-assets/MyPlayground9.1.2.playground (1).zip)
 
 
 
@@ -2869,7 +2869,7 @@ struct Car{
 
 If you write the updateYear function, you'll see the following error:
 
-<figure><img src="/gitbook-assets/Screenshot 2025-09-09 at 5.00.06 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2025-09-09 at 5.00.06 PM.png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 It says that self is immutable. **Why?**
 
@@ -2976,10 +2976,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **9.2. Classes** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -3019,9 +3019,9 @@ class Vehicle{
 
 If you just write the above block of code, you'll get an error:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-04 at 5.08.56 PM (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-04 at 5.08.56 PM (1).png" alt="Educational illustration for iOS concept" width="563"><figcaption></figcaption></figure>
 
-So, it is not like a `struct` where you do not need to have an initializer method. You must have your own initializer to be able to create an instance of a `class`. <mark style="color:orange;">**This is the first difference between a**</mark><mark style="color:orange;">\*\*</mark> `struct` <mark style="color:orange;">**and a**</mark> `class`.\*\*
+So, it is not like a `struct` where you do not need to have an initializer method. You must have your own initializer to be able to create an instance of a `class`. **This is the first difference between a**\*\* `struct` **and a** `class`.\*\*
 
 Now let's define our `init()` method and create a variable:
 
@@ -3159,7 +3159,7 @@ This is called method overriding. A class not only can inherit a method from the
 
 ### Source code
 
-{% file src="/gitbook-assets/MyPlayground9.2.1.playground (1).zip" %}
+[Download Project Archive](/gitbook-assets/MyPlayground9.2.1.playground (1).zip)
 
 
 
@@ -3167,7 +3167,7 @@ This is called method overriding. A class not only can inherit a method from the
 
 Another major difference between a struct and a class is how they behave when copied. Structs are 'value types,' and classes are 'reference types.'
 
-<mark style="color:purple;">**(Structs)**</mark> When you copy an instance of a struct from an existing instance, both instances work independently. For example:
+**(Structs)** When you copy an instance of a struct from an existing instance, both instances work independently. For example:
 
 ```swift
 struct User{
@@ -3201,7 +3201,7 @@ User name of user2 = Bob Smith
 
 We copied the instance `user1` to another instance `user2`. When I changed the `name` in `user2` it did not have any effect on `user1`. They worked independent to each other. The data of the instances are independent and separate to each other.
 
-<mark style="color:purple;">**(Classes)**</mark> However, classes are reference types. For example,
+**(Classes)** However, classes are reference types. For example,
 
 ```swift
 class Person{
@@ -3241,7 +3241,7 @@ Here, we copied `person1` to `person2`. But when we changed the name of `person2
 
 ### Reference Code
 
-{% file src="/gitbook-assets/MyPlayground9.2.2.playground (1).zip" %}
+[Download Project Archive](/gitbook-assets/MyPlayground9.2.2.playground (1).zip)
 
 ---
 
@@ -3281,10 +3281,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **this topic** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -3319,17 +3319,17 @@ This is where we begin our journey with Swift. In this book section, we will go 
 
 Open Xcode from your Launchpad. You should be seeing something like the following:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 11.46.52 AM (1).png" alt=""><figcaption><p>Xcode launch screen</p></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 11.46.52 AM (1).png" alt="Educational illustration for iOS concept"><figcaption><p>Xcode launch screen</p></figcaption></figure>
 
 Do not create an Xcode project yet; click on _**File -> New -> Playground**_. Select _**Blank**,_ click _**Next**_, give the playground a name, and click on _Create._ If you see something like the following, you are good to go! That is the first step toward learning Swift!!!
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 12.01.56 PM (2).png" alt=""><figcaption><p>Playground</p></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 12.01.56 PM (2).png" alt="Educational illustration for iOS concept"><figcaption><p>Playground</p></figcaption></figure>
 
 ### Video
 
-{% embed url="https://www.youtube.com/watch?v=IG9nba_A7Z4" %}
+[View Resource](https://www.youtube.com/watch?v=IG9nba_A7Z4)
 Demo
-{% endembed %}
+
 
 
 
@@ -3345,7 +3345,7 @@ var greeting = "Hello, playground"
 
 It creates a new variable called _greeting_, and gives it the value "Hello, playground".
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 12.31.15 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 12.31.15 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 After you click on the play button, you'll see "Hello, playground" on the right side, which is the output area of the Playground.
 
@@ -3357,13 +3357,13 @@ greeting = "Hello, Bonobos!!!!"
 
 Now, you can see the new values showing on the output area!
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 12.35.08 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 12.35.08 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Since greeting is a variable, we can change the values without creating a new variable for the new value!
 
 ### Video
 
-{% embed url="https://youtu.be/_a2NJAJg-WM" %}
+[View Resource](https://youtu.be/_a2NJAJg-WM)
 
 
 
@@ -3379,7 +3379,7 @@ greeting = 12
 
 And click on play! We will see something like the following:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 1.06.02 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 1.06.02 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 It says, "Cannot assign the value of type **'Int'** to **'String'**. So it means that Swift automatically sets the type of the variable _**greeting**_ to a String when it creates the variable with a String. Now that the type is already assigned, when I wanted to change the value to an integer 12, it yelled at me.
 
@@ -3401,7 +3401,7 @@ var million = 1_000_000
 
 ### Video
 
-{% embed url="https://youtu.be/XrHRxOiLX_o" %}
+[View Resource](https://youtu.be/XrHRxOiLX_o)
 
 
 
@@ -3431,13 +3431,13 @@ print(multiline)
 
 It should display the following at the bottom (console output) of Xcode:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 1.55.07 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 1.55.07 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Now you get the full view of how a multiline String would get displayed.
 
 ### Video
 
-{% embed url="https://youtu.be/FEoQh4CarpM" %}
+[View Resource](https://youtu.be/FEoQh4CarpM)
 
 
 
@@ -3459,7 +3459,7 @@ print(type(of: myNum))
 
 Here Swift automatically sets the type of the variable myNum to **Double** since I put a fractional value to it. The above code outputs the following:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 3.21.10 PM (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 3.21.10 PM (1) (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 The first print() outputs the value of _**myNum**_, and the second print outputs the type of the variable _**myNum**_.
 
@@ -3473,13 +3473,13 @@ print(type(of: myFloat))
 
 Here, I am writing 'var' to say the next one is a variable, as earlier. I give the variable a name, 'myFloat', and then I put a colon(:), **followed by the type of the variable (Float),** and finally, I assign a value, 13. This is a standard way of defining a variable in Swift. We will eventually learn about a more concrete way of declaring and defining the variables. Now the output of the code is:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 3.34.11 PM (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 3.34.11 PM (3).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 One thing to note is that I put the value as 13 for myFloat, which would be interpreted as an Int if I did not specifically predefine it as a **Float.** If you look at the output, 13 became 13.0, which is a fractional number.
 
 ### Video
 
-{% embed url="https://youtu.be/TU-5-RWzJMs" %}
+[View Resource](https://youtu.be/TU-5-RWzJMs)
 
 
 
@@ -3566,11 +3566,11 @@ myConstant = 20
 
 But now you will see the following error:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 10.56.02 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 10.56.02 PM.png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 **So, `myConstant` is not changeable (not mutable).**
 
-\*\*Please note: when you will be building iOS apps, \*\*<mark style="color:red;">**use constants as much as possible.**</mark> It is suggested that you should declare everything as constants using `let` and then selectively change them to variables when needed.
+\*\*Please note: when you will be building iOS apps, \*\***use constants as much as possible.** It is suggested that you should declare everything as constants using `let` and then selectively change them to variables when needed.
 
 
 
@@ -3615,7 +3615,7 @@ var myFloat:Float = 13
 
 ### Reference Code
 
-{% file src="/gitbook-assets/MyPlayground.playground (1).zip" %}
+[Download Project Archive](/gitbook-assets/MyPlayground.playground (1).zip)
 
 ---
 

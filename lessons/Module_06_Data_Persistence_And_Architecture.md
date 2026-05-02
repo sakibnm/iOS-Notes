@@ -11,10 +11,10 @@
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **Notification Center** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -40,7 +40,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 ### Notification Center
 
-<mark style="color:purple;">**(Do not confuse it with the push notifications)**</mark>
+**(Do not confuse it with the push notifications)**
 
 NotificationCenter is a very useful utility for iOS to handle data independent of the lifecycles of the screens.
 
@@ -69,7 +69,7 @@ We are sending data from the second screen to the first screen. So, we need to o
 
 We initialize the notification center in the first screen by adding the following line of code in ViewController.swift:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -89,7 +89,7 @@ class ViewController: UIViewController {
     //codes omitted...
 }
 ```
-{% endcode %}
+
 
 ### Setting up an observer
 
@@ -97,7 +97,7 @@ Then we should start observing for a particular notification. We will use the fo
 
 So let's add the following lines of code in `viewDidLoad()` method:
 
-{% code lineNumbers="true" %}
+
 ```swift
 class ViewController: UIViewController {
 
@@ -119,7 +119,7 @@ class ViewController: UIViewController {
     }
 }
 ```
-{% endcode %}
+
 
 Here what we are doing is:
 
@@ -130,7 +130,7 @@ Here what we are doing is:
 
 Here is the entire code of the ViewController.swift:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -180,7 +180,7 @@ class ViewController: UIViewController {
 
 
 ```
-{% endcode %}
+
 
 Now, our first screen will listen to any notification named "textFromSecondScreen" and deal with it in `notificationReceivedForTextChanged()` method.
 
@@ -190,7 +190,7 @@ Now, our first screen will listen to any notification named "textFromSecondScree
 
 We will build the following app in this module.
 
-<figure><img src="/gitbook-assets/app7.1.1.1.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/app7.1.1.1.gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Here,
 
@@ -205,13 +205,13 @@ Here,
 
 Now, let's create a new app in Xcode and name it 'App7.' Add the views and controllers of two screens:
 
-![](</gitbook-assets/Screenshot 2023-05-22 at 5.02.27 PM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-22 at 5.02.27 PM (1).png>)
 
 ### First Screen:
 
 #### FirstScreenView.swift
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  FirstScreen.swift
@@ -270,11 +270,11 @@ class FirstScreenView: UIView {
 }
 
 ```
-{% endcode %}
+
 
 #### ViewController.swift
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -308,13 +308,13 @@ class ViewController: UIViewController {
     }
 }
 ```
-{% endcode %}
+
 
 ### Second Screen:
 
 #### SecondScreenView.swift
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  SecondScreenView.swift
@@ -384,11 +384,11 @@ class SecondScreenView: UIView {
 }
 
 ```
-{% endcode %}
+
 
 #### SecondScreenViewController.swift
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  SecondScreenViewController.swift
@@ -427,7 +427,7 @@ class SecondScreenViewController: UIViewController {
 
 }
 ```
-{% endcode %}
+
 
 
 
@@ -435,7 +435,7 @@ class SecondScreenViewController: UIViewController {
 
 Now, let's open up the SecondScreenViewController.swift file. We need to initialize the Notification Center here as well. Let's add the following code:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  SecondScreenViewController.swift
@@ -457,13 +457,13 @@ class SecondScreenViewController: UIViewController {
 }
 
 ```
-{% endcode %}
+
 
 ### Posting data to Notification Center
 
 Now, when the user puts some text in `textFieldSendBack`, and taps `buttonSendBack`, we need to fetch the text and post the text to Notification Center. So, let's write the following codes in `onButtonSendBackTapped()` method:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  SecondScreenViewController.swift
@@ -501,7 +501,7 @@ class SecondScreenViewController: UIViewController {
 }
 
 ```
-{% endcode %}
+
 
 In `notificationCenter.post()` method, we are passing two parameters.
 
@@ -510,7 +510,7 @@ In `notificationCenter.post()` method, we are passing two parameters.
 
 So now let's look into the whole code of SecondScreenViewController.swift:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  SecondScreenViewController.swift
@@ -556,11 +556,11 @@ class SecondScreenViewController: UIViewController {
 }
 
 ```
-{% endcode %}
+
 
 Now let's run the app.
 
-<figure><img src="/gitbook-assets/app7.1.1.1.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/app7.1.1.1.gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 ### Notes:
 
@@ -584,7 +584,7 @@ In real life, the Notification Center is used very frequently, especially when w
 
 So, let's create a new Swift file (not a Cocoa touch class) called NotificationNames.swift.
 
-![](</gitbook-assets/Screenshot 2023-05-22 at 7.42.36 PM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-22 at 7.42.36 PM (1).png>)
 
 Write the following code inside it:
 
@@ -652,7 +652,7 @@ _**This way, we can easily store multiple identifiers/names without worrying abo
 
 ### Reference Code
 
-{% file src="/gitbook-assets/App7 (1).zip" %}
+[Download Project Archive](/gitbook-assets/App7 (1).zip)
 
 ---
 
@@ -692,10 +692,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **Clean Code & Async** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -731,7 +731,7 @@ Let's examine an example using pseudocode.
 
 So far, we have dealt with sequential API calls by calling the second API from within the callback of the first API. For example, in our contacts API,  to add a new contact and display the updated list of contacts, what we are doing is:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //MARK: It is a pseudocode, not Swift!!!
 
@@ -745,7 +745,7 @@ func addANewContact(contact:Contact){
     }
 }
 ```
-{% endcode %}
+
 
 In this pseudocode, when we call the callAddContactAPI() API, we must also call the callGetAllContactsAPI() API from its callback. It creates a spaghetti of code. Think about 3 or more sequential calls; How complex would that be!
 
@@ -768,7 +768,7 @@ So, we will do the same for App 11 here.
 
 Let's look at the following Swift code (you can run it in a Playground):
 
-{% code lineNumbers="true" %}
+
 ```swift
 import UIKit
 
@@ -792,7 +792,7 @@ func start() {
 
 start()
 ```
-{% endcode %}
+
 
 Let's look at what we have here:
 
@@ -806,11 +806,11 @@ Let's look at what we have here:
 
 Now, if we run the code, you will see the following:
 
-<figure><img src="/gitbook-assets/one (5).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/one (5).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Now, if we change the code like this:
 
-{% code lineNumbers="true" %}
+
 ```swift
 import UIKit
 
@@ -834,7 +834,7 @@ func start() {
 
 start()
 ```
-{% endcode %}
+
 
 We removed the print outside the Task block and put a new print statement in the block. It will ouput:
 
@@ -845,7 +845,7 @@ Hello from the asynchronous world, I waited 5 seconds to print this!
 
 So, within the **Task{...}** block, all asynchronous calls are sequenced one after another! For better clarity, run the following code in your playground:
 
-{% code lineNumbers="true" %}
+
 ```swift
 import UIKit
 
@@ -874,9 +874,9 @@ func start() {
 }
 start()
 ```
-{% endcode %}
 
-### <mark style="color:red;">Important notes:</mark>
+
+### Important notes:
 
 1. When we define an async function in Swift, we write async notation on the declaration.
 2. When we call an async function, we call it using await notation.
@@ -929,10 +929,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **1. Writing Clean Code For Asynchronous Operations** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -969,7 +969,7 @@ So far, we have the following structure of the project:
   * Contact API Coinfigs (Directory)
     * APIConfigs.swift
     * ContactsProtocol.swift
-  * Edit Screen (Directory) _—_ _<mark style="color:$info;">Added later for completeness</mark>_
+  * Edit Screen (Directory) _—_ _Added later for completeness_
     * Views (Directory)&#x20;
       * EditScreenView.swift
     * EditViewController.swift
@@ -977,11 +977,11 @@ So far, we have the following structure of the project:
     * Views (Directory)
       * ContactsTableViewCell.swift
       * MainScreenView.swift
-    * ContactListTableViewManager.swift _— <mark style="color:$info;">Added later with extension magic!</mark>_
+    * ContactListTableViewManager.swift _— Added later with extension magic!_
     * ContactsAPICalls.swift
-    * ContactsViewController.swift — _<mark style="color:$info;">Changed from ViewController using SceneDelegate</mark>_
-  * _<mark style="color:$info;">AppDelegate.swift</mark>_
-  * _<mark style="color:$info;">SceneDelegate.swift</mark>_
+    * ContactsViewController.swift — _Changed from ViewController using SceneDelegate_
+  * _AppDelegate.swift_
+  * _SceneDelegate.swift_
 
 ### Updating Contact API Protocol code
 
@@ -1012,7 +1012,7 @@ So we will now rewrite (a little) the current code for the API calls (getall, ad
 
 For example, the previous code for the getall API call in ContactAPICalls.swift file was:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //MARK: get all contacts call: getall endpoint...
 func getAllContacts(){
@@ -1069,7 +1069,7 @@ func getAllContacts(){
     }
 }
 ```
-{% endcode %}
+
 
 Here, our callback was on line 4, **completionHandler**. This closure gets returned when the network call is complete.&#x20;
 
@@ -1077,7 +1077,7 @@ Now, we need to get rid of the completionHandler since we will be managing the a
 
 So, the updated code becomes something like:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //MARK: get all contacts...
 func getAllContacts() async -> Bool{
@@ -1131,7 +1131,7 @@ func getAllContacts() async -> Bool{
     return false
 }
 ```
-{% endcode %}
+
 
 Let's compare the two codes and check what happened here.
 
@@ -1146,7 +1146,7 @@ It already looks less cluttered!&#x20;
 
 Now, let's see how we can call getAllContacts using the Task{} block from the ViewController. Let's check the corresponding code in ContactsViewController.swift file:
 
-{% code lineNumbers="true" %}
+
 ```swift
 import UIKit
 import Alamofire
@@ -1188,7 +1188,7 @@ class ContactsViewController: UIViewController {
     
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -1208,7 +1208,7 @@ Let's look at the updated delete and add contact API calls:
 
 #### addANewContact(contact: Contact)
 
-{% code lineNumbers="true" %}
+
 ```swift
 //MARK: add a new contact call: add endpoint...
 func addANewContact(contact: Contact) async -> Bool{
@@ -1252,11 +1252,11 @@ func addANewContact(contact: Contact) async -> Bool{
     }
 }
 ```
-{% endcode %}
+
 
 #### deleteContact(name: String)
 
-{% code lineNumbers="true" %}
+
 ```swift
 //MARK: delete the selected contact...
 func deleteContact(name: String) async -> Bool{
@@ -1297,11 +1297,11 @@ func deleteContact(name: String) async -> Bool{
     }
 }
 ```
-{% endcode %}
+
 
 Both calls were defined as asynchronous calls. Now, let's look into the code snippet where the user taps on the save button from the edit screen:
 
-{% code lineNumbers="true" %}
+
 ```swift
 @objc func editContactSaveButtonPressed(notification: Notification){
     let tuple: (Contact, String) = notification.object as! (Contact, String)
@@ -1317,7 +1317,7 @@ Both calls were defined as asynchronous calls. Now, let's look into the code sni
     }
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -1335,7 +1335,7 @@ Please download the whole project and study that to understand the concepts.
 
 ### Reference Code
 
-{% file src="/gitbook-assets/App 11 modular async.zip" %}
+[Download Project Archive](/gitbook-assets/App 11 modular async.zip)
 
 ---
 

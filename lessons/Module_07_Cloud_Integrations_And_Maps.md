@@ -11,10 +11,10 @@
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **CocoaPods** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -44,11 +44,11 @@ UIKit has thousands of modules, and we cannot learn all of them (you don't even 
 
 Also, many developers build third-party modules that give generalized solutions to tricky problems, like making HTTP connections to talk to remote APIs over the Internet, building reactive screens that can deal with different sensors, etc. So, these community-built modules are also shared with others through Cocoa Pods, so you do not have to reinvent the wheels. ([https://cocoapods.org/](https://cocoapods.org/)).
 
-<mark style="color:orange;">**Caution: You must be cautious since CocoaPods are not developed and released by Apple.**</mark>
+**Caution: You must be cautious since CocoaPods are not developed and released by Apple.**
 
-* <mark style="color:orange;">The cocoa pods are usually general-purpose modules, meaning they are the Jacks of all trades, masters of none. So, for a large application, they might create slight performance issues. For example, you might have just needed to read the byte stream from a remote API. If you use a fancy general-purpose cocoa pod library that can do many more tasks and would implement a lot of abstractions before it gives you the stream, it might be overkill for you. And if your app is time and performance sensitive, you better build your own module.</mark>
-* <mark style="color:orange;">Not all of the modules can be trusted since community members openly share these, and not many of us test all of them.</mark> <mark style="color:orange;">**Only use the most common and reputed ones. (Google might help you find them).**</mark>
-* <mark style="color:orange;">**Only use the ones that get updated often.**</mark> <mark style="color:orange;">Many of the modules in Cocoa Pods seem useful, yet weren't been updated in the last couple of years.</mark> <mark style="color:orange;">**Do not use them.**</mark> <mark style="color:orange;">First, Swift gets updates very</mark> _<mark style="color:orange;">**swiftly**</mark>_<mark style="color:orange;">, so even if the module works today, the underlying libraries are probably deprecated. So, if they stop working tomorrow, you need to build your own module anyway.</mark> \ <mark style="color:orange;">Secondly, older modules risk being vulnerable regarding security, privacy, and overall code safety.</mark>
+* The cocoa pods are usually general-purpose modules, meaning they are the Jacks of all trades, masters of none. So, for a large application, they might create slight performance issues. For example, you might have just needed to read the byte stream from a remote API. If you use a fancy general-purpose cocoa pod library that can do many more tasks and would implement a lot of abstractions before it gives you the stream, it might be overkill for you. And if your app is time and performance sensitive, you better build your own module.
+* Not all of the modules can be trusted since community members openly share these, and not many of us test all of them. **Only use the most common and reputed ones. (Google might help you find them).**
+* **Only use the ones that get updated often.** Many of the modules in Cocoa Pods seem useful, yet weren't been updated in the last couple of years. **Do not use them.** First, Swift gets updates very _**swiftly**_, so even if the module works today, the underlying libraries are probably deprecated. So, if they stop working tomorrow, you need to build your own module anyway. \ Secondly, older modules risk being vulnerable regarding security, privacy, and overall code safety.
 
 (Enough of being cautious) However, Cocoa Pods have some of the very best modules; those are even used in the industry. For example, AlamoFire is a beginner-friendly module that can be used to connect your app to the Internet and talk to the API servers. It is a general-purpose module that is used by millions of developers and very often gets updates and support from many contributors worldwide.
 
@@ -61,11 +61,11 @@ Here we will see how to integrate Cocoa Pod modules into our app.
 
 Let's visit the web page [https://cocoapods.org/](https://cocoapods.org/).
 
-{% embed url="https://cocoapods.org/" %}
+[View Resource](https://cocoapods.org/)
 
 It should open a page like this:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-24 at 12.27.12 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-24 at 12.27.12 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Now let's open the Terminal app on your Mac.
 
@@ -73,7 +73,7 @@ Now let's open the Terminal app on your Mac.
 * Type "Terminal," and it should find the Terminal app for you.
 * Press the return key to open it.
 
-<figure><img src="/gitbook-assets/9.1 (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/9.1 (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 ### **There are two ways of installing CocoaPods on your Mac:**
 
@@ -97,7 +97,7 @@ Now let's open the Terminal app on your Mac.
   * It should be installing **CocoaPods** on your Mac.
   * After it's done, put the following command `pod --version` into your terminal. It should show something like the following: `1.12.1`. If you see that, you are done installing CocoaPods on your Mac.
 
-<figure><img src="/gitbook-assets/9.two (2).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/9.two (2).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 
 
@@ -115,17 +115,17 @@ Let's create a new project App9 in Xcode. We will not write any code here; we wi
 * Press return. Now you should be in the project directory through Terminal.
 * Type `ls` and press return. You will see the project files in the Terminal.
 
-<figure><img src="/gitbook-assets/9.one (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/9.one (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 * Now, type in `pod init` command on Terminal.
 * Open Finder again. You will see that there is a file called **Podfile** has been created.
 
-<figure><img src="/gitbook-assets/9.4 (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/9.4 (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 * Now open the Podfile with your favorite text editor.
 * You will see a line `# Pods for App9`. You can add modules after the line.
 
-<figure><img src="/gitbook-assets/9.5 (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/9.5 (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 ### Adding a CocoaPod module, Alamofire, to our project
 
@@ -136,32 +136,32 @@ As I said before, Alamofire is a widely used module for beginners to manage Inte
 * Click on the button to the right, 'Site.'
 * It will load the main project site in Github.
 
-<figure><img src="/gitbook-assets/9.6 (2).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/9.6 (2).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 * If you scroll down to **Installation,** you will see the instructions of how to install Alamofire using CocoaPods. Copy the line that says: `pod 'Alamofire'`.
 * Open the Podfile we have seen before.
 * Paste the line after `# Pods for App9`.
 
-<figure><img src="/gitbook-assets/9.7.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/9.7.gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 * Now go back to the Terminal again. Go to the project directory if you are not there (see above if you forgot how to).
 * Put the following command onto the Terminal: `pod install`.
 * You will see, depending on the modules you added to the Podfile, it will install them. When it's done installing the pods, in this case, it is Alamofire, your project can use this CocoaPod module.
 
-<mark style="color:red;">**Now, the final step is to be able to use the module. The following part is very important. We often forget to do that and the modules do not work in code.**</mark>
+**Now, the final step is to be able to use the module. The following part is very important. We often forget to do that and the modules do not work in code.**
 
 * Now, what you have to do is, **close the Xcode project.**
 * Open the project directory again.
-* <mark style="color:red;">**Do not open the .xcodeproj file.**</mark> <mark style="color:green;">**Open the .xcworkspace file for this project.**</mark>
-* **Once you install a third-party module using CocoaPods, you must always use the workspace file (.**<mark style="color:green;">**xcworkspace**</mark>**) to open the project. Otherwise, you can't use the third-party modules.**
+* **Do not open the .xcodeproj file.** **Open the .xcworkspace file for this project.**
+* **Once you install a third-party module using CocoaPods, you must always use the workspace file (.****xcworkspace****) to open the project. Otherwise, you can't use the third-party modules.**
 
-<figure><img src="/gitbook-assets/9.9 (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/9.9 (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 **Now, we have completed adding the 'Alamofire' module to our project using CocoaPods.**
 
 ### Reference Code
 
-{% file src="/gitbook-assets/App9_cocoapods (1).zip" %}
+[Download Project Archive](/gitbook-assets/App9_cocoapods (1).zip)
 
 ---
 
@@ -201,10 +201,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **Firebase Auth & Firestore** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -236,19 +236,19 @@ Firebase is a Google service portal through which Google provides users with man
 
 ### Getting started with Firebase
 
-{% embed url="https://youtu.be/1I9KMcQ_XCg" %}
+[View Resource](https://youtu.be/1I9KMcQ_XCg)
 
 ### Enabling Authentication, Firestore, and Storage
 
-{% embed url="https://youtu.be/gdQDxqoTT5U" %}
+[View Resource](https://youtu.be/gdQDxqoTT5U)
 
 ### Adding Firebase to our App
 
-{% embed url="https://youtu.be/W0RGrDo4Bv4" %}
+[View Resource](https://youtu.be/W0RGrDo4Bv4)
 
 ### Firestore Data Structure
 
-{% embed url="https://youtu.be/eqW7KNChx5A" %}
+[View Resource](https://youtu.be/eqW7KNChx5A)
 
 ### Firebase Official Documentation
 
@@ -270,7 +270,7 @@ In this module, we will build App 12, which will be a contacts list app using,
 
 The overall goal is to build an app like the following:
 
-<figure><img src="/gitbook-assets/12.one (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/12.one (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 The app has the following features:
 
@@ -299,13 +299,13 @@ In this Project, we will keep the codes as modular as possible. So, let's create
 
 Then we create a new Group called 'Views' inside 'Main Screen.' Add a new file named MainScreenView.swift inside 'Views.' The structure looks like this:
 
-![](</gitbook-assets/Screenshot 2023-06-02 at 2.39.45 PM.png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-06-02 at 2.39.45 PM.png>)
 
 ### MainScreenView.swift
 
 Then open MainScreenView.swift, and the following code there:
 
-{% code lineNumbers="true" %}
+
 ```swift
 class MainScreenView: UIView {
     var profilePic: UIImageView!
@@ -396,7 +396,7 @@ class MainScreenView: UIView {
     }
 }
 ```
-{% endcode %}
+
 
 In the above code, you should have already worked with all the elements in your previous assignments. The only new concept here is to build a floating add button at the bottom right corner of the screen. If you look at lines 77 through 80, we are setting up the constraints for that button.
 
@@ -410,7 +410,7 @@ In the above code, you should have already worked with all the elements in your 
 
 We are displaying a table view for the contacts the user saves, so we need to design a cell layout for the table view. Let's create a new file inside `Main Screen -> Views ->` named 'ContactsTableViewCell.swift.' Then add the following code there:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ContactsTableViewCell.swift
@@ -520,7 +520,7 @@ class ContactsTableViewCell: UITableViewCell {
 }
 
 ```
-{% endcode %}
+
 
 The above code is pretty straightforward; we have used the same code before. However, we still need to set up an identifier for the cell to use in the table view.
 
@@ -544,7 +544,7 @@ class Configs{
 
 The file structure looks like the following:
 
-![](</gitbook-assets/Screenshot 2023-06-02 at 2.59.59 PM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-06-02 at 2.59.59 PM (1).png>)
 
 Great! Now that our view is set up, we can start patching the ViewController.
 
@@ -554,7 +554,7 @@ Great! Now that our view is set up, we can start patching the ViewController.
 
 Now we will patch up the view to the controller. Let's open up `MainScreen -> ViewController.swift` file, and add the following code there:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -586,7 +586,7 @@ class ViewController: UIViewController {
     }
 }
 ```
-{% endcode %}
+
 
 In the above code,
 
@@ -596,7 +596,7 @@ In the above code,
 
 If you run the app now, it'd look like this:
 
-![](</gitbook-assets/Screenshot 2023-06-02 at 3.09.07 PM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-06-02 at 3.09.07 PM (1).png>)
 
 ### Patching the Table View
 
@@ -604,7 +604,7 @@ We need to create a data model for the contacts to display them. Let's create a 
 
 Create a new Group named 'Data Models' and add Contact.swift file inside.
 
-![](</gitbook-assets/Screenshot 2023-06-02 at 3.17.58 PM (2).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-06-02 at 3.17.58 PM (2).png>)
 
 ```swift
 //
@@ -653,7 +653,7 @@ class ViewController: UIViewController {
 
 Let's separate the adoption of the protocols from ViewController.swift. So, let's create a file `Main Screen -> ContactsTableViewManager.swift` and write the following code there:
 
-![](</gitbook-assets/Screenshot 2023-06-02 at 3.24.55 PM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-06-02 at 3.24.55 PM (1).png>)
 
 ```swift
 //
@@ -719,7 +719,7 @@ class ViewController: UIViewController {
 
 Now, it's time to set up the authentication for the app. We will use the right navigation bar buttons to manage the sign-in, register, and logout operations. Before we set up those buttons, let's write the logic to handle the authentication states in the app. Let's open ViewCOntroller.swift file and write the following code there:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -767,7 +767,7 @@ class ViewController: UIViewController {
     }
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -869,7 +869,7 @@ Let's add a new group in the file navigator, 'Add Contact Screen.' Create a file
 
 Create a sub-group of 'Add Contact Screen' named 'Views' and create 'AddContactView.swift' file inside it.
 
-![](</gitbook-assets/Screenshot 2023-06-02 at 11.30.10 PM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-06-02 at 11.30.10 PM (1).png>)
 
 ### AddContactView.swift
 
@@ -968,7 +968,7 @@ The above code is straightforward as well. We have four UI elements, three text 
 
 Open the 'AddContactViewController.swift' file. Now let's put the following code there:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  AddContactViewController.swift
@@ -1023,7 +1023,7 @@ class AddContactViewController: UIViewController {
         
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -1042,7 +1042,7 @@ In the above code:
 
 Open `DataModels -> Contact.swift` and update it like the following:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  Contact.swift
@@ -1068,7 +1068,7 @@ struct Contact: Codable{
 }
 
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -1080,7 +1080,7 @@ In the above code:
 
 Now, let's put the following code to AddContactViewController.swift file:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  AddContactViewController.swift
@@ -1119,7 +1119,7 @@ class AddContactViewController: UIViewController {
     }       
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -1137,7 +1137,7 @@ In the above code:
 
 We can easily add the progress indicator view when storing the contact in Firestore. Let's add the following code to AddContactViewController.swift:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  AddContactViewController.swift
@@ -1198,7 +1198,7 @@ extension AddContactViewController:ProgressSpinnerDelegate{
     }
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -1210,7 +1210,7 @@ In the above code:
 
 Once the floating add contact button is tapped, we need to display the add contact screen. So, let's add the following lines of code to ViewController.swift file:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -1244,7 +1244,7 @@ class ViewController: UIViewController {
     }
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -1253,13 +1253,13 @@ In the above code:
 
 Now, if we run the app, we will see:
 
-<figure><img src="/gitbook-assets/12.seven (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/12.seven (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 If we look at the Firestore console, we will see the following:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-06-03 at 1.06.35 AM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-06-03 at 1.06.35 AM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
-<figure><img src="/gitbook-assets/Screenshot 2023-06-03 at 1.06.45 AM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-06-03 at 1.06.45 AM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 You can see that:
 
@@ -1278,7 +1278,7 @@ So we need to add an observer for Firestore contacts list updates when there is 
 
 We need to update `handleAuth` (the handler to handle authentication state changes) in ViewController.swift to add an observer. Open ViewController.swift and add the following code:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -1340,7 +1340,7 @@ class ViewController: UIViewController {
 
 
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -1357,15 +1357,15 @@ In the above code:
 
 Now let's run the app again.
 
-<figure><img src="/gitbook-assets/12.ten (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/12.ten (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
-### <mark style="color:purple;">**YAY!!! We built our first app using Firebase!!!**</mark>
+### **YAY!!! We built our first app using Firebase!!!**
 
 
 
 ### Reference Code
 
-{% file src="/gitbook-assets/App12 (1).zip" %}
+[Download Project Archive](/gitbook-assets/App12 (1).zip)
 
 
 
@@ -1411,10 +1411,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **Firebase Storage** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -1450,7 +1450,7 @@ We will extend App 12 to store images in Firestore Storage. We will do the follo
 * Once we create the profile, we have to store the profile photo in Firebase Storage.
 * Then, when we are on the main screen, we should see the profile photo loaded on the Screen. Like the following:
 
-<figure><img src="/gitbook-assets/13.one (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/13.one (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 
 
@@ -1468,7 +1468,7 @@ We need to update the Register Screen's view to accommodate the profile photo. L
 
 And then update the constraints to accommodate the new elements on the screen.
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  RegisterView.swift
@@ -1556,13 +1556,13 @@ class RegisterView: UIView {
 }
 
 ```
-{% endcode %}
+
 
 ### Patching RegisterViewController to Pick Photo
 
 Now we update the RegisterViewController.swift:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  RegisterViewController.swift
@@ -1628,7 +1628,7 @@ class RegisterViewController: UIViewController {
 }
 
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -1643,7 +1643,7 @@ We still need to adopt the protocols related to PHPickerView, and UIImagePicker.
 
 Let's create a new file PhotoManager.swift in `Register Screen` group and put the following code in it:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  PhotoManager.swift
@@ -1702,13 +1702,13 @@ extension RegisterViewController: UINavigationControllerDelegate, UIImagePickerC
     }
 }
 ```
-{% endcode %}
+
 
 In the above code, we save the selected image in `pickedImage` variable (on lines 31 and 51).
 
 Now that the Photo Pickers are integrated let's run the app. We should see the following:
 
-<figure><img src="/gitbook-assets/13.two (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/13.two (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 **Note: we are making 'pick a profile photo' for the new user optional. So, a user can be created without even picking a photo.**
 
@@ -1747,7 +1747,7 @@ class RegisterViewController: UIViewController {
 
 Let's open the RegisterFirebaseManager.swift file and write the following code:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  RegisterFirebaseManager.swift
@@ -1817,7 +1817,7 @@ extension RegisterViewController{
 }
 
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -1863,11 +1863,11 @@ Here we are just displaying the progress activity indicator, and then calling th
 
 Now! If you run the app again, you'll see:
 
-<figure><img src="/gitbook-assets/13.four (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/13.four (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Let's look into the FirebaseStorage console:
 
-<figure><img src="/gitbook-assets/13.five (2).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/13.five (2).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 So the files are getting uploaded. Now we need to display the images, and then it's done.
 
@@ -1879,11 +1879,11 @@ Now, we know the download URL of the profile photo of the logged-in user. We wil
 
 We first add a custom utility for the UIImageView class using `extension` keyword. Let's create a file named 'ImageViewUtils.swift'.
 
-<figure><img src="/gitbook-assets/Screenshot 2023-06-05 at 6.52.34 PM (1).png" alt="" width="345"><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-06-05 at 6.52.34 PM (1).png" alt="Educational illustration for iOS concept" width="345"><figcaption></figcaption></figure>
 
 Put the following code there:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ImageViewUtils.swift
@@ -1911,7 +1911,7 @@ extension UIImageView {
     }
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -1923,7 +1923,7 @@ Now, we need to open ViewController.swift file and scroll down to `handleAuth`.
 
 Let's add the following couple of lines of code in the file:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -1965,7 +1965,7 @@ class ViewController: UIViewController {
 
 
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -1973,7 +1973,7 @@ In the above code:
 
 Let's run the app now.
 
-<figure><img src="/gitbook-assets/13.seven (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/13.seven (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 ### Great!!! We now know how to store and retrieve an image using Firebase Storage.
 
@@ -1985,7 +1985,7 @@ Let's run the app now.
 
 ### Reference Code
 
-{% file src="/gitbook-assets/App13(App 12 extension with Storage) (1).zip" %}
+[Download Project Archive](/gitbook-assets/App13(App 12 extension with Storage) (1).zip)
 
 ---
 
@@ -2025,10 +2025,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **MapKit & Location** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -2069,11 +2069,11 @@ Our landing screen will be a Map screen. In the first step, we will have a butto
 
 Let's create a file named MapView.swift.&#x20;
 
-![](</gitbook-assets/Screenshot 2023-06-14 at 11.20.25 AM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-06-14 at 11.20.25 AM (1).png>)
 
 Let's put the following code in the file:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  MapView.swift
@@ -2165,7 +2165,7 @@ class MapView: UIView {
     }
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -2211,15 +2211,15 @@ class ViewController: UIViewController {
 
 Let's run the app now.
 
-<figure><img src="/gitbook-assets/Screenshot 2023-06-14 at 11.38.02 AM.png" alt="" width="188"><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-06-14 at 11.38.02 AM.png" alt="Educational illustration for iOS concept" width="188"><figcaption></figcaption></figure>
 
 ### Location Manager
 
-Now we will work on fetching the current location and moving the camera (map frame) to that location. Let's create a new file named LocationManager.swift. ![](</gitbook-assets/Screenshot 2023-06-14 at 12.15.25 PM.png>)
+Now we will work on fetching the current location and moving the camera (map frame) to that location. Let's create a new file named LocationManager.swift. ![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-06-14 at 12.15.25 PM.png>)
 
 Let's add the following code to the file:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  LocationManager.swift
@@ -2260,7 +2260,7 @@ extension ViewController: CLLocationManagerDelegate{
     }
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -2286,7 +2286,7 @@ We need to implement the logic when the `buttonCurrentLocation` is tapped by the
 
 The code so far in ViewController.swift file is:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -2323,7 +2323,7 @@ class ViewController: UIViewController {
 
 }
 ```
-{% endcode %}
+
 
 On lines 29 through 31, we center the map view to the current location with a radius of 1000 meters.&#x20;
 
@@ -2333,7 +2333,7 @@ On lines 29 through 31, we center the map view to the current location with a ra
 
 Let's open ViewController.swift file and add the following extension to enable centering to the current location:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -2363,7 +2363,7 @@ extension MKMapView{
 }
 
 ```
-{% endcode %}
+
 
 In the above code,
 
@@ -2390,7 +2390,7 @@ When the app loads, it still loads the entire North America. So, we need to zoom
 
 ### Setting up Info.plist to allow the location access
 
-<figure><img src="/gitbook-assets/14.one.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/14.one.gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 * Let's open Info.plist of the project.&#x20;
 * Add a new row
@@ -2403,19 +2403,19 @@ The emulator location is often set up as 'none' by default. In that case, it wil
 
 * When the simulator is running, click on the Simulator Menu -> Features - > Location. You will see this:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-06-14 at 6.02.27 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-06-14 at 6.02.27 PM.png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 * You can select 'Custom Location...' option to put your preferred coordinate to simulate the current location.
 
 Let's run the app now.
 
-<figure><img src="/gitbook-assets/14.six.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/14.six.gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 
 
 ### Code so far
 
-{% file src="/gitbook-assets/App14_phase1.zip" %}
+[Download Project Archive](/gitbook-assets/App14_phase1.zip)
 
 
 
@@ -2423,13 +2423,13 @@ Let's run the app now.
 
 In this module, we will learn how to annotate a place in a particular coordinate on the map view. For example, we can annotate Northeastern University on the map view like the following:
 
-<figure><img src="/gitbook-assets/14.sixty.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/14.sixty.gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 ### Defining a Place class with MKAnnotation
 
 We will define a class named Place, adopting the MKAnnotation protocol to annotate places on the map view. So let's create a new file named 'Place.swift' and put the following code there:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  Place.swift
@@ -2468,7 +2468,7 @@ class Place: NSObject, MKAnnotation {
     }
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -2491,7 +2491,7 @@ In the above code:
 
 Let's open the ViewController.swift file, and put the following code there:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -2525,7 +2525,7 @@ class ViewController: UIViewController {
 }
 //codes omitted...
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -2534,7 +2534,7 @@ In the above code:
 
 Let's run the app.&#x20;
 
-<figure><img src="/gitbook-assets/14.sixty1.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/14.sixty1.gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 You can see there is a red bubble on the place `northeastern`. That is the placemark we talked about thus far.
 
@@ -2544,7 +2544,7 @@ Now to be able to interact with the bubble, we need to adopt a protocol `MKMapVi
 
 Let's create a new file MapAnnotationDelegate.swift and put the following code there:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  MapAnnotationDelegate.swift
@@ -2569,7 +2569,7 @@ extension ViewController: MKMapViewDelegate{
 }
 
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -2580,7 +2580,7 @@ In the above code:
 
 Let's put the following code in the `mapView()` method for `viewFor` (first method in the above code):
 
-{% code lineNumbers="true" %}
+
 ```swift
 func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation)
     -> MKAnnotationView? {
@@ -2603,7 +2603,7 @@ func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation)
     return view
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -2618,7 +2618,7 @@ In the above code:
 
 Let's put the following code in the `mapView()` method for `calloutAccessoryControlTapped` (second method):
 
-{% code lineNumbers="true" %}
+
 ```swift
 func mapView(_ mapView: MKMapView, 
     annotationView view: MKAnnotationView, 
@@ -2643,7 +2643,7 @@ func mapView(_ mapView: MKMapView,
     present(ac, animated: true)
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -2659,13 +2659,13 @@ We have a final task to do. We need to patch the delegate of the mapView to View
 
 Let's run the app.&#x20;
 
-<figure><img src="/gitbook-assets/14.sixty4.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/14.sixty4.gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 We first load the screen and display the annotation for Northeastern. Then we change the current simulator location to Apple's headquarters location.  Then we try the navigation with annotation. It opens the Apple Map, and we can drive!
 
 ### Code so far
 
-{% file src="/gitbook-assets/App14 Phase2.zip" %}
+[Download Project Archive](/gitbook-assets/App14 Phase2.zip)
 
 
 
@@ -2677,7 +2677,7 @@ At this point, we will add a Bottom Search Sheet to find the places around and n
 
 First, let's add a search button at the bottom of the Map Screen. Open MapView.swift file, and put the following code to add the search button and its constraints:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  MapView.swift
@@ -2730,11 +2730,11 @@ class MapView: UIView {
 }
 
 ```
-{% endcode %}
+
 
 Now, let's create the files related to the Bottom Search Sheet in the project: SearchViewController.swift, SearchBottomSheet.swift, SearchTableViewCell.swift, and SearchTableViewManager.swift.&#x20;
 
-![](</gitbook-assets/Screenshot 2023-06-15 at 1.31.59 PM.png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-06-15 at 1.31.59 PM.png>)
 
 Then we set up the Bottom Search Sheet following the example in [Broken link](broken-reference "mention").&#x20;
 
@@ -2744,7 +2744,7 @@ Then we set up the Bottom Search Sheet following the example in [Broken link](br
 
 Let's add the following code to the file:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  SearchViewController.swift
@@ -2786,13 +2786,13 @@ extension SearchViewController: UISearchBarDelegate{
     }
 }
 ```
-{% endcode %}
+
 
 ### SearchBottomSheet.swift
 
 Let's add the following code to the file:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  SearchBottomSheet.swift
@@ -2847,13 +2847,13 @@ class SearchBottomSheet: UIView {
     }
 }
 ```
-{% endcode %}
+
 
 ### SearchTableViewCell.swift
 
 Let's add the following code to the file:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  SearchTableViewCell.swift
@@ -2911,13 +2911,13 @@ class SearchTableViewCell: UITableViewCell {
 
 }
 ```
-{% endcode %}
+
 
 ### SearchTableViewManager.swift
 
 Let's add the following code to the file:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  SearchTableViewManager.swift
@@ -2945,7 +2945,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
     }
 }
 ```
-{% endcode %}
+
 
 ### Displaying the Bottom Search Sheet
 
@@ -2953,7 +2953,7 @@ We need to add an action to the search button in ViewController. And then displa
 
 Let's add the following code in ViewController.swift file:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -2996,7 +2996,7 @@ class ViewController: UIViewController {
 
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -3007,7 +3007,7 @@ In the above code:
 
 If we run the app now:
 
-<figure><img src="/gitbook-assets/14.seventy.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/14.seventy.gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 So, our bottom search sheet is working!
 
@@ -3015,7 +3015,7 @@ So, our bottom search sheet is working!
 
 Here we have to type something on the search bar, and depending on what we type, it should display the list of related places in the search results table view. So, let's open SearchViewController.swift and put in the following code to add a delegate to mapview:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  SearchViewController.swift
@@ -3045,15 +3045,15 @@ extension SearchViewController: UISearchBarDelegate{
     }
 }
 ```
-{% endcode %}
+
 
 In the above code, on line 13, we declare a delegate variable to the ViewController where the map view is.
 
-Now, let's create a new file named LoadPlaces.swift in the group "Map Screen." ![](</gitbook-assets/Screenshot 2023-06-15 at 7.40.50 PM.png>)
+Now, let's create a new file named LoadPlaces.swift in the group "Map Screen." ![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-06-15 at 7.40.50 PM.png>)
 
 Let's write the following code in the file:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  LoadPlaces.swift
@@ -3096,7 +3096,7 @@ extension ViewController{
     }
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -3110,7 +3110,7 @@ In the above code:
 
 Now, let's open SearchViewController.swift file again and call `loadPlacesAround()` method when the user type something:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  SearchViewController.swift
@@ -3138,13 +3138,13 @@ extension SearchViewController: UISearchBarDelegate{
 }
 
 ```
-{% endcode %}
+
 
 In the above code, on line 18, we call the `loadPlacesAround(query: searchText)` method of map screen using the delegate. We send the text the user writes on the search bar.
 
 We need to update ViewController.swift file to initialize the delegateToMapView variable. So, let's initialize it as the following code:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -3174,13 +3174,13 @@ class ViewController: UIViewController {
 }
 //codes omitted...
 ```
-{% endcode %}
+
 
 In the above code, on line 14, we initialize `delegateToMapView` variable of the search view controller to `self`.
 
 Let's run the app.
 
-<figure><img src="/gitbook-assets/14.seventy1.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/14.seventy1.gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 The results are getting printed in the output area in the above demo. The results are related to the search query "coffee." It fetches all the coffee shops around.
 
@@ -3192,7 +3192,7 @@ Now we have the search results in the map screen, so we need to send them back t
 
 Open SearchViewController.swift file, and put the following code there:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  SearchViewController.swift
@@ -3239,7 +3239,7 @@ extension SearchViewController: UISearchBarDelegate{
     }
 }
 ```
-{% endcode %}
+
 
 In the above code:&#x20;
 
@@ -3249,7 +3249,7 @@ In the above code:&#x20;
 
 Let's open SearchTableViewManager.swift file and add the following code to display the map items on the cells:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  SearchTableViewManager.swift
@@ -3273,7 +3273,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
     //codes omitted...
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -3283,7 +3283,7 @@ In the above code:
 
 Let's open LoadPlaces.swift file, and put the following code there:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  LoadPlaces.swift
@@ -3332,7 +3332,7 @@ extension ViewController{
     }
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -3341,13 +3341,13 @@ In the above code:
 
 Let's run the app again:
 
-<figure><img src="/gitbook-assets/14.seventy3.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/14.seventy3.gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 **Great! We can see the search results!!! Now can we show the place on the map when we select it on the table view?**
 
 ### Code so far
 
-{% file src="/gitbook-assets/App14_phase3.zip" %}
+[Download Project Archive](/gitbook-assets/App14_phase3.zip)
 
 
 
@@ -3359,7 +3359,7 @@ The task seems complicated, but we already have the code to display the annotati
 
 Let's open ViewController.swift file and add a method `showSelectedPlace(placeItem: MKMapItem)` there:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -3394,7 +3394,7 @@ class ViewController: UIViewController {
 }
 //codes omitted...
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -3405,7 +3405,7 @@ In the above code:
 
 Now we need to call `showSelectedPlace()` method when a search result cell is tapped from the bottom search sheet. So, let's open SearchTableViewManager.swift file and update the tableView() method with parameter `didSelectRowAt.`
 
-{% code lineNumbers="true" %}
+
 ```swift
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
     //codes omitted...
@@ -3416,13 +3416,13 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
     }
 }
 ```
-{% endcode %}
+
 
 In the above code, on line 5, we call the `showSelectedPlace()` method with the selected place.
 
 Nice! Let's try our app now.
 
-<figure><img src="/gitbook-assets/14.seventy6.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/14.seventy6.gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Awesome!!! Now we built a pretty useful basic place search application!
 
@@ -3430,7 +3430,7 @@ Awesome!!! Now we built a pretty useful basic place search application!
 
 ### Reference Code
 
-{% file src="/gitbook-assets/App14.zip" %}
+[Download Project Archive](/gitbook-assets/App14.zip)
 
 ---
 
@@ -3470,10 +3470,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **12.5. Implementing Register and Sign In** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -3501,7 +3501,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 Our next goal is to build the functionalities so that a user can register a new account and sign in to the account like the following:
 
-<figure><img src="/gitbook-assets/12.two.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/12.two.gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 * We need to add a right bar button to enable sign-in.
 * If the user clicks on the bar button, the app should show an alert to give the user an option to put their email and password. It should also give them the option to register a new account.
@@ -3517,9 +3517,9 @@ We add two buttons on the right navigation bar, triggering the same action. We d
 
 We will separate the logic of creating and handling the right bar button actions from the ViewController. So, let's create a new file `Main Screen -> RightBarButtonManager.swift` and write the following code there:
 
-![](</gitbook-assets/Screenshot 2023-06-02 at 4.37.14 PM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-06-02 at 4.37.14 PM (1).png>)
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  RightBarButtonManager.swift
@@ -3579,7 +3579,7 @@ extension ViewController{
     
 }
 ```
-{% endcode %}
+
 
 ### setupRightBarButton(isLoggedin: Bool)
 
@@ -3595,7 +3595,7 @@ When the sign-in bar button is tapped, we need to display an alert with the text
 
 So we will write the following logic inside the `onSignInBarButtonTapped()` method.
 
-{% code lineNumbers="true" %}
+
 ```swift
 @objc func onSignInBarButtonTapped(){
     let signInAlert = UIAlertController(
@@ -3648,7 +3648,7 @@ So we will write the following logic inside the `onSignInBarButtonTapped()` meth
     self.dismiss(animated: true)
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -3657,7 +3657,7 @@ In the above code:
 * Then we will add the actions to the alert controller (lines 37-38).
 * Then we present the alert controller (lines 40-46). In the completion closure, we write logic to handle if the user taps outside the alert. We need to dismiss the alert if the user taps outside. So, we add a Gesture Recognizer on the `superview` (the screen which popped this alert) of the alert controller. If the user taps on the super view, the alert gets dismissed.
 
-<mark style="color:orange;">**We will keep the sign-in and register logic empty and return to that momentarily.**</mark>
+**We will keep the sign-in and register logic empty and return to that momentarily.**
 
 ### onLogOutBarButtonTapped()
 
@@ -3729,7 +3729,7 @@ See in the above code:
 
 Now run the app again!
 
-<figure><img src="/gitbook-assets/12.three (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/12.three (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 
 
@@ -3737,7 +3737,7 @@ Now run the app again!
 
 If you noticed, when we clicked on the Register button, the UI was stuck for a few seconds as we were waiting for the create user operation to complete. In these cases, the user may get confused if we do not give the users a cue that the backend is working on their request. So we want to implement a loading screen with a progress indicator so that the user can understand the app is working in the backend to complete their request. Like this:
 
-<figure><img src="/gitbook-assets/123.four (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/123.four (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 ### Defining a Progress Activity Indicator
 
@@ -3745,13 +3745,13 @@ We will use a UI element in iOS called `UIActivityIndicatorView` to display the 
 
 Let's create a new group called 'Progress Indicator' in the files navigator of Xcode. Then add two files in the group: ProgressSpinnerViewController.swift and ProgressSpinnerDelegate.swift.
 
-![](</gitbook-assets/Screenshot 2023-06-02 at 9.23.32 PM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-06-02 at 9.23.32 PM (1).png>)
 
 ### ProgressSpinnerViewController.swift
 
 Let's open ProgressSpinnerViewController.swift file and put the following code there:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ProgressSpinnerViewController.swift
@@ -3783,7 +3783,7 @@ class ProgressSpinnerViewController: UIViewController {
 
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -3852,11 +3852,11 @@ class RegisterViewController: UIViewController {
 
 ### **Secondly,** let's create a new file, 'RegisterProgressIndicatorManager.swift' in the 'Register Screen' group.
 
-![](</gitbook-assets/Screenshot 2023-06-02 at 9.58.51 PM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-06-02 at 9.58.51 PM (1).png>)
 
 Add the following code there:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  RegisterProgressIndicatorManager.swift
@@ -3881,7 +3881,7 @@ extension RegisterViewController:ProgressSpinnerDelegate{
     }
 }
 ```
-{% endcode %}
+
 
 In the above code, we adopt the `ProgressSpinnerDelegate` protocol and define the show and hide methods.
 
@@ -3903,7 +3903,7 @@ Where do we handle those tasks? - In RegisterFirebaseManager.swift file, right?
 
 So let's edit the RegisterFirebaseManager.swift file and add a couple of lines like the following:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  RegisterFirebaseManager.swift
@@ -3958,7 +3958,7 @@ extension RegisterViewController{
     }
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -3967,7 +3967,7 @@ In the above code:
 
 If you run the application now, you will see that the progress indicator is working!
 
-<figure><img src="/gitbook-assets/12.five (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/12.five (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 
 
@@ -3975,7 +3975,7 @@ If you run the application now, you will see that the progress indicator is work
 
 Let's design the Register Screen to let the user create an account. It will look like the following:
 
-<figure><img src="/gitbook-assets/12.three.2 (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/12.three.2 (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 The Register Screen design is very simple; we have three text fields to put the name, email, and password so that the user can create an account with them.
 
@@ -3983,7 +3983,7 @@ The Register Screen design is very simple; we have three text fields to put the 
 
 Let's create a new Group named "Register Screen." Create another group "Views" inside the "Register Screen" group. Add a file named "RegisterView.swift" in it.
 
-![](</gitbook-assets/Screenshot 2023-06-02 at 5.55.46 PM (2).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-06-02 at 5.55.46 PM (2).png>)
 
 Put the following code to create the view for the Register screen:
 
@@ -4081,7 +4081,7 @@ The above code is very straightforward to display three text fields: name, email
 
 Then let's create RegisterViewController.swift file to write code for controlling the Register screen.
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  RegisterViewController.swift
@@ -4116,7 +4116,7 @@ class RegisterViewController: UIViewController {
     
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -4126,7 +4126,7 @@ In the above code:
 
 We will separate the code for Firebase from the controller. Let's create a new file `Register Screen -> RegisterFirebaseManager.swift`.
 
-![](</gitbook-assets/Screenshot 2023-06-02 at 7.09.24 PM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-06-02 at 7.09.24 PM (1).png>)
 
 In this file, we will handle the Firebase Authentication procedures.
 
@@ -4141,7 +4141,7 @@ We have to do the following tasks:
 
 So, let's write the following code in RegisterFirebaseManager.swift file:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  RegisterFirebaseManager.swift
@@ -4190,11 +4190,11 @@ extension RegisterViewController{
 }
 
 ```
-{% endcode %}
+
 
 In the above code:
 
-### <mark style="color:purple;">(Creating a new User in Firebase)</mark>
+### (Creating a new User in Firebase)
 
 * The `registerNewAccount()` method creates a new account using Firebase Authentication service.
   * You have to import the authentication library `FirebaseAuth` (line 9).
@@ -4207,7 +4207,7 @@ In the above code:
       * Please note we cannot set the profile data in a FirebaseAuth account while creating the account. It can create just an account with the email and password. Then we have to update the profile with the name provided by the user in `setNameOfTheUserInFirebaseAuth()` method.
     * Else we have to handle the error.
 
-### <mark style="color:purple;">(Updating a User Profile in Firebase)</mark>
+### (Updating a User Profile in Firebase)
 
 * The `setNameOfTheUserInFirebaseAuth(name: String)` method updates the profile of the created user. (See [https://firebase.google.com/docs/auth/ios/manage-users#update\_a\_users\_profile](https://firebase.google.com/docs/auth/ios/manage-users#update\_a\_users\_profile)).
   * On line 33, we create a change request for the current FirebaseAuth user.
@@ -4217,7 +4217,7 @@ In the above code:
     * If there is no error, the response returns a nil error. So, here we can certainly say that the profile has been updated.
     * Since all the tasks are done, we can close the register screen and return to the main screen (line 38).
 
-<mark style="color:red;">**Very important:**</mark> <mark style="color:red;">Firebase calls are asynchronous, requiring network communications and server processing.</mark> <mark style="color:red;">**So the sequence of events is very important. You must wait until one operation is done, then conduct the next operation.**</mark> <mark style="color:red;">We cannot create a Firebase user and update profile operations together. We have to wait for the user to be created first. If the response is successful and the user is created, we update the profile. You must think carefully before writing codes and maintain the chain of Firebase calls correctly to avoid errors.</mark>
+> **Very important:** Firebase calls are asynchronous, requiring network communications and server processing. **So the sequence of events is very important. You must wait until one operation is done, then conduct the next operation.** We cannot create a Firebase user and update profile operations together. We have to wait for the user to be created first. If the response is successful and the user is created, we update the profile. You must think carefully before writing codes and maintain the chain of Firebase calls correctly to avoid errors.
 
 ### RegisterViewController.swift
 
@@ -4269,11 +4269,11 @@ extension ViewController{
 
 If you run the app now, you will see:
 
-<figure><img src="/gitbook-assets/12.three.3 (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/12.three.3 (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 If you now look into the Firebase Authentication portal,
 
-<figure><img src="/gitbook-assets/Screenshot 2023-06-02 at 9.06.25 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-06-02 at 9.06.25 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 
 
@@ -4283,7 +4283,7 @@ Now it's time to sign in with an already created user.
 
 We just need to add a few lines of code inside `RightBarButtonManager.swift` file inside the `signInAction` alert action:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  RightBarButtonManager.swift
@@ -4330,7 +4330,7 @@ extension ViewController{
 
 
 ```
-{% endcode %}
+
 
 Here:
 
@@ -4339,13 +4339,13 @@ Here:
 
 If we run the app now, you will see:
 
-<figure><img src="/gitbook-assets/12.six (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/12.six (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
-_<mark style="color:purple;">**Can you display a progress indicator while the login operation is happening?**</mark>_
+_**Can you display a progress indicator while the login operation is happening?**_
 
 ### App12 code so far:
 
-{% file src="/gitbook-assets/App12_auth.zip" %}
+[Download Project Archive](/gitbook-assets/App12_auth.zip)
 
 ---
 

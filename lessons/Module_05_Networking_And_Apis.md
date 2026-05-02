@@ -11,10 +11,10 @@
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **HTTP & Networking** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -50,14 +50,14 @@ In this module, we will learn how an iOS app can talk to a server over the Inter
 
 Intro to HTTP
 
-{% embed url="https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d52f70dc-ac38-4530-9e9a-ae9e01243cec" %}
+[View Resource](https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d52f70dc-ac38-4530-9e9a-ae9e01243cec)
 
 HTTP stands for HyperText Transfer Protocol. It is used by two parties to transmit data between themselves over the Internet. For example, When you browse the web, your browser uses HTTP. The two parties are called:
 
 * **Client**: who requests data. For example, an app is requesting information about the user.
 * **Server**: who responds with the requested data. For example, the database server who responds to the app by sending the user information.
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-25 at 1.09.07 PM (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-25 at 1.09.07 PM (2).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 **The request from a client:** When a client sends a request to the server, it includes the following:
 
@@ -96,7 +96,7 @@ HTTP stands for HyperText Transfer Protocol. It is used by two parties to transm
 
 ### Installing Postman
 
-{% embed url="https://www.youtube.com/watch?v=v62mZZ6HG8Y" %}
+[View Resource](https://www.youtube.com/watch?v=v62mZZ6HG8Y)
 
 * Visit [this link](https://www.postman.com/downloads/?utm\_source=postman-home) to download Postman. Install it on your Mac by copying the extracted file into the Applications folder. Open it, create an account, and log in.
 * Then create a new collection by clicking on `+` icon on the top left corner. Then add requests to start testing.
@@ -107,7 +107,7 @@ HTTP stands for HyperText Transfer Protocol. It is used by two parties to transm
 
 Please watch the video to learn how to use Postman with an API.
 
-{% embed url="https://www.youtube.com/watch?v=0kQbmIaIvVk" %}
+[View Resource](https://www.youtube.com/watch?v=0kQbmIaIvVk)
 
 ### Contacts API details
 
@@ -134,7 +134,7 @@ Please watch the video to learn how to use Postman with an API.
 
 Our app should look like the following at the end.:
 
-<figure><img src="/gitbook-assets/10.one (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/10.one (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Let's create a new project in Xcode, "App10." And add Alamofire to the project using Cocoapods. ( See [9.-cocoa-pods](../9.-cocoa-pods/ "mention")).
 
@@ -161,7 +161,7 @@ So, let's add the following files:
 
 Let's add the following code to the MainScreenView.swift file:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  MainScreenView.swift
@@ -294,7 +294,7 @@ class MainScreenView: UIView {
 }
 
 ```
-{% endcode %}
+
 
 In the above code, we add three text fields as the sub-views of the bottom add view. Then we anchor the bottom add view to the bottom of the safe area. Then we anchor the table view to the top, leading and trailing anchors of the safe area. Finally, we anchor the bottom of the table view to the top of the bottom add view.
 
@@ -304,7 +304,7 @@ Look at `setupBottomAddView()`. Play with the attributes (color, margins, border
 
 In the ContactsTableViewCell.swift file, we define the view for each cell in the table view. Let's add the following code:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ContactsTableViewCell.swift
@@ -385,7 +385,7 @@ class ContactsTableViewCell: UITableViewCell {
 
 }
 ```
-{% endcode %}
+
 
 Look at `setupWrapperCellView()`. Play with the attributes (color, margins, border, etc.) to design it as you want to.
 
@@ -393,7 +393,7 @@ Look at `setupWrapperCellView()`. Play with the attributes (color, margins, bord
 
 Let's add load the view in the controller. Let's add the following code to ViewController.swift:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -421,11 +421,11 @@ class ViewController: UIViewController {
 }
 
 ```
-{% endcode %}
+
 
 If we run the app now, it will look like:
 
-![](</gitbook-assets/Screenshot 2023-05-25 at 7.42.51 PM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-25 at 7.42.51 PM (1).png>)
 
 
 
@@ -437,7 +437,7 @@ It's time to fetch the contacts' names and display them in our table view. We wi
 
 If you noticed, in our API, we are getting back text responses from the server. We will use Alamofire to process the responses. Before we do, let's define an array of Strings in our ViewController for populating the table view. That array will hold the names of the contacts returned by the API endpoint `getall`.
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -460,17 +460,17 @@ class ViewController: UIViewController {
 }
 
 ```
-{% endcode %}
+
 
 First, we need the API base URL to be set up. You can directly use the URL string in the call; however, it is always a better practice if you save these API details in a separate file as a static String, so that you can reuse that from any screen if you need to.
 
 Let's create a file named `APIConfigs.swift` under `App10` folder. It is a Swift class file, **not a CocoaTouch Class.**
 
-![](</gitbook-assets/Screenshot 2023-05-25 at 8.45.51 PM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-25 at 8.45.51 PM (1).png>)
 
 In APIConfig.swift, let's add the static constant for the base URL:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  Configs.swift
@@ -486,7 +486,7 @@ class APIConfigs{
     static let baseURL = "https://apis.sakibnm.work:8888/contacts/text/"
 }
 ```
-{% endcode %}
+
 
 You can access the base URL by writing `APIConfigs.baseURL` from anywhere in the project.
 
@@ -547,18 +547,18 @@ Let's look at the function `getAllContacs()` method definition:
 * Then we call the `responseString()` method for the request. We are handling text responses, right? So, we need to catch String-type data from the response we get from the server.
 * Then we write a closure `completionHandler` to deal with the data after we receive the response.\
   \
-  &#xNAN;_<mark style="color:orange;">**Please note any communication over the Internet is Asynchronous. That means we are dealing with data that are hosted probably hundreds if not thousands of miles away. So, it will take time to receive the response from the server after you send the request. It might feel like it's real-time, but logically, it's not. So, when we build apps that communicate over the Internet, we must be very careful dealing with it. We should not expect that we will receive the response right away.**</mark>_&#x20;
+  &#xNAN;_**Please note any communication over the Internet is Asynchronous. That means we are dealing with data that are hosted probably hundreds if not thousands of miles away. So, it will take time to receive the response from the server after you send the request. It might feel like it's real-time, but logically, it's not. So, when we build apps that communicate over the Internet, we must be very careful dealing with it. We should not expect that we will receive the response right away.**_&#x20;
 * In the closure, we print `response.result` to see what kind of data we received as the response. If you run the app now, It prints something like this:\
   &#xNAN;**`success("Alice Smith\nBob Smith\nDavid B\nAlex C\nMark W\n")`**
   * `success()` in the response means the request was successfully transmitted, and there was no network error.
   * See, we have  in between two consecutive names. The character  means a new line. So, we have to fetch the whole String and then use it.
 * **Also, the status code the response has is very important. We need to check if it is a 200-level or a 400-level code.**
-  * <mark style="color:green;">**200-level codes mean the request was valid, and we received a desirable response.**</mark>
-  * <mark style="color:red;">**400-level codes mean the request was incorrect, so we must handle the response appropriately to manage the UI elements properly.**</mark>
+  * **200-level codes mean the request was valid, and we received a desirable response.**
+  * **400-level codes mean the request was incorrect, so we must handle the response appropriately to manage the UI elements properly.**
 
 So, let's write the following code in the `completionHandler` closure taking care of the status codes and network errors:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //MARK: get all contacts...
 func getAllContacts(){
@@ -604,7 +604,7 @@ func getAllContacts(){
     }
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -620,46 +620,46 @@ In the above code:
 
 **Now, if we run the app, it will run, but you won't see any items printed.** If you check the outputs, you might see something like the following:
 
-{% code overflow="wrap" %}
+
 ```
 sessionTaskFailed(error: Error Domain=NSURLErrorDomain Code=-1022 "The resource could not be loaded because the App Transport Security policy requires the use of a secure connection." 
 ```
-{% endcode %}
 
-<mark style="color:red;">**By default, iOS does not allow HTTP connections without encryption. We should always use the connections through HTTPS.**</mark>
+
+**By default, iOS does not allow HTTP connections without encryption. We should always use the connections through HTTPS.**
 
 **However,** since my API is a dumb API, and I am using the API for demonstration purposes, I didn't go through the HTTPS configuration process. So, we need to enable unencrypted HTTP connections in our app.
 
 If you face this, you can solve this by doing the following:
 
-### <mark style="color:$info;">Enabling unencrypted HTTP in our app</mark>
+### Enabling unencrypted HTTP in our app
 
-* <mark style="color:$info;">We need to open</mark> <mark style="color:$info;"></mark><mark style="color:$info;">`Info.plist`</mark> <mark style="color:$info;"></mark><mark style="color:$info;">file from the File Navigator of the project.</mark>
-* <mark style="color:$info;">Right-click (control + click) on the empty space of</mark> <mark style="color:$info;"></mark><mark style="color:$info;">`Info.plist`</mark><mark style="color:$info;">.</mark>
-* <mark style="color:$info;">Select</mark> <mark style="color:$info;"></mark><mark style="color:$info;">`Add Row`</mark><mark style="color:$info;">.</mark>
-* <mark style="color:$info;">Search and Select "App Transport Security Settings."</mark>
-  * <mark style="color:$info;">Inside "App Transport Security Settings," add an attribute by clicking plus icon(</mark><mark style="color:$info;">`+`</mark><mark style="color:$info;">).</mark>
-  * <mark style="color:$info;">Set "Allow Arbitrary Loads" attribute's value to YES.</mark>
+* We need to open `Info.plist` file from the File Navigator of the project.
+* Right-click (control + click) on the empty space of `Info.plist`.
+* Select `Add Row`.
+* Search and Select "App Transport Security Settings."
+  * Inside "App Transport Security Settings," add an attribute by clicking plus icon(`+`).
+  * Set "Allow Arbitrary Loads" attribute's value to YES.
 
-<figure><img src="/gitbook-assets/10.12 (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/10.12 (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
-<mark style="color:$info;">It should now allow unencrypted HTTP.</mark>
+It should now allow unencrypted HTTP.
 
-<mark style="color:$info;">If we run the app now, it should print the following:</mark>
+If we run the app now, it should print the following:
 
-<mark style="color:$info;">**`["Alice Smith", "Bob Smith", "David B", "Alex C", "Mark W", ""]`**</mark><mark style="color:$info;">**.**</mark>
+**`["Alice Smith", "Bob Smith", "David B", "Alex C", "Mark W", ""]`****.**
 
-<mark style="color:$info;">**Interestingly, there is an empty String at the end.**</mark> <mark style="color:$info;"></mark><mark style="color:$info;">This happens because the server adds a  character at the end of the last user's name. So we need to remove it from the</mark> <mark style="color:$info;"></mark><mark style="color:$info;">`contactNames`</mark><mark style="color:$info;">.</mark>
+**Interestingly, there is an empty String at the end.** This happens because the server adds a  character at the end of the last user's name. So we need to remove it from the `contactNames`.
 
-<mark style="color:$info;">Let's add</mark> <mark style="color:$info;"></mark><mark style="color:$info;">`self.contactNames.removeLast()`</mark> <mark style="color:$info;"></mark><mark style="color:$info;">after line 18.</mark>
+Let's add `self.contactNames.removeLast()` after line 18.
 
-<mark style="color:$info;">Now, we have the perfect</mark> <mark style="color:$info;"></mark><mark style="color:$info;">`contactNames`</mark> <mark style="color:$info;"></mark><mark style="color:$info;">array to be displayed in the table view.</mark>
+Now, we have the perfect `contactNames` array to be displayed in the table view.
 
 ### Displaying data on the table view
 
 Now, let's adopt the protocols for the table view:
 
-{% code lineNumbers="true" %}
+
 ```swift
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -677,7 +677,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     }
 }
 ```
-{% endcode %}
+
 
 Then, set the delegate and data source in `viewDidLoad()` method.
 
@@ -704,7 +704,7 @@ If you run the app now, the table view remains empty. As I discussed before, the
 
 The final `getAllContacts()` method looks as follows:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //MARK: get all contacts...
 func getAllContacts(){
@@ -752,11 +752,11 @@ func getAllContacts(){
     }
 }
 ```
-{% endcode %}
+
 
 Let's run the app again. It should look like this:
 
-![](</gitbook-assets/Screenshot 2023-05-25 at 10.35.15 PM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-25 at 10.35.15 PM (1).png>)
 
 
 
@@ -768,7 +768,7 @@ Now it's time to add a new contact. We need to read the name, email, and phone n
 
 Let's open ViewController.swift file. Then add an action to `mainScreen.buttonAdd` (Add Contact button):
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -804,13 +804,13 @@ class ViewController: UIViewController {
     }
 }
 ```
-{% endcode %}
+
 
 Now let's define a struct `Contact` in a separate file. We will use this struct to create Swift contact objects for the API contacts.
 
-![](</gitbook-assets/Screenshot 2023-05-25 at 11.08.19 PM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-25 at 11.08.19 PM (1).png>)
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  Contact.swift
@@ -833,11 +833,11 @@ struct Contact{
     }
 }
 ```
-{% endcode %}
+
 
 Now, `onButtonAddTapped()` method, we will fetch the values from the text fields of the bottom add view. Let's write following code in `onButtonAddTapped()`:
 
-{% code lineNumbers="true" %}
+
 ```swift
 @objc func onButtonAddTapped(){
     //do the validations...
@@ -860,7 +860,7 @@ Now, `onButtonAddTapped()` method, we will fetch the values from the text fields
     }
 }
 ```
-{% endcode %}
+
 
 We unwrapped the optional values from the text fields and fetched the strings. Then we convert the phone number's text to an integer.
 
@@ -868,7 +868,7 @@ We unwrapped the optional values from the text fields and fetched the strings. T
 
 We need to use Alamofire to POST the new contact we created above to the server. We now write the following code in `addANewContact(contact: Contact)` method:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //MARK: add a new contact call: add endpoint...
 func addANewContact(contact: Contact){
@@ -922,7 +922,7 @@ func addANewContact(contact: Contact){
     }
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -941,7 +941,7 @@ func clearAddViewFields(){
 
 If you are still with me, we are done with adding a new contact. Let's run the app again.
 
-<figure><img src="/gitbook-assets/10.seven (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/10.seven (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Yay! we are done adding a new contact!
 
@@ -969,7 +969,7 @@ Here we are saying if the user selects a row, we will call the `getContactDetail
 
 Let's define the `getContactDetails()` method:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //MARK: get details of a contact...
     func getContactDetails(name: String){
@@ -1019,7 +1019,7 @@ Let's define the `getContactDetails()` method:
         }
     }
 ```
-{% endcode %}
+
 
 Here in the above code:
 
@@ -1029,7 +1029,7 @@ Here in the above code:
 
 Now let's write the code to display the alert in method `showDetailsInAlert():`
 
-{% code lineNumbers="true" %}
+
 ```swift
 func showDetailsInAlert(data: String){
     let parts = data.components(separatedBy: ",")
@@ -1052,13 +1052,13 @@ func showDetailsInAlert(data: String){
     
 }
 ```
-{% endcode %}
+
 
 In the above code, we split the data string into multiple parts to separate the name, email, and phone. Then we remove the whitespaces from each part's beginning and end, and display the alert using them.
 
 Let's run the app now.
 
-<figure><img src="/gitbook-assets/10.eight (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/10.eight (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 So, we are done writing codes for three API calls. **Can you do the 'delete'?**
 
@@ -1066,7 +1066,7 @@ So, we are done writing codes for three API calls. **Can you do the 'delete'?**
 
 ### Reference Code
 
-{% file src="/gitbook-assets/App10 (2).zip" %}
+[Download Project Archive](/gitbook-assets/App10 (2).zip)
 
 ---
 
@@ -1106,10 +1106,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **Working with JSON** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -1437,11 +1437,11 @@ class APIConfigs{
 
 The project file structure would look like this:
 
-![](</gitbook-assets/Screenshot 2023-05-26 at 4.05.44 PM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-26 at 4.05.44 PM (1).png>)
 
 Let's open the View Controller and write the initial controller code similar to App10.
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -1544,7 +1544,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     }
 }
 ```
-{% endcode %}
+
 
 #### Representing the 'getall' JSON with Swift (ContactNames.swift)
 
@@ -1573,7 +1573,7 @@ struct ContactNames{
 
 Open ViewController.swift file, and let's write the following code in `getAllContacts()`:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //MARK: get all contacts call: getall endpoint...
 func getAllContacts(){
@@ -1630,7 +1630,7 @@ func getAllContacts(){
     }
 }
 ```
-{% endcode %}
+
 
 In the above code, we are
 
@@ -1645,7 +1645,7 @@ In the above code, we are
 
 **Now, this code will not work yet. You will get an error like this:**
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-26 at 4.35.09 PM (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-26 at 4.35.09 PM (1) (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 ### Adopting Codable protocol
 
@@ -1675,7 +1675,7 @@ Now, the error will go away.
 
 (Make sure you enable unencrypted HTTP) Let's run the app. It will show us the current contacts.
 
-![](</gitbook-assets/Screenshot 2023-05-26 at 5.26.46 PM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-26 at 5.26.46 PM (1).png>)
 
 Great! We are done with **getall.**
 
@@ -1722,7 +1722,7 @@ struct Contact: Codable{
 
 Now, let's update the `getContactDetails(name: String)` method:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //MARK: get details of a contact...
 func getContactDetails(name: String){
@@ -1793,7 +1793,7 @@ func showDetailsInAlert(data: Contact){
         
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -1805,7 +1805,7 @@ In the above code:
 
 Now, if we run the app, we will see:
 
-<figure><img src="/gitbook-assets/11.three (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/11.three (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 
 
@@ -1837,7 +1837,7 @@ So let's compare the two and think about what are the things we need to handle t
 * The types of the values in the response JSON must match the types of the variables in the Codable struct. For example, `"phone": 6781234567` means the value for the key "phone" has a value of integer data type. So we must set the type of the variable `phone` in struct `Contact` to `Int`.
 * You do not have to define variables for all the keys in JSON. You can selectively write variables to parse the needed data from a big JSON object.
 
-<mark style="color:red;">**So, the name and the data type of the variables in a Codable must match the name of the keys and the type of the values in JSON. Otherwise, JSON decoding will not work.**</mark>
+**So, the name and the data type of the variables in a Codable must match the name of the keys and the type of the values in JSON. Otherwise, JSON decoding will not work.**
 
 
 
@@ -1927,7 +1927,7 @@ func addANewContact(contact: Contact){
 
 Now, let's run the app.
 
-<figure><img src="/gitbook-assets/11.eight (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/11.eight (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 
 
@@ -1937,7 +1937,7 @@ Now, let's run the app.
 
 UITableView allows us to add views as accessories. Adding an accessory view is the easiest way to enable user interactions with a cell in a table view. So, in our app, we want to do the following:
 
-<figure><img src="/gitbook-assets/11.ten (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/11.ten (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 * We will have a settings button. If the user taps on the button, there will be a menu to give the user two options: Edit and Delete.
 * The user can select one of the options to either edit or delete the contact.
@@ -1948,7 +1948,7 @@ Then go to the adopted method for `cellForRowAt`, where we initialize the cell.
 
 Add the following code to add an accessory button:
 
-{% code lineNumbers="true" %}
+
 ```swift
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "names", for: indexPath) as! ContactsTableViewCell
@@ -1976,7 +1976,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     return cell
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -1986,7 +1986,7 @@ In the above code:
 * Then from line 13 through 21, we setup the menu.
 * **Finally, in line 23,** we set the cell's accessory view to the button.
 
-_<mark style="color:purple;">**If you noticed, the accessory view is a UIView. So technically, you can design your custom view with multiple UI elements. You can add multiple buttons if you want to. For the buttons, you must work with proper constraints, height, width, etc. (And it is a little complicated).**</mark>_
+_**If you noticed, the accessory view is a UIView. So technically, you can design your custom view with multiple UI elements. You can add multiple buttons if you want to. For the buttons, you must work with proper constraints, height, width, etc. (And it is a little complicated).**_
 
 ### Writing methods when the user selects an option
 
@@ -2004,7 +2004,7 @@ func deleteSelectedFor(contact: Int){
 
 Now, let's run the app:
 
-<figure><img src="/gitbook-assets/11.eleven (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/11.eleven (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 See? They are printing the appropriate logs as outputs. You can now do anything to edit or delete the contact.
 
@@ -2012,7 +2012,7 @@ See? They are printing the appropriate logs as outputs. You can now do anything 
 
 ### Reference Code
 
-{% file src="/gitbook-assets/App11 (1).zip" %}
+[Download Project Archive](/gitbook-assets/App11 (1).zip)
 
 
 
@@ -2074,7 +2074,7 @@ extension ViewController: ContactsProtocol{
 
 In the above code, we use the extension magic to adopt the ContactsProtocol from ViewController. Now, it's time to move the methods from ViewController.swift to ContactsAPICalls.swift.
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ContactsAPICalls.swift
@@ -2249,17 +2249,17 @@ extension ViewController:ContactsProtocol{
 }
 
 ```
-{% endcode %}
+
 
 ### The file structure of the project now looks like this:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-29 at 2.32.25 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-29 at 2.32.25 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Now, the code is more modular and more manageable.
 
 **Note: You can make it even more modular by putting the table view protocol codes into a separate file from the ViewController.**
 
-{% file src="/gitbook-assets/App11_modular (2).zip" %}
+[Download Project Archive](/gitbook-assets/App11_modular (2).zip)
 
 ---
 

@@ -18,10 +18,10 @@
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **Designing Without Storyboards** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -57,11 +57,11 @@ There are several reasons for it, as this blog post discusses: [https://kissdigi
 
 Before we start, let's have a quick look at the UI we had from 'App1':
 
-![](</gitbook-assets/Screenshot 2023-05-09 at 10.25.49 PM.png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-09 at 10.25.49 PM.png>)
 
 Let's look into the constraints of the UI:
 
-![](</gitbook-assets/Screenshot 2023-05-09 at 10.50.48 PM (1) (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-09 at 10.50.48 PM (1) (1).png>)
 
 So the Label ("Hello World!") has two constraints:
 
@@ -82,7 +82,7 @@ Similarly, the Button ("Click me!") has two constraints:
 
 Let's look at the following grid:
 
-<figure><img src="/gitbook-assets/grid (2).png" alt=""><figcaption><p>The grid on a screen</p></figcaption></figure>
+<figure><img src="/gitbook-assets/grid (2).png" alt="Educational illustration for iOS concept"><figcaption><p>The grid on a screen</p></figcaption></figure>
 
 The above grid is similar to a mobile screen. **The origin of the grid `(0, 0)` above is the top-left point,** unlike to the regular grid we use in our regular visualizations. So, when we want to anchor the object on the screen, there are four constraints we may need to set:
 
@@ -102,9 +102,9 @@ So, let's convert the Storyboard to Swift code!
 
 The following image is how the grid on the device screen is defined.
 
-<figure><img src="/gitbook-assets/grid (1) (1).png" alt=""><figcaption><p>Grid of a screen</p></figcaption></figure>
+<figure><img src="/gitbook-assets/grid (1) (1).png" alt="Educational illustration for iOS concept"><figcaption><p>Grid of a screen</p></figcaption></figure>
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 10.50.48 PM (2).png" alt="" width="375"><figcaption><p>App1 design</p></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 10.50.48 PM (2).png" alt="Educational illustration for iOS concept" width="375"><figcaption><p>App1 design</p></figcaption></figure>
 
 In the above image, we can see how the UI elements are placed on the device's screen in our App1.
 
@@ -116,7 +116,7 @@ We will add the code directly to ViewController.
 
 If you remember, In App1, we dragged and dropped a Label from the Objects Library and changed a few things. Let's go back to the Storyboard and click on the "Hello World!" label.
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-10 at 10.09.48 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-10 at 10.09.48 AM.png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 * We changed the text to "Hello World!"
 * The color of the text is Blue (accent color).
@@ -266,7 +266,7 @@ class ViewController: UIViewController {
 
 So we write a separate method `initConstraints()` to activate the constraints and call it from `viewDidLoad()`. Now let's run the app:
 
-![](</gitbook-assets/Screenshot 2023-05-10 at 11.20.58 AM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-10 at 11.20.58 AM (1).png>)
 
 So, our program rendered a "Hello World!" label on screen!
 
@@ -520,7 +520,7 @@ If you run the app, you can see that we replicated the whole App1 by just writin
 
 ### Reference Code
 
-{% file src="/gitbook-assets/App1_NoStory.zip" %}
+[Download Project Archive](/gitbook-assets/App1_NoStory.zip)
 
 ---
 
@@ -560,10 +560,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **Multi-Screen Apps** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -604,7 +604,7 @@ If you are an iPhone or iPad user, you must have used apps with multiple screens
 
 For example, the Settings app's navigation looks like this:
 
-<figure><img src="/gitbook-assets/one_ (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/one_ (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 This is called the Navigation of the app, where you define how the screen transitions are managed in an app.
 
@@ -612,17 +612,17 @@ This is called the Navigation of the app, where you define how the screen transi
 
 Navigation Controller is a Stack data structure. The user sees the screen from the top of the Stack. If we want to navigate from one screen to another screen, the user can call the `push()` method of the Navigation Controller to push Screen 2 on top of Screen 1. Since the user sees the Stack from above the Stack, the user will see Screen 2 now. Whenever the user is done dealing with screen 2, and they want to get back to screen 1, they have to basically use the Navigation Controller to `pop()` Screen 2 from the Stack. Then Screen 1 will be at the top of the Stack again
 
-{% embed url="https://www.youtube.com/watch?v=JozvVb4QyvE" %}
+[View Resource](https://www.youtube.com/watch?v=JozvVb4QyvE)
 Navigation Controller Stack
-{% endembed %}
+
 
 In our case, the ViewController is Screen 1, and ShowViewController is Screen 2. We need to push ShowViewController on top of ViewController.
 
 ### Embedding the Navigation Controller
 
-So let's create our new project, 'App3.' _<mark style="color:purple;">**We will not entirely discard our Storyboard here. We will use it to attach the NavigationController to our app.**</mark>_ So, open the Main storyboard in your project, Select the ViewController (the preview screen), click on the Embed In button at the bottom right corner of the middle pane, and select 'Navigation Controller.'
+So let's create our new project, 'App3.' _**We will not entirely discard our Storyboard here. We will use it to attach the NavigationController to our app.**_ So, open the Main storyboard in your project, Select the ViewController (the preview screen), click on the Embed In button at the bottom right corner of the middle pane, and select 'Navigation Controller.'
 
-<figure><img src="/gitbook-assets/two_ (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/two_ (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Once you embed the ViewController into the NavigationController, our tasks with Storyboard are done.
 
@@ -635,7 +635,7 @@ Let's add UI elements to our View Controller (ViewController.swift). Let's progr
 
 So, let's add the TextField and the Button programmatically. First, we initialize the UI elements and set proper attributes, like the following:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -675,11 +675,11 @@ class ViewController: UIViewController {
     }
 }
 ```
-{% endcode %}
+
 
 Then initialize the constraints:
 
-{% code lineNumbers="true" %}
+
 ```swift
 func initConstraints(){
     
@@ -695,11 +695,11 @@ func initConstraints(){
     
 }
 ```
-{% endcode %}
+
 
 Now let's run the app:
 
-<figure><img src="/gitbook-assets/three (2) (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/three (2) (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 ### Creating ShowViewController and adding UI elements
 
@@ -713,7 +713,7 @@ Now, let's create the second View Controller, 'ShowViewController.'
 * Click **Next.**
 * Finally, click on **Create.**
 
-<figure><img src="/gitbook-assets/four (3) (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/four (3) (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 It should create a new ShowViewController swift file, where we will design our second screen.
 
@@ -801,7 +801,7 @@ Then we define the `onButtonSendTapped()` method to delegate button tap events:
 
 In the above code, we create a new instance of ShowViewController, then push it to the navigation stack. Now, let's run the app:
 
-<figure><img src="/gitbook-assets/six (1) (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/six (1) (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Now, there is a problem here. We can see that tapping the Send button opens the ShowViewController, but the background is black. Well, by default, iOS gives a ViewController a transparent background. The system has no background; the transparent background makes it look black. Now we can set the background color to white by writing `view.backgroundColor = .white` inside the `viewDidLoad()` method in **ShowViewController.swift** file.
 
@@ -825,7 +825,7 @@ override func viewDidLoad() {
 
 Now let's run the app:
 
-<figure><img src="/gitbook-assets/seven (1) (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/seven (1) (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 We can see that there is a Back button on the left top of the ShowViewController screen. When we tap on Back, the navigation controller automatically calls the `pop()` method, and pops ShowViewController.
 
@@ -837,7 +837,7 @@ Now it's time to send data from our first screen (ViewController) to the second 
 
 So, let's get back to ViewController.swift. Scroll down to the button event action method `onButtonSendTapped()`. And add the following code in `onButtonSendTapped()` after we initialize the ShowViewController:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -865,11 +865,11 @@ So, let's get back to ViewController.swift. Scroll down to the button event acti
         }
     }
 ```
-{% endcode %}
+
 
 Now let's run the code:
 
-<figure><img src="/gitbook-assets/eight (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/eight (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 So, we can see that we can send data from one screen to the next.
 
@@ -877,7 +877,7 @@ So, we can see that we can send data from one screen to the next.
 
 ### Reference Code
 
-{% file src="/gitbook-assets/App3 (1).zip" %}
+[Download Project Archive](/gitbook-assets/App3 (1).zip)
 
 
 
@@ -923,10 +923,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **MVC Architecture** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -958,7 +958,7 @@ We have been keeping all the codes for a screen on a single file (ViewController
 
 To be able to do that, we will create our App4. We will build something like the following:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-16 at 11.05.16 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-16 at 11.05.16 AM.png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 On our first screen, we will have a Label to display "App4." Then we will have a TextField to get a text from the user. Next, we will have another Label to say, "How are you feeling today?" And then, we will show a PickerView to select a mood from "Happy," "Meh," and "Sad." Finally, we will have a Button, Submit. If the user taps the Submit Button, it should take them to the second screen. The second screen displays the message and the mood of the user.&#x20;
 
@@ -975,7 +975,7 @@ Now let's create a separate file, 'FirstScreenView.swift' in the project.&#x20;
 * Select **UIView** as for 'Subclass of.' And press **Next**.
 * Press **Create.**
 
-<figure><img src="/gitbook-assets/one (3).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/one (3).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 ### Setting up the View
 
@@ -1013,13 +1013,13 @@ class FirstScreenView: UIView {
 
 In the above code, we initialize the FirstScreenView with a rectangular frame. The frame comes from the view where we will patch this screen later.&#x20;
 
-Now, Xcode will yell at you saying, <mark style="color:red;">'required' initializer 'init(coder:)' must be provided by the subclass of 'UIView'.</mark> UIView adopts the [NSCoder](https://developer.apple.com/documentation/foundation/nscoder) protocol, so we must override the `init()` method with the coder parameter. Do not worry about it; just click on the red sign and click fix. That should automatically do the stuff for you. And you can keep the generated method untouched.
+Now, Xcode will yell at you saying, 'required' initializer 'init(coder:)' must be provided by the subclass of 'UIView'. UIView adopts the [NSCoder](https://developer.apple.com/documentation/foundation/nscoder) protocol, so we must override the `init()` method with the coder parameter. Do not worry about it; just click on the red sign and click fix. That should automatically do the stuff for you. And you can keep the generated method untouched.
 
-<figure><img src="/gitbook-assets/two (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/two (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Let's start building the View now. We trivially add the following initializing methods like how we did before:&#x20;
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  FirstScreenView.swift
@@ -1091,13 +1091,13 @@ class FirstScreenView: UIView {
 }
 
 ```
-{% endcode %}
+
 
 In the above code, notice that I am setting the 'backgroundColor' to white because it would, by default, populate a black screen without the background color. The `init(frame: CGRect)` method is used as the initializer of the instance of the FirstScreenView. If you look carefully at the setup methods, we are not saying `view.addSubView()` like before. This class is already a UIView, so we use `self.addSubView()` method.&#x20;
 
 Now let's initialize the constraints:
 
-{% code lineNumbers="true" %}
+
 ```swift
 class FirstScreenView: UIView {
     //codes omitted...    
@@ -1141,9 +1141,9 @@ class FirstScreenView: UIView {
 }
 
 ```
-{% endcode %}
 
-<mark style="color:purple;background-color:red;">**Notice that here to set up the constraints, I am using**</mark><mark style="color:purple;background-color:red;">**&#x20;**</mark><mark style="color:purple;background-color:red;">**`self`**</mark><mark style="color:purple;background-color:red;">**&#x20;**</mark><mark style="color:purple;background-color:red;">**instead of**</mark><mark style="color:purple;background-color:red;">**&#x20;**</mark><mark style="color:purple;background-color:red;">**`view`**</mark><mark style="color:purple;background-color:red;">**&#x20;**</mark><mark style="color:purple;background-color:red;">**for the same reason, this FirstScreenView is a UIView itself. I am adding children of the**</mark><mark style="color:purple;background-color:red;">**&#x20;**</mark><mark style="color:purple;background-color:red;">**`self`**</mark><mark style="color:purple;background-color:red;">**&#x20;**</mark><mark style="color:purple;background-color:red;">**view.**</mark>
+
+**Notice that here to set up the constraints, I am using****&#x20;****`self`****&#x20;****instead of****&#x20;****`view`****&#x20;****for the same reason, this FirstScreenView is a UIView itself. I am adding children of the****&#x20;****`self`****&#x20;****view.**
 
 
 
@@ -1204,7 +1204,7 @@ Here we override the `loadView()` method so that we can patch the view with the 
 
 Now, let's run the app:&#x20;
 
-<figure><img src="/gitbook-assets/five (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/five (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 ### Adding the PickerView logic
 
@@ -1278,7 +1278,7 @@ class ViewController: UIViewController {
 
 The whole code so far is as follows:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -1334,11 +1334,11 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
 }
 
 ```
-{% endcode %}
+
 
 Now, let's run it.&#x20;
 
-<figure><img src="/gitbook-assets/three (2).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/three (2).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 See, we patched the PickerView with data!
 
@@ -1357,7 +1357,7 @@ We have two Labels in the view:
 
 So create the 'DisplayView' file like before and add the codes as follows:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  DisplayView.swift
@@ -1415,7 +1415,7 @@ class DisplayView: UIView {
 }
 
 ```
-{% endcode %}
+
 
 ### Adding DisplayViewController
 
@@ -1500,7 +1500,7 @@ Notice that I am writing `public` before declaring the struct `Package`. We are 
 
 Now that our struct is ready, we will create a data package of two strings (message and mood). And then, when the user taps on the Submit button, we should navigate to DisplayViewController and send this package there. So let's add an action to the button:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //  ViewController.swift
 //  App4
@@ -1546,11 +1546,11 @@ class ViewController: UIViewController {
 }
 //codes omitted...
 ```
-{% endcode %}
+
 
 In the above code, we add an action for `buttonSubmit` to handle if the user taps on it.&#x20;
 
-**Please note:** <mark style="color:purple;">**`buttonSubmit`**</mark><mark style="color:purple;">**&#x20;**</mark><mark style="color:purple;">**is not a part of the ViewController, rather it's a part of the view (**</mark><mark style="color:purple;">**`firstScreen`**</mark><mark style="color:purple;">**). That is why we are adding the action to the button by calling**</mark><mark style="color:purple;">**&#x20;**</mark><mark style="color:purple;">**`firstScreen.buttonSubmit`**</mark><mark style="color:purple;">**. We will always add actions for the buttons inside the ViewController, not the view. A view (FirstScreenView) class is just for setting up the front-end. You should not write back-end methods or actions there.**</mark>&#x20;
+> **Please note:** **`buttonSubmit`****&#x20;****is not a part of the ViewController, rather it's a part of the view (****`firstScreen`****). That is why we are adding the action to the button by calling****&#x20;****`firstScreen.buttonSubmit`****. We will always add actions for the buttons inside the ViewController, not the view. A view (FirstScreenView) class is just for setting up the front-end. You should not write back-end methods or actions there.**&#x20;
 
 If the user puts in a message and selects their mood, the code will create a variable `package` of struct `Package` with the message and the mood. Then the code instantiates the DisplayViewController (`displayViewController`) and sets `package` as the value of the `receivedPackage` variable of `displayViewController`. Then, as usual, we push `displayViewController` to the navigation controller.
 
@@ -1558,7 +1558,7 @@ If the user puts in a message and selects their mood, the code will create a var
 
 We need to prepare the DisplayViewController to receive the package. So let's update DisplayViewController.swift as follows:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  DisplayViewController.swift
@@ -1601,7 +1601,7 @@ class DisplayViewController: UIViewController {
 }
 
 ```
-{% endcode %}
+
 
 In the above code, see that we are creating a variable `receivedPackage` of type `ViewController.Package`. `Package` is a public struct in the `ViewController` class. So to access it from inside another class, we need to write the source class name, then dot(`.`), then the struct name.&#x20;
 
@@ -1609,9 +1609,9 @@ Then we process and display the data on DisplayView.
 
 Let's run the app:
 
-<figure><img src="/gitbook-assets/six (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/six (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
-_<mark style="color:purple;">**Here, we learned how to detach the front end (View) of a screen from the back end (ViewController) of it. It is a widely used technique in iOS development. And you should follow this pattern.**</mark>_
+_**Here, we learned how to detach the front end (View) of a screen from the back end (ViewController) of it. It is a widely used technique in iOS development. And you should follow this pattern.**_
 
 
 
@@ -1619,7 +1619,7 @@ _<mark style="color:purple;">**Here, we learned how to detach the front end (Vie
 
 Now, your project structure should look like the following:
 
-![](</gitbook-assets/Screenshot 2023-05-16 at 2.39.20 PM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-16 at 2.39.20 PM (1).png>)
 
 Although we have separated the Views from the Controllers, we still may find this structure cluttered. So, we want to put the files in separate groups for better readability.&#x20;
 
@@ -1627,7 +1627,7 @@ Although we have separated the Views from the Controllers, we still may find thi
 * **Right-click** on the selected files and select **New Group From Selection**. Name the group as 'First Screen'
 * Create the group of files (DisplayView and DisplayViewController) for the second screen similarly.
 
-<figure><img src="/gitbook-assets/ten.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/ten.gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 **Now, the structure looks a lot better!!!** :tada:
 
@@ -1635,7 +1635,7 @@ Although we have separated the Views from the Controllers, we still may find thi
 
 ### Reference Code
 
-{% file src="/gitbook-assets/App4.zip" %}
+[Download Project Archive](/gitbook-assets/App4.zip)
 
 ---
 
@@ -1675,10 +1675,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **3.3. Send data back from Screen 2 to Screen 1** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -1715,7 +1715,7 @@ So, here is the goal for the extension of our current app:
 
 **On ViewController,** we will add a new Label and an ImageView, as follows:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -1785,13 +1785,13 @@ class ViewController: UIViewController {
     }
 }
 ```
-{% endcode %}
+
 
 The `labelMood` will show the mood the user selected on ShowViewController, and the ImageView `imageMood` will show an image corresponding to the mood.
 
 **Now on ShowViewController,** we will add a new Label, a PickerView, and a Button, as follows:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ShowViewController.swift
@@ -1868,7 +1868,7 @@ class ShowViewController: UIViewController {
     }
 }    
 ```
-{% endcode %}
+
 
 Here, `labelMoodInstructions` shows the message: "How are you feeling today?"
 
@@ -1876,7 +1876,7 @@ Then we place the `moodPicker` and finally put `buttonSendMood` at the bottom.
 
 If we run the app now, we will see:
 
-<figure><img src="/gitbook-assets/nine (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/nine (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Here, we do not see the two elements we added to ViewController, because `labelMood` and `imageMood` doesn't have anything to display.
 
@@ -1887,7 +1887,7 @@ On ShowViewController, we see there is an empty `moodPicker` and the newly added
 
 ### Send data back from Screen 2 to Screen 1: UIPickerView
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-11 at 12.13.48 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-11 at 12.13.48 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Now let's open the second screen (ShowViewController). We are going to set up our PickerView `moodPicker` now. Let's define an array of Strings having three moods: "Happy," "Meh," and "Sad."
 
@@ -1976,7 +1976,7 @@ We are saying for enabling the user interactions (delegate), and as the data sou
 
 Now so far, the code files look like the following:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ShowViewController.swift
@@ -2100,9 +2100,9 @@ extension ShowViewController: UIPickerViewDelegate, UIPickerViewDataSource{
 
 
 ```
-{% endcode %}
 
-{% code lineNumbers="true" %}
+
+
 ```swift
 //
 //  ViewController.swift
@@ -2213,7 +2213,7 @@ class ViewController: UIViewController {
 
 
 ```
-{% endcode %}
+
 
 
 
@@ -2221,7 +2221,7 @@ class ViewController: UIViewController {
 
 Now, let's enable the action for `buttonSendMood` in ShowViewController.swift file. So let's update `viewDidLoad()` function and add a new selector method `onSendButtonTapped()`:
 
-{% code lineNumbers="true" %}
+
 ```swift
 // setting up buttonSendMood...
 override func viewDidLoad() {
@@ -2247,7 +2247,7 @@ override func viewDidLoad() {
     
 }
 ```
-{% endcode %}
+
 
 ### Declaring the delegate variable in ShowViewController.swift
 
@@ -2272,7 +2272,7 @@ class ShowViewController: UIViewController {
 
 **Now, let's go back to ViewController class** and ensure we set the `delegate`variable's value before pushing ShowViewController into the NavigationController. By doing that, we are ensuring that the instance of ShowViewController can have access to the instance of ViewController. So let's update the `@objc func onButtonSendTapped()` in ViewController:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -2305,13 +2305,13 @@ class ViewController: UIViewController {
 }
  
 ```
-{% endcode %}
+
 
 ### Doing delegated tasks in ViewController
 
 **Now, we need to add a method in ViewController** to conduct the delegated tasks from ShowViewController:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -2350,13 +2350,13 @@ class ViewController: UIViewController {
 }
  
 ```
-{% endcode %}
+
 
 Here, `delegateButtonSendMood(mood:String)` receives a String (mood) as a parameter. Let's just print the mood for now.
 
 Now, let's switch back to ShowViewController. **We now need to call this `delegateButtonSendMood(mood:String)` method when the user taps on `onSendMoodButton`.** We can write:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ShowViewController.swift
@@ -2379,15 +2379,15 @@ class ShowViewController: UIViewController {
 }
 
 ```
-{% endcode %}
+
 
 Since the instance of ShowViewController gets populated with the variable `delegate` already set to the instance of ViewController, we can call `delegateButtonSendMood()` method from ShowViewController. We are calling the method with `selectedMood` as the parameter. Now, let's run the app and check if ViewController can print the mood.
 
-<figure><img src="/gitbook-assets/ten (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/ten (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 We are yet to do another task. We need to pop the ShowViewController after we click on `buttonSendMood`. So we will add `navigationController?.popViewController(animated: true)` to `@objc func onSendMoodButtonTapped()`.
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ShowViewController.swift
@@ -2410,11 +2410,11 @@ class ShowViewController: UIViewController {
 
 }
 ```
-{% endcode %}
+
 
 Now let's run it again:
 
-<figure><img src="/gitbook-assets/eleven.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/eleven.gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Yay! We now learned how to send data back and forth between two screens!
 
@@ -2430,15 +2430,15 @@ Next, we will discuss displaying an image related to the user's mood.
 
 Now, let's start working with ImageViews. We need three images for moods: happy, meh, and sad. We will be using the following images in three different sizes: 1x, 2x, and 3x.
 
-![](</gitbook-assets/happy (1).png>) ![](</gitbook-assets/meh (1).png>) ![](</gitbook-assets/sad (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/happy (1).png>) ![Educational illustration for iOS concept](</gitbook-assets/meh (1).png>) ![Educational illustration for iOS concept](</gitbook-assets/sad (1).png>)
 
 Download the images from here:
 
-{% file src="/gitbook-assets/images (1).zip" %}
+[Download Project Archive](/gitbook-assets/images (1).zip)
 
 If you extract the files, you will see something like the following:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-11 at 9.26.55 PM (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-11 at 9.26.55 PM (2).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 See each image has three versions: 1x, 2x, and 3x.
 
@@ -2454,13 +2454,13 @@ Long story short, in the early iOS devices before iPhone 8, the resolutions were
 
 Now, let's add the images to our project. Go to the project navigator on the left pane. Click on **Assets**. Right-click somewhere below the AppIcon, and select **New Folder.** Create a folder named "mood images."
 
-_<mark style="color:blue;">(you can name it as you want; you do not need to create the folder; I am creating the folder to help myself organize the assets).</mark>_
+_(you can name it as you want; you do not need to create the folder; I am creating the folder to help myself organize the assets)._
 
 Now, right-click on the "mood images" folder and select **Import.** Then select the images and **Open.**
 
-<figure><img src="/gitbook-assets/thirteen (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/thirteen (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
-Looking at the Assets now, you'll see three image assets listed instead of nine. The project automatically indexed nine of them into three assets, each having 3 scales (1x, 2x, and 3x). ![](</gitbook-assets/Screenshot 2023-05-11 at 10.11.02 PM.png>)
+Looking at the Assets now, you'll see three image assets listed instead of nine. The project automatically indexed nine of them into three assets, each having 3 scales (1x, 2x, and 3x). ![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-11 at 10.11.02 PM.png>)
 
 ### Setting the image into the ImageView through delegate
 
@@ -2474,7 +2474,7 @@ Here, we are creating an `UIImage` object from the project assets. We are lookin
 
 Let's run the app again.
 
-<figure><img src="/gitbook-assets/fourteen (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/fourteen (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Nice! We have learned a lot of things together from building this app:
 
@@ -2491,7 +2491,7 @@ Thanks for bearing with me! :smile:
 * These are just the basics of these topics; we just scratched the surface, and many more things to explore, eventually.
 * UIImageView and layout constraints do not go hand in hand. It's always better to use a UIImageView wrapped by a UIView. We will discuss it further down the road.
 
-_<mark style="background-color:blue;">**Now, before you go, set the title of the app by writing**</mark><mark style="background-color:blue;">**&#x20;**</mark><mark style="background-color:blue;">**`title = "Learning Navigation"`**</mark><mark style="background-color:blue;">**&#x20;**</mark><mark style="background-color:blue;">**in**</mark><mark style="background-color:blue;">**&#x20;**</mark><mark style="background-color:blue;">**`viewDidLoad()`**</mark><mark style="background-color:blue;">**&#x20;**</mark><mark style="background-color:blue;">**method at ViewController. And run the app to see the changes!**</mark>_
+_**Now, before you go, set the title of the app by writing****&#x20;****`title = "Learning Navigation"`****&#x20;****in****&#x20;****`viewDidLoad()`****&#x20;****method at ViewController. And run the app to see the changes!**_
 
 ---
 
@@ -2531,10 +2531,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **this topic** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -2562,29 +2562,29 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 Press `Command (⌘) + Space` together on your Mac computer. It opens up Spotlight search. Search 'Xcode' there, and open Xcode. It opens the following window:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 10.51.51 AM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 10.51.51 AM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Click on **'Create a new Xcode project.'** You will see the following:
 
-**Make sure you select iOS from the top template chooser.&#x20;**<mark style="color:red;">**Do not choose multiplatform or macOS.**</mark>
+**Make sure you select iOS from the top template chooser.&#x20;****Do not choose multiplatform or macOS.**
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 10.55.45 AM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 10.55.45 AM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Select **App** and press **Next.**
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 10.57.39 AM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 10.57.39 AM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Give your project a name. If you have not already signed in to an Apple ID, sign in here and then select your Personal Team. Put your preferred organization identifier (reversed domain name order). For example, you can put `com.nuios`. Select **'Storyboard'** as the interface (**do not select 'SwiftUI'**). Select the language **'Swift.'** And then press **Next**. You'll see:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 11.04.18 AM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 11.04.18 AM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Here is where you'll choose where to save your project. Click on **Create.** It will create a new project for you, and you will see the following:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 11.05.36 AM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 11.05.36 AM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Here, you need to select a simulator. Please click on the top middle panel as indicated in the following image:
 
-<figure><img src="/gitbook-assets/1.1.1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/1.1.1.png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Select an iPhone simulator of your choice. **Do not select 'This Mac.'**
 
@@ -2592,11 +2592,11 @@ Now, your first project is ready to be built.
 
 Press the Play :arrow\_forward: button from the top left corner.
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 11.07.39 AM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 11.07.39 AM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 It will open up the Emulator with an empty screen.
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 11.12.10 AM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 11.12.10 AM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 If you can see the emulator, you have successfully built your first app. We will start building on it.
 
@@ -2607,17 +2607,17 @@ If you can see the emulator, you have successfully built your first app. We will
 
 The Xcode screen has three panes.
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 11.22.24 AM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 11.22.24 AM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 ### The left pane
 
 In the left pane, you see the file structure of the codes and resources. If you right-click on the project directory, you can see that you can show the project directory in Finder:
 
-![](</gitbook-assets/Screenshot 2023-05-09 at 11.27.41 AM.png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-09 at 11.27.41 AM.png>)
 
 It will show you the project directory:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 11.30.52 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 11.30.52 AM.png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Now we can see that the structure of the files and directories in your project directory match how you see the project structure in Xcode.
 
@@ -2639,13 +2639,13 @@ _Even though it feels easier to design our app with storyboards, it comes with a
 
 The middle pane is the work pane. Here we write code, design, change settings and preferences, debug, etc. For example, If we click on **ViewController** from the left pane, we will see the code in the middle pane:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 11.57.38 AM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 11.57.38 AM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 ### The right pane
 
 The right pane is the configuration and attributes explorer pane. For example, if you click on the Main Storyboard and click the screen preview, the right pane will display the attribute of the screen view:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 12.00.43 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 12.00.43 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Once we start building apps, we will eventually get used to Xcode more.
 
@@ -2655,21 +2655,21 @@ Once we start building apps, we will eventually get used to Xcode more.
 
 Let's add a text pane, `UILabel` to our storyboard. Open the Main storyboard, and press `Command(⌘) + Shift + L` together. It opens up the Objects Library like this:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 12.09.01 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 12.09.01 PM.png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Now, look for 'label'. **Press the intended UI element, (in this case, it shows as 'Label'), drag it, and drop it on the preview screen.**
 
-<figure><img src="/gitbook-assets/six_ (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/six_ (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 It will now show:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 12.15.19 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 12.15.19 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 See, there is a left view pane where you can find all the elements. The newly added Label got added inside the View Controller tree. Inside the View Controller, you have a View. The View is actually the view of the entire screen, including the camera cut.
 
 #### Safe area: Inside the View, we have a Safe area. A safe area is an area where there are no interruptions or obstacles like the camera cut. Click on the safe area; it will mark the safe area on the screen:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 12.24.52 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 12.24.52 PM.png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 The safe area comes in very handy designing the screen with constraints.
 
@@ -2677,7 +2677,7 @@ Now, let's add a few constraints and attributes for the Label we just added.
 
 Click on the Label, either on the preview screen or the left view pane, and notice the right configuration pane:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 12.32.14 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 12.32.14 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Change the label text, color, and font. You see, once you change the attributes, the changes reflect on the actual UI element.
 
@@ -2687,17 +2687,17 @@ Now, let's work on the constraints so that we can place the label on the screen,
 
 Before we change anything for the Label, let's see where we will find the tools to work on constraints. Look at the bottom right corner of the Middle pane:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 12.40.55 PM (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 12.40.55 PM (2).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Now let's click on the Label. Then click on the Alignment tool, and select both 'Horizontally in Container,' and 'Vertically in Container.' And add the constraints. It should put the Label in the center of the screen (center-aligned both horizontally and vertically):
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 12.50.49 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 12.50.49 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Now run the app. and rotate the screen:
 
-![](</gitbook-assets/Screenshot 2023-05-09 at 12.51.58 PM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-09 at 12.51.58 PM (1).png>)
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 12.52.07 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 12.52.07 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 See, for both cases, the alignment setup is keeping the Label on the screen nice and predictable.
 
@@ -2711,47 +2711,47 @@ So far, we have added one UILabel, with the text "Hello World" in it. Now, we wi
 
 So far, the Label is center-aligned both horizontally and vertically. We will keep the horizontal alignment for the Label but remove the vertical alignment. Unfortunately, the storyboard can't clear one particular constraint from visual tools (or not easily). (That's another reason why we will move to write constraints programmatically). So, we will clear all the constraints from the Label. Click on the 'Reset constraints' tool, and select Clear Constraints for Selected Views to clear constraints for the Label:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 1.38.01 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 1.38.01 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Now, we will put the Label at the top of the screen, having a 32 points margin from the top edge. Click the 'Add Constraints' tool, and set the top anchor constant to 32. Then click to 'Add 1 constraint':
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 1.44.08 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 1.44.08 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 So you see that the Label is anchored to the top edge of the screen with a 32 points gap:
 
-![](</gitbook-assets/Screenshot 2023-05-09 at 1.46.36 PM.png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-09 at 1.46.36 PM.png>)
 
 Now, we will horizontally center the Label. Use the alignment tool to add the constraint:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 1.49.20 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 1.49.20 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 #### Adding UITextField below UILabel
 
 We now add the UITextField using the Object library (`Command(⌘) + Shift + L`). Look for text, and drag and drop TextField on the screen.
 
-![](</gitbook-assets/Screenshot 2023-05-09 at 1.55.41 PM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-09 at 1.55.41 PM (1).png>)
 
 Now, let's center the TextField:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 1.58.10 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 1.58.10 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Then add the 16 points constraint to the top so that the TextField is anchored to the bottom of the Label having a 16 points gap.
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 2.01.02 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 2.01.02 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 For a TextField, you should give a user some hint of what kind of text the app is expecting. For example, we want to give the user a hint, "Put some text". So, we will use the 'Place holder' attribute in the right pane of the TextField to set it.
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 2.02.40 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 2.02.40 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Now run the app.
 
-![](</gitbook-assets/Screenshot 2023-05-09 at 2.07.46 PM.png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-09 at 2.07.46 PM.png>)
 
 You can see now, you can type something on the TextField.
 
 Please note, you are using your computer keyboard to put the text inside. You can use the emulator (device) keyboard too. From the Simulator menu, click **I/O -> Keyboard -> Toggle Software Keyboard.**
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 2.10.38 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 2.10.38 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 
 
@@ -2765,19 +2765,19 @@ We will use two UI elements for this purpose: UIButton, and UIAlertController.
 
 Let's place a Button on the Screen, center it, and anchor it 16 points below the TextField.
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 2.39.56 PM (1).png" alt=""><figcaption><p>Objects library</p></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 2.39.56 PM (1).png" alt="Educational illustration for iOS concept"><figcaption><p>Objects library</p></figcaption></figure>
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 2.40.21 PM (1).png" alt=""><figcaption><p>Drag and drop button</p></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 2.40.21 PM (1).png" alt="Educational illustration for iOS concept"><figcaption><p>Drag and drop button</p></figcaption></figure>
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 2.40.40 PM (1).png" alt=""><figcaption><p>Center horizontally</p></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 2.40.40 PM (1).png" alt="Educational illustration for iOS concept"><figcaption><p>Center horizontally</p></figcaption></figure>
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 2.40.57 PM (1).png" alt=""><figcaption><p>Add anchor to the bottom of the TextField</p></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 2.40.57 PM (1).png" alt="Educational illustration for iOS concept"><figcaption><p>Add anchor to the bottom of the TextField</p></figcaption></figure>
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 2.41.30 PM (1).png" alt=""><figcaption><p>Button is now placed</p></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 2.41.30 PM (1).png" alt="Educational illustration for iOS concept"><figcaption><p>Button is now placed</p></figcaption></figure>
 
 Now, let's change the attributes of the Button. If you select the Button and look at the right pane, you will see the attributes of it. You can play with many different things, like the Style, Title, Background, and Foreground styling, etc. For now, we will just change the Title. Let's change the Title from "Button" to "Click me!"
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 2.48.02 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 2.48.02 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Now, run the app, and you will see that you have the button "Click me!", and can click on it!
 
@@ -2785,27 +2785,27 @@ Now, run the app, and you will see that you have the button "Click me!", and can
 
 Now, we need to handle the click on the Button. So, we need to patch the frontend UI elements to our ViewController code.
 
-_<mark style="color:purple;">We will not use the following technique very much after this lesson since most people do not use Storyboards anymore. However, it's worth the knowledge.</mark>_
+_We will not use the following technique very much after this lesson since most people do not use Storyboards anymore. However, it's worth the knowledge._
 
 So, we will open the Main storyboard and the ViewController code side by side. To do that, Go to the menu, **Editor -> Assistant.** After you click Assistant, it opens the Viewcontroller to right of the Storyboard:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 3.54.28 PM (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 3.54.28 PM (2).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Basically, you have the front end on the left, and on the right, you have the back end.
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 3.59.44 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 3.59.44 PM.png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Let's patch the UI elements with the back-end code (ViewController).&#x20;
 
 Think about what UI elements we need to handle from the backend here. We need the TextField and the Button. So, **press the 'control' key** on your keyboard (not the command key) and keep it pressed. While pressing the control button, click on the TextField from the storyboard, and do not release. Now, drag the mouse pointer to the right ViewController (keep both the control and mouse pointer pressed). A blue line should appear. Place it inside the class ViewController. An outlet connector appears; put the name of the logical TextField as "textFIeldUser."
 
-<figure><img src="/gitbook-assets/one (2) (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/one (2) (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 It creates a `@IBOutlet var textFieldUser: UITextField!` variable in your ViewController. `@IBOutlet` means it's an outlet from the Interface Builder (storyboard). In short, `textFieldUser` is the logical instance of the `TextField` from storyboard in the ViewController class.
 
 Let's add the Button outlet to the ViewController the same way. And name the Button "buttonClickMe."
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 5.35.35 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 5.35.35 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 ### Adding button action
 
@@ -2813,7 +2813,7 @@ Now, we need to handle if the user taps on `buttonClickMe`. We need to handle th
 
 Let's type `buttonClickMe` in `viewDidLoad()` method, and press `.` and then you will see Xcode automatically shows you the possible usage of the button. Then find the `addTarget()` function.
 
-<figure><img src="/gitbook-assets/two (3) (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/two (3) (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 `addTarget()` has three parameters: target, action, and for.
 
@@ -2831,7 +2831,7 @@ Let's define the `onButtonClickMeTapped()` method:
 
 Now, let's run the app and click the button.
 
-<figure><img src="/gitbook-assets/three_ (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/three_ (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 You'll see that at the bottom right of Xcode, "Button clicked!!" is printed on the Output area.
 
@@ -2925,7 +2925,7 @@ Then you need to add action buttons for the alert, like "OK" or "Cancel." We jus
 
 Now let's run the app:
 
-<figure><img src="/gitbook-assets/four (2).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/four (2).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Now, we are almost done with our first app. The entire code in ViewController so far is:
 
@@ -3002,7 +3002,7 @@ class ViewController: UIViewController {
 
 Before we complete the app, let's add an icon for the app. I generated a 1024x1024 pixels large icon:
 
-![](</gitbook-assets/Screenshot 2023-05-09 at 7.05.08 PM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-09 at 7.05.08 PM (1).png>)
 
 I will use it as my app icon for this app.
 
@@ -3010,13 +3010,13 @@ _You can generate AppIcons from here:_ [_https://www.appicon.co/_](https://www.a
 
 Go to the project navigator from the left pane and click on Assets. In the middle pane, you will see the current assets are loaded. (There are no assets in your project yet). Click on AppIcon; you will see an empty canvas for a 1024x1024 image. Double-click on that, and select the icon from your files. Now your App Icon is set.
 
-<figure><img src="/gitbook-assets/five (1) (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/five (1) (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Now, run the app again.
 
 Now, go to the app drawer of the emulator. You will see that the icon for our 'App1' is set.
 
-![](</gitbook-assets/Screenshot 2023-05-09 at 7.24.14 PM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-09 at 7.24.14 PM (1).png>)
 
 Now, our first app 'App1' is complete!
 
@@ -3024,11 +3024,11 @@ Now, our first app 'App1' is complete!
 
 ### Reference Code and Video
 
-{% file src="/gitbook-assets/App1_project.zip" %}
+[Download Project Archive](/gitbook-assets/App1_project.zip)
 
 ### TA Arpan created the video on this module for us:
 
-{% embed url="https://www.youtube.com/watch?v=pEwhCh9j8wo" %}
+[View Resource](https://www.youtube.com/watch?v=pEwhCh9j8wo)
 
 ---
 

@@ -11,10 +11,10 @@
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **UITableView** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -54,11 +54,11 @@ More specifically, we will learn about the following:
 
 So, let's create an app called 'App5'. Our preliminary target is to build something like the following app:
 
-![](</gitbook-assets/Screenshot 2023-05-18 at 10.45.04 AM (1).png>) ![](</gitbook-assets/Screenshot 2023-05-18 at 10.45.19 AM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-18 at 10.45.04 AM (1).png>) ![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-18 at 10.45.19 AM (1).png>)
 
 The first screen contains a list of expenses. The user can add a new expense by tapping on the plus icon (`+`) on the navigation bar. If a user taps on `+` icon, it takes them to the next screen where they can put the details of the expense.
 
-![](</gitbook-assets/Screenshot 2023-05-18 at 10.56.57 AM (1).png>) ![](</gitbook-assets/Screenshot 2023-05-18 at 10.45.48 AM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-18 at 10.56.57 AM (1).png>) ![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-18 at 10.45.48 AM (1).png>)
 
 Once the user puts in the details and taps the Add Expense button, it should return to the first screen and show the newly added expense.
 
@@ -70,7 +70,7 @@ Now let's build the app.
 
 Let's create a new project, 'App5' in Xcode.
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-18 at 10.45.04 AM (1).png" alt="" width="343"><figcaption><p>App 5: First screen</p></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-18 at 10.45.04 AM (1).png" alt="Educational illustration for iOS concept" width="343"><figcaption><p>App 5: First screen</p></figcaption></figure>
 
 In App3 ([3.-our-first-multi-screen-app](../3.-our-first-multi-screen-app/ "mention")), we discussed the basics of the Navigation Controller. Navigation Controller automatically adds a top bar (Navigation Bar) on the screen, where you have seen the Back buttons. You can add more buttons there, either on the left side or right side. Usually, we add our custom buttons on the right side of the Bar since the left side is usually reserved for going back. We will add our plus button (`+`) on the right side of the Bar.
 
@@ -108,7 +108,7 @@ class ViewController: UIViewController {
 
 In the above code, we are creating a new UIBarButtonItem and setting it to the right Bar Button of the Navigation Bar. We are also adding an action listener `onAddBarButtonTapped()` to handle the user tap. If you run it now, you will see the plus button on the Bar's right side.
 
-<figure><img src="/gitbook-assets/one (1) (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/one (1) (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Now we will set up the TableView and then return to this button.
 
@@ -124,7 +124,7 @@ According to [Apple developer documentation](https://developer.apple.com/documen
 
 A good example of a TableView is the Settings app on our iPhones or iPads.
 
-<figure><img src="/gitbook-assets/two (2) (1).gif" alt=""><figcaption><p>Settings app</p></figcaption></figure>
+<figure><img src="/gitbook-assets/two (2) (1).gif" alt="Educational illustration for iOS concept"><figcaption><p>Settings app</p></figcaption></figure>
 
 You can see that the Settings app has multiple groups of items in the list. For example, the first group has 'Sign in' and 'VPN' rows. The second group has the 'Screen Time' row. And the third group has 'General,' 'Accessibility,' and 'Privacy and Security' rows. **These groups are called sections.** Each group can have one or more rows.
 
@@ -211,7 +211,7 @@ class ViewController: UIViewController {
 
 Each row in our TableView (`tableViewExpense`) should look like this:
 
-![](</gitbook-assets/Screenshot 2023-05-18 at 12.12.41 PM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-18 at 12.12.41 PM (1).png>)
 
 So we can see that there are three Labels there, displaying:
 
@@ -225,7 +225,7 @@ So, we need to design our TableView row. **The view of the row is called a cell*
 
 Give the file's name as "TableViewExpenseCell" and set the file as the 'Subclass of' UITableViewCell. Then click **Next. And then click Create.**
 
-<figure><img src="/gitbook-assets/three (1) (1).gif" alt=""><figcaption><p>Creating a Cell's View</p></figcaption></figure>
+<figure><img src="/gitbook-assets/three (1) (1).gif" alt="Educational illustration for iOS concept"><figcaption><p>Creating a Cell's View</p></figcaption></figure>
 
 Now, let's open the TableViewExpenseCell.swift file. You will see that there are two methods already given there (`awakeFromNib()` and `setSelected()`). We won't use them. Let's add the following code to the file:
 
@@ -391,7 +391,7 @@ So, let's create a new swift file called "Expense."
 * Name it as **"Expense."**
 * Click **Create.**
 
-<figure><img src="/gitbook-assets/four (1) (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/four (1) (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Let's add the following code to Expense.swift file:
 
@@ -563,7 +563,7 @@ We are patching the table view's delegate and data source to the controller. By 
 
 Now, let's run it.
 
-<figure><img src="/gitbook-assets/six (2).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/six (2).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Our Table View is up and running now, displaying our dummy data!
 
@@ -571,11 +571,11 @@ Our Table View is up and running now, displaying our dummy data!
 
 Since we are almost done with our first screen, let's create groups of files and put them in separate folders to structure them better.
 
-<figure><img src="/gitbook-assets/seven (2).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/seven (2).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 The file structure looks like this:
 
-![](</gitbook-assets/Screenshot 2023-05-18 at 3.01.03 PM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-18 at 3.01.03 PM (1).png>)
 
 
 
@@ -583,11 +583,11 @@ The file structure looks like this:
 
 When the user clicks the plus Bar button (`+`), we should populate a screen to add a new expense. So, let's create two new files: AddExpenseView.swift (subclass of UIView) and AddExpenseViewController.swift (subclass of UIViewController). And add them to a new group, "Add Expense Screen." (**Use the Cocoa Touch Class template, not a Swift file template).**
 
-<figure><img src="/gitbook-assets/5.ten (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/5.ten (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 ### Setting up the View
 
-![](</gitbook-assets/Screenshot 2023-05-18 at 10.45.19 AM (1).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-18 at 10.45.19 AM (1).png>)
 
 We can see that we need the following UI elements:
 
@@ -740,7 +740,7 @@ We will pick the type of expense using this PickerView. We know that we added an
 
 Let's create a new Swift file named "Utilities.swift" in the project.
 
-<figure><img src="/gitbook-assets/5.6.1.one (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/5.6.1.one (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Let's add the following code to the new file:
 
@@ -899,7 +899,7 @@ class ViewController: UIViewController {
 
 The code above creates a new Add Expense Screen, sets the delegate, and pushes it on the Navigation Stack. Now let's run the app:
 
-<figure><img src="/gitbook-assets/5.6.1.two (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/5.6.1.two (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 ### Updating ViewController to use Utilities.types instead of the local array.
 
@@ -1161,7 +1161,7 @@ Here, we receive an object of Expense, `expense` through the delegated method an
 
 Let's run the app.
 
-<figure><img src="/gitbook-assets/5.6.1.three (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/5.6.1.three (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 One last thing to discuss before we finish this module. We can also deal with when a user clicks on a cell in the TableView.
 
@@ -1194,7 +1194,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
 
 We added the `tableView()` method for `didSelectRowAt`. It is the call-back method if a user taps on a cell (selected a cell) in TableView. After you add this method, let's run the app. It should print the corresponding data.
 
-<figure><img src="/gitbook-assets/5.6.1.four (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/5.6.1.four (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Now, you can see that you can handle it if a user taps on a cell. It's time for exercise.
 
@@ -1206,7 +1206,7 @@ Now, you can see that you can handle it if a user taps on a cell. It's time for 
 
 ### Reference Code
 
-{% file src="/gitbook-assets/App5 (1).zip" %}
+[Download Project Archive](/gitbook-assets/App5 (1).zip)
 
 ---
 
@@ -1246,10 +1246,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **UIScrollView** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -1279,7 +1279,7 @@ So far, we have worked with screens that do not scroll. I think all of you faced
 
 Let's build a small app App8 to implement a ScrollView. The app should look like this:
 
-<figure><img src="/gitbook-assets/8.11 (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/8.11 (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 **So there will be the following UI elements:**
 
@@ -1335,11 +1335,11 @@ If you noticed, I have declared a variable called `contentWrapper` of type `UISc
 
 We also need a large image. I used the following image to load inside the screen:
 
-![](</gitbook-assets/image@3x (1).jpg>)
+![Educational illustration for iOS concept](</gitbook-assets/image@3x (1).jpg>)
 
 So, let's import the image into the project:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-05-24 at 10.59.28 AM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-24 at 10.59.28 AM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Let's initialize the UI elements:
 
@@ -1488,15 +1488,15 @@ Here, we are loading the view on `loadView()` method; and also including the met
 
 Let's run the app now.
 
-<figure><img src="/gitbook-assets/8.11 (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/8.11 (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
-_<mark style="color:purple;">Now that you know how to use scrollable views. Use it carefully when you use it.</mark>_
+_Now that you know how to use scrollable views. Use it carefully when you use it._
 
 
 
 ### Reference Code
 
-{% file src="/gitbook-assets/App8 (1).zip" %}
+[Download Project Archive](/gitbook-assets/App8 (1).zip)
 
 ---
 
@@ -1536,10 +1536,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **UIMenu & Image Pickers** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -1569,7 +1569,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 Let's create a new project, "App6." Add all the codes from the current "App5." For your convenience, download the project from here:
 
-{% file src="/gitbook-assets/App6_initial (1).zip" %}
+[Download Project Archive](/gitbook-assets/App6_initial (1).zip)
 
 Our goal here is to:
 
@@ -1579,7 +1579,7 @@ Our goal here is to:
 
 App6 would look something like this:
 
-<figure><img src="/gitbook-assets/6.1.one.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/6.1.one.gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 
 
@@ -1588,7 +1588,7 @@ App6 would look something like this:
 
 Let's open TableViewExpenseCell.swift file to add an ImageView. Let's add a new variable named, `imageViewReceipt` of type `UIImageView` in the file, set it up, and initialize its constraints. Add the following code to TableViewExpenseCell.swift file:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  TableViewExpenseCell.swift
@@ -1665,13 +1665,13 @@ class TableViewExpenseCell: UITableViewCell {
 }
 
 ```
-{% endcode %}
+
 
 In the above code, we have a few very important key points to discuss:
 
 **Defining the ImageView `imageReceipt`:**
 
-* Let's look into the method where we define the new `imageReceipt` ImageView (`setupimageReceipt()`). We wrote: `imageReceipt.image = UIImage(systemName: "photo")`. We are trying to set a default image for the ImageView. For the default image, we select an iOS system image named "photo" (<img src="/gitbook-assets/photo@2x (1).png" alt="" data-size="line">). Xcode ships with these system images. But we need to know the names of those images. Fortunately, we can easily find the names of the system images. You need to install an Apple developer app called "SF Symbols" on your Mac. [Download, install, and learn how to use the app.](6.1.-updating-the-tableview-cell-to-accommodate-an-imageview.md#installing-and-using-sf-symbols-app)
+* Let's look into the method where we define the new `imageReceipt` ImageView (`setupimageReceipt()`). We wrote: `imageReceipt.image = UIImage(systemName: "photo")`. We are trying to set a default image for the ImageView. For the default image, we select an iOS system image named "photo" (<img src="/gitbook-assets/photo@2x (1).png" alt="Educational illustration for iOS concept" data-size="line">). Xcode ships with these system images. But we need to know the names of those images. Fortunately, we can easily find the names of the system images. You need to install an Apple developer app called "SF Symbols" on your Mac. [Download, install, and learn how to use the app.](6.1.-updating-the-tableview-cell-to-accommodate-an-imageview.md#installing-and-using-sf-symbols-app)
 * Next, we write `imageReceipt.contentMode = .scaleToFill` to say, fill the ImageView with the image by resizing it. For more details on `contentMode`, read: [https://www.delasign.com/blog/uiimageview-content-modes/](https://www.delasign.com/blog/uiimageview-content-modes/)
 * We write `imageReceipt.clipsToBounds = true` to say, clip the image if it overflows the ImageView frame.
 * We write `imageReceipt.layer.cornerRadius = 10` to make the corners of the ImageView rounded with a radius of 10.
@@ -1694,19 +1694,19 @@ Now that we are done with the file, we move to the Add Expense Screen.
 
 * Download the SF Symbols app from here: [https://developer.apple.com/sf-symbols/](https://developer.apple.com/sf-symbols/)
 
-<figure><img src="/gitbook-assets/6.1.two (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/6.1.two (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 * Open the .DMG file
 * Then Install the .pkg file by double-clicking on it:
 
-<figure><img src="/gitbook-assets/6.1.four.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/6.1.four.gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 *   Let's open the app. Press `Command` + `Space` to open the spotlight search. Then look for SF Symbols and press `return` to open it. \\
 
-    <figure><img src="/gitbook-assets/5.6.1.five (1).gif" alt=""><figcaption></figcaption></figure>
+    <figure><img src="/gitbook-assets/5.6.1.five (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 *   Now we can use the app to find the appropriate iOS system icon/symbol for us and fetch the name of it. Here I am finding the name for the icon I will use:\\
 
-    <figure><img src="/gitbook-assets/5.6.1.six (1).gif" alt=""><figcaption></figcaption></figure>
+    <figure><img src="/gitbook-assets/5.6.1.six (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 
 
@@ -1714,7 +1714,7 @@ Now that we are done with the file, we move to the Add Expense Screen.
 
 The screen would be something like this:
 
-![](</gitbook-assets/Screenshot 2023-05-19 at 12.47.14 AM.png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-19 at 12.47.14 AM.png>)
 
 We have:
 
@@ -1729,7 +1729,7 @@ Let's open the AddExpenseView.swift file and update the code. Remove the PickerV
 
 Let's see the updated code in the following:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  AddExpenseView.swift
@@ -1825,7 +1825,7 @@ class AddExpenseView: UIView {
 }
 
 ```
-{% endcode %}
+
 
 ### Setting up the Buttons
 
@@ -1833,7 +1833,7 @@ class AddExpenseView: UIView {
 
 Let's look into the setup method for `buttonSelectType`:
 
-{% code lineNumbers="true" %}
+
 ```swift
 func setupbuttonSelectType(){
     buttonSelectType = UIButton(type: .system)
@@ -1842,7 +1842,7 @@ func setupbuttonSelectType(){
     self.addSubview(buttonSelectType)
 }
 ```
-{% endcode %}
+
 
 It looks pretty straight forward now. At some point, we need to tweak the setup a little.
 
@@ -1850,7 +1850,7 @@ It looks pretty straight forward now. At some point, we need to tweak the setup 
 
 Let's look into the setup method:
 
-{% code lineNumbers="true" %}
+
 ```swift
 func setupbuttonTakePhoto(){
     buttonTakePhoto = UIButton(type: .system)
@@ -1863,7 +1863,7 @@ func setupbuttonTakePhoto(){
     self.addSubview(buttonTakePhoto)
 }
 ```
-{% endcode %}
+
 
 This button is a little different. We set a background to it, which shows a camera icon instead of text. So, we set an empty title to it. Then set an image of the system name, "camera.fill". (I found the name using the SF Symbols app). These couple of lines are very important.
 
@@ -1891,7 +1891,7 @@ We set the height and width of `buttonTakePhoto`. **When you are working with im
 
 Now, it's time to remove the PickerView codes. After we remove the PickerView, the code looks like this:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  AddExpenseViewController.swift
@@ -1959,11 +1959,11 @@ class AddExpenseViewController: UIViewController {
 
 }
 ```
-{% endcode %}
+
 
 Now if you run the app, it will look like the following:
 
-<figure><img src="/gitbook-assets/6.2.one (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/6.2.one (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 So now, let's add the actions for the newly added buttons, `buttonSelectType` and `buttonTakePhoto`.
 
@@ -1971,7 +1971,7 @@ So now, let's add the actions for the newly added buttons, `buttonSelectType` an
 
 When the user taps on `buttonSelectType`, it should display a pop-up menu with four options. Let's add the code for it. In AddExpenseViewController.swift add:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  AddExpenseViewController.swift
@@ -2008,13 +2008,13 @@ class AddExpenseViewController: UIViewController {
 }
 
 ```
-{% endcode %}
+
 
 We write `addExpenseScreen.buttonSelectType.menu` to set the menu. We write a method `getMenuTypes() -> UIMenu` to generate the menu. Let's look into the method.
 
 We create an array of UIMenu items (four in our case). Each UIMenu item is a UIAction with the title of the menu item and the [closure](https://github.com/sakibnm/iOS/blob/main/7.-closures) for defining the tasks we should do if we select that item from the menu. For example, in each iteration of the loop:
 
-{% code lineNumbers="true" %}
+
 ```swift
 for type in Utilities.types{
     let menuItem = UIAction(title: type,handler: {(_) in
@@ -2024,17 +2024,17 @@ for type in Utilities.types{
     menuItems.append(menuItem)
 }
 ```
-{% endcode %}
+
 
 Here, we are creating a menu item using the `Utilities.types` array. The `handler` closure defines the on-select actions for that item. We are saying that if the user selects this particular menu item, set the value of `selectedType` to the corresponding type of expense. And set the title of the button to the selected item.
 
 So, let's run the app now.
 
-<figure><img src="/gitbook-assets/6.2.two (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/6.2.two (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 See, if we long tap on `buttonSelectType` then a menu pops up, and we can select a type of expense. But we want this menu to pop up when we do regular tap. By default, the menu pop-up is not set as the primary action of a Button. We have to set it as an attribute of the Button when we initialize it. So let's go to AddExpenseView.swift and edit the `setupbuttonSelectType()` method:
 
-{% code lineNumbers="true" %}
+
 ```swift
 func setupbuttonSelectType(){
     buttonSelectType = UIButton(type: .system)
@@ -2045,11 +2045,11 @@ func setupbuttonSelectType(){
     self.addSubview(buttonSelectType)
 }
 ```
-{% endcode %}
+
 
 Now let's run the app again:
 
-<figure><img src="/gitbook-assets/6.2.three (1) (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/6.2.three (1) (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Now, our menu is working as intended.
 
@@ -2057,13 +2057,13 @@ Now, our menu is working as intended.
 
 ### AddExpenseViewController: UIMenu for buttonTakePhoto
 
-<figure><img src="/gitbook-assets/6.2.three (2).gif" alt=""><figcaption><p><strong>The app so far</strong></p></figcaption></figure>
+<figure><img src="/gitbook-assets/6.2.three (2).gif" alt="Educational illustration for iOS concept"><figcaption><p><strong>The app so far</strong></p></figcaption></figure>
 
 Now let's handle the actions for `buttonTakePhoto` (with the camera icon). If the user taps the button, it should display two options: "Camera" and "Gallery." If the user selects the "Camera" option, it will open the camera and take a photo; else, if the user selects "Gallery," it will open the image gallery to pick a photo. Finally, the chosen photo will be set as the image inside `buttonTakePhoto`.
 
 Let's open AddExpenseViewController.swift file. and add the following code in it:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  AddExpenseViewController.swift
@@ -2118,7 +2118,7 @@ class AddExpenseViewController: UIViewController {
 }
 
 ```
-{% endcode %}
+
 
 Here we are writing `getMenuImagePicker() -> UIMenu` method to create a pop-up menu for displaying the options. In the closures, we call two methods, `pickUsingCamera()` and `pickPhotoFromGallery()` to handle the option clicks.
 
@@ -2132,7 +2132,7 @@ buttonTakePhoto.showsMenuAsPrimaryAction = true
 
 Let's run the app now.
 
-<figure><img src="/gitbook-assets/6.3.one (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/6.3.one (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Our next task is to implement the Gallery and Camera functions.
 
@@ -2272,7 +2272,7 @@ Here,
 
 Alright! We are done setting up the PHPicker, and now it's time to test the app.
 
-<figure><img src="/gitbook-assets/6.5.one (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/6.5.one (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 [^1]: importing required library.
 
@@ -2282,7 +2282,7 @@ Alright! We are done setting up the PHPicker, and now it's time to test the app.
 
 Now it's time to build the final part of the app: integrating the camera to take a photo.
 
-<mark style="color:red;">**Please note: the camera doesn't work in the emulator; you need a physical iOS device to test it. Do not worry; picking images using the camera is not mandatory in this course. This is an example for your future reference.**</mark>
+**Please note: the camera doesn't work in the emulator; you need a physical iOS device to test it. Do not worry; picking images using the camera is not mandatory in this course. This is an example for your future reference.**
 
 So, let's open AddExpenseViewController.swift file. We will write codes in `pickUsingCamera()` method. We also need to adopt `UINavigationControllerDelegate`, and `UIImagePickerControllerDelegate` protocols using the `extension` keyword. Let's add the following code in AddExpenseViewController.swift file:
 
@@ -2391,11 +2391,11 @@ You need to update the privacy description for Camera Usage in the app 'Info' co
 * Find "Privacy - Camera Usage Description."
 * Add "We need to use the camera to take the receipt of the expense." as your justification for the user to access the camera.
 
-<figure><img src="/gitbook-assets/6.6.two (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/6.6.two (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Now let's run the app. I ran the app on my iPad to demonstrate it is working.
 
-{% embed url="https://www.youtube.com/watch?v=FnCsBWWiv0Y" %}
+[View Resource](https://www.youtube.com/watch?v=FnCsBWWiv0Y)
 
 
 
@@ -2526,7 +2526,7 @@ We unwrap the image, and then set it to `cell.imageReceipt.image`.
 
 Finally, let's run the app!
 
-<figure><img src="/gitbook-assets/6.7.one (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/6.7.one (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 
 
@@ -2534,7 +2534,7 @@ Finally, let's run the app!
 
 We will polish the TableView a little bit to make our TableView look like this:
 
-![](</gitbook-assets/Screenshot 2023-05-20 at 5.18.17 PM (2).png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-20 at 5.18.17 PM (2).png>)
 
 Let's make the following changes to the code:
 
@@ -2605,7 +2605,7 @@ Here, we are adding 10 points margins around the Cell wrapper.
 
 **Now, let's run the app again.**
 
-<figure><img src="/gitbook-assets/6.8.one (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/6.8.one (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 There we have a 3D effect!
 
@@ -2613,7 +2613,7 @@ There we have a 3D effect!
 
 ### Reference Code
 
-{% file src="/gitbook-assets/App6 (2).zip" %}
+[Download Project Archive](/gitbook-assets/App6 (2).zip)
 
 ---
 
@@ -2653,10 +2653,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **Useful UI Elements** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -2684,7 +2684,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 When you are building iOS apps, you might have noticed that if you put some texts into TextFields, the emulator/phone keyboard doesn't disappear if you tap outside the keyboard automatically, like this:
 
-<figure><img src="/gitbook-assets/KeyboardNotHiding (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/KeyboardNotHiding (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Now if we want to hide the keyboard, it is very simple. Inside the ViewController of a Screen, add the following code in `viewDidLoad()` method:
 
@@ -2709,7 +2709,7 @@ override func viewDidLoad() {
 
 Here, we create a gesture recognizer that recognizes that the user taps on the app screen. Then we add the recognizer to the view. Then we add the action (`@objc func hideKeyboardOnTap()`) for reacting to that gesture that would hide the keyboard. The end result is:
 
-<figure><img src="/gitbook-assets/KeyboardHiding (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/KeyboardHiding (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 
 
@@ -2721,7 +2721,7 @@ A great guide with other tricks can be found here: [https://kaushalelsewhere.med
 
 It is a little complicated, watch the video below to understand the aspects of it:
 
-{% embed url="https://www.youtube.com/watch?v=O4tP7egAV1I" %}
+[View Resource](https://www.youtube.com/watch?v=O4tP7egAV1I)
 
 Source code: [https://github.com/jrasmusson/ios-professional-course/blob/main/Password-Reset/7-Dealing-Keyboards/README.md](https://github.com/jrasmusson/ios-professional-course/blob/main/Password-Reset/7-Dealing-Keyboards/README.md)
 
@@ -2783,7 +2783,7 @@ We often face a situation where we have more than two UI elements on a single ro
 
 For example, our goal is to have something like the following:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-06-08 at 1.05.38 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-06-08 at 1.05.38 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 There are three buttons, and we want to align them perfectly with each other without working with custom constraints.
 
@@ -2791,7 +2791,7 @@ There are three buttons, and we want to align them perfectly with each other wit
 
 Let's create a new App and name it "StackViewDemo." Create a new file called StackView.swift, and put the following code there:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  StackView.swift
@@ -2865,7 +2865,7 @@ class StackView: UIView {
     }
 }
 ```
-{% endcode %}
+
 
 In the above code, we have three buttons and a stack to hold these three buttons.
 
@@ -2885,11 +2885,11 @@ Now, let's load the view we created in the ViewController.swift file.
 
 If we run the app now, we will see:
 
-<figure><img src="/gitbook-assets/24.one (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/24.one (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 If we change the axis to vertical ( `stack.axis = .vertical` ), the screen will look like:
 
-<figure><img src="/gitbook-assets/24.two (3).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/24.two (3).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 
 
@@ -2899,20 +2899,20 @@ So far you have noticed, we embed the Navigation Controller using the Storyboard
 
 To start, we will create a new iOS project in Xcode named, "NavConFromCode."&#x20;
 
-<figure><img src="/gitbook-assets/Screenshot 2025-10-09 at 1.22.15 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2025-10-09 at 1.22.15 PM.png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 We already know that it comes with a default view controller: **ViewController.swift**
 
 So let's first change the name of it to a different name: **FirstScreenViewController.swift**
 
-<figure><img src="/gitbook-assets/sdf.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/sdf.gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
-<mark style="color:$danger;background-color:red;">**Please note, we are also changing the name of the class.**</mark>&#x20;
+**Please note, we are also changing the name of the class.**&#x20;
 
 Then just open SceneDelegate.swift file, and update the \
 `func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions)` function.
 
-{% code lineNumbers="true" %}
+
 ```swift
 func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
             
@@ -2932,7 +2932,7 @@ func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options conn
     window?.makeKeyAndVisible()
 }
 ```
-{% endcode %}
+
 
 On line 3, we define windowScene as a variable since we want to manipulate the window on the app.
 
@@ -2962,7 +2962,7 @@ Now, if we run the app, it should run as the FirstScreenViewController being the
 
 ### Resource Files
 
-{% file src="/gitbook-assets/NavConFromCode.zip" %}
+[Download Project Archive](/gitbook-assets/NavConFromCode.zip)
 
 
 
@@ -3008,10 +3008,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **this topic** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -3039,7 +3039,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 The Search Bar in iOS is a very common UI element, and it is very useful to filter or search data from a list of data. In this module, we will build a demo app with a search bar. The app would look like the following:
 
-<figure><img src="/gitbook-assets/6.one (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/6.one (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 The app will have the following:
 
@@ -3064,7 +3064,7 @@ The view of this app is very simple; we have two UI elements on the screen:
 
 Let's create a file named MainScreenView.swift and put the following code there:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  MainScreenView.swift
@@ -3114,7 +3114,7 @@ class MainScreenView: UIView {
     }   
 }
 ```
-{% endcode %}
+
 
 In the above code, on lines 19 through 23, we define the search bar. On line 21, we give a placeholder that describes what this Search Bar is about. The rest of the code is trivial, where we define the table view and the constraints.
 
@@ -3196,7 +3196,7 @@ class SearchTableViewCell: UITableViewCell {
 
 Let's open ViewController.swift file and put the following code there:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -3268,7 +3268,7 @@ extension ViewController: UISearchBarDelegate{
     }
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -3287,7 +3287,7 @@ In the above code:
 
 Let's put the following code into the method regarding `textDidChange` (in between lines 66 and 68 in the above code):
 
-{% code lineNumbers="true" %}
+
 ```swift
 //MARK: adopting the search bar protocol...
 extension ViewController: UISearchBarDelegate{
@@ -3307,7 +3307,7 @@ extension ViewController: UISearchBarDelegate{
     }
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -3320,7 +3320,7 @@ In the above code:
 
 Let's run the app again:
 
-<figure><img src="/gitbook-assets/6.six (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/6.six (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Yay! Our simple search bar is working!
 
@@ -3328,7 +3328,7 @@ Yay! Our simple search bar is working!
 
 ### Reference Code
 
-{% file src="/gitbook-assets/SearchBarDemo (1).zip" %}
+[Download Project Archive](/gitbook-assets/SearchBarDemo (1).zip)
 
 ---
 
@@ -3368,10 +3368,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **this topic** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -3399,7 +3399,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 We often see apps with bottom navigation bars, where you can tap on an icon from the bottom bar, and the app loads different screens for different buttons pressed like the following:
 
-<figure><img src="/gitbook-assets/5.one (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/5.one (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 iOS gives us an easy-to-use and customizable tool called UITabBarController to build such screens. In this module, we will create an app that uses a Tab Bar.
 
@@ -3587,7 +3587,7 @@ We have three screens. Now we want to patch these three screens in a Tab Bar Con
 
 Let's look into the logical structure of a Tab Bar:
 
-<figure><img src="/gitbook-assets/Screenshot 2023-06-12 at 12.41.40 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-06-12 at 12.41.40 PM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 * The Tab Bar is the UI component that displays the bottom tabs.
 * So it needs a controller to control the UI. In our case, we will use the main ViewController as the Tab Bar Controller.
@@ -3601,7 +3601,7 @@ Let's look into the logical structure of a Tab Bar:
 
 Let's open the ViewController.swift file and put the following code there:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -3657,7 +3657,7 @@ class ViewController: UITabBarController, UITabBarControllerDelegate {
     }
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -3674,7 +3674,7 @@ In the above code:
 
 If we run the app now, we will see:
 
-<figure><img src="/gitbook-assets/5.two (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/5.two (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 
 
@@ -3684,7 +3684,7 @@ We will use Notification Center to send data between the tabs. If the user taps 
 
 We now have to write code in the view controllers to enable this feature. Let's open RedViewController.swift file and write the following code:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  RedViewController.swift
@@ -3749,7 +3749,7 @@ class RedViewController: UIViewController {
     }
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -3769,13 +3769,13 @@ We write the other two view controllers regarding the Blue and Green screens sim
 
 Now, if we run the app now, we will see:
 
-<figure><img src="/gitbook-assets/5.four (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/5.four (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 
 
 ### Reference Code
 
-{% file src="/gitbook-assets/TabControllerDemo.zip" %}
+[Download Project Archive](/gitbook-assets/TabControllerDemo.zip)
 
 
 
@@ -3824,10 +3824,10 @@ Because this course is fully asynchronous, here's how to get unstuck:
 **Format:** Asynchronous online
 **Prerequisites:** Previous iOS topics
 
-{< hint info >}
+
 **🎯 Topic Mission:** 
 In this module, we will explore **this topic** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
-{< /hint >}
+
 
 ---
 
@@ -3857,7 +3857,7 @@ You probably have seen apps where you tap a button, and a page sheet pops up fro
 
 In this short module, we will build the following app:
 
-<figure><img src="/gitbook-assets/7.sixty (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/7.sixty (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 Basically, we build this app on top of the app in the [6.-search-bar](../6.-search-bar/ "mention") module. We will implement SearchBar on a bottom sheet view.
 
@@ -3879,7 +3879,7 @@ We have a Find button on our main screen and a label to display the selected nam
 * SearchBottomSheetView.swift
 * SearchTableCell.swift
 
-![](</gitbook-assets/Screenshot 2023-06-13 at 1.12.04 PM.png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-06-13 at 1.12.04 PM.png>)
 
 Let's design the view first.
 
@@ -4019,7 +4019,7 @@ Let's open SearchBottomSheetController.swift file. We will mostly use the same c
 
 Let's write the code for setting up the table view and the search bar. Let's open SearchBottomSheetController.swift file, and put the following code there:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  SearchBottomSheetController.swift
@@ -4094,7 +4094,7 @@ extension SearchBottomSheetController: UISearchBarDelegate{
     }
 }
 ```
-{% endcode %}
+
 
 
 
@@ -4109,7 +4109,7 @@ The main screen is very simple to design; we have:
 
 Let's create a file named MainScreenView.swift:
 
-![](</gitbook-assets/Screenshot 2023-06-13 at 1.35.29 PM.png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-06-13 at 1.35.29 PM.png>)
 
 Let's put the following code there:
 
@@ -4168,7 +4168,7 @@ class MainScreenView: UIView {
 
 Now it's time to patch the actions to pop the bottom search sheet from the view controller. Let's put the following code in ViewController.swift:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -4213,7 +4213,7 @@ class ViewController: UIViewController {
     }
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -4237,11 +4237,11 @@ In the above code:
     * **large()** detent does not brake the sheet until it reaches the top of the screens.&#x20;
     * We add both of the detents here so that it stops in the middle; then, if we want, we can fill up the screen with it.
 
-<figure><img src="/gitbook-assets/7.sixtytwo.gif" alt=""><figcaption><p><strong>Detents</strong></p></figcaption></figure>
+<figure><img src="/gitbook-assets/7.sixtytwo.gif" alt="Educational illustration for iOS concept"><figcaption><p><strong>Detents</strong></p></figcaption></figure>
 
 * On line 35, we display the grabber.
 
-![](</gitbook-assets/Screenshot 2023-06-13 at 5.00.01 PM.png>)
+![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-06-13 at 5.00.01 PM.png>)
 
 
 
@@ -4258,7 +4258,7 @@ We will use Notification Center to do that.&#x20;
 
 Let's open ViewController.swift file, and update the file with the following code:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //
 //  ViewController.swift
@@ -4301,7 +4301,7 @@ class ViewController: UIViewController {
   
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -4315,7 +4315,7 @@ In the above code:
 
 Let's open SearchBottomSheetController.swift file and add the following method inside the extension where we are adopting the table view protocols:
 
-{% code lineNumbers="true" %}
+
 ```swift
 //MARK: adopting Table View protocols...
 extension SearchBottomSheetController: UITableViewDelegate, UITableViewDataSource{
@@ -4330,7 +4330,7 @@ extension SearchBottomSheetController: UITableViewDelegate, UITableViewDataSourc
     }
 }
 ```
-{% endcode %}
+
 
 In the above code:
 
@@ -4340,7 +4340,7 @@ In the above code:
 
 Let's run the app.
 
-<figure><img src="/gitbook-assets/seven.5.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/seven.5.gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
 **Nice! We built our first Bottom Sheet View!**
 
@@ -4348,7 +4348,7 @@ Let's run the app.
 
 ### Reference Code
 
-{% file src="/gitbook-assets/BottomSheetView.zip" %}
+[Download Project Archive](/gitbook-assets/BottomSheetView.zip)
 
 ---
 
