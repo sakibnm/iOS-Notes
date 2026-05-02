@@ -230,7 +230,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 ### Firebase Authentication and Firestore
 
-Firebase is a Google service portal through which Google provides users with many useful Cloud services. Firebase services are very fast, reliable, and easy to use. They have comprehensive guides for developers to integrate and build systems using their services on a plethora of platforms, like, iOS, Android, NodeJS, Flutter, Unity, etc.
+Firebase is a Google service portal through which Google provides users with many useful Cloud services. Firebase services are very fast, reliable, and easy to use. They have comprehensive guides for developers to integrate and build systems using their services on a plethora of platforms, like, iOS, NodeJS, Flutter, Unity, etc.
 
 **The landing portal of Firebase services is:** [https://firebase.google.com/](https://firebase.google.com/)
 
@@ -1979,7 +1979,7 @@ Let's run the app now.
 
 ### What data can you store in a FirebaseAuth user object?
 
-* Firebase users have a fixed set of basic properties—a unique ID, a primary email address, a name and a photo URL—stored in the project's user database, that can be updated by the user (iOS, Android, web). **You cannot add other properties to the user object directly; instead, you can store the additional properties in any other storage services, like Google Cloud Firestore.**
+* Firebase users have a fixed set of basic properties—a unique ID, a primary email address, a name and a photo URL—stored in the project's user database, that can be updated by the user (iOS, web). **You cannot add other properties to the user object directly; instead, you can store the additional properties in any other storage services, like Google Cloud Firestore.**
 
 
 

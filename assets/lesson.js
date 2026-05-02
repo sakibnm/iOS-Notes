@@ -493,7 +493,7 @@
     document.querySelectorAll('#article a').forEach((a) => {
       const href = a.getAttribute('href');
       if (!href) return;
-      if (href.includes('play.kotlinlang.org') || href.endsWith('.zip')) {
+      if (href.includes('developer.apple.com') || href.endsWith('.zip')) {
         a.setAttribute('target', '_blank');
         a.setAttribute('rel', 'noopener noreferrer');
       }
@@ -529,7 +529,7 @@
 
     if (key === 'kmp' || key === 'ai' || key === 'cloud_ai') {
       setText('#topic-eyebrow', 'Optional Module');
-      const bTitle = key === 'kmp' ? 'Kotlin Multiplatform' : key === 'ai' ? 'On-Device AI' : 'Cloud AI';
+      const bTitle = key === 'ai' ? 'On-Device AI' : 'Cloud AI';
       setText('#breadcrumb', bTitle);
     } else {
       setText('#topic-eyebrow', 'Topic ' + key + ' · iOS Development');
