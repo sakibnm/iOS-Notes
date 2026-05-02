@@ -1,3382 +1,654 @@
-<!DOCTYPE html>
-<html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-  <!--
-Made with Book Theme
-https://github.com/alex-shpak/hugo-book
--->
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="6. UIMenu, Picking Images from Gallery and Camera, and UIImageView# App6: Adding more features on App5# Let’s create a new project, “App6.” Add all the codes from the current “App5.” For your convenience, download the project from here:
-{% file src=&#34;/gitbook-assets/App6_initial (1).zip&#34; %}
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content='6. UIMenu, Picking Images from Gallery and Camera, and UIImageView# App6: Adding more features on App5# Let’s create a new project, “App6.” Add all the codes from the current “App5.” For your convenience, download the project from here:
+{% file src="/gitbook-assets/App6_initial (1).zip" %}
 Our goal here is to:
 Learn to use UIMenu instead of PickerView. Add an ImageView to the TableView Cell to display the expense receipt. Add options to take a photo of the receipt using the camera or gallery. App6 would look something like this:
-">
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="//localhost:1313/docs/04-advanced-ui-components/uimenu-and-image-pickers/">
-  <meta property="og:site_name" content="iOS UIKit Course">
-  <meta property="og:title" content="UIMenu & Image Pickers">
-  <meta property="og:description" content="6. UIMenu, Picking Images from Gallery and Camera, and UIImageView# App6: Adding more features on App5# Let’s create a new project, “App6.” Add all the codes from the current “App5.” For your convenience, download the project from here:
-{% file src=&#34;/gitbook-assets/App6_initial (1).zip&#34; %}
+'><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="/docs/04-advanced-ui-components/uimenu-and-image-pickers/"><meta property="og:site_name" content="iOS UIKit Course"><meta property="og:title" content="UIMenu & Image Pickers"><meta property="og:description" content='6. UIMenu, Picking Images from Gallery and Camera, and UIImageView# App6: Adding more features on App5# Let’s create a new project, “App6.” Add all the codes from the current “App5.” For your convenience, download the project from here:
+{% file src="/gitbook-assets/App6_initial (1).zip" %}
 Our goal here is to:
-Learn to use UIMenu instead of PickerView. Add an ImageView to the TableView Cell to display the expense receipt. Add options to take a photo of the receipt using the camera or gallery. App6 would look something like this:">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="website">
-
-
-  <meta itemprop="name" content="UIMenu & Image Pickers">
-  <meta itemprop="description" content="6. UIMenu, Picking Images from Gallery and Camera, and UIImageView# App6: Adding more features on App5# Let’s create a new project, “App6.” Add all the codes from the current “App5.” For your convenience, download the project from here:
-{% file src=&#34;/gitbook-assets/App6_initial (1).zip&#34; %}
+Learn to use UIMenu instead of PickerView. Add an ImageView to the TableView Cell to display the expense receipt. Add options to take a photo of the receipt using the camera or gallery. App6 would look something like this:'><meta property="og:locale" content="en_us"><meta property="og:type" content="website"><meta itemprop=name content="UIMenu & Image Pickers"><meta itemprop=description content='6. UIMenu, Picking Images from Gallery and Camera, and UIImageView# App6: Adding more features on App5# Let’s create a new project, “App6.” Add all the codes from the current “App5.” For your convenience, download the project from here:
+{% file src="/gitbook-assets/App6_initial (1).zip" %}
 Our goal here is to:
-Learn to use UIMenu instead of PickerView. Add an ImageView to the TableView Cell to display the expense receipt. Add options to take a photo of the receipt using the camera or gallery. App6 would look something like this:">
-  <meta itemprop="wordCount" content="87">
-
-<title>UIMenu &amp; Image Pickers | iOS UIKit Course</title>
-<link rel="icon" href="/favicon.png" >
-<link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="//localhost:1313/docs/04-advanced-ui-components/uimenu-and-image-pickers/">
-<link rel="stylesheet" href="/book.min.4d6d5ad3b0ae85d2a15b20ab217863f70db543e46314629e239ced759e674898.css" integrity="sha256-TW1a07CuhdKhWyCrIXhj9w21Q&#43;RjFGKeI5ztdZ5nSJg=" crossorigin="anonymous">
-
-
-  <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.e6a1a3fb88e89103ded2947d8fb82dac991cdb25b0fd74298b4577ffa07dfdff.js" integrity="sha256-5qGj&#43;4jokQPe0pR9j7gtrJkc2yWw/XQpi0V3/6B9/f8=" crossorigin="anonymous"></script>
-
-
-<link rel="alternate" type="application/rss+xml" href="//localhost:1313/docs/04-advanced-ui-components/uimenu-and-image-pickers/index.xml" title="iOS UIKit Course" />
-
-  
-</head>
-<body dir="ltr" class="book-kind-section book-type-docs">
-  <input type="checkbox" class="hidden toggle" id="menu-control" />
-  <input type="checkbox" class="hidden toggle" id="toc-control" />
-  <main class="container flex">
-    
-<aside class="book-menu">
-  <div class="book-menu-content">
-    
-  <nav>
-<h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>iOS UIKit Course</span>
-  </a>
-</h2>
-
-
-<div class="book-search hidden">
-  <input id="book-search-input" type="text" 
-    placeholder="Search"
-    aria-label="Search"
-    maxlength="64" data-hotkeys="s/" />
-  <div class="book-search-spinner hidden"></div>
-  <ul id="book-search-results"></ul>
-</div>
-<script>document.querySelector(".book-search").classList.remove("hidden")</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a>
-      Module 1: Getting Started</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a>
-      Getting Started</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/01-getting-started/getting-started/preparing-your-development-environment/" class="">
-      Preparing Your Development Environment</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/01-getting-started/getting-started/setting-up-xcode/" class="">
-      Setting Up Xcode</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a>
-      Module 2: Swift Fundamentals</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a>
-      Variables &amp; Data Types</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./" class="">
-      1. Variables Data Types and More.</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.1.-creating-a-swift-playground/" class="">
-      1.1. Creating a Swift Playground</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.2.-variables/" class="">
-      1.2. Variables</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.3.-type-safety/" class="">
-      1.3. Type safety</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.4.-strings-and-print-to-console/" class="">
-      1.4. Strings and print to console</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.5.-floating-point-numbers-and-type-annotation/" class="">
-      1.5. Floating point numbers and Type annotation</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.6.-more-print-string-interpolation/" class="">
-      1.6. More print, String interpolation</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.7.-constants/" class="">
-      1.7. Constants</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.8.-type-annotations-revisited/" class="">
-      1.8. Type annotations (revisited)</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.9.-comments/" class="">
-      1.9. Comments</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.10.-reference-code/" class="">
-      1.10. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/collections/" class="">
-      Collections</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/collections/2.1.-arrays/" class="">
-      2.1. Arrays</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/collections/2.2.-sets/" class="">
-      2.2. Sets</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/collections/2.3.-tuples/" class="">
-      2.3. Tuples</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/collections/2.4.-dictionaries/" class="">
-      2.4. Dictionaries</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/collections/2.5.-reference-code/" class="">
-      2.5. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/operators/" class="">
-      Operators</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/operators/3.1.-arithmetic-operations/" class="">
-      3.1. Arithmetic Operations</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/operators/3.2.-operator-overloading/" class="">
-      3.2. Operator overloading</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/operators/3.3.-more-on-operators/" class="">
-      3.3. More on Operators</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/operators/3.4.-comparison-operators-and-booleans/" class="">
-      3.4. Comparison Operators (and Booleans)</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/operators/3.5.-reference-code/" class="">
-      3.5. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/conditionals/" class="">
-      Conditionals</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/conditionals/4.1.-if-statements/" class="">
-      4.1. If statements</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/conditionals/4.2.-if-else-statements/" class="">
-      4.2. If-else statements</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/conditionals/4.3.-switch-statements/" class="">
-      4.3. Switch statements</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/conditionals/4.4.-combining-operators/" class="">
-      4.4. Combining operators</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/conditionals/4.5.-range-operators/" class="">
-      4.5. Range operators</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/conditionals/4.6.-reference-code/" class="">
-      4.6. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/loops/" class="">
-      Loops</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/loops/5.1.-for-loops/" class="">
-      5.1. For loops</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/loops/5.2.-while-loops/" class="">
-      5.2. While loops</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/loops/5.3.-repeat-loops/" class="">
-      5.3. Repeat loops</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/loops/5.4.-break-and-continue/" class="">
-      5.4. Break and continue</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/loops/5.5.-reference-code/" class="">
-      5.5. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/functions/" class="">
-      Functions</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/functions/6.1.-writing-functions/" class="">
-      6.1. Writing functions</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/functions/6.2.-functions-with-parameters/" class="">
-      6.2. Functions with parameters</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/functions/6.3.-functions-that-return-a-value/" class="">
-      6.3. Functions that return a value</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/functions/6.4.-more-on-function-parameters/" class="">
-      6.4. More on function parameters</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/functions/6.5.-reference-code/" class="">
-      6.5. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/closures/" class="">
-      Closures</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/closures/7.1.-closures-with-parameters/" class="">
-      7.1. Closures with parameters</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/closures/7.2.-closures-that-return-a-value/" class="">
-      7.2. Closures that return a value</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/closures/7.3.-closures-as-parameters/" class="">
-      7.3. Closures as parameters</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/closures/7.4.-reference-code/" class="">
-      7.4. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/optionals/" class="">
-      Optionals</a>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/custom-data-types/" class="">
-      Custom Data Types</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/" class="">
-      9.1. Structs</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/9.1.1.-functions-methods-inside-structs/" class="">
-      9.1.1. Functions (methods) inside structs</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/9.1.2.-initializing-structs-with-different-initializers/" class="">
-      9.1.2. Initializing structs with different initializers</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/9.1.3.-manipulating-object-properties-inherently-in-a-struct/" class="">
-      9.1.3. Manipulating object properties inherently in a struct</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/custom-data-types/9.2.-classes/" class="">
-      9.2. Classes</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/custom-data-types/9.2.-classes/9.2.1.-inheritance/" class="">
-      9.2.1. Inheritance</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/custom-data-types/9.2.-classes/9.2.2.-value-vs.-reference/" class="">
-      9.2.2. Value vs. Reference</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/protocols/" class="">
-      Protocols</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/protocols/10.1.-adopting-a-protocol/" class="">
-      10.1. Adopting a protocol</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/protocols/10.2.-creating-a-single-protocol-from-multiple-protocols/" class="">
-      10.2. Creating a single protocol from multiple protocols</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/protocols/10.3.-inheriting-a-super-class-and-adopting-protocols-together/" class="">
-      10.3. Inheriting a super class and adopting protocols together</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/sorting-arrays/" class="">
-      Sorting Arrays</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/sorting-arrays/11.1.-increasing-order/" class="">
-      11.1. Increasing order</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/sorting-arrays/11.2.-decreasing-order/" class="">
-      11.2. Decreasing order</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/sorting-arrays/11.-3.-sorting-an-array-of-custom-data/" class="">
-      11. 3. Sorting an array of custom data</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a>
-      Module 3: Introduction to UIKit</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a>
-      Creating Our First App</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/" class="">
-      1. Creating Our First App</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/1.1.-project-structure-overview/" class="">
-      1.1. Project structure overview</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/1.2.-uilabel-our-first-ui-element/" class="">
-      1.2. UILabel, our first UI element</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/1.3.-uitextfield-and-constraints/" class="">
-      1.3. UITextField, and constraints</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/1.4.-uibutton-and-uialertcontroller/" class="">
-      1.4. UIButton, and UIAlertController</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/1.5.-wrapping-up-appicon/" class="">
-      1.5. Wrapping up: AppIcon</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/1.6.-reference-code-and-video/" class="">
-      1.6. Reference Code and Video</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/designing-without-storyboards/" class="">
-      Designing Without Storyboards</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/designing-without-storyboards/2.1.-converting-the-storyboard-to-code/" class="">
-      2.1. Converting the storyboard to code</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/designing-without-storyboards/2.2.-reference-code/" class="">
-      2.2. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/" class="">
-      Multi-Screen Apps</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.1.-navigation-controller/" class="">
-      3.1. Navigation Controller and UI setup</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.2.-send-data-from-screen-1-viewcontroller-to-screen2-showviewcontroller/" class="">
-      3.2. Send data from Screen 1 (ViewController) to Screen2 (ShowViewController)</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/" class="">
-      3.3. Send data back from Screen 2 to Screen 1</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/3.4.-send-data-back-from-screen-2-to-screen-1-part-2-uipickerview/" class="">
-      3.3.1. Send data back from Screen 2 to Screen 1: UIPickerView</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/3.5.-send-data-back-from-screen-2-to-screen-1-part-3-delegating-to-viewcontroller/" class="">
-      3.3.2. Send data back from Screen 2 to Screen 1: delegating to ViewController</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/3.6.-send-data-back-from-screen-2-to-screen-1-part-4-uiimageview/" class="">
-      3.3.3. Send data back from Screen 2 to Screen 1: UIImageView</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.7.-reference-code/" class="">
-      3.4. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/mvc-architecture/" class="">
-      MVC Architecture</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/mvc-architecture/4.1.-creating-a-separate-view-code-file/" class="">
-      4.1. Creating a separate View code file</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/mvc-architecture/4.2.-patching-the-view-class-with-the-viewcontroller/" class="">
-      4.2. Patching the View class with the ViewController</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/mvc-architecture/4.3.-creating-the-display-screen/" class="">
-      4.3. Creating the Display Screen</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/mvc-architecture/4.4.-navigation-controller-and-sending-data-from-screen-1-to-screen-2/" class="">
-      4.4. Navigation Controller and sending data from screen 1 to screen 2</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/mvc-architecture/4.5.-wrapping-up-structuring-the-files/" class="">
-      4.5. Wrapping up: structuring the files</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/mvc-architecture/4.6.-reference-code/" class="">
-      4.6. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a>
-      Module 4: Advanced UI Components</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uitableview/" class="">
-      UITableView</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uitableview/5.1.-expense-app/" class="">
-      5.1. Expense App</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uitableview/5.2.-first-screen-part-1-adding-a-bar-button/" class="">
-      5.2. First screen, part 1: Adding a Bar Button</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uitableview/5.3.-first-screen-part-2-setting-up-the-view-of-the-first-screen-with-tableview./" class="">
-      5.3. First screen, part 2: Setting up the View of the First Screen with TableView.</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uitableview/5.4.-first-screen-part-3-setting-up-the-view-controller-and-populating-tableview/" class="">
-      5.4. First screen, part 3: Setting up the View Controller and populating TableView</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uitableview/5.5.-second-screen-part-1-setting-up-the-view-of-the-add-expense-screen/" class="">
-      5.5. Second screen, part 1: Setting up the View of the Add Expense Screen</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uitableview/5.6.-second-screen-part-2-setting-up-add-expense-view-controller/" class="">
-      5.6. Second screen, part 2: Setting up Add Expense View Controller</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uitableview/5.7.-second-screen-part-3-send-new-expense-back-to-viewcontroller-and-update-the-tableview/" class="">
-      5.7. Second screen, part 3: Send new expense back to ViewController and update the TableView</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uitableview/5.8.-tapping-a-cell-in-tableview-and-practice-exercise/" class="">
-      5.8. Tapping a cell in TableView and Practice exercise</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uitableview/5.9.-reference-code/" class="">
-      5.9. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uiscrollview/" class="">
-      UIScrollView</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uiscrollview/8.1.-creating-the-view-of-the-screen/" class="">
-      8.1. Creating the View of the Screen</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uiscrollview/8.2.-creating-the-controller/" class="">
-      8.2. Creating the Controller</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uiscrollview/8.3.-reference-code/" class="">
-      8.3. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/" class="active">
-      UIMenu &amp; Image Pickers</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.1.-updating-the-tableview-cell-to-accommodate-an-imageview/" class="">
-      6.1. Updating the TableView Cell to accommodate an ImageView</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.2.-add-expense-screen/" class="">
-      6.2. Add Expense Screen</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.3.-addexpenseviewcontroller-uimenu-for-buttonselecttype/" class="">
-      6.3. AddExpenseViewController: UIMenu for buttonSelectType</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.4.-addexpenseviewcontroller-uimenu-for-buttontakephoto/" class="">
-      6.4. AddExpenseViewController: UIMenu for buttonTakePhoto</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.5.-using-gallery-phpicker/" class="">
-      6.5. Using Gallery: PHPicker</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.6.-using-camera-uiimagepickercontroller/" class="">
-      6.6. Using Camera: UIImagePickerController</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.7.-getting-the-expense-back-to-viewcontroller/" class="">
-      6.7. Getting the expense back to ViewController</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.8.-wrapping-up-a-bit-of-polishing/" class="">
-      6.8. Wrapping Up: a bit of polishing</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.9.-reference-code/" class="">
-      6.9. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a>
-      Useful UI Elements</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/embed-navigation-controller-from-code-not-storyboard/" class="">
-      Embed Navigation Controller from code (Not Storyboard)</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/1.-hiding-keyboard-when-tapped-outside/" class="">
-      1. Hiding Keyboard When Tapped Outside</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/2.-slide-up-the-view-to-accommodate-the-on-screen-keyboard/" class="">
-      2. Slide Up the View to Accommodate the on Screen Keyboard</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/3.-saving-small-data-when-the-app-is-not-running-session-or-other-state-variables/" class="">
-      3. Saving Small Data When the App Is Not Running Session or Other State Variables</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/4.-stack-view/" class="">
-      4. Stack View</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/" class="">
-      5. Tab Bar Controller</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/5.1.-views-of-the-screens/" class="">
-      1. Views of the Screens</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/5.2.-controllers-of-the-screens/" class="">
-      2. Controllers of the Screens</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/5.3.-patching-the-screens-in-the-tab-bar/" class="">
-      3. Patching the Screens in the Tab Bar</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/5.4.-sending-data-from-one-tab-to-another/" class="">
-      4. Sending data From one Tab to Another</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/5.5.-reference-code/" class="">
-      5. Reference Code</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/5.6.-notes-for-tab-bar-controller/" class="">
-      6. Notes for Tab Bar Controller</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/" class="">
-      6. Search Bar</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/6.1.-setting-up-the-views/" class="">
-      6.1. Setting up the Views</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/6.2.-setting-up-the-view-controller-handling-the-search-bar/" class="">
-      6.2. Setting up the View Controller: Handling the Search Bar</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/6.3.-reference-code/" class="">
-      6.3. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/" class="">
-      Bottom Sheet View Modal Presentation</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/1.-creating-the-screen-for-a-bottom-sheet-view/" class="">
-      1. Creating the Screen for a Bottom Sheet View</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/2.-setting-up-the-controller-for-the-search-bottom-sheet/" class="">
-      2. Setting up the Controller for the Search Bottom Sheet</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/3.-main-screen/" class="">
-      3. Main Screen</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/4.-sending-data-back-to-main-screen/" class="">
-      4. Sending data back to Main Screen</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/5.-reference-code/" class="">
-      5. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a>
-      Module 5: Networking &amp; APIs</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/http-and-networking/" class="">
-      HTTP &amp; Networking</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/http-and-networking/10.1.-http-connections/" class="">
-      10.1. HTTP connections</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/http-and-networking/10.2.-postman-a-useful-tool-to-test-web-services/" class="">
-      10.2. Postman: a Useful Tool to Test Web Services</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/http-and-networking/10.3.-testing-our-simple-custom-api-with-postman/" class="">
-      10.3. Testing our Simple Custom API with Postman</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/http-and-networking/10.4.-app-that-uses-our-contact-api/" class="">
-      10.4. App that Uses Our Contact API</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/http-and-networking/10.5.-setting-up-the-view-of-app10/" class="">
-      10.5. Setting up the View of App10</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/http-and-networking/10.9.-reference-code/" class="">
-      10.9. Reference Code</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/http-and-networking/10.6.-fetching-data-with-alamofire-get/" class="">
-      10.6. Fetching Data With Alamofire Get</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/http-and-networking/10.7.-posting-data-with-alamofire-post/" class="">
-      10.7. Posting Data With Alamofire Post</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/http-and-networking/10.8.-fetching-data-with-alamofire-details-endpoint/" class="">
-      10.8. Fetching Data With Alamofire Details Endpoint</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/working-with-json/" class="">
-      Working with JSON</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/working-with-json/11.1.-the-json-api-for-the-contact-app/" class="">
-      11.1. The JSON API for the Contact App</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/working-with-json/11.3.-app11-getting-the-details-of-a-selected-contact-details-endpoint/" class="">
-      11.3. App11: Getting the Details of a Selected Contact (details endpoint)</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/working-with-json/11.4.-must-dos-while-decoding-json-adopting-codable/" class="">
-      11.4. &#39;Must Do&#39;s While Decoding JSON adopting Codable</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/working-with-json/11.5.-app11-add-a-new-contact/" class="">
-      11.5. App11: Add a new Contact</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/working-with-json/11.6.-adding-accessory-button-to-table-view-edit-delete-a-contact/" class="">
-      11.6. Adding Accessory Button to Table View (Edit/Delete a Contact)</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/working-with-json/11.7.-reference-code/" class="">
-      11.7. Reference Code</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/working-with-json/useful-extra-11.8.-decluttering-codes-from-view-controller/" class="">
-      11.8. Decluttering codes from View Controller (Recommended Read)</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/working-with-json/11.2.-app11-getting-all-the-contact-names-getall-endpoint/" class="">
-      11.2. App11 Getting All the Contact Names Getall Endpoint</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a>
-      Module 6: Architecture &amp; Data Flow</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/06-data-persistence-and-architecture/notification-center/" class="">
-      Notification Center</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/06-data-persistence-and-architecture/notification-center/7.1.-app-7/" class="">
-      7.1. App 7</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/06-data-persistence-and-architecture/notification-center/7.1.-add-an-observer/" class="">
-      7.1. Add an Observer</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/06-data-persistence-and-architecture/notification-center/7.2.-posting-data-to-notification-center/" class="">
-      7.2. Posting Data to Notification Center</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/06-data-persistence-and-architecture/notification-center/7.3.-defining-the-names-identifiers-of-the-notifications-in-a-better-way/" class="">
-      7.3. Defining the names (identifiers) of the Notifications in a Better Way</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/06-data-persistence-and-architecture/notification-center/7.4.-reference-code/" class="">
-      7.4. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a>
-      Clean Code &amp; Async</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/" class="">
-      1. Writing clean code for Asynchronous operations</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/1.1.-decluttering-our-app11-contacts-app-with-json/" class="">
-      1.1. Decluttering our App11 (Contacts App with JSON)</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/1.2.-decluttering-continues.../" class="">
-      1.2. Decluttering continues...</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/1.3.-reference-code/" class="">
-      1.3. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a>
-      Module 7: Cloud Integrations &amp; Maps</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/cocoapods/" class="">
-      CocoaPods</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/cocoapods/9.1.-installing-cocoa-pods/" class="">
-      9.1. Installing Cocoa Pods</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/cocoapods/9.2.-integrating-cocoapods-into-a-project/" class="">
-      9.2. Integrating CocoaPods into a Project</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/" class="">
-      Firebase Auth &amp; Firestore</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.1.-app-12-with-firebase/" class="">
-      12.1. App 12 with Firebase</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.2.-setting-up-the-main-screen-view/" class="">
-      12.2. Setting up the Main Screen View</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.3.-setting-up-the-viewcontroller-with-tableview/" class="">
-      12.3. Setting up the ViewController with TableView</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.4.-authentication-state-handler/" class="">
-      12.4. Authentication State Handler</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/" class="">
-      12.5. Implementing Register and Sign In</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/12.3.1.-building-the-right-bar-button-s-for-sign-in-and-logout/" class="">
-      12.5.1. Building the Right Bar Button(s) for Sign In and Logout</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/12.3.2.-register-screen-create-a-user-in-firebase/" class="">
-      12.5.2. Register Screen: Create a user in Firebase</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/12.3.2.-progress-activity-indicator/" class="">
-      12.5.2. Progress Activity Indicator</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/12.3.3.-implementing-sign-in/" class="">
-      12.5.3. Implementing Sign In</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.6.-firestore-structure-for-storing-contacts/" class="">
-      12.6. Firestore Structure for Storing Contacts</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.7.-adding-a-new-contact/" class="">
-      12.7. Adding a New Contact</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.8.-observing-firestore-updates-updating-the-tableview/" class="">
-      12.8. Observing Firestore Updates: Updating the TableView</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.9.-reference-code/" class="">
-      12.9. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-storage/" class="">
-      Firebase Storage</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-storage/13.1.-integrating-photo-pickers/" class="">
-      13.1. Integrating Photo Pickers</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-storage/13.2.-uploading-the-picked-photo-to-firebase-storage/" class="">
-      13.2. Uploading the Picked Photo to Firebase Storage</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-storage/13.3.-displaying-images-hosted-in-cloud/" class="">
-      13.3. Displaying Images Hosted in Cloud</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-storage/13.4.-reference-code/" class="">
-      13.4. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/mapkit-and-location/" class="">
-      MapKit &amp; Location</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/mapkit-and-location/14.1.-phase-1-displaying-map-view-and-current-location/" class="">
-      14.1. Phase 1: Displaying Map View and Current Location</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/mapkit-and-location/14.2.-phase-2-annotations-and-accessories-for-a-certain-place/" class="">
-      14.2. Phase 2: Annotations and Accessories for a certain place</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/mapkit-and-location/14.3.-phase-3-place-search-and-navigate/" class="">
-      14.3. Phase 3: Place Search and Navigate</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/mapkit-and-location/14.4.-phase-4-display-searched-places-on-map/" class="">
-      14.4. Phase 4: Display Searched Places on Map</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/mapkit-and-location/14.5.-reference-code/" class="">
-      14.5. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</nav>
-
-
-
-
-  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
-
-
-
-  </div>
-</aside>
- 
-
-    <div class="book-page">
-      <header class="book-header hidden">
+Learn to use UIMenu instead of PickerView. Add an ImageView to the TableView Cell to display the expense receipt. Add options to take a photo of the receipt using the camera or gallery. App6 would look something like this:'><meta itemprop=wordCount content="4048"><title>UIMenu & Image Pickers | iOS UIKit Course</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=/docs/04-advanced-ui-components/uimenu-and-image-pickers/><link rel=stylesheet href=/book.min.27b623a68e5ed421a2c09e9cb252a5df26e9f6d074ae994704e46b8381284e76.css><script defer src=/fuse.min.js></script><script defer src=/en.search.min.946e84732729cdf57bc6627fb099b618f786241a8fd580d4e88e8f50700543b5.js></script><link rel=alternate type=application/rss+xml href=/docs/04-advanced-ui-components/uimenu-and-image-pickers/index.xml title="iOS UIKit Course"></head><body dir=ltr class="book-kind-section book-type-docs"><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>iOS UIKit Course</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href=/docs/01-getting-started/>Module 1: Getting Started</a><ul><li><a href=/docs/01-getting-started/getting-started/>Getting Started</a><ul></ul></li></ul></li><li><a href=/docs/02-swift-fundamentals/>Module 2: Swift Fundamentals</a><ul><li><a href=/docs/02-swift-fundamentals/swift-the-programming-language/>Variables & Data Types</a><ul><li><a href=/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./>1. Variables Data Types and More.</a><ul></ul></li></ul></li><li><a href=/docs/02-swift-fundamentals/collections/>Collections</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/operators/>Operators</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/conditionals/>Conditionals</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/loops/>Loops</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/functions/>Functions</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/closures/>Closures</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/optionals/>Optionals</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/custom-data-types/>Custom Data Types</a><ul><li><a href=/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/>9.1. Structs</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/custom-data-types/9.2.-classes/>9.2. Classes</a><ul></ul></li></ul></li><li><a href=/docs/02-swift-fundamentals/protocols/>Protocols</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/sorting-arrays/>Sorting Arrays</a><ul></ul></li></ul></li><li><a href=/docs/03-introduction-to-uikit/>Module 3: Introduction to UIKit</a><ul><li><a href=/docs/03-introduction-to-uikit/creating-our-first-app/>Creating Our First App</a><ul><li><a href=/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/>1. Creating Our First App</a><ul></ul></li></ul></li><li><a href=/docs/03-introduction-to-uikit/designing-without-storyboards/>Designing Without Storyboards</a><ul></ul></li><li><a href=/docs/03-introduction-to-uikit/multi-screen-apps/>Multi-Screen Apps</a><ul><li><a href=/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/>3.3. Send data back from Screen 2 to Screen 1</a><ul></ul></li></ul></li><li><a href=/docs/03-introduction-to-uikit/mvc-architecture/>MVC Architecture</a><ul></ul></li></ul></li><li><a href=/docs/04-advanced-ui-components/>Module 4: Advanced UI Components</a><ul><li><a href=/docs/04-advanced-ui-components/uitableview/>UITableView</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/uiscrollview/>UIScrollView</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/uimenu-and-image-pickers/ class=active>UIMenu & Image Pickers</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/>Useful UI Elements</a><ul><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/>5. Tab Bar Controller</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/>6. Search Bar</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/>Bottom Sheet View Modal Presentation</a><ul></ul></li></ul></li></ul></li><li><a href=/docs/05-networking-and-apis/>Module 5: Networking & APIs</a><ul><li><a href=/docs/05-networking-and-apis/http-and-networking/>HTTP & Networking</a><ul></ul></li><li><a href=/docs/05-networking-and-apis/working-with-json/>Working with JSON</a><ul></ul></li></ul></li><li><a href=/docs/06-data-persistence-and-architecture/>Module 6: Architecture & Data Flow</a><ul><li><a href=/docs/06-data-persistence-and-architecture/notification-center/>Notification Center</a><ul></ul></li><li><a href=/docs/06-data-persistence-and-architecture/clean-code-and-async/>Clean Code & Async</a><ul><li><a href=/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/>1. Writing Clean Code For Asynchronous Operations</a><ul></ul></li></ul></li></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/>Module 7: Cloud Integrations & Maps</a><ul><li><a href=/docs/07-cloud-integrations-and-maps/cocoapods/>CocoaPods</a><ul></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/>Firebase Auth & Firestore</a><ul><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/>12.5. Implementing Register and Sign In</a><ul></ul></li></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-storage/>Firebase Storage</a><ul></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/mapkit-and-location/>MapKit & Location</a><ul></ul></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><label for=menu-control><img src=/icons/menu.svg class=book-icon alt=Menu></label><h3>UIMenu & Image Pickers</h3><label for=toc-control><img src=/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#app6-adding-more-features-on-app5>App6: Adding more features on App5</a></li></ul><ul><li><a href=#appendix>Appendix</a><ul><li><a href=#installing-and-using-sf-symbols-app>Installing and using SF Symbols app</a></li></ul></li></ul><ul><li><a href=#addexpenseview>AddExpenseView</a><ul><li><a href=#setting-up-the-buttons>Setting up the Buttons</a></li><li><a href=#the-constraints>The Constraints</a></li></ul></li></ul><ul><li><ul><li><a href=#uimenu-for-buttonselecttype>UIMenu for buttonSelectType</a></li></ul></li></ul><ul><li><ul><li><a href=#modify-the-buttontakephoto-in-addexpenseview>Modify the buttonTakePhoto in AddExpenseView</a></li></ul></li></ul><ul><li><ul><li></li><li><a href=#changing-the-privacy-settings-of-the-app-to-allow-the-app-to-access-the-camera>Changing the privacy settings of the App to allow the app to access the Camera</a></li></ul></li></ul><ul><li><ul><li><a href=#update-expense-data-model>Update Expense data model:</a></li><li><a href=#update-addexpenseviewcontrollers-onaddbuttontapped-method>Update AddExpenseViewController&rsquo;s onAddButtonTapped() method:</a></li><li><a href=#update-the-tableview-to-display-the-image-in-the-cell>Update the TableView to display the image in the cell</a></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=6-uimenu-picking-images-from-gallery-and-camera-and-uiimageview>6. UIMenu, Picking Images from Gallery and Camera, and UIImageView<a class=anchor href=#6-uimenu-picking-images-from-gallery-and-camera-and-uiimageview>#</a></h1><h2 id=app6-adding-more-features-on-app5>App6: Adding more features on App5<a class=anchor href=#app6-adding-more-features-on-app5>#</a></h2><p>Let&rsquo;s create a new project, &ldquo;App6.&rdquo; Add all the codes from the current &ldquo;App5.&rdquo; For your convenience, download the project from here:</p><p>{% file src="/gitbook-assets/App6_initial (1).zip" %}</p><p>Our goal here is to:</p><ul><li>Learn to use UIMenu instead of PickerView.</li><li>Add an ImageView to the TableView Cell to display the expense receipt.</li><li>Add options to take a photo of the receipt using the camera or gallery.</li></ul><p>App6 would look something like this:</p><figure><img src=/gitbook-assets/6.1.one.gif alt><figcaption></figcaption></figure><h1 id=61-updating-the-tableview-cell-to-accommodate-an-imageview>6.1. Updating the TableView Cell to accommodate an ImageView<a class=anchor href=#61-updating-the-tableview-cell-to-accommodate-an-imageview>#</a></h1><p>Let&rsquo;s open TableViewExpenseCell.swift file to add an ImageView. Let&rsquo;s add a new variable named, <code>imageViewReceipt</code> of type <code>UIImageView</code> in the file, set it up, and initialize its constraints. Add the following code to TableViewExpenseCell.swift file:</p><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  TableViewExpenseCell.swift</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  App6</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  Created by Sakib Miazi on 5/18/23.</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>UIKit</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>TableViewExpenseCell</span>: UITableViewCell {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//codes omitted...</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> declaring the ImageView for receipt image...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> imageReceipt: UIImageView!
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>init</span>(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//Codes omitted...</span>
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> defining the ImageView for receipt image...</span>
+</span></span><span style=display:flex><span>        setupimageReceipt()
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        initConstraints()
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//Codes omitted...</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//Adding the ImageView for receipt...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupimageReceipt</span>(){
+</span></span><span style=display:flex><span>        imageReceipt = UIImageView()
+</span></span><span style=display:flex><span>        imageReceipt.image = UIImage(systemName: <span style=color:#e6db74>&#34;photo&#34;</span>)
+</span></span><span style=display:flex><span>        imageReceipt.contentMode = .scaleToFill
+</span></span><span style=display:flex><span>        imageReceipt.clipsToBounds = <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>        imageReceipt.layer.cornerRadius = <span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span>        imageReceipt.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>        wrapperCellView.addSubview(imageReceipt)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> initializing the constraints...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>initConstraints</span>(){
+</span></span><span style=display:flex><span>        NSLayoutConstraint.activate([
+</span></span><span style=display:flex><span>            wrapperCellView.topAnchor.constraint(equalTo: <span style=color:#66d9ef>self</span>.topAnchor,constant: <span style=color:#ae81ff>10</span>),
+</span></span><span style=display:flex><span>            wrapperCellView.leadingAnchor.constraint(equalTo: <span style=color:#66d9ef>self</span>.leadingAnchor, constant: <span style=color:#ae81ff>10</span>),
+</span></span><span style=display:flex><span>            wrapperCellView.bottomAnchor.constraint(equalTo: <span style=color:#66d9ef>self</span>.bottomAnchor, constant: <span style=color:#f92672>-</span><span style=color:#ae81ff>10</span>),
+</span></span><span style=display:flex><span>            wrapperCellView.trailingAnchor.constraint(equalTo: <span style=color:#66d9ef>self</span>.trailingAnchor, constant: <span style=color:#f92672>-</span><span style=color:#ae81ff>10</span>),
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            labelTitle.topAnchor.constraint(equalTo: wrapperCellView.topAnchor, constant: <span style=color:#ae81ff>2</span>),
+</span></span><span style=display:flex><span>            labelTitle.leadingAnchor.constraint(equalTo: imageReceipt.trailingAnchor, constant: <span style=color:#ae81ff>8</span>),
+</span></span><span style=display:flex><span>            labelTitle.heightAnchor.constraint(equalToConstant: <span style=color:#ae81ff>32</span>),
+</span></span><span style=display:flex><span>            labelTitle.widthAnchor.constraint(lessThanOrEqualTo: wrapperCellView.widthAnchor),
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            labelAmount.topAnchor.constraint(equalTo: labelTitle.bottomAnchor, constant: <span style=color:#ae81ff>2</span>),
+</span></span><span style=display:flex><span>            labelAmount.leadingAnchor.constraint(equalTo: labelTitle.leadingAnchor),
+</span></span><span style=display:flex><span>            labelAmount.heightAnchor.constraint(equalToConstant: <span style=color:#ae81ff>32</span>),
+</span></span><span style=display:flex><span>            labelAmount.widthAnchor.constraint(lessThanOrEqualTo: labelTitle.widthAnchor),
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            labelType.topAnchor.constraint(equalTo: labelAmount.bottomAnchor, constant: <span style=color:#ae81ff>2</span>),
+</span></span><span style=display:flex><span>            labelType.leadingAnchor.constraint(equalTo: labelTitle.leadingAnchor),
+</span></span><span style=display:flex><span>            labelType.heightAnchor.constraint(equalToConstant: <span style=color:#ae81ff>32</span>),
+</span></span><span style=display:flex><span>            labelType.widthAnchor.constraint(lessThanOrEqualTo: labelTitle.widthAnchor),
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            imageReceipt.leadingAnchor.constraint(equalTo: wrapperCellView.leadingAnchor, constant: <span style=color:#ae81ff>8</span>),
+</span></span><span style=display:flex><span>            imageReceipt.centerYAnchor.constraint(equalTo: wrapperCellView.centerYAnchor),
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> it is better to set the height and width of an ImageView with constraints...</span>
+</span></span><span style=display:flex><span>            imageReceipt.heightAnchor.constraint(equalTo: wrapperCellView.heightAnchor, constant: <span style=color:#f92672>-</span><span style=color:#ae81ff>20</span>),
+</span></span><span style=display:flex><span>            imageReceipt.widthAnchor.constraint(equalTo: wrapperCellView.heightAnchor, constant: <span style=color:#f92672>-</span><span style=color:#ae81ff>20</span>),
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            wrapperCellView.heightAnchor.constraint(equalToConstant: <span style=color:#ae81ff>104</span>)
+</span></span><span style=display:flex><span>        ])
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//codes omitted...</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>{% endcode %}</p><p>In the above code, we have a few very important key points to discuss:</p><p><strong>Defining the ImageView <code>imageReceipt</code>:</strong></p><ul><li>Let&rsquo;s look into the method where we define the new <code>imageReceipt</code> ImageView (<code>setupimageReceipt()</code>). We wrote: <code>imageReceipt.image = UIImage(systemName: "photo")</code>. We are trying to set a default image for the ImageView. For the default image, we select an iOS system image named &ldquo;photo&rdquo; (<img src="/gitbook-assets/photo@2x (1).png" alt data-size=line>). Xcode ships with these system images. But we need to know the names of those images. Fortunately, we can easily find the names of the system images. You need to install an Apple developer app called &ldquo;SF Symbols&rdquo; on your Mac. <a href=6.1.-updating-the-tableview-cell-to-accommodate-an-imageview.md#installing-and-using-sf-symbols-app>Download, install, and learn how to use the app.</a></li><li>Next, we write <code>imageReceipt.contentMode = .scaleToFill</code> to say, fill the ImageView with the image by resizing it. For more details on <code>contentMode</code>, read: <a href=https://www.delasign.com/blog/uiimageview-content-modes/>https://www.delasign.com/blog/uiimageview-content-modes/</a></li><li>We write <code>imageReceipt.clipsToBounds = true</code> to say, clip the image if it overflows the ImageView frame.</li><li>We write <code>imageReceipt.layer.cornerRadius = 10</code> to make the corners of the ImageView rounded with a radius of 10.</li></ul><p><strong>Constraints of the ImageView <code>imageReceipt</code>:</strong></p><ul><li>We place the ImageView to the left of the cell. So, for all the other UI elements, we set their <code>leadingAnchor</code> to <code>imageReceipt</code>&rsquo;s <code>trailingAnchor</code> with a gap of 8 points. For example: <code>labelTitle.leadingAnchor.constraint(equalTo: imageReceipt.trailingAnchor, constant: 8)</code>.</li><li>It&rsquo;s better to define the heights and widths of the UI elements while designing the cell. We set the heights of the Labels to 32 points. For example, <code>labelTitle.heightAnchor.constraint(equalToConstant: 32)</code>.<br><br>Also, we define the constraints of the Labels so that they can take all the remaining space in the cell after we populate the ImageView. For example, <code>labelTitle.widthAnchor.constraint(lessThanOrEqualTo: wrapperCellView.widthAnchor)</code>. <code>lessThanOrEqualTo</code> means that it will try to occupy the whole width of the wrapper; if it can&rsquo;t, it will occupy the remaining space.</li><li>We are using the width of the cell to create a square ImageView by writing: <code>imageReceipt.heightAnchor.constraint(equalTo: wrapperCellView.heightAnchor, constant: -20)</code>.<br>It means if the wrapper&rsquo;s width is 104, the frame size of the ImageView will be 84x84.</li><li>Finally, we add all the constraint values (2+32+2+32+2+32+2) and define the wrapper&rsquo;s height to 104.</li></ul><p>Now that we are done with the file, we move to the Add Expense Screen.</p><h2 id=appendix>Appendix<a class=anchor href=#appendix>#</a></h2><h3 id=installing-and-using-sf-symbols-app>Installing and using SF Symbols app<a class=anchor href=#installing-and-using-sf-symbols-app>#</a></h3><ul><li>Download the SF Symbols app from here: <a href=https://developer.apple.com/sf-symbols/>https://developer.apple.com/sf-symbols/</a></li></ul><figure><img src="/gitbook-assets/6.1.two (1).gif" alt><figcaption></figcaption></figure><ul><li>Open the .DMG file</li><li>Then Install the .pkg file by double-clicking on it:</li></ul><figure><img src=/gitbook-assets/6.1.four.gif alt><figcaption></figcaption></figure><ul><li><p>Let&rsquo;s open the app. Press <code>Command</code> + <code>Space</code> to open the spotlight search. Then look for SF Symbols and press <code>return</code> to open it. \</p><figure><img src="/gitbook-assets/5.6.1.five (1).gif" alt><figcaption></figcaption></figure></li><li><p>Now we can use the app to find the appropriate iOS system icon/symbol for us and fetch the name of it. Here I am finding the name for the icon I will use:\</p><figure><img src="/gitbook-assets/5.6.1.six (1).gif" alt><figcaption></figcaption></figure></li></ul><h1 id=62-add-expense-screen>6.2. Add Expense Screen<a class=anchor href=#62-add-expense-screen>#</a></h1><p>The screen would be something like this:</p><p><img src=/gitbook-assets/Screenshot%202023-05-19%20at%2012.47.14%20AM.png alt></p><p>We have:</p><ul><li>Two TextFields</li><li>One Button to choose the type of expense</li><li>One Button (use the Camera icon as the background) to pick the image for receipt.</li><li>FInally, the Add Expense Button.</li></ul><h2 id=addexpenseview>AddExpenseView<a class=anchor href=#addexpenseview>#</a></h2><p>Let&rsquo;s open the AddExpenseView.swift file and update the code. Remove the PickerView and add two buttons (to select expense type and pick receipt image).</p><p>Let&rsquo;s see the updated code in the following:</p><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  AddExpenseView.swift</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  App6</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  Created by Sakib Miazi on 5/18/23.</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>UIKit</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>AddExpenseView</span>: UIView {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> textFieldTitle: UITextField!
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> textFieldAmount: UITextField!
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> buttonSelectType: UIButton!
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> buttonTakePhoto: UIButton!
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> buttonAdd: UIButton!
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>init</span>(frame: CGRect) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>super</span>.<span style=color:#66d9ef>init</span>(frame: frame)
+</span></span><span style=display:flex><span>        backgroundColor = .white
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        setuptextFieldTitle()
+</span></span><span style=display:flex><span>        setuptextFieldAmount()
+</span></span><span style=display:flex><span>        setupbuttonSelectType()
+</span></span><span style=display:flex><span>        setupbuttonTakePhoto()
+</span></span><span style=display:flex><span>        setupbuttonAdd()
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        initConstraints()
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setuptextFieldTitle</span>(){
+</span></span><span style=display:flex><span>        textFieldTitle = UITextField()
+</span></span><span style=display:flex><span>        textFieldTitle.placeholder = <span style=color:#e6db74>&#34;Put title&#34;</span>
+</span></span><span style=display:flex><span>        textFieldTitle.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>self</span>.addSubview(textFieldTitle)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setuptextFieldAmount</span>(){
+</span></span><span style=display:flex><span>        textFieldAmount = UITextField()
+</span></span><span style=display:flex><span>        textFieldAmount.placeholder = <span style=color:#e6db74>&#34;Put amount&#34;</span>
+</span></span><span style=display:flex><span>        textFieldAmount.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>self</span>.addSubview(textFieldAmount)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupbuttonSelectType</span>(){
+</span></span><span style=display:flex><span>        buttonSelectType = UIButton(type: .system)
+</span></span><span style=display:flex><span>        buttonSelectType.setTitle(<span style=color:#e6db74>&#34;Select the type of expense:&#34;</span>, <span style=color:#66d9ef>for</span>: .normal)
+</span></span><span style=display:flex><span>        buttonSelectType.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>self</span>.addSubview(buttonSelectType)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupbuttonTakePhoto</span>(){
+</span></span><span style=display:flex><span>        buttonTakePhoto = UIButton(type: .system)
+</span></span><span style=display:flex><span>        buttonTakePhoto.setTitle(<span style=color:#e6db74>&#34;&#34;</span>, <span style=color:#66d9ef>for</span>: .normal)
+</span></span><span style=display:flex><span>        buttonTakePhoto.setImage(UIImage(systemName: <span style=color:#e6db74>&#34;camera.fill&#34;</span>), <span style=color:#66d9ef>for</span>: .normal)
+</span></span><span style=display:flex><span>        buttonTakePhoto.contentHorizontalAlignment = .fill
+</span></span><span style=display:flex><span>        buttonTakePhoto.contentVerticalAlignment = .fill
+</span></span><span style=display:flex><span>        buttonTakePhoto.imageView?.contentMode = .scaleAspectFit
+</span></span><span style=display:flex><span>        buttonTakePhoto.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>self</span>.addSubview(buttonTakePhoto)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupbuttonAdd</span>(){
+</span></span><span style=display:flex><span>        buttonAdd = UIButton(type: .system)
+</span></span><span style=display:flex><span>        buttonAdd.setTitle(<span style=color:#e6db74>&#34;Add Expense&#34;</span>, <span style=color:#66d9ef>for</span>: .normal)
+</span></span><span style=display:flex><span>        buttonAdd.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>self</span>.addSubview(buttonAdd)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>initConstraints</span>(){
+</span></span><span style=display:flex><span>        NSLayoutConstraint.activate([
+</span></span><span style=display:flex><span>            textFieldTitle.topAnchor.constraint(equalTo: <span style=color:#66d9ef>self</span>.safeAreaLayoutGuide.topAnchor, constant: <span style=color:#ae81ff>32</span>),
+</span></span><span style=display:flex><span>            textFieldTitle.centerXAnchor.constraint(equalTo: <span style=color:#66d9ef>self</span>.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            textFieldAmount.topAnchor.constraint(equalTo: textFieldTitle.bottomAnchor, constant: <span style=color:#ae81ff>16</span>),
+</span></span><span style=display:flex><span>            textFieldAmount.centerXAnchor.constraint(equalTo: <span style=color:#66d9ef>self</span>.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            buttonSelectType.topAnchor.constraint(equalTo: textFieldAmount.bottomAnchor, constant: <span style=color:#ae81ff>16</span>),
+</span></span><span style=display:flex><span>            buttonSelectType.centerXAnchor.constraint(equalTo: <span style=color:#66d9ef>self</span>.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            buttonTakePhoto.topAnchor.constraint(equalTo: buttonSelectType.bottomAnchor, constant: <span style=color:#ae81ff>16</span>),
+</span></span><span style=display:flex><span>            buttonTakePhoto.centerXAnchor.constraint(equalTo: <span style=color:#66d9ef>self</span>.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style=display:flex><span>            buttonTakePhoto.widthAnchor.constraint(equalToConstant: <span style=color:#ae81ff>100</span>),
+</span></span><span style=display:flex><span>            buttonTakePhoto.heightAnchor.constraint(equalToConstant: <span style=color:#ae81ff>100</span>),
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            buttonAdd.topAnchor.constraint(equalTo: buttonTakePhoto.bottomAnchor, constant: <span style=color:#ae81ff>16</span>),
+</span></span><span style=display:flex><span>            buttonAdd.centerXAnchor.constraint(equalTo: <span style=color:#66d9ef>self</span>.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style=display:flex><span>        ])
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>   
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> unused functions...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>required</span> <span style=color:#66d9ef>init</span>?(coder: NSCoder) {
+</span></span><span style=display:flex><span>        fatalError(<span style=color:#e6db74>&#34;init(coder:) has not been implemented&#34;</span>)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>{% endcode %}</p><h3 id=setting-up-the-buttons>Setting up the Buttons<a class=anchor href=#setting-up-the-buttons>#</a></h3><h4 id=buttonselecttype>buttonSelectType:<a class=anchor href=#buttonselecttype>#</a></h4><p>Let&rsquo;s look into the setup method for <code>buttonSelectType</code>:</p><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupbuttonSelectType</span>(){
+</span></span><span style=display:flex><span>    buttonSelectType = UIButton(type: .system)
+</span></span><span style=display:flex><span>    buttonSelectType.setTitle(<span style=color:#e6db74>&#34;Select the type of expense:&#34;</span>, <span style=color:#66d9ef>for</span>: .normal)
+</span></span><span style=display:flex><span>    buttonSelectType.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>self</span>.addSubview(buttonSelectType)
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>{% endcode %}</p><p>It looks pretty straight forward now. At some point, we need to tweak the setup a little.</p><h4 id=buttontakephoto>buttonTakePhoto:<a class=anchor href=#buttontakephoto>#</a></h4><p>Let&rsquo;s look into the setup method:</p><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupbuttonTakePhoto</span>(){
+</span></span><span style=display:flex><span>    buttonTakePhoto = UIButton(type: .system)
+</span></span><span style=display:flex><span>    buttonTakePhoto.setTitle(<span style=color:#e6db74>&#34;&#34;</span>, <span style=color:#66d9ef>for</span>: .normal)
+</span></span><span style=display:flex><span>    buttonTakePhoto.setImage(UIImage(systemName: <span style=color:#e6db74>&#34;camera.fill&#34;</span>), <span style=color:#66d9ef>for</span>: .normal)
+</span></span><span style=display:flex><span>    buttonTakePhoto.contentHorizontalAlignment = .fill
+</span></span><span style=display:flex><span>    buttonTakePhoto.contentVerticalAlignment = .fill
+</span></span><span style=display:flex><span>    buttonTakePhoto.imageView?.contentMode = .scaleAspectFit
+</span></span><span style=display:flex><span>    buttonTakePhoto.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>self</span>.addSubview(buttonTakePhoto)
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>{% endcode %}</p><p>This button is a little different. We set a background to it, which shows a camera icon instead of text. So, we set an empty title to it. Then set an image of the system name, &ldquo;camera.fill&rdquo;. (I found the name using the SF Symbols app). These couple of lines are very important.</p><p>For example, <code>buttonTakePhoto.contentHorizontalAlignment = .fill</code> means that the contents of this button can fill the whole width of the button. In our case, the content is the camera image inside the button. The same idea works with the next line: <code>buttonTakePhoto.contentVerticalAlignment = .fill</code> to allow the image of the button fill the height of the button.</p><p>Then, we set the frame of the image so that the image can be loaded with the content mode <code>scaleAspectFit</code>. (<code>buttonTakePhoto.imageView?.contentMode = .scaleAspectFit</code>).</p><h3 id=the-constraints>The Constraints<a class=anchor href=#the-constraints>#</a></h3><p>The constraints here are pretty straightforward, except for the <code>buttonTakePhoto</code>. Let&rsquo;s look into the constraints for the Button:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span>buttonTakePhoto.topAnchor.constraint(equalTo: buttonSelectType.bottomAnchor, constant: <span style=color:#ae81ff>16</span>),
+</span></span><span style=display:flex><span>buttonTakePhoto.centerXAnchor.constraint(equalTo: <span style=color:#66d9ef>self</span>.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> setting buttonTakePhoto&#39;s height and width...</span>
+</span></span><span style=display:flex><span>buttonTakePhoto.widthAnchor.constraint(equalToConstant: <span style=color:#ae81ff>100</span>),
+</span></span><span style=display:flex><span>buttonTakePhoto.heightAnchor.constraint(equalToConstant: <span style=color:#ae81ff>100</span>),</span></span></code></pre></div><p>We set the height and width of <code>buttonTakePhoto</code>. <strong>When you are working with images, you should set a frame size. The best way to set the frame size is to do it using the constraints.</strong> Use <code>widthAnchor</code> as the width and <code>heightAnchor</code> as the height of the frame.</p><h1 id=63-addexpenseviewcontroller-uimenu-for-buttonselecttype>6.3. AddExpenseViewController: UIMenu for buttonSelectType<a class=anchor href=#63-addexpenseviewcontroller-uimenu-for-buttonselecttype>#</a></h1><p>Now, it&rsquo;s time to remove the PickerView codes. After we remove the PickerView, the code looks like this:</p><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  AddExpenseViewController.swift</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  App6</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  Created by Sakib Miazi on 5/18/23.</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>UIKit</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>AddExpenseViewController</span>: UIViewController {
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> delegate to ViewController when getting back...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> delegate:ViewController!
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> by default Groceries is selected...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> selectedType = <span style=color:#e6db74>&#34;Groceries&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> initializing the ADDExpenseView...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> addExpenseScreen = AddExpenseView()
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> set the current view to addExpenseScreen...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>loadView</span>() {
+</span></span><span style=display:flex><span>        view = addExpenseScreen
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>viewDidLoad</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>super</span>.viewDidLoad()
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> adding the action for tapping on buttonAdd...</span>
+</span></span><span style=display:flex><span>        addExpenseScreen.buttonAdd.addTarget(<span style=color:#66d9ef>self</span>, action: <span style=color:#66d9ef>#selector</span>(onAddButtonTapped), <span style=color:#66d9ef>for</span>: .touchUpInside)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> action for tapping buttonAdd..</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>@objc</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>onAddButtonTapped</span>(){
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>var</span> title:String?
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#66d9ef>let</span> titleText = addExpenseScreen.textFieldTitle.text{
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> <span style=color:#f92672>!</span>titleText.isEmpty{
+</span></span><span style=display:flex><span>                title = titleText
+</span></span><span style=display:flex><span>            }<span style=color:#66d9ef>else</span>{
+</span></span><span style=display:flex><span>                <span style=color:#75715e>//do your thing to alert user...</span>
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>var</span> amount = <span style=color:#ae81ff>0.0</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#66d9ef>let</span> amountText = addExpenseScreen.textFieldAmount.text{
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> <span style=color:#f92672>!</span>amountText.isEmpty{
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> <span style=color:#66d9ef>let</span> uwAmount = Double(amountText){
+</span></span><span style=display:flex><span>                    amount = uwAmount
+</span></span><span style=display:flex><span>                }<span style=color:#66d9ef>else</span>{
+</span></span><span style=display:flex><span>                    <span style=color:#75715e>//alert the user that it&#39;s not a valid input...</span>
+</span></span><span style=display:flex><span>                }
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>                
+</span></span><span style=display:flex><span>            }<span style=color:#66d9ef>else</span>{
+</span></span><span style=display:flex><span>                <span style=color:#75715e>//do your thing to alert the user...</span>
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>let</span> newExpense = Expense(title: title, amount: amount, type: selectedType)
+</span></span><span style=display:flex><span>        delegate.delegateOnAddExpense(expense: newExpense)
+</span></span><span style=display:flex><span>        navigationController?.popViewController(animated: <span style=color:#66d9ef>true</span>)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>{% endcode %}</p><p>Now if you run the app, it will look like the following:</p><figure><img src="/gitbook-assets/6.2.one (1).gif" alt><figcaption></figcaption></figure><p>So now, let&rsquo;s add the actions for the newly added buttons, <code>buttonSelectType</code> and <code>buttonTakePhoto</code>.</p><h3 id=uimenu-for-buttonselecttype>UIMenu for buttonSelectType<a class=anchor href=#uimenu-for-buttonselecttype>#</a></h3><p>When the user taps on <code>buttonSelectType</code>, it should display a pop-up menu with four options. Let&rsquo;s add the code for it. In AddExpenseViewController.swift add:</p><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  AddExpenseViewController.swift</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  App6</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>AddExpenseViewController</span>: UIViewController {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//codes omitted...</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>viewDidLoad</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>super</span>.viewDidLoad()
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> adding menu to buttonSelectType...</span>
+</span></span><span style=display:flex><span>        addExpenseScreen.buttonSelectType.menu = getMenuTypes()
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//codes omitted...</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> menu for buttonSelectType setup...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>getMenuTypes</span>() -&gt; UIMenu{
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>var</span> menuItems = [UIAction]()
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> type <span style=color:#66d9ef>in</span> Utilities.types{
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>let</span> menuItem = UIAction(title: type,handler: {(<span style=color:#66d9ef>_</span>) <span style=color:#66d9ef>in</span>
+</span></span><span style=display:flex><span>                                <span style=color:#66d9ef>self</span>.selectedType = type
+</span></span><span style=display:flex><span>                                <span style=color:#66d9ef>self</span>.addExpenseScreen.buttonSelectType.setTitle(<span style=color:#66d9ef>self</span>.selectedType, <span style=color:#66d9ef>for</span>: .normal)
+</span></span><span style=display:flex><span>                            })
+</span></span><span style=display:flex><span>            menuItems.append(menuItem)
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> UIMenu(title: <span style=color:#e6db74>&#34;Select type&#34;</span>, children: menuItems)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//codes omitted...</span>
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>{% endcode %}</p><p>We write <code>addExpenseScreen.buttonSelectType.menu</code> to set the menu. We write a method <code>getMenuTypes() -> UIMenu</code> to generate the menu. Let&rsquo;s look into the method.</p><p>We create an array of UIMenu items (four in our case). Each UIMenu item is a UIAction with the title of the menu item and the <a href=https://github.com/sakibnm/iOS/blob/main/7.-closures>closure</a> for defining the tasks we should do if we select that item from the menu. For example, in each iteration of the loop:</p><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>for</span> type <span style=color:#66d9ef>in</span> Utilities.types{
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> menuItem = UIAction(title: type,handler: {(<span style=color:#66d9ef>_</span>) <span style=color:#66d9ef>in</span>
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>self</span>.selectedType = type
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>self</span>.addExpenseScreen.buttonSelectType.setTitle(<span style=color:#66d9ef>self</span>.selectedType, <span style=color:#66d9ef>for</span>: .normal)
+</span></span><span style=display:flex><span>            })
+</span></span><span style=display:flex><span>    menuItems.append(menuItem)
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>{% endcode %}</p><p>Here, we are creating a menu item using the <code>Utilities.types</code> array. The <code>handler</code> closure defines the on-select actions for that item. We are saying that if the user selects this particular menu item, set the value of <code>selectedType</code> to the corresponding type of expense. And set the title of the button to the selected item.</p><p>So, let&rsquo;s run the app now.</p><figure><img src="/gitbook-assets/6.2.two (1).gif" alt><figcaption></figcaption></figure><p>See, if we long tap on <code>buttonSelectType</code> then a menu pops up, and we can select a type of expense. But we want this menu to pop up when we do regular tap. By default, the menu pop-up is not set as the primary action of a Button. We have to set it as an attribute of the Button when we initialize it. So let&rsquo;s go to AddExpenseView.swift and edit the <code>setupbuttonSelectType()</code> method:</p><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupbuttonSelectType</span>(){
+</span></span><span style=display:flex><span>    buttonSelectType = UIButton(type: .system)
+</span></span><span style=display:flex><span>    buttonSelectType.setTitle(<span style=color:#e6db74>&#34;Select the type of expense:&#34;</span>, <span style=color:#66d9ef>for</span>: .normal)
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> the on-tap primary action will pop up the menu...</span>
+</span></span><span style=display:flex><span>    buttonSelectType.showsMenuAsPrimaryAction = <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>    buttonSelectType.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>self</span>.addSubview(buttonSelectType)
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>{% endcode %}</p><p>Now let&rsquo;s run the app again:</p><figure><img src="/gitbook-assets/6.2.three (1) (1).gif" alt><figcaption></figcaption></figure><p>Now, our menu is working as intended.</p><h1 id=64-addexpenseviewcontroller-uimenu-for-buttontakephoto>6.4. AddExpenseViewController: UIMenu for buttonTakePhoto<a class=anchor href=#64-addexpenseviewcontroller-uimenu-for-buttontakephoto>#</a></h1><figure><img src="/gitbook-assets/6.2.three (2).gif" alt><figcaption><p><strong>The app so far</strong></p></figcaption></figure><p>Now let&rsquo;s handle the actions for <code>buttonTakePhoto</code> (with the camera icon). If the user taps the button, it should display two options: &ldquo;Camera&rdquo; and &ldquo;Gallery.&rdquo; If the user selects the &ldquo;Camera&rdquo; option, it will open the camera and take a photo; else, if the user selects &ldquo;Gallery,&rdquo; it will open the image gallery to pick a photo. Finally, the chosen photo will be set as the image inside <code>buttonTakePhoto</code>.</p><p>Let&rsquo;s open AddExpenseViewController.swift file. and add the following code in it:</p><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  AddExpenseViewController.swift</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  App6</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  Created by Sakib Miazi on 5/18/23.</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>UIKit</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>AddExpenseViewController</span>: UIViewController {
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//Codes omitted...</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>viewDidLoad</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>super</span>.viewDidLoad()
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>       <span style=color:#75715e>//codes omitted...</span>
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> adding menu to buttonTakePhoto...</span>
+</span></span><span style=display:flex><span>        addExpenseScreen.buttonTakePhoto.menu = getMenuImagePicker()
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//codes omitted...</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//codes omitted...</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>getMenuImagePicker</span>() -&gt; UIMenu{
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>var</span> menuItems = [
+</span></span><span style=display:flex><span>            UIAction(title: <span style=color:#e6db74>&#34;Camera&#34;</span>,handler: {(<span style=color:#66d9ef>_</span>) <span style=color:#66d9ef>in</span>
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>self</span>.pickUsingCamera()
+</span></span><span style=display:flex><span>            }),
+</span></span><span style=display:flex><span>            UIAction(title: <span style=color:#e6db74>&#34;Gallery&#34;</span>,handler: {(<span style=color:#66d9ef>_</span>) <span style=color:#66d9ef>in</span>
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>self</span>.pickPhotoFromGallery()
+</span></span><span style=display:flex><span>            })
+</span></span><span style=display:flex><span>        ]
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> UIMenu(title: <span style=color:#e6db74>&#34;Select source&#34;</span>, children: menuItems)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> take Photo using Camera...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>pickUsingCamera</span>(){
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> pick Photo using Gallery...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>pickPhotoFromGallery</span>(){
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//codes omitted...</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>{% endcode %}</p><p>Here we are writing <code>getMenuImagePicker() -> UIMenu</code> method to create a pop-up menu for displaying the options. In the closures, we call two methods, <code>pickUsingCamera()</code> and <code>pickPhotoFromGallery()</code> to handle the option clicks.</p><h3 id=modify-the-buttontakephoto-in-addexpenseview>Modify the buttonTakePhoto in AddExpenseView<a class=anchor href=#modify-the-buttontakephoto-in-addexpenseview>#</a></h3><p>Now we need to set the menu as the primary action for <code>buttonTakePhoto</code>. Open AddExpenseView.swift and add the following line to the method <code>setupbuttonTakePhoto()</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span>buttonTakePhoto.showsMenuAsPrimaryAction = <span style=color:#66d9ef>true</span></span></span></code></pre></div><p>Let&rsquo;s run the app now.</p><figure><img src="/gitbook-assets/6.3.one (1).gif" alt><figcaption></figcaption></figure><p>Our next task is to implement the Gallery and Camera functions.</p><h1 id=65-using-gallery-phpicker>6.5. Using Gallery: PHPicker<a class=anchor href=#65-using-gallery-phpicker>#</a></h1><p><a href=https://developer.apple.com/documentation/photokit/phpickerviewcontroller>PHPicker</a> <em>is a view controller that provides the user interface for choosing assets from the photo library.</em> We use this view controller to browse the local image assets, select the chosen image(s), and retrieve the image(s). It is a highly configurable and scalable tool and fairly easy to use. We need to import <code>PhotosUI</code> library to use the tool.</p><p>So, let&rsquo;s open AddExpenseViewController.swift file. We will write codes in <code>pickPhotoFromGallery()</code> method. We also need to adopt <code>PHPickerViewControllerDelegate</code> protocol using the <code>extension</code> keyword. Let&rsquo;s add the following code in AddExpenseViewController.swift file:</p><pre class=language-swift data-line-numbers><code class=lang-swift>//
+//  AddExpenseViewController.swift
+//  App6
+//
+//  Created by Sakib Miazi on 5/18/23.
+//
+
+import UIKit
+<a data-footnote-ref href=#user-content-fn-1>import PhotosUI</a> //MARK: importing the library to use PHPicker...
+
+class AddExpenseViewController: UIViewController {
+    //codes omitted...
+    
+    //MARK: variable to store the picked Image...
+    var pickedImage:UIImage?
+    
+    //Codes omitted...
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-  <div class="flex align-center justify-between">
-  <label for="menu-control">
-    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
-  </label>
-
-  <h3>UIMenu &amp; Image Pickers</h3>
-
-  <label for="toc-control">
-    
-    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
-    
-  </label>
-</div>
-
-
-  
-  <aside class="hidden">
-    
-  
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#app6-adding-more-features-on-app5">App6: Adding more features on App5</a></li>
-  </ul>
-</nav>
-
-
-
-  </aside>
-  
- 
-      </header>
-
-      
-      
-  <article class="markdown book-article"><h1 id="6-uimenu-picking-images-from-gallery-and-camera-and-uiimageview">6. UIMenu, Picking Images from Gallery and Camera, and UIImageView<a class="anchor" href="#6-uimenu-picking-images-from-gallery-and-camera-and-uiimageview">#</a></h1>
-<h2 id="app6-adding-more-features-on-app5">App6: Adding more features on App5<a class="anchor" href="#app6-adding-more-features-on-app5">#</a></h2>
-<p>Let&rsquo;s create a new project, &ldquo;App6.&rdquo; Add all the codes from the current &ldquo;App5.&rdquo; For your convenience, download the project from here:</p>
-<p>{% file src=&quot;/gitbook-assets/App6_initial (1).zip&quot; %}</p>
-<p>Our goal here is to:</p>
-<ul>
-<li>Learn to use UIMenu instead of PickerView.</li>
-<li>Add an ImageView to the TableView Cell to display the expense receipt.</li>
-<li>Add options to take a photo of the receipt using the camera or gallery.</li>
-</ul>
-<p>App6 would look something like this:</p>
-<figure><img src="/gitbook-assets/6.1.one.gif" alt=""><figcaption></figcaption></figure>
-</article>
- 
-      
-
-      <footer class="book-footer">
+       //codes omitted...
         
-  <div class="flex flex-wrap justify-between">
-
-<div>
-
-</div>
-
-<div>
-
-</div>
-
-</div>
-
-
-
-
-
-  
-  
-  
-  <div class="flex flex-wrap justify-between">
-    <span>
-    
-      <a href="/docs/04-advanced-ui-components/uiscrollview/8.3.-reference-code/" class="flex align-center">
-        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
-        <span>8.3. Reference Code</span>
-      </a>
-    
-    </span>
-    <span>
-    
-      <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.1.-updating-the-tableview-cell-to-accommodate-an-imageview/" class="flex align-center">
-        <span>6.1. Updating the TableView Cell to accommodate an ImageView</span>
-        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
-      </a>
-    
-    </span>
-  </div>
-  
-
-
- 
+        //MARK: adding menu to buttonTakePhoto...
+        addExpenseScreen.buttonTakePhoto.menu = getMenuImagePicker()
         
-  
-  <div class="book-comments">
-
-</div>
-  
- 
-        
-        
-  
- 
-        
-  
-  
-    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
-  
-
-      </footer>
-
-      <label for="menu-control" class="hidden book-menu-overlay"></label>
-    </div>
-
+        //codes omitted...
+    }
     
-  
-  <aside class="book-toc">
-    <div class="book-toc-content">
-      
-  
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#app6-adding-more-features-on-app5">App6: Adding more features on App5</a></li>
-  </ul>
-</nav>
+    //codes omitted...
+    
+    func getMenuImagePicker() -> UIMenu{
+        var menuItems = [
+            UIAction(title: "Camera",handler: {(_) in
+                self.pickUsingCamera()
+            }),
+            UIAction(title: "Gallery",handler: {(_) in
+                self.pickPhotoFromGallery()
+            })
+        ]
+        
+        return UIMenu(title: "Select source", children: menuItems)
+    }
+    
+    //codes omitted...
+    
+    //MARK: pick Photo using Gallery...
+    func pickPhotoFromGallery(){
+        var configuration = PHPickerConfiguration()
+        configuration.filter = PHPickerFilter.any(of: [.images])
+        configuration.selectionLimit = 1
+        
+        let photoPicker = PHPickerViewController(configuration: configuration)
+        
+        photoPicker.delegate = self
+        present(photoPicker, animated: true, completion: nil)
+    }
+    //codes omitted...
 
+}
 
-
-    </div>
-  </aside>
-  
- 
-  </main>
-
-  
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//MARK: adopting required protocols for PHPicker...
+extension AddExpenseViewController:PHPickerViewControllerDelegate{
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        dismiss(animated: true)
+        
+        print(results)
+        
+        let itemprovider = results.map(\.itemProvider)
+        
+        for item in itemprovider{
+            if item.canLoadObject(ofClass: UIImage.self){
+                item.loadObject(ofClass: UIImage.self, completionHandler: { (image, error) in
+                    DispatchQueue.main.async{
+                        if let uwImage = image as? UIImage{
+                            self.addExpenseScreen.buttonTakePhoto.setImage(
+                                uwImage.withRenderingMode(.alwaysOriginal),
+                                for: .normal
+                            )
+                            self.pickedImage = uwImage
+                        }
+                    }
+                })
+            }
+        }
+    }
+}
+</code></pre><p>Here,</p><ul><li>We are importing the library <code>PhotosUI</code> using <code>import</code> keyword.</li><li>Then, inside the class, we keep a variable <code>pickedImage</code> of type <code>UIImage</code> to store the picked image.</li><li><strong>Inside the <code>pickPhotoFromGallery()</code> method:</strong><ul><li>We create a configuration for the picker.</li><li>We are saying that we want to pick the images from the Gallery. You can modify it to pick Videos, GIFs, etc.</li><li>We write <code>configuration.selectionLimit = 1</code> to say that only one image can be selected from the Gallery. If you have used texting apps like WhatsApp or even Messages, you can see that you can select multiple images together and send them together in a message. PHPicker allows you to build similar functionalities. For our case, we need to select only one image.</li><li>Then we create the instance of <code>PHPickerViewController</code>, <code>photoPicker</code>with the configuration we created.</li><li>Then we set the <code>photoPicker</code>&rsquo;s delegate to <code>self</code> to enable this screen to handle the PHPicker.</li><li>Then we present the <code>photoPicker</code> on the screen.</li></ul></li><li><strong>Adopting PHPickerViewControllerDelegate protocol:</strong><ul><li><p>We must implement <code>didFinishPicking</code> method to handle the results. results contain the images we picked using the <code>photoPicker</code>.</p></li><li><p>If you directly print the results, you should see something like the following:</p><pre tabindex=0><code>[PhotosUI.PHPickerResult(
+    itemProvider: &lt;PUPhotosFileProviderItemProvider: 0x600001091290&gt; {
+        types = (
+            &#34;public.jpeg&#34;
+        )
+    }, 
+    assetIdentifier: nil, 
+    __personIdentifier: nil)
+]</code></pre></li><li><p>Notice that it is a file structure. It creates a package of selected images in the &lsquo;itemProvider&rsquo; directory. For example, I selected the &ldquo;public.jpeg&rdquo; image from the gallery, and the <code>photoPicker</code> sent the image with this package.</p></li><li><p>Now, between line 71 through 85, we iterate through all the images inside the package and <strong>asynchronously (DispatchQueue)</strong> fetch the images and deal with them. Since we have only one image, we set the image to <code>pickedImage</code>.</p></li><li><p>You might get confused by seeing:</p></li><li><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>self</span>.addExpenseScreen.buttonTakePhoto.setImage(
+</span></span><span style=display:flex><span>    uwImage.withRenderingMode(.alwaysOriginal),
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span>: .normal
+</span></span><span style=display:flex><span>)</span></span></code></pre></div></li><li><p>Here, we are setting the image rendering mode to <code>alwaysOriginal</code> for setting the image for <code>buttonTakePhoto</code>. We set a specific rendering mode because iOS sets a tint on top of the images inside a button. That would ruin the original image. To remove the tinting effect, we set the rendering mode to <code>alwaysOriginal</code>. <em>Try removing the rendering mode, and see the tinting effect.</em></p></li></ul></li></ul><p>Alright! We are done setting up the PHPicker, and now it&rsquo;s time to test the app.</p><figure><img src="/gitbook-assets/6.5.one (1).gif" alt><figcaption></figcaption></figure><h1 id=66-using-camera-uiimagepickercontroller>6.6. Using Camera: UIImagePickerController<a class=anchor href=#66-using-camera-uiimagepickercontroller>#</a></h1><p>Now it&rsquo;s time to build the final part of the app: integrating the camera to take a photo.</p><p><mark style=color:red><strong>Please note: the camera doesn&rsquo;t work in the emulator; you need a physical iOS device to test it. Do not worry; picking images using the camera is not mandatory in this course. This is an example for your future reference.</strong></mark></p><p>So, let&rsquo;s open AddExpenseViewController.swift file. We will write codes in <code>pickUsingCamera()</code> method. We also need to adopt <code>UINavigationControllerDelegate</code>, and <code>UIImagePickerControllerDelegate</code> protocols using the <code>extension</code> keyword. Let&rsquo;s add the following code in AddExpenseViewController.swift file:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  AddExpenseViewController.swift</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  App6</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  Created by Sakib Miazi on 5/18/23.</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//codes omitted...</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>AddExpenseViewController</span>: UIViewController {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//codes omitted...</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> variable to store the picked Image...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> pickedImage:UIImage?
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//Codes omitted...</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>viewDidLoad</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>super</span>.viewDidLoad()
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>       <span style=color:#75715e>//codes omitted...</span>
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> adding menu to buttonTakePhoto...</span>
+</span></span><span style=display:flex><span>        addExpenseScreen.buttonTakePhoto.menu = getMenuImagePicker()
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//codes omitted...</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//codes omitted...</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>getMenuImagePicker</span>() -&gt; UIMenu{
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>var</span> menuItems = [
+</span></span><span style=display:flex><span>            UIAction(title: <span style=color:#e6db74>&#34;Camera&#34;</span>,handler: {(<span style=color:#66d9ef>_</span>) <span style=color:#66d9ef>in</span>
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>self</span>.pickUsingCamera()
+</span></span><span style=display:flex><span>            }),
+</span></span><span style=display:flex><span>            UIAction(title: <span style=color:#e6db74>&#34;Gallery&#34;</span>,handler: {(<span style=color:#66d9ef>_</span>) <span style=color:#66d9ef>in</span>
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>self</span>.pickPhotoFromGallery()
+</span></span><span style=display:flex><span>            })
+</span></span><span style=display:flex><span>        ]
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> UIMenu(title: <span style=color:#e6db74>&#34;Select source&#34;</span>, children: menuItems)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//codes omitted...</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> take Photo using Camera...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>pickUsingCamera</span>(){
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>let</span> cameraController = UIImagePickerController()
+</span></span><span style=display:flex><span>        cameraController.sourceType = .camera
+</span></span><span style=display:flex><span>        cameraController.allowsEditing = <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>        cameraController.delegate = <span style=color:#66d9ef>self</span>
+</span></span><span style=display:flex><span>        present(cameraController, animated: <span style=color:#66d9ef>true</span>)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//codes omitted...</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//codes omitted...</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> adopting required protocols for UIImagePicker...</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>extension</span> <span style=color:#a6e22e>AddExpenseViewController</span>: UINavigationControllerDelegate, UIImagePickerControllerDelegate{
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>imagePickerController</span>(<span style=color:#66d9ef>_</span> picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+</span></span><span style=display:flex><span>        picker.dismiss(animated: <span style=color:#66d9ef>true</span>)
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#66d9ef>let</span> image = info[.editedImage] <span style=color:#66d9ef>as</span>? UIImage{
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>self</span>.addExpenseScreen.buttonTakePhoto.setImage(
+</span></span><span style=display:flex><span>                image.withRenderingMode(.alwaysOriginal),
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>for</span>: .normal
+</span></span><span style=display:flex><span>            )
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>self</span>.pickedImage = image
+</span></span><span style=display:flex><span>        }<span style=color:#66d9ef>else</span>{
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// Do your thing for No image loaded...</span>
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>Here we can see using a camera is pretty straightforward.</p><h4 id=inside-pickusingcamera-method>Inside pickUsingCamera() method:<a class=anchor href=#inside-pickusingcamera-method>#</a></h4><ul><li>We create an instance of <code>UIImagePickerController</code> named <code>cameraController</code>.</li><li>Then we set the source type of the controller to the camera. (This controller was also used to pick gallery images; however, Apple deprecated sources other than the camera for this controller).</li><li>Then we allow cropping and editing after the user takes the photo.</li><li>We set the camera delegate to <code>self</code> to handle the images after they are picked.</li><li>Then we present the camera.</li></ul><p><strong>Adopting UINavigationControllerDelegate and UIImagePickerControllerDelegate protocol:</strong></p><ul><li>We must implement the <code>imagePickerController()</code> method corresponding to <code>didFinishPickingMediaWithInfo</code>.</li><li>First, we must dismiss the picker; otherwise, iOS will not close the camera app.</li><li>Then we unwrap the image we took and edited.</li><li>Finally, we set it to <code>pickedImage</code>.</li></ul><h3 id=changing-the-privacy-settings-of-the-app-to-allow-the-app-to-access-the-camera>Changing the privacy settings of the App to allow the app to access the Camera<a class=anchor href=#changing-the-privacy-settings-of-the-app-to-allow-the-app-to-access-the-camera>#</a></h3><p>You need to update the privacy description for Camera Usage in the app &lsquo;Info&rsquo; configurations.</p><ul><li>Click on &lsquo;Info&rsquo; from the left pane.</li><li>Right-click on the empty space</li><li>Select &ldquo;Add Row.&rdquo;</li><li>Find &ldquo;Privacy - Camera Usage Description.&rdquo;</li><li>Add &ldquo;We need to use the camera to take the receipt of the expense.&rdquo; as your justification for the user to access the camera.</li></ul><figure><img src="/gitbook-assets/6.6.two (1).gif" alt><figcaption></figcaption></figure><p>Now let&rsquo;s run the app. I ran the app on my iPad to demonstrate it is working.</p><p>{% embed url=&ldquo;<a href="https://www.youtube.com/watch?v=FnCsBWWiv0Y%22">https://www.youtube.com/watch?v=FnCsBWWiv0Y"</a> %}</p><h1 id=67-getting-the-expense-back-to-viewcontroller>6.7. Getting the expense back to ViewController<a class=anchor href=#67-getting-the-expense-back-to-viewcontroller>#</a></h1><p>We now need to get the expense back when we press <code>buttonAdd</code>. We need to tweak the data model Expense to accommodate the image, right?</p><h3 id=update-expense-data-model>Update Expense data model:<a class=anchor href=#update-expense-data-model>#</a></h3><p>Let&rsquo;s open the Expense.swift file and update the file as the following:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  Expense.swift</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  App6</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  Created by Sakib Miazi on 5/18/23.</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>Foundation</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>UIKit</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>Expense</span>{
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> title: String?
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> amount: Double?
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> type: String?
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> image: UIImage?
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>init</span>(title: String, amount: Double, type: String, image: UIImage) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>self</span>.title = title
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>self</span>.amount = amount
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>self</span>.type = type
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>self</span>.image = image
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><h3 id=update-addexpenseviewcontrollers-onaddbuttontapped-method>Update AddExpenseViewController&rsquo;s onAddButtonTapped() method:<a class=anchor href=#update-addexpenseviewcontrollers-onaddbuttontapped-method>#</a></h3><p>We write:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> action for tapping buttonAdd..</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>@objc</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>onAddButtonTapped</span>(){
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> title:String = <span style=color:#e6db74>&#34;&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#66d9ef>let</span> titleText = addExpenseScreen.textFieldTitle.text{
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#f92672>!</span>titleText.isEmpty{
+</span></span><span style=display:flex><span>            title = titleText
+</span></span><span style=display:flex><span>        }<span style=color:#66d9ef>else</span>{
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//do your thing to alert user...</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span>
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> amount = <span style=color:#ae81ff>0.0</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#66d9ef>let</span> amountText = addExpenseScreen.textFieldAmount.text{
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#f92672>!</span>amountText.isEmpty{
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> <span style=color:#66d9ef>let</span> uwAmount = Double(amountText){
+</span></span><span style=display:flex><span>                amount = uwAmount
+</span></span><span style=display:flex><span>            }<span style=color:#66d9ef>else</span>{
+</span></span><span style=display:flex><span>                <span style=color:#75715e>//alert the user that it&#39;s not a valid input...</span>
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>return</span>
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>        }<span style=color:#66d9ef>else</span>{
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//do your thing to alert the user...</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span>
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> newExpense = Expense(
+</span></span><span style=display:flex><span>                        title: title, 
+</span></span><span style=display:flex><span>                        amount: amount, 
+</span></span><span style=display:flex><span>                        type: selectedType, 
+</span></span><span style=display:flex><span>                        image: pickedImage ?? (UIImage(systemName: <span style=color:#e6db74>&#34;photo&#34;</span>))<span style=color:#f92672>!</span>
+</span></span><span style=display:flex><span>                    )
+</span></span><span style=display:flex><span>    delegate.delegateOnAddExpense(expense: newExpense)
+</span></span><span style=display:flex><span>    navigationController?.popViewController(animated: <span style=color:#66d9ef>true</span>)
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>Here, we are creating a new expense with the title, amount, type, and image. The <code>pickedImage</code> might be nil since it is Optional. So if it becomes nil (at any point), we send a default system image named &ldquo;photo&rdquo; to be safe.</p><h3 id=update-the-tableview-to-display-the-image-in-the-cell>Update the TableView to display the image in the cell<a class=anchor href=#update-the-tableview-to-display-the-image-in-the-cell>#</a></h3><p>Open ViewController.swift. We need to update where we are adopting the TableView protocools.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> adopting the procols for TableView...</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>extension</span> <span style=color:#a6e22e>ViewController</span>: UITableViewDelegate, UITableViewDataSource{
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> returns the number of rows in the current section...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>tableView</span>(<span style=color:#66d9ef>_</span> tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> expenses.count
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> populate a cell for the currecnt row...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>tableView</span>(<span style=color:#66d9ef>_</span> tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>let</span> cell = tableView.dequeueReusableCell(withIdentifier: <span style=color:#e6db74>&#34;expenses&#34;</span>, <span style=color:#66d9ef>for</span>: indexPath) <span style=color:#66d9ef>as</span>! TableViewExpenseCell
+</span></span><span style=display:flex><span>        cell.labelTitle.text = expenses[indexPath.row].title
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#66d9ef>let</span> uwAmount = expenses[indexPath.row].amount{
+</span></span><span style=display:flex><span>            cell.labelAmount.text = <span style=color:#e6db74>&#34;Cost: $</span><span style=color:#e6db74>\(</span>uwAmount<span style=color:#e6db74>)</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#66d9ef>let</span> uwType = expenses[indexPath.row].type{
+</span></span><span style=display:flex><span>            cell.labelType.text = <span style=color:#e6db74>&#34;Type: </span><span style=color:#e6db74>\(</span>uwType<span style=color:#e6db74>)</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> setting the image of the receipt...</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#66d9ef>let</span> uwImage = expenses[indexPath.row].image{
+</span></span><span style=display:flex><span>            cell.imageReceipt.image = uwImage
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> cell
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> deal with user interaction with a cell...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>tableView</span>(<span style=color:#66d9ef>_</span> tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+</span></span><span style=display:flex><span>        print(<span style=color:#66d9ef>self</span>.expenses[indexPath.row])
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>We unwrap the image, and then set it to <code>cell.imageReceipt.image</code>.</p><p>Finally, let&rsquo;s run the app!</p><figure><img src="/gitbook-assets/6.7.one (1).gif" alt><figcaption></figcaption></figure><h1 id=68-wrapping-up-a-bit-of-polishing>6.8. Wrapping Up: a bit of polishing<a class=anchor href=#68-wrapping-up-a-bit-of-polishing>#</a></h1><p>We will polish the TableView a little bit to make our TableView look like this:</p><p><img src=/gitbook-assets/Screenshot%202023-05-20%20at%205.18.17%20PM%20%282%29.png alt></p><p>Let&rsquo;s make the following changes to the code:</p><p><strong>Removing the separator line:</strong></p><p>Open ViewController.swift file. Put the following line in <code>viewDidLoad()</code> method:</p><pre class=language-swift><code class=lang-swift>override func viewDidLoad() {
+<strong>    super.viewDidLoad()
+</strong>    title = "Expense App"
+    
+    //MARK: manipulating TableView separator line...
+    firstScreen.tableViewExpense.separatorStyle = .none
+    
+    //Codes omitted...
+}
+</code></pre><p><strong>Working with shadows:</strong></p><p>Open the TableViewExpenseCell.swift file. Update the code in the method where we initialize the <code>wrapperCellView</code> (<code>setupWrapperCellView()</code>) :</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupWrapperCellView</span>(){
+</span></span><span style=display:flex><span>    wrapperCellView = UITableViewCell()
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//working with the shadows and colors...</span>
+</span></span><span style=display:flex><span>    wrapperCellView.backgroundColor = .white
+</span></span><span style=display:flex><span>    wrapperCellView.layer.cornerRadius = <span style=color:#ae81ff>10.0</span>
+</span></span><span style=display:flex><span>    wrapperCellView.layer.shadowColor = UIColor.gray.cgColor
+</span></span><span style=display:flex><span>    wrapperCellView.layer.shadowOffset = .zero
+</span></span><span style=display:flex><span>    wrapperCellView.layer.shadowRadius = <span style=color:#ae81ff>6.0</span>
+</span></span><span style=display:flex><span>    wrapperCellView.layer.shadowOpacity = <span style=color:#ae81ff>0.7</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    wrapperCellView.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>self</span>.addSubview(wrapperCellView)
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><ul><li>By default, a view has a transparent background, hence, <code>wrapperCellView's</code> background is transparent too. So, we set it to white.</li><li>Then we set the cell&rsquo;s corner radius to 10.0.</li><li>We want to create a shadow effect. So first, we set the shadow color to gray. (The color has to be a <a href=https://stackoverflow.com/a/20140941/2959067>CGColor</a>).</li><li>Then we set the offset of the shadow. If you set the offset to <code>.zero</code>, it means that there will be no gap between the object (cell) and the shadow.</li><li>Then we set how wide the shadow would be; we set it to 6 points.</li><li>And then, we set the shadow opacity. We set it to .7. Meaning the opacity will be 70%.</li></ul><p><strong>Changing the constraints to make room for the shadows:</strong></p><p>In TableViewExpenseCell.swift file, let&rsquo;s update the constraints for the <code>wrapperCellView</code>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> initializing the constraints...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>initConstraints</span>(){
+</span></span><span style=display:flex><span>        NSLayoutConstraint.activate([
+</span></span><span style=display:flex><span>            wrapperCellView.topAnchor.constraint(equalTo: <span style=color:#66d9ef>self</span>.topAnchor,constant: <span style=color:#ae81ff>10</span>),
+</span></span><span style=display:flex><span>            wrapperCellView.leadingAnchor.constraint(equalTo: <span style=color:#66d9ef>self</span>.leadingAnchor, constant: <span style=color:#ae81ff>10</span>),
+</span></span><span style=display:flex><span>            wrapperCellView.bottomAnchor.constraint(equalTo: <span style=color:#66d9ef>self</span>.bottomAnchor, constant: <span style=color:#f92672>-</span><span style=color:#ae81ff>10</span>),
+</span></span><span style=display:flex><span>            wrapperCellView.trailingAnchor.constraint(equalTo: <span style=color:#66d9ef>self</span>.trailingAnchor, constant: <span style=color:#f92672>-</span><span style=color:#ae81ff>10</span>),
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//codes omitted...</span>
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            wrapperCellView.heightAnchor.constraint(equalToConstant: <span style=color:#ae81ff>104</span>)ft            
+</span></span><span style=display:flex><span>        ])
+</span></span><span style=display:flex><span>    }</span></span></code></pre></div><p>Here, we are adding 10 points margins around the Cell wrapper.</p><p><strong>Now, let&rsquo;s run the app again.</strong></p><figure><img src="/gitbook-assets/6.8.one (1).gif" alt><figcaption></figcaption></figure><p>There we have a 3D effect!</p><h1 id=69-reference-code>6.9. Reference Code<a class=anchor href=#69-reference-code>#</a></h1><p>{% file src="/gitbook-assets/App6 (2).zip&rdquo; %}</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=/docs/04-advanced-ui-components/uiscrollview/ class="flex align-center"><img src=/icons/backward.svg class=book-icon alt=Backward>
+<span>UIScrollView</span>
+</a></span><span><a href=/docs/04-advanced-ui-components/useful-ui-elements/ class="flex align-center"><span>Useful UI Elements</span>
+<img src=/icons/forward.svg class=book-icon alt=Forward></a></span></div><div class=book-comments></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#app6-adding-more-features-on-app5>App6: Adding more features on App5</a></li></ul><ul><li><a href=#appendix>Appendix</a><ul><li><a href=#installing-and-using-sf-symbols-app>Installing and using SF Symbols app</a></li></ul></li></ul><ul><li><a href=#addexpenseview>AddExpenseView</a><ul><li><a href=#setting-up-the-buttons>Setting up the Buttons</a></li><li><a href=#the-constraints>The Constraints</a></li></ul></li></ul><ul><li><ul><li><a href=#uimenu-for-buttonselecttype>UIMenu for buttonSelectType</a></li></ul></li></ul><ul><li><ul><li><a href=#modify-the-buttontakephoto-in-addexpenseview>Modify the buttonTakePhoto in AddExpenseView</a></li></ul></li></ul><ul><li><ul><li></li><li><a href=#changing-the-privacy-settings-of-the-app-to-allow-the-app-to-access-the-camera>Changing the privacy settings of the App to allow the app to access the Camera</a></li></ul></li></ul><ul><li><ul><li><a href=#update-expense-data-model>Update Expense data model:</a></li><li><a href=#update-addexpenseviewcontrollers-onaddbuttontapped-method>Update AddExpenseViewController&rsquo;s onAddButtonTapped() method:</a></li><li><a href=#update-the-tableview-to-display-the-image-in-the-cell>Update the TableView to display the image in the cell</a></li></ul></li></ul></nav></div></aside></main></body></html>

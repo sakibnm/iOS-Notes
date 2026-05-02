@@ -95,3 +95,402 @@ Bob Smith is an adult!
 ```
 
 So depending on different values of the property `age`, it automatically computes the value of the property `isMinor`.
+
+
+
+
+<!-- Merged from 9.1.1.-functions-methods-inside-structs.md -->
+
+# 9.1.1. Functions (methods) inside structs
+
+We can write functions inside structs. In Swift, they're called methods. For example, we can have a `printProfile` method in our `Profile` struct:
+
+```swift
+struct Person{
+    var name:String
+    var age:Int
+    var city:String
+    
+//    computed property .....
+    var isMinor:Bool{
+        if age < 18{
+            return true
+        }else{
+            return false
+        }
+    }
+//    method printProfile...
+    
+    func printProfile(){
+        print(
+            """
+            Hi! I am \(name).
+            I am \(age) years old.
+            And I live in \(city)!
+            Happy coding!
+            """
+        )
+    }
+}
+```
+
+Then we call the method from outside the struct:
+
+```swift
+//printing the profile intro using the method printProfile...
+newPerson.printProfile()
+```
+
+It prints:
+
+```
+Hi! I am Bob Smith.
+I am 36 years old.
+And I live in Boston!
+Happy coding!
+```
+
+### Struct initializers
+
+We can set the default values for our structs using the initializer method `init()`. Let's add the `init()` method in `Person` where we set the `name` to "Unknown", `age` to `18`, and `city` to "Not Given".
+
+```swift
+struct Person{
+    var name:String
+    var age:Int
+    var city:String
+    
+//    initializer method...
+    init() {
+        name = "Unknown"
+        age = 18
+        city = "Not Given"
+    }
+    
+//    computed property .....
+    var isMinor:Bool{
+        if age < 18{
+            return true
+        }else{
+            return false
+        }
+    }
+    
+//    method printProfile...
+    
+    func printProfile(){
+        print(
+            """
+            Hi! I am \(name).
+            I am \(age) years old.
+            And I live in \(city)!
+            Happy coding!
+            """
+        )
+    }
+}
+```
+
+Then we can create an instance of `Person` without providing any parameters, like:
+
+```swift
+//Creating an instance using the init()
+var newPerson = Person()
+
+//print the variable person of type Person...
+print(newPerson) 
+
+//modifying the properties of newPerson...
+newPerson.name = "Bob Smith"
+newPerson.age = 36
+newPerson.city = "Boston"
+
+//printing newPerson after modifying the properties...
+print(newPerson)
+
+//printing the computed property...
+if(newPerson.isMinor){
+    print("\(newPerson.name) is a minor!")
+}else{
+    print("\(newPerson.name) is an adult!")
+    //prints 
+}
+
+//printing the profile intro using the method printProfile...
+newPerson.printProfile()
+```
+
+It prints:
+
+```
+Person(name: "Unknown", age: 18, city: "Not Given")
+Person(name: "Bob Smith", age: 36, city: "Boston")
+Bob Smith is an adult!
+Hi! I am Bob Smith.
+I am 36 years old.
+And I live in Boston!
+Happy coding!
+```
+
+So, we can create an instance of a struct with default values by writing `init()` method. Then we have to set the values later.
+
+<mark style="color:purple;">**Please note: you need to write**</mark><mark style="color:purple;">\*\*</mark> `init()` \*\*<mark style="color:purple;">**method before all the other methods and computed properties.**</mark>
+
+## Source code
+
+{% file src="/gitbook-assets/MyPlayground9.1.1.playground (1).zip" %}
+
+
+
+<!-- Merged from 9.1.2.-initializing-structs-with-different-initializers.md -->
+
+# 9.1.2. Initializing structs with different initializers
+
+We can define multiple initializers in a struct. At this point, we will define a new struct `Car` to demonstrate this concept. Let's define `Car`:
+
+```swift
+struct Car{
+    var make:String
+    var model:String
+    var year:Int
+    
+    init(){
+        make = "Not set"
+        model = "Not set"
+        year = 0
+    }
+}
+
+//creating an instance of Car...
+var car = Car()
+
+//printing the instance...
+print(car)
+
+```
+
+It prints:
+
+```
+Car(make: "Not set", model: "Not set", year: 0)
+```
+
+Here, we can see that all the default values were set when we created the instance.
+
+Now, let's define another custom `init()` method along with the default one. This custom `init()` will accept parameters when we are creating the instance.
+
+```swift
+struct Car{
+    var make:String
+    var model:String
+    var year:Int
+    
+    //default init...
+    init(){
+        make = "Not set"
+        model = "Not set"
+        year = 0
+    }
+    //custom init...
+    init(make:String, model:String, year:Int) {
+        self.make = make
+        self.model = model
+        self.year = year
+    }
+}
+```
+
+_<mark style="color:purple;">Do you see the</mark>_ _<mark style="color:purple;">`self`</mark>_ _<mark style="color:purple;">keyword? What do you think it is? -</mark>_ `self` is used to refer to the current instance of `Car`. See, we are using the same names for the parameters the method accepts as the properties of `Car`. By writing `self.make = make`, we are instructing the program to set the value of the current instance's `make` property to the value of the parameter `make` accepted by the `init()` method.
+
+Now, we can create an instance of `Car` by calling the new `init(make:String, model:String, year:Int)` method. Let's try:
+
+```swift
+//creating an instance of Car using the custom init()...
+var car2 = Car(make: "Toyota", model: "Corolla", year: 2020)
+print(car2)
+```
+
+It prints:
+
+```
+Car(make: "Toyota", model: "Corolla", year: 2020)
+```
+
+So yes! We can create instances of a struct using multiple `init()` methods.
+
+### Struct initialization and Optionals
+
+Let's continue with the same `Car` example. Let's assume that when we are creating an instance of `Car` struct, we only want to set the values for two parameters, `make` and `model`, and keep the value of `year` empty. We can write a new `init()` method like:
+
+```swift
+init(make:String, model:String){
+    self.make = make
+    self.model = model
+    //year is left uninitialized...
+}
+```
+
+If we add this method, we will see an error:
+
+<figure><img src="/gitbook-assets/Screenshot 2023-05-04 at 2.01.14 PM (1).png" alt=""><figcaption></figcaption></figure>
+
+So it is saying that we need to initialize all stored properties (`year` is not initialized). Now, how can we initialize `make` and `model` without initializing `year`?
+
+Remember **Optional?**
+
+Yes, we can declare `year` as an Optional like the following:
+
+```swift
+struct Car{
+    var make:String
+    var model:String
+    var year:Int? //Optional
+    
+    //omitted other codes...
+    init(make:String, model:String){
+        self.make = make
+        self.model = model
+    }
+}
+```
+
+Now that we do not have the error anymore, we can create an instance of `Car` and initialize it:
+
+```swift
+//creating an instance of Car...
+var car3 = Car(make: "Honda", model: "Civic")
+print(car3)
+//prints: Car(make: "Honda", model: "Civic", year: nil)
+
+//Assigning a value of year after we create the instance
+car3.year = 2022
+print(car3)
+//prints: Car(make: "Honda", model: "Civic", year: Optional(2022))
+
+```
+
+Do you see an issue? `year` is wrapped with Optional. So if you want to use it anywhere, we should use an unwrapping technique like [if-let](../../8.-optionals.md).
+
+## Source code
+
+{% file src="/gitbook-assets/MyPlayground9.1.2.playground (1).zip" %}
+
+
+
+<!-- Merged from 9.1.3.-manipulating-object-properties-inherently-in-a-struct.md -->
+
+# 9.1.3. Manipulating object properties inherently in a struct
+
+What about we try to update a property of an object and write a function **directly inside of the struct**? So, potentially we will use an inherent function to update a property of the current object.&#x20;
+
+So, let's try to add a new function inside the struct `Car` , `updateYear()` to change the year of a car.
+
+```swift
+// updating a car's year...
+func updateYear(_ year:Int){
+    self.year = year
+}
+```
+
+So if we put it in the struct, the entire code looks like:
+
+```swift
+struct Car{
+    var make:String
+    var model:String
+    var year:Int?
+    
+    init(){
+        make = "Not set"
+        model = "Not set"
+        year = 0
+    }
+    
+    init(make:String, model:String, year:Int) {
+        self.make = make
+        self.model = model
+        self.year = year
+    }
+    
+    init(make:String, model:String){
+        self.make = make
+        self.model = model
+    }
+    
+    func updateYear(_ year:Int){
+        self.year = year
+    }
+}
+```
+
+If you write the updateYear function, you'll see the following error:
+
+<figure><img src="/gitbook-assets/Screenshot 2025-09-09 at 5.00.06 PM.png" alt=""><figcaption></figcaption></figure>
+
+It says that self is immutable. **Why?**
+
+**struct** data type is a value type, it is not a reference type. It means, the objects are stored directly in their allocated memory space (RAM), if you access the objects with their variable names, you directly access them from the memory. If you pass a variable to a function through a parameter, it copies the whole object into the function, and never manipulates the original data.&#x20;
+
+On the other hand, the variables of a **reference** data type like class do not directly store the objects in their allocated memory space. Rather, the variables will store a pointer (reference) to the objects, and the objects are stored in a separate memory location. So if you pass a reference type variable into a function through parameters, it will pass the reference to the original object. The function can manipulate the original data. It creates a shared **mutable** state.
+
+_(In programming, a mutable object is one whose state or value can be changed after it is created.)_
+
+**Long story short,** since Swift is a **safe** language, by default the objects of the **value data types** are not mutating. You have to purposefully make the manipulating functions mutating to allow the functions to mutate the object, or manipulate its original value. So we will change the function above to the following:
+
+```swift
+mutating func updateYear(_ year:Int){
+    self.year = year
+}
+```
+
+`mutating`  keyword defines that this function can update the original data for the object.&#x20;
+
+So let's use the new method:
+
+```swift
+import UIKit
+
+//MARK: 9.1.2 initializers...
+struct Car{
+    var make:String
+    var model:String
+    var year:Int?
+    
+    init(){
+        make = "Not set"
+        model = "Not set"
+        year = 0
+    }
+    
+    init(make:String, model:String, year:Int) {
+        self.make = make
+        self.model = model
+        self.year = year
+    }
+    
+    init(make:String, model:String){
+        self.make = make
+        self.model = model
+    }
+    
+    mutating func updateYear(_ year:Int){
+        self.year = year
+    }
+}
+
+//creating an instance of Car using the custom init()...
+var car2 = Car(make: "Toyota", model: "Corolla", year: 2020)
+print(car2)
+car2.updateYear(2025)
+print(car2)
+```
+
+It prints:
+
+```
+Car(make: "Toyota", model: "Corolla", year: Optional(2020))
+Car(make: "Toyota", model: "Corolla", year: Optional(2025))
+```
+
+**So, if the object you are using is of a value type, any inherent manipulator needs to be explicitly defined as mutating.**&#x20;
+

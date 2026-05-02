@@ -16,3 +16,268 @@ protocol SomeProtocol{
     //protocol definition goes here...
 }
 ```
+
+
+
+
+<!-- Merged from 10.1.-adopting-a-protocol.md -->
+
+# 10.1. Adopting a protocol
+
+A protocol contains only the declarations of the properties and functions that are needed to be adopted and implemented by a struct or class. For example, let's define our own USB interface, `USBMad.`
+
+We can define our own `USBMad` protocol with a few guidelines:
+
+* We need an id of the device to implement this protocol.
+* We have the option to support a display adapter through that port.
+* We have the option to support audio through that interface.
+* We must implement charging through the port.
+* We must implement data transfer through the port.
+
+So we define the protocol where we declare three variables, `id` - for the device ID, `supportsDisplayAdapter` - to decide whether we would implement the display feature, and `supportsAudio` - to decide whether we would implement the audio or not. We also declare two methods to say this `USBMad` protocol must provide functionalities to charge the accessories and transfer data.
+
+```swift
+protocol USBMad{
+    var id:Int{get}
+    var supportsDisplayAdapter:Bool{get}
+    var supportsAudio:Bool{get}
+    func chargeAccessories()
+    func transferData()
+}
+```
+
+_<mark style="color:orange;">You might be confused about</mark>_ _<mark style="color:orange;">`{get}`</mark>_ _<mark style="color:orange;">declarations you see in the code. It means the property is a gettable property when implemented. You can also declare a property both gettable and settable by declaring</mark>_ _<mark style="color:orange;">`{get set}`</mark><mark style="color:orange;">. I will not dig deeper into these declarations; for now, I will just use</mark>_ _<mark style="color:orange;">`{get}`</mark><mark style="color:orange;">. For more information,</mark>_ [_you can read this article_](https://chetan-aggarwal.medium.com/swift-protocols-properties-distinction-get-get-set-32a34a7f16e9)_._
+
+Now, let's adopt our USBMad protocol in our `MyLaptop` struct:
+
+```swift
+struct MyLaptop: USBMad{
+    //struct's own properties
+    var name:String
+    var architecture:String
+    
+    //adopted/conformed variables and methods
+    var id: Int
+    var supportsDisplayAdapter: Bool
+    var supportsAudio: Bool
+    
+    //adopted and to be implemented methods
+    func chargeAccessories() {
+        //MyLaptop's implementation of adopted method
+        print("I am able to charge the accessories!")
+    }
+    func transferData() {
+        //MyLaptop's implementation of adopted method
+        print("You can send/receive data to/from me!")
+    }   
+}
+```
+
+Here, we are defining our struct `MyLaptop` where we adopt the `USBMad` protocol. We wrote `MyLaptop : USBMad` to say that `MyLaptop` adopts `USBMad` protocol. `MyLaptop` has it's own variables, `name` and `architecture`. Also, since it adopts the `USBMad` protocol, it must adopt the properties and methods of `USBMad` and implement them.
+
+So we can create an instance of `MyLaptop` like the following:
+
+{% code overflow="wrap" %}
+```swift
+let myLaptop = MyLaptop(
+    name: "Sakib's Macbook",
+    architecture: "ARM64",
+    id: 1,
+    supportsDisplayAdapter: true,
+    supportsAudio: true
+)
+
+myLaptop.chargeAccessories()
+//prints: I am able to charge the accessories!
+
+myLaptop.transferData()
+//prints: You can send/receive data to/from me!
+```
+{% endcode %}
+
+See, we not only have to initialize `MyLaptop`'s own properties but must also initialize the properties `MyLaptop` adopts from `USBMad`.
+
+Let's add another method `describe()` to `MyLaptop`:
+
+```swift
+struct MyLaptop: USBMad{
+    //struct's own properties
+    var name:String
+    var architecture:String
+    
+    //adopted/conformed variables and methods
+    var id: Int
+    var supportsDisplayAdapter: Bool
+    var supportsAudio: Bool
+    
+    //adopted and to be implemented methods
+    func chargeAccessories() {
+        //MyLaptop's implementation of adopted method
+        print("I am able to charge the accessories!")
+    }
+    func transferData() {
+        //MyLaptop's implementation of adopted method
+        print("You can send/receive data to/from me!")
+    }
+    
+    //MyLaptop's own method...
+    func describe(){
+        print(
+            """
+            My name is \(name).
+            I use \(architecture) architecture.
+            I have a USBMad interface with id: \(id).
+            """
+        )
+        self.chargeAccessories()
+        self.transferData()
+    }
+}
+```
+
+Calling `myLaptop.describe()` prints:
+
+```
+My name is Sakib's Macbook.
+I use ARM64 architecture.
+I have a USBMad interface with id: 1.
+I am able to charge the accessories!
+You can send/receive data to/from me!
+```
+
+These are the CliffsNotes version of adopting/confirming a protocol. You will see extensive use of protocols in iOS development.
+
+## Reference code
+
+{% file src="/gitbook-assets/MyPlayground10.1.playground.zip" %}
+
+
+
+<!-- Merged from 10.2.-creating-a-single-protocol-from-multiple-protocols.md -->
+
+# 10.2. Creating a single protocol from multiple protocols
+
+Let's assume we need to write a protocol for Teaching Assistants (TA). The TAs are paid, receive TA training, and are rated by the professors. Let's assume that we have protocols to pay people, conduct TA training, and rating TAs:
+
+```swift
+//protocol for payment...
+protocol Payment{
+    func biweeklyPayment() -> Double
+}
+
+//protocol for TA training...
+protocol TATraining{
+    func completeTraining()
+}
+
+//protocol for TA rating...
+protocol RatedByProfessor{
+    func rate() -> Int
+}
+```
+
+Now, we can consolidate all the protocols into one for the TAs like:
+
+```swift
+// Some code//consolidating to a single protocol...
+protocol TeachingAssistant: Payment, TATraining, RatedByProfessor{
+    //properties and methods for TeachingAssistant protocol...
+}
+```
+
+
+
+<!-- Merged from 10.3.-inheriting-a-super-class-and-adopting-protocols-together.md -->
+
+# 10.3. Inheriting a super class and adopting protocols together
+
+We are continuing with the previous example. Now let's expand on the idea. TAs are also students. A student can be either a graduate student or an undergrad student. Let's assume Alice is an undergrad TA. Let's see how we can write some code to define Alice:
+
+First, we need to define a class `Student` that has property `name` and an initializer method to initialize the instance.
+
+```swift
+//super class Student...
+class Student{
+    var name: String
+    init(name:String) {
+        self.name = name
+    }
+}
+```
+
+Then we need to define the class `UndergradTA` that inherits `Student` class, and adopts or conforms `TeachingAssistant` protocol:
+
+```swift
+//UndergradTA inherits Student, and adopts/conforms TeachingAssistant protocol...
+
+class UndergradTA: Student, TeachingAssistant{
+    //own property course...
+    var course:String
+    
+    //initializer for UndergradTA...
+    init(name: String, course:String) {
+        self.course = course
+        super.init(name: name)
+    }
+    
+    //defining adopted methods from TeachingAssistant...
+    func biweeklyPayment() -> Double {
+        return 1_500.00
+    }
+    
+    func completeTraining() {
+        print("\(name) completed the TA training.")
+    }
+    
+    func rate() -> Int {
+        return 5
+    }
+    
+    // own describe method of UndergradTA...
+    func describe(){
+        print(
+            """
+            \(name) is a TA of \(course) course.
+            They were rated \(self.rate())/5 by the professor.
+            They are paid \(self.biweeklyPayment()) biweekly.
+            """
+        )
+        self.completeTraining()
+    }
+}
+
+```
+
+<mark style="color:orange;">**Please note: a class can only inherit one superclass, but it can adopt as many protocols as it needs. So if there is a superclass to be inherited, the class is written as the first one after**</mark><mark style="color:orange;">\*\*</mark> `:` <mark style="color:orange;">**(like**</mark> <mark style="color:orange;">**`Student`**</mark> <mark style="color:orange;">**in this example)**</mark> <mark style="color:orange;">**followed by the protocols separated by**</mark> `,`(comma).\*\*
+
+Here, in the above code, we can see `UndergradTA` the inherited `Student` class and adopted `TeachingAssistant` protocol. We have a new variable `course` in `UndergradTA`, so we write an `init()` method to initialize both the variable `course` and the variable `name` in the superclass `Student`.
+
+Then we implement the adopted methods of the protocol `TeachingAssistant`. And finally we write `UndergradTA`'s own method `describe()`.
+
+Let's create the TA `alice`:
+
+```swift
+let alice = UndergradTA(
+    name: "Alice",
+    course: "Mobile App Development"
+)
+
+alice.describe()
+
+/*
+ alice.describe() prints:
+ Alice is a TA of Mobile App Development course.
+ They were rated 5/5 by the professor.
+ They are paid 1500.0 biweekly.
+ Alice completed the TA training.
+ */
+```
+
+**Please try the whole thing in your own playground.**
+
+So now we have a basic understanding of how classes work with other classes and protocols. In iOS development, we will repeatedly face these concepts.
+
+## Reference code
+
+{% file src="/gitbook-assets/MyPlayground10.3.playground (1).zip" %}
+

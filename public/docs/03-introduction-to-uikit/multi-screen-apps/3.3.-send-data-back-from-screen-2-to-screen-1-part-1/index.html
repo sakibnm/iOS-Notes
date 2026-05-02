@@ -1,3533 +1,540 @@
-<!DOCTYPE html>
-<html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-  <!--
-Made with Book Theme
-https://github.com/alex-shpak/hugo-book
--->
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="3.3. Send data back from Screen 2 to Screen 1# So, here is the goal for the extension of our current app:
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="3.3. Send data back from Screen 2 to Screen 1# So, here is the goal for the extension of our current app:
 We will add a PickerView (selects one from a list of options) to the second screen (ShowViewController). The PickerView will show the user a list of moods: Happy, Meh, and Sad. The user selects a mood and sends the mood back to the first screen (ViewController). The first screen receives the mood and displays a corresponding image in an ImageView. Updating the screens with new UI elements.# On ViewController, we will add a new Label and an ImageView, as follows:
-">
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="//localhost:1313/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/">
-  <meta property="og:site_name" content="iOS UIKit Course">
-  <meta property="og:title" content="3.3. Send data back from Screen 2 to Screen 1">
-  <meta property="og:description" content="3.3. Send data back from Screen 2 to Screen 1# So, here is the goal for the extension of our current app:
-We will add a PickerView (selects one from a list of options) to the second screen (ShowViewController). The PickerView will show the user a list of moods: Happy, Meh, and Sad. The user selects a mood and sends the mood back to the first screen (ViewController). The first screen receives the mood and displays a corresponding image in an ImageView. Updating the screens with new UI elements.# On ViewController, we will add a new Label and an ImageView, as follows:">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="website">
-
-
-  <meta itemprop="name" content="3.3. Send data back from Screen 2 to Screen 1">
-  <meta itemprop="description" content="3.3. Send data back from Screen 2 to Screen 1# So, here is the goal for the extension of our current app:
-We will add a PickerView (selects one from a list of options) to the second screen (ShowViewController). The PickerView will show the user a list of moods: Happy, Meh, and Sad. The user selects a mood and sends the mood back to the first screen (ViewController). The first screen receives the mood and displays a corresponding image in an ImageView. Updating the screens with new UI elements.# On ViewController, we will add a new Label and an ImageView, as follows:">
-  <meta itemprop="wordCount" content="513">
-
-<title>3.3. Send data back from Screen 2 to Screen 1 | iOS UIKit Course</title>
-<link rel="icon" href="/favicon.png" >
-<link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="//localhost:1313/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/">
-<link rel="stylesheet" href="/book.min.4d6d5ad3b0ae85d2a15b20ab217863f70db543e46314629e239ced759e674898.css" integrity="sha256-TW1a07CuhdKhWyCrIXhj9w21Q&#43;RjFGKeI5ztdZ5nSJg=" crossorigin="anonymous">
-
-
-  <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.e6a1a3fb88e89103ded2947d8fb82dac991cdb25b0fd74298b4577ffa07dfdff.js" integrity="sha256-5qGj&#43;4jokQPe0pR9j7gtrJkc2yWw/XQpi0V3/6B9/f8=" crossorigin="anonymous"></script>
-
-
-<link rel="alternate" type="application/rss+xml" href="//localhost:1313/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/index.xml" title="iOS UIKit Course" />
-
-  
-</head>
-<body dir="ltr" class="book-kind-section book-type-docs">
-  <input type="checkbox" class="hidden toggle" id="menu-control" />
-  <input type="checkbox" class="hidden toggle" id="toc-control" />
-  <main class="container flex">
-    
-<aside class="book-menu">
-  <div class="book-menu-content">
-    
-  <nav>
-<h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>iOS UIKit Course</span>
-  </a>
-</h2>
-
-
-<div class="book-search hidden">
-  <input id="book-search-input" type="text" 
-    placeholder="Search"
-    aria-label="Search"
-    maxlength="64" data-hotkeys="s/" />
-  <div class="book-search-spinner hidden"></div>
-  <ul id="book-search-results"></ul>
-</div>
-<script>document.querySelector(".book-search").classList.remove("hidden")</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a>
-      Module 1: Getting Started</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a>
-      Getting Started</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/01-getting-started/getting-started/preparing-your-development-environment/" class="">
-      Preparing Your Development Environment</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/01-getting-started/getting-started/setting-up-xcode/" class="">
-      Setting Up Xcode</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a>
-      Module 2: Swift Fundamentals</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a>
-      Variables &amp; Data Types</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./" class="">
-      1. Variables Data Types and More.</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.1.-creating-a-swift-playground/" class="">
-      1.1. Creating a Swift Playground</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.2.-variables/" class="">
-      1.2. Variables</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.3.-type-safety/" class="">
-      1.3. Type safety</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.4.-strings-and-print-to-console/" class="">
-      1.4. Strings and print to console</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.5.-floating-point-numbers-and-type-annotation/" class="">
-      1.5. Floating point numbers and Type annotation</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.6.-more-print-string-interpolation/" class="">
-      1.6. More print, String interpolation</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.7.-constants/" class="">
-      1.7. Constants</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.8.-type-annotations-revisited/" class="">
-      1.8. Type annotations (revisited)</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.9.-comments/" class="">
-      1.9. Comments</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.10.-reference-code/" class="">
-      1.10. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/collections/" class="">
-      Collections</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/collections/2.1.-arrays/" class="">
-      2.1. Arrays</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/collections/2.2.-sets/" class="">
-      2.2. Sets</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/collections/2.3.-tuples/" class="">
-      2.3. Tuples</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/collections/2.4.-dictionaries/" class="">
-      2.4. Dictionaries</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/collections/2.5.-reference-code/" class="">
-      2.5. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/operators/" class="">
-      Operators</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/operators/3.1.-arithmetic-operations/" class="">
-      3.1. Arithmetic Operations</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/operators/3.2.-operator-overloading/" class="">
-      3.2. Operator overloading</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/operators/3.3.-more-on-operators/" class="">
-      3.3. More on Operators</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/operators/3.4.-comparison-operators-and-booleans/" class="">
-      3.4. Comparison Operators (and Booleans)</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/operators/3.5.-reference-code/" class="">
-      3.5. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/conditionals/" class="">
-      Conditionals</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/conditionals/4.1.-if-statements/" class="">
-      4.1. If statements</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/conditionals/4.2.-if-else-statements/" class="">
-      4.2. If-else statements</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/conditionals/4.3.-switch-statements/" class="">
-      4.3. Switch statements</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/conditionals/4.4.-combining-operators/" class="">
-      4.4. Combining operators</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/conditionals/4.5.-range-operators/" class="">
-      4.5. Range operators</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/conditionals/4.6.-reference-code/" class="">
-      4.6. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/loops/" class="">
-      Loops</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/loops/5.1.-for-loops/" class="">
-      5.1. For loops</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/loops/5.2.-while-loops/" class="">
-      5.2. While loops</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/loops/5.3.-repeat-loops/" class="">
-      5.3. Repeat loops</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/loops/5.4.-break-and-continue/" class="">
-      5.4. Break and continue</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/loops/5.5.-reference-code/" class="">
-      5.5. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/functions/" class="">
-      Functions</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/functions/6.1.-writing-functions/" class="">
-      6.1. Writing functions</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/functions/6.2.-functions-with-parameters/" class="">
-      6.2. Functions with parameters</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/functions/6.3.-functions-that-return-a-value/" class="">
-      6.3. Functions that return a value</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/functions/6.4.-more-on-function-parameters/" class="">
-      6.4. More on function parameters</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/functions/6.5.-reference-code/" class="">
-      6.5. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/closures/" class="">
-      Closures</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/closures/7.1.-closures-with-parameters/" class="">
-      7.1. Closures with parameters</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/closures/7.2.-closures-that-return-a-value/" class="">
-      7.2. Closures that return a value</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/closures/7.3.-closures-as-parameters/" class="">
-      7.3. Closures as parameters</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/closures/7.4.-reference-code/" class="">
-      7.4. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/optionals/" class="">
-      Optionals</a>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/custom-data-types/" class="">
-      Custom Data Types</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/" class="">
-      9.1. Structs</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/9.1.1.-functions-methods-inside-structs/" class="">
-      9.1.1. Functions (methods) inside structs</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/9.1.2.-initializing-structs-with-different-initializers/" class="">
-      9.1.2. Initializing structs with different initializers</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/9.1.3.-manipulating-object-properties-inherently-in-a-struct/" class="">
-      9.1.3. Manipulating object properties inherently in a struct</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/custom-data-types/9.2.-classes/" class="">
-      9.2. Classes</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/custom-data-types/9.2.-classes/9.2.1.-inheritance/" class="">
-      9.2.1. Inheritance</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/custom-data-types/9.2.-classes/9.2.2.-value-vs.-reference/" class="">
-      9.2.2. Value vs. Reference</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/protocols/" class="">
-      Protocols</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/protocols/10.1.-adopting-a-protocol/" class="">
-      10.1. Adopting a protocol</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/protocols/10.2.-creating-a-single-protocol-from-multiple-protocols/" class="">
-      10.2. Creating a single protocol from multiple protocols</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/protocols/10.3.-inheriting-a-super-class-and-adopting-protocols-together/" class="">
-      10.3. Inheriting a super class and adopting protocols together</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/sorting-arrays/" class="">
-      Sorting Arrays</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/sorting-arrays/11.1.-increasing-order/" class="">
-      11.1. Increasing order</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/sorting-arrays/11.2.-decreasing-order/" class="">
-      11.2. Decreasing order</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/02-swift-fundamentals/sorting-arrays/11.-3.-sorting-an-array-of-custom-data/" class="">
-      11. 3. Sorting an array of custom data</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a>
-      Module 3: Introduction to UIKit</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a>
-      Creating Our First App</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/" class="">
-      1. Creating Our First App</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/1.1.-project-structure-overview/" class="">
-      1.1. Project structure overview</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/1.2.-uilabel-our-first-ui-element/" class="">
-      1.2. UILabel, our first UI element</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/1.3.-uitextfield-and-constraints/" class="">
-      1.3. UITextField, and constraints</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/1.4.-uibutton-and-uialertcontroller/" class="">
-      1.4. UIButton, and UIAlertController</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/1.5.-wrapping-up-appicon/" class="">
-      1.5. Wrapping up: AppIcon</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/1.6.-reference-code-and-video/" class="">
-      1.6. Reference Code and Video</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/designing-without-storyboards/" class="">
-      Designing Without Storyboards</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/designing-without-storyboards/2.1.-converting-the-storyboard-to-code/" class="">
-      2.1. Converting the storyboard to code</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/designing-without-storyboards/2.2.-reference-code/" class="">
-      2.2. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/" class="">
-      Multi-Screen Apps</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.1.-navigation-controller/" class="">
-      3.1. Navigation Controller and UI setup</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.2.-send-data-from-screen-1-viewcontroller-to-screen2-showviewcontroller/" class="">
-      3.2. Send data from Screen 1 (ViewController) to Screen2 (ShowViewController)</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/" class="active">
-      3.3. Send data back from Screen 2 to Screen 1</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/3.4.-send-data-back-from-screen-2-to-screen-1-part-2-uipickerview/" class="">
-      3.3.1. Send data back from Screen 2 to Screen 1: UIPickerView</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/3.5.-send-data-back-from-screen-2-to-screen-1-part-3-delegating-to-viewcontroller/" class="">
-      3.3.2. Send data back from Screen 2 to Screen 1: delegating to ViewController</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/3.6.-send-data-back-from-screen-2-to-screen-1-part-4-uiimageview/" class="">
-      3.3.3. Send data back from Screen 2 to Screen 1: UIImageView</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.7.-reference-code/" class="">
-      3.4. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/mvc-architecture/" class="">
-      MVC Architecture</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/mvc-architecture/4.1.-creating-a-separate-view-code-file/" class="">
-      4.1. Creating a separate View code file</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/mvc-architecture/4.2.-patching-the-view-class-with-the-viewcontroller/" class="">
-      4.2. Patching the View class with the ViewController</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/mvc-architecture/4.3.-creating-the-display-screen/" class="">
-      4.3. Creating the Display Screen</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/mvc-architecture/4.4.-navigation-controller-and-sending-data-from-screen-1-to-screen-2/" class="">
-      4.4. Navigation Controller and sending data from screen 1 to screen 2</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/mvc-architecture/4.5.-wrapping-up-structuring-the-files/" class="">
-      4.5. Wrapping up: structuring the files</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/03-introduction-to-uikit/mvc-architecture/4.6.-reference-code/" class="">
-      4.6. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a>
-      Module 4: Advanced UI Components</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uitableview/" class="">
-      UITableView</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uitableview/5.1.-expense-app/" class="">
-      5.1. Expense App</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uitableview/5.2.-first-screen-part-1-adding-a-bar-button/" class="">
-      5.2. First screen, part 1: Adding a Bar Button</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uitableview/5.3.-first-screen-part-2-setting-up-the-view-of-the-first-screen-with-tableview./" class="">
-      5.3. First screen, part 2: Setting up the View of the First Screen with TableView.</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uitableview/5.4.-first-screen-part-3-setting-up-the-view-controller-and-populating-tableview/" class="">
-      5.4. First screen, part 3: Setting up the View Controller and populating TableView</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uitableview/5.5.-second-screen-part-1-setting-up-the-view-of-the-add-expense-screen/" class="">
-      5.5. Second screen, part 1: Setting up the View of the Add Expense Screen</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uitableview/5.6.-second-screen-part-2-setting-up-add-expense-view-controller/" class="">
-      5.6. Second screen, part 2: Setting up Add Expense View Controller</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uitableview/5.7.-second-screen-part-3-send-new-expense-back-to-viewcontroller-and-update-the-tableview/" class="">
-      5.7. Second screen, part 3: Send new expense back to ViewController and update the TableView</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uitableview/5.8.-tapping-a-cell-in-tableview-and-practice-exercise/" class="">
-      5.8. Tapping a cell in TableView and Practice exercise</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uitableview/5.9.-reference-code/" class="">
-      5.9. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uiscrollview/" class="">
-      UIScrollView</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uiscrollview/8.1.-creating-the-view-of-the-screen/" class="">
-      8.1. Creating the View of the Screen</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uiscrollview/8.2.-creating-the-controller/" class="">
-      8.2. Creating the Controller</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uiscrollview/8.3.-reference-code/" class="">
-      8.3. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/" class="">
-      UIMenu &amp; Image Pickers</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.1.-updating-the-tableview-cell-to-accommodate-an-imageview/" class="">
-      6.1. Updating the TableView Cell to accommodate an ImageView</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.2.-add-expense-screen/" class="">
-      6.2. Add Expense Screen</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.3.-addexpenseviewcontroller-uimenu-for-buttonselecttype/" class="">
-      6.3. AddExpenseViewController: UIMenu for buttonSelectType</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.4.-addexpenseviewcontroller-uimenu-for-buttontakephoto/" class="">
-      6.4. AddExpenseViewController: UIMenu for buttonTakePhoto</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.5.-using-gallery-phpicker/" class="">
-      6.5. Using Gallery: PHPicker</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.6.-using-camera-uiimagepickercontroller/" class="">
-      6.6. Using Camera: UIImagePickerController</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.7.-getting-the-expense-back-to-viewcontroller/" class="">
-      6.7. Getting the expense back to ViewController</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.8.-wrapping-up-a-bit-of-polishing/" class="">
-      6.8. Wrapping Up: a bit of polishing</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.9.-reference-code/" class="">
-      6.9. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a>
-      Useful UI Elements</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/embed-navigation-controller-from-code-not-storyboard/" class="">
-      Embed Navigation Controller from code (Not Storyboard)</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/1.-hiding-keyboard-when-tapped-outside/" class="">
-      1. Hiding Keyboard When Tapped Outside</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/2.-slide-up-the-view-to-accommodate-the-on-screen-keyboard/" class="">
-      2. Slide Up the View to Accommodate the on Screen Keyboard</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/3.-saving-small-data-when-the-app-is-not-running-session-or-other-state-variables/" class="">
-      3. Saving Small Data When the App Is Not Running Session or Other State Variables</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/4.-stack-view/" class="">
-      4. Stack View</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/" class="">
-      5. Tab Bar Controller</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/5.1.-views-of-the-screens/" class="">
-      1. Views of the Screens</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/5.2.-controllers-of-the-screens/" class="">
-      2. Controllers of the Screens</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/5.3.-patching-the-screens-in-the-tab-bar/" class="">
-      3. Patching the Screens in the Tab Bar</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/5.4.-sending-data-from-one-tab-to-another/" class="">
-      4. Sending data From one Tab to Another</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/5.5.-reference-code/" class="">
-      5. Reference Code</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/5.6.-notes-for-tab-bar-controller/" class="">
-      6. Notes for Tab Bar Controller</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/" class="">
-      6. Search Bar</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/6.1.-setting-up-the-views/" class="">
-      6.1. Setting up the Views</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/6.2.-setting-up-the-view-controller-handling-the-search-bar/" class="">
-      6.2. Setting up the View Controller: Handling the Search Bar</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/6.3.-reference-code/" class="">
-      6.3. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/" class="">
-      Bottom Sheet View Modal Presentation</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/1.-creating-the-screen-for-a-bottom-sheet-view/" class="">
-      1. Creating the Screen for a Bottom Sheet View</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/2.-setting-up-the-controller-for-the-search-bottom-sheet/" class="">
-      2. Setting up the Controller for the Search Bottom Sheet</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/3.-main-screen/" class="">
-      3. Main Screen</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/4.-sending-data-back-to-main-screen/" class="">
-      4. Sending data back to Main Screen</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/5.-reference-code/" class="">
-      5. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a>
-      Module 5: Networking &amp; APIs</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/http-and-networking/" class="">
-      HTTP &amp; Networking</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/http-and-networking/10.1.-http-connections/" class="">
-      10.1. HTTP connections</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/http-and-networking/10.2.-postman-a-useful-tool-to-test-web-services/" class="">
-      10.2. Postman: a Useful Tool to Test Web Services</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/http-and-networking/10.3.-testing-our-simple-custom-api-with-postman/" class="">
-      10.3. Testing our Simple Custom API with Postman</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/http-and-networking/10.4.-app-that-uses-our-contact-api/" class="">
-      10.4. App that Uses Our Contact API</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/http-and-networking/10.5.-setting-up-the-view-of-app10/" class="">
-      10.5. Setting up the View of App10</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/http-and-networking/10.9.-reference-code/" class="">
-      10.9. Reference Code</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/http-and-networking/10.6.-fetching-data-with-alamofire-get/" class="">
-      10.6. Fetching Data With Alamofire Get</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/http-and-networking/10.7.-posting-data-with-alamofire-post/" class="">
-      10.7. Posting Data With Alamofire Post</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/http-and-networking/10.8.-fetching-data-with-alamofire-details-endpoint/" class="">
-      10.8. Fetching Data With Alamofire Details Endpoint</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/working-with-json/" class="">
-      Working with JSON</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/working-with-json/11.1.-the-json-api-for-the-contact-app/" class="">
-      11.1. The JSON API for the Contact App</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/working-with-json/11.3.-app11-getting-the-details-of-a-selected-contact-details-endpoint/" class="">
-      11.3. App11: Getting the Details of a Selected Contact (details endpoint)</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/working-with-json/11.4.-must-dos-while-decoding-json-adopting-codable/" class="">
-      11.4. &#39;Must Do&#39;s While Decoding JSON adopting Codable</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/working-with-json/11.5.-app11-add-a-new-contact/" class="">
-      11.5. App11: Add a new Contact</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/working-with-json/11.6.-adding-accessory-button-to-table-view-edit-delete-a-contact/" class="">
-      11.6. Adding Accessory Button to Table View (Edit/Delete a Contact)</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/working-with-json/11.7.-reference-code/" class="">
-      11.7. Reference Code</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/working-with-json/useful-extra-11.8.-decluttering-codes-from-view-controller/" class="">
-      11.8. Decluttering codes from View Controller (Recommended Read)</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/05-networking-and-apis/working-with-json/11.2.-app11-getting-all-the-contact-names-getall-endpoint/" class="">
-      11.2. App11 Getting All the Contact Names Getall Endpoint</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a>
-      Module 6: Architecture &amp; Data Flow</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/06-data-persistence-and-architecture/notification-center/" class="">
-      Notification Center</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/06-data-persistence-and-architecture/notification-center/7.1.-app-7/" class="">
-      7.1. App 7</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/06-data-persistence-and-architecture/notification-center/7.1.-add-an-observer/" class="">
-      7.1. Add an Observer</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/06-data-persistence-and-architecture/notification-center/7.2.-posting-data-to-notification-center/" class="">
-      7.2. Posting Data to Notification Center</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/06-data-persistence-and-architecture/notification-center/7.3.-defining-the-names-identifiers-of-the-notifications-in-a-better-way/" class="">
-      7.3. Defining the names (identifiers) of the Notifications in a Better Way</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/06-data-persistence-and-architecture/notification-center/7.4.-reference-code/" class="">
-      7.4. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a>
-      Clean Code &amp; Async</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/" class="">
-      1. Writing clean code for Asynchronous operations</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/1.1.-decluttering-our-app11-contacts-app-with-json/" class="">
-      1.1. Decluttering our App11 (Contacts App with JSON)</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/1.2.-decluttering-continues.../" class="">
-      1.2. Decluttering continues...</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/1.3.-reference-code/" class="">
-      1.3. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a>
-      Module 7: Cloud Integrations &amp; Maps</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/cocoapods/" class="">
-      CocoaPods</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/cocoapods/9.1.-installing-cocoa-pods/" class="">
-      9.1. Installing Cocoa Pods</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/cocoapods/9.2.-integrating-cocoapods-into-a-project/" class="">
-      9.2. Integrating CocoaPods into a Project</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/" class="">
-      Firebase Auth &amp; Firestore</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.1.-app-12-with-firebase/" class="">
-      12.1. App 12 with Firebase</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.2.-setting-up-the-main-screen-view/" class="">
-      12.2. Setting up the Main Screen View</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.3.-setting-up-the-viewcontroller-with-tableview/" class="">
-      12.3. Setting up the ViewController with TableView</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.4.-authentication-state-handler/" class="">
-      12.4. Authentication State Handler</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/" class="">
-      12.5. Implementing Register and Sign In</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/12.3.1.-building-the-right-bar-button-s-for-sign-in-and-logout/" class="">
-      12.5.1. Building the Right Bar Button(s) for Sign In and Logout</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/12.3.2.-register-screen-create-a-user-in-firebase/" class="">
-      12.5.2. Register Screen: Create a user in Firebase</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/12.3.2.-progress-activity-indicator/" class="">
-      12.5.2. Progress Activity Indicator</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/12.3.3.-implementing-sign-in/" class="">
-      12.5.3. Implementing Sign In</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.6.-firestore-structure-for-storing-contacts/" class="">
-      12.6. Firestore Structure for Storing Contacts</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.7.-adding-a-new-contact/" class="">
-      12.7. Adding a New Contact</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.8.-observing-firestore-updates-updating-the-tableview/" class="">
-      12.8. Observing Firestore Updates: Updating the TableView</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.9.-reference-code/" class="">
-      12.9. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-storage/" class="">
-      Firebase Storage</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-storage/13.1.-integrating-photo-pickers/" class="">
-      13.1. Integrating Photo Pickers</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-storage/13.2.-uploading-the-picked-photo-to-firebase-storage/" class="">
-      13.2. Uploading the Picked Photo to Firebase Storage</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-storage/13.3.-displaying-images-hosted-in-cloud/" class="">
-      13.3. Displaying Images Hosted in Cloud</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/firebase-storage/13.4.-reference-code/" class="">
-      13.4. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/mapkit-and-location/" class="">
-      MapKit &amp; Location</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/mapkit-and-location/14.1.-phase-1-displaying-map-view-and-current-location/" class="">
-      14.1. Phase 1: Displaying Map View and Current Location</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/mapkit-and-location/14.2.-phase-2-annotations-and-accessories-for-a-certain-place/" class="">
-      14.2. Phase 2: Annotations and Accessories for a certain place</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/mapkit-and-location/14.3.-phase-3-place-search-and-navigate/" class="">
-      14.3. Phase 3: Place Search and Navigate</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/mapkit-and-location/14.4.-phase-4-display-searched-places-on-map/" class="">
-      14.4. Phase 4: Display Searched Places on Map</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/07-cloud-integrations-and-maps/mapkit-and-location/14.5.-reference-code/" class="">
-      14.5. Reference Code</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</nav>
-
-
-
-
-  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
-
-
-
-  </div>
-</aside>
- 
-
-    <div class="book-page">
-      <header class="book-header hidden">
-        
-  <div class="flex align-center justify-between">
-  <label for="menu-control">
-    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
-  </label>
-
-  <h3>3.3. Send data back from Screen 2 to Screen 1</h3>
-
-  <label for="toc-control">
-    
-    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
-    
-  </label>
-</div>
-
-
-  
-  <aside class="hidden">
-    
-  
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#updating-the-screens-with-new-ui-elements">Updating the screens with new UI elements.</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-
-
-
-  </aside>
-  
- 
-      </header>
-
-      
-      
-  <article class="markdown book-article"><h1 id="33-send-data-back-from-screen-2-to-screen-1">3.3. Send data back from Screen 2 to Screen 1<a class="anchor" href="#33-send-data-back-from-screen-2-to-screen-1">#</a></h1>
-<p>So, here is the goal for the extension of our current app:</p>
-<ul>
-<li>We will add a PickerView (selects one from a list of options) to the second screen (ShowViewController).</li>
-<li>The PickerView will show the user a list of moods: Happy, Meh, and Sad.</li>
-<li>The user selects a mood and sends the mood back to the first screen (ViewController).</li>
-<li>The first screen receives the mood and displays a corresponding image in an ImageView.</li>
-</ul>
-<h3 id="updating-the-screens-with-new-ui-elements">Updating the screens with new UI elements.<a class="anchor" href="#updating-the-screens-with-new-ui-elements">#</a></h3>
-<p><strong>On ViewController,</strong> we will add a new Label and an ImageView, as follows:</p>
-<p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//  ViewController.swift</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ViewController</span>: UIViewController {
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> textFieldMessage: UITextField!
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> buttonSend: UIButton!
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> labelMood: UILabel!
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> imageMood: UIImageView!
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">viewDidLoad</span>() {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.viewDidLoad()
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Do any additional setup after loading the view.</span>
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> initializing the UI elements...</span>
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// code in between is omitted...</span>
-</span></span><span style="display:flex;"><span>        setupLabelMood()
-</span></span><span style="display:flex;"><span>        setupImageMood()
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> initializing the constraints...</span>
-</span></span><span style="display:flex;"><span>        initConstraints()
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> on buttonSend tap...</span>
-</span></span><span style="display:flex;"><span>        buttonSend.addTarget(<span style="color:#66d9ef">self</span>, action: <span style="color:#66d9ef">#selector</span>(onButtonSendTapped),
-</span></span><span style="display:flex;"><span>                             <span style="color:#66d9ef">for</span>: .touchUpInside)
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// code in between is omitted...</span>
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//labelMood...</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setupLabelMood</span>(){
-</span></span><span style="display:flex;"><span>        labelMood = UILabel()
-</span></span><span style="display:flex;"><span>        labelMood.translatesAutoresizingMaskIntoConstraints = <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span>        view.addSubview(labelMood)
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//imageMood...</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setupImageMood</span>(){
-</span></span><span style="display:flex;"><span>        imageMood = UIImageView()
-</span></span><span style="display:flex;"><span>        imageMood.translatesAutoresizingMaskIntoConstraints = <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span>        view.addSubview(imageMood)
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//updating constraints..</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">initConstraints</span>(){
-</span></span><span style="display:flex;"><span>        NSLayoutConstraint.activate([
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// textFieldMessage constraints...</span>
-</span></span><span style="display:flex;"><span>            textFieldMessage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-</span></span><span style="display:flex;"><span>            textFieldMessage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: <span style="color:#ae81ff">32</span>),
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// buttonSend constraints...</span>
-</span></span><span style="display:flex;"><span>            buttonSend.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-</span></span><span style="display:flex;"><span>            buttonSend.topAnchor.constraint(equalTo: textFieldMessage.bottomAnchor, constant: <span style="color:#ae81ff">16</span>),
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// labelMood constraints...</span>
-</span></span><span style="display:flex;"><span>            labelMood.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-</span></span><span style="display:flex;"><span>            labelMood.topAnchor.constraint(equalTo: buttonSend.bottomAnchor, constant: <span style="color:#ae81ff">16</span>),<span style="color:#75715e">// labelMood constraints...</span>
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// imageMood constraints...</span>
-</span></span><span style="display:flex;"><span>            imageMood.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-</span></span><span style="display:flex;"><span>            imageMood.topAnchor.constraint(equalTo: labelMood.bottomAnchor, constant: <span style="color:#ae81ff">16</span>),
-</span></span><span style="display:flex;"><span>        ])       
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>{% endcode %}</p>
-<p>The <code>labelMood</code> will show the mood the user selected on ShowViewController, and the ImageView <code>imageMood</code> will show an image corresponding to the mood.</p>
-<p><strong>Now on ShowViewController,</strong> we will add a new Label, a PickerView, and a Button, as follows:</p>
-<p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//  ShowViewController.swift</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ShowViewController</span>: UIViewController {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> labelMessage: UILabel!
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> labelMoodInstructions: UILabel!
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> moodPicker: UIPickerView!
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> buttonSendMood: UIButton!
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">viewDidLoad</span>() {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.viewDidLoad()
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//omitting the code in between...</span>
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        setupLabelMoodInstructions()
-</span></span><span style="display:flex;"><span>        setupMoodPicker()
-</span></span><span style="display:flex;"><span>        setupButtonSendMood()
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// </span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> setting up constraints...</span>
-</span></span><span style="display:flex;"><span>        initConstraints()
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//omitting the code in between...</span>
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// setting up labelMoodInstructions...</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setupLabelMoodInstructions</span>(){
-</span></span><span style="display:flex;"><span>        labelMoodInstructions = UILabel()
-</span></span><span style="display:flex;"><span>        labelMoodInstructions.text = <span style="color:#e6db74">&#34;How are you feeling today?&#34;</span>
-</span></span><span style="display:flex;"><span>        labelMoodInstructions.translatesAutoresizingMaskIntoConstraints = <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span>        view.addSubview(labelMoodInstructions)
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// setting up mood picker...</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setupMoodPicker</span>(){
-</span></span><span style="display:flex;"><span>        moodPicker = UIPickerView()
-</span></span><span style="display:flex;"><span>        moodPicker.isUserInteractionEnabled = <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span>        moodPicker.translatesAutoresizingMaskIntoConstraints = <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span>        view.addSubview(moodPicker)
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// setting up buttonSendMood...</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setupButtonSendMood</span>(){
-</span></span><span style="display:flex;"><span>        buttonSendMood = UIButton(type: .system)
-</span></span><span style="display:flex;"><span>        buttonSendMood.setTitle(<span style="color:#e6db74">&#34;Send Mood back!&#34;</span>, <span style="color:#66d9ef">for</span>: .normal)
-</span></span><span style="display:flex;"><span>        buttonSendMood.translatesAutoresizingMaskIntoConstraints = <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span>        view.addSubview(buttonSendMood)
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//omitting the code in between...</span>
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// </span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> setting up constraints...</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">initConstraints</span>(){
-</span></span><span style="display:flex;"><span>        NSLayoutConstraint.activate([
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//labelMessage constraints...</span>
-</span></span><span style="display:flex;"><span>            labelMessage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-</span></span><span style="display:flex;"><span>            labelMessage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: <span style="color:#ae81ff">32</span>),
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//labelMoodInstructions constraints...</span>
-</span></span><span style="display:flex;"><span>            labelMoodInstructions.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-</span></span><span style="display:flex;"><span>            labelMoodInstructions.topAnchor.constraint(equalTo: labelMessage.bottomAnchor, constant: <span style="color:#ae81ff">16</span>),
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//mood picker constraints...</span>
-</span></span><span style="display:flex;"><span>            moodPicker.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-</span></span><span style="display:flex;"><span>            moodPicker.topAnchor.constraint(equalTo: labelMoodInstructions.bottomAnchor, constant: <span style="color:#ae81ff">16</span>),
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//buttonSendMood constraints...</span>
-</span></span><span style="display:flex;"><span>            buttonSendMood.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-</span></span><span style="display:flex;"><span>            buttonSendMood.topAnchor.constraint(equalTo: moodPicker.bottomAnchor, constant: <span style="color:#ae81ff">16</span>),
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>        ])
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}    </span></span></code></pre></div><p>{% endcode %}</p>
-<p>Here, <code>labelMoodInstructions</code> shows the message: &ldquo;How are you feeling today?&rdquo;</p>
-<p>Then we place the <code>moodPicker</code> and finally put <code>buttonSendMood</code> at the bottom.</p>
-<p>If we run the app now, we will see:</p>
-<figure><img src="/gitbook-assets/nine (1).gif" alt=""><figcaption></figcaption></figure>
-<p>Here, we do not see the two elements we added to ViewController, because <code>labelMood</code> and <code>imageMood</code> doesn&rsquo;t have anything to display.</p>
-<p>On ShowViewController, we see there is an empty <code>moodPicker</code> and the newly added <code>buttonSendMood</code>.</p>
-</article>
- 
-      
-
-      <footer class="book-footer">
-        
-  <div class="flex flex-wrap justify-between">
-
-<div>
-
-</div>
-
-<div>
-
-</div>
-
-</div>
-
-
-
-
-
-  
-  
-  
-  <div class="flex flex-wrap justify-between">
-    <span>
-    
-      <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.2.-send-data-from-screen-1-viewcontroller-to-screen2-showviewcontroller/" class="flex align-center">
-        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
-        <span>3.2. Send data from Screen 1 (ViewController) to Screen2 (ShowViewController)</span>
-      </a>
-    
-    </span>
-    <span>
-    
-      <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/3.4.-send-data-back-from-screen-2-to-screen-1-part-2-uipickerview/" class="flex align-center">
-        <span>3.3.1. Send data back from Screen 2 to Screen 1: UIPickerView</span>
-        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
-      </a>
-    
-    </span>
-  </div>
-  
-
-
- 
-        
-  
-  <div class="book-comments">
-
-</div>
-  
- 
-        
-        
-  
- 
-        
-  
-  
-    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
-  
-
-      </footer>
-
-      <label for="menu-control" class="hidden book-menu-overlay"></label>
-    </div>
-
-    
-  
-  <aside class="book-toc">
-    <div class="book-toc-content">
-      
-  
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#updating-the-screens-with-new-ui-elements">Updating the screens with new UI elements.</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-
-
-
-    </div>
-  </aside>
-  
- 
-  </main>
-
-  
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/"><meta property="og:site_name" content="iOS UIKit Course"><meta property="og:title" content="3.3. Send data back from Screen 2 to Screen 1"><meta property="og:description" content="3.3. Send data back from Screen 2 to Screen 1# So, here is the goal for the extension of our current app:
+We will add a PickerView (selects one from a list of options) to the second screen (ShowViewController). The PickerView will show the user a list of moods: Happy, Meh, and Sad. The user selects a mood and sends the mood back to the first screen (ViewController). The first screen receives the mood and displays a corresponding image in an ImageView. Updating the screens with new UI elements.# On ViewController, we will add a new Label and an ImageView, as follows:"><meta property="og:locale" content="en_us"><meta property="og:type" content="website"><meta itemprop=name content="3.3. Send data back from Screen 2 to Screen 1"><meta itemprop=description content="3.3. Send data back from Screen 2 to Screen 1# So, here is the goal for the extension of our current app:
+We will add a PickerView (selects one from a list of options) to the second screen (ShowViewController). The PickerView will show the user a list of moods: Happy, Meh, and Sad. The user selects a mood and sends the mood back to the first screen (ViewController). The first screen receives the mood and displays a corresponding image in an ImageView. Updating the screens with new UI elements.# On ViewController, we will add a new Label and an ImageView, as follows:"><meta itemprop=wordCount content="2906"><title>3.3. Send data back from Screen 2 to Screen 1 | iOS UIKit Course</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/><link rel=stylesheet href=/book.min.27b623a68e5ed421a2c09e9cb252a5df26e9f6d074ae994704e46b8381284e76.css><script defer src=/fuse.min.js></script><script defer src=/en.search.min.946e84732729cdf57bc6627fb099b618f786241a8fd580d4e88e8f50700543b5.js></script><link rel=alternate type=application/rss+xml href=/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/index.xml title="iOS UIKit Course"></head><body dir=ltr class="book-kind-section book-type-docs"><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>iOS UIKit Course</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href=/docs/01-getting-started/>Module 1: Getting Started</a><ul><li><a href=/docs/01-getting-started/getting-started/>Getting Started</a><ul></ul></li></ul></li><li><a href=/docs/02-swift-fundamentals/>Module 2: Swift Fundamentals</a><ul><li><a href=/docs/02-swift-fundamentals/swift-the-programming-language/>Variables & Data Types</a><ul><li><a href=/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./>1. Variables Data Types and More.</a><ul></ul></li></ul></li><li><a href=/docs/02-swift-fundamentals/collections/>Collections</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/operators/>Operators</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/conditionals/>Conditionals</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/loops/>Loops</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/functions/>Functions</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/closures/>Closures</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/optionals/>Optionals</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/custom-data-types/>Custom Data Types</a><ul><li><a href=/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/>9.1. Structs</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/custom-data-types/9.2.-classes/>9.2. Classes</a><ul></ul></li></ul></li><li><a href=/docs/02-swift-fundamentals/protocols/>Protocols</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/sorting-arrays/>Sorting Arrays</a><ul></ul></li></ul></li><li><a href=/docs/03-introduction-to-uikit/>Module 3: Introduction to UIKit</a><ul><li><a href=/docs/03-introduction-to-uikit/creating-our-first-app/>Creating Our First App</a><ul><li><a href=/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/>1. Creating Our First App</a><ul></ul></li></ul></li><li><a href=/docs/03-introduction-to-uikit/designing-without-storyboards/>Designing Without Storyboards</a><ul></ul></li><li><a href=/docs/03-introduction-to-uikit/multi-screen-apps/>Multi-Screen Apps</a><ul><li><a href=/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/ class=active>3.3. Send data back from Screen 2 to Screen 1</a><ul></ul></li></ul></li><li><a href=/docs/03-introduction-to-uikit/mvc-architecture/>MVC Architecture</a><ul></ul></li></ul></li><li><a href=/docs/04-advanced-ui-components/>Module 4: Advanced UI Components</a><ul><li><a href=/docs/04-advanced-ui-components/uitableview/>UITableView</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/uiscrollview/>UIScrollView</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/uimenu-and-image-pickers/>UIMenu & Image Pickers</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/>Useful UI Elements</a><ul><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/>5. Tab Bar Controller</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/>6. Search Bar</a><ul></ul></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/>Bottom Sheet View Modal Presentation</a><ul></ul></li></ul></li></ul></li><li><a href=/docs/05-networking-and-apis/>Module 5: Networking & APIs</a><ul><li><a href=/docs/05-networking-and-apis/http-and-networking/>HTTP & Networking</a><ul></ul></li><li><a href=/docs/05-networking-and-apis/working-with-json/>Working with JSON</a><ul></ul></li></ul></li><li><a href=/docs/06-data-persistence-and-architecture/>Module 6: Architecture & Data Flow</a><ul><li><a href=/docs/06-data-persistence-and-architecture/notification-center/>Notification Center</a><ul></ul></li><li><a href=/docs/06-data-persistence-and-architecture/clean-code-and-async/>Clean Code & Async</a><ul><li><a href=/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/>1. Writing Clean Code For Asynchronous Operations</a><ul></ul></li></ul></li></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/>Module 7: Cloud Integrations & Maps</a><ul><li><a href=/docs/07-cloud-integrations-and-maps/cocoapods/>CocoaPods</a><ul></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/>Firebase Auth & Firestore</a><ul><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/>12.5. Implementing Register and Sign In</a><ul></ul></li></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-storage/>Firebase Storage</a><ul></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/mapkit-and-location/>MapKit & Location</a><ul></ul></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><label for=menu-control><img src=/icons/menu.svg class=book-icon alt=Menu></label><h3>3.3. Send data back from Screen 2 to Screen 1</h3><label for=toc-control><img src=/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><ul><li><a href=#updating-the-screens-with-new-ui-elements>Updating the screens with new UI elements.</a></li></ul></li></ul><ul><li><ul><li><a href=#declaring-the-delegate-variable-in-showviewcontrollerswift>Declaring the delegate variable in ShowViewController.swift</a></li><li><a href=#initializing-delegate-to-the-instance-of-viewcontroller-self>Initializing delegate to the instance of ViewController (self)</a></li><li><a href=#doing-delegated-tasks-in-viewcontroller>Doing delegated tasks in ViewController</a></li></ul></li></ul><ul><li><a href=#importing-images-into-the-project>Importing images into the project</a></li><li><a href=#setting-the-image-into-the-imageview-through-delegate>Setting the image into the ImageView through delegate</a><ul><li><a href=#a-few-notes>A few notes:</a></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=33-send-data-back-from-screen-2-to-screen-1>3.3. Send data back from Screen 2 to Screen 1<a class=anchor href=#33-send-data-back-from-screen-2-to-screen-1>#</a></h1><p>So, here is the goal for the extension of our current app:</p><ul><li>We will add a PickerView (selects one from a list of options) to the second screen (ShowViewController).</li><li>The PickerView will show the user a list of moods: Happy, Meh, and Sad.</li><li>The user selects a mood and sends the mood back to the first screen (ViewController).</li><li>The first screen receives the mood and displays a corresponding image in an ImageView.</li></ul><h3 id=updating-the-screens-with-new-ui-elements>Updating the screens with new UI elements.<a class=anchor href=#updating-the-screens-with-new-ui-elements>#</a></h3><p><strong>On ViewController,</strong> we will add a new Label and an ImageView, as follows:</p><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  ViewController.swift</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>UIKit</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ViewController</span>: UIViewController {
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> textFieldMessage: UITextField!
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> buttonSend: UIButton!
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> labelMood: UILabel!
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> imageMood: UIImageView!
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>viewDidLoad</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>super</span>.viewDidLoad()
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Do any additional setup after loading the view.</span>
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> initializing the UI elements...</span>
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// code in between is omitted...</span>
+</span></span><span style=display:flex><span>        setupLabelMood()
+</span></span><span style=display:flex><span>        setupImageMood()
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> initializing the constraints...</span>
+</span></span><span style=display:flex><span>        initConstraints()
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> on buttonSend tap...</span>
+</span></span><span style=display:flex><span>        buttonSend.addTarget(<span style=color:#66d9ef>self</span>, action: <span style=color:#66d9ef>#selector</span>(onButtonSendTapped),
+</span></span><span style=display:flex><span>                             <span style=color:#66d9ef>for</span>: .touchUpInside)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// code in between is omitted...</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//labelMood...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupLabelMood</span>(){
+</span></span><span style=display:flex><span>        labelMood = UILabel()
+</span></span><span style=display:flex><span>        labelMood.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>        view.addSubview(labelMood)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//imageMood...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupImageMood</span>(){
+</span></span><span style=display:flex><span>        imageMood = UIImageView()
+</span></span><span style=display:flex><span>        imageMood.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>        view.addSubview(imageMood)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//updating constraints..</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>initConstraints</span>(){
+</span></span><span style=display:flex><span>        NSLayoutConstraint.activate([
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// textFieldMessage constraints...</span>
+</span></span><span style=display:flex><span>            textFieldMessage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style=display:flex><span>            textFieldMessage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: <span style=color:#ae81ff>32</span>),
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// buttonSend constraints...</span>
+</span></span><span style=display:flex><span>            buttonSend.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style=display:flex><span>            buttonSend.topAnchor.constraint(equalTo: textFieldMessage.bottomAnchor, constant: <span style=color:#ae81ff>16</span>),
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// labelMood constraints...</span>
+</span></span><span style=display:flex><span>            labelMood.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style=display:flex><span>            labelMood.topAnchor.constraint(equalTo: buttonSend.bottomAnchor, constant: <span style=color:#ae81ff>16</span>),<span style=color:#75715e>// labelMood constraints...</span>
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// imageMood constraints...</span>
+</span></span><span style=display:flex><span>            imageMood.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style=display:flex><span>            imageMood.topAnchor.constraint(equalTo: labelMood.bottomAnchor, constant: <span style=color:#ae81ff>16</span>),
+</span></span><span style=display:flex><span>        ])       
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>{% endcode %}</p><p>The <code>labelMood</code> will show the mood the user selected on ShowViewController, and the ImageView <code>imageMood</code> will show an image corresponding to the mood.</p><p><strong>Now on ShowViewController,</strong> we will add a new Label, a PickerView, and a Button, as follows:</p><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  ShowViewController.swift</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>UIKit</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ShowViewController</span>: UIViewController {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> labelMessage: UILabel!
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> labelMoodInstructions: UILabel!
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> moodPicker: UIPickerView!
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> buttonSendMood: UIButton!
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>viewDidLoad</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>super</span>.viewDidLoad()
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//omitting the code in between...</span>
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        setupLabelMoodInstructions()
+</span></span><span style=display:flex><span>        setupMoodPicker()
+</span></span><span style=display:flex><span>        setupButtonSendMood()
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// </span><span style=color:#75715e>MARK:</span><span style=color:#75715e> setting up constraints...</span>
+</span></span><span style=display:flex><span>        initConstraints()
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//omitting the code in between...</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// setting up labelMoodInstructions...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupLabelMoodInstructions</span>(){
+</span></span><span style=display:flex><span>        labelMoodInstructions = UILabel()
+</span></span><span style=display:flex><span>        labelMoodInstructions.text = <span style=color:#e6db74>&#34;How are you feeling today?&#34;</span>
+</span></span><span style=display:flex><span>        labelMoodInstructions.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>        view.addSubview(labelMoodInstructions)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// setting up mood picker...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupMoodPicker</span>(){
+</span></span><span style=display:flex><span>        moodPicker = UIPickerView()
+</span></span><span style=display:flex><span>        moodPicker.isUserInteractionEnabled = <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>        moodPicker.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>        view.addSubview(moodPicker)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// setting up buttonSendMood...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupButtonSendMood</span>(){
+</span></span><span style=display:flex><span>        buttonSendMood = UIButton(type: .system)
+</span></span><span style=display:flex><span>        buttonSendMood.setTitle(<span style=color:#e6db74>&#34;Send Mood back!&#34;</span>, <span style=color:#66d9ef>for</span>: .normal)
+</span></span><span style=display:flex><span>        buttonSendMood.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>        view.addSubview(buttonSendMood)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//omitting the code in between...</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// </span><span style=color:#75715e>MARK:</span><span style=color:#75715e> setting up constraints...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>initConstraints</span>(){
+</span></span><span style=display:flex><span>        NSLayoutConstraint.activate([
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//labelMessage constraints...</span>
+</span></span><span style=display:flex><span>            labelMessage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style=display:flex><span>            labelMessage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: <span style=color:#ae81ff>32</span>),
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//labelMoodInstructions constraints...</span>
+</span></span><span style=display:flex><span>            labelMoodInstructions.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style=display:flex><span>            labelMoodInstructions.topAnchor.constraint(equalTo: labelMessage.bottomAnchor, constant: <span style=color:#ae81ff>16</span>),
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//mood picker constraints...</span>
+</span></span><span style=display:flex><span>            moodPicker.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style=display:flex><span>            moodPicker.topAnchor.constraint(equalTo: labelMoodInstructions.bottomAnchor, constant: <span style=color:#ae81ff>16</span>),
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//buttonSendMood constraints...</span>
+</span></span><span style=display:flex><span>            buttonSendMood.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style=display:flex><span>            buttonSendMood.topAnchor.constraint(equalTo: moodPicker.bottomAnchor, constant: <span style=color:#ae81ff>16</span>),
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>        ])
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}    </span></span></code></pre></div><p>{% endcode %}</p><p>Here, <code>labelMoodInstructions</code> shows the message: &ldquo;How are you feeling today?&rdquo;</p><p>Then we place the <code>moodPicker</code> and finally put <code>buttonSendMood</code> at the bottom.</p><p>If we run the app now, we will see:</p><figure><img src="/gitbook-assets/nine (1).gif" alt><figcaption></figcaption></figure><p>Here, we do not see the two elements we added to ViewController, because <code>labelMood</code> and <code>imageMood</code> doesn&rsquo;t have anything to display.</p><p>On ShowViewController, we see there is an empty <code>moodPicker</code> and the newly added <code>buttonSendMood</code>.</p><h1 id=331-send-data-back-from-screen-2-to-screen-1-uipickerview>3.3.1. Send data back from Screen 2 to Screen 1: UIPickerView<a class=anchor href=#331-send-data-back-from-screen-2-to-screen-1-uipickerview>#</a></h1><figure><img src="/gitbook-assets/Screenshot 2023-05-11 at 12.13.48 PM (1).png" alt><figcaption></figcaption></figure><p>Now let&rsquo;s open the second screen (ShowViewController). We are going to set up our PickerView <code>moodPicker</code> now. Let&rsquo;s define an array of Strings having three moods: &ldquo;Happy,&rdquo; &ldquo;Meh,&rdquo; and &ldquo;Sad.&rdquo;</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>// moods for moodPicker...</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> moods: [String] = [<span style=color:#e6db74>&#34;Happy&#34;</span>, <span style=color:#e6db74>&#34;Meh&#34;</span>, <span style=color:#e6db74>&#34;Sad&#34;</span>] </span></span></code></pre></div><p>Also, let&rsquo;s declare a variable that keeps the selected mode:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>var</span> selectedMood = <span style=color:#e6db74>&#34;Happy&#34;</span></span></span></code></pre></div><p>Now it&rsquo;s time to set up the PickerView. To activate a PickerView, the class ShowViewController needs to adopt two <a href=https://github.com/sakibnm/iOS/blob/main/10.-protocols>Protocols</a>: UIPickerViewDelegate, and UIPickerViewDataSource. UIPickerViewDelegate is the protocol to enable user interactions with the PickerView, and UIPickerViewDataSource is the protocol to access data to display on PickerView.</p><p>You can adopt it in two ways. The first way is the way we have seen in our Swift notes:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ShowViewController</span>: UIViewController,
+</span></span><span style=display:flex><span>                            UIPickerViewDelegate,
+</span></span><span style=display:flex><span>                            UIPickerViewDataSource {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//codes omitted...</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>Or we can separate the code block from the class to make our code more readable by using <code>extension</code> keyword:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ShowViewController</span>: UIViewController {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// codes omitted...</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>extension</span> <span style=color:#a6e22e>ShowViewController</span>: UIPickerViewDelegate, UIPickerViewDataSource{
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//has the same scope of ShowViewController...</span>
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>The keyword <strong><code>extension</code></strong> allows you to write code inside the same context of a class. You are writing code literally inside a class if you use an extension.</p><p>We will choose the second option, where we can keep the code separated. So, let&rsquo;s implement or adopt the methods in the protocols and define them. You need to write code for three methods to properly set up the <code>moodPicker:</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>// </span><span style=color:#75715e>MARK:</span><span style=color:#75715e> Conforming required PickerView protocols...</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>extension</span> <span style=color:#a6e22e>ShowViewController</span>: UIPickerViewDelegate, UIPickerViewDataSource{
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//returns the number of columns/components in the Picker View...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>numberOfComponents</span>(<span style=color:#66d9ef>in</span> pickerView: UIPickerView) -&gt; Int {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//returns the number of rows in the current component...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>pickerView</span>(<span style=color:#66d9ef>_</span> pickerView: UIPickerView, numberOfRowsInComponent component: Int) -&gt; Int {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> moods.count
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//set the title of currently picked row...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>pickerView</span>(<span style=color:#66d9ef>_</span> pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -&gt; String? {
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// on change selection, update selectedMood...</span>
+</span></span><span style=display:flex><span>        selectedMood = moods[row]
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> moods[row]
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>Here, <code>numberOfComponents()</code> method expects you to return the number of columns in PickerView. In our <code>moodPicker</code> we only have one column, so we will return 1. (There could be scenarios with multiple components, like a date picker).</p><p>You see, there are two methods named <code>pickerView()</code>, it might get you confused at first glance, but really they are used as overridden methods for the protocols. The most important parts are <code>numberOfRowsInComponent</code> and <code>titleForRow</code> parameters.</p><p>The first <code>pickerView()</code> method with <code>numberOfRowsInComponent</code> should return the number of rows in the current component/column. We have to populate the Strings in the moods array. So, we return <code>moods.count</code>.</p><p>The second <code>pickerView()</code> method with <code>titleForRow</code> should return the title we want to set for the selected row. Here, we need to show the Strings in the moods array, each mood in each row. So we return <code>moods[row]</code>. Before we return, we update <code>selectedMood</code> variable&rsquo;s value to the corresponding String to the currently selected row, <code>moods[row]</code>.</p><p>Now, two more important tasks are yet to be done. We have to show the <code>moodPicker</code> the class where it can fetch the data from and enable user interaction. Add the following two lines of codes, in <code>setupMoodPicker()</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span>moodPicker.delegate = <span style=color:#66d9ef>self</span>
+</span></span><span style=display:flex><span>moodPicker.dataSource = <span style=color:#66d9ef>self</span></span></span></code></pre></div><p>We are saying for enabling the user interactions (delegate), and as the data source <code>moodPicker</code> should use the ShowViewController class&rsquo;s current instance.</p><p>Now so far, the code files look like the following:</p><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  ShowViewController.swift</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  App3</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  Created by Sakib Miazi on 5/10/23.</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>UIKit</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ShowViewController</span>: UIViewController {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> messageFromFirstScreen:String? = <span style=color:#e6db74>&#34;No message received!&#34;</span> <span style=color:#75715e>//First screen can set this variable...</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> moods: [String] = [<span style=color:#e6db74>&#34;Happy&#34;</span>, <span style=color:#e6db74>&#34;Meh&#34;</span>, <span style=color:#e6db74>&#34;Sad&#34;</span>] <span style=color:#75715e>// moods for moodPicker...</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> selectedMood = <span style=color:#e6db74>&#34;Happy&#34;</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> labelMessage: UILabel!
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> labelMoodInstructions: UILabel!
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> moodPicker: UIPickerView!
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> buttonSendMood: UIButton!
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>viewDidLoad</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>super</span>.viewDidLoad()
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//setting the view background to white...</span>
+</span></span><span style=display:flex><span>        view.backgroundColor = .white
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// </span><span style=color:#75715e>MARK:</span><span style=color:#75715e> initializing the UI elements...</span>
+</span></span><span style=display:flex><span>        setupLabelMessage()
+</span></span><span style=display:flex><span>        setupLabelMoodInstructions()
+</span></span><span style=display:flex><span>        setupMoodPicker()
+</span></span><span style=display:flex><span>        setupButtonSendMood()
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// </span><span style=color:#75715e>MARK:</span><span style=color:#75715e> setting up constraints...</span>
+</span></span><span style=display:flex><span>        initConstraints()
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//setting up labelMessage...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupLabelMessage</span>(){
+</span></span><span style=display:flex><span>        labelMessage = UILabel()
+</span></span><span style=display:flex><span>        labelMessage.textColor = .systemBlue
+</span></span><span style=display:flex><span>        labelMessage.text = messageFromFirstScreen
+</span></span><span style=display:flex><span>        labelMessage.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>        view.addSubview(labelMessage)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// setting up labelMoodInstructions...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupLabelMoodInstructions</span>(){
+</span></span><span style=display:flex><span>        labelMoodInstructions = UILabel()
+</span></span><span style=display:flex><span>        labelMoodInstructions.text = <span style=color:#e6db74>&#34;How are you feeling today?&#34;</span>
+</span></span><span style=display:flex><span>        labelMoodInstructions.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>        view.addSubview(labelMoodInstructions)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// setting up mood picker...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupMoodPicker</span>(){
+</span></span><span style=display:flex><span>        moodPicker = UIPickerView()
+</span></span><span style=display:flex><span>        moodPicker.isUserInteractionEnabled = <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>        moodPicker.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>        view.addSubview(moodPicker)
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//patching the delegate and data source...</span>
+</span></span><span style=display:flex><span>        moodPicker.delegate = <span style=color:#66d9ef>self</span>
+</span></span><span style=display:flex><span>        moodPicker.dataSource = <span style=color:#66d9ef>self</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// setting up buttonSendMood...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupButtonSendMood</span>(){
+</span></span><span style=display:flex><span>        buttonSendMood = UIButton(type: .system)
+</span></span><span style=display:flex><span>        buttonSendMood.setTitle(<span style=color:#e6db74>&#34;Send Mood back!&#34;</span>, <span style=color:#66d9ef>for</span>: .normal)
+</span></span><span style=display:flex><span>        buttonSendMood.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>        view.addSubview(buttonSendMood)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// </span><span style=color:#75715e>MARK:</span><span style=color:#75715e> setting up constraints...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>initConstraints</span>(){
+</span></span><span style=display:flex><span>        NSLayoutConstraint.activate([
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//labelMessage constraints...</span>
+</span></span><span style=display:flex><span>            labelMessage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style=display:flex><span>            labelMessage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: <span style=color:#ae81ff>32</span>),
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//labelMoodInstructions constraints...</span>
+</span></span><span style=display:flex><span>            labelMoodInstructions.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style=display:flex><span>            labelMoodInstructions.topAnchor.constraint(equalTo: labelMessage.bottomAnchor, constant: <span style=color:#ae81ff>16</span>),
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//mood picker constraints...</span>
+</span></span><span style=display:flex><span>            moodPicker.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style=display:flex><span>            moodPicker.topAnchor.constraint(equalTo: labelMoodInstructions.bottomAnchor, constant: <span style=color:#ae81ff>16</span>),
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//buttonSendMood constraints...</span>
+</span></span><span style=display:flex><span>            buttonSendMood.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style=display:flex><span>            buttonSendMood.topAnchor.constraint(equalTo: moodPicker.bottomAnchor, constant: <span style=color:#ae81ff>16</span>),
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>        ])
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// </span><span style=color:#75715e>MARK:</span><span style=color:#75715e> Conforming to required PickerView protocols...</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>extension</span> <span style=color:#a6e22e>ShowViewController</span>: UIPickerViewDelegate, UIPickerViewDataSource{
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//returns the number of columns/components in the Picker View...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>numberOfComponents</span>(<span style=color:#66d9ef>in</span> pickerView: UIPickerView) -&gt; Int {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//returns the number of rows in the current component...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>pickerView</span>(<span style=color:#66d9ef>_</span> pickerView: UIPickerView, numberOfRowsInComponent component: Int) -&gt; Int {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> moods.count
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//set the title of currently picked row...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>pickerView</span>(<span style=color:#66d9ef>_</span> pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -&gt; String? {
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// on change selection, update selectedMood...</span>
+</span></span><span style=display:flex><span>        selectedMood = moods[row]
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> moods[row]
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>{% endcode %}</p><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  ViewController.swift</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  App3</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  Created by Sakib Miazi on 5/10/23.</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>UIKit</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ViewController</span>: UIViewController {
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> textFieldMessage: UITextField!
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> buttonSend: UIButton!
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> labelMood: UILabel!
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> imageMood: UIImageView!
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>viewDidLoad</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>super</span>.viewDidLoad()
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Do any additional setup after loading the view.</span>
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> initializing the UI elements...</span>
+</span></span><span style=display:flex><span>        setupTextFieldMessage()
+</span></span><span style=display:flex><span>        setupButtonSend()
+</span></span><span style=display:flex><span>        setupLabelMood()
+</span></span><span style=display:flex><span>        setupImageMood()
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> initializing the constraints...</span>
+</span></span><span style=display:flex><span>        initConstraints()
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> on buttonSend tap...</span>
+</span></span><span style=display:flex><span>        buttonSend.addTarget(<span style=color:#66d9ef>self</span>, action: <span style=color:#66d9ef>#selector</span>(onButtonSendTapped),
+</span></span><span style=display:flex><span>                             <span style=color:#66d9ef>for</span>: .touchUpInside)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// textFieldMessage...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupTextFieldMessage</span>(){
+</span></span><span style=display:flex><span>        textFieldMessage = UITextField()
+</span></span><span style=display:flex><span>        textFieldMessage.placeholder = <span style=color:#e6db74>&#34;Put your message here&#34;</span>
+</span></span><span style=display:flex><span>        textFieldMessage.borderStyle = .roundedRect
+</span></span><span style=display:flex><span>        textFieldMessage.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>        view.addSubview(textFieldMessage)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//buttonSend...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupButtonSend</span>(){
+</span></span><span style=display:flex><span>        buttonSend = UIButton(type: .system)
+</span></span><span style=display:flex><span>        buttonSend.setTitle(<span style=color:#e6db74>&#34;Send&#34;</span>, <span style=color:#66d9ef>for</span>: .normal)
+</span></span><span style=display:flex><span>        buttonSend.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>        view.addSubview(buttonSend)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//labelMood...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupLabelMood</span>(){
+</span></span><span style=display:flex><span>        labelMood = UILabel()
+</span></span><span style=display:flex><span>        labelMood.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>        view.addSubview(labelMood)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//imageMood...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>setupImageMood</span>(){
+</span></span><span style=display:flex><span>        imageMood = UIImageView()
+</span></span><span style=display:flex><span>        imageMood.translatesAutoresizingMaskIntoConstraints = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>        view.addSubview(imageMood)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// </span><span style=color:#75715e>MARK:</span><span style=color:#75715e> On button tapped delegate...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>@objc</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>onButtonSendTapped</span>(){
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//initializing a new screen with ShowViewController...</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>var</span> showViewController = ShowViewController()
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//set the message to ShowViewController&#39;s messageFromFirstScreen variable...</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#66d9ef>let</span> unwrappedMessage = textFieldMessage.text{
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> <span style=color:#f92672>!</span>unwrappedMessage.isEmpty{ <span style=color:#75715e>// checking if the user has put any message...</span>
+</span></span><span style=display:flex><span>                showViewController.messageFromFirstScreen = unwrappedMessage
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//push the screen to Stack...</span>
+</span></span><span style=display:flex><span>        navigationController?.pushViewController(showViewController, animated: <span style=color:#66d9ef>true</span>)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> initializing constraints...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>initConstraints</span>(){
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        NSLayoutConstraint.activate([
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// textFieldMessage constraints...</span>
+</span></span><span style=display:flex><span>            textFieldMessage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style=display:flex><span>            textFieldMessage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: <span style=color:#ae81ff>32</span>),
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// buttonSend constraints...</span>
+</span></span><span style=display:flex><span>            buttonSend.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style=display:flex><span>            buttonSend.topAnchor.constraint(equalTo: textFieldMessage.bottomAnchor, constant: <span style=color:#ae81ff>16</span>),
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// labelMood constraints...</span>
+</span></span><span style=display:flex><span>            labelMood.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style=display:flex><span>            labelMood.topAnchor.constraint(equalTo: buttonSend.bottomAnchor, constant: <span style=color:#ae81ff>16</span>),<span style=color:#75715e>// labelMood constraints...</span>
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// imageMood constraints...</span>
+</span></span><span style=display:flex><span>            imageMood.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+</span></span><span style=display:flex><span>            imageMood.topAnchor.constraint(equalTo: labelMood.bottomAnchor, constant: <span style=color:#ae81ff>16</span>),
+</span></span><span style=display:flex><span>        ])
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>{% endcode %}</p><h1 id=332-send-data-back-from-screen-2-to-screen-1-delegating-to-viewcontroller>3.3.2. Send data back from Screen 2 to Screen 1: delegating to ViewController<a class=anchor href=#332-send-data-back-from-screen-2-to-screen-1-delegating-to-viewcontroller>#</a></h1><p>Now, let&rsquo;s enable the action for <code>buttonSendMood</code> in ShowViewController.swift file. So let&rsquo;s update <code>viewDidLoad()</code> function and add a new selector method <code>onSendButtonTapped()</code>:</p><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>// setting up buttonSendMood...</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>override</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>viewDidLoad</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>super</span>.viewDidLoad()
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//setting the view background to white...</span>
+</span></span><span style=display:flex><span>        view.backgroundColor = .white
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// </span><span style=color:#75715e>MARK:</span><span style=color:#75715e> initializing the UI elements...</span>
+</span></span><span style=display:flex><span>        setupLabelMessage()
+</span></span><span style=display:flex><span>        setupLabelMoodInstructions()
+</span></span><span style=display:flex><span>        setupMoodPicker()
+</span></span><span style=display:flex><span>        setupButtonSendMood()
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// </span><span style=color:#75715e>MARK:</span><span style=color:#75715e> setting up constraints...</span>
+</span></span><span style=display:flex><span>        initConstraints()
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> add a delegate to on </span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//button send mode tapped...</span>
+</span></span><span style=display:flex><span>        buttonSendMood.addTarget(<span style=color:#66d9ef>self</span>, action: <span style=color:#66d9ef>#selector</span>(onSendMoodButtonTapped), <span style=color:#66d9ef>for</span>: .touchUpInside)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span><span style=color:#75715e>// </span><span style=color:#75715e>MARK:</span><span style=color:#75715e> on send button tapped...</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>@objc</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>onSendMoodButtonTapped</span>(){
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>{% endcode %}</p><h3 id=declaring-the-delegate-variable-in-showviewcontrollerswift>Declaring the delegate variable in ShowViewController.swift<a class=anchor href=#declaring-the-delegate-variable-in-showviewcontrollerswift>#</a></h3><p><strong>Before we write something in <code>onSendMoodButtonTapped()</code>,</strong> we need to do a few more things. First, if we want to send the mood back to the first screen (ViewController), we need to ask the ViewController to receive the data and do the tasks afterward. We are delegating the tasks to VIewController after we click on <code>buttonSendMood</code>. So, we create a variable <code>delegate</code> in ShowViewController.swift file that can hold the reference to the instance of ViewController:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  ShowViewController.swift</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  App3</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ShowViewController</span>: UIViewController {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> messageFromFirstScreen:String? = <span style=color:#e6db74>&#34;No message received!&#34;</span> <span style=color:#75715e>//First screen can set this variable...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> delegate: ViewController! <span style=color:#75715e>//delegate to ViewController...</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// codes omitted...</span>
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><h3 id=initializing-delegate-to-the-instance-of-viewcontroller-self>Initializing delegate to the instance of ViewController (self)<a class=anchor href=#initializing-delegate-to-the-instance-of-viewcontroller-self>#</a></h3><p><strong>Now, let&rsquo;s go back to ViewController class</strong> and ensure we set the <code>delegate</code>variable&rsquo;s value before pushing ShowViewController into the NavigationController. By doing that, we are ensuring that the instance of ShowViewController can have access to the instance of ViewController. So let&rsquo;s update the <code>@objc func onButtonSendTapped()</code> in ViewController:</p><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  ViewController.swift</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  App3</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ViewController</span>: UIViewController {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// codes omitted...</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// </span><span style=color:#75715e>MARK:</span><span style=color:#75715e> On button tapped delegate...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>@objc</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>onButtonSendTapped</span>(){
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//initializing a new screen with ShowViewController...</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>var</span> showViewController = ShowViewController()
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//set the message to ShowViewController&#39;s messageFromFirstScreen variable...</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#66d9ef>let</span> unwrappedMessage = textFieldMessage.text{
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> <span style=color:#f92672>!</span>unwrappedMessage.isEmpty{ <span style=color:#75715e>// checking if the user has put any message...</span>
+</span></span><span style=display:flex><span>                <span style=color:#75715e>//Sending data...</span>
+</span></span><span style=display:flex><span>                showViewController.messageFromFirstScreen = unwrappedMessage
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//setting the delegate for receiving data...</span>
+</span></span><span style=display:flex><span>            showViewController.delegate = <span style=color:#66d9ef>self</span>
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//push the screen to Stack...</span>
+</span></span><span style=display:flex><span>        navigationController?.pushViewController(showViewController, animated: <span style=color:#66d9ef>true</span>)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//codes omitted...</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span> </span></span></code></pre></div><p>{% endcode %}</p><h3 id=doing-delegated-tasks-in-viewcontroller>Doing delegated tasks in ViewController<a class=anchor href=#doing-delegated-tasks-in-viewcontroller>#</a></h3><p><strong>Now, we need to add a method in ViewController</strong> to conduct the delegated tasks from ShowViewController:</p><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  ViewController.swift</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  App3</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ViewController</span>: UIViewController {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// codes omitted...</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// </span><span style=color:#75715e>MARK:</span><span style=color:#75715e> On button tapped delegate...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>@objc</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>onButtonSendTapped</span>(){
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//initializing a new screen with ShowViewController...</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>var</span> showViewController = ShowViewController()
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//set the message to ShowViewController&#39;s messageFromFirstScreen variable...</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#66d9ef>let</span> unwrappedMessage = textFieldMessage.text{
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> <span style=color:#f92672>!</span>unwrappedMessage.isEmpty{ <span style=color:#75715e>// checking if the user has put any message...</span>
+</span></span><span style=display:flex><span>                <span style=color:#75715e>//Sending data...</span>
+</span></span><span style=display:flex><span>                showViewController.messageFromFirstScreen = unwrappedMessage
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//setting the delegate for receiving data...</span>
+</span></span><span style=display:flex><span>            showViewController.delegate = <span style=color:#66d9ef>self</span>
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//push the screen to Stack...</span>
+</span></span><span style=display:flex><span>        navigationController?.pushViewController(showViewController, animated: <span style=color:#66d9ef>true</span>)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//codes omitted...</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//</span><span style=color:#75715e>MARK:</span><span style=color:#75715e> delegated method from ShowViewController...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>delegateButtonSendMood</span>(mood: String){
+</span></span><span style=display:flex><span>        print(<span style=color:#e6db74>&#34;The user is </span><span style=color:#e6db74>\(</span>mood<span style=color:#e6db74>)</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//codes omitted...</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span> </span></span></code></pre></div><p>{% endcode %}</p><p>Here, <code>delegateButtonSendMood(mood:String)</code> receives a String (mood) as a parameter. Let&rsquo;s just print the mood for now.</p><p>Now, let&rsquo;s switch back to ShowViewController. <strong>We now need to call this <code>delegateButtonSendMood(mood:String)</code> method when the user taps on <code>onSendMoodButton</code>.</strong> We can write:</p><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  ShowViewController.swift</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  App3</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ShowViewController</span>: UIViewController {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// codes omitted in between...</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> delegate: ViewController! <span style=color:#75715e>//delegate to ViewController...</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//codes omitted in between...</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// </span><span style=color:#75715e>MARK:</span><span style=color:#75715e> on send button tapped...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>@objc</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>onSendMoodButtonTapped</span>(){
+</span></span><span style=display:flex><span>        delegate.delegateButtonSendMood(mood: selectedMood)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//codes omitted in between...</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>{% endcode %}</p><p>Since the instance of ShowViewController gets populated with the variable <code>delegate</code> already set to the instance of ViewController, we can call <code>delegateButtonSendMood()</code> method from ShowViewController. We are calling the method with <code>selectedMood</code> as the parameter. Now, let&rsquo;s run the app and check if ViewController can print the mood.</p><figure><img src="/gitbook-assets/ten (1).gif" alt><figcaption></figcaption></figure><p>We are yet to do another task. We need to pop the ShowViewController after we click on <code>buttonSendMood</code>. So we will add <code>navigationController?.popViewController(animated: true)</code> to <code>@objc func onSendMoodButtonTapped()</code>.</p><p>{% code lineNumbers=&ldquo;true&rdquo; %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  ShowViewController.swift</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//  App3</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ShowViewController</span>: UIViewController {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// codes omitted in between...</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> delegate: ViewController! <span style=color:#75715e>//delegate to ViewController...</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//codes omitted in between...</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// </span><span style=color:#75715e>MARK:</span><span style=color:#75715e> on send button tapped...</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>@objc</span> <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>onSendMoodButtonTapped</span>(){
+</span></span><span style=display:flex><span>        delegate.delegateButtonSendMood(mood: selectedMood)
+</span></span><span style=display:flex><span>        navigationController?.popViewController(animated: <span style=color:#66d9ef>true</span>)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//codes omitted in between...</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>{% endcode %}</p><p>Now let&rsquo;s run it again:</p><figure><img src=/gitbook-assets/eleven.gif alt><figcaption></figcaption></figure><p>Yay! We now learned how to send data back and forth between two screens!</p><p><em>Now, your task is to show the user&rsquo;s mood in <code>labelMood</code> at ViewController screen.</em></p><p>Next, we will discuss displaying an image related to the user&rsquo;s mood.</p><h1 id=333-send-data-back-from-screen-2-to-screen-1-uiimageview>3.3.3. Send data back from Screen 2 to Screen 1: UIImageView<a class=anchor href=#333-send-data-back-from-screen-2-to-screen-1-uiimageview>#</a></h1><h2 id=importing-images-into-the-project>Importing images into the project<a class=anchor href=#importing-images-into-the-project>#</a></h2><p>Now, let&rsquo;s start working with ImageViews. We need three images for moods: happy, meh, and sad. We will be using the following images in three different sizes: 1x, 2x, and 3x.</p><p><img src=/gitbook-assets/happy%20%281%29.png alt> <img src=/gitbook-assets/meh%20%281%29.png alt> <img src=/gitbook-assets/sad%20%281%29.png alt></p><p>Download the images from here:</p><p>{% file src="/gitbook-assets/images (1).zip" %}</p><p>If you extract the files, you will see something like the following:</p><figure><img src="/gitbook-assets/Screenshot 2023-05-11 at 9.26.55 PM (2).png" alt><figcaption></figcaption></figure><p>See each image has three versions: 1x, 2x, and 3x.</p><ul><li>1x images have a resolution of 200x200</li><li>2x images have a resolution of 400x400</li><li>3x images have a resolution of 600x600</li></ul><p>These are called image scaling. To understand the concept, read the following article: <a href=https://www.appypie.com/image-scaling-ios-how-to>https://www.appypie.com/image-scaling-ios-how-to</a>.</p><p>Long story short, in the early iOS devices before iPhone 8, the resolutions were very low, less than 640p. There you need to use smaller images (like 200x200). Comparatively, phones like iPhone 11 or later have more than 1024p, so modern screens can accommodate bigger images (like 600x600). iOS has a great feature to scale the images automatically if you provide images with all three scales. It will automatically use the appropriate image based on the device where you run the app.</p><p><strong>Pro tip:</strong> now, you usually do not have to worry about 1x images anymore; those low-resolution devices are non-existent now.</p><p>Now, let&rsquo;s add the images to our project. Go to the project navigator on the left pane. Click on <strong>Assets</strong>. Right-click somewhere below the AppIcon, and select <strong>New Folder.</strong> Create a folder named &ldquo;mood images.&rdquo;</p><p><em><mark style=color:blue>(you can name it as you want; you do not need to create the folder; I am creating the folder to help myself organize the assets).</mark></em></p><p>Now, right-click on the &ldquo;mood images&rdquo; folder and select <strong>Import.</strong> Then select the images and <strong>Open.</strong></p><figure><img src="/gitbook-assets/thirteen (1).gif" alt><figcaption></figcaption></figure><p>Looking at the Assets now, you&rsquo;ll see three image assets listed instead of nine. The project automatically indexed nine of them into three assets, each having 3 scales (1x, 2x, and 3x). <img src=/gitbook-assets/Screenshot%202023-05-11%20at%2010.11.02%20PM.png alt></p><h2 id=setting-the-image-into-the-imageview-through-delegate>Setting the image into the ImageView through delegate<a class=anchor href=#setting-the-image-into-the-imageview-through-delegate>#</a></h2><p>In ViewController, add the following line of code into <code>delegateButtonSendMood()</code> method:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-swift data-lang=swift><span style=display:flex><span>imageMood.image = UIImage(named: mood.lowercased())</span></span></code></pre></div><p>Here, we are creating an <code>UIImage</code> object from the project assets. We are looking for an image asset named as the mood we receive from ShowViewController through the delegate method. Now, the moods are &ldquo;Happy,&rdquo; &ldquo;Meh,&rdquo; and &ldquo;Sad.&rdquo; But the image asset names are &ldquo;happy,&rdquo; &ldquo;meh,&rdquo; and &ldquo;sad.&rdquo; So we convert the String to all lowercase by calling <code>lowercased()</code> method.</p><p>Let&rsquo;s run the app again.</p><figure><img src="/gitbook-assets/fourteen (1).gif" alt><figcaption></figcaption></figure><p>Nice! We have learned a lot of things together from building this app:</p><ul><li>Designing an app without using the storyboard</li><li>Working with multiple ViewControllers</li><li>Navigation Controller and Navigation Stack</li><li>Data exchange between two view controllers</li><li>Basics of ImageViews</li></ul><p>Thanks for bearing with me! :smile:</p><h3 id=a-few-notes>A few notes:<a class=anchor href=#a-few-notes>#</a></h3><ul><li>These are just the basics of these topics; we just scratched the surface, and many more things to explore, eventually.</li><li>UIImageView and layout constraints do not go hand in hand. It&rsquo;s always better to use a UIImageView wrapped by a UIView. We will discuss it further down the road.</li></ul><p><em><mark style=background-color:blue><strong>Now, before you go, set the title of the app by writing</strong></mark><mark style=background-color:blue><strong> </strong></mark><mark style=background-color:blue><strong><code>title = "Learning Navigation"</code></strong></mark><mark style=background-color:blue><strong> </strong></mark><mark style=background-color:blue><strong>in</strong></mark><mark style=background-color:blue><strong> </strong></mark><mark style=background-color:blue><strong><code>viewDidLoad()</code></strong></mark><mark style=background-color:blue><strong> </strong></mark><mark style=background-color:blue><strong>method at ViewController. And run the app to see the changes!</strong></mark></em></p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=/docs/03-introduction-to-uikit/multi-screen-apps/ class="flex align-center"><img src=/icons/backward.svg class=book-icon alt=Backward>
+<span>Multi-Screen Apps</span>
+</a></span><span><a href=/docs/03-introduction-to-uikit/mvc-architecture/ class="flex align-center"><span>MVC Architecture</span>
+<img src=/icons/forward.svg class=book-icon alt=Forward></a></span></div><div class=book-comments></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><ul><li><a href=#updating-the-screens-with-new-ui-elements>Updating the screens with new UI elements.</a></li></ul></li></ul><ul><li><ul><li><a href=#declaring-the-delegate-variable-in-showviewcontrollerswift>Declaring the delegate variable in ShowViewController.swift</a></li><li><a href=#initializing-delegate-to-the-instance-of-viewcontroller-self>Initializing delegate to the instance of ViewController (self)</a></li><li><a href=#doing-delegated-tasks-in-viewcontroller>Doing delegated tasks in ViewController</a></li></ul></li></ul><ul><li><a href=#importing-images-into-the-project>Importing images into the project</a></li><li><a href=#setting-the-image-into-the-imageview-through-delegate>Setting the image into the ImageView through delegate</a><ul><li><a href=#a-few-notes>A few notes:</a></li></ul></li></ul></nav></div></aside></main></body></html>
