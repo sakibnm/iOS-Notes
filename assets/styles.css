@@ -1206,29 +1206,3 @@ a:hover { color: var(--accent-hover); }
   .article pre code, .article code { color: #111; }
 }
 
-/* highlightjs-line-numbers.js styles */
-.hljs-ln td {
-  border: none !important;
-  padding: 0 !important;
-}
-.hljs-ln-numbers {
-  -webkit-user-select: none;
-  user-select: none;
-  text-align: right;
-  color: var(--ink-faint);
-  border-right: 1px solid var(--code-border) !important;
-  vertical-align: top;
-  padding-right: 12px !important;
-  width: 1%;
-  white-space: nowrap;
-}
-.hljs-ln-numbers .hljs-ln-n {
-  color: transparent; /* Hide the actual text */
-}
-.hljs-ln-numbers .hljs-ln-n::before {
-  content: attr(data-line-number); /* Display the attribute */
-  color: var(--ink-faint);
-}
-.hljs-ln-code {
-  padding-left: 12px !important;
-}
