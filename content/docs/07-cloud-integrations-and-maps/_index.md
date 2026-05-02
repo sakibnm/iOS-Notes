@@ -10,7 +10,7 @@ bookCollapseSection: false
 
 
 
-## CocoaPods
+### CocoaPods
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -43,7 +43,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 9. Cocoa Pods
+### Cocoa Pods
 
 UIKit has thousands of modules, and we cannot learn all of them (you don't even need to). You only need to learn the most important, common, and useful ones. Then you can learn the others if you need them to solve a problem you are facing in real life.
 
@@ -62,9 +62,7 @@ Here we will see how to integrate Cocoa Pod modules into our app.
 
 
 
-<!-- Merged from 9.1.-installing-cocoa-pods.md -->
-
-# 9.1. Installing Cocoa Pods
+### Installing Cocoa Pods
 
 Let's visit the web page [https://cocoapods.org/](https://cocoapods.org/).
 
@@ -84,7 +82,7 @@ Now let's open the Terminal app on your Mac.
 
 ### **There are two ways of installing CocoaPods on your Mac:**
 
-#### 1. Using the command in cocoapods.org:
+### Using the command in cocoapods.org:
 
 * Copy the command (`sudo gem install cocoapods`) from the CocoaPods webpage and paste it into the Terminal. Put in your password and press return. It should install CocoaPods. After installation is done, put the command `pod --version` into your terminal. It should show something like: `1.12.1`. If you see that, you are done installing CocoaPods on your Mac.
 
@@ -108,9 +106,7 @@ Now let's open the Terminal app on your Mac.
 
 
 
-<!-- Merged from 9.2.-integrating-cocoapods-into-a-project.md -->
-
-# 9.2. Integrating CocoaPods into a Project
+### Integrating CocoaPods into a Project
 
 Let's create a new project App9 in Xcode. We will not write any code here; we will just use it to see how we can integrate cocoa pods into the project.
 
@@ -204,7 +200,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## Firebase Auth & Firestore
+### Firebase Auth & Firestore
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -237,29 +233,29 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 12. Firebase Authentication and Firestore
+### Firebase Authentication and Firestore
 
 Firebase is a Google service portal through which Google provides users with many useful Cloud services. Firebase services are very fast, reliable, and easy to use. They have comprehensive guides for developers to integrate and build systems using their services on a plethora of platforms, like, iOS, Android, NodeJS, Flutter, Unity, etc.
 
 **The landing portal of Firebase services is:** [https://firebase.google.com/](https://firebase.google.com/)
 
-## Getting started with Firebase
+### Getting started with Firebase
 
 {% embed url="https://youtu.be/1I9KMcQ_XCg" %}
 
-## Enabling Authentication, Firestore, and Storage
+### Enabling Authentication, Firestore, and Storage
 
 {% embed url="https://youtu.be/gdQDxqoTT5U" %}
 
-## Adding Firebase to our App
+### Adding Firebase to our App
 
 {% embed url="https://youtu.be/W0RGrDo4Bv4" %}
 
-## Firestore Data Structure
+### Firestore Data Structure
 
 {% embed url="https://youtu.be/eqW7KNChx5A" %}
 
-## Firebase Official Documentation
+### Firebase Official Documentation
 
 * [**Firebase Authentication for iOS**](https://firebase.google.com/docs/auth/ios/start)
 * [**Firebase Firestore for iOS**](https://firebase.google.com/docs/firestore/quickstart#ios+)
@@ -268,16 +264,14 @@ Firebase is a Google service portal through which Google provides users with man
 
 
 
-<!-- Merged from 12.1.-app-12-with-firebase.md -->
-
-# 12.1. App 12 with Firebase
+### App 12 with Firebase
 
 In this module, we will build App 12, which will be a contacts list app using,
 
 * Firebase Authentication
 * Firebase Firestore
 
-## App12: My Contacts app
+### App12: My Contacts app
 
 The overall goal is to build an app like the following:
 
@@ -291,7 +285,7 @@ The app has the following features:
 * They can log out.
 * Each authenticated user will have a separate contacts list.
 
-## Setting up your Firebase project in Firebase's Console
+### Setting up your Firebase project in Firebase's Console
 
 * Please set up your own Firebase project.
 * Create your own App12 in Xcode.
@@ -304,9 +298,7 @@ The app has the following features:
 
 
 
-<!-- Merged from 12.2.-setting-up-the-main-screen-view.md -->
-
-# 12.2. Setting up the Main Screen View
+### Setting up the Main Screen View
 
 In this Project, we will keep the codes as modular as possible. So, let's create a new Group called 'Main Screen.' Put ViewController.swift file inside 'Main Screen.'
 
@@ -563,9 +555,7 @@ Great! Now that our view is set up, we can start patching the ViewController.
 
 
 
-<!-- Merged from 12.3.-setting-up-the-viewcontroller-with-tableview.md -->
-
-# 12.3. Setting up the ViewController with TableView
+### Setting up the ViewController with TableView
 
 Now we will patch up the view to the controller. Let's open up `MainScreen -> ViewController.swift` file, and add the following code there:
 
@@ -613,7 +603,7 @@ If you run the app now, it'd look like this:
 
 ![](</gitbook-assets/Screenshot 2023-06-02 at 3.09.07 PM (1).png>)
 
-## Patching the Table View
+### Patching the Table View
 
 We need to create a data model for the contacts to display them. Let's create a data model (a struct) Contact in `Data Models -> Contact.swift` file.
 
@@ -730,9 +720,7 @@ class ViewController: UIViewController {
 
 
 
-<!-- Merged from 12.4.-authentication-state-handler.md -->
-
-# 12.4. Authentication State Handler
+### Authentication State Handler
 
 Now, it's time to set up the authentication for the app. We will use the right navigation bar buttons to manage the sign-in, register, and logout operations. Before we set up those buttons, let's write the logic to handle the authentication states in the app. Let's open ViewCOntroller.swift file and write the following code there:
 
@@ -796,7 +784,7 @@ In the above code:
 * In `viewWillAppear` method, we define `handleAuth` handler with a closure to handle the authentication state changes. This closure will be automatically called every time a user signs in or logs out. In the closure, you see that we have two parameters: `auth`, and `user`. If the user is nil, there is no authenticated user; else, there is a signed-in user in the app.
 * In `viewWillDisappear` method, we remove the listener from the app so that we do not run the listener infinitely.
 
-## if user == nil
+### if user == nil
 
 If the user is nil, meaning there is no signed-in user, we will write the following logic:
 
@@ -825,7 +813,7 @@ In the above code,
 * Then we also need to clear the local array for contacts by removing all the array elements.
 * Then finally, we reload the table view to reflect the authentication state change.
 
-## else (the user is logged in)
+### else (the user is logged in)
 
 To handle if the user is signed in, we write logic inside the `else` closure:
 
@@ -849,9 +837,7 @@ Here we update the local `currentUser` instance with the signed-in user. We then
 
 
 
-<!-- Merged from 12.6.-firestore-structure-for-storing-contacts.md -->
-
-# 12.6. Firestore Structure for Storing Contacts
+### Firestore Structure for Storing Contacts
 
 At this point, our authentication service is working great. Now have to design our Firestore structure to accommodate a contacts list for each user.
 
@@ -880,9 +866,7 @@ When we implement the functionalities in our app, we need to make sure we store 
 
 
 
-<!-- Merged from 12.7.-adding-a-new-contact.md -->
-
-# 12.7. Adding a New Contact
+### Adding a New Contact
 
 Let's focus on building the functionalities to add a new contact for a signed-in user in the app.
 
@@ -892,7 +876,7 @@ Create a sub-group of 'Add Contact Screen' named 'Views' and create 'AddContactV
 
 ![](</gitbook-assets/Screenshot 2023-06-02 at 11.30.10 PM (1).png>)
 
-## AddContactView.swift
+### AddContactView.swift
 
 Let's open 'AddContactView.swift' file and write the following code there:
 
@@ -985,7 +969,7 @@ class AddContactView: UIView {
 
 The above code is straightforward as well. We have four UI elements, three text fields for the contact's name, email, and phone, and an add button to store the contact.
 
-## AddContactViewController.swift
+### AddContactViewController.swift
 
 Open the 'AddContactViewController.swift' file. Now let's put the following code there:
 
@@ -1059,7 +1043,7 @@ In the above code:
 * We now have to update the Contact struct a little bit to conform to the Firestore structure.
 * Then we will define `func saveContactToFireStore(contact: Contact)` method.
 
-## Updating Contact.swift
+### Updating Contact.swift
 
 Open `DataModels -> Contact.swift` and update it like the following:
 
@@ -1097,7 +1081,7 @@ In the above code:
 * We adopt the Codable protocol to enable encoding and decoding.
 * On line 12, you see that we added `@DocumentID var id: String?`. Do you remember that Firebase has two options for setting a document ID? You can either give an ID manually or auto-generate an ID. We need to put that declaration line to enable both to conform properly to the Firestore document structure. We are saying that the document ID of the Firestore document will be an optional string. For more clarification visit: [https://firebase.google.com/docs/firestore/solutions/swift-codable-data-mapping](https://firebase.google.com/docs/firestore/solutions/swift-codable-data-mapping).
 
-## Uploading the Contact to Firestore
+### Uploading the Contact to Firestore
 
 Now, let's put the following code to AddContactViewController.swift file:
 
@@ -1154,7 +1138,7 @@ In the above code:
 * On line 26, we call `collectionContacts.addDocument(from: contact, completion:...)` to add a contact document to `collectionContacts` reference. If you notice, we are directly uploading the data from a Swift Contact object.
 * If there is no error, the add is successful, and we can now close this screen and go back to Main Screen.
 
-## Adding Progress Activity Indicator
+### Adding Progress Activity Indicator
 
 We can easily add the progress indicator view when storing the contact in Firestore. Let's add the following code to AddContactViewController.swift:
 
@@ -1227,7 +1211,7 @@ In the above code:
 * On line 25, we show the indicator before we start storing the contact in Firestore.
 * On line 31, we hide the indicator after we complete storing the contact.
 
-## Patching with the Main Screen
+### Patching with the Main Screen
 
 Once the floating add contact button is tapped, we need to display the add contact screen. So, let's add the following lines of code to ViewController.swift file:
 
@@ -1291,9 +1275,7 @@ You can see that:
 
 
 
-<!-- Merged from 12.8.-observing-firestore-updates-updating-the-tableview.md -->
-
-# 12.8. Observing Firestore Updates: Updating the TableView
+### Observing Firestore Updates: Updating the TableView
 
 We need to update our local array of contacts if anything changes in Firestore, right? If the user adds or removes a contact, we need to update the TableView.
 
@@ -1386,9 +1368,7 @@ Now let's run the app again.
 
 
 
-<!-- Merged from 12.9.-reference-code.md -->
-
-# 12.9. Reference Code
+### Reference Code
 
 {% file src="/gitbook-assets/App12 (1).zip" %}
 
@@ -1430,7 +1410,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## Firebase Storage
+### Firebase Storage
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -1463,11 +1443,11 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 13. Firebase Storage
+### Firebase Storage
 
 In this module, we will extend App12 to store images in FIrebase storage. Please review [https://github.com/sakibnm/iOS/blob/main/12.-firebase-authentication-and-firestore](https://github.com/sakibnm/iOS/blob/main/12.-firebase-authentication-and-firestore "mention") section to set up your Firebase Storage service in your Firebase services.
 
-## App 12 extended for storage
+### App 12 extended for storage
 
 We will extend App 12 to store images in Firestore Storage. We will do the following:
 
@@ -1480,11 +1460,9 @@ We will extend App 12 to store images in Firestore Storage. We will do the follo
 
 
 
-<!-- Merged from 13.1.-integrating-photo-pickers.md -->
+### Integrating Photo Pickers
 
-# 13.1. Integrating Photo Pickers
-
-## Updating RegisterView.swift
+### Updating RegisterView.swift
 
 Let's open App 12
 
@@ -1585,7 +1563,7 @@ class RegisterView: UIView {
 ```
 {% endcode %}
 
-## Patching RegisterViewController to Pick Photo
+### Patching RegisterViewController to Pick Photo
 
 Now we update the RegisterViewController.swift:
 
@@ -1666,7 +1644,7 @@ In the above code:
 
 We still need to adopt the protocols related to PHPickerView, and UIImagePicker. We will separate the adoption of protocols from RegisterViewController.swift file.
 
-## PhotoManager.swift
+### PhotoManager.swift
 
 Let's create a new file PhotoManager.swift in `Register Screen` group and put the following code in it:
 
@@ -1741,9 +1719,7 @@ Now that the Photo Pickers are integrated let's run the app. We should see the f
 
 
 
-<!-- Merged from 13.2.-uploading-the-picked-photo-to-firebase-storage.md -->
-
-# 13.2. Uploading the Picked Photo to Firebase Storage
+### Uploading the Picked Photo to Firebase Storage
 
 We need to update the RegisterFirebaseManager.swift file to upload the picked photo to Firebase Storage.
 
@@ -1772,7 +1748,7 @@ class RegisterViewController: UIViewController {
 }
 ```
 
-## Uploading a File to Storage: RegisterFirebaseManager.swift
+### Uploading a File to Storage: RegisterFirebaseManager.swift
 
 Let's open the RegisterFirebaseManager.swift file and write the following code:
 
@@ -1902,9 +1878,7 @@ So the files are getting uploaded. Now we need to display the images, and then i
 
 
 
-<!-- Merged from 13.3.-displaying-images-hosted-in-cloud.md -->
-
-# 13.3. Displaying Images Hosted in Cloud
+### Displaying Images Hosted in Cloud
 
 Now, we know the download URL of the profile photo of the logged-in user. We will now display it in an ImageView.
 
@@ -2014,9 +1988,7 @@ Let's run the app now.
 
 
 
-<!-- Merged from 13.4.-reference-code.md -->
-
-# 13.4. Reference Code
+### Reference Code
 
 {% file src="/gitbook-assets/App13(App 12 extension with Storage) (1).zip" %}
 
@@ -2052,7 +2024,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## MapKit & Location
+### MapKit & Location
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -2085,7 +2057,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 14. UIMapKit: Working with Location and Maps
+### UIMapKit: Working with Location and Maps
 
 In this module, we will learn how to use location services in iOS and build a few basic utilities of UIMapKit. Our end goal is to search places nearby on a Map View and navigate to the selected place using Apple Maps.
 
@@ -2094,11 +2066,9 @@ Let's create a new project on XCode and name it App14.
 
 
 
-<!-- Merged from 14.1.-phase-1-displaying-map-view-and-current-location.md -->
+### Phase 1: Displaying Map View and Current Location
 
-# 14.1. Phase 1: Displaying Map View and Current Location
-
-## Setting up the Map View
+### Setting up the Map View
 
 Our landing screen will be a Map screen. In the first step, we will have a button to show the current location on the map.&#x20;
 
@@ -2214,7 +2184,7 @@ In the above code:
 * And finally, we initialize the constraints on lines 67 through 84.
   * Make sure you define the height and width of the map view using constraints.
 
-## Patching the View with the Controller
+### Patching the View with the Controller
 
 Let's open the ViewController.swift file and put the following code there:
 
@@ -2248,7 +2218,7 @@ Let's run the app now.
 
 <figure><img src="/gitbook-assets/Screenshot 2023-06-14 at 11.38.02 AM.png" alt="" width="188"><figcaption></figcaption></figure>
 
-## Location Manager
+### Location Manager
 
 Now we will work on fetching the current location and moving the camera (map frame) to that location. Let's create a new file named LocationManager.swift. ![](</gitbook-assets/Screenshot 2023-06-14 at 12.15.25 PM.png>)
 
@@ -2315,7 +2285,7 @@ In the above code:
   * On line 31, we hide the loading button or remove the progress indicator.
   * On lines 35 through 37, we handle the error accessing the location.
 
-## Action when the Current Location button is tapped
+### Action when the Current Location button is tapped
 
 We need to implement the logic when the `buttonCurrentLocation` is tapped by the user. So we write `mapView.mapView.centerToLocation(location: locationManager.location!)` inside the `@objc func onButtonCurrentLocationTapped()` method in ViewController.swift file.&#x20;
 
@@ -2364,7 +2334,7 @@ On lines 29 through 31, we center the map view to the current location with a ra
 
 * Now, it should yell at you saying could not find method `centerToLocation()`. Because MKMapView does not have `centerToLocation()` method by default. We need to extend MKMapView to center the view.
 
-## Extending MKMapView to center the view to the current location
+### Extending MKMapView to center the view to the current location
 
 Let's open ViewController.swift file and add the following extension to enable centering to the current location:
 
@@ -2423,7 +2393,7 @@ When the app loads, it still loads the entire North America. So, we need to zoom
     }
 ```
 
-## Setting up Info.plist to allow the location access
+### Setting up Info.plist to allow the location access
 
 <figure><img src="/gitbook-assets/14.one.gif" alt=""><figcaption></figcaption></figure>
 
@@ -2448,21 +2418,19 @@ Let's run the app now.
 
 
 
-## Code so far
+### Code so far
 
 {% file src="/gitbook-assets/App14_phase1.zip" %}
 
 
 
-<!-- Merged from 14.2.-phase-2-annotations-and-accessories-for-a-certain-place.md -->
-
-# 14.2. Phase 2: Annotations and Accessories for a certain place
+### Phase 2: Annotations and Accessories for a certain place
 
 In this module, we will learn how to annotate a place in a particular coordinate on the map view. For example, we can annotate Northeastern University on the map view like the following:
 
 <figure><img src="/gitbook-assets/14.sixty.gif" alt=""><figcaption></figcaption></figure>
 
-## Defining a Place class with MKAnnotation
+### Defining a Place class with MKAnnotation
 
 We will define a class named Place, adopting the MKAnnotation protocol to annotate places on the map view. So let's create a new file named 'Place.swift' and put the following code there:
 
@@ -2524,7 +2492,7 @@ In the above code:
 
 **guard-let** is very similar to if-let to unwrap an optional value. `guard-let` is often used when you do not need to deal with the unwrapped value immediately and would use it later. So, we get the unwrapped value and store it in a constant for later use. For more, visit: [https://www.hackingwithswift.com/quick-start/understanding-swift/when-to-use-guard-let-rather-than-if-let](https://www.hackingwithswift.com/quick-start/understanding-swift/when-to-use-guard-let-rather-than-if-let)
 
-## Display an Annotated Place on Map
+### Display an Annotated Place on Map
 
 Let's open the ViewController.swift file, and put the following code there:
 
@@ -2575,7 +2543,7 @@ Let's run the app.&#x20;
 
 You can see there is a red bubble on the place `northeastern`. That is the placemark we talked about thus far.
 
-## Interacting with the Annotations
+### Interacting with the Annotations
 
 Now to be able to interact with the bubble, we need to adopt a protocol `MKMapViewDelegate`. We  need to implement two adopted `mapView()` methods with parameters `viewFor` and `calloutAccessoryControlTapped`.&#x20;
 
@@ -2700,19 +2668,17 @@ Let's run the app.&#x20;
 
 We first load the screen and display the annotation for Northeastern. Then we change the current simulator location to Apple's headquarters location.  Then we try the navigation with annotation. It opens the Apple Map, and we can drive!
 
-## Code so far
+### Code so far
 
 {% file src="/gitbook-assets/App14 Phase2.zip" %}
 
 
 
-<!-- Merged from 14.3.-phase-3-place-search-and-navigate.md -->
-
-# 14.3. Phase 3: Place Search and Navigate
+### Phase 3: Place Search and Navigate
 
 At this point, we will add a Bottom Search Sheet to find the places around and navigate there.
 
-## Setting up the Bottom Search Sheet
+### Setting up the Bottom Search Sheet
 
 First, let's add a search button at the bottom of the Map Screen. Open MapView.swift file, and put the following code to add the search button and its constraints:
 
@@ -2777,7 +2743,7 @@ Now, let's create the files related to the Bottom Search Sheet in the project: S
 
 Then we set up the Bottom Search Sheet following the example in [Broken link](broken-reference "mention").&#x20;
 
-## Bottom Search Sheet
+### Bottom Search Sheet
 
 ### SearchViewController.swift
 
@@ -2986,7 +2952,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
 ```
 {% endcode %}
 
-## Displaying the Bottom Search Sheet
+### Displaying the Bottom Search Sheet
 
 We need to add an action to the search button in ViewController. And then display the bottom search sheet.
 
@@ -3050,7 +3016,7 @@ If we run the app now:
 
 So, our bottom search sheet is working!
 
-## Searching Nearby Places
+### Searching Nearby Places
 
 Here we have to type something on the search bar, and depending on what we type, it should display the list of related places in the search results table view. So, let's open SearchViewController.swift and put in the following code to add a delegate to mapview:
 
@@ -3223,7 +3189,7 @@ Let's run the app.
 
 The results are getting printed in the output area in the above demo. The results are related to the search query "coffee." It fetches all the coffee shops around.
 
-## Displaying the search results in the search table view
+### Displaying the search results in the search table view
 
 Now we have the search results in the map screen, so we need to send them back to the search result table view. We will use Notification Center for that. We need to observe the data from the search bottom sheet. We post the notification from the map screen.
 
@@ -3384,15 +3350,13 @@ Let's run the app again:
 
 **Great! We can see the search results!!! Now can we show the place on the map when we select it on the table view?**
 
-## Code so far
+### Code so far
 
 {% file src="/gitbook-assets/App14_phase3.zip" %}
 
 
 
-<!-- Merged from 14.4.-phase-4-display-searched-places-on-map.md -->
-
-# 14.4. Phase 4: Display Searched Places on Map
+### Phase 4: Display Searched Places on Map
 
 The last part of our app is to show a place selected from the search results on the map and navigate to it.
 
@@ -3469,9 +3433,7 @@ Awesome!!! Now we built a pretty useful basic place search application!
 
 
 
-<!-- Merged from 14.5.-reference-code.md -->
-
-# 14.5. Reference Code
+### Reference Code
 
 {% file src="/gitbook-assets/App14.zip" %}
 
@@ -3507,7 +3469,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## 12.5. Implementing Register and Sign In
+### Implementing Register and Sign In
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -3540,7 +3502,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 12.5. Implementing Register and Sign In
+### Implementing Register and Sign In
 
 Our next goal is to build the functionalities so that a user can register a new account and sign in to the account like the following:
 
@@ -3554,9 +3516,7 @@ Our next goal is to build the functionalities so that a user can register a new 
 
 
 
-<!-- Merged from 12.3.1.-building-the-right-bar-button-s-for-sign-in-and-logout.md -->
-
-# 12.3.1. Building the Right Bar Button(s) for Sign In and Logout
+### Building the Right Bar Button(s) for Sign In and Logout
 
 We add two buttons on the right navigation bar, triggering the same action. We do it to display an image and text to explain to the user what to do. (This is not standard practice, you can design your own buttons.)
 
@@ -3626,7 +3586,7 @@ extension ViewController{
 ```
 {% endcode %}
 
-## setupRightBarButton(isLoggedin: Bool)
+### setupRightBarButton(isLoggedin: Bool)
 
 In the above code:
 
@@ -3634,7 +3594,7 @@ In the above code:
 * In both cases, we add two buttons to do the same tasks. If you look at lines 28 and 45, we add the pair of buttons together.
 * For the logout buttons, the action would be `onLogOutBarButtonTapped()` method, and for the sign-in buttons, the action would be `onSignInBarButtonTapped()` method.
 
-## onSignInBarButtonTapped()
+### onSignInBarButtonTapped()
 
 When the sign-in bar button is tapped, we need to display an alert with the text fields to let the user sign in. It should have two buttons: 'SIgn In' and 'Logout.
 
@@ -3704,7 +3664,7 @@ In the above code:
 
 <mark style="color:orange;">**We will keep the sign-in and register logic empty and return to that momentarily.**</mark>
 
-## onLogOutBarButtonTapped()
+### onLogOutBarButtonTapped()
 
 Now, when the user taps on the logout right bar button, we need to confirm that the user really wants to log out. So we need to show another alert to confirm the log-out operation. Let's write the following code in `onLogOutBarButtonTapped()` method:
 
@@ -3731,7 +3691,7 @@ Now, when the user taps on the logout right bar button, we need to confirm that 
 * If the user taps on the action 'Yes, Log out!' we call the Firebase authentication service to log the current user out.
 * If the user wats to stay logged in, they can tap 'Cancel.'
 
-## Patching ViewController to display the Right Bar Buttons
+### Patching ViewController to display the Right Bar Buttons
 
 We still need to display the Right Bar buttons on the Main Screen. So open up the ViewController.swift file and update the `handleAuth` closures to manage the sign-in and logout bar buttons:
 
@@ -3778,15 +3738,13 @@ Now run the app again!
 
 
 
-<!-- Merged from 12.3.2.-progress-activity-indicator.md -->
-
-# 12.3.2. Progress Activity Indicator
+### Progress Activity Indicator
 
 If you noticed, when we clicked on the Register button, the UI was stuck for a few seconds as we were waiting for the create user operation to complete. In these cases, the user may get confused if we do not give the users a cue that the backend is working on their request. So we want to implement a loading screen with a progress indicator so that the user can understand the app is working in the backend to complete their request. Like this:
 
 <figure><img src="/gitbook-assets/123.four (1).gif" alt=""><figcaption></figcaption></figure>
 
-## Defining a Progress Activity Indicator
+### Defining a Progress Activity Indicator
 
 We will use a UI element in iOS called `UIActivityIndicatorView` to display the loading screen. Since we may reuse the same `UIActivityIndicatorView` for multiple backend tasks, we will write separate code to create the instance of it.
 
@@ -3868,7 +3826,7 @@ So any class that wants to display the progress indicator view, must adopt `Prog
 * showActivityIndicator()
 * hideActivityIndicator()
 
-## Displaying the Progress Indicator View while Registering a User
+### Displaying the Progress Indicator View while Registering a User
 
 In our case, when a user clicks on the register button, the app should display the indicator view, and when the user is created, and their profile is updated, we will remove it.
 
@@ -4018,9 +3976,7 @@ If you run the application now, you will see that the progress indicator is work
 
 
 
-<!-- Merged from 12.3.2.-register-screen-create-a-user-in-firebase.md -->
-
-# 12.5.2. Register Screen: Create a user in Firebase
+### Register Screen: Create a user in Firebase
 
 Let's design the Register Screen to let the user create an account. It will look like the following:
 
@@ -4028,7 +3984,7 @@ Let's design the Register Screen to let the user create an account. It will look
 
 The Register Screen design is very simple; we have three text fields to put the name, email, and password so that the user can create an account with them.
 
-## RegisterView.swift
+### RegisterView.swift
 
 Let's create a new Group named "Register Screen." Create another group "Views" inside the "Register Screen" group. Add a file named "RegisterView.swift" in it.
 
@@ -4126,7 +4082,7 @@ class RegisterView: UIView {
 
 The above code is very straightforward to display three text fields: name, email, password, and a register button.
 
-## RegisterViewController.swift
+### RegisterViewController.swift
 
 Then let's create RegisterViewController.swift file to write code for controlling the Register screen.
 
@@ -4171,7 +4127,7 @@ In the above code:
 
 * We have added the `onRegisterTapped()` method to handle if the Register button is tapped. We need to patch the Firebase code on line 30.
 
-## RegisterFirebaseManager.swift
+### RegisterFirebaseManager.swift
 
 We will separate the code for Firebase from the controller. Let's create a new file `Register Screen -> RegisterFirebaseManager.swift`.
 
@@ -4281,7 +4237,7 @@ Open RegisterViewController.swift file, and update the `onRegisterTapped` method
 }
 ```
 
-## Patching the Main Screen to Show Register Screen
+### Patching the Main Screen to Show Register Screen
 
 Open RightBarButtonManager.swift file. Now, we need to write the logic for opening the Register Screen in `registerAction` AlertAction. We will add the following codes:
 
@@ -4326,9 +4282,7 @@ If you now look into the Firebase Authentication portal,
 
 
 
-<!-- Merged from 12.3.3.-implementing-sign-in.md -->
-
-# 12.3.3. Implementing Sign In
+### Implementing Sign In
 
 Now it's time to sign in with an already created user.
 
@@ -4394,7 +4348,7 @@ If we run the app now, you will see:
 
 _<mark style="color:purple;">**Can you display a progress indicator while the login operation is happening?**</mark>_
 
-## App12 code so far:
+### App12 code so far:
 
 {% file src="/gitbook-assets/App12_auth.zip" %}
 

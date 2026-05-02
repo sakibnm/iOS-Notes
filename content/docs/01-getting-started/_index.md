@@ -10,7 +10,7 @@ bookCollapseSection: false
 
 
 
-## Getting Started
+### Getting Started
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -43,9 +43,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-<!-- Merged from preparing-your-development-environment.md -->
-
-# Preparing your Development Environment
+### Preparing your Development Environment
 
 ### <mark style="color:red;">You cannot build native iOS apps in Windows or Linux OSs.</mark>
 
@@ -57,7 +55,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 **If you are not a Mac user, you can still take the course; however, you must pay a monthly fee (around $50) to rent a cloud Mac VM.** **Please note Northeastern does not provide this VM.**
 
-## Mac In Cloud
+### Mac In Cloud
 
 There are a few options to rent a cloud MacOS VM, like, Mac Stadium, AWS, and Mac in Cloud. I personally prefer **Mac In Cloud** ([https://macincloud.com](https://www.macincloud.com)). Please watch the following video to set up a Mac In Cloud instance and start using it on your Windows or Linux computer.
 
@@ -65,9 +63,7 @@ There are a few options to rent a cloud MacOS VM, like, Mac Stadium, AWS, and Ma
 
 
 
-<!-- Merged from setting-up-xcode.md -->
-
-# Setting up Xcode
+### Setting up Xcode
 
 Setting up Xcode is also very simple. Let's open Safari (or any browser you use) and type in [https://developer.apple.com/xcode/](https://developer.apple.com/xcode/).
 

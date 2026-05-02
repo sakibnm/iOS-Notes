@@ -10,7 +10,7 @@ bookCollapseSection: false
 
 
 
-## UITableView
+### UITableView
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -43,7 +43,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 5. UITableView, and more
+### UITableView, and more
 
 So far, we have worked with multiple screens and NavigationController. Now, we will learn how to display a list of data and work with some other UI elements.
 
@@ -55,9 +55,7 @@ More specifically, we will learn about the following:
 
 
 
-<!-- Merged from 5.1.-expense-app.md -->
-
-# 5.1. Expense App
+### Expense App
 
 So, let's create an app called 'App5'. Our preliminary target is to build something like the following app:
 
@@ -73,9 +71,7 @@ Now let's build the app.
 
 
 
-<!-- Merged from 5.2.-first-screen-part-1-adding-a-bar-button.md -->
-
-# 5.2. First screen, part 1: Adding a Bar Button
+### First screen, part 1: Adding a Bar Button
 
 Let's create a new project, 'App5' in Xcode.
 
@@ -123,9 +119,7 @@ Now we will set up the TableView and then return to this button.
 
 
 
-<!-- Merged from 5.3.-first-screen-part-2-setting-up-the-view-of-the-first-screen-with-tableview..md -->
-
-# 5.3. First screen, part 2: Setting up the View of the First Screen with TableView.
+### First screen, part 2: Setting up the View of the First Screen with TableView.
 
 We have to build our first TableView here in this app. Before we build one, we need to understand what it is.
 
@@ -387,9 +381,7 @@ That's it. We set up the view of the first screen and added a TableView with a d
 
 
 
-<!-- Merged from 5.4.-first-screen-part-3-setting-up-the-view-controller-and-populating-tableview.md -->
-
-# 5.4. First screen, part 3: Setting up the View Controller and populating TableView
+### First screen, part 3: Setting up the View Controller and populating TableView
 
 Now we must patch the views with our controller (ViewController.swift). Before we do, let's create a data model for the data we will display in the TableView `tableViewExpense`. We have three data points for displaying a row in the table view: expense title, amount, and type.
 
@@ -434,7 +426,7 @@ struct Expense{
 
 We created a struct `Expense` with three properties: `title`, `amount`, and `type`. We also define the `init()` method to initialize the properties.
 
-## Setting up the Controller
+### Setting up the Controller
 
 Let's add some dummy data to test out TableView. Add the following code in your ViewController.swift:
 
@@ -592,9 +584,7 @@ The file structure looks like this:
 
 
 
-<!-- Merged from 5.5.-second-screen-part-1-setting-up-the-view-of-the-add-expense-screen.md -->
-
-# 5.5. Second screen, part 1: Setting up the View of the Add Expense Screen
+### Second screen, part 1: Setting up the View of the Add Expense Screen
 
 When the user clicks the plus Bar button (`+`), we should populate a screen to add a new expense. So, let's create two new files: AddExpenseView.swift (subclass of UIView) and AddExpenseViewController.swift (subclass of UIViewController). And add them to a new group, "Add Expense Screen." (**Use the Cocoa Touch Class template, not a Swift file template).**
 
@@ -711,9 +701,7 @@ This file should be very straightforward to understand. Now that we have added o
 
 
 
-<!-- Merged from 5.6.-second-screen-part-2-setting-up-add-expense-view-controller.md -->
-
-# 5.6. Second screen, part 2: Setting up Add Expense View Controller
+### Second screen, part 2: Setting up Add Expense View Controller
 
 Now, let's open the AddExpenseViewController.swift file. We need to patch this view controller with the front-end view (AddExpenseView) we created. So, we write the following code to load the view:
 
@@ -747,7 +735,7 @@ class AddExpenseViewController: UIViewController {
 
 ```
 
-## **Patching the PickerView to pick the type of expense**
+### **Patching the PickerView to pick the type of expense**
 
 Now, let's patch the PickerView (`addExpenseScreen.pickerType`) to the controller.
 
@@ -872,7 +860,7 @@ class AddExpenseViewController: UIViewController {
 
 ```
 
-## Housekeeping: Updating Navigation controller and patching Utilities.types in View Controller
+### Housekeeping: Updating Navigation controller and patching Utilities.types in View Controller
 
 Open the ViewController.swift file. Now, let's complete the plus (`+`) button actions. When we tap on the `+` button on the Navigation Bar, we need to switch from the First Screen to Add Expense Screen. So let's write the following code in the method `@objc func onAddBarButtonTapped()`:
 
@@ -1072,9 +1060,7 @@ extension AddExpenseViewController: UIPickerViewDelegate, UIPickerViewDataSource
 
 
 
-<!-- Merged from 5.7.-second-screen-part-3-send-new-expense-back-to-viewcontroller-and-update-the-tableview.md -->
-
-# 5.7. Second screen, part 3: Send new expense back to ViewController and update the TableView
+### Second screen, part 3: Send new expense back to ViewController and update the TableView
 
 Let's open AddExpenseViewController.swift file. Now, we will add an action for tapping on`addExpenseScreen.buttonAdd`. Once this button is tapped, we need to create an Expense object from the data the user put in and delegate the next tasks to ViewController.
 
@@ -1186,9 +1172,7 @@ One last thing to discuss before we finish this module. We can also deal with wh
 
 
 
-<!-- Merged from 5.8.-tapping-a-cell-in-tableview-and-practice-exercise.md -->
-
-# 5.8. Tapping a cell in TableView and Practice exercise
+### Tapping a cell in TableView and Practice exercise
 
 Let's open ViewController.swift file and add the following code to the protocols adoption block:
 
@@ -1225,9 +1209,7 @@ Now, you can see that you can handle it if a user taps on a cell. It's time for 
 
 
 
-<!-- Merged from 5.9.-reference-code.md -->
-
-# 5.9. Reference Code
+### Reference Code
 
 {% file src="/gitbook-assets/App5 (1).zip" %}
 
@@ -1263,7 +1245,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## UIScrollView
+### UIScrollView
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -1296,7 +1278,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 8. UIScrollView
+### UIScrollView
 
 So far, we have worked with screens that do not scroll. I think all of you faced a similar issue: if you rotate the screen, the UI elements get outside the bottom edge. The reason behind it is that the screen is not scrollable. So here, we will implement a scrollable view.
 
@@ -1313,9 +1295,7 @@ Let's build a small app App8 to implement a ScrollView. The app should look like
 
 
 
-<!-- Merged from 8.1.-creating-the-view-of-the-screen.md -->
-
-# 8.1. Creating the View of the Screen
+### Creating the View of the Screen
 
 Let's declare the UI elements:
 
@@ -1465,9 +1445,7 @@ Now we need to patch the screen to the controller.
 
 
 
-<!-- Merged from 8.2.-creating-the-controller.md -->
-
-# 8.2. Creating the Controller
+### Creating the Controller
 
 Let's put the following code in the ViewController.swift:
 
@@ -1521,9 +1499,7 @@ _<mark style="color:purple;">Now that you know how to use scrollable views. Use 
 
 
 
-<!-- Merged from 8.3.-reference-code.md -->
-
-# 8.3. Reference Code
+### Reference Code
 
 {% file src="/gitbook-assets/App8 (1).zip" %}
 
@@ -1559,7 +1535,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## UIMenu & Image Pickers
+### UIMenu & Image Pickers
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -1592,9 +1568,9 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 6. UIMenu, Picking Images from Gallery and Camera, and UIImageView
+### UIMenu, Picking Images from Gallery and Camera, and UIImageView
 
-## App6: Adding more features on App5
+### App6: Adding more features on App5
 
 Let's create a new project, "App6." Add all the codes from the current "App5." For your convenience, download the project from here:
 
@@ -1613,9 +1589,7 @@ App6 would look something like this:
 
 
 
-<!-- Merged from 6.1.-updating-the-tableview-cell-to-accommodate-an-imageview.md -->
-
-# 6.1. Updating the TableView Cell to accommodate an ImageView
+### Updating the TableView Cell to accommodate an ImageView
 
 Let's open TableViewExpenseCell.swift file to add an ImageView. Let's add a new variable named, `imageViewReceipt` of type `UIImageView` in the file, set it up, and initialize its constraints. Add the following code to TableViewExpenseCell.swift file:
 
@@ -1719,7 +1693,7 @@ In the above code, we have a few very important key points to discuss:
 
 Now that we are done with the file, we move to the Add Expense Screen.
 
-## Appendix
+### Appendix
 
 ### Installing and using SF Symbols app
 
@@ -1741,9 +1715,7 @@ Now that we are done with the file, we move to the Add Expense Screen.
 
 
 
-<!-- Merged from 6.2.-add-expense-screen.md -->
-
-# 6.2. Add Expense Screen
+### Add Expense Screen
 
 The screen would be something like this:
 
@@ -1756,7 +1728,7 @@ We have:
 * One Button (use the Camera icon as the background) to pick the image for receipt.
 * FInally, the Add Expense Button.
 
-## AddExpenseView
+### AddExpenseView
 
 Let's open the AddExpenseView.swift file and update the code. Remove the PickerView and add two buttons (to select expense type and pick receipt image).
 
@@ -1920,9 +1892,7 @@ We set the height and width of `buttonTakePhoto`. **When you are working with im
 
 
 
-<!-- Merged from 6.3.-addexpenseviewcontroller-uimenu-for-buttonselecttype.md -->
-
-# 6.3. AddExpenseViewController: UIMenu for buttonSelectType
+### AddExpenseViewController: UIMenu for buttonSelectType
 
 Now, it's time to remove the PickerView codes. After we remove the PickerView, the code looks like this:
 
@@ -2090,9 +2060,7 @@ Now, our menu is working as intended.
 
 
 
-<!-- Merged from 6.4.-addexpenseviewcontroller-uimenu-for-buttontakephoto.md -->
-
-# 6.4. AddExpenseViewController: UIMenu for buttonTakePhoto
+### AddExpenseViewController: UIMenu for buttonTakePhoto
 
 <figure><img src="/gitbook-assets/6.2.three (2).gif" alt=""><figcaption><p><strong>The app so far</strong></p></figcaption></figure>
 
@@ -2175,9 +2143,7 @@ Our next task is to implement the Gallery and Camera functions.
 
 
 
-<!-- Merged from 6.5.-using-gallery-phpicker.md -->
-
-# 6.5. Using Gallery: PHPicker
+### Using Gallery: PHPicker
 
 [PHPicker](https://developer.apple.com/documentation/photokit/phpickerviewcontroller) _is a view controller that provides the user interface for choosing assets from the photo library._ We use this view controller to browse the local image assets, select the chosen image(s), and retrieve the image(s). It is a highly configurable and scalable tool and fairly easy to use. We need to import `PhotosUI` library to use the tool.
 
@@ -2317,9 +2283,7 @@ Alright! We are done setting up the PHPicker, and now it's time to test the app.
 
 
 
-<!-- Merged from 6.6.-using-camera-uiimagepickercontroller.md -->
-
-# 6.6. Using Camera: UIImagePickerController
+### Using Camera: UIImagePickerController
 
 Now it's time to build the final part of the app: integrating the camera to take a photo.
 
@@ -2440,9 +2404,7 @@ Now let's run the app. I ran the app on my iPad to demonstrate it is working.
 
 
 
-<!-- Merged from 6.7.-getting-the-expense-back-to-viewcontroller.md -->
-
-# 6.7. Getting the expense back to ViewController
+### Getting the expense back to ViewController
 
 We now need to get the expense back when we press `buttonAdd`. We need to tweak the data model Expense to accommodate the image, right?
 
@@ -2573,9 +2535,7 @@ Finally, let's run the app!
 
 
 
-<!-- Merged from 6.8.-wrapping-up-a-bit-of-polishing.md -->
-
-# 6.8. Wrapping Up: a bit of polishing
+### Wrapping Up: a bit of polishing
 
 We will polish the TableView a little bit to make our TableView look like this:
 
@@ -2656,9 +2616,7 @@ There we have a 3D effect!
 
 
 
-<!-- Merged from 6.9.-reference-code.md -->
-
-# 6.9. Reference Code
+### Reference Code
 
 {% file src="/gitbook-assets/App6 (2).zip" %}
 
@@ -2694,7 +2652,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## Useful UI Elements
+### Useful UI Elements
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -2727,9 +2685,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-<!-- Merged from 1.-hiding-keyboard-when-tapped-outside.md -->
-
-# 1. Hiding Keyboard when tapped outside
+### Hiding Keyboard when tapped outside
 
 When you are building iOS apps, you might have noticed that if you put some texts into TextFields, the emulator/phone keyboard doesn't disappear if you tap outside the keyboard automatically, like this:
 
@@ -2766,9 +2722,7 @@ A great guide with other tricks can be found here: [https://kaushalelsewhere.med
 
 
 
-<!-- Merged from 2.-slide-up-the-view-to-accommodate-the-on-screen-keyboard.md -->
-
-# 2. Slide Up the View to Accommodate the On-screen Keyboard
+### Slide Up the View to Accommodate the On-screen Keyboard
 
 It is a little complicated, watch the video below to understand the aspects of it:
 
@@ -2778,9 +2732,7 @@ Source code: [https://github.com/jrasmusson/ios-professional-course/blob/main/Pa
 
 
 
-<!-- Merged from 3.-saving-small-data-when-the-app-is-not-running-session-or-other-state-variables.md -->
-
-# 3. Saving small data when the App is not running (session or other state variables)
+### Saving small data when the App is not running (session or other state variables)
 
 We can store any data type in the local storage as long as the App is installed. It means even if the app is not running, small values can be stored in the storage, and the app can access them whenever needed, like from a database. We use `UserDefaults` for that.
 
@@ -2830,9 +2782,7 @@ In the above code, we access the value saved using the key "apiKey."
 
 
 
-<!-- Merged from 4.-stack-view.md -->
-
-# 4. Stack View
+### Stack View
 
 We often face a situation where we have more than two UI elements on a single row of the screen; then, it becomes really hard to align them proportionately with spacing using layout constraints. We can use UIStackView to deal with that situations.
 
@@ -2948,9 +2898,7 @@ If we change the axis to vertical ( `stack.axis = .vertical` ), the screen will 
 
 
 
-<!-- Merged from embed-navigation-controller-from-code-not-storyboard.md -->
-
-# Embed Navigation Controller from code (Not Storyboard)
+### Embed Navigation Controller from code (Not Storyboard)
 
 So far you have noticed, we embed the Navigation Controller using the Storyboard (refer to [3.1.-navigation-controller.md](../3.-our-first-multi-screen-app/3.1.-navigation-controller.md "mention") ). What about we want to remove that process and want to add Navigation Controller by writing code? That way it'll be easy to change the name of the default "ViewController.swift" file to a more appropriate name.&#x20;
 
@@ -3059,7 +3007,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## 6.-search-bar
+### 6.-search-bar
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -3092,7 +3040,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 6. Search Bar
+### Search Bar
 
 The Search Bar in iOS is a very common UI element, and it is very useful to filter or search data from a list of data. In this module, we will build a demo app with a search bar. The app would look like the following:
 
@@ -3110,16 +3058,14 @@ So let's create a new app named "SearchBarDemo."
 
 
 
-<!-- Merged from 6.1.-setting-up-the-views.md -->
-
-# 6.1. Setting up the Views
+### Setting up the Views
 
 The view of this app is very simple; we have two UI elements on the screen:
 
 * A Search Bar
 * A Table View
 
-## MainScreenView.swift
+### MainScreenView.swift
 
 Let's create a file named MainScreenView.swift and put the following code there:
 
@@ -3177,7 +3123,7 @@ class MainScreenView: UIView {
 
 In the above code, on lines 19 through 23, we define the search bar. On line 21, we give a placeholder that describes what this Search Bar is about. The rest of the code is trivial, where we define the table view and the constraints.
 
-## SearchTableViewCell.swift
+### SearchTableViewCell.swift
 
 Now we define the view for each cell of the table view. The view for each cell is also very simple. We have one label that displays a name. Let's create a file named SearchTableViewCell.swift and put the following code there:
 
@@ -3251,9 +3197,7 @@ class SearchTableViewCell: UITableViewCell {
 
 
 
-<!-- Merged from 6.2.-setting-up-the-view-controller-handling-the-search-bar.md -->
-
-# 6.2. Setting up the View Controller: Handling the Search Bar
+### Setting up the View Controller: Handling the Search Bar
 
 Let's open ViewController.swift file and put the following code there:
 
@@ -3387,9 +3331,7 @@ Yay! Our simple search bar is working!
 
 
 
-<!-- Merged from 6.3.-reference-code.md -->
-
-# 6.3. Reference Code
+### Reference Code
 
 {% file src="/gitbook-assets/SearchBarDemo (1).zip" %}
 
@@ -3425,7 +3367,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## 5.-tab-bar-controller
+### 5.-tab-bar-controller
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -3458,7 +3400,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 5. Tab Bar Controller
+### Tab Bar Controller
 
 We often see apps with bottom navigation bars, where you can tap on an icon from the bottom bar, and the app loads different screens for different buttons pressed like the following:
 
@@ -3466,7 +3408,7 @@ We often see apps with bottom navigation bars, where you can tap on an icon from
 
 iOS gives us an easy-to-use and customizable tool called UITabBarController to build such screens. In this module, we will create an app that uses a Tab Bar.
 
-## The TabControllerDemo app
+### The TabControllerDemo app
 
 Let's create an app called TabControllerDemo in XCode. The app will have:
 
@@ -3482,11 +3424,9 @@ Let's create an app called TabControllerDemo in XCode. The app will have:
 
 
 
-<!-- Merged from 5.1.-views-of-the-screens.md -->
+### Views of the Screens
 
-# 5.1. Views of the Screens
-
-## Views
+### Views
 
 The design of the screens is the same except for the background color of the color box. So, let's create the views of Red, Blue, and Green screens.
 
@@ -3556,13 +3496,11 @@ The only thing different in these files compared to RedView.swift is the backgro
 
 
 
-<!-- Merged from 5.2.-controllers-of-the-screens.md -->
-
-# 5.2. Controllers of the Screens
+### Controllers of the Screens
 
 For each different screen (red, blue, and green), we need to have different Controllers. Let's create three controller files.
 
-## RedViewController.swift
+### RedViewController.swift
 
 ```swift
 //
@@ -3590,7 +3528,7 @@ class RedViewController: UIViewController {
 
 ```
 
-## BlueViewController.swift
+### BlueViewController.swift
 
 ```swift
 //
@@ -3618,7 +3556,7 @@ class BlueViewController: UIViewController {
 
 ```
 
-## GreenViewController.swift
+### GreenViewController.swift
 
 ```swift
 //
@@ -3648,9 +3586,7 @@ class GreenViewController: UIViewController {
 
 
 
-<!-- Merged from 5.3.-patching-the-screens-in-the-tab-bar.md -->
-
-# 5.3. Patching the Screens in the Tab Bar
+### Patching the Screens in the Tab Bar
 
 We have three screens. Now we want to patch these three screens in a Tab Bar Controller. Now it's time to use our main ViewController.swift file.
 
@@ -3747,9 +3683,7 @@ If we run the app now, we will see:
 
 
 
-<!-- Merged from 5.4.-sending-data-from-one-tab-to-another.md -->
-
-# 5.4. Sending data From one Tab to Another
+### Sending data From one Tab to Another
 
 We will use Notification Center to send data between the tabs. If the user taps on the "Send Hello" button from the Red Screen, it will send all the other tabs a message, "Hello From Red Screen." The other screens will display the message on the labels.
 
@@ -3844,17 +3778,13 @@ Now, if we run the app now, we will see:
 
 
 
-<!-- Merged from 5.5.-reference-code.md -->
-
-# 5.5. Reference Code
+### Reference Code
 
 {% file src="/gitbook-assets/TabControllerDemo.zip" %}
 
 
 
-<!-- Merged from 5.6.-notes-for-tab-bar-controller.md -->
-
-# 5.6. Notes for Tab Bar Controller
+### Notes for Tab Bar Controller
 
 * **Tab Bar Controller is a powerful tool.**
 * **Each tab has its own Navigation Controller. So, you can build a separate tree of screens for each tab with its navigation.**
@@ -3893,7 +3823,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## bottom-sheet-view-modal-presentation
+### bottom-sheet-view-modal-presentation
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -3926,7 +3856,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 7. Bottom Sheet View: Modal Presentation
+### Bottom Sheet View: Modal Presentation
 
 You probably have seen apps where you tap a button, and a page sheet pops up from the bottom. You can then interact with that page sheet and work with the app. We can use Swift's SheetPresentationController for building the bottom sheet views.&#x20;
 
@@ -3941,9 +3871,7 @@ We have a Find button on our main screen and a label to display the selected nam
 
 
 
-<!-- Merged from 1.-creating-the-screen-for-a-bottom-sheet-view.md -->
-
-# 7.1. Creating the Screen for a Bottom Sheet View
+### Creating the Screen for a Bottom Sheet View
 
 **When building a bottom sheet (presentation) view, we must remember that the page we will present as a bottom sheet is a full and independent screen. It should have its own:**
 
@@ -3960,7 +3888,7 @@ We have a Find button on our main screen and a label to display the selected nam
 
 Let's design the view first.
 
-## Search Bottom Sheet View
+### Search Bottom Sheet View
 
 Let's open the SearchBottomSheetView.swift file. **The design of this view should be exactly the same as** [6.1.-setting-up-the-views.md](../6.-search-bar/6.1.-setting-up-the-views.md "mention")**.** So let's put the following code in the file:
 
@@ -4015,7 +3943,7 @@ class SearchBottomSheetView: UIView {
 
 ```
 
-## Search Table Cell
+### Search Table Cell
 
 We will use the same table cell here as [6.-search-bar](../6.-search-bar/ "mention"). Let's open SearchTableCell.swift file and put the following code there:
 
@@ -4090,9 +4018,7 @@ class SearchTableCell: UITableViewCell {
 
 
 
-<!-- Merged from 2.-setting-up-the-controller-for-the-search-bottom-sheet.md -->
-
-# 7.2. Setting up the Controller for the Search Bottom Sheet
+### Setting up the Controller for the Search Bottom Sheet
 
 Let's open SearchBottomSheetController.swift file. We will mostly use the same code here as [6.-search-bar](../6.-search-bar/ "mention"). We would add a few more logic to handle a tap on a row and send data back to the main screen.&#x20;
 
@@ -4177,16 +4103,14 @@ extension SearchBottomSheetController: UISearchBarDelegate{
 
 
 
-<!-- Merged from 3.-main-screen.md -->
-
-# 3. Main Screen
+### Main Screen
 
 The main screen is very simple to design; we have:
 
 * A label to display the selected name from the bottom search sheet.
 * A Find button to pop the bottom search sheet.
 
-## Main Screen View
+### Main Screen View
 
 Let's create a file named MainScreenView.swift:
 
@@ -4245,7 +4169,7 @@ class MainScreenView: UIView {
 
 ```
 
-## Main Screen Controller
+### Main Screen Controller
 
 Now it's time to patch the actions to pop the bottom search sheet from the view controller. Let's put the following code in ViewController.swift:
 
@@ -4330,9 +4254,7 @@ Now, our app is almost ready. We just need to return the name to main screen whe
 
 
 
-<!-- Merged from 4.-sending-data-back-to-main-screen.md -->
-
-# 7.4. Sending data back to Main Screen
+### Sending data back to Main Screen
 
 We will use Notification Center to do that.&#x20;
 
@@ -4394,7 +4316,7 @@ In the above code:
 * On line 34, the `onNameSelected()` method gets triggered when the notification is received.&#x20;
   * On line 36, we set the name with the data we receive through the notification.
 
-## Table View in Bottom Search Sheet Controller: overriding didSelectRowAt
+### Table View in Bottom Search Sheet Controller: overriding didSelectRowAt
 
 Let's open SearchBottomSheetController.swift file and add the following method inside the extension where we are adopting the table view protocols:
 
@@ -4429,9 +4351,7 @@ Let's run the app.
 
 
 
-<!-- Merged from 5.-reference-code.md -->
-
-# 7.5. Reference Code
+### Reference Code
 
 {% file src="/gitbook-assets/BottomSheetView.zip" %}
 

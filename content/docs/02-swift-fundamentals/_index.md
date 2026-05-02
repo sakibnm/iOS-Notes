@@ -10,14 +10,14 @@ bookCollapseSection: false
 
 
 
-## Variables & Data Types
+### Variables & Data Types
 
 ## Table of Contents
 
 {{< section >}}
 
 
-## Collections
+### Collections
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -50,7 +50,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 2. Collections
+### Collections
 
 So far, we have discussed a few simple Data types like String, Int, Double, etc. **Now, we will move into learning a few useful Collections like Arrays, Sets, Tuples, and Dictionaries.**
 
@@ -61,9 +61,7 @@ Please browse to the next page to learn more about Swift Collections.
 
 
 
-<!-- Merged from 2.1.-arrays.md -->
-
-# 2.1. Arrays
+### Arrays
 
 An array is a _**data structure**_ that can store a collection of values of the same data type. An array is an ordered data structure, which means the elements are stored in a specific order, and an element stays at the same position/index until changed.
 
@@ -168,9 +166,7 @@ So far, we have learned the basics about Swift arrays (declaring and initializin
 
 
 
-<!-- Merged from 2.2.-sets.md -->
-
-# 2.2. Sets
+### Sets
 
 A Set in Swift is a similar data structure to an Array with two differences:
 
@@ -227,9 +223,7 @@ Note: you can remove an element from a set by calling `remove()` function. Try i
 
 
 
-<!-- Merged from 2.3.-tuples.md -->
-
-# 2.3. Tuples
+### Tuples
 
 A Tuple is a collection of different elements of different data types stored together in the same place. It may sound like an array, but it is not exactly an array. The differences are:
 
@@ -297,9 +291,7 @@ Try writing: `yourTuple.age="thirty four"` :wink:
 
 
 
-<!-- Merged from 2.4.-dictionaries.md -->
-
-# 2.4. Dictionaries
+### Dictionaries
 
 When we hear the word 'dictionary,' we imagine a book of words and their corresponding meanings where we search for the words and find their meanings. Each word has a meaning in a dictionary.
 
@@ -388,9 +380,7 @@ let mazdaCount = carCounts["Mazda"]
 
 
 
-<!-- Merged from 2.5.-reference-code.md -->
-
-# 2.5. Reference Code
+### Reference Code
 
 {% file src="/gitbook-assets/MyPlayground2.playground.zip" %}
 
@@ -426,7 +416,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## Operators
+### Operators
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -459,16 +449,14 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 3. Operators
+### Operators
 
 In this section, we will learn about the usage of operators (`+`,`-`,`/`, etc.) in Swift. Please continue reading the next pages to learn about them.
 
 
 
 
-<!-- Merged from 3.1.-arithmetic-operations.md -->
-
-# 3.1. Arithmetic Operations
+### Arithmetic Operations
 
 Let's do some arithmetic operations using Swift now. For addition, subtraction, multiplication, and division, we use `+`,`-`,`*`, and `/` respectively. Let's look at the following code:
 
@@ -535,9 +523,7 @@ You should always be careful of the types of data before you use arithmetic oper
 
 
 
-<!-- Merged from 3.2.-operator-overloading.md -->
-
-# 3.2. Operator overloading
+### Operator overloading
 
 Operator overloading is a way of saying that an arithmetic operator like `+` has another meaning depending on different data types. For example, we can concatenate two strings, or join two arrays with `+` operator. For example,
 
@@ -572,9 +558,7 @@ would it work? :wink:
 
 
 
-<!-- Merged from 3.3.-more-on-operators.md -->
-
-# 3.3. More on Operators
+### More on Operators
 
 In Swift, you can take a few shortcuts when you are using operators (`+`, `-`, `*`, and `/`). For example,
 
@@ -623,9 +607,7 @@ name += surname
 
 
 
-<!-- Merged from 3.4.-comparison-operators-and-booleans.md -->
-
-# 3.4. Comparison Operators (and Booleans)
+### Comparison Operators (and Booleans)
 
 Swift uses many comparison operators like, `==`, `!=`, `<`, `>`, and so on. We use the following operators the most:
 
@@ -668,9 +650,7 @@ Comparison operators are widely used in Conditionals, Loops, and many other plac
 
 
 
-<!-- Merged from 3.5.-reference-code.md -->
-
-# 3.5. Reference Code
+### Reference Code
 
 {% file src="/gitbook-assets/MyPlayground3.playground (1).zip" %}
 
@@ -706,7 +686,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## Conditionals
+### Conditionals
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -739,7 +719,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 4. Conditionals
+### Conditionals
 
 Conditionals in Swift are used to make decisions in your code. They allow us to make different decisions based on the different circumstances. The condition is an expression that evaluates to a Boolean value, which can be either `true` or `false`. If the condition is true, the corresponding code block will execute; if false, that particular block won't execute. You can define a separate code block to execute if the condition is false.
 
@@ -752,9 +732,7 @@ There are three types of conditionals in Swift:
 
 
 
-<!-- Merged from 4.1.-if-statements.md -->
-
-# 4.1. If statements
+### If statements
 
 **`if` statements** are the simplest type of conditional. They allow us to specify what should happen if a condition is `true`. For example, the following code prints "It is 5!" if the variable `myNum` is equal to 5:
 
@@ -769,9 +747,7 @@ if myNum == 5 {
 
 
 
-<!-- Merged from 4.2.-if-else-statements.md -->
-
-# 4.2. If-else statements
+### If-else statements
 
 **`if-else` statements** allow us to specify what should happen if a condition is `true` or `false`. So, now we can add a code block if the condition is `false`. We can modify our previous example to print "It is not 5!", if `myNum` is not 5.
 
@@ -802,9 +778,7 @@ Here, the conditions are checked sequentially for each `if` and `else if`. If no
 
 
 
-<!-- Merged from 4.3.-switch-statements.md -->
-
-# 4.3. Switch statements
+### Switch statements
 
 Instead of `if-else if-else` chain, we can use `switch` statements if multiple statements are `true`. For example, the following code prints the name of the day of the week, depending on the value of the constant `day`. If the value of `day` is 1 through 7, the code prints the name of the day; else, it prints "Invalid!"
 
@@ -838,9 +812,7 @@ default:
 
 
 
-<!-- Merged from 4.4.-combining-operators.md -->
-
-# 4.4. Combining operators
+### Combining operators
 
 Swift has two operators that let us combine multiple conditions. They are `&&` (`and`), and `||` (or).
 
@@ -862,9 +834,7 @@ It means if `myAge` is more than or equal to 18 `and` less than or equal to 65, 
 
 
 
-<!-- Merged from 4.5.-range-operators.md -->
-
-# 4.5. Range operators
+### Range operators
 
 Swift can even represent a range of values. There are two kinds of range operators in Swift:
 
@@ -892,9 +862,7 @@ It means that if the value of `today` is in the range 1 to 5 (including 5), `tod
 
 
 
-<!-- Merged from 4.6.-reference-code.md -->
-
-# 4.6. Reference Code
+### Reference Code
 
 {% file src="/gitbook-assets/MyPlayground4.playground.zip" %}
 
@@ -930,7 +898,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## Loops
+### Loops
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -963,7 +931,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 5. Loops
+### Loops
 
 If you know any programming language, you probably have heard the word `loop` most frequently. Yes, Swift, too, has loops. Basically, the structure of a loop is simple, run a block of code repeatedly while a condition is true or until the condition is false.
 
@@ -976,9 +944,7 @@ There are three kinds of loops in Swift:
 
 
 
-<!-- Merged from 5.1.-for-loops.md -->
-
-# 5.1. For loops
+### For loops
 
 For loops are the most common loops in Swift, and you'll probably use this loop for more than 90% of cases. We use `for` loops to iterate over a sequence of values or a range of values.
 
@@ -1012,7 +978,7 @@ for _ in 1...10{
 
 Here, underscore skips create unnecessary values.
 
-### 5.1.2. Looping through other Collections (Dictionaries, Arrays of Struct Objects, etc.)
+### Looping through other Collections (Dictionaries, Arrays of Struct Objects, etc.)
 
 Let's think about the following Dictionary:
 
@@ -1086,9 +1052,7 @@ We got 60 cars in our dealership.
 
 
 
-<!-- Merged from 5.2.-while-loops.md -->
-
-# 5.2. While loops
+### While loops
 
 The second most common loops in Swift are `while` loops. We use a while loop to run a code block repeatedly as long as a given condition is true. A general structure of a `while` loop is:
 
@@ -1113,9 +1077,7 @@ Here the condition is: if `targetNum` is less than or equal to 50.
 
 
 
-<!-- Merged from 5.3.-repeat-loops.md -->
-
-# 5.3. Repeat loops
+### Repeat loops
 
 The third way of writing loops is `repeat` loops. It is identical to a while loop, but the condition is checked at the end of the code block. If we use the same example from before, we can write:
 
@@ -1134,9 +1096,7 @@ The point is `repeat` loops will execute the code block at least once. So, you s
 
 
 
-<!-- Merged from 5.4.-break-and-continue.md -->
-
-# 5.4. Break and continue
+### Break and continue
 
 ### Breaking/exiting loops
 
@@ -1178,9 +1138,7 @@ Here, we wanted to print the odd integers between 1 and 10. So, we are running a
 
 
 
-<!-- Merged from 5.5.-reference-code.md -->
-
-# 5.5. Reference Code
+### Reference Code
 
 {% file src="/gitbook-assets/MyPlayground5.playground.zip" %}
 
@@ -1216,7 +1174,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## Functions
+### Functions
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -1249,7 +1207,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 6. Functions
+### Functions
 
 Functions are the best tools for writing reusable code blocks. Whenever we write codes, we often see that we need to execute the same task in multiple places in our program. What if we could separate the code for that particular task from the main code block and call it every time we need to do it instead of writing the same code again?
 
@@ -1258,9 +1216,7 @@ So, in short, a function is a code block where we can do certain tasks. We can p
 
 
 
-<!-- Merged from 6.1.-writing-functions.md -->
-
-# 6.1. Writing functions
+### Writing functions
 
 To write a function in Swift, we use the keyword `func` followed by the function's name, parameter list, return data type, and body (the code block). A general structure of a Swift function is:
 
@@ -1288,9 +1244,7 @@ printHelloWorld()
 
 
 
-<!-- Merged from 6.2.-functions-with-parameters.md -->
-
-# 6.2. Functions with parameters
+### Functions with parameters
 
 Now, let's write a function that accepts parameters and do some tasks. The following code accepts the name and age of a person as parameters and prints the details.
 
@@ -1321,9 +1275,7 @@ Donald is awesome!
 
 
 
-<!-- Merged from 6.3.-functions-that-return-a-value.md -->
-
-# 6.3. Functions that return a value
+### Functions that return a value
 
 Now, let's think about a function that accepts an array of integers as a parameter and returns the sum of the integers.
 
@@ -1356,11 +1308,9 @@ let sum = sumOf(array: [1,2,3,4,5])
 
 
 
-<!-- Merged from 6.4.-more-on-function-parameters.md -->
+### More on function parameters
 
-# 6.4. More on function parameters
-
-## Parameter labels
+### Parameter labels
 
 Swift functions have the ability to have completely separate internal and external parameter names. Instead of having a single parameter name, the function below has two. The first one, `with` is an external parameter name, which is the name that will refer to the parameter when we call the function. The second one, `vehicle` is the internal parameter name which is the name we’ll use when we need to use the parameter within the function.
 
@@ -1384,7 +1334,7 @@ Let's look at the first `String` parameter the `navigate` function accepts. Here
 
 We can use this feature to write and call a function creatively.
 
-## Omitting parameter labels
+### Omitting parameter labels
 
 We can also omit the external parameter name to call our function just by passing in a value without mentioning the parameter's name. We achieve this by simply replacing the external name with the underscore. Now we can call our function without using a parameter name at all. Instead, we can pass in a value that we want to use as the input.
 
@@ -1400,7 +1350,7 @@ func printHello(_ name:String){
 printHello("Sakib")
 ```
 
-## Default parameters
+### Default parameters
 
 Sometimes we want to have default values for our parameters. The default value gets activated if we do not pass any value through the parameters. We can set a default value by writing a `=` after the parameter's type followed by the default value. Like this:
 
@@ -1421,7 +1371,7 @@ Hello Unknown!
 
 Because the default is already set to "Unknown."
 
-## <mark style="color:orange;">Why and where do we use internal and external names in Swift functions?</mark>
+### <mark style="color:orange;">Why and where do we use internal and external names in Swift functions?</mark>
 
 1.  **Improved Clarity in Function Calls:**
 
@@ -1453,9 +1403,7 @@ _These are the very basics of functions in Swift. Eventually, we will learn more
 
 
 
-<!-- Merged from 6.5.-reference-code.md -->
-
-# 6.5. Reference Code
+### Reference Code
 
 {% file src="/gitbook-assets/MyPlayground6.playground (1).zip" %}
 
@@ -1491,7 +1439,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## Closures
+### Closures
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -1524,7 +1472,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 7. Closures
+### Closures
 
 _<mark style="color:purple;">**This concept might look like a weird one. Do not worry, you'll understand it eventually, and I will keep it simple here.**</mark>_
 
@@ -1551,9 +1499,7 @@ printHello()
 
 
 
-<!-- Merged from 7.1.-closures-with-parameters.md -->
-
-# 7.1. Closures with parameters
+### Closures with parameters
 
 We can take the help of `in` keyword to pass parameters in a closure. For example, in the following code, we define a closure to take a person's name as a parameter and say hello to them:
 
@@ -1576,9 +1522,7 @@ Do you find a difference between functions and closure in handling the parameter
 
 
 
-<!-- Merged from 7.2.-closures-that-return-a-value.md -->
-
-# 7.2. Closures that return a value
+### Closures that return a value
 
 To return a value, we would use `->` followed by the return data type followed by `in` keyword. For example, let's convert the `sumOf` function into a closure to return the sum of integers in an array.
 
@@ -1606,9 +1550,7 @@ It prints:
 
 
 
-<!-- Merged from 7.3.-closures-as-parameters.md -->
-
-# 7.3. Closures as parameters
+### Closures as parameters
 
 So far, we rewrote the functions as closures. So why write a closure when we can just define a function? Well, the beauty of closures is we can pass closures as parameters to a function. And iOS UIKit and SwiftUI libraries use it extensively.
 
@@ -1714,9 +1656,7 @@ So far, we have covered the basics of closures. You need to get used to the clos
 
 
 
-<!-- Merged from 7.4.-reference-code.md -->
-
-# 7.4. Reference Code
+### Reference Code
 
 {% file src="/gitbook-assets/MyPlayground7.playground.zip" %}
 
@@ -1752,7 +1692,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## Optionals
+### Optionals
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -1785,7 +1725,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 8. Optionals
+### Optionals
 
 So far, we have learned about the variables and constants that we always initialize with data. What about we declare a variable without any data in it and try to use it, like the following:
 
@@ -1907,9 +1847,9 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## Custom Data Types
+### Custom Data Types
 
-# 9. Creating your own data types
+### Creating your own data types
 
 Swift allows you to create your own data types in two ways:
 
@@ -1924,7 +1864,7 @@ We will first talk about structs and then move into classes.
 {{< section >}}
 
 
-## Protocols
+### Protocols
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -1957,7 +1897,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 10. Protocols
+### Protocols
 
 Protocols in Swift are similar to Interfaces in many other languages like Java.
 
@@ -1974,9 +1914,7 @@ protocol SomeProtocol{
 
 
 
-<!-- Merged from 10.1.-adopting-a-protocol.md -->
-
-# 10.1. Adopting a protocol
+### Adopting a protocol
 
 A protocol contains only the declarations of the properties and functions that are needed to be adopted and implemented by a struct or class. For example, let's define our own USB interface, `USBMad.`
 
@@ -2101,15 +2039,13 @@ You can send/receive data to/from me!
 
 These are the CliffsNotes version of adopting/confirming a protocol. You will see extensive use of protocols in iOS development.
 
-## Reference code
+### Reference code
 
 {% file src="/gitbook-assets/MyPlayground10.1.playground.zip" %}
 
 
 
-<!-- Merged from 10.2.-creating-a-single-protocol-from-multiple-protocols.md -->
-
-# 10.2. Creating a single protocol from multiple protocols
+### Creating a single protocol from multiple protocols
 
 Let's assume we need to write a protocol for Teaching Assistants (TA). The TAs are paid, receive TA training, and are rated by the professors. Let's assume that we have protocols to pay people, conduct TA training, and rating TAs:
 
@@ -2141,9 +2077,7 @@ protocol TeachingAssistant: Payment, TATraining, RatedByProfessor{
 
 
 
-<!-- Merged from 10.3.-inheriting-a-super-class-and-adopting-protocols-together.md -->
-
-# 10.3. Inheriting a super class and adopting protocols together
+### Inheriting a super class and adopting protocols together
 
 We are continuing with the previous example. Now let's expand on the idea. TAs are also students. A student can be either a graduate student or an undergrad student. Let's assume Alice is an undergrad TA. Let's see how we can write some code to define Alice:
 
@@ -2231,7 +2165,7 @@ alice.describe()
 
 So now we have a basic understanding of how classes work with other classes and protocols. In iOS development, we will repeatedly face these concepts.
 
-## Reference code
+### Reference code
 
 {% file src="/gitbook-assets/MyPlayground10.3.playground (1).zip" %}
 
@@ -2267,7 +2201,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## Sorting Arrays
+### Sorting Arrays
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -2300,16 +2234,14 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 11. Sorting Arrays
+### Sorting Arrays
 
 Here we will talk about one of the most useful lessons while developing iOS apps, sorting. First, we will start with sorting a very simple array, and then we will look into how to sort arrays of custom struct/class objects.
 
 
 
 
-<!-- Merged from 11.1.-increasing-order.md -->
-
-# 11.1. Increasing order
+### Increasing order
 
 We can call `sorted()` function to sort an array with the increasing order of it's values.
 
@@ -2341,9 +2273,7 @@ The above code sorted the array in a lexicographical order (like how the words i
 
 
 
-<!-- Merged from 11.2.-decreasing-order.md -->
-
-# 11.2. Decreasing order
+### Decreasing order
 
 Unfortunately, it is not as simple to sort an array in a reversed (decreasing) order as it is to sort it in an increasing order. We need to write a comparator function or closure and use `sort(by: <comparator>))` to do it.
 
@@ -2400,9 +2330,7 @@ You can shorten it even more. I did not want to give you an overdose yet. :joy:
 
 
 
-<!-- Merged from 11.-3.-sorting-an-array-of-custom-data.md -->
-
-# 11. 3. Sorting an array of custom data
+### 3. Sorting an array of custom data
 
 Let's look at the following example:
 
@@ -2497,7 +2425,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## 9.1. Structs
+### Structs
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -2530,7 +2458,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 9.1. Structs
+### Structs
 
 Do you remember [tuples](../../2.-collections/2.3.-tuples.md)? We can store different types of data together in a tuple. Structs are very similar to that. We can have any kind of variables in it. For example, a simple struct to store a person's details would be:
 
@@ -2626,9 +2554,7 @@ So depending on different values of the property `age`, it automatically compute
 
 
 
-<!-- Merged from 9.1.1.-functions-methods-inside-structs.md -->
-
-# 9.1.1. Functions (methods) inside structs
+### Functions (methods) inside structs
 
 We can write functions inside structs. In Swift, they're called methods. For example, we can have a `printProfile` method in our `Profile` struct:
 
@@ -2763,15 +2689,13 @@ So, we can create an instance of a struct with default values by writing `init()
 
 <mark style="color:purple;">**Please note: you need to write**</mark><mark style="color:purple;">\*\*</mark> `init()` \*\*<mark style="color:purple;">**method before all the other methods and computed properties.**</mark>
 
-## Source code
+### Source code
 
 {% file src="/gitbook-assets/MyPlayground9.1.1.playground (1).zip" %}
 
 
 
-<!-- Merged from 9.1.2.-initializing-structs-with-different-initializers.md -->
-
-# 9.1.2. Initializing structs with different initializers
+### Initializing structs with different initializers
 
 We can define multiple initializers in a struct. At this point, we will define a new struct `Car` to demonstrate this concept. Let's define `Car`:
 
@@ -2898,15 +2822,13 @@ print(car3)
 
 Do you see an issue? `year` is wrapped with Optional. So if you want to use it anywhere, we should use an unwrapping technique like [if-let](../../8.-optionals.md).
 
-## Source code
+### Source code
 
 {% file src="/gitbook-assets/MyPlayground9.1.2.playground (1).zip" %}
 
 
 
-<!-- Merged from 9.1.3.-manipulating-object-properties-inherently-in-a-struct.md -->
-
-# 9.1.3. Manipulating object properties inherently in a struct
+### Manipulating object properties inherently in a struct
 
 What about we try to update a property of an object and write a function **directly inside of the struct**? So, potentially we will use an inherent function to update a property of the current object.&#x20;
 
@@ -3053,7 +2975,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## 9.2. Classes
+### Classes
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -3086,7 +3008,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 9.2. Classes
+### Classes
 
 At first glance, a `class` looks the same as a `struct`. However, there are a few major differences between them.
 
@@ -3128,9 +3050,7 @@ print(car1.type) //prints: Car
 
 
 
-<!-- Merged from 9.2.1.-inheritance.md -->
-
-# 9.2.1. Inheritance
+### Inheritance
 
 **One of the most critical capabilities that a class has but a struct doesn't have is inheritance.** Inheritance is the ability of a class to inherit the properties of another existing class and add more functionalities along with it. In other words, we can build a new class based on another existing class. For example, we can build a new class `Car` based on the `Vehicle` class we have:
 
@@ -3242,15 +3162,13 @@ It is a Toyota Rav4.
 
 This is called method overriding. A class not only can inherit a method from the superclass but also can change (override) it.
 
-## Source code
+### Source code
 
 {% file src="/gitbook-assets/MyPlayground9.2.1.playground (1).zip" %}
 
 
 
-<!-- Merged from 9.2.2.-value-vs.-reference.md -->
-
-# 9.2.2. Value vs. Reference
+### Value vs. Reference
 
 Another major difference between a struct and a class is how they behave when copied. Structs are 'value types,' and classes are 'reference types.'
 
@@ -3326,7 +3244,7 @@ Do you find the difference?
 
 Here, we copied `person1` to `person2`. But when we changed the name of `person2`, it also changed the `name` of `person1`. So basically, the data is not separate for the two instances, they share the same data reference.
 
-## Reference Code
+### Reference Code
 
 {% file src="/gitbook-assets/MyPlayground9.2.2.playground (1).zip" %}
 
@@ -3362,7 +3280,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## 1.-variables-data-types-and-more.
+### 1.-variables-data-types-and-more.
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -3395,16 +3313,14 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 1. Variables, Data types, and more.
+### Variables, Data types, and more.
 
 This is where we begin our journey with Swift. In this book section, we will go through the simple data types in Swift and see how to work with them. Please go to the next page to start!!!
 
 
 
 
-<!-- Merged from 1.1.-creating-a-swift-playground.md -->
-
-# 1.1. Creating a Swift Playground
+### Creating a Swift Playground
 
 Open Xcode from your Launchpad. You should be seeing something like the following:
 
@@ -3414,7 +3330,7 @@ Do not create an Xcode project yet; click on _**File -> New -> Playground**_. Se
 
 <figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 12.01.56 PM (2).png" alt=""><figcaption><p>Playground</p></figcaption></figure>
 
-## Video
+### Video
 
 {% embed url="https://www.youtube.com/watch?v=IG9nba_A7Z4" %}
 Demo
@@ -3422,9 +3338,7 @@ Demo
 
 
 
-<!-- Merged from 1.2.-variables.md -->
-
-# 1.2. Variables
+### Variables
 
 We will write our "Hello World" code here. In very short, variables are the places in your code where you can store program data while the program is running. They are called variables because you can change (vary) their values.
 
@@ -3452,15 +3366,13 @@ Now, you can see the new values showing on the output area!
 
 Since greeting is a variable, we can change the values without creating a new variable for the new value!
 
-## Video
+### Video
 
 {% embed url="https://youtu.be/_a2NJAJg-WM" %}
 
 
 
-<!-- Merged from 1.3.-type-safety.md -->
-
-# 1.3. Type safety
+### Type safety
 
 Swift is a type-safe language. It means that once you create a variable, it is stuck with a specific data type, and you cannot change the data type of it. Every variable has to have a particular data type.
 
@@ -3492,15 +3404,13 @@ var million = 1_000_000
 
 **To sum up, you need to be very careful about the data types of variables. You must not mix up data types for a particular variable.**
 
-## Video
+### Video
 
 {% embed url="https://youtu.be/XrHRxOiLX_o" %}
 
 
 
-<!-- Merged from 1.4.-strings-and-print-to-console.md -->
-
-# 1.4. Strings and print to console
+### Strings and print to console
 
 Swift allows you to write strings in two ways. The first one is, of course, the age-old String we declare inside **" "**. The next one is multiline strings which you can write inside **""" """** (triple quotes on both sides).
 
@@ -3530,15 +3440,13 @@ It should display the following at the bottom (console output) of Xcode:
 
 Now you get the full view of how a multiline String would get displayed.
 
-## Video
+### Video
 
 {% embed url="https://youtu.be/FEoQh4CarpM" %}
 
 
 
-<!-- Merged from 1.5.-floating-point-numbers-and-type-annotation.md -->
-
-# 1.5. Floating point numbers and Type annotation
+### Floating point numbers and Type annotation
 
 Two basic data types in Swift handle the floating point numbers (fractional values): **Double** and **Float.**
 
@@ -3574,15 +3482,13 @@ Here, I am writing 'var' to say the next one is a variable, as earlier. I give t
 
 One thing to note is that I put the value as 13 for myFloat, which would be interpreted as an Int if I did not specifically predefine it as a **Float.** If you look at the output, 13 became 13.0, which is a fractional number.
 
-## Video
+### Video
 
 {% embed url="https://youtu.be/TU-5-RWzJMs" %}
 
 
 
-<!-- Merged from 1.6.-more-print-string-interpolation.md -->
-
-# 1.6. More print, String interpolation
+### More print, String interpolation
 
 Swift allows you to insert values of variables into a String. String interpolation is useful for creating dynamic texts (labels, error messages, debug information, etc.) and formatting texts.
 
@@ -3638,9 +3544,7 @@ Here we see how multiline Strings and String interpolation can be used together 
 
 
 
-<!-- Merged from 1.7.-constants.md -->
-
-# 1.7. Constants
+### Constants
 
 So far, we talked about variables. Just as a refresher, you can always change the values of a variable, maintaining the **type-safety**. However, in many cases, you would not want a value to be changeable and keep it unchanged while the program runs. These are called **constants.**
 
@@ -3675,9 +3579,7 @@ But now you will see the following error:
 
 
 
-<!-- Merged from 1.8.-type-annotations-revisited.md -->
-
-# 1.8. Type annotations (revisited)
+### Type annotations (revisited)
 
 As we have already discussed a couple of times, we can predefine the data type for a variable when you are creating it. This is called **Type annotations.**
 
@@ -3693,9 +3595,7 @@ let iUseIPhone:Bool = false
 
 
 
-<!-- Merged from 1.9.-comments.md -->
-
-# 1.9. Comments
+### Comments
 
 We often need to write texts that are not executable programming instructions, just plain text instructions or documentation of our code. These are called comments. In swift, we can write comments in two ways.
 
@@ -3718,9 +3618,7 @@ var myFloat:Float = 13
 
 
 
-<!-- Merged from 1.10.-reference-code.md -->
-
-# 1.10. Reference Code
+### Reference Code
 
 {% file src="/gitbook-assets/MyPlayground.playground (1).zip" %}
 

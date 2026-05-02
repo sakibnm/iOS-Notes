@@ -10,7 +10,7 @@ bookCollapseSection: false
 
 
 
-## HTTP & Networking
+### HTTP & Networking
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -43,7 +43,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 10. Making the app communicate over the Internet
+### Making the app communicate over the Internet
 
 In this module, we will learn how an iOS app can talk to a server over the Internet. We will learn how to use remote APIs, fetch data from a server, and send data to a server using those APIs.
 
@@ -51,9 +51,7 @@ In this module, we will learn how an iOS app can talk to a server over the Inter
 
 
 
-<!-- Merged from 10.1.-http-connections.md -->
-
-# 10.1. HTTP connections
+### HTTP connections
 
 Intro to HTTP
 
@@ -99,9 +97,7 @@ HTTP stands for HyperText Transfer Protocol. It is used by two parties to transm
 
 
 
-<!-- Merged from 10.2.-postman-a-useful-tool-to-test-web-services.md -->
-
-# 10.2. Postman: a Useful Tool to Test Web Services
+### Postman: a Useful Tool to Test Web Services
 
 ### Installing Postman
 
@@ -112,15 +108,13 @@ HTTP stands for HyperText Transfer Protocol. It is used by two parties to transm
 
 
 
-<!-- Merged from 10.3.-testing-our-simple-custom-api-with-postman.md -->
-
-# 10.3. Testing our Simple Custom API with Postman
+### Testing our Simple Custom API with Postman
 
 Please watch the video to learn how to use Postman with an API.
 
 {% embed url="https://www.youtube.com/watch?v=0kQbmIaIvVk" %}
 
-## Contacts API details
+### Contacts API details
 
 **The base URL:** [https://apis.sakibnm.work:8888/contacts/text/](https://apis.sakibnm.work:8888/contacts/text/)
 
@@ -141,9 +135,7 @@ Please watch the video to learn how to use Postman with an API.
 
 
 
-<!-- Merged from 10.4.-app-that-uses-our-contact-api.md -->
-
-# 10.4. App that Uses Our Contact API
+### App that Uses Our Contact API
 
 Our app should look like the following at the end.:
 
@@ -157,11 +149,9 @@ Open the workspace (not the xcodeproject).
 
 
 
-<!-- Merged from 10.5.-setting-up-the-view-of-app10.md -->
+### Setting up the View of App10
 
-# 10.5. Setting up the View of App10
-
-## Setting up the View
+### Setting up the View
 
 * In the app, we will add a bottom view to add a new contact.
   * The bottom add view contains three text fields for name, email, and phone.
@@ -444,9 +434,7 @@ If we run the app now, it will look like:
 
 
 
-<!-- Merged from 10.6.-fetching-data-with-alamofire-get.md -->
-
-# 10.6. Fetching Data with AlamoFire: GET
+### Fetching Data with AlamoFire: GET
 
 It's time to fetch the contacts' names and display them in our table view. We will call the API with `getall` endpoint when the app starts, and display the response on the table view ([10.3.-testing-our-simple-custom-api-with-postman.md](10.3.-testing-our-simple-custom-api-with-postman.md "mention")).
 
@@ -777,9 +765,7 @@ Let's run the app again. It should look like this:
 
 
 
-<!-- Merged from 10.7.-posting-data-with-alamofire-post.md -->
-
-# 10.7. Posting Data with AlamoFire: POST
+### Posting Data with AlamoFire: POST
 
 Now it's time to add a new contact. We need to read the name, email, and phone number the user puts into the bottom add view. Then when the user taps the Add Contact button, we need to use Alamofire to post the data to the API server.
 
@@ -966,9 +952,7 @@ Yay! we are done adding a new contact!
 
 
 
-<!-- Merged from 10.8.-fetching-data-with-alamofire-details-endpoint.md -->
-
-# 10.8. Fetching Data with AlamoFire: 'details' endpoint
+### Fetching Data with AlamoFire: 'details' endpoint
 
 Let's get the details of a selected user when the user taps on a cell on the table view.
 
@@ -1085,9 +1069,7 @@ So, we are done writing codes for three API calls. **Can you do the 'delete'?**
 
 
 
-<!-- Merged from 10.9.-reference-code.md -->
-
-# 10.9. Reference Code
+### Reference Code
 
 {% file src="/gitbook-assets/App10 (2).zip" %}
 
@@ -1123,7 +1105,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## Working with JSON
+### Working with JSON
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -1156,7 +1138,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 11. Working with APIs and JSON
+### Working with APIs and JSON
 
 JSON stands for JavaScript Object Notation. It is a standard text-based format for representing structured data. It follows the JavaScript object syntax. It is the most popular standard of text data for web APIs nowadays. That means almost all the APIs you will work with or build will be structured in JSON. So it is paramount to learn how to parse JSON data and use them in iOS.
 
@@ -1265,11 +1247,9 @@ App11 will look the same as App10, but we will use a JSON-based API.
 
 
 
-<!-- Merged from 11.1.-the-json-api-for-the-contact-app.md -->
+### The JSON API for the Contact App
 
-# 11.1. The JSON API for the Contact App
-
-## The API details:
+### The API details:
 
 The setup of the JSON API is exactly the same as the text API we used in App9. Just change the base URL. It'll work just fine.
 
@@ -1396,9 +1376,7 @@ https://apis.sakibnm.work:8888/contacts/json/add \[with POST body form]
 
 
 
-<!-- Merged from 11.2.-app11-getting-all-the-contact-names-getall-endpoint.md -->
-
-# 11.2. App11: Getting All the Contact Names (getall endpoint)
+### App11: Getting All the Contact Names (getall endpoint)
 
 ### Representing JSON in Swift (getall)
 
@@ -1708,9 +1686,7 @@ Great! We are done with **getall.**
 
 
 
-<!-- Merged from 11.3.-app11-getting-the-details-of-a-selected-contact-details-endpoint.md -->
-
-# 11.3. App11: Getting the Details of a Selected Contact (details endpoint)
+### App11: Getting the Details of a Selected Contact (details endpoint)
 
 The **details** endpoint sends us a response like this:
 
@@ -1838,9 +1814,7 @@ Now, if we run the app, we will see:
 
 
 
-<!-- Merged from 11.4.-must-dos-while-decoding-json-adopting-codable.md -->
-
-# 11.4. 'Must Do's While Decoding JSON adopting Codable
+### 'Must Do's While Decoding JSON adopting Codable
 
 Let's look into the example JSON response for the `details` endpoint again:
 
@@ -1872,9 +1846,7 @@ So let's compare the two and think about what are the things we need to handle t
 
 
 
-<!-- Merged from 11.5.-app11-add-a-new-contact.md -->
-
-# 11.5. App11: Add a new Contact
+### App11: Add a new Contact
 
 The code is unchanged here since we just upload the data and do not necessarily need to parse JSON responses (for now).
 
@@ -1964,9 +1936,7 @@ Now, let's run the app.
 
 
 
-<!-- Merged from 11.6.-adding-accessory-button-to-table-view-edit-delete-a-contact.md -->
-
-# 11.6. Adding Accessory Button to Table View (Edit/Delete a Contact)
+### Adding Accessory Button to Table View (Edit/Delete a Contact)
 
 ### **Adding a Button to the TableView Cell as an Accessory**
 
@@ -2045,23 +2015,19 @@ See? They are printing the appropriate logs as outputs. You can now do anything 
 
 
 
-<!-- Merged from 11.7.-reference-code.md -->
-
-# 11.7. Reference Code
+### Reference Code
 
 {% file src="/gitbook-assets/App11 (1).zip" %}
 
 
 
-<!-- Merged from useful-extra-11.8.-decluttering-codes-from-view-controller.md -->
-
-# 11.8. Decluttering codes from View Controller (Recommended Read)
+### Decluttering codes from View Controller (Recommended Read)
 
 If you noticed, we have 281 lines of code in ViewController.swift. It appears to be a jumble of code. And in many ways, it's hard to read when you'll return to it after a week.
 
 We can utilize protocols and extensions to break the code into multiple files, making it more modular.
 
-## Separating the API calls from the Controller
+### Separating the API calls from the Controller
 
 Let's first separate the code we used to call the Contacts API. The methods we have related to the Contacts API are:
 

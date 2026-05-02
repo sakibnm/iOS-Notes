@@ -10,14 +10,14 @@ bookCollapseSection: false
 
 
 
-## Creating Our First App
+### Creating Our First App
 
 ## Table of Contents
 
 {{< section >}}
 
 
-## Designing Without Storyboards
+### Designing Without Storyboards
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -50,7 +50,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 2. Designing without Storyboards
+### Designing without Storyboards
 
 In our first app, we dragged and dropped the UI elements on Storyboard and set up the constraints using the Interface Builder's tools. Now, I said we would ditch this approach and start designing the UI with codes.
 
@@ -101,9 +101,7 @@ Please note you do not need to add all four constraints to anchor an object on t
 
 
 
-<!-- Merged from 2.1.-converting-the-storyboard-to-code.md -->
-
-# 2.1. Converting the storyboard to code
+### Converting the storyboard to code
 
 So, let's convert the Storyboard to Swift code!
 
@@ -117,7 +115,7 @@ In the above image, we can see how the UI elements are placed on the device's sc
 
 We will add the code directly to ViewController.
 
-## Understanding the attributes
+### Understanding the attributes
 
 ### Label attributes
 
@@ -201,7 +199,7 @@ In the above code, we defined the attributes for the label:
 * `labelHello.translatesAutoresizingMaskIntoConstraints` is set to `false` which is a default and fail-safe attribute for all the UI elements. The storyboard sets it automatically. If you write codes to edit the attributes, you have to set it to `false` manually for every UI element. This attribute says to the iOS system that you are dynamically using your own constraints to display the contents on the screen. Otherwise, the system will try to pack all the UI elements together to display them on the screen without your choices.
 * `view.addSubview(labelHello)` is where you add the logical view of `labelHello` you created as a subview of the screen. Here `view` is the logical view of the screen. Since `labelHello` is a child view of `view`, we write this line of code.
 
-## Setting the constraints
+### Setting the constraints
 
 Now that we have created a logical view of `labelHello`, we have to define the constraints. We can use `NSLayoutConstraint` system class to set the constraints. `NSLayoutConstraint.activate()` takes in an array of constraints and activate them on the current view. We know that `labelHello` has two constraints:
 
@@ -367,7 +365,7 @@ So, we call the methods to define the attributes of UI elements first, then acti
 
 **Hint:** _You can still use the Storyboard to check what attributes to set up. When you are designing by coding for the first time, you can go to the Storyboard, place a UI element from the Objects Library on the Storyboard, and design it as you like. Then, use the attributes you edited to setup the design programmatically in ViewController. Then, delete the object from the storyboard. The Storyboard potentially becomes your draft design pad._
 
-## Adding button action
+### Adding button action
 
 Remember, we added an event listener for the button tap using `buttonClickMe.addtarget()`? Where do you think we should add that target?
 
@@ -525,9 +523,7 @@ If you run the app, you can see that we replicated the whole App1 by just writin
 
 
 
-<!-- Merged from 2.2.-reference-code.md -->
-
-# 2.2. Reference Code
+### Reference Code
 
 {% file src="/gitbook-assets/App1_NoStory.zip" %}
 
@@ -563,7 +559,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## Multi-Screen Apps
+### Multi-Screen Apps
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -596,7 +592,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 3. Our first Multi-screen App
+### Our first Multi-screen App
 
 At this point, we will make a multi-screen application. After the end of lesson 3, we will understand the basics of Navigation Controller, UIImageViews, and Image Assets.
 
@@ -607,9 +603,7 @@ I will be designing the interface without the Storyboard here.
 
 
 
-<!-- Merged from 3.1.-navigation-controller.md -->
-
-# 3.1. Navigation Controller
+### Navigation Controller
 
 If you are an iPhone or iPad user, you must have used apps with multiple screens, where you go from one screen to another and return to the previous screen with a back button on the top left corner.
 
@@ -619,7 +613,7 @@ For example, the Settings app's navigation looks like this:
 
 This is called the Navigation of the app, where you define how the screen transitions are managed in an app.
 
-## Understanding the data Structure behind NavigationController
+### Understanding the data Structure behind NavigationController
 
 Navigation Controller is a Stack data structure. The user sees the screen from the top of the Stack. If we want to navigate from one screen to another screen, the user can call the `push()` method of the Navigation Controller to push Screen 2 on top of Screen 1. Since the user sees the Stack from above the Stack, the user will see Screen 2 now. Whenever the user is done dealing with screen 2, and they want to get back to screen 1, they have to basically use the Navigation Controller to `pop()` Screen 2 from the Stack. Then Screen 1 will be at the top of the Stack again
 
@@ -629,7 +623,7 @@ Navigation Controller Stack
 
 In our case, the ViewController is Screen 1, and ShowViewController is Screen 2. We need to push ShowViewController on top of ViewController.
 
-## Embedding the Navigation Controller
+### Embedding the Navigation Controller
 
 So let's create our new project, 'App3.' _<mark style="color:purple;">**We will not entirely discard our Storyboard here. We will use it to attach the NavigationController to our app.**</mark>_ So, open the Main storyboard in your project, Select the ViewController (the preview screen), click on the Embed In button at the bottom right corner of the middle pane, and select 'Navigation Controller.'
 
@@ -842,9 +836,7 @@ We can see that there is a Back button on the left top of the ShowViewController
 
 
 
-<!-- Merged from 3.2.-send-data-from-screen-1-viewcontroller-to-screen2-showviewcontroller.md -->
-
-# 3.2. Send data from Screen 1 (ViewController) to Screen2 (ShowViewController)
+### Send data from Screen 1 (ViewController) to Screen2 (ShowViewController)
 
 Now it's time to send data from our first screen (ViewController) to the second screen (ShowViewController). Remember, we created a variable named `messageFromFirstScreen`? We have to access that variable from the first screen (ViewController) and set the text the user puts in `textFieldMessage` to `messageFromFirstScreen`.
 
@@ -888,9 +880,7 @@ So, we can see that we can send data from one screen to the next.
 
 
 
-<!-- Merged from 3.7.-reference-code.md -->
-
-# 3.7. Reference Code
+### Reference Code
 
 {% file src="/gitbook-assets/App3 (1).zip" %}
 
@@ -932,7 +922,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## MVC Architecture
+### MVC Architecture
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -965,7 +955,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 4. Separating the View from the Controller code
+### Separating the View from the Controller code
 
 One of the better ways of coding is to separate the Views (front-end codes) from the Controllers (back-end codes). That way, we can make ViewControllers less cluttered.
 
@@ -980,9 +970,7 @@ On our first screen, we will have a Label to display "App4." Then we will have a
 
 
 
-<!-- Merged from 4.1.-creating-a-separate-view-code-file.md -->
-
-# 4.1. Creating a separate View code file
+### Creating a separate View code file
 
 Now let's create a separate file, 'FirstScreenView.swift' in the project.&#x20;
 
@@ -994,7 +982,7 @@ Now let's create a separate file, 'FirstScreenView.swift' in the project.&#x20;
 
 <figure><img src="/gitbook-assets/one (3).gif" alt=""><figcaption></figcaption></figure>
 
-## Setting up the View
+### Setting up the View
 
 FirstScreenView will be our View (front end) code file. We will declare the UI elements in the file like the following:
 
@@ -1164,9 +1152,7 @@ class FirstScreenView: UIView {
 
 
 
-<!-- Merged from 4.2.-patching-the-view-class-with-the-viewcontroller.md -->
-
-# 4.2. Patching the View class with the ViewController
+### Patching the View class with the ViewController
 
 Now that we are done with the FirstScreenView file, we have to initialize the view in the ViewController. So open the ViewController.swift file. Let's create an instance of the FirstScreenView:
 
@@ -1225,7 +1211,7 @@ Now, let's run the app:&#x20;
 
 <figure><img src="/gitbook-assets/five (1).gif" alt=""><figcaption></figcaption></figure>
 
-## Adding the PickerView logic
+### Adding the PickerView logic
 
 Let's define the moods like the app, App3, which we built previously.
 
@@ -1363,13 +1349,11 @@ See, we patched the PickerView with data!
 
 
 
-<!-- Merged from 4.3.-creating-the-display-screen.md -->
-
-# 4.3. Creating the Display Screen
+### Creating the Display Screen
 
 Now, we need to create another screen to display the data the user sends from the first screen. We need to create two swift files here, one is for the view (DisplayView), and another is for the view controller (DisplayViewController).&#x20;
 
-## DisplayView.swift
+### DisplayView.swift
 
 We have two Labels in the view:
 
@@ -1438,7 +1422,7 @@ class DisplayView: UIView {
 ```
 {% endcode %}
 
-## Adding DisplayViewController
+### Adding DisplayViewController
 
 Now, let's add the view controller for the display screen to our project:
 
@@ -1481,9 +1465,7 @@ class DisplayViewController: UIViewController {
 
 
 
-<!-- Merged from 4.4.-navigation-controller-and-sending-data-from-screen-1-to-screen-2.md -->
-
-# 4.4. Navigation Controller and sending data from screen 1 to screen 2
+### Navigation Controller and sending data from screen 1 to screen 2
 
 We will now use the navigation controller to switch between screens and send data from the first screen to the second screen.&#x20;
 
@@ -1491,7 +1473,7 @@ Embed the ViewController (controller of the first screen) to the Navigation Cont
 
 Now, we need to send the data (message and mood) from the first screen (ViewController) to the second screen (DisplayViewController). We will create a public struct to create this package.&#x20;
 
-## Adding a struct
+### Adding a struct
 
 So, open the ViewController.swift file, and add the struct there:
 
@@ -1517,7 +1499,7 @@ class ViewController: UIViewController {
 
 Notice that I am writing `public` before declaring the struct `Package`. We are working with access control of Swift here. If we do not write `public`, `Package` cannot be accessed from outside the `ViewController` class. The keyword `public` means this struct `Package` will also be available to other classes outside this class. For more details about access control in Swift, read: [https://docs.swift.org/swift-book/documentation/the-swift-programming-language/accesscontrol/](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/accesscontrol/).&#x20;
 
-## Handling the Button Tap action
+### Handling the Button Tap action
 
 ### **Sending Data**
 
@@ -1638,9 +1620,7 @@ _<mark style="color:purple;">**Here, we learned how to detach the front end (Vie
 
 
 
-<!-- Merged from 4.5.-wrapping-up-structuring-the-files.md -->
-
-# 4.5. Wrapping up: structuring the files
+### Wrapping up: structuring the files
 
 Now, your project structure should look like the following:
 
@@ -1658,9 +1638,7 @@ Although we have separated the Views from the Controllers, we still may find thi
 
 
 
-<!-- Merged from 4.6.-reference-code.md -->
-
-# 4.6. Reference Code
+### Reference Code
 
 {% file src="/gitbook-assets/App4.zip" %}
 
@@ -1696,7 +1674,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## 3.3. Send data back from Screen 2 to Screen 1
+### Send data back from Screen 2 to Screen 1
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -1729,7 +1707,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 3.3. Send data back from Screen 2 to Screen 1
+### Send data back from Screen 2 to Screen 1
 
 So, here is the goal for the extension of our current app:
 
@@ -1912,9 +1890,7 @@ On ShowViewController, we see there is an empty `moodPicker` and the newly added
 
 
 
-<!-- Merged from 3.4.-send-data-back-from-screen-2-to-screen-1-part-2-uipickerview.md -->
-
-# 3.3.1. Send data back from Screen 2 to Screen 1: UIPickerView
+### Send data back from Screen 2 to Screen 1: UIPickerView
 
 <figure><img src="/gitbook-assets/Screenshot 2023-05-11 at 12.13.48 PM (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -2246,9 +2222,7 @@ class ViewController: UIViewController {
 
 
 
-<!-- Merged from 3.5.-send-data-back-from-screen-2-to-screen-1-part-3-delegating-to-viewcontroller.md -->
-
-# 3.3.2. Send data back from Screen 2 to Screen 1: delegating to ViewController
+### Send data back from Screen 2 to Screen 1: delegating to ViewController
 
 Now, let's enable the action for `buttonSendMood` in ShowViewController.swift file. So let's update `viewDidLoad()` function and add a new selector method `onSendButtonTapped()`:
 
@@ -2455,11 +2429,9 @@ Next, we will discuss displaying an image related to the user's mood.
 
 
 
-<!-- Merged from 3.6.-send-data-back-from-screen-2-to-screen-1-part-4-uiimageview.md -->
+### Send data back from Screen 2 to Screen 1: UIImageView
 
-# 3.3.3. Send data back from Screen 2 to Screen 1: UIImageView
-
-## Importing images into the project
+### Importing images into the project
 
 Now, let's start working with ImageViews. We need three images for moods: happy, meh, and sad. We will be using the following images in three different sizes: 1x, 2x, and 3x.
 
@@ -2495,7 +2467,7 @@ Now, right-click on the "mood images" folder and select **Import.** Then select 
 
 Looking at the Assets now, you'll see three image assets listed instead of nine. The project automatically indexed nine of them into three assets, each having 3 scales (1x, 2x, and 3x). ![](</gitbook-assets/Screenshot 2023-05-11 at 10.11.02 PM.png>)
 
-## Setting the image into the ImageView through delegate
+### Setting the image into the ImageView through delegate
 
 In ViewController, add the following line of code into `delegateButtonSendMood()` method:
 
@@ -2558,7 +2530,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## 1.-creating-our-first-app
+### 1.-creating-our-first-app
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -2591,7 +2563,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 1. Creating our first app
+### Creating our first app
 
 Press `Command (⌘) + Space` together on your Mac computer. It opens up Spotlight search. Search 'Xcode' there, and open Xcode. It opens the following window:
 
@@ -2636,9 +2608,7 @@ If you can see the emulator, you have successfully built your first app. We will
 
 
 
-<!-- Merged from 1.1.-project-structure-overview.md -->
-
-# 1.1. Project structure overview
+### Project structure overview
 
 The Xcode screen has three panes.
 
@@ -2686,9 +2656,7 @@ Once we start building apps, we will eventually get used to Xcode more.
 
 
 
-<!-- Merged from 1.2.-uilabel-our-first-ui-element.md -->
-
-# 1.2. UILabel, our first UI element
+### UILabel, our first UI element
 
 Let's add a text pane, `UILabel` to our storyboard. Open the Main storyboard, and press `Command(⌘) + Shift + L` together. It opens up the Objects Library like this:
 
@@ -2740,9 +2708,7 @@ See, for both cases, the alignment setup is keeping the Label on the screen nice
 
 
 
-<!-- Merged from 1.3.-uitextfield-and-constraints.md -->
-
-# 1.3. UITextField, and constraints
+### UITextField, and constraints
 
 So far, we have added one UILabel, with the text "Hello World" in it. Now, we will add our second UI element on the screen, UITextField, below the Label. UITextField is used to get user inputs from the keyboard. We can type something in the TextField and use it in our app.
 
@@ -2794,15 +2760,13 @@ Please note, you are using your computer keyboard to put the text inside. You ca
 
 
 
-<!-- Merged from 1.4.-uibutton-and-uialertcontroller.md -->
-
-# 1.4. UIButton, and UIAlertController
+### UIButton, and UIAlertController
 
 At this point, We have a TextField to get user inputs from the keyboard. Now, let's add a button below the TextField. Our goal is if a user types something on the TextField and presses the button, the app should echo the text back to the user with an alert.
 
 We will use two UI elements for this purpose: UIButton, and UIAlertController.
 
-## Adding a new button
+### Adding a new button
 
 Let's place a Button on the Screen, center it, and anchor it 16 points below the TextField.
 
@@ -2822,7 +2786,7 @@ Now, let's change the attributes of the Button. If you select the Button and loo
 
 Now, run the app, and you will see that you have the button "Click me!", and can click on it!
 
-## ViewController and AlertController
+### ViewController and AlertController
 
 Now, we need to handle the click on the Button. So, we need to patch the frontend UI elements to our ViewController code.
 
@@ -3039,9 +3003,7 @@ class ViewController: UIViewController {
 
 
 
-<!-- Merged from 1.5.-wrapping-up-appicon.md -->
-
-# 1.5. Wrapping up: AppIcon
+### Wrapping up: AppIcon
 
 Before we complete the app, let's add an icon for the app. I generated a 1024x1024 pixels large icon:
 
@@ -3065,9 +3027,7 @@ Now, our first app 'App1' is complete!
 
 
 
-<!-- Merged from 1.6.-reference-code-and-video.md -->
-
-# 1.6. Reference Code and Video
+### Reference Code and Video
 
 {% file src="/gitbook-assets/App1_project.zip" %}
 

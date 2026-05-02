@@ -10,7 +10,7 @@ bookCollapseSection: false
 
 
 
-## Notification Center
+### Notification Center
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -43,7 +43,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-# 7. Notification Center
+### Notification Center
 
 <mark style="color:purple;">**(Do not confuse it with the push notifications)**</mark>
 
@@ -66,9 +66,7 @@ So, let's build a small App to test it out.
 
 
 
-<!-- Merged from 7.1.-add-an-observer.md -->
-
-# 7.1. Add an Observer
+### Add an Observer
 
 We are sending data from the second screen to the first screen. So, we need to observe the Notification Center for any notifications sent from the Second Screen.
 
@@ -193,9 +191,7 @@ Now, our first screen will listen to any notification named "textFromSecondScree
 
 
 
-<!-- Merged from 7.1.-app-7.md -->
-
-# 7.1. App 7
+### App 7
 
 We will build the following app in this module.
 
@@ -440,9 +436,7 @@ class SecondScreenViewController: UIViewController {
 
 
 
-<!-- Merged from 7.2.-posting-data-to-notification-center.md -->
-
-# 7.2. Posting Data to Notification Center
+### Posting Data to Notification Center
 
 Now, let's open up the SecondScreenViewController.swift file. We need to initialize the Notification Center here as well. Let's add the following code:
 
@@ -589,9 +583,7 @@ Now let's run the app.
 
 
 
-<!-- Merged from 7.3.-defining-the-names-identifiers-of-the-notifications-in-a-better-way.md -->
-
-# 7.3. Defining the names (identifiers) of the Notifications in a Better Way
+### Defining the names (identifiers) of the Notifications in a Better Way
 
 In real life, the Notification Center is used very frequently, especially when we fetch data from the internet and wait for data to update. Oftentimes, it's pretty common to create tens of observers in a single app. So, just writing the names/identifiers of the notifications, as we did before, is not a good way of dealing with it. If the names do not match on both sides, notifications won't work. So, keeping the names in a separate class as static variables is better.
 
@@ -663,9 +655,7 @@ _**This way, we can easily store multiple identifiers/names without worrying abo
 
 
 
-<!-- Merged from 7.4.-reference-code.md -->
-
-# 7.4. Reference Code
+### Reference Code
 
 {% file src="/gitbook-assets/App7 (1).zip" %}
 
@@ -701,7 +691,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## Clean Code & Async
+### Clean Code & Async
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -734,13 +724,11 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-<!-- Merged from 1.-writing-clean-code-for-asynchronous-operations.md -->
-
-# 1. Writing clean code for Asynchronous operations
+### Writing clean code for Asynchronous operations
 
 In this section, we will rewrite the code for App 11 (JSON API). We will have options for displaying, adding, deleting, and editing contacts using our same API (please refer to:[11.1.-the-json-api-for-the-contact-app.md](../11.-working-with-json/11.1.-the-json-api-for-the-contact-app.md "mention")). We took small steps in[useful-extra-11.8.-decluttering-codes-from-view-controller.md](../11.-working-with-json/useful-extra-11.8.-decluttering-codes-from-view-controller.md "mention") section to separate the API calls from the control code. This time, we will break the chain of nested asynchronous API calls with async-await blocks of code to make our code cleaner.&#x20;
 
-## 1. Asynchronous calls
+### Asynchronous calls
 
 So far, what we have seen in our API calls is that, for a sequence of asynchronous tasks, we must wait for the previous task to complete before executing the next task. We wrote _**spaghetti**_ code there and made the next API call from the callback of the first API call (if the response was a 200-level code, refer to [11.5.-app11-add-a-new-contact.md](../11.-working-with-json/11.5.-app11-add-a-new-contact.md "mention") ). However, it renders our code largely unusable for future use. What if we could write the code such that we could call the async calls one after another, but the code would not execute in parallel? Wouldn't it be great to instruct the code to wait for the call to complete and then move to the next line? That way, we can keep our code cleaner and highly reusable for future use. &#x20;
 
@@ -781,7 +769,7 @@ See how much more readable and usable it becomes!
 
 So, we will do the same for App 11 here.
 
-## 2. Tasks with async await
+### Tasks with async await
 
 Let's look at the following Swift code (you can run it in a Playground):
 
@@ -940,7 +928,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 - **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
 
-## 1. Writing Clean Code For Asynchronous Operations
+### Writing Clean Code For Asynchronous Operations
 
 **Estimated effort:** 1-2 hours this topic
 **Format:** Asynchronous online
@@ -973,9 +961,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 > 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
 
-<!-- Merged from 1.1.-decluttering-our-app11-contacts-app-with-json.md -->
-
-# 1.1. Decluttering our App11 (Contacts App with JSON)
+### Decluttering our App11 (Contacts App with JSON)
 
 So far in [useful-extra-11.8.-decluttering-codes-from-view-controller.md](../../11.-working-with-json/useful-extra-11.8.-decluttering-codes-from-view-controller.md "mention") section, we learned how to write protocols and use extensions to modularize your code. Let's start there.&#x20;
 
@@ -1002,7 +988,7 @@ So far, we have the following structure of the project:
   * _<mark style="color:$info;">AppDelegate.swift</mark>_
   * _<mark style="color:$info;">SceneDelegate.swift</mark>_
 
-## 1.1.1. Updating Contact API Protocol code
+### Updating Contact API Protocol code
 
 To be able to accommodate the async-await calls to remove the spaghetti code, we need a few changes in our Contact API protocol in ContactsProtocol.swift file:
 
@@ -1023,7 +1009,7 @@ The basic differences here from before are:
 1. We made all the API call functions asynchronous by adding the _**async**_ notation.&#x20;
 2. We are also making the functions return something (Bool, Contact, etc.) so that it becomes easier when we sequence them from the controller.
 
-## 1.1.2. Making API calls async
+### Making API calls async
 
 So we will now rewrite (a little) the current code for the API calls (getall, add, delete, getdetails) to be able to call them asynchronously.
 
@@ -1161,7 +1147,7 @@ Let's compare the two codes and check what happened here.
 
 It already looks less cluttered!&#x20;
 
-### 1.1.3. Control Code
+### Control Code
 
 Now, let's see how we can call getAllContacts using the Task{} block from the ViewController. Let's check the corresponding code in ContactsViewController.swift file:
 
@@ -1217,9 +1203,7 @@ In the above code:
 
 
 
-<!-- Merged from 1.2.-decluttering-continues....md -->
-
-# 1.2. Decluttering continues...
+### Decluttering continues...
 
 Now we will look at an example where we will edit a contact. We would need to make two API calls sequentially: delete the contact, and then add a new contact with updated data.
 
@@ -1354,9 +1338,7 @@ Please download the whole project and study that to understand the concepts.
 
 
 
-<!-- Merged from 1.3.-reference-code.md -->
-
-# 1.3. Reference Code
+### Reference Code
 
 {% file src="/gitbook-assets/App 11 modular async.zip" %}
 
