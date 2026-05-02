@@ -8,7 +8,7 @@ So far, we have worked with screens that do not scroll. I think all of you faced
 
 Let's build a small app App8 to implement a ScrollView. The app should look like this:
 
-<figure><img src="../.gitbook/assets/8.11 (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/8.11 (1).gif" alt=""><figcaption></figcaption></figure>
 
 **So there will be the following UI elements:**
 

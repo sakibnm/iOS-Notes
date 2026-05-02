@@ -177,7 +177,7 @@ Then we place the `moodPicker` and finally put `buttonSendMood` at the bottom.
 
 If we run the app now, we will see:
 
-<figure><img src="../../.gitbook/assets/nine (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/nine (1).gif" alt=""><figcaption></figcaption></figure>
 
 Here, we do not see the two elements we added to ViewController, because `labelMood` and `imageMood` doesn't have anything to display.
 

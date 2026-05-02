@@ -9,13 +9,13 @@ So far you have noticed, we embed the Navigation Controller using the Storyboard
 
 To start, we will create a new iOS project in Xcode named, "NavConFromCode."&#x20;
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-10-09 at 1.22.15 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2025-10-09 at 1.22.15 PM.png" alt=""><figcaption></figcaption></figure>
 
 We already know that it comes with a default view controller: **ViewController.swift**
 
 So let's first change the name of it to a different name: **FirstScreenViewController.swift**
 
-<figure><img src="../.gitbook/assets/sdf.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/sdf.gif" alt=""><figcaption></figcaption></figure>
 
 <mark style="color:$danger;background-color:red;">**Please note, we are also changing the name of the class.**</mark>&#x20;
 
@@ -72,5 +72,5 @@ Now, if we run the app, it should run as the FirstScreenViewController being the
 
 ### Resource Files
 
-{% file src="../.gitbook/assets/NavConFromCode.zip" %}
+{% file src="/gitbook-assets/NavConFromCode.zip" %}
 

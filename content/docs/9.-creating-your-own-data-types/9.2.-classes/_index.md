@@ -19,7 +19,7 @@ class Vehicle{
 
 If you just write the above block of code, you'll get an error:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-05-04 at 5.08.56 PM (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-04 at 5.08.56 PM (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 So, it is not like a `struct` where you do not need to have an initializer method. You must have your own initializer to be able to create an instance of a `class`. <mark style="color:orange;">**This is the first difference between a**</mark><mark style="color:orange;">\*\*</mark> `struct` <mark style="color:orange;">**and a**</mark> `class`.\*\*
 

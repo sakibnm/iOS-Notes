@@ -14,4 +14,4 @@ We will extend App 12 to store images in Firestore Storage. We will do the follo
 * Once we create the profile, we have to store the profile photo in Firebase Storage.
 * Then, when we are on the main screen, we should see the profile photo loaded on the Screen. Like the following:
 
-<figure><img src="../.gitbook/assets/13.one (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="/gitbook-assets/13.one (1).gif" alt=""><figcaption></figcaption></figure>

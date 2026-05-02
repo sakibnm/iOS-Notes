@@ -14,11 +14,11 @@ There are several reasons for it, as this blog post discusses: [https://kissdigi
 
 Before we start, let's have a quick look at the UI we had from 'App1':
 
-![](<../.gitbook/assets/Screenshot 2023-05-09 at 10.25.49 PM.png>)
+![](</gitbook-assets/Screenshot 2023-05-09 at 10.25.49 PM.png>)
 
 Let's look into the constraints of the UI:
 
-![](<../.gitbook/assets/Screenshot 2023-05-09 at 10.50.48 PM (1) (1).png>)
+![](</gitbook-assets/Screenshot 2023-05-09 at 10.50.48 PM (1) (1).png>)
 
 So the Label ("Hello World!") has two constraints:
 
@@ -39,7 +39,7 @@ Similarly, the Button ("Click me!") has two constraints:
 
 Let's look at the following grid:
 
-<figure><img src="../.gitbook/assets/grid (2).png" alt=""><figcaption><p>The grid on a screen</p></figcaption></figure>
+<figure><img src="/gitbook-assets/grid (2).png" alt=""><figcaption><p>The grid on a screen</p></figcaption></figure>
 
 The above grid is similar to a mobile screen. **The origin of the grid `(0, 0)` above is the top-left point,** unlike to the regular grid we use in our regular visualizations. So, when we want to anchor the object on the screen, there are four constraints we may need to set:
 
