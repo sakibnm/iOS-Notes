@@ -28,7 +28,7 @@ Learning Objectives# By the end of this session, you will be able to:">
   <meta itemprop="description" content="Table of Contents# HTTP &amp; Networking# Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
 {&lt; hint info &gt;} 🎯 Topic Mission: In this module, we will explore HTTP &amp; Networking and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {&lt; /hint &gt;}
 Learning Objectives# By the end of this session, you will be able to:">
-  <meta itemprop="wordCount" content="8699">
+  <meta itemprop="wordCount" content="8680">
 
 <title>Module 5: Networking &amp; APIs | iOS UIKit Course</title>
 <link rel="icon" href="/favicon.png" >
@@ -38,7 +38,7 @@ Learning Objectives# By the end of this session, you will be able to:">
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.2d8fd5e4236bd86b25ebef9673310ebe25f1df0b4aedc504172ac049ab171f38.js" integrity="sha256-LY/V5CNr2Gsl6&#43;&#43;WczEOviXx3wtK7cUEFyrASasXHzg=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.79d8fbe5c352e1e2da559b8378ff5b4507df69656d01b71c19c90d10531011a5.js" integrity="sha256-edj75cNS4eLaVZuDeP9bRQffaWVtAbccGckNEFMQEaU=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="//localhost:1313/docs/05-networking-and-apis/index.xml" title="iOS UIKit Course" />
@@ -269,64 +269,40 @@ Learning Objectives# By the end of this session, you will be able to:">
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#table-of-contents">Table of Contents</a></li>
-    <li><a href="#http--networking">HTTP &amp; Networking</a></li>
+    <li><a href="#table-of-contents">Table of Contents</a>
+      <ul>
+        <li><a href="#http--networking">HTTP &amp; Networking</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives">Learning Objectives</a></li>
     <li><a href="#the-story-so-far">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-http--networking">Walkthrough: Exploring HTTP &amp; Networking</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-http--networking">Walkthrough: Exploring HTTP &amp; Networking</a>
       <ul>
+        <li><a href="#making-the-app-communicate-over-the-internet">Making the app communicate over the Internet</a></li>
+        <li><a href="#http-connections">HTTP connections</a></li>
+        <li><a href="#postman-a-useful-tool-to-test-web-services">Postman: a Useful Tool to Test Web Services</a></li>
         <li><a href="#installing-postman">Installing Postman</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#contacts-api-details">Contacts API details</a></li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#testing-our-simple-custom-api-with-postman">Testing our Simple Custom API with Postman</a></li>
+        <li><a href="#contacts-api-details">Contacts API details</a></li>
+        <li><a href="#app-that-uses-our-contact-api">App that Uses Our Contact API</a></li>
         <li></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#setting-up-the-view">Setting up the View</a>
-      <ul>
+        <li><a href="#setting-up-the-view-of-app10">Setting up the View of App10</a></li>
+        <li><a href="#setting-up-the-view">Setting up the View</a></li>
         <li><a href="#mainscreenviewswift"><strong>MainScreenView.swift</strong></a></li>
         <li><a href="#contactstableviewcellswift"><strong>ContactsTableViewCell.swift</strong></a></li>
         <li><a href="#viewcontrollerswift"><strong>ViewController.swift</strong></a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#fetching-data-with-alamofire-get">Fetching Data with AlamoFire: GET</a></li>
         <li><a href="#using-alamofire-for-text-responses">Using Alamofire for text responses</a></li>
         <li><a href="#the-getall-endpoint-with-alamofire">The &lsquo;getall&rsquo; endpoint with Alamofire</a></li>
         <li><a href="#enabling-unencrypted-http-in-our-app"><mark>Enabling unencrypted HTTP in our app</mark></a></li>
         <li><a href="#displaying-data-on-the-table-view">Displaying data on the table view</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#posting-data-with-alamofire-post">Posting Data with AlamoFire: POST</a></li>
         <li><a href="#fetching-the-user-inputs-and-creating-a-new-contact-object">Fetching the user inputs and creating a new Contact object</a></li>
         <li><a href="#making-the-api-call-for-the-endpoint-add">Making the API call for the endpoint &lsquo;add.&rsquo;</a></li>
+        <li><a href="#fetching-data-with-alamofire-details-endpoint">Fetching Data with AlamoFire: &lsquo;details&rsquo; endpoint</a></li>
+        <li><a href="#reference-code">Reference Code</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
     <li><a href="#guided-practice-challenges">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation">Challenge 1: Experimentation</a></li>
@@ -334,58 +310,40 @@ Learning Objectives# By the end of this session, you will be able to:">
       </ul>
     </li>
     <li><a href="#references">References</a></li>
-    <li><a href="#getting-help">Getting Help</a></li>
-    <li><a href="#working-with-json">Working with JSON</a></li>
+    <li><a href="#getting-help">Getting Help</a>
+      <ul>
+        <li><a href="#working-with-json">Working with JSON</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-1">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-1">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-working-with-json">Walkthrough: Exploring Working with JSON</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-working-with-json">Walkthrough: Exploring Working with JSON</a>
       <ul>
+        <li><a href="#working-with-apis-and-json">Working with APIs and JSON</a></li>
         <li><a href="#json-structure">JSON Structure</a></li>
         <li><a href="#json-object">JSON Object</a></li>
         <li><a href="#json-array">JSON Array</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#the-api-details">The API details:</a>
-      <ul>
+        <li><a href="#the-json-api-for-the-contact-app">The JSON API for the Contact App</a></li>
+        <li><a href="#the-api-details">The API details:</a></li>
         <li><a href="#the-base-url">The base URL:</a></li>
         <li><a href="#getall"><strong>getall:</strong></a></li>
         <li><a href="#details"><strong>details:</strong></a></li>
         <li><a href="#delete"><strong>delete:</strong></a></li>
         <li><a href="#add"><strong>add:</strong></a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#app11-getting-all-the-contact-names-getall-endpoint">App11: Getting All the Contact Names (getall endpoint)</a></li>
         <li><a href="#representing-json-in-swift-getall">Representing JSON in Swift (getall)</a></li>
         <li><a href="#parsing-json">Parsing JSON</a></li>
         <li><a href="#creating-the-getall-request-using-alamofire">Creating the &lsquo;getall&rsquo; request using Alamofire</a></li>
         <li><a href="#adopting-codable-protocol">Adopting Codable protocol</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#app11-getting-the-details-of-a-selected-contact-details-endpoint">App11: Getting the Details of a Selected Contact (details endpoint)</a></li>
+        <li><a href="#must-dos-while-decoding-json-adopting-codable">&lsquo;Must Do&rsquo;s While Decoding JSON adopting Codable</a></li>
+        <li><a href="#app11-add-a-new-contact">App11: Add a new Contact</a></li>
+        <li><a href="#adding-accessory-button-to-table-view-editdelete-a-contact">Adding Accessory Button to Table View (Edit/Delete a Contact)</a></li>
         <li><a href="#adding-a-button-to-the-tableview-cell-as-an-accessory"><strong>Adding a Button to the TableView Cell as an Accessory</strong></a></li>
         <li><a href="#writing-methods-when-the-user-selects-an-option">Writing methods when the user selects an option</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#separating-the-api-calls-from-the-controller">Separating the API calls from the Controller</a>
-      <ul>
+        <li><a href="#reference-code-1">Reference Code</a></li>
+        <li><a href="#decluttering-codes-from-view-controller-recommended-read">Decluttering codes from View Controller (Recommended Read)</a></li>
+        <li><a href="#separating-the-api-calls-from-the-controller">Separating the API calls from the Controller</a></li>
         <li><a href="#defining-a-protocol-for-the-api-calls">Defining a Protocol for the API Calls</a></li>
         <li><a href="#adopting-the-protocol">Adopting the Protocol</a></li>
         <li><a href="#the-file-structure-of-the-project-now-looks-like-this">The file structure of the project now looks like this:</a></li>
@@ -412,7 +370,7 @@ Learning Objectives# By the end of this session, you will be able to:">
       
       
   <article class="markdown book-article"><h2 id="table-of-contents">Table of Contents<a class="anchor" href="#table-of-contents">#</a></h2>
-<h2 id="http--networking">HTTP &amp; Networking<a class="anchor" href="#http--networking">#</a></h2>
+<h3 id="http--networking">HTTP &amp; Networking<a class="anchor" href="#http--networking">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -436,10 +394,9 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-http--networking">Walkthrough: Exploring HTTP &amp; Networking<a class="anchor" href="#walkthrough-exploring-http--networking">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="10-making-the-app-communicate-over-the-internet">10. Making the app communicate over the Internet<a class="anchor" href="#10-making-the-app-communicate-over-the-internet">#</a></h1>
+</blockquote><h3 id="making-the-app-communicate-over-the-internet">Making the app communicate over the Internet<a class="anchor" href="#making-the-app-communicate-over-the-internet">#</a></h3>
 <p>In this module, we will learn how an iOS app can talk to a server over the Internet. We will learn how to use remote APIs, fetch data from a server, and send data to a server using those APIs.</p>
-<!-- Merged from 10.1.-http-connections.md -->
-<h1 id="101-http-connections">10.1. HTTP connections<a class="anchor" href="#101-http-connections">#</a></h1>
+<h3 id="http-connections">HTTP connections<a class="anchor" href="#http-connections">#</a></h3>
 <p>Intro to HTTP</p>
 <p>{% embed url=&ldquo;<a href="https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d52f70dc-ac38-4530-9e9a-ae9e01243cec%22">https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d52f70dc-ac38-4530-9e9a-ae9e01243cec"</a> %}</p>
 <p>HTTP stands for HyperText Transfer Protocol. It is used by two parties to transmit data between themselves over the Internet. For example, When you browse the web, your browser uses HTTP. The two parties are called:</p>
@@ -488,19 +445,17 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li><strong>Body:</strong> the response from the server comes as a part of the body.</li>
 <li><strong>Headers:</strong> SImilar to the request headers, server may use headers to send additional meta data.</li>
 </ul>
-<!-- Merged from 10.2.-postman-a-useful-tool-to-test-web-services.md -->
-<h1 id="102-postman-a-useful-tool-to-test-web-services">10.2. Postman: a Useful Tool to Test Web Services<a class="anchor" href="#102-postman-a-useful-tool-to-test-web-services">#</a></h1>
+<h3 id="postman-a-useful-tool-to-test-web-services">Postman: a Useful Tool to Test Web Services<a class="anchor" href="#postman-a-useful-tool-to-test-web-services">#</a></h3>
 <h3 id="installing-postman">Installing Postman<a class="anchor" href="#installing-postman">#</a></h3>
 <p>{% embed url=&ldquo;<a href="https://www.youtube.com/watch?v=v62mZZ6HG8Y%22">https://www.youtube.com/watch?v=v62mZZ6HG8Y"</a> %}</p>
 <ul>
 <li>Visit <a href="https://www.postman.com/downloads/?utm%5c_source=postman-home">this link</a> to download Postman. Install it on your Mac by copying the extracted file into the Applications folder. Open it, create an account, and log in.</li>
 <li>Then create a new collection by clicking on <code>+</code> icon on the top left corner. Then add requests to start testing.</li>
 </ul>
-<!-- Merged from 10.3.-testing-our-simple-custom-api-with-postman.md -->
-<h1 id="103-testing-our-simple-custom-api-with-postman">10.3. Testing our Simple Custom API with Postman<a class="anchor" href="#103-testing-our-simple-custom-api-with-postman">#</a></h1>
+<h3 id="testing-our-simple-custom-api-with-postman">Testing our Simple Custom API with Postman<a class="anchor" href="#testing-our-simple-custom-api-with-postman">#</a></h3>
 <p>Please watch the video to learn how to use Postman with an API.</p>
 <p>{% embed url=&ldquo;<a href="https://www.youtube.com/watch?v=0kQbmIaIvVk%22">https://www.youtube.com/watch?v=0kQbmIaIvVk"</a> %}</p>
-<h2 id="contacts-api-details">Contacts API details<a class="anchor" href="#contacts-api-details">#</a></h2>
+<h3 id="contacts-api-details">Contacts API details<a class="anchor" href="#contacts-api-details">#</a></h3>
 <p><strong>The base URL:</strong> <a href="https://apis.sakibnm.work:8888/contacts/text/">https://apis.sakibnm.work:8888/contacts/text/</a></p>
 <p><strong>The endpoints:</strong></p>
 <ul>
@@ -529,16 +484,14 @@ Open your current Xcode project or start a new Playground to follow along with t
 </ul>
 </li>
 </ul>
-<!-- Merged from 10.4.-app-that-uses-our-contact-api.md -->
-<h1 id="104-app-that-uses-our-contact-api">10.4. App that Uses Our Contact API<a class="anchor" href="#104-app-that-uses-our-contact-api">#</a></h1>
+<h3 id="app-that-uses-our-contact-api">App that Uses Our Contact API<a class="anchor" href="#app-that-uses-our-contact-api">#</a></h3>
 <p>Our app should look like the following at the end.:</p>
 <figure><img src="/gitbook-assets/10.one (1).gif" alt=""><figcaption></figcaption></figure>
 <p>Let&rsquo;s create a new project in Xcode, &ldquo;App10.&rdquo; And add Alamofire to the project using Cocoapods. ( See <a href="../9.-cocoa-pods/" title="mention">9.-cocoa-pods</a>).</p>
 <p>Open the workspace (not the xcodeproject).</p>
 <h3 id=""><a class="anchor" href="#">#</a></h3>
-<!-- Merged from 10.5.-setting-up-the-view-of-app10.md -->
-<h1 id="105-setting-up-the-view-of-app10">10.5. Setting up the View of App10<a class="anchor" href="#105-setting-up-the-view-of-app10">#</a></h1>
-<h2 id="setting-up-the-view">Setting up the View<a class="anchor" href="#setting-up-the-view">#</a></h2>
+<h3 id="setting-up-the-view-of-app10">Setting up the View of App10<a class="anchor" href="#setting-up-the-view-of-app10">#</a></h3>
+<h3 id="setting-up-the-view">Setting up the View<a class="anchor" href="#setting-up-the-view">#</a></h3>
 <ul>
 <li>In the app, we will add a bottom view to add a new contact.
 <ul>
@@ -797,8 +750,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>{% endcode %}</p>
 <p>If we run the app now, it will look like:</p>
 <p><img src="/gitbook-assets/Screenshot%202023-05-25%20at%207.42.51%20PM%20%281%29.png" alt="" /></p>
-<!-- Merged from 10.6.-fetching-data-with-alamofire-get.md -->
-<h1 id="106-fetching-data-with-alamofire-get">10.6. Fetching Data with AlamoFire: GET<a class="anchor" href="#106-fetching-data-with-alamofire-get">#</a></h1>
+<h3 id="fetching-data-with-alamofire-get">Fetching Data with AlamoFire: GET<a class="anchor" href="#fetching-data-with-alamofire-get">#</a></h3>
 <p>It&rsquo;s time to fetch the contacts&rsquo; names and display them in our table view. We will call the API with <code>getall</code> endpoint when the app starts, and display the response on the table view (<a href="10.3.-testing-our-simple-custom-api-with-postman.md" title="mention">10.3.-testing-our-simple-custom-api-with-postman.md</a>).</p>
 <h3 id="using-alamofire-for-text-responses">Using Alamofire for text responses<a class="anchor" href="#using-alamofire-for-text-responses">#</a></h3>
 <p>If you noticed, in our API, we are getting back text responses from the server. We will use Alamofire to process the responses. Before we do, let&rsquo;s define an array of Strings in our ViewController for populating the table view. That array will hold the names of the contacts returned by the API endpoint <code>getall</code>.</p>
@@ -1083,8 +1035,7 @@ import Alamofire
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>{% endcode %}</p>
 <p>Let&rsquo;s run the app again. It should look like this:</p>
 <p><img src="/gitbook-assets/Screenshot%202023-05-25%20at%2010.35.15%20PM%20%281%29.png" alt="" /></p>
-<!-- Merged from 10.7.-posting-data-with-alamofire-post.md -->
-<h1 id="107-posting-data-with-alamofire-post">10.7. Posting Data with AlamoFire: POST<a class="anchor" href="#107-posting-data-with-alamofire-post">#</a></h1>
+<h3 id="posting-data-with-alamofire-post">Posting Data with AlamoFire: POST<a class="anchor" href="#posting-data-with-alamofire-post">#</a></h3>
 <p>Now it&rsquo;s time to add a new contact. We need to read the name, email, and phone number the user puts into the bottom add view. Then when the user taps the Add Contact button, we need to use Alamofire to post the data to the API server.</p>
 <h3 id="fetching-the-user-inputs-and-creating-a-new-contact-object">Fetching the user inputs and creating a new Contact object<a class="anchor" href="#fetching-the-user-inputs-and-creating-a-new-contact-object">#</a></h3>
 <p>Let&rsquo;s open ViewController.swift file. Then add an action to <code>mainScreen.buttonAdd</code> (Add Contact button):</p>
@@ -1239,8 +1190,7 @@ import Alamofire
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>If you are still with me, we are done with adding a new contact. Let&rsquo;s run the app again.</p>
 <figure><img src="/gitbook-assets/10.seven (1).gif" alt=""><figcaption></figcaption></figure>
 <p>Yay! we are done adding a new contact!</p>
-<!-- Merged from 10.8.-fetching-data-with-alamofire-details-endpoint.md -->
-<h1 id="108-fetching-data-with-alamofire-details-endpoint">10.8. Fetching Data with AlamoFire: &lsquo;details&rsquo; endpoint<a class="anchor" href="#108-fetching-data-with-alamofire-details-endpoint">#</a></h1>
+<h3 id="fetching-data-with-alamofire-details-endpoint">Fetching Data with AlamoFire: &lsquo;details&rsquo; endpoint<a class="anchor" href="#fetching-data-with-alamofire-details-endpoint">#</a></h3>
 <p>Let&rsquo;s get the details of a selected user when the user taps on a cell on the table view.</p>
 <p>We already know that when the user taps on a cell of the table view, we can handle the interaction in the adopted method regarding <code>didSelectRowAt</code>.</p>
 <p>So let&rsquo;s write this line of code <code>getContactDetails(name: self.contactNames[indexPath.row])</code> inside <code>didSelectRowAt</code>.</p>
@@ -1332,8 +1282,7 @@ import Alamofire
 <p>Let&rsquo;s run the app now.</p>
 <figure><img src="/gitbook-assets/10.eight (1).gif" alt=""><figcaption></figcaption></figure>
 <p>So, we are done writing codes for three API calls. <strong>Can you do the &lsquo;delete&rsquo;?</strong></p>
-<!-- Merged from 10.9.-reference-code.md -->
-<h1 id="109-reference-code">10.9. Reference Code<a class="anchor" href="#109-reference-code">#</a></h1>
+<h3 id="reference-code">Reference Code<a class="anchor" href="#reference-code">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/App10 (2).zip&rdquo; %}</p>
 <hr>
 <h2 id="guided-practice-challenges">Guided Practice Challenges<a class="anchor" href="#guided-practice-challenges">#</a></h2>
@@ -1358,7 +1307,7 @@ import Alamofire
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="working-with-json">Working with JSON<a class="anchor" href="#working-with-json">#</a></h2>
+<h3 id="working-with-json">Working with JSON<a class="anchor" href="#working-with-json">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -1382,7 +1331,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-working-with-json">Walkthrough: Exploring Working with JSON<a class="anchor" href="#walkthrough-exploring-working-with-json">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="11-working-with-apis-and-json">11. Working with APIs and JSON<a class="anchor" href="#11-working-with-apis-and-json">#</a></h1>
+</blockquote><h3 id="working-with-apis-and-json">Working with APIs and JSON<a class="anchor" href="#working-with-apis-and-json">#</a></h3>
 <p>JSON stands for JavaScript Object Notation. It is a standard text-based format for representing structured data. It follows the JavaScript object syntax. It is the most popular standard of text data for web APIs nowadays. That means almost all the APIs you will work with or build will be structured in JSON. So it is paramount to learn how to parse JSON data and use them in iOS.</p>
 <h3 id="json-structure">JSON Structure<a class="anchor" href="#json-structure">#</a></h3>
 <p>Since JSON is a string that resembles JavaScript object syntax, we can put all basic data types inside a JSON string - strings, numbers, arrays, booleans, etc.</p>
@@ -1458,9 +1407,8 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>    ]
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>In this module, we will build a new app, App11, to demonstrate JSON data parsing.</p>
 <p>App11 will look the same as App10, but we will use a JSON-based API.</p>
-<!-- Merged from 11.1.-the-json-api-for-the-contact-app.md -->
-<h1 id="111-the-json-api-for-the-contact-app">11.1. The JSON API for the Contact App<a class="anchor" href="#111-the-json-api-for-the-contact-app">#</a></h1>
-<h2 id="the-api-details">The API details:<a class="anchor" href="#the-api-details">#</a></h2>
+<h3 id="the-json-api-for-the-contact-app">The JSON API for the Contact App<a class="anchor" href="#the-json-api-for-the-contact-app">#</a></h3>
+<h3 id="the-api-details">The API details:<a class="anchor" href="#the-api-details">#</a></h3>
 <p>The setup of the JSON API is exactly the same as the text API we used in App9. Just change the base URL. It&rsquo;ll work just fine.</p>
 <h3 id="the-base-url">The base URL:<a class="anchor" href="#the-base-url">#</a></h3>
 <p><a href="https://apis.sakibnm.work:8888/contacts/json/">https://apis.sakibnm.work:8888/contacts/json/</a></p>
@@ -1561,8 +1509,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>    {
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;error&#34;</span>: <span style="color:#e6db74">&#34;Error: Contact Alice Smith already exists!&#34;</span>
 </span></span><span style="display:flex;"><span>    }</span></span></code></pre></div><h4 id="please-test-the-api-using-postman">PLEASE test the API using Postman.<a class="anchor" href="#please-test-the-api-using-postman">#</a></h4>
-<!-- Merged from 11.2.-app11-getting-all-the-contact-names-getall-endpoint.md -->
-<h1 id="112-app11-getting-all-the-contact-names-getall-endpoint">11.2. App11: Getting All the Contact Names (getall endpoint)<a class="anchor" href="#112-app11-getting-all-the-contact-names-getall-endpoint">#</a></h1>
+<h3 id="app11-getting-all-the-contact-names-getall-endpoint">App11: Getting All the Contact Names (getall endpoint)<a class="anchor" href="#app11-getting-all-the-contact-names-getall-endpoint">#</a></h3>
 <h3 id="representing-json-in-swift-getall">Representing JSON in Swift (getall)<a class="anchor" href="#representing-json-in-swift-getall">#</a></h3>
 <p>From the API details (<a href="11.1.-the-json-api-for-the-contact-app.md" title="mention">11.1.-the-json-api-for-the-contact-app.md</a>), we know that <code>getall</code> API returns a JSON string like:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
@@ -1825,8 +1772,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <p>(Make sure you enable unencrypted HTTP) Let&rsquo;s run the app. It will show us the current contacts.</p>
 <p><img src="/gitbook-assets/Screenshot%202023-05-26%20at%205.26.46%20PM%20%281%29.png" alt="" /></p>
 <p>Great! We are done with <strong>getall.</strong></p>
-<!-- Merged from 11.3.-app11-getting-the-details-of-a-selected-contact-details-endpoint.md -->
-<h1 id="113-app11-getting-the-details-of-a-selected-contact-details-endpoint">11.3. App11: Getting the Details of a Selected Contact (details endpoint)<a class="anchor" href="#113-app11-getting-the-details-of-a-selected-contact-details-endpoint">#</a></h1>
+<h3 id="app11-getting-the-details-of-a-selected-contact-details-endpoint">App11: Getting the Details of a Selected Contact (details endpoint)<a class="anchor" href="#app11-getting-the-details-of-a-selected-contact-details-endpoint">#</a></h3>
 <p>The <strong>details</strong> endpoint sends us a response like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;email&#34;</span>: <span style="color:#e6db74">&#34;alice@email.comt&#34;</span>,
@@ -1933,8 +1879,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </ul>
 <p>Now, if we run the app, we will see:</p>
 <figure><img src="/gitbook-assets/11.three (1).gif" alt=""><figcaption></figcaption></figure>
-<!-- Merged from 11.4.-must-dos-while-decoding-json-adopting-codable.md -->
-<h1 id="114-must-dos-while-decoding-json-adopting-codable">11.4. &lsquo;Must Do&rsquo;s While Decoding JSON adopting Codable<a class="anchor" href="#114-must-dos-while-decoding-json-adopting-codable">#</a></h1>
+<h3 id="must-dos-while-decoding-json-adopting-codable">&lsquo;Must Do&rsquo;s While Decoding JSON adopting Codable<a class="anchor" href="#must-dos-while-decoding-json-adopting-codable">#</a></h3>
 <p>Let&rsquo;s look into the example JSON response for the <code>details</code> endpoint again:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;email&#34;</span>: <span style="color:#e6db74">&#34;alice@email.comt&#34;</span>,
@@ -1952,8 +1897,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li>You do not have to define variables for all the keys in JSON. You can selectively write variables to parse the needed data from a big JSON object.</li>
 </ul>
 <p><mark style="color:red;"><strong>So, the name and the data type of the variables in a Codable must match the name of the keys and the type of the values in JSON. Otherwise, JSON decoding will not work.</strong></mark></p>
-<!-- Merged from 11.5.-app11-add-a-new-contact.md -->
-<h1 id="115-app11-add-a-new-contact">11.5. App11: Add a new Contact<a class="anchor" href="#115-app11-add-a-new-contact">#</a></h1>
+<h3 id="app11-add-a-new-contact">App11: Add a new Contact<a class="anchor" href="#app11-add-a-new-contact">#</a></h3>
 <p>The code is unchanged here since we just upload the data and do not necessarily need to parse JSON responses (for now).</p>
 <p>So let&rsquo;s put the code from App10 to <code>addANewContact(contact: Contact)</code> and <code>onButtonAddTapped()</code> methods:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> add a new contact call: add endpoint...</span>
@@ -2028,8 +1972,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Now, let&rsquo;s run the app.</p>
 <figure><img src="/gitbook-assets/11.eight (1).gif" alt=""><figcaption></figcaption></figure>
-<!-- Merged from 11.6.-adding-accessory-button-to-table-view-edit-delete-a-contact.md -->
-<h1 id="116-adding-accessory-button-to-table-view-editdelete-a-contact">11.6. Adding Accessory Button to Table View (Edit/Delete a Contact)<a class="anchor" href="#116-adding-accessory-button-to-table-view-editdelete-a-contact">#</a></h1>
+<h3 id="adding-accessory-button-to-table-view-editdelete-a-contact">Adding Accessory Button to Table View (Edit/Delete a Contact)<a class="anchor" href="#adding-accessory-button-to-table-view-editdelete-a-contact">#</a></h3>
 <h3 id="adding-a-button-to-the-tableview-cell-as-an-accessory"><strong>Adding a Button to the TableView Cell as an Accessory</strong><a class="anchor" href="#adding-a-button-to-the-tableview-cell-as-an-accessory">#</a></h3>
 <p>UITableView allows us to add views as accessories. Adding an accessory view is the easiest way to enable user interactions with a cell in a table view. So, in our app, we want to do the following:</p>
 <figure><img src="/gitbook-assets/11.ten (1).gif" alt=""><figcaption></figcaption></figure>
@@ -2087,14 +2030,12 @@ Then go to the adopted method for <code>cellForRowAt</code>, where we initialize
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Now, let&rsquo;s run the app:</p>
 <figure><img src="/gitbook-assets/11.eleven (1).gif" alt=""><figcaption></figcaption></figure>
 <p>See? They are printing the appropriate logs as outputs. You can now do anything to edit or delete the contact.</p>
-<!-- Merged from 11.7.-reference-code.md -->
-<h1 id="117-reference-code">11.7. Reference Code<a class="anchor" href="#117-reference-code">#</a></h1>
+<h3 id="reference-code-1">Reference Code<a class="anchor" href="#reference-code-1">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/App11 (1).zip&rdquo; %}</p>
-<!-- Merged from useful-extra-11.8.-decluttering-codes-from-view-controller.md -->
-<h1 id="118-decluttering-codes-from-view-controller-recommended-read">11.8. Decluttering codes from View Controller (Recommended Read)<a class="anchor" href="#118-decluttering-codes-from-view-controller-recommended-read">#</a></h1>
+<h3 id="decluttering-codes-from-view-controller-recommended-read">Decluttering codes from View Controller (Recommended Read)<a class="anchor" href="#decluttering-codes-from-view-controller-recommended-read">#</a></h3>
 <p>If you noticed, we have 281 lines of code in ViewController.swift. It appears to be a jumble of code. And in many ways, it&rsquo;s hard to read when you&rsquo;ll return to it after a week.</p>
 <p>We can utilize protocols and extensions to break the code into multiple files, making it more modular.</p>
-<h2 id="separating-the-api-calls-from-the-controller">Separating the API calls from the Controller<a class="anchor" href="#separating-the-api-calls-from-the-controller">#</a></h2>
+<h3 id="separating-the-api-calls-from-the-controller">Separating the API calls from the Controller<a class="anchor" href="#separating-the-api-calls-from-the-controller">#</a></h3>
 <p>Let&rsquo;s first separate the code we used to call the Contacts API. The methods we have related to the Contacts API are:</p>
 <ul>
 <li>getAllContacts()</li>
@@ -2409,64 +2350,40 @@ Then go to the adopted method for <code>cellForRowAt</code>, where we initialize
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#table-of-contents">Table of Contents</a></li>
-    <li><a href="#http--networking">HTTP &amp; Networking</a></li>
+    <li><a href="#table-of-contents">Table of Contents</a>
+      <ul>
+        <li><a href="#http--networking">HTTP &amp; Networking</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives">Learning Objectives</a></li>
     <li><a href="#the-story-so-far">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-http--networking">Walkthrough: Exploring HTTP &amp; Networking</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-http--networking">Walkthrough: Exploring HTTP &amp; Networking</a>
       <ul>
+        <li><a href="#making-the-app-communicate-over-the-internet">Making the app communicate over the Internet</a></li>
+        <li><a href="#http-connections">HTTP connections</a></li>
+        <li><a href="#postman-a-useful-tool-to-test-web-services">Postman: a Useful Tool to Test Web Services</a></li>
         <li><a href="#installing-postman">Installing Postman</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#contacts-api-details">Contacts API details</a></li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#testing-our-simple-custom-api-with-postman">Testing our Simple Custom API with Postman</a></li>
+        <li><a href="#contacts-api-details">Contacts API details</a></li>
+        <li><a href="#app-that-uses-our-contact-api">App that Uses Our Contact API</a></li>
         <li></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#setting-up-the-view">Setting up the View</a>
-      <ul>
+        <li><a href="#setting-up-the-view-of-app10">Setting up the View of App10</a></li>
+        <li><a href="#setting-up-the-view">Setting up the View</a></li>
         <li><a href="#mainscreenviewswift"><strong>MainScreenView.swift</strong></a></li>
         <li><a href="#contactstableviewcellswift"><strong>ContactsTableViewCell.swift</strong></a></li>
         <li><a href="#viewcontrollerswift"><strong>ViewController.swift</strong></a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#fetching-data-with-alamofire-get">Fetching Data with AlamoFire: GET</a></li>
         <li><a href="#using-alamofire-for-text-responses">Using Alamofire for text responses</a></li>
         <li><a href="#the-getall-endpoint-with-alamofire">The &lsquo;getall&rsquo; endpoint with Alamofire</a></li>
         <li><a href="#enabling-unencrypted-http-in-our-app"><mark>Enabling unencrypted HTTP in our app</mark></a></li>
         <li><a href="#displaying-data-on-the-table-view">Displaying data on the table view</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#posting-data-with-alamofire-post">Posting Data with AlamoFire: POST</a></li>
         <li><a href="#fetching-the-user-inputs-and-creating-a-new-contact-object">Fetching the user inputs and creating a new Contact object</a></li>
         <li><a href="#making-the-api-call-for-the-endpoint-add">Making the API call for the endpoint &lsquo;add.&rsquo;</a></li>
+        <li><a href="#fetching-data-with-alamofire-details-endpoint">Fetching Data with AlamoFire: &lsquo;details&rsquo; endpoint</a></li>
+        <li><a href="#reference-code">Reference Code</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
     <li><a href="#guided-practice-challenges">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation">Challenge 1: Experimentation</a></li>
@@ -2474,58 +2391,40 @@ Then go to the adopted method for <code>cellForRowAt</code>, where we initialize
       </ul>
     </li>
     <li><a href="#references">References</a></li>
-    <li><a href="#getting-help">Getting Help</a></li>
-    <li><a href="#working-with-json">Working with JSON</a></li>
+    <li><a href="#getting-help">Getting Help</a>
+      <ul>
+        <li><a href="#working-with-json">Working with JSON</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-1">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-1">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-working-with-json">Walkthrough: Exploring Working with JSON</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-working-with-json">Walkthrough: Exploring Working with JSON</a>
       <ul>
+        <li><a href="#working-with-apis-and-json">Working with APIs and JSON</a></li>
         <li><a href="#json-structure">JSON Structure</a></li>
         <li><a href="#json-object">JSON Object</a></li>
         <li><a href="#json-array">JSON Array</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#the-api-details">The API details:</a>
-      <ul>
+        <li><a href="#the-json-api-for-the-contact-app">The JSON API for the Contact App</a></li>
+        <li><a href="#the-api-details">The API details:</a></li>
         <li><a href="#the-base-url">The base URL:</a></li>
         <li><a href="#getall"><strong>getall:</strong></a></li>
         <li><a href="#details"><strong>details:</strong></a></li>
         <li><a href="#delete"><strong>delete:</strong></a></li>
         <li><a href="#add"><strong>add:</strong></a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#app11-getting-all-the-contact-names-getall-endpoint">App11: Getting All the Contact Names (getall endpoint)</a></li>
         <li><a href="#representing-json-in-swift-getall">Representing JSON in Swift (getall)</a></li>
         <li><a href="#parsing-json">Parsing JSON</a></li>
         <li><a href="#creating-the-getall-request-using-alamofire">Creating the &lsquo;getall&rsquo; request using Alamofire</a></li>
         <li><a href="#adopting-codable-protocol">Adopting Codable protocol</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#app11-getting-the-details-of-a-selected-contact-details-endpoint">App11: Getting the Details of a Selected Contact (details endpoint)</a></li>
+        <li><a href="#must-dos-while-decoding-json-adopting-codable">&lsquo;Must Do&rsquo;s While Decoding JSON adopting Codable</a></li>
+        <li><a href="#app11-add-a-new-contact">App11: Add a new Contact</a></li>
+        <li><a href="#adding-accessory-button-to-table-view-editdelete-a-contact">Adding Accessory Button to Table View (Edit/Delete a Contact)</a></li>
         <li><a href="#adding-a-button-to-the-tableview-cell-as-an-accessory"><strong>Adding a Button to the TableView Cell as an Accessory</strong></a></li>
         <li><a href="#writing-methods-when-the-user-selects-an-option">Writing methods when the user selects an option</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#separating-the-api-calls-from-the-controller">Separating the API calls from the Controller</a>
-      <ul>
+        <li><a href="#reference-code-1">Reference Code</a></li>
+        <li><a href="#decluttering-codes-from-view-controller-recommended-read">Decluttering codes from View Controller (Recommended Read)</a></li>
+        <li><a href="#separating-the-api-calls-from-the-controller">Separating the API calls from the Controller</a></li>
         <li><a href="#defining-a-protocol-for-the-api-calls">Defining a Protocol for the API Calls</a></li>
         <li><a href="#adopting-the-protocol">Adopting the Protocol</a></li>
         <li><a href="#the-file-structure-of-the-project-now-looks-like-this">The file structure of the project now looks like this:</a></li>

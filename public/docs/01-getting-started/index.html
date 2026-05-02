@@ -38,7 +38,7 @@ Learning Objectives# By the end of this session, you will be able to:">
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.2d8fd5e4236bd86b25ebef9673310ebe25f1df0b4aedc504172ac049ab171f38.js" integrity="sha256-LY/V5CNr2Gsl6&#43;&#43;WczEOviXx3wtK7cUEFyrASasXHzg=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.79d8fbe5c352e1e2da559b8378ff5b4507df69656d01b71c19c90d10531011a5.js" integrity="sha256-edj75cNS4eLaVZuDeP9bRQffaWVtAbccGckNEFMQEaU=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="//localhost:1313/docs/01-getting-started/index.xml" title="iOS UIKit Course" />
@@ -269,27 +269,21 @@ Learning Objectives# By the end of this session, you will be able to:">
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#table-of-contents">Table of Contents</a></li>
-    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#table-of-contents">Table of Contents</a>
+      <ul>
+        <li><a href="#getting-started">Getting Started</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives">Learning Objectives</a></li>
     <li><a href="#the-story-so-far">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-getting-started">Walkthrough: Exploring Getting Started</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-getting-started">Walkthrough: Exploring Getting Started</a>
       <ul>
+        <li><a href="#preparing-your-development-environment">Preparing your Development Environment</a></li>
         <li><a href="#you-cannot-build-native-ios-apps-in-windows-or-linux-oss"><mark>You cannot build native iOS apps in Windows or Linux OSs.</mark></a></li>
         <li><a href="#i-recommend-using-a-macbook-or-an-apple-computer-for-this-course-you-do-not-need-an-iphoneipad-for-this-course-if-you-do-not-have-a-macbook-you-can-try-macincloud-or-even-try-borrowing-macbooks-from-the-library-i-am-not-sure-how-long-you-can-borrow-a-computer-from-there-you-can-even-talk-to-khoury-systems-to-check-if-they-lend-macbooks-for-a-semester"><mark>I recommend using a Macbook or an Apple Computer for this course. You do not need an iPhone/iPad for this course. If you do not have a Macbook, you can try MacInCloud, or even try borrowing Macbooks from the library (I am not sure how long you can borrow a computer from there). You can even talk to Khoury Systems to check if they lend Macbooks for a semester.</mark></a></li>
         <li><a href="#macincloud-could-be-unstable-for-you-if-you-do-not-have-a-reliable-internet-connection-so-try-it-they-give-you-a-day-for-099-as-soon-as-you-register-for-the-course-if-it-works-for-you-continue-this-course-or-else-talk-to-me"><mark>MacInCloud could be unstable for you if you do not have a reliable Internet connection. So try it (they give you a day for $0.99) as soon as you register for the course. If it works for you, continue this course, or else talk to me</mark><mark>.</mark></a></li>
-      </ul>
-    </li>
-    <li><a href="#mac-in-cloud">Mac In Cloud</a></li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#mac-in-cloud">Mac In Cloud</a></li>
+        <li><a href="#setting-up-xcode">Setting up Xcode</a></li>
         <li><a href="#creating-a-new-project">Creating a new project</a></li>
       </ul>
     </li>
@@ -314,7 +308,7 @@ Learning Objectives# By the end of this session, you will be able to:">
       
       
   <article class="markdown book-article"><h2 id="table-of-contents">Table of Contents<a class="anchor" href="#table-of-contents">#</a></h2>
-<h2 id="getting-started">Getting Started<a class="anchor" href="#getting-started">#</a></h2>
+<h3 id="getting-started">Getting Started<a class="anchor" href="#getting-started">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -338,18 +332,16 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-getting-started">Walkthrough: Exploring Getting Started<a class="anchor" href="#walkthrough-exploring-getting-started">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><!-- Merged from preparing-your-development-environment.md -->
-<h1 id="preparing-your-development-environment">Preparing your Development Environment<a class="anchor" href="#preparing-your-development-environment">#</a></h1>
+</blockquote><h3 id="preparing-your-development-environment">Preparing your Development Environment<a class="anchor" href="#preparing-your-development-environment">#</a></h3>
 <h3 id="you-cannot-build-native-ios-apps-in-windows-or-linux-oss"><mark style="color:red;">You cannot build native iOS apps in Windows or Linux OSs.</mark><a class="anchor" href="#you-cannot-build-native-ios-apps-in-windows-or-linux-oss">#</a></h3>
 <h3 id="i-recommend-using-a-macbook-or-an-apple-computer-for-this-course-you-do-not-need-an-iphoneipad-for-this-course-if-you-do-not-have-a-macbook-you-can-try-macincloud-or-even-try-borrowing-macbooks-from-the-library-i-am-not-sure-how-long-you-can-borrow-a-computer-from-there-you-can-even-talk-to-khoury-systems-to-check-if-they-lend-macbooks-for-a-semester"><mark style="color:red;">I recommend using a Macbook or an Apple Computer for this course. You do not need an iPhone/iPad for this course. If you do not have a Macbook, you can try MacInCloud, or even try borrowing Macbooks from the library (I am not sure how long you can borrow a computer from there). You can even talk to Khoury Systems to check if they lend Macbooks for a semester.</mark><a class="anchor" href="#i-recommend-using-a-macbook-or-an-apple-computer-for-this-course-you-do-not-need-an-iphoneipad-for-this-course-if-you-do-not-have-a-macbook-you-can-try-macincloud-or-even-try-borrowing-macbooks-from-the-library-i-am-not-sure-how-long-you-can-borrow-a-computer-from-there-you-can-even-talk-to-khoury-systems-to-check-if-they-lend-macbooks-for-a-semester">#</a></h3>
 <h3 id="macincloud-could-be-unstable-for-you-if-you-do-not-have-a-reliable-internet-connection-so-try-it-they-give-you-a-day-for-099-as-soon-as-you-register-for-the-course-if-it-works-for-you-continue-this-course-or-else-talk-to-me"><mark style="color:red;">MacInCloud could be unstable for you if you do not have a reliable Internet connection. So try it (they give you a day for $0.99) as soon as you register for the course. If it works for you, continue this course, or else talk to me</mark><mark style="color:blue;">.</mark><a class="anchor" href="#macincloud-could-be-unstable-for-you-if-you-do-not-have-a-reliable-internet-connection-so-try-it-they-give-you-a-day-for-099-as-soon-as-you-register-for-the-course-if-it-works-for-you-continue-this-course-or-else-talk-to-me">#</a></h3>
 <p><strong>If you are a Mac computer (Macbooks, iMacs, or Mac Pros) user, jump directly to</strong><a href="setting-up-xcode.md" title="mention">setting-up-xcode.md</a>.</p>
 <p><strong>If you are not a Mac user, you can still take the course; however, you must pay a monthly fee (around $50) to rent a cloud Mac VM.</strong> <strong>Please note Northeastern does not provide this VM.</strong></p>
-<h2 id="mac-in-cloud">Mac In Cloud<a class="anchor" href="#mac-in-cloud">#</a></h2>
+<h3 id="mac-in-cloud">Mac In Cloud<a class="anchor" href="#mac-in-cloud">#</a></h3>
 <p>There are a few options to rent a cloud MacOS VM, like, Mac Stadium, AWS, and Mac in Cloud. I personally prefer <strong>Mac In Cloud</strong> (<a href="https://www.macincloud.com">https://macincloud.com</a>). Please watch the following video to set up a Mac In Cloud instance and start using it on your Windows or Linux computer.</p>
 <p>{% embed url=&ldquo;<a href="https://youtu.be/mOuH4u0rlyM%22">https://youtu.be/mOuH4u0rlyM"</a> %}</p>
-<!-- Merged from setting-up-xcode.md -->
-<h1 id="setting-up-xcode">Setting up Xcode<a class="anchor" href="#setting-up-xcode">#</a></h1>
+<h3 id="setting-up-xcode">Setting up Xcode<a class="anchor" href="#setting-up-xcode">#</a></h3>
 <p>Setting up Xcode is also very simple. Let&rsquo;s open Safari (or any browser you use) and type in <a href="https://developer.apple.com/xcode/">https://developer.apple.com/xcode/</a>.</p>
 <figure><img src="/gitbook-assets/Screenshot 2025-09-01 at 11.19.55 AM.png" alt=""><figcaption></figcaption></figure>
 <p>Click on Download (on the top right) -&gt; Mac App Store</p>
@@ -468,27 +460,21 @@ Open your current Xcode project or start a new Playground to follow along with t
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#table-of-contents">Table of Contents</a></li>
-    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#table-of-contents">Table of Contents</a>
+      <ul>
+        <li><a href="#getting-started">Getting Started</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives">Learning Objectives</a></li>
     <li><a href="#the-story-so-far">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-getting-started">Walkthrough: Exploring Getting Started</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-getting-started">Walkthrough: Exploring Getting Started</a>
       <ul>
+        <li><a href="#preparing-your-development-environment">Preparing your Development Environment</a></li>
         <li><a href="#you-cannot-build-native-ios-apps-in-windows-or-linux-oss"><mark>You cannot build native iOS apps in Windows or Linux OSs.</mark></a></li>
         <li><a href="#i-recommend-using-a-macbook-or-an-apple-computer-for-this-course-you-do-not-need-an-iphoneipad-for-this-course-if-you-do-not-have-a-macbook-you-can-try-macincloud-or-even-try-borrowing-macbooks-from-the-library-i-am-not-sure-how-long-you-can-borrow-a-computer-from-there-you-can-even-talk-to-khoury-systems-to-check-if-they-lend-macbooks-for-a-semester"><mark>I recommend using a Macbook or an Apple Computer for this course. You do not need an iPhone/iPad for this course. If you do not have a Macbook, you can try MacInCloud, or even try borrowing Macbooks from the library (I am not sure how long you can borrow a computer from there). You can even talk to Khoury Systems to check if they lend Macbooks for a semester.</mark></a></li>
         <li><a href="#macincloud-could-be-unstable-for-you-if-you-do-not-have-a-reliable-internet-connection-so-try-it-they-give-you-a-day-for-099-as-soon-as-you-register-for-the-course-if-it-works-for-you-continue-this-course-or-else-talk-to-me"><mark>MacInCloud could be unstable for you if you do not have a reliable Internet connection. So try it (they give you a day for $0.99) as soon as you register for the course. If it works for you, continue this course, or else talk to me</mark><mark>.</mark></a></li>
-      </ul>
-    </li>
-    <li><a href="#mac-in-cloud">Mac In Cloud</a></li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#mac-in-cloud">Mac In Cloud</a></li>
+        <li><a href="#setting-up-xcode">Setting up Xcode</a></li>
         <li><a href="#creating-a-new-project">Creating a new project</a></li>
       </ul>
     </li>

@@ -25,7 +25,7 @@ https://github.com/alex-shpak/hugo-book
   <meta itemprop="name" content="Module 3: Introduction to UIKit">
   <meta itemprop="description" content="Table of Contents# Creating Our First App# Table of Contents# Designing Without Storyboards# Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
 {&lt; hint info &gt;} 🎯 Topic Mission: In this module, we will explore Designing Without Storyboards and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {&lt; /hint &gt;}">
-  <meta itemprop="wordCount" content="13275">
+  <meta itemprop="wordCount" content="13247">
 
 <title>Module 3: Introduction to UIKit | iOS UIKit Course</title>
 <link rel="icon" href="/favicon.png" >
@@ -35,7 +35,7 @@ https://github.com/alex-shpak/hugo-book
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.2d8fd5e4236bd86b25ebef9673310ebe25f1df0b4aedc504172ac049ab171f38.js" integrity="sha256-LY/V5CNr2Gsl6&#43;&#43;WczEOviXx3wtK7cUEFyrASasXHzg=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.79d8fbe5c352e1e2da559b8378ff5b4507df69656d01b71c19c90d10531011a5.js" integrity="sha256-edj75cNS4eLaVZuDeP9bRQffaWVtAbccGckNEFMQEaU=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="//localhost:1313/docs/03-introduction-to-uikit/index.xml" title="iOS UIKit Course" />
@@ -266,35 +266,31 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#table-of-contents">Table of Contents</a></li>
-    <li><a href="#creating-our-first-app">Creating Our First App</a></li>
-    <li><a href="#table-of-contents-1">Table of Contents</a></li>
-    <li><a href="#designing-without-storyboards">Designing Without Storyboards</a></li>
+    <li><a href="#table-of-contents">Table of Contents</a>
+      <ul>
+        <li><a href="#creating-our-first-app">Creating Our First App</a></li>
+      </ul>
+    </li>
+    <li><a href="#table-of-contents-1">Table of Contents</a>
+      <ul>
+        <li><a href="#designing-without-storyboards">Designing Without Storyboards</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives">Learning Objectives</a></li>
     <li><a href="#the-story-so-far">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-designing-without-storyboards">Walkthrough: Exploring Designing Without Storyboards</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-designing-without-storyboards">Walkthrough: Exploring Designing Without Storyboards</a>
       <ul>
+        <li><a href="#designing-without-storyboards-1">Designing without Storyboards</a></li>
         <li><a href="#why-dont-we-use-storyboards">Why don&rsquo;t we use storyboards?</a></li>
         <li><a href="#understanding-the-constraint-notations">Understanding the constraint notations</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#understanding-the-attributes">Understanding the attributes</a>
-      <ul>
+        <li><a href="#converting-the-storyboard-to-code">Converting the storyboard to code</a></li>
+        <li><a href="#understanding-the-attributes">Understanding the attributes</a></li>
         <li><a href="#label-attributes">Label attributes</a></li>
+        <li><a href="#setting-the-constraints">Setting the constraints</a></li>
+        <li><a href="#adding-button-action">Adding button action</a></li>
+        <li><a href="#reference-code">Reference Code</a></li>
       </ul>
     </li>
-    <li><a href="#setting-the-constraints">Setting the constraints</a></li>
-    <li><a href="#adding-button-action">Adding button action</a></li>
-  </ul>
-
-  <ul>
     <li><a href="#guided-practice-challenges">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation">Challenge 1: Experimentation</a></li>
@@ -302,25 +298,26 @@ https://github.com/alex-shpak/hugo-book
       </ul>
     </li>
     <li><a href="#references">References</a></li>
-    <li><a href="#getting-help">Getting Help</a></li>
-    <li><a href="#multi-screen-apps">Multi-Screen Apps</a></li>
+    <li><a href="#getting-help">Getting Help</a>
+      <ul>
+        <li><a href="#multi-screen-apps">Multi-Screen Apps</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-1">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-1">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-multi-screen-apps">Walkthrough: Exploring Multi-Screen Apps</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#understanding-the-data-structure-behind-navigationcontroller">Understanding the data Structure behind NavigationController</a></li>
-    <li><a href="#embedding-the-navigation-controller">Embedding the Navigation Controller</a>
+    <li><a href="#walkthrough-exploring-multi-screen-apps">Walkthrough: Exploring Multi-Screen Apps</a>
       <ul>
+        <li><a href="#our-first-multi-screen-app">Our first Multi-screen App</a></li>
+        <li><a href="#navigation-controller">Navigation Controller</a></li>
+        <li><a href="#understanding-the-data-structure-behind-navigationcontroller">Understanding the data Structure behind NavigationController</a></li>
+        <li><a href="#embedding-the-navigation-controller">Embedding the Navigation Controller</a></li>
         <li><a href="#adding-ui-elements-on-the-viewcontroller">Adding UI elements on the ViewController</a></li>
         <li><a href="#creating-showviewcontroller-and-adding-ui-elements">Creating ShowViewController and adding UI elements</a></li>
         <li><a href="#pushing-showviewcontroller-on-the-button-tap">Pushing ShowViewController on the Button tap</a></li>
+        <li><a href="#send-data-from-screen-1-viewcontroller-to-screen2-showviewcontroller">Send data from Screen 1 (ViewController) to Screen2 (ShowViewController)</a></li>
+        <li><a href="#reference-code-1">Reference Code</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
     <li><a href="#table-of-contents-2">Table of Contents</a></li>
     <li><a href="#guided-practice-challenges-1">Guided Practice Challenges</a>
       <ul>
@@ -329,37 +326,32 @@ https://github.com/alex-shpak/hugo-book
       </ul>
     </li>
     <li><a href="#references-1">References</a></li>
-    <li><a href="#getting-help-1">Getting Help</a></li>
-    <li><a href="#mvc-architecture">MVC Architecture</a></li>
-    <li><a href="#learning-objectives-2">Learning Objectives</a></li>
-    <li><a href="#the-story-so-far-2">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-mvc-architecture">Walkthrough: Exploring MVC Architecture</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#setting-up-the-view">Setting up the View</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#adding-the-pickerview-logic">Adding the PickerView logic</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#displayviewswift">DisplayView.swift</a></li>
-    <li><a href="#adding-displayviewcontroller">Adding DisplayViewController</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#adding-a-struct">Adding a struct</a></li>
-    <li><a href="#handling-the-button-tap-action">Handling the Button Tap action</a>
+    <li><a href="#getting-help-1">Getting Help</a>
       <ul>
-        <li><a href="#sending-data"><strong>Sending Data</strong></a></li>
-        <li><a href="#receiving-data-at-displayviewcontroller"><strong>Receiving data at DisplayViewController</strong></a></li>
+        <li><a href="#mvc-architecture">MVC Architecture</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
+    <li><a href="#learning-objectives-2">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far-2">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-mvc-architecture">Walkthrough: Exploring MVC Architecture</a>
+      <ul>
+        <li><a href="#separating-the-view-from-the-controller-code">Separating the View from the Controller code</a></li>
+        <li><a href="#creating-a-separate-view-code-file">Creating a separate View code file</a></li>
+        <li><a href="#setting-up-the-view">Setting up the View</a></li>
+        <li><a href="#patching-the-view-class-with-the-viewcontroller">Patching the View class with the ViewController</a></li>
+        <li><a href="#adding-the-pickerview-logic">Adding the PickerView logic</a></li>
+        <li><a href="#creating-the-display-screen">Creating the Display Screen</a></li>
+        <li><a href="#displayviewswift">DisplayView.swift</a></li>
+        <li><a href="#adding-displayviewcontroller">Adding DisplayViewController</a></li>
+        <li><a href="#navigation-controller-and-sending-data-from-screen-1-to-screen-2">Navigation Controller and sending data from screen 1 to screen 2</a></li>
+        <li><a href="#adding-a-struct">Adding a struct</a></li>
+        <li><a href="#handling-the-button-tap-action">Handling the Button Tap action</a></li>
+        <li><a href="#sending-data"><strong>Sending Data</strong></a></li>
+        <li><a href="#receiving-data-at-displayviewcontroller"><strong>Receiving data at DisplayViewController</strong></a></li>
+        <li><a href="#wrapping-up-structuring-the-files">Wrapping up: structuring the files</a></li>
+        <li><a href="#reference-code-2">Reference Code</a></li>
+      </ul>
+    </li>
     <li><a href="#guided-practice-challenges-2">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-2">Challenge 1: Experimentation</a></li>
@@ -367,35 +359,25 @@ https://github.com/alex-shpak/hugo-book
       </ul>
     </li>
     <li><a href="#references-2">References</a></li>
-    <li><a href="#getting-help-2">Getting Help</a></li>
-    <li><a href="#33-send-data-back-from-screen-2-to-screen-1">3.3. Send data back from Screen 2 to Screen 1</a></li>
-    <li><a href="#learning-objectives-3">Learning Objectives</a></li>
-    <li><a href="#the-story-so-far-3">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-33-send-data-back-from-screen-2-to-screen-1">Walkthrough: Exploring 3.3. Send data back from Screen 2 to Screen 1</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#getting-help-2">Getting Help</a>
       <ul>
-        <li><a href="#updating-the-screens-with-new-ui-elements">Updating the screens with new UI elements.</a></li>
+        <li><a href="#send-data-back-from-screen-2-to-screen-1">Send data back from Screen 2 to Screen 1</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#learning-objectives-3">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far-3">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-33-send-data-back-from-screen-2-to-screen-1">Walkthrough: Exploring 3.3. Send data back from Screen 2 to Screen 1</a>
       <ul>
+        <li><a href="#send-data-back-from-screen-2-to-screen-1-1">Send data back from Screen 2 to Screen 1</a></li>
+        <li><a href="#updating-the-screens-with-new-ui-elements">Updating the screens with new UI elements.</a></li>
+        <li><a href="#send-data-back-from-screen-2-to-screen-1-uipickerview">Send data back from Screen 2 to Screen 1: UIPickerView</a></li>
+        <li><a href="#send-data-back-from-screen-2-to-screen-1-delegating-to-viewcontroller">Send data back from Screen 2 to Screen 1: delegating to ViewController</a></li>
         <li><a href="#declaring-the-delegate-variable-in-showviewcontrollerswift">Declaring the delegate variable in ShowViewController.swift</a></li>
         <li><a href="#initializing-delegate-to-the-instance-of-viewcontroller-self">Initializing delegate to the instance of ViewController (self)</a></li>
         <li><a href="#doing-delegated-tasks-in-viewcontroller">Doing delegated tasks in ViewController</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#importing-images-into-the-project">Importing images into the project</a></li>
-    <li><a href="#setting-the-image-into-the-imageview-through-delegate">Setting the image into the ImageView through delegate</a>
-      <ul>
+        <li><a href="#send-data-back-from-screen-2-to-screen-1-uiimageview">Send data back from Screen 2 to Screen 1: UIImageView</a></li>
+        <li><a href="#importing-images-into-the-project">Importing images into the project</a></li>
+        <li><a href="#setting-the-image-into-the-imageview-through-delegate">Setting the image into the ImageView through delegate</a></li>
         <li><a href="#a-few-notes">A few notes:</a></li>
       </ul>
     </li>
@@ -406,52 +388,29 @@ https://github.com/alex-shpak/hugo-book
       </ul>
     </li>
     <li><a href="#references-3">References</a></li>
-    <li><a href="#getting-help-3">Getting Help</a></li>
-    <li><a href="#1-creating-our-first-app">1.-creating-our-first-app</a></li>
+    <li><a href="#getting-help-3">Getting Help</a>
+      <ul>
+        <li><a href="#1-creating-our-first-app">1.-creating-our-first-app</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-4">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-4">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-this-topic">Walkthrough: Exploring this topic</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-this-topic">Walkthrough: Exploring this topic</a>
       <ul>
+        <li><a href="#creating-our-first-app-1">Creating our first app</a></li>
+        <li><a href="#project-structure-overview">Project structure overview</a></li>
         <li><a href="#the-left-pane">The left pane</a></li>
         <li><a href="#the-middle-pane">The middle pane</a></li>
         <li><a href="#the-right-pane">The right pane</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#adding-a-new-button">Adding a new button</a></li>
-    <li><a href="#viewcontroller-and-alertcontroller">ViewController and AlertController</a>
-      <ul>
+        <li><a href="#uilabel-our-first-ui-element">UILabel, our first UI element</a></li>
+        <li><a href="#uitextfield-and-constraints">UITextField, and constraints</a></li>
+        <li><a href="#uibutton-and-uialertcontroller">UIButton, and UIAlertController</a></li>
+        <li><a href="#adding-a-new-button">Adding a new button</a></li>
+        <li><a href="#viewcontroller-and-alertcontroller">ViewController and AlertController</a></li>
         <li><a href="#adding-button-action-1">Adding button action</a></li>
         <li><a href="#displaying-an-alert">Displaying an Alert</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#wrapping-up-appicon">Wrapping up: AppIcon</a></li>
+        <li><a href="#reference-code-and-video">Reference Code and Video</a></li>
         <li><a href="#ta-arpan-created-the-video-on-this-module-for-us">TA Arpan created the video on this module for us:</a></li>
       </ul>
     </li>
@@ -476,13 +435,13 @@ https://github.com/alex-shpak/hugo-book
       
       
   <article class="markdown book-article"><h2 id="table-of-contents">Table of Contents<a class="anchor" href="#table-of-contents">#</a></h2>
-<h2 id="creating-our-first-app">Creating Our First App<a class="anchor" href="#creating-our-first-app">#</a></h2>
+<h3 id="creating-our-first-app">Creating Our First App<a class="anchor" href="#creating-our-first-app">#</a></h3>
 <h2 id="table-of-contents-1">Table of Contents<a class="anchor" href="#table-of-contents-1">#</a></h2>
 <dl>
 
 </dl>
 
-<h2 id="designing-without-storyboards">Designing Without Storyboards<a class="anchor" href="#designing-without-storyboards">#</a></h2>
+<h3 id="designing-without-storyboards">Designing Without Storyboards<a class="anchor" href="#designing-without-storyboards">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -506,7 +465,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-designing-without-storyboards">Walkthrough: Exploring Designing Without Storyboards<a class="anchor" href="#walkthrough-exploring-designing-without-storyboards">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="2-designing-without-storyboards">2. Designing without Storyboards<a class="anchor" href="#2-designing-without-storyboards">#</a></h1>
+</blockquote><h3 id="designing-without-storyboards-1">Designing without Storyboards<a class="anchor" href="#designing-without-storyboards-1">#</a></h3>
 <p>In our first app, we dragged and dropped the UI elements on Storyboard and set up the constraints using the Interface Builder&rsquo;s tools. Now, I said we would ditch this approach and start designing the UI with codes.</p>
 <h3 id="why-dont-we-use-storyboards">Why don&rsquo;t we use storyboards?<a class="anchor" href="#why-dont-we-use-storyboards">#</a></h3>
 <p>There are several reasons for it, as this blog post discusses: <a href="https://kissdigital.com/blog/why-we-stopped-using-storyboards">https://kissdigital.com/blog/why-we-stopped-using-storyboards</a>. However, long story short, Storyboards automatically create the XML tags for the UI elements. Since they are machine generated, the resource IDs of the UI elements change very frequently. So, if you run your friend&rsquo;s code on your computer, the IDs will change. Think about you are collaborating with a friend using GitHub. It will probably be fine if you do not work concurrently in different branches. However, it will be a massive pain if you work on the same project concurrently and want to merge the updates. Using codes to generate the UIs programmatically doesn&rsquo;t have this issue.</p>
@@ -541,15 +500,14 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li>Bottom constraint - how far the object is from the reference point below it.</li>
 </ul>
 <p>Please note you do not need to add all four constraints to anchor an object on the screen. For example, the UI elements of &lsquo;App1&rsquo; do not have all four anchors. They all have top, leading, and trailing anchors. <em>Centering an element takes care of two constraints: leading and trailing together.</em></p>
-<!-- Merged from 2.1.-converting-the-storyboard-to-code.md -->
-<h1 id="21-converting-the-storyboard-to-code">2.1. Converting the storyboard to code<a class="anchor" href="#21-converting-the-storyboard-to-code">#</a></h1>
+<h3 id="converting-the-storyboard-to-code">Converting the storyboard to code<a class="anchor" href="#converting-the-storyboard-to-code">#</a></h3>
 <p>So, let&rsquo;s convert the Storyboard to Swift code!</p>
 <p>The following image is how the grid on the device screen is defined.</p>
 <figure><img src="/gitbook-assets/grid (1) (1).png" alt=""><figcaption><p>Grid of a screen</p></figcaption></figure>
 <figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 10.50.48 PM (2).png" alt="" width="375"><figcaption><p>App1 design</p></figcaption></figure>
 <p>In the above image, we can see how the UI elements are placed on the device&rsquo;s screen in our App1.</p>
 <p>We will add the code directly to ViewController.</p>
-<h2 id="understanding-the-attributes">Understanding the attributes<a class="anchor" href="#understanding-the-attributes">#</a></h2>
+<h3 id="understanding-the-attributes">Understanding the attributes<a class="anchor" href="#understanding-the-attributes">#</a></h3>
 <h3 id="label-attributes">Label attributes<a class="anchor" href="#label-attributes">#</a></h3>
 <p>If you remember, In App1, we dragged and dropped a Label from the Objects Library and changed a few things. Let&rsquo;s go back to the Storyboard and click on the &ldquo;Hello World!&rdquo; label.</p>
 <figure><img src="/gitbook-assets/Screenshot 2023-05-10 at 10.09.48 AM.png" alt=""><figcaption></figcaption></figure>
@@ -618,7 +576,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li><code>labelHello.translatesAutoresizingMaskIntoConstraints</code> is set to <code>false</code> which is a default and fail-safe attribute for all the UI elements. The storyboard sets it automatically. If you write codes to edit the attributes, you have to set it to <code>false</code> manually for every UI element. This attribute says to the iOS system that you are dynamically using your own constraints to display the contents on the screen. Otherwise, the system will try to pack all the UI elements together to display them on the screen without your choices.</li>
 <li><code>view.addSubview(labelHello)</code> is where you add the logical view of <code>labelHello</code> you created as a subview of the screen. Here <code>view</code> is the logical view of the screen. Since <code>labelHello</code> is a child view of <code>view</code>, we write this line of code.</li>
 </ul>
-<h2 id="setting-the-constraints">Setting the constraints<a class="anchor" href="#setting-the-constraints">#</a></h2>
+<h3 id="setting-the-constraints">Setting the constraints<a class="anchor" href="#setting-the-constraints">#</a></h3>
 <p>Now that we have created a logical view of <code>labelHello</code>, we have to define the constraints. We can use <code>NSLayoutConstraint</code> system class to set the constraints. <code>NSLayoutConstraint.activate()</code> takes in an array of constraints and activate them on the current view. We know that <code>labelHello</code> has two constraints:</p>
 <ul>
 <li>Centered to the x-axis (horizontal axis).</li>
@@ -762,7 +720,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>So, we call the methods to define the attributes of UI elements first, then activate the constraints.</p>
 <p><strong>Hint:</strong> <em>You can still use the Storyboard to check what attributes to set up. When you are designing by coding for the first time, you can go to the Storyboard, place a UI element from the Objects Library on the Storyboard, and design it as you like. Then, use the attributes you edited to setup the design programmatically in ViewController. Then, delete the object from the storyboard. The Storyboard potentially becomes your draft design pad.</em></p>
-<h2 id="adding-button-action">Adding button action<a class="anchor" href="#adding-button-action">#</a></h2>
+<h3 id="adding-button-action">Adding button action<a class="anchor" href="#adding-button-action">#</a></h3>
 <p>Remember, we added an event listener for the button tap using <code>buttonClickMe.addtarget()</code>? Where do you think we should add that target?</p>
 <p>We can do that in the <code>viewDidLoad()</code> method since that is the logical Controller of the app:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">viewDidLoad</span>() {
@@ -904,8 +862,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>If you run the app, you can see that we replicated the whole App1 by just writing codes. You should start practicing this early since almost everyone in the industry got rid of Storyboards.</p>
-<!-- Merged from 2.2.-reference-code.md -->
-<h1 id="22-reference-code">2.2. Reference Code<a class="anchor" href="#22-reference-code">#</a></h1>
+<h3 id="reference-code">Reference Code<a class="anchor" href="#reference-code">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/App1_NoStory.zip&quot; %}</p>
 <hr>
 <h2 id="guided-practice-challenges">Guided Practice Challenges<a class="anchor" href="#guided-practice-challenges">#</a></h2>
@@ -930,7 +887,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="multi-screen-apps">Multi-Screen Apps<a class="anchor" href="#multi-screen-apps">#</a></h2>
+<h3 id="multi-screen-apps">Multi-Screen Apps<a class="anchor" href="#multi-screen-apps">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -954,23 +911,22 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-multi-screen-apps">Walkthrough: Exploring Multi-Screen Apps<a class="anchor" href="#walkthrough-exploring-multi-screen-apps">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="3-our-first-multi-screen-app">3. Our first Multi-screen App<a class="anchor" href="#3-our-first-multi-screen-app">#</a></h1>
+</blockquote><h3 id="our-first-multi-screen-app">Our first Multi-screen App<a class="anchor" href="#our-first-multi-screen-app">#</a></h3>
 <p>At this point, we will make a multi-screen application. After the end of lesson 3, we will understand the basics of Navigation Controller, UIImageViews, and Image Assets.</p>
 <p>So let&rsquo;s create a new App named &lsquo;App3.&rsquo;</p>
 <p>I will be designing the interface without the Storyboard here.</p>
-<!-- Merged from 3.1.-navigation-controller.md -->
-<h1 id="31-navigation-controller">3.1. Navigation Controller<a class="anchor" href="#31-navigation-controller">#</a></h1>
+<h3 id="navigation-controller">Navigation Controller<a class="anchor" href="#navigation-controller">#</a></h3>
 <p>If you are an iPhone or iPad user, you must have used apps with multiple screens, where you go from one screen to another and return to the previous screen with a back button on the top left corner.</p>
 <p>For example, the Settings app&rsquo;s navigation looks like this:</p>
 <figure><img src="/gitbook-assets/one_ (1).gif" alt=""><figcaption></figcaption></figure>
 <p>This is called the Navigation of the app, where you define how the screen transitions are managed in an app.</p>
-<h2 id="understanding-the-data-structure-behind-navigationcontroller">Understanding the data Structure behind NavigationController<a class="anchor" href="#understanding-the-data-structure-behind-navigationcontroller">#</a></h2>
+<h3 id="understanding-the-data-structure-behind-navigationcontroller">Understanding the data Structure behind NavigationController<a class="anchor" href="#understanding-the-data-structure-behind-navigationcontroller">#</a></h3>
 <p>Navigation Controller is a Stack data structure. The user sees the screen from the top of the Stack. If we want to navigate from one screen to another screen, the user can call the <code>push()</code> method of the Navigation Controller to push Screen 2 on top of Screen 1. Since the user sees the Stack from above the Stack, the user will see Screen 2 now. Whenever the user is done dealing with screen 2, and they want to get back to screen 1, they have to basically use the Navigation Controller to <code>pop()</code> Screen 2 from the Stack. Then Screen 1 will be at the top of the Stack again</p>
 <p>{% embed url=&ldquo;<a href="https://www.youtube.com/watch?v=JozvVb4QyvE%22">https://www.youtube.com/watch?v=JozvVb4QyvE"</a> %}
 Navigation Controller Stack
 {% endembed %}</p>
 <p>In our case, the ViewController is Screen 1, and ShowViewController is Screen 2. We need to push ShowViewController on top of ViewController.</p>
-<h2 id="embedding-the-navigation-controller">Embedding the Navigation Controller<a class="anchor" href="#embedding-the-navigation-controller">#</a></h2>
+<h3 id="embedding-the-navigation-controller">Embedding the Navigation Controller<a class="anchor" href="#embedding-the-navigation-controller">#</a></h3>
 <p>So let&rsquo;s create our new project, &lsquo;App3.&rsquo; <em><mark style="color:purple;"><strong>We will not entirely discard our Storyboard here. We will use it to attach the NavigationController to our app.</strong></mark></em> So, open the Main storyboard in your project, Select the ViewController (the preview screen), click on the Embed In button at the bottom right corner of the middle pane, and select &lsquo;Navigation Controller.&rsquo;</p>
 <figure><img src="/gitbook-assets/two_ (1).gif" alt=""><figcaption></figcaption></figure>
 <p>Once you embed the ViewController into the NavigationController, our tasks with Storyboard are done.</p>
@@ -1133,8 +1089,7 @@ Navigation Controller Stack
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Now let&rsquo;s run the app:</p>
 <figure><img src="/gitbook-assets/seven (1) (1).gif" alt=""><figcaption></figcaption></figure>
 <p>We can see that there is a Back button on the left top of the ShowViewController screen. When we tap on Back, the navigation controller automatically calls the <code>pop()</code> method, and pops ShowViewController.</p>
-<!-- Merged from 3.2.-send-data-from-screen-1-viewcontroller-to-screen2-showviewcontroller.md -->
-<h1 id="32-send-data-from-screen-1-viewcontroller-to-screen2-showviewcontroller">3.2. Send data from Screen 1 (ViewController) to Screen2 (ShowViewController)<a class="anchor" href="#32-send-data-from-screen-1-viewcontroller-to-screen2-showviewcontroller">#</a></h1>
+<h3 id="send-data-from-screen-1-viewcontroller-to-screen2-showviewcontroller">Send data from Screen 1 (ViewController) to Screen2 (ShowViewController)<a class="anchor" href="#send-data-from-screen-1-viewcontroller-to-screen2-showviewcontroller">#</a></h3>
 <p>Now it&rsquo;s time to send data from our first screen (ViewController) to the second screen (ShowViewController). Remember, we created a variable named <code>messageFromFirstScreen</code>? We have to access that variable from the first screen (ViewController) and set the text the user puts in <code>textFieldMessage</code> to <code>messageFromFirstScreen</code>.</p>
 <p>So, let&rsquo;s get back to ViewController.swift. Scroll down to the button event action method <code>onButtonSendTapped()</code>. And add the following code in <code>onButtonSendTapped()</code> after we initialize the ShowViewController:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
@@ -1166,8 +1121,7 @@ Navigation Controller Stack
 <p>Now let&rsquo;s run the code:</p>
 <figure><img src="/gitbook-assets/eight (1).gif" alt=""><figcaption></figcaption></figure>
 <p>So, we can see that we can send data from one screen to the next.</p>
-<!-- Merged from 3.7.-reference-code.md -->
-<h1 id="37-reference-code">3.7. Reference Code<a class="anchor" href="#37-reference-code">#</a></h1>
+<h3 id="reference-code-1">Reference Code<a class="anchor" href="#reference-code-1">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/App3 (1).zip&rdquo; %}</p>
 <h2 id="table-of-contents-2">Table of Contents<a class="anchor" href="#table-of-contents-2">#</a></h2>
 <dl>
@@ -1197,7 +1151,7 @@ Navigation Controller Stack
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="mvc-architecture">MVC Architecture<a class="anchor" href="#mvc-architecture">#</a></h2>
+<h3 id="mvc-architecture">MVC Architecture<a class="anchor" href="#mvc-architecture">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -1221,14 +1175,13 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-mvc-architecture">Walkthrough: Exploring MVC Architecture<a class="anchor" href="#walkthrough-exploring-mvc-architecture">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="4-separating-the-view-from-the-controller-code">4. Separating the View from the Controller code<a class="anchor" href="#4-separating-the-view-from-the-controller-code">#</a></h1>
+</blockquote><h3 id="separating-the-view-from-the-controller-code">Separating the View from the Controller code<a class="anchor" href="#separating-the-view-from-the-controller-code">#</a></h3>
 <p>One of the better ways of coding is to separate the Views (front-end codes) from the Controllers (back-end codes). That way, we can make ViewControllers less cluttered.</p>
 <p>We have been keeping all the codes for a screen on a single file (ViewController.swift). We can easily separate the View codes from the ViewController. After we separate the Views, we willwillwillwillwillwillwillwill only have Control and Data access codes in ViewController. </p>
 <p>To be able to do that, we will create our App4. We will build something like the following:</p>
 <figure><img src="/gitbook-assets/Screenshot 2023-05-16 at 11.05.16 AM.png" alt=""><figcaption></figcaption></figure>
 <p>On our first screen, we will have a Label to display &ldquo;App4.&rdquo; Then we will have a TextField to get a text from the user. Next, we will have another Label to say, &ldquo;How are you feeling today?&rdquo; And then, we will show a PickerView to select a mood from &ldquo;Happy,&rdquo; &ldquo;Meh,&rdquo; and &ldquo;Sad.&rdquo; Finally, we will have a Button, Submit. If the user taps the Submit Button, it should take them to the second screen. The second screen displays the message and the mood of the user. </p>
-<!-- Merged from 4.1.-creating-a-separate-view-code-file.md -->
-<h1 id="41-creating-a-separate-view-code-file">4.1. Creating a separate View code file<a class="anchor" href="#41-creating-a-separate-view-code-file">#</a></h1>
+<h3 id="creating-a-separate-view-code-file">Creating a separate View code file<a class="anchor" href="#creating-a-separate-view-code-file">#</a></h3>
 <p>Now let&rsquo;s create a separate file, &lsquo;FirstScreenView.swift&rsquo; in the project. </p>
 <ul>
 <li>Click <strong>File -&gt; New -&gt; File&hellip;</strong> </li>
@@ -1238,7 +1191,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li>Press <strong>Create.</strong></li>
 </ul>
 <figure><img src="/gitbook-assets/one (3).gif" alt=""><figcaption></figcaption></figure>
-<h2 id="setting-up-the-view">Setting up the View<a class="anchor" href="#setting-up-the-view">#</a></h2>
+<h3 id="setting-up-the-view">Setting up the View<a class="anchor" href="#setting-up-the-view">#</a></h3>
 <p>FirstScreenView will be our View (front end) code file. We will declare the UI elements in the file like the following:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FirstScreenView</span>: UIView {
 </span></span><span style="display:flex;"><span>
@@ -1378,8 +1331,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>{% endcode %}</p>
 <p><mark style="color:purple;background-color:red;"><strong>Notice that here to set up the constraints, I am using</strong></mark><mark style="color:purple;background-color:red;"><strong> </strong></mark><mark style="color:purple;background-color:red;"><strong><code>self</code></strong></mark><mark style="color:purple;background-color:red;"><strong> </strong></mark><mark style="color:purple;background-color:red;"><strong>instead of</strong></mark><mark style="color:purple;background-color:red;"><strong> </strong></mark><mark style="color:purple;background-color:red;"><strong><code>view</code></strong></mark><mark style="color:purple;background-color:red;"><strong> </strong></mark><mark style="color:purple;background-color:red;"><strong>for the same reason, this FirstScreenView is a UIView itself. I am adding children of the</strong></mark><mark style="color:purple;background-color:red;"><strong> </strong></mark><mark style="color:purple;background-color:red;"><strong><code>self</code></strong></mark><mark style="color:purple;background-color:red;"><strong> </strong></mark><mark style="color:purple;background-color:red;"><strong>view.</strong></mark></p>
-<!-- Merged from 4.2.-patching-the-view-class-with-the-viewcontroller.md -->
-<h1 id="42-patching-the-view-class-with-the-viewcontroller">4.2. Patching the View class with the ViewController<a class="anchor" href="#42-patching-the-view-class-with-the-viewcontroller">#</a></h1>
+<h3 id="patching-the-view-class-with-the-viewcontroller">Patching the View class with the ViewController<a class="anchor" href="#patching-the-view-class-with-the-viewcontroller">#</a></h3>
 <p>Now that we are done with the FirstScreenView file, we have to initialize the view in the ViewController. So open the ViewController.swift file. Let&rsquo;s create an instance of the FirstScreenView:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//  ViewController.swift</span>
@@ -1424,7 +1376,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Here we override the <code>loadView()</code> method so that we can patch the view with the controller while the view is loading. </p>
 <p>Now, let&rsquo;s run the app: </p>
 <figure><img src="/gitbook-assets/five (1).gif" alt=""><figcaption></figcaption></figure>
-<h2 id="adding-the-pickerview-logic">Adding the PickerView logic<a class="anchor" href="#adding-the-pickerview-logic">#</a></h2>
+<h3 id="adding-the-pickerview-logic">Adding the PickerView logic<a class="anchor" href="#adding-the-pickerview-logic">#</a></h3>
 <p>Let&rsquo;s define the moods like the app, App3, which we built previously.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ViewController</span>: UIViewController {
 </span></span><span style="display:flex;"><span>    
@@ -1534,10 +1486,9 @@ Open your current Xcode project or start a new Playground to follow along with t
 <p>Now, let&rsquo;s run it. </p>
 <figure><img src="/gitbook-assets/three (2).gif" alt=""><figcaption></figcaption></figure>
 <p>See, we patched the PickerView with data!</p>
-<!-- Merged from 4.3.-creating-the-display-screen.md -->
-<h1 id="43-creating-the-display-screen">4.3. Creating the Display Screen<a class="anchor" href="#43-creating-the-display-screen">#</a></h1>
+<h3 id="creating-the-display-screen">Creating the Display Screen<a class="anchor" href="#creating-the-display-screen">#</a></h3>
 <p>Now, we need to create another screen to display the data the user sends from the first screen. We need to create two swift files here, one is for the view (DisplayView), and another is for the view controller (DisplayViewController). </p>
-<h2 id="displayviewswift">DisplayView.swift<a class="anchor" href="#displayviewswift">#</a></h2>
+<h3 id="displayviewswift">DisplayView.swift<a class="anchor" href="#displayviewswift">#</a></h3>
 <p>We have two Labels in the view:</p>
 <ul>
 <li>The first Label displays the message.</li>
@@ -1599,7 +1550,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>{% endcode %}</p>
-<h2 id="adding-displayviewcontroller">Adding DisplayViewController<a class="anchor" href="#adding-displayviewcontroller">#</a></h2>
+<h3 id="adding-displayviewcontroller">Adding DisplayViewController<a class="anchor" href="#adding-displayviewcontroller">#</a></h3>
 <p>Now, let&rsquo;s add the view controller for the display screen to our project:</p>
 <p>Now let&rsquo;s create a separate file, &lsquo;DisplayViewController.swift&rsquo; in the project. </p>
 <ul>
@@ -1632,12 +1583,11 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>       
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><!-- Merged from 4.4.-navigation-controller-and-sending-data-from-screen-1-to-screen-2.md -->
-<h1 id="44-navigation-controller-and-sending-data-from-screen-1-to-screen-2">4.4. Navigation Controller and sending data from screen 1 to screen 2<a class="anchor" href="#44-navigation-controller-and-sending-data-from-screen-1-to-screen-2">#</a></h1>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="navigation-controller-and-sending-data-from-screen-1-to-screen-2">Navigation Controller and sending data from screen 1 to screen 2<a class="anchor" href="#navigation-controller-and-sending-data-from-screen-1-to-screen-2">#</a></h3>
 <p>We will now use the navigation controller to switch between screens and send data from the first screen to the second screen. </p>
 <p>Embed the ViewController (controller of the first screen) to the Navigation Controller on Storyboard.  </p>
 <p>Now, we need to send the data (message and mood) from the first screen (ViewController) to the second screen (DisplayViewController). We will create a public struct to create this package. </p>
-<h2 id="adding-a-struct">Adding a struct<a class="anchor" href="#adding-a-struct">#</a></h2>
+<h3 id="adding-a-struct">Adding a struct<a class="anchor" href="#adding-a-struct">#</a></h3>
 <p>So, open the ViewController.swift file, and add the struct there:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ViewController</span>: UIViewController {
 </span></span><span style="display:flex;"><span>    
@@ -1656,7 +1606,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">//codes omitted...</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//codes omitted...</span></span></span></code></pre></div><p>Notice that I am writing <code>public</code> before declaring the struct <code>Package</code>. We are working with access control of Swift here. If we do not write <code>public</code>, <code>Package</code> cannot be accessed from outside the <code>ViewController</code> class. The keyword <code>public</code> means this struct <code>Package</code> will also be available to other classes outside this class. For more details about access control in Swift, read: <a href="https://docs.swift.org/swift-book/documentation/the-swift-programming-language/accesscontrol/">https://docs.swift.org/swift-book/documentation/the-swift-programming-language/accesscontrol/</a>. </p>
-<h2 id="handling-the-button-tap-action">Handling the Button Tap action<a class="anchor" href="#handling-the-button-tap-action">#</a></h2>
+<h3 id="handling-the-button-tap-action">Handling the Button Tap action<a class="anchor" href="#handling-the-button-tap-action">#</a></h3>
 <h3 id="sending-data"><strong>Sending Data</strong><a class="anchor" href="#sending-data">#</a></h3>
 <p>Now that our struct is ready, we will create a data package of two strings (message and mood). And then, when the user taps on the Submit button, we should navigate to DisplayViewController and send this package there. So let&rsquo;s add an action to the button:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
@@ -1753,8 +1703,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <p>Let&rsquo;s run the app:</p>
 <figure><img src="/gitbook-assets/six (1).gif" alt=""><figcaption></figcaption></figure>
 <p><em><mark style="color:purple;"><strong>Here, we learned how to detach the front end (View) of a screen from the back end (ViewController) of it. It is a widely used technique in iOS development. And you should follow this pattern.</strong></mark></em></p>
-<!-- Merged from 4.5.-wrapping-up-structuring-the-files.md -->
-<h1 id="45-wrapping-up-structuring-the-files">4.5. Wrapping up: structuring the files<a class="anchor" href="#45-wrapping-up-structuring-the-files">#</a></h1>
+<h3 id="wrapping-up-structuring-the-files">Wrapping up: structuring the files<a class="anchor" href="#wrapping-up-structuring-the-files">#</a></h3>
 <p>Now, your project structure should look like the following:</p>
 <p><img src="/gitbook-assets/Screenshot%202023-05-16%20at%202.39.20%20PM%20%281%29.png" alt="" /></p>
 <p>Although we have separated the Views from the Controllers, we still may find this structure cluttered. So, we want to put the files in separate groups for better readability. </p>
@@ -1765,8 +1714,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </ul>
 <figure><img src="/gitbook-assets/ten.gif" alt=""><figcaption></figcaption></figure>
 <p><strong>Now, the structure looks a lot better!!!</strong> :tada:</p>
-<!-- Merged from 4.6.-reference-code.md -->
-<h1 id="46-reference-code">4.6. Reference Code<a class="anchor" href="#46-reference-code">#</a></h1>
+<h3 id="reference-code-2">Reference Code<a class="anchor" href="#reference-code-2">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/App4.zip&quot; %}</p>
 <hr>
 <h2 id="guided-practice-challenges-2">Guided Practice Challenges<a class="anchor" href="#guided-practice-challenges-2">#</a></h2>
@@ -1791,7 +1739,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="33-send-data-back-from-screen-2-to-screen-1">3.3. Send data back from Screen 2 to Screen 1<a class="anchor" href="#33-send-data-back-from-screen-2-to-screen-1">#</a></h2>
+<h3 id="send-data-back-from-screen-2-to-screen-1">Send data back from Screen 2 to Screen 1<a class="anchor" href="#send-data-back-from-screen-2-to-screen-1">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -1815,7 +1763,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-33-send-data-back-from-screen-2-to-screen-1">Walkthrough: Exploring 3.3. Send data back from Screen 2 to Screen 1<a class="anchor" href="#walkthrough-exploring-33-send-data-back-from-screen-2-to-screen-1">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="33-send-data-back-from-screen-2-to-screen-1-1">3.3. Send data back from Screen 2 to Screen 1<a class="anchor" href="#33-send-data-back-from-screen-2-to-screen-1-1">#</a></h1>
+</blockquote><h3 id="send-data-back-from-screen-2-to-screen-1-1">Send data back from Screen 2 to Screen 1<a class="anchor" href="#send-data-back-from-screen-2-to-screen-1-1">#</a></h3>
 <p>So, here is the goal for the extension of our current app:</p>
 <ul>
 <li>We will add a PickerView (selects one from a list of options) to the second screen (ShowViewController).</li>
@@ -1976,8 +1924,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <figure><img src="/gitbook-assets/nine (1).gif" alt=""><figcaption></figcaption></figure>
 <p>Here, we do not see the two elements we added to ViewController, because <code>labelMood</code> and <code>imageMood</code> doesn&rsquo;t have anything to display.</p>
 <p>On ShowViewController, we see there is an empty <code>moodPicker</code> and the newly added <code>buttonSendMood</code>.</p>
-<!-- Merged from 3.4.-send-data-back-from-screen-2-to-screen-1-part-2-uipickerview.md -->
-<h1 id="331-send-data-back-from-screen-2-to-screen-1-uipickerview">3.3.1. Send data back from Screen 2 to Screen 1: UIPickerView<a class="anchor" href="#331-send-data-back-from-screen-2-to-screen-1-uipickerview">#</a></h1>
+<h3 id="send-data-back-from-screen-2-to-screen-1-uipickerview">Send data back from Screen 2 to Screen 1: UIPickerView<a class="anchor" href="#send-data-back-from-screen-2-to-screen-1-uipickerview">#</a></h3>
 <figure><img src="/gitbook-assets/Screenshot 2023-05-11 at 12.13.48 PM (1).png" alt=""><figcaption></figcaption></figure>
 <p>Now let&rsquo;s open the second screen (ShowViewController). We are going to set up our PickerView <code>moodPicker</code> now. Let&rsquo;s define an array of Strings having three moods: &ldquo;Happy,&rdquo; &ldquo;Meh,&rdquo; and &ldquo;Sad.&rdquo;</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">// moods for moodPicker...</span>
@@ -2255,8 +2202,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>{% endcode %}</p>
-<!-- Merged from 3.5.-send-data-back-from-screen-2-to-screen-1-part-3-delegating-to-viewcontroller.md -->
-<h1 id="332-send-data-back-from-screen-2-to-screen-1-delegating-to-viewcontroller">3.3.2. Send data back from Screen 2 to Screen 1: delegating to ViewController<a class="anchor" href="#332-send-data-back-from-screen-2-to-screen-1-delegating-to-viewcontroller">#</a></h1>
+<h3 id="send-data-back-from-screen-2-to-screen-1-delegating-to-viewcontroller">Send data back from Screen 2 to Screen 1: delegating to ViewController<a class="anchor" href="#send-data-back-from-screen-2-to-screen-1-delegating-to-viewcontroller">#</a></h3>
 <p>Now, let&rsquo;s enable the action for <code>buttonSendMood</code> in ShowViewController.swift file. So let&rsquo;s update <code>viewDidLoad()</code> function and add a new selector method <code>onSendButtonTapped()</code>:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">// setting up buttonSendMood...</span>
@@ -2418,9 +2364,8 @@ Open your current Xcode project or start a new Playground to follow along with t
 <p>Yay! We now learned how to send data back and forth between two screens!</p>
 <p><em>Now, your task is to show the user&rsquo;s mood in <code>labelMood</code> at ViewController screen.</em></p>
 <p>Next, we will discuss displaying an image related to the user&rsquo;s mood.</p>
-<!-- Merged from 3.6.-send-data-back-from-screen-2-to-screen-1-part-4-uiimageview.md -->
-<h1 id="333-send-data-back-from-screen-2-to-screen-1-uiimageview">3.3.3. Send data back from Screen 2 to Screen 1: UIImageView<a class="anchor" href="#333-send-data-back-from-screen-2-to-screen-1-uiimageview">#</a></h1>
-<h2 id="importing-images-into-the-project">Importing images into the project<a class="anchor" href="#importing-images-into-the-project">#</a></h2>
+<h3 id="send-data-back-from-screen-2-to-screen-1-uiimageview">Send data back from Screen 2 to Screen 1: UIImageView<a class="anchor" href="#send-data-back-from-screen-2-to-screen-1-uiimageview">#</a></h3>
+<h3 id="importing-images-into-the-project">Importing images into the project<a class="anchor" href="#importing-images-into-the-project">#</a></h3>
 <p>Now, let&rsquo;s start working with ImageViews. We need three images for moods: happy, meh, and sad. We will be using the following images in three different sizes: 1x, 2x, and 3x.</p>
 <p><img src="/gitbook-assets/happy%20%281%29.png" alt="" /> <img src="/gitbook-assets/meh%20%281%29.png" alt="" /> <img src="/gitbook-assets/sad%20%281%29.png" alt="" /></p>
 <p>Download the images from here:</p>
@@ -2441,7 +2386,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <p>Now, right-click on the &ldquo;mood images&rdquo; folder and select <strong>Import.</strong> Then select the images and <strong>Open.</strong></p>
 <figure><img src="/gitbook-assets/thirteen (1).gif" alt=""><figcaption></figcaption></figure>
 <p>Looking at the Assets now, you&rsquo;ll see three image assets listed instead of nine. The project automatically indexed nine of them into three assets, each having 3 scales (1x, 2x, and 3x). <img src="/gitbook-assets/Screenshot%202023-05-11%20at%2010.11.02%20PM.png" alt="" /></p>
-<h2 id="setting-the-image-into-the-imageview-through-delegate">Setting the image into the ImageView through delegate<a class="anchor" href="#setting-the-image-into-the-imageview-through-delegate">#</a></h2>
+<h3 id="setting-the-image-into-the-imageview-through-delegate">Setting the image into the ImageView through delegate<a class="anchor" href="#setting-the-image-into-the-imageview-through-delegate">#</a></h3>
 <p>In ViewController, add the following line of code into <code>delegateButtonSendMood()</code> method:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>imageMood.image = UIImage(named: mood.lowercased())</span></span></code></pre></div><p>Here, we are creating an <code>UIImage</code> object from the project assets. We are looking for an image asset named as the mood we receive from ShowViewController through the delegate method. Now, the moods are &ldquo;Happy,&rdquo; &ldquo;Meh,&rdquo; and &ldquo;Sad.&rdquo; But the image asset names are &ldquo;happy,&rdquo; &ldquo;meh,&rdquo; and &ldquo;sad.&rdquo; So we convert the String to all lowercase by calling <code>lowercased()</code> method.</p>
 <p>Let&rsquo;s run the app again.</p>
@@ -2484,7 +2429,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="1-creating-our-first-app">1.-creating-our-first-app<a class="anchor" href="#1-creating-our-first-app">#</a></h2>
+<h3 id="1-creating-our-first-app">1.-creating-our-first-app<a class="anchor" href="#1-creating-our-first-app">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -2508,7 +2453,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-this-topic">Walkthrough: Exploring this topic<a class="anchor" href="#walkthrough-exploring-this-topic">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="1-creating-our-first-app-1">1. Creating our first app<a class="anchor" href="#1-creating-our-first-app-1">#</a></h1>
+</blockquote><h3 id="creating-our-first-app-1">Creating our first app<a class="anchor" href="#creating-our-first-app-1">#</a></h3>
 <p>Press <code>Command (⌘) + Space</code> together on your Mac computer. It opens up Spotlight search. Search &lsquo;Xcode&rsquo; there, and open Xcode. It opens the following window:</p>
 <figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 10.51.51 AM (1).png" alt=""><figcaption></figcaption></figure>
 <p>Click on <strong>&lsquo;Create a new Xcode project.&rsquo;</strong> You will see the following:</p>
@@ -2529,8 +2474,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <p>It will open up the Emulator with an empty screen.</p>
 <figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 11.12.10 AM (1).png" alt=""><figcaption></figcaption></figure>
 <p>If you can see the emulator, you have successfully built your first app. We will start building on it.</p>
-<!-- Merged from 1.1.-project-structure-overview.md -->
-<h1 id="11-project-structure-overview">1.1. Project structure overview<a class="anchor" href="#11-project-structure-overview">#</a></h1>
+<h3 id="project-structure-overview">Project structure overview<a class="anchor" href="#project-structure-overview">#</a></h3>
 <p>The Xcode screen has three panes.</p>
 <figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 11.22.24 AM (1).png" alt=""><figcaption></figcaption></figure>
 <h3 id="the-left-pane">The left pane<a class="anchor" href="#the-left-pane">#</a></h3>
@@ -2553,8 +2497,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <p>The right pane is the configuration and attributes explorer pane. For example, if you click on the Main Storyboard and click the screen preview, the right pane will display the attribute of the screen view:</p>
 <figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 12.00.43 PM (1).png" alt=""><figcaption></figcaption></figure>
 <p>Once we start building apps, we will eventually get used to Xcode more.</p>
-<!-- Merged from 1.2.-uilabel-our-first-ui-element.md -->
-<h1 id="12-uilabel-our-first-ui-element">1.2. UILabel, our first UI element<a class="anchor" href="#12-uilabel-our-first-ui-element">#</a></h1>
+<h3 id="uilabel-our-first-ui-element">UILabel, our first UI element<a class="anchor" href="#uilabel-our-first-ui-element">#</a></h3>
 <p>Let&rsquo;s add a text pane, <code>UILabel</code> to our storyboard. Open the Main storyboard, and press <code>Command(⌘) + Shift + L</code> together. It opens up the Objects Library like this:</p>
 <figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 12.09.01 PM.png" alt=""><figcaption></figcaption></figure>
 <p>Now, look for &rsquo;label&rsquo;. <strong>Press the intended UI element, (in this case, it shows as &lsquo;Label&rsquo;), drag it, and drop it on the preview screen.</strong></p>
@@ -2579,8 +2522,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <p><img src="/gitbook-assets/Screenshot%202023-05-09%20at%2012.51.58%20PM%20%281%29.png" alt="" /></p>
 <figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 12.52.07 PM (1).png" alt=""><figcaption></figcaption></figure>
 <p>See, for both cases, the alignment setup is keeping the Label on the screen nice and predictable.</p>
-<!-- Merged from 1.3.-uitextfield-and-constraints.md -->
-<h1 id="13-uitextfield-and-constraints">1.3. UITextField, and constraints<a class="anchor" href="#13-uitextfield-and-constraints">#</a></h1>
+<h3 id="uitextfield-and-constraints">UITextField, and constraints<a class="anchor" href="#uitextfield-and-constraints">#</a></h3>
 <p>So far, we have added one UILabel, with the text &ldquo;Hello World&rdquo; in it. Now, we will add our second UI element on the screen, UITextField, below the Label. UITextField is used to get user inputs from the keyboard. We can type something in the TextField and use it in our app.</p>
 <h4 id="housekeeping-the-constraints-first">Housekeeping the constraints first<a class="anchor" href="#housekeeping-the-constraints-first">#</a></h4>
 <p>So far, the Label is center-aligned both horizontally and vertically. We will keep the horizontal alignment for the Label but remove the vertical alignment. Unfortunately, the storyboard can&rsquo;t clear one particular constraint from visual tools (or not easily). (That&rsquo;s another reason why we will move to write constraints programmatically). So, we will clear all the constraints from the Label. Click on the &lsquo;Reset constraints&rsquo; tool, and select Clear Constraints for Selected Views to clear constraints for the Label:</p>
@@ -2605,11 +2547,10 @@ Open your current Xcode project or start a new Playground to follow along with t
 <p>You can see now, you can type something on the TextField.</p>
 <p>Please note, you are using your computer keyboard to put the text inside. You can use the emulator (device) keyboard too. From the Simulator menu, click <strong>I/O -&gt; Keyboard -&gt; Toggle Software Keyboard.</strong></p>
 <figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 2.10.38 PM (1).png" alt=""><figcaption></figcaption></figure>
-<!-- Merged from 1.4.-uibutton-and-uialertcontroller.md -->
-<h1 id="14-uibutton-and-uialertcontroller">1.4. UIButton, and UIAlertController<a class="anchor" href="#14-uibutton-and-uialertcontroller">#</a></h1>
+<h3 id="uibutton-and-uialertcontroller">UIButton, and UIAlertController<a class="anchor" href="#uibutton-and-uialertcontroller">#</a></h3>
 <p>At this point, We have a TextField to get user inputs from the keyboard. Now, let&rsquo;s add a button below the TextField. Our goal is if a user types something on the TextField and presses the button, the app should echo the text back to the user with an alert.</p>
 <p>We will use two UI elements for this purpose: UIButton, and UIAlertController.</p>
-<h2 id="adding-a-new-button">Adding a new button<a class="anchor" href="#adding-a-new-button">#</a></h2>
+<h3 id="adding-a-new-button">Adding a new button<a class="anchor" href="#adding-a-new-button">#</a></h3>
 <p>Let&rsquo;s place a Button on the Screen, center it, and anchor it 16 points below the TextField.</p>
 <figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 2.39.56 PM (1).png" alt=""><figcaption><p>Objects library</p></figcaption></figure>
 <figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 2.40.21 PM (1).png" alt=""><figcaption><p>Drag and drop button</p></figcaption></figure>
@@ -2619,7 +2560,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <p>Now, let&rsquo;s change the attributes of the Button. If you select the Button and look at the right pane, you will see the attributes of it. You can play with many different things, like the Style, Title, Background, and Foreground styling, etc. For now, we will just change the Title. Let&rsquo;s change the Title from &ldquo;Button&rdquo; to &ldquo;Click me!&rdquo;</p>
 <figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 2.48.02 PM (1).png" alt=""><figcaption></figcaption></figure>
 <p>Now, run the app, and you will see that you have the button &ldquo;Click me!&rdquo;, and can click on it!</p>
-<h2 id="viewcontroller-and-alertcontroller">ViewController and AlertController<a class="anchor" href="#viewcontroller-and-alertcontroller">#</a></h2>
+<h3 id="viewcontroller-and-alertcontroller">ViewController and AlertController<a class="anchor" href="#viewcontroller-and-alertcontroller">#</a></h3>
 <p>Now, we need to handle the click on the Button. So, we need to patch the frontend UI elements to our ViewController code.</p>
 <p><em><mark style="color:purple;">We will not use the following technique very much after this lesson since most people do not use Storyboards anymore. However, it&rsquo;s worth the knowledge.</mark></em></p>
 <p>So, we will open the Main storyboard and the ViewController code side by side. To do that, Go to the menu, <strong>Editor -&gt; Assistant.</strong> After you click Assistant, it opens the Viewcontroller to right of the Storyboard:</p>
@@ -2783,8 +2724,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.present(alert, animated: <span style="color:#66d9ef">true</span>)
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><!-- Merged from 1.5.-wrapping-up-appicon.md -->
-<h1 id="15-wrapping-up-appicon">1.5. Wrapping up: AppIcon<a class="anchor" href="#15-wrapping-up-appicon">#</a></h1>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="wrapping-up-appicon">Wrapping up: AppIcon<a class="anchor" href="#wrapping-up-appicon">#</a></h3>
 <p>Before we complete the app, let&rsquo;s add an icon for the app. I generated a 1024x1024 pixels large icon:</p>
 <p><img src="/gitbook-assets/Screenshot%202023-05-09%20at%207.05.08%20PM%20%281%29.png" alt="" /></p>
 <p>I will use it as my app icon for this app.</p>
@@ -2795,8 +2735,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <p>Now, go to the app drawer of the emulator. You will see that the icon for our &lsquo;App1&rsquo; is set.</p>
 <p><img src="/gitbook-assets/Screenshot%202023-05-09%20at%207.24.14%20PM%20%281%29.png" alt="" /></p>
 <p>Now, our first app &lsquo;App1&rsquo; is complete!</p>
-<!-- Merged from 1.6.-reference-code-and-video.md -->
-<h1 id="16-reference-code-and-video">1.6. Reference Code and Video<a class="anchor" href="#16-reference-code-and-video">#</a></h1>
+<h3 id="reference-code-and-video">Reference Code and Video<a class="anchor" href="#reference-code-and-video">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/App1_project.zip&quot; %}</p>
 <h3 id="ta-arpan-created-the-video-on-this-module-for-us">TA Arpan created the video on this module for us:<a class="anchor" href="#ta-arpan-created-the-video-on-this-module-for-us">#</a></h3>
 <p>{% embed url=&ldquo;<a href="https://www.youtube.com/watch?v=pEwhCh9j8wo%22">https://www.youtube.com/watch?v=pEwhCh9j8wo"</a> %}</p>
@@ -2900,35 +2839,31 @@ Open your current Xcode project or start a new Playground to follow along with t
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#table-of-contents">Table of Contents</a></li>
-    <li><a href="#creating-our-first-app">Creating Our First App</a></li>
-    <li><a href="#table-of-contents-1">Table of Contents</a></li>
-    <li><a href="#designing-without-storyboards">Designing Without Storyboards</a></li>
+    <li><a href="#table-of-contents">Table of Contents</a>
+      <ul>
+        <li><a href="#creating-our-first-app">Creating Our First App</a></li>
+      </ul>
+    </li>
+    <li><a href="#table-of-contents-1">Table of Contents</a>
+      <ul>
+        <li><a href="#designing-without-storyboards">Designing Without Storyboards</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives">Learning Objectives</a></li>
     <li><a href="#the-story-so-far">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-designing-without-storyboards">Walkthrough: Exploring Designing Without Storyboards</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-designing-without-storyboards">Walkthrough: Exploring Designing Without Storyboards</a>
       <ul>
+        <li><a href="#designing-without-storyboards-1">Designing without Storyboards</a></li>
         <li><a href="#why-dont-we-use-storyboards">Why don&rsquo;t we use storyboards?</a></li>
         <li><a href="#understanding-the-constraint-notations">Understanding the constraint notations</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#understanding-the-attributes">Understanding the attributes</a>
-      <ul>
+        <li><a href="#converting-the-storyboard-to-code">Converting the storyboard to code</a></li>
+        <li><a href="#understanding-the-attributes">Understanding the attributes</a></li>
         <li><a href="#label-attributes">Label attributes</a></li>
+        <li><a href="#setting-the-constraints">Setting the constraints</a></li>
+        <li><a href="#adding-button-action">Adding button action</a></li>
+        <li><a href="#reference-code">Reference Code</a></li>
       </ul>
     </li>
-    <li><a href="#setting-the-constraints">Setting the constraints</a></li>
-    <li><a href="#adding-button-action">Adding button action</a></li>
-  </ul>
-
-  <ul>
     <li><a href="#guided-practice-challenges">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation">Challenge 1: Experimentation</a></li>
@@ -2936,25 +2871,26 @@ Open your current Xcode project or start a new Playground to follow along with t
       </ul>
     </li>
     <li><a href="#references">References</a></li>
-    <li><a href="#getting-help">Getting Help</a></li>
-    <li><a href="#multi-screen-apps">Multi-Screen Apps</a></li>
+    <li><a href="#getting-help">Getting Help</a>
+      <ul>
+        <li><a href="#multi-screen-apps">Multi-Screen Apps</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-1">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-1">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-multi-screen-apps">Walkthrough: Exploring Multi-Screen Apps</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#understanding-the-data-structure-behind-navigationcontroller">Understanding the data Structure behind NavigationController</a></li>
-    <li><a href="#embedding-the-navigation-controller">Embedding the Navigation Controller</a>
+    <li><a href="#walkthrough-exploring-multi-screen-apps">Walkthrough: Exploring Multi-Screen Apps</a>
       <ul>
+        <li><a href="#our-first-multi-screen-app">Our first Multi-screen App</a></li>
+        <li><a href="#navigation-controller">Navigation Controller</a></li>
+        <li><a href="#understanding-the-data-structure-behind-navigationcontroller">Understanding the data Structure behind NavigationController</a></li>
+        <li><a href="#embedding-the-navigation-controller">Embedding the Navigation Controller</a></li>
         <li><a href="#adding-ui-elements-on-the-viewcontroller">Adding UI elements on the ViewController</a></li>
         <li><a href="#creating-showviewcontroller-and-adding-ui-elements">Creating ShowViewController and adding UI elements</a></li>
         <li><a href="#pushing-showviewcontroller-on-the-button-tap">Pushing ShowViewController on the Button tap</a></li>
+        <li><a href="#send-data-from-screen-1-viewcontroller-to-screen2-showviewcontroller">Send data from Screen 1 (ViewController) to Screen2 (ShowViewController)</a></li>
+        <li><a href="#reference-code-1">Reference Code</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
     <li><a href="#table-of-contents-2">Table of Contents</a></li>
     <li><a href="#guided-practice-challenges-1">Guided Practice Challenges</a>
       <ul>
@@ -2963,37 +2899,32 @@ Open your current Xcode project or start a new Playground to follow along with t
       </ul>
     </li>
     <li><a href="#references-1">References</a></li>
-    <li><a href="#getting-help-1">Getting Help</a></li>
-    <li><a href="#mvc-architecture">MVC Architecture</a></li>
-    <li><a href="#learning-objectives-2">Learning Objectives</a></li>
-    <li><a href="#the-story-so-far-2">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-mvc-architecture">Walkthrough: Exploring MVC Architecture</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#setting-up-the-view">Setting up the View</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#adding-the-pickerview-logic">Adding the PickerView logic</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#displayviewswift">DisplayView.swift</a></li>
-    <li><a href="#adding-displayviewcontroller">Adding DisplayViewController</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#adding-a-struct">Adding a struct</a></li>
-    <li><a href="#handling-the-button-tap-action">Handling the Button Tap action</a>
+    <li><a href="#getting-help-1">Getting Help</a>
       <ul>
-        <li><a href="#sending-data"><strong>Sending Data</strong></a></li>
-        <li><a href="#receiving-data-at-displayviewcontroller"><strong>Receiving data at DisplayViewController</strong></a></li>
+        <li><a href="#mvc-architecture">MVC Architecture</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
+    <li><a href="#learning-objectives-2">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far-2">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-mvc-architecture">Walkthrough: Exploring MVC Architecture</a>
+      <ul>
+        <li><a href="#separating-the-view-from-the-controller-code">Separating the View from the Controller code</a></li>
+        <li><a href="#creating-a-separate-view-code-file">Creating a separate View code file</a></li>
+        <li><a href="#setting-up-the-view">Setting up the View</a></li>
+        <li><a href="#patching-the-view-class-with-the-viewcontroller">Patching the View class with the ViewController</a></li>
+        <li><a href="#adding-the-pickerview-logic">Adding the PickerView logic</a></li>
+        <li><a href="#creating-the-display-screen">Creating the Display Screen</a></li>
+        <li><a href="#displayviewswift">DisplayView.swift</a></li>
+        <li><a href="#adding-displayviewcontroller">Adding DisplayViewController</a></li>
+        <li><a href="#navigation-controller-and-sending-data-from-screen-1-to-screen-2">Navigation Controller and sending data from screen 1 to screen 2</a></li>
+        <li><a href="#adding-a-struct">Adding a struct</a></li>
+        <li><a href="#handling-the-button-tap-action">Handling the Button Tap action</a></li>
+        <li><a href="#sending-data"><strong>Sending Data</strong></a></li>
+        <li><a href="#receiving-data-at-displayviewcontroller"><strong>Receiving data at DisplayViewController</strong></a></li>
+        <li><a href="#wrapping-up-structuring-the-files">Wrapping up: structuring the files</a></li>
+        <li><a href="#reference-code-2">Reference Code</a></li>
+      </ul>
+    </li>
     <li><a href="#guided-practice-challenges-2">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-2">Challenge 1: Experimentation</a></li>
@@ -3001,35 +2932,25 @@ Open your current Xcode project or start a new Playground to follow along with t
       </ul>
     </li>
     <li><a href="#references-2">References</a></li>
-    <li><a href="#getting-help-2">Getting Help</a></li>
-    <li><a href="#33-send-data-back-from-screen-2-to-screen-1">3.3. Send data back from Screen 2 to Screen 1</a></li>
-    <li><a href="#learning-objectives-3">Learning Objectives</a></li>
-    <li><a href="#the-story-so-far-3">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-33-send-data-back-from-screen-2-to-screen-1">Walkthrough: Exploring 3.3. Send data back from Screen 2 to Screen 1</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#getting-help-2">Getting Help</a>
       <ul>
-        <li><a href="#updating-the-screens-with-new-ui-elements">Updating the screens with new UI elements.</a></li>
+        <li><a href="#send-data-back-from-screen-2-to-screen-1">Send data back from Screen 2 to Screen 1</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#learning-objectives-3">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far-3">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-33-send-data-back-from-screen-2-to-screen-1">Walkthrough: Exploring 3.3. Send data back from Screen 2 to Screen 1</a>
       <ul>
+        <li><a href="#send-data-back-from-screen-2-to-screen-1-1">Send data back from Screen 2 to Screen 1</a></li>
+        <li><a href="#updating-the-screens-with-new-ui-elements">Updating the screens with new UI elements.</a></li>
+        <li><a href="#send-data-back-from-screen-2-to-screen-1-uipickerview">Send data back from Screen 2 to Screen 1: UIPickerView</a></li>
+        <li><a href="#send-data-back-from-screen-2-to-screen-1-delegating-to-viewcontroller">Send data back from Screen 2 to Screen 1: delegating to ViewController</a></li>
         <li><a href="#declaring-the-delegate-variable-in-showviewcontrollerswift">Declaring the delegate variable in ShowViewController.swift</a></li>
         <li><a href="#initializing-delegate-to-the-instance-of-viewcontroller-self">Initializing delegate to the instance of ViewController (self)</a></li>
         <li><a href="#doing-delegated-tasks-in-viewcontroller">Doing delegated tasks in ViewController</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#importing-images-into-the-project">Importing images into the project</a></li>
-    <li><a href="#setting-the-image-into-the-imageview-through-delegate">Setting the image into the ImageView through delegate</a>
-      <ul>
+        <li><a href="#send-data-back-from-screen-2-to-screen-1-uiimageview">Send data back from Screen 2 to Screen 1: UIImageView</a></li>
+        <li><a href="#importing-images-into-the-project">Importing images into the project</a></li>
+        <li><a href="#setting-the-image-into-the-imageview-through-delegate">Setting the image into the ImageView through delegate</a></li>
         <li><a href="#a-few-notes">A few notes:</a></li>
       </ul>
     </li>
@@ -3040,52 +2961,29 @@ Open your current Xcode project or start a new Playground to follow along with t
       </ul>
     </li>
     <li><a href="#references-3">References</a></li>
-    <li><a href="#getting-help-3">Getting Help</a></li>
-    <li><a href="#1-creating-our-first-app">1.-creating-our-first-app</a></li>
+    <li><a href="#getting-help-3">Getting Help</a>
+      <ul>
+        <li><a href="#1-creating-our-first-app">1.-creating-our-first-app</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-4">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-4">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-this-topic">Walkthrough: Exploring this topic</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-this-topic">Walkthrough: Exploring this topic</a>
       <ul>
+        <li><a href="#creating-our-first-app-1">Creating our first app</a></li>
+        <li><a href="#project-structure-overview">Project structure overview</a></li>
         <li><a href="#the-left-pane">The left pane</a></li>
         <li><a href="#the-middle-pane">The middle pane</a></li>
         <li><a href="#the-right-pane">The right pane</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#adding-a-new-button">Adding a new button</a></li>
-    <li><a href="#viewcontroller-and-alertcontroller">ViewController and AlertController</a>
-      <ul>
+        <li><a href="#uilabel-our-first-ui-element">UILabel, our first UI element</a></li>
+        <li><a href="#uitextfield-and-constraints">UITextField, and constraints</a></li>
+        <li><a href="#uibutton-and-uialertcontroller">UIButton, and UIAlertController</a></li>
+        <li><a href="#adding-a-new-button">Adding a new button</a></li>
+        <li><a href="#viewcontroller-and-alertcontroller">ViewController and AlertController</a></li>
         <li><a href="#adding-button-action-1">Adding button action</a></li>
         <li><a href="#displaying-an-alert">Displaying an Alert</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#wrapping-up-appicon">Wrapping up: AppIcon</a></li>
+        <li><a href="#reference-code-and-video">Reference Code and Video</a></li>
         <li><a href="#ta-arpan-created-the-video-on-this-module-for-us">TA Arpan created the video on this module for us:</a></li>
       </ul>
     </li>

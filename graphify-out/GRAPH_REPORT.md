@@ -1,63 +1,64 @@
-# Graph Report - iOS-Notes  (2026-05-02)
+# Graph Report - .  (2026-05-02)
 
 ## Corpus Check
-- 27 files · ~134,131,770 words
+- 8 files · ~85,203 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 5669 nodes · 19317 edges · 48 communities detected
-- Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 2044 edges (avg confidence: 0.83)
+- 5665 nodes · 19307 edges · 49 communities detected
+- Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 2041 edges (avg confidence: 0.82)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
-- [[_COMMUNITY_Community 0|Community 0]]
-- [[_COMMUNITY_Community 1|Community 1]]
-- [[_COMMUNITY_Community 2|Community 2]]
-- [[_COMMUNITY_Community 3|Community 3]]
-- [[_COMMUNITY_Community 4|Community 4]]
-- [[_COMMUNITY_Community 5|Community 5]]
-- [[_COMMUNITY_Community 6|Community 6]]
-- [[_COMMUNITY_Community 7|Community 7]]
-- [[_COMMUNITY_Community 8|Community 8]]
-- [[_COMMUNITY_Community 9|Community 9]]
-- [[_COMMUNITY_Community 10|Community 10]]
-- [[_COMMUNITY_Community 11|Community 11]]
-- [[_COMMUNITY_Community 12|Community 12]]
-- [[_COMMUNITY_Community 13|Community 13]]
-- [[_COMMUNITY_Community 14|Community 14]]
-- [[_COMMUNITY_Community 15|Community 15]]
-- [[_COMMUNITY_Community 16|Community 16]]
-- [[_COMMUNITY_Community 17|Community 17]]
-- [[_COMMUNITY_Community 18|Community 18]]
-- [[_COMMUNITY_Community 19|Community 19]]
-- [[_COMMUNITY_Community 20|Community 20]]
-- [[_COMMUNITY_Community 21|Community 21]]
-- [[_COMMUNITY_Community 22|Community 22]]
-- [[_COMMUNITY_Community 23|Community 23]]
-- [[_COMMUNITY_Community 24|Community 24]]
-- [[_COMMUNITY_Community 25|Community 25]]
-- [[_COMMUNITY_Community 26|Community 26]]
-- [[_COMMUNITY_Community 27|Community 27]]
-- [[_COMMUNITY_Community 28|Community 28]]
-- [[_COMMUNITY_Community 29|Community 29]]
-- [[_COMMUNITY_Community 30|Community 30]]
-- [[_COMMUNITY_Community 31|Community 31]]
-- [[_COMMUNITY_Community 32|Community 32]]
-- [[_COMMUNITY_Community 33|Community 33]]
-- [[_COMMUNITY_Community 34|Community 34]]
-- [[_COMMUNITY_Community 35|Community 35]]
-- [[_COMMUNITY_Community 36|Community 36]]
-- [[_COMMUNITY_Community 37|Community 37]]
-- [[_COMMUNITY_Community 38|Community 38]]
-- [[_COMMUNITY_Community 39|Community 39]]
-- [[_COMMUNITY_Community 40|Community 40]]
-- [[_COMMUNITY_Community 41|Community 41]]
-- [[_COMMUNITY_Community 42|Community 42]]
-- [[_COMMUNITY_Community 43|Community 43]]
-- [[_COMMUNITY_Community 44|Community 44]]
-- [[_COMMUNITY_Community 45|Community 45]]
-- [[_COMMUNITY_Community 46|Community 46]]
-- [[_COMMUNITY_Community 47|Community 47]]
+- [[_COMMUNITY_Public Mermaid|Public Mermaid]]
+- [[_COMMUNITY_Static Mermaid|Static Mermaid]]
+- [[_COMMUNITY_Screen Swift|Screen Swift]]
+- [[_COMMUNITY_Mermaid Public|Mermaid Public]]
+- [[_COMMUNITY_Asciinema Player|Asciinema Player]]
+- [[_COMMUNITY_Katex Search|Katex Search]]
+- [[_COMMUNITY_Static Mermaid|Static Mermaid]]
+- [[_COMMUNITY_Mermaid Public|Mermaid Public]]
+- [[_COMMUNITY_Static Mermaid|Static Mermaid]]
+- [[_COMMUNITY_Static Mermaid|Static Mermaid]]
+- [[_COMMUNITY_Static Mermaid|Static Mermaid]]
+- [[_COMMUNITY_Static Mermaid|Static Mermaid]]
+- [[_COMMUNITY_Static Mermaid|Static Mermaid]]
+- [[_COMMUNITY_Public Mermaid|Public Mermaid]]
+- [[_COMMUNITY_Public Mermaid|Public Mermaid]]
+- [[_COMMUNITY_Mermaid Static|Mermaid Static]]
+- [[_COMMUNITY_Public Mermaid|Public Mermaid]]
+- [[_COMMUNITY_Static Mermaid|Static Mermaid]]
+- [[_COMMUNITY_Static Mermaid|Static Mermaid]]
+- [[_COMMUNITY_Static Mermaid|Static Mermaid]]
+- [[_COMMUNITY_Public Mermaid|Public Mermaid]]
+- [[_COMMUNITY_Public Mermaid|Public Mermaid]]
+- [[_COMMUNITY_Public Mermaid|Public Mermaid]]
+- [[_COMMUNITY_Public Mermaid|Public Mermaid]]
+- [[_COMMUNITY_Public Mermaid|Public Mermaid]]
+- [[_COMMUNITY_Public Mermaid|Public Mermaid]]
+- [[_COMMUNITY_Static Mermaid|Static Mermaid]]
+- [[_COMMUNITY_Static Mermaid|Static Mermaid]]
+- [[_COMMUNITY_Mermaid Static|Mermaid Static]]
+- [[_COMMUNITY_Static Mermaid|Static Mermaid]]
+- [[_COMMUNITY_Public Mermaid|Public Mermaid]]
+- [[_COMMUNITY_Public Mermaid|Public Mermaid]]
+- [[_COMMUNITY_Public Mermaid|Public Mermaid]]
+- [[_COMMUNITY_Mermaid Public|Mermaid Public]]
+- [[_COMMUNITY_Static Mermaid|Static Mermaid]]
+- [[_COMMUNITY_Public Mermaid|Public Mermaid]]
+- [[_COMMUNITY_Static Mermaid|Static Mermaid]]
+- [[_COMMUNITY_Static Mermaid|Static Mermaid]]
+- [[_COMMUNITY_Static Mermaid|Static Mermaid]]
+- [[_COMMUNITY_Public Mermaid|Public Mermaid]]
+- [[_COMMUNITY_Static Mermaid|Static Mermaid]]
+- [[_COMMUNITY_Static Mermaid|Static Mermaid]]
+- [[_COMMUNITY_Public Mermaid|Public Mermaid]]
+- [[_COMMUNITY_Public Mermaid|Public Mermaid]]
+- [[_COMMUNITY_Mermaid Static|Mermaid Static]]
+- [[_COMMUNITY_Uimenu Expense|Uimenu Expense]]
+- [[_COMMUNITY_Static Mermaid|Static Mermaid]]
+- [[_COMMUNITY_Public Mermaid|Public Mermaid]]
+- [[_COMMUNITY_Katex Auto|Katex Auto]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Js()` - 2327 edges
@@ -72,231 +73,235 @@
 10. `forEach()` - 84 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `H3()` --calls--> `e()`  [INFERRED]
+- `Xwe()` --calls--> `O()`  [INFERRED]
   public/mermaid.min.js → themes/hugo-book/static/asciinema/asciinema-player.min.js
-- `L9e()` --calls--> `e()`  [INFERRED]
-  public/mermaid.min.js → themes/hugo-book/static/asciinema/asciinema-player.min.js
-- `checkSingleRoot()` --calls--> `e()`  [INFERRED]
-  public/mermaid.min.js → themes/hugo-book/static/asciinema/asciinema-player.min.js
-- `natural_sort_key()` --calls--> `isDigit()`  [INFERRED]
+- `process_directory()` --calls--> `join()`  [INFERRED]
   scratch/merge.py → themes/hugo-book/static/mermaid.min.js
 - `process_directory()` --calls--> `remove()`  [INFERRED]
   scratch/merge.py → themes/hugo-book/static/mermaid.min.js
+- `generate_index_md()` --calls--> `join()`  [INFERRED]
+  scratch/sequence.py → themes/hugo-book/static/mermaid.min.js
+- `main()` --calls--> `join()`  [INFERRED]
+  scratch/sequence.py → themes/hugo-book/static/mermaid.min.js
 
 ## Communities
 
-### Community 0 - "Community 0"
+### Community 0 - "Public Mermaid"
 Cohesion: 0.01
-Nodes (315): A0(), addToResyncTokens(), age(), alternatives(), AQ(), AT_LEAST_ONE(), AT_LEAST_ONE1(), AT_LEAST_ONE2() (+307 more)
+Nodes (241): $9(), age(), alternatives(), alts(), AT_LEAST_ONE(), AT_LEAST_ONE1(), AT_LEAST_ONE2(), AT_LEAST_ONE3() (+233 more)
 
-### Community 1 - "Community 1"
+### Community 1 - "Static Mermaid"
 Cohesion: 0.01
-Nodes (210): $0e(), addToResyncTokens(), alternatives(), AT_LEAST_ONE(), AT_LEAST_ONE1(), AT_LEAST_ONE2(), AT_LEAST_ONE3(), AT_LEAST_ONE4() (+202 more)
+Nodes (202): a8(), age(), ale(), AQ(), aSe(), AT_LEAST_ONE(), AT_LEAST_ONE1(), AT_LEAST_ONE2() (+194 more)
 
-### Community 2 - "Community 2"
+### Community 2 - "Screen Swift"
 Cohesion: 0.01
-Nodes (467): 1.-creating-our-first-app, 1.-variables-data-types-and-more., **2. If the above method doesn't work and your Terminal is not responding, try the following (more stable) method:**, 3. Sorting an array of custom data, 5.-tab-bar-controller, 6.-search-bar, A few notes:, Accessing a value for a key: (+459 more)
+Nodes (463): 1.-creating-our-first-app, 1.-variables-data-types-and-more., **2. If the above method doesn't work and your Terminal is not responding, try the following (more stable) method:**, 3. Sorting an array of custom data, 5.-tab-bar-controller, 6.-search-bar, A few notes:, Accessing a value for a key: (+455 more)
 
-### Community 3 - "Community 3"
+### Community 3 - "Mermaid Public"
 Cohesion: 0.01
-Nodes (327): e(), each(), I, O(), s(), t(), U, V() (+319 more)
+Nodes (402): e(), gA(), I, O(), pt(), $2(), a(), AAe() (+394 more)
 
-### Community 4 - "Community 4"
+### Community 4 - "Asciinema Player"
 Cohesion: 0.02
-Nodes (266): $2(), $9(), AAe(), aC(), accept(), _Ae(), aF(), aFe() (+258 more)
+Nodes (154): _, AA(), Ag(), B, bA(), Bg(), BI(), C() (+146 more)
 
-### Community 5 - "Community 5"
+### Community 5 - "Katex Search"
 Cohesion: 0.02
-Nodes (110): F, element(), focusSearchFieldOnKeyPress(), init(), isHotkey(), search(), _, an() (+102 more)
+Nodes (102): F, element(), focusSearchFieldOnKeyPress(), init(), isHotkey(), search(), _, an() (+94 more)
 
-### Community 6 - "Community 6"
-Cohesion: 0.02
-Nodes (137): _, AA(), Ag(), B, bA(), Bg(), BI(), C() (+129 more)
-
-### Community 7 - "Community 7"
+### Community 6 - "Static Mermaid"
 Cohesion: 0.03
-Nodes (209): $2(), $9(), AAe(), aC(), accept(), _Ae(), aF(), aFe() (+201 more)
+Nodes (233): $2(), $9(), AAe(), aC(), accept(), _Ae(), aF(), aFe() (+225 more)
 
-### Community 8 - "Community 8"
-Cohesion: 0.04
-Nodes (179): Ht(), mt(), natural_sort_key(), process_directory(), main(), process_file(), generate_index_md(), main() (+171 more)
-
-### Community 9 - "Community 9"
-Cohesion: 0.02
-Nodes (151): $6e(), addAll(), addAnnotation(), addAttributes(), addClass(), addClassesToNamespace(), addCssStyles(), addDescription() (+143 more)
-
-### Community 10 - "Community 10"
-Cohesion: 0.02
-Nodes (136): __(), _0(), A7e(), Abe(), ACTION(), activationCount(), addActor(), addBox() (+128 more)
-
-### Community 11 - "Community 11"
+### Community 7 - "Mermaid Public"
 Cohesion: 0.03
-Nodes (134): $6e(), A7e(), activationCount(), addActor(), addAll(), addAnnotation(), addAttributes(), addBox() (+126 more)
+Nodes (208): each(), Ht(), mt(), _7e(), _8(), A2(), ad(), AEe() (+200 more)
 
-### Community 12 - "Community 12"
+### Community 8 - "Static Mermaid"
 Cohesion: 0.02
-Nodes (136): __(), _0(), ACTION(), addParents(), addTokenUsingPush(), ADe(), after(), all() (+128 more)
+Nodes (156): $6e(), A7e(), activationCount(), addActor(), addAll(), addAnnotation(), addAttributes(), addBox() (+148 more)
 
-### Community 13 - "Community 13"
+### Community 9 - "Static Mermaid"
 Cohesion: 0.05
-Nodes (129): _7e(), A2(), ad(), AEe(), Bc(), bDe(), bJ(), bZ() (+121 more)
+Nodes (144): A2(), ad(), AEe(), AL(), ar(), arc(), Bc(), bDe() (+136 more)
 
-### Community 14 - "Community 14"
+### Community 10 - "Static Mermaid"
+Cohesion: 0.02
+Nodes (134): addToResyncTokens(), alternatives(), AT_LEAST_ONE_SEP(), AT_LEAST_ONE_SEP1(), AT_LEAST_ONE_SEP2(), AT_LEAST_ONE_SEP3(), AT_LEAST_ONE_SEP4(), AT_LEAST_ONE_SEP5() (+126 more)
+
+### Community 11 - "Static Mermaid"
+Cohesion: 0.02
+Nodes (127): $A(), Abe(), ACTION(), addAstNodeRegionWithAssignmentsTo(), addDocument(), addPoints(), after(), ap() (+119 more)
+
+### Community 12 - "Static Mermaid"
+Cohesion: 0.02
+Nodes (112): A_e(), addMembers(), allElements(), bindFunctions(), Bse(), buildKeywordTokens(), buildTerminalToken(), buildTerminalTokens() (+104 more)
+
+### Community 13 - "Public Mermaid"
 Cohesion: 0.03
-Nodes (115): II(), NRe(), _5(), A5(), addEntry(), AK(), B7e(), bBe() (+107 more)
+Nodes (116): ie(), _5(), A5(), addEntry(), AK(), bBe(), bl(), buildDuplicateRuleNameError() (+108 more)
 
-### Community 15 - "Community 15"
+### Community 14 - "Public Mermaid"
 Cohesion: 0.03
-Nodes (108): addEntry(), AK(), bBe(), Bn(), bue(), buildKeywordPattern(), buildKeywordToken(), C2e() (+100 more)
+Nodes (113): $6e(), add(), addActor(), addAll(), addAnnotation(), addClass(), addClassesToNamespace(), addDescription() (+105 more)
 
-### Community 16 - "Community 16"
+### Community 15 - "Mermaid Static"
+Cohesion: 0.05
+Nodes (108): alternative(), assertion(), atom(), atomEscape(), characterClass(), characterClassEscape(), classAtom(), classEscape() (+100 more)
+
+### Community 16 - "Public Mermaid"
 Cohesion: 0.03
-Nodes (105): add(), all(), allElements(), _be(), Bse(), build(), buildAlternationAmbiguityError(), buildAlternationPrefixAmbiguityError() (+97 more)
+Nodes (111): ACTION(), activationCount(), addAttributes(), addBox(), addCssStyles(), addMessage(), addNote(), addSignal() (+103 more)
 
-### Community 17 - "Community 17"
-Cohesion: 0.06
-Nodes (92): alternative(), assertion(), atom(), atomEscape(), characterClass(), characterClassEscape(), classAtom(), classEscape() (+84 more)
-
-### Community 18 - "Community 18"
-Cohesion: 0.05
-Nodes (88): acquireParserWorker(), addHiddenNodes(), AG(), beginGroup(), bh(), buildLeafNode(), buildRootNode(), c8e() (+80 more)
-
-### Community 19 - "Community 19"
-Cohesion: 0.04
-Nodes (88): $A(), serialize(), addAstNodeRegionWithAssignmentsTo(), allElements(), ap(), _be(), Bse(), buildKeywordTokens() (+80 more)
-
-### Community 20 - "Community 20"
-Cohesion: 0.04
-Nodes (79): autolink(), blockquote(), blockTokens(), buildTerminalToken(), checkbox(), code(), codespan(), def() (+71 more)
-
-### Community 21 - "Community 21"
-Cohesion: 0.04
-Nodes (78): addDocument(), addPoints(), Am(), AU(), buildDocuments(), buildLeafNode(), computeExports(), computeExportsForNode() (+70 more)
-
-### Community 22 - "Community 22"
+### Community 17 - "Static Mermaid"
 Cohesion: 0.03
-Nodes (75): A_e(), addMembers(), b$(), bindFunctions(), bLe(), buildDuplicateRuleNameError(), C_e(), calculate() (+67 more)
+Nodes (110): _0(), addHiddenNodes(), addParents(), addTokenUsingPush(), ADe(), aMe(), Ax(), buildDuplicateRuleNameError() (+102 more)
 
-### Community 23 - "Community 23"
+### Community 18 - "Static Mermaid"
+Cohesion: 0.03
+Nodes (103): s(), U, $0e(), _7e(), a(), Ah(), b$(), bMe() (+95 more)
+
+### Community 19 - "Static Mermaid"
 Cohesion: 0.04
-Nodes (74): A_e(), addMembers(), b$(), bindFunctions(), bLe(), C_e(), calculate(), Cbe() (+66 more)
+Nodes (98): _5(), A5(), addEntry(), AK(), bBe(), bl(), buildKeywordPattern(), buildKeywordToken() (+90 more)
 
-### Community 24 - "Community 24"
-Cohesion: 0.06
-Nodes (72): ie(), $4(), aa(), Axe(), b2(), b_e(), bK(), c1() (+64 more)
+### Community 20 - "Public Mermaid"
+Cohesion: 0.03
+Nodes (89): $0e(), addMembers(), ADe(), bindFunctions(), buildKeywordToken(), buildKeywordTokens(), buildTerminalTokens(), buildTokens() (+81 more)
 
-### Community 25 - "Community 25"
-Cohesion: 0.05
-Nodes (61): acquireParserWorker(), autolink(), blockquote(), blockTokens(), buildRootNode(), checkbox(), code(), codespan() (+53 more)
+### Community 21 - "Public Mermaid"
+Cohesion: 0.03
+Nodes (96): autolink(), Bg(), bLe(), blockquote(), blockTokens(), c8e(), checkbox(), code() (+88 more)
 
-### Community 26 - "Community 26"
-Cohesion: 0.05
-Nodes (60): $(), add(), ale(), B4e(), BI(), bt(), bW(), clear() (+52 more)
+### Community 22 - "Public Mermaid"
+Cohesion: 0.03
+Nodes (80): Abe(), addDocument(), addParents(), addPoints(), aUe(), B6e(), build(), buildDocuments() (+72 more)
 
-### Community 27 - "Community 27"
-Cohesion: 0.09
-Nodes (60): AG(), beginGroup(), bh(), callFunction(), cG(), consume(), consumeArg(), consumeArgs() (+52 more)
+### Community 23 - "Public Mermaid"
+Cohesion: 0.03
+Nodes (74): __(), _0(), A7e(), a8(), addALink(), addDetails(), addLinks(), addProperties() (+66 more)
 
-### Community 28 - "Community 28"
+### Community 24 - "Public Mermaid"
 Cohesion: 0.04
-Nodes (59): addNode(), aSe(), bEe(), bnt(), Bxe(), c1e(), c8(), consumeInternalRecord() (+51 more)
+Nodes (70): Ah(), aSe(), bnt(), cd(), Ch(), cke(), copy(), cSe() (+62 more)
 
-### Community 29 - "Community 29"
-Cohesion: 0.04
-Nodes (58): Ah(), Bg(), cramp(), Dxe(), escape(), eT(), extend(), finalize() (+50 more)
-
-### Community 30 - "Community 30"
-Cohesion: 0.05
-Nodes (56): addALink(), addDetails(), addLinks(), addNode(), addProperties(), bEe(), buildDuplicateFoundError(), buildEmptyRepetitionError() (+48 more)
-
-### Community 31 - "Community 31"
-Cohesion: 0.06
-Nodes (54): addALink(), addDetails(), addDocument(), addLinks(), addPoints(), addProperties(), create(), createAsync() (+46 more)
-
-### Community 32 - "Community 32"
-Cohesion: 0.06
-Nodes (53): buildTerminalToken(), calculateHorizontalSpace(), calculateSpace(), calculateSpaceIfDrawnHorizontally(), calculateSpaceIfDrawnVertical(), calculateVerticalSpace(), cI(), createIndentationTokenInstance() (+45 more)
-
-### Community 33 - "Community 33"
+### Community 25 - "Public Mermaid"
 Cohesion: 0.07
-Nodes (49): buildRuleNotFoundError(), checkIsTarget(), concat(), ege(), em(), getGAstProductions(), getNextPossibleTokenTypes(), IA() (+41 more)
+Nodes (70): acquireParserWorker(), addHiddenNodes(), AG(), beginGroup(), bh(), buildLeafNode(), buildRootNode(), callFunction() (+62 more)
 
-### Community 34 - "Community 34"
+### Community 26 - "Static Mermaid"
+Cohesion: 0.04
+Nodes (68): __(), add(), b2(), B4e(), b_e(), bK(), bW(), c_() (+60 more)
+
+### Community 27 - "Static Mermaid"
+Cohesion: 0.05
+Nodes (61): acquireParserWorker(), autolink(), blockquote(), blockTokens(), buildRootNode(), code(), codespan(), def() (+53 more)
+
+### Community 28 - "Mermaid Static"
 Cohesion: 0.09
-Nodes (49): _5(), $8e(), A5(), Am(), b8e(), bl(), C5(), cd() (+41 more)
+Nodes (59): useStrictBehavior(), AG(), beginGroup(), bh(), callFunction(), cG(), consume(), consumeArg() (+51 more)
 
-### Community 35 - "Community 35"
-Cohesion: 0.07
-Nodes (47): ap(), assign(), Bq(), buildReference(), computeLocalScopes(), createDescription(), createLinkingError(), cue() (+39 more)
+### Community 29 - "Static Mermaid"
+Cohesion: 0.05
+Nodes (59): all(), _be(), build(), Bv(), calculateHorizontalSpace(), calculateSpace(), calculateSpaceIfDrawnHorizontally(), calculateSpaceIfDrawnVertical() (+51 more)
 
-### Community 36 - "Community 36"
-Cohesion: 0.09
-Nodes (46): aa(), b2(), b_e(), bK(), c1(), Di(), Dle(), E_e() (+38 more)
+### Community 30 - "Public Mermaid"
+Cohesion: 0.05
+Nodes (54): ap(), buildReference(), cI(), computeLocalScopes(), createDescription(), createLinkingError(), createScope(), dehydrate() (+46 more)
 
-### Community 37 - "Community 37"
+### Community 31 - "Public Mermaid"
 Cohesion: 0.06
-Nodes (40): Ah(), aI(), Ax(), bCe(), Bg(), cramp(), eT(), finalize() (+32 more)
+Nodes (51): A_e(), all(), allElements(), b2(), b_e(), bK(), C_e(), Cbe() (+43 more)
 
-### Community 38 - "Community 38"
+### Community 32 - "Public Mermaid"
+Cohesion: 0.06
+Nodes (48): B4e(), calculate(), clear(), constructor(), create(), eze(), feed(), getConfig() (+40 more)
+
+### Community 33 - "Mermaid Public"
+Cohesion: 0.09
+Nodes (46): $8e(), A0(), b8e(), computeLookaheadFunc(), disableRecording(), enableRecording(), f8e(), g8e() (+38 more)
+
+### Community 34 - "Static Mermaid"
+Cohesion: 0.06
+Nodes (48): bezierCurveTo(), c1e(), closePath(), consumeInternalRecord(), cW(), _drawToContext(), eet(), Eje() (+40 more)
+
+### Community 35 - "Public Mermaid"
+Cohesion: 0.05
+Nodes (46): addNode(), bEe(), c1e(), consumeInternalRecord(), count(), decorateNode(), dEe(), eSe() (+38 more)
+
+### Community 36 - "Static Mermaid"
+Cohesion: 0.06
+Nodes (43): addALink(), addDetails(), addLinks(), addNode(), addProperties(), bEe(), BI(), checkbox() (+35 more)
+
+### Community 37 - "Static Mermaid"
 Cohesion: 0.12
-Nodes (40): $8e(), A0(), b8e(), cd(), f8e(), FK(), g8e(), gd() (+32 more)
+Nodes (39): $8e(), A0(), b8e(), cd(), f8e(), g8e(), gd(), gM() (+31 more)
 
-### Community 39 - "Community 39"
-Cohesion: 0.06
-Nodes (39): aUe(), b8(), C2e(), Ch(), CU(), displayable(), E2e(), eH() (+31 more)
-
-### Community 40 - "Community 40"
+### Community 38 - "Static Mermaid"
 Cohesion: 0.09
-Nodes (36): $4(), Axe(), Cl(), cM(), Cxe(), dit(), Exe(), F4() (+28 more)
+Nodes (37): $4(), Axe(), Bn(), Cl(), cM(), dit(), Exe(), F4() (+29 more)
 
-### Community 41 - "Community 41"
+### Community 39 - "Public Mermaid"
 Cohesion: 0.09
-Nodes (29): buildRuleNotFoundError(), checkIsTarget(), mp(), visit(), visitAlternation(), visitAlternative(), visitCharacter(), visitChildren() (+21 more)
+Nodes (35): buildTerminalToken(), calculateHorizontalSpace(), calculateSpace(), calculateSpaceIfDrawnHorizontally(), calculateSpaceIfDrawnVertical(), calculateVerticalSpace(), df(), Fg() (+27 more)
 
-### Community 42 - "Community 42"
+### Community 40 - "Static Mermaid"
+Cohesion: 0.07
+Nodes (34): Am(), aUe(), BS(), bue(), C2e(), cde(), E2e(), EEe() (+26 more)
+
+### Community 41 - "Static Mermaid"
+Cohesion: 0.08
+Nodes (32): Bg(), cramp(), eT(), finalize(), fontMetrics(), fTe(), g3(), getColor() (+24 more)
+
+### Community 42 - "Public Mermaid"
+Cohesion: 0.1
+Nodes (30): $4(), Axe(), Cxe(), dit(), Exe(), F4(), gC(), getDisplayDetails() (+22 more)
+
+### Community 43 - "Public Mermaid"
+Cohesion: 0.14
+Nodes (30): aa(), c1(), cW(), Di(), Dle(), gFe(), i$e(), IM() (+22 more)
+
+### Community 44 - "Mermaid Static"
 Cohesion: 0.09
-Nodes (27): age(), bje(), cqe(), dqe(), FJe(), fqe(), Gb(), Hge() (+19 more)
+Nodes (27): II(), dTe(), KTe(), LM(), LRe(), nCe(), NRe(), oRe() (+19 more)
 
-### Community 43 - "Community 43"
-Cohesion: 0.09
-Nodes (26): AN(), B4e(), BI(), constructor(), errors(), feed(), getConfig(), init() (+18 more)
-
-### Community 44 - "Community 44"
+### Community 45 - "Uimenu Expense"
 Cohesion: 0.15
 Nodes (25): Add Expense Screen, AddExpenseView, AddExpenseViewController: UIMenu for buttonSelectType, AddExpenseViewController: UIMenu for buttonTakePhoto, App6: Adding more features on App5, Appendix, buttonSelectType:, buttonTakePhoto: (+17 more)
 
-### Community 45 - "Community 45"
-Cohesion: 0.13
-Nodes (22): bezierCurveTo(), closePath(), _drawToContext(), Eje(), fillSketch(), htt(), j0(), jMe() (+14 more)
+### Community 46 - "Static Mermaid"
+Cohesion: 0.22
+Nodes (23): aa(), c1(), Di(), IM(), isEpsilon(), j6e(), jFe(), kFe() (+15 more)
 
-### Community 46 - "Community 46"
-Cohesion: 0.15
-Nodes (20): bezierCurveTo(), closePath(), cW(), _drawToContext(), Eje(), htt(), j0(), jMe() (+12 more)
+### Community 47 - "Public Mermaid"
+Cohesion: 0.14
+Nodes (21): bue(), C2e(), cde(), E2e(), eH(), eUe(), jVe(), Krt() (+13 more)
 
-### Community 47 - "Community 47"
+### Community 48 - "Katex Auto"
 Cohesion: 0.67
 Nodes (1): r()
 
 ## Knowledge Gaps
 - **1 isolated node(s):** `Variables & Data Types`
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Community 47`** (3 nodes): `r()`, `auto-render.min.js`, `auto-render.min.js`
+- **Thin community `Katex Auto`** (3 nodes): `r()`, `auto-render.min.js`, `auto-render.min.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Js()` connect `Community 0` to `Community 3`, `Community 5`, `Community 6`, `Community 7`, `Community 9`, `Community 10`, `Community 13`, `Community 14`, `Community 15`, `Community 16`, `Community 17`, `Community 18`, `Community 19`, `Community 20`, `Community 22`, `Community 24`, `Community 28`, `Community 29`, `Community 31`, `Community 33`, `Community 34`, `Community 35`, `Community 43`, `Community 46`?**
+- **Why does `Js()` connect `Public Mermaid` to `Mermaid Public`, `Asciinema Player`, `Katex Search`, `Mermaid Public`, `Public Mermaid`, `Public Mermaid`, `Mermaid Static`, `Public Mermaid`, `Public Mermaid`, `Public Mermaid`, `Public Mermaid`, `Public Mermaid`, `Public Mermaid`, `Public Mermaid`, `Mermaid Static`, `Public Mermaid`, `Public Mermaid`, `Public Mermaid`, `Mermaid Public`, `Public Mermaid`, `Public Mermaid`, `Public Mermaid`, `Public Mermaid`, `Mermaid Static`, `Public Mermaid`?**
   _High betweenness centrality (0.467) - this node is a cross-community bridge._
-- **Why does `O()` connect `Community 3` to `Community 0`, `Community 1`, `Community 4`, `Community 6`, `Community 7`, `Community 8`, `Community 9`, `Community 10`, `Community 11`, `Community 12`, `Community 13`, `Community 14`, `Community 15`, `Community 16`, `Community 17`, `Community 18`, `Community 19`, `Community 20`, `Community 21`, `Community 22`, `Community 23`, `Community 24`, `Community 25`, `Community 26`, `Community 27`, `Community 28`, `Community 30`, `Community 32`, `Community 34`, `Community 35`, `Community 36`, `Community 37`, `Community 38`, `Community 39`, `Community 40`, `Community 43`?**
+- **Why does `O()` connect `Mermaid Public` to `Public Mermaid`, `Static Mermaid`, `Asciinema Player`, `Static Mermaid`, `Mermaid Public`, `Static Mermaid`, `Static Mermaid`, `Static Mermaid`, `Static Mermaid`, `Static Mermaid`, `Public Mermaid`, `Public Mermaid`, `Mermaid Static`, `Static Mermaid`, `Static Mermaid`, `Static Mermaid`, `Public Mermaid`, `Public Mermaid`, `Public Mermaid`, `Public Mermaid`, `Public Mermaid`, `Static Mermaid`, `Mermaid Static`, `Static Mermaid`, `Public Mermaid`, `Public Mermaid`, `Public Mermaid`, `Mermaid Public`, `Static Mermaid`, `Public Mermaid`, `Static Mermaid`, `Static Mermaid`, `Static Mermaid`, `Static Mermaid`, `Public Mermaid`, `Static Mermaid`, `Public Mermaid`?**
   _High betweenness centrality (0.232) - this node is a cross-community bridge._
-- **Why does `e()` connect `Community 3` to `Community 0`, `Community 1`, `Community 4`, `Community 6`, `Community 7`, `Community 8`, `Community 9`, `Community 10`, `Community 11`, `Community 12`, `Community 13`, `Community 16`, `Community 19`, `Community 20`, `Community 21`, `Community 22`, `Community 23`, `Community 28`, `Community 30`, `Community 31`, `Community 32`, `Community 35`, `Community 38`?**
+- **Why does `e()` connect `Mermaid Public` to `Public Mermaid`, `Static Mermaid`, `Asciinema Player`, `Static Mermaid`, `Mermaid Public`, `Static Mermaid`, `Static Mermaid`, `Static Mermaid`, `Static Mermaid`, `Public Mermaid`, `Public Mermaid`, `Mermaid Static`, `Public Mermaid`, `Static Mermaid`, `Static Mermaid`, `Static Mermaid`, `Public Mermaid`, `Public Mermaid`, `Public Mermaid`, `Public Mermaid`, `Public Mermaid`, `Static Mermaid`, `Public Mermaid`, `Mermaid Public`, `Static Mermaid`, `Public Mermaid`, `Static Mermaid`, `Static Mermaid`, `Public Mermaid`, `Mermaid Static`, `Static Mermaid`?**
   _High betweenness centrality (0.028) - this node is a cross-community bridge._
-- **Are the 235 inferred relationships involving `O()` (e.g. with `b$()` and `w$()`) actually correct?**
+- **Are the 235 inferred relationships involving `O()` (e.g. with `Js()` and `b$()`) actually correct?**
   _`O()` has 235 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 160 inferred relationships involving `e()` (e.g. with `UV()` and `iTe()`) actually correct?**
+- **Are the 160 inferred relationships involving `e()` (e.g. with `Abe()` and `r()`) actually correct?**
   _`e()` has 160 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `Variables & Data Types` to the rest of the system?**
   _1 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Community 0` be split into smaller, more focused modules?**
+- **Should `Public Mermaid` be split into smaller, more focused modules?**
   _Cohesion score 0.01 - nodes in this community are weakly interconnected._

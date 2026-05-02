@@ -28,7 +28,7 @@ Learning Objectives# By the end of this session, you will be able to:">
   <meta itemprop="description" content="Table of Contents# Variables &amp; Data Types# Table of Contents# Collections# Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
 {&lt; hint info &gt;} 🎯 Topic Mission: In this module, we will explore Collections and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {&lt; /hint &gt;}
 Learning Objectives# By the end of this session, you will be able to:">
-  <meta itemprop="wordCount" content="16496">
+  <meta itemprop="wordCount" content="16417">
 
 <title>Module 2: Swift Fundamentals | iOS UIKit Course</title>
 <link rel="icon" href="/favicon.png" >
@@ -38,7 +38,7 @@ Learning Objectives# By the end of this session, you will be able to:">
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.2d8fd5e4236bd86b25ebef9673310ebe25f1df0b4aedc504172ac049ab171f38.js" integrity="sha256-LY/V5CNr2Gsl6&#43;&#43;WczEOviXx3wtK7cUEFyrASasXHzg=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.79d8fbe5c352e1e2da559b8378ff5b4507df69656d01b71c19c90d10531011a5.js" integrity="sha256-edj75cNS4eLaVZuDeP9bRQffaWVtAbccGckNEFMQEaU=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="//localhost:1313/docs/02-swift-fundamentals/index.xml" title="iOS UIKit Course" />
@@ -269,47 +269,38 @@ Learning Objectives# By the end of this session, you will be able to:">
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#table-of-contents">Table of Contents</a></li>
-    <li><a href="#variables--data-types">Variables &amp; Data Types</a></li>
-    <li><a href="#table-of-contents-1">Table of Contents</a></li>
-    <li><a href="#collections">Collections</a></li>
+    <li><a href="#table-of-contents">Table of Contents</a>
+      <ul>
+        <li><a href="#variables--data-types">Variables &amp; Data Types</a></li>
+      </ul>
+    </li>
+    <li><a href="#table-of-contents-1">Table of Contents</a>
+      <ul>
+        <li><a href="#collections">Collections</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives">Learning Objectives</a></li>
     <li><a href="#the-story-so-far">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-collections">Walkthrough: Exploring Collections</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-collections">Walkthrough: Exploring Collections</a>
       <ul>
+        <li><a href="#collections-1">Collections</a></li>
+        <li><a href="#arrays">Arrays</a></li>
         <li><a href="#adding-a-new-element-to-an-existing-array"><strong>Adding a new element to an existing array:</strong></a></li>
         <li><a href="#size-of-an-existing-array"><strong>Size of an existing array:</strong></a></li>
         <li><a href="#accessing-an-element-from-a-particular-position"><strong>Accessing an element from a particular position:</strong></a></li>
         <li><a href="#removing-an-element-from-an-existing-array"><strong>Removing an element from an existing array:</strong></a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#sets">Sets</a></li>
+        <li><a href="#tuples">Tuples</a></li>
         <li><a href="#creating-a-new-tuple">Creating a new tuple:</a></li>
         <li><a href="#accessing-elements-in-a-tuple">Accessing elements in a tuple:</a></li>
         <li><a href="#changing-values">Changing values:</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#dictionaries">Dictionaries</a></li>
         <li><a href="#creating-a-dictionary">Creating a dictionary:</a></li>
         <li><a href="#adding-a-new-key-value-pair-and-updating-a-value-for-a-particular-key">Adding a new key-value pair and updating a value for a particular key:</a></li>
         <li><a href="#accessing-a-value-for-a-key">Accessing a value for a key:</a></li>
+        <li><a href="#reference-code">Reference Code</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
     <li><a href="#guided-practice-challenges">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation">Challenge 1: Experimentation</a></li>
@@ -317,22 +308,24 @@ Learning Objectives# By the end of this session, you will be able to:">
       </ul>
     </li>
     <li><a href="#references">References</a></li>
-    <li><a href="#getting-help">Getting Help</a></li>
-    <li><a href="#operators">Operators</a></li>
-    <li><a href="#learning-objectives-1">Learning Objectives</a></li>
-    <li><a href="#the-story-so-far-1">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-operators">Walkthrough: Exploring Operators</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#getting-help">Getting Help</a>
       <ul>
-        <li><a href="#booleans">Booleans:</a></li>
+        <li><a href="#operators">Operators</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
+    <li><a href="#learning-objectives-1">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far-1">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-operators">Walkthrough: Exploring Operators</a>
+      <ul>
+        <li><a href="#operators-1">Operators</a></li>
+        <li><a href="#arithmetic-operations">Arithmetic Operations</a></li>
+        <li><a href="#operator-overloading">Operator overloading</a></li>
+        <li><a href="#more-on-operators">More on Operators</a></li>
+        <li><a href="#comparison-operators-and-booleans">Comparison Operators (and Booleans)</a></li>
+        <li><a href="#booleans">Booleans:</a></li>
+        <li><a href="#reference-code-1">Reference Code</a></li>
+      </ul>
+    </li>
     <li><a href="#guided-practice-challenges-1">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-1">Challenge 1: Experimentation</a></li>
@@ -340,14 +333,24 @@ Learning Objectives# By the end of this session, you will be able to:">
       </ul>
     </li>
     <li><a href="#references-1">References</a></li>
-    <li><a href="#getting-help-1">Getting Help</a></li>
-    <li><a href="#conditionals">Conditionals</a></li>
+    <li><a href="#getting-help-1">Getting Help</a>
+      <ul>
+        <li><a href="#conditionals">Conditionals</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-2">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-2">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-conditionals">Walkthrough: Exploring Conditionals</a></li>
-  </ul>
-
-  <ul>
+    <li><a href="#walkthrough-exploring-conditionals">Walkthrough: Exploring Conditionals</a>
+      <ul>
+        <li><a href="#conditionals-1">Conditionals</a></li>
+        <li><a href="#if-statements">If statements</a></li>
+        <li><a href="#if-else-statements">If-else statements</a></li>
+        <li><a href="#switch-statements">Switch statements</a></li>
+        <li><a href="#combining-operators">Combining operators</a></li>
+        <li><a href="#range-operators">Range operators</a></li>
+        <li><a href="#reference-code-2">Reference Code</a></li>
+      </ul>
+    </li>
     <li><a href="#guided-practice-challenges-2">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-2">Challenge 1: Experimentation</a></li>
@@ -355,31 +358,26 @@ Learning Objectives# By the end of this session, you will be able to:">
       </ul>
     </li>
     <li><a href="#references-2">References</a></li>
-    <li><a href="#getting-help-2">Getting Help</a></li>
-    <li><a href="#loops">Loops</a></li>
+    <li><a href="#getting-help-2">Getting Help</a>
+      <ul>
+        <li><a href="#loops">Loops</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-3">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-3">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-loops">Walkthrough: Exploring Loops</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-loops">Walkthrough: Exploring Loops</a>
       <ul>
-        <li><a href="#512-looping-through-other-collections-dictionaries-arrays-of-struct-objects-etc">5.1.2. Looping through other Collections (Dictionaries, Arrays of Struct Objects, etc.)</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#loops-1">Loops</a></li>
+        <li><a href="#for-loops">For loops</a></li>
+        <li><a href="#looping-through-other-collections-dictionaries-arrays-of-struct-objects-etc">Looping through other Collections (Dictionaries, Arrays of Struct Objects, etc.)</a></li>
+        <li><a href="#while-loops">While loops</a></li>
+        <li><a href="#repeat-loops">Repeat loops</a></li>
+        <li><a href="#break-and-continue">Break and continue</a></li>
         <li><a href="#breakingexiting-loops">Breaking/exiting loops</a></li>
         <li><a href="#skipping-a-block-manually">Skipping a block manually</a></li>
+        <li><a href="#reference-code-3">Reference Code</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
     <li><a href="#guided-practice-challenges-3">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-3">Challenge 1: Experimentation</a></li>
@@ -387,33 +385,29 @@ Learning Objectives# By the end of this session, you will be able to:">
       </ul>
     </li>
     <li><a href="#references-3">References</a></li>
-    <li><a href="#getting-help-3">Getting Help</a></li>
-    <li><a href="#functions">Functions</a></li>
+    <li><a href="#getting-help-3">Getting Help</a>
+      <ul>
+        <li><a href="#functions">Functions</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-4">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-4">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-functions">Walkthrough: Exploring Functions</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-functions">Walkthrough: Exploring Functions</a>
       <ul>
+        <li><a href="#functions-1">Functions</a></li>
+        <li><a href="#writing-functions">Writing functions</a></li>
         <li><a href="#simple-functions">Simple functions</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#parameter-labels">Parameter labels</a></li>
-    <li><a href="#omitting-parameter-labels">Omitting parameter labels</a></li>
-    <li><a href="#default-parameters">Default parameters</a></li>
-    <li><a href="#why-and-where-do-we-use-internal-and-external-names-in-swift-functions"><mark>Why and where do we use internal and external names in Swift functions?</mark></a>
-      <ul>
+        <li><a href="#functions-with-parameters">Functions with parameters</a></li>
+        <li><a href="#functions-that-return-a-value">Functions that return a value</a></li>
+        <li><a href="#more-on-function-parameters">More on function parameters</a></li>
+        <li><a href="#parameter-labels">Parameter labels</a></li>
+        <li><a href="#omitting-parameter-labels">Omitting parameter labels</a></li>
+        <li><a href="#default-parameters">Default parameters</a></li>
+        <li><a href="#why-and-where-do-we-use-internal-and-external-names-in-swift-functions"><mark>Why and where do we use internal and external names in Swift functions?</mark></a></li>
         <li><a href="#scenarios-where-internal-and-external-names-are-useful">Scenarios where internal and external names are useful</a></li>
+        <li><a href="#reference-code-4">Reference Code</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
     <li><a href="#guided-practice-challenges-4">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-4">Challenge 1: Experimentation</a></li>
@@ -421,22 +415,23 @@ Learning Objectives# By the end of this session, you will be able to:">
       </ul>
     </li>
     <li><a href="#references-4">References</a></li>
-    <li><a href="#getting-help-4">Getting Help</a></li>
-    <li><a href="#closures">Closures</a></li>
-    <li><a href="#learning-objectives-5">Learning Objectives</a></li>
-    <li><a href="#the-story-so-far-5">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-closures">Walkthrough: Exploring Closures</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#getting-help-4">Getting Help</a>
       <ul>
-        <li><a href="#when-closures-accept-parameters-themselves-and-return-values">When closures accept parameters themselves and return values</a></li>
+        <li><a href="#closures">Closures</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
+    <li><a href="#learning-objectives-5">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far-5">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-closures">Walkthrough: Exploring Closures</a>
+      <ul>
+        <li><a href="#closures-1">Closures</a></li>
+        <li><a href="#closures-with-parameters">Closures with parameters</a></li>
+        <li><a href="#closures-that-return-a-value">Closures that return a value</a></li>
+        <li><a href="#closures-as-parameters">Closures as parameters</a></li>
+        <li><a href="#when-closures-accept-parameters-themselves-and-return-values">When closures accept parameters themselves and return values</a></li>
+        <li><a href="#reference-code-5">Reference Code</a></li>
+      </ul>
+    </li>
     <li><a href="#guided-practice-challenges-5">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-5">Challenge 1: Experimentation</a></li>
@@ -444,16 +439,16 @@ Learning Objectives# By the end of this session, you will be able to:">
       </ul>
     </li>
     <li><a href="#references-5">References</a></li>
-    <li><a href="#getting-help-5">Getting Help</a></li>
-    <li><a href="#optionals">Optionals</a></li>
+    <li><a href="#getting-help-5">Getting Help</a>
+      <ul>
+        <li><a href="#optionals">Optionals</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-6">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-6">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-optionals">Walkthrough: Exploring Optionals</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-optionals">Walkthrough: Exploring Optionals</a>
       <ul>
+        <li><a href="#optionals-1">Optionals</a></li>
         <li><a href="#if-let">If-let</a></li>
         <li><a href="#forced">Forced</a></li>
         <li><a href="#source-code">Source code</a></li>
@@ -466,24 +461,29 @@ Learning Objectives# By the end of this session, you will be able to:">
       </ul>
     </li>
     <li><a href="#references-6">References</a></li>
-    <li><a href="#getting-help-6">Getting Help</a></li>
-    <li><a href="#custom-data-types">Custom Data Types</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#table-of-contents-2">Table of Contents</a></li>
-    <li><a href="#protocols">Protocols</a></li>
+    <li><a href="#getting-help-6">Getting Help</a>
+      <ul>
+        <li><a href="#custom-data-types">Custom Data Types</a></li>
+        <li><a href="#creating-your-own-data-types">Creating your own data types</a></li>
+      </ul>
+    </li>
+    <li><a href="#table-of-contents-2">Table of Contents</a>
+      <ul>
+        <li><a href="#protocols">Protocols</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-7">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-7">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-protocols">Walkthrough: Exploring Protocols</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#reference-code">Reference code</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#reference-code-1">Reference code</a></li>
+    <li><a href="#walkthrough-exploring-protocols">Walkthrough: Exploring Protocols</a>
+      <ul>
+        <li><a href="#protocols-1">Protocols</a></li>
+        <li><a href="#adopting-a-protocol">Adopting a protocol</a></li>
+        <li><a href="#reference-code-6">Reference code</a></li>
+        <li><a href="#creating-a-single-protocol-from-multiple-protocols">Creating a single protocol from multiple protocols</a></li>
+        <li><a href="#inheriting-a-super-class-and-adopting-protocols-together">Inheriting a super class and adopting protocols together</a></li>
+        <li><a href="#reference-code-7">Reference code</a></li>
+      </ul>
+    </li>
     <li><a href="#guided-practice-challenges-7">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-7">Challenge 1: Experimentation</a></li>
@@ -491,31 +491,24 @@ Learning Objectives# By the end of this session, you will be able to:">
       </ul>
     </li>
     <li><a href="#references-7">References</a></li>
-    <li><a href="#getting-help-7">Getting Help</a></li>
-    <li><a href="#sorting-arrays">Sorting Arrays</a></li>
+    <li><a href="#getting-help-7">Getting Help</a>
+      <ul>
+        <li><a href="#sorting-arrays">Sorting Arrays</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-8">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-8">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-sorting-arrays">Walkthrough: Exploring Sorting Arrays</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-sorting-arrays">Walkthrough: Exploring Sorting Arrays</a>
       <ul>
+        <li><a href="#sorting-arrays-1">Sorting Arrays</a></li>
+        <li><a href="#increasing-order">Increasing order</a></li>
         <li></li>
         <li></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#decreasing-order">Decreasing order</a></li>
         <li><a href="#do-it-using-closures-not-functions">Do it using closures (not functions)</a></li>
+        <li><a href="#3-sorting-an-array-of-custom-data">3. Sorting an array of custom data</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
     <li><a href="#guided-practice-challenges-8">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-8">Challenge 1: Experimentation</a></li>
@@ -523,40 +516,26 @@ Learning Objectives# By the end of this session, you will be able to:">
       </ul>
     </li>
     <li><a href="#references-8">References</a></li>
-    <li><a href="#getting-help-8">Getting Help</a></li>
-    <li><a href="#91-structs">9.1. Structs</a></li>
+    <li><a href="#getting-help-8">Getting Help</a>
+      <ul>
+        <li><a href="#structs">Structs</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-9">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-9">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-91-structs">Walkthrough: Exploring 9.1. Structs</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-91-structs">Walkthrough: Exploring 9.1. Structs</a>
       <ul>
+        <li><a href="#structs-1">Structs</a></li>
         <li><a href="#computed-properties">Computed properties</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#functions-methods-inside-structs">Functions (methods) inside structs</a></li>
         <li><a href="#struct-initializers">Struct initializers</a></li>
-      </ul>
-    </li>
-    <li><a href="#source-code-1">Source code</a></li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#source-code-1">Source code</a></li>
+        <li><a href="#initializing-structs-with-different-initializers">Initializing structs with different initializers</a></li>
         <li><a href="#struct-initialization-and-optionals">Struct initialization and Optionals</a></li>
+        <li><a href="#source-code-2">Source code</a></li>
+        <li><a href="#manipulating-object-properties-inherently-in-a-struct">Manipulating object properties inherently in a struct</a></li>
       </ul>
     </li>
-    <li><a href="#source-code-2">Source code</a></li>
-  </ul>
-
-  <ul>
     <li><a href="#guided-practice-challenges-9">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-9">Challenge 1: Experimentation</a></li>
@@ -564,24 +543,23 @@ Learning Objectives# By the end of this session, you will be able to:">
       </ul>
     </li>
     <li><a href="#references-9">References</a></li>
-    <li><a href="#getting-help-9">Getting Help</a></li>
-    <li><a href="#92-classes">9.2. Classes</a></li>
-    <li><a href="#learning-objectives-10">Learning Objectives</a></li>
-    <li><a href="#the-story-so-far-10">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-92-classes">Walkthrough: Exploring 9.2. Classes</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#getting-help-9">Getting Help</a>
       <ul>
-        <li><a href="#overriding-methods">Overriding methods</a></li>
+        <li><a href="#classes">Classes</a></li>
       </ul>
     </li>
-    <li><a href="#source-code-3">Source code</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#reference-code-2">Reference Code</a></li>
+    <li><a href="#learning-objectives-10">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far-10">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-92-classes">Walkthrough: Exploring 9.2. Classes</a>
+      <ul>
+        <li><a href="#classes-1">Classes</a></li>
+        <li><a href="#inheritance">Inheritance</a></li>
+        <li><a href="#overriding-methods">Overriding methods</a></li>
+        <li><a href="#source-code-3">Source code</a></li>
+        <li><a href="#value-vs-reference">Value vs. Reference</a></li>
+        <li><a href="#reference-code-8">Reference Code</a></li>
+      </ul>
+    </li>
     <li><a href="#guided-practice-challenges-10">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-10">Challenge 1: Experimentation</a></li>
@@ -589,34 +567,33 @@ Learning Objectives# By the end of this session, you will be able to:">
       </ul>
     </li>
     <li><a href="#references-10">References</a></li>
-    <li><a href="#getting-help-10">Getting Help</a></li>
-    <li><a href="#1-variables-data-types-and-more">1.-variables-data-types-and-more.</a></li>
+    <li><a href="#getting-help-10">Getting Help</a>
+      <ul>
+        <li><a href="#1-variables-data-types-and-more">1.-variables-data-types-and-more.</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-11">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-11">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-this-topic">Walkthrough: Exploring this topic</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#video">Video</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#video-1">Video</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#video-2">Video</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#video-3">Video</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#video-4">Video</a></li>
-  </ul>
-
-  <ul>
+    <li><a href="#walkthrough-exploring-this-topic">Walkthrough: Exploring this topic</a>
+      <ul>
+        <li><a href="#variables-data-types-and-more">Variables, Data types, and more.</a></li>
+        <li><a href="#creating-a-swift-playground">Creating a Swift Playground</a></li>
+        <li><a href="#video">Video</a></li>
+        <li><a href="#variables">Variables</a></li>
+        <li><a href="#video-1">Video</a></li>
+        <li><a href="#type-safety">Type safety</a></li>
+        <li><a href="#video-2">Video</a></li>
+        <li><a href="#strings-and-print-to-console">Strings and print to console</a></li>
+        <li><a href="#video-3">Video</a></li>
+        <li><a href="#floating-point-numbers-and-type-annotation">Floating point numbers and Type annotation</a></li>
+        <li><a href="#video-4">Video</a></li>
+        <li><a href="#more-print-string-interpolation">More print, String interpolation</a></li>
+        <li><a href="#constants">Constants</a></li>
+        <li><a href="#type-annotations-revisited">Type annotations (revisited)</a></li>
+        <li><a href="#comments">Comments</a></li>
+        <li><a href="#reference-code-9">Reference Code</a></li>
+      </ul>
+    </li>
     <li><a href="#guided-practice-challenges-11">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-11">Challenge 1: Experimentation</a></li>
@@ -638,13 +615,13 @@ Learning Objectives# By the end of this session, you will be able to:">
       
       
   <article class="markdown book-article"><h2 id="table-of-contents">Table of Contents<a class="anchor" href="#table-of-contents">#</a></h2>
-<h2 id="variables--data-types">Variables &amp; Data Types<a class="anchor" href="#variables--data-types">#</a></h2>
+<h3 id="variables--data-types">Variables &amp; Data Types<a class="anchor" href="#variables--data-types">#</a></h3>
 <h2 id="table-of-contents-1">Table of Contents<a class="anchor" href="#table-of-contents-1">#</a></h2>
 <dl>
 
 </dl>
 
-<h2 id="collections">Collections<a class="anchor" href="#collections">#</a></h2>
+<h3 id="collections">Collections<a class="anchor" href="#collections">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -668,12 +645,11 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-collections">Walkthrough: Exploring Collections<a class="anchor" href="#walkthrough-exploring-collections">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="2-collections">2. Collections<a class="anchor" href="#2-collections">#</a></h1>
+</blockquote><h3 id="collections-1">Collections<a class="anchor" href="#collections-1">#</a></h3>
 <p>So far, we have discussed a few simple Data types like String, Int, Double, etc. <strong>Now, we will move into learning a few useful Collections like Arrays, Sets, Tuples, and Dictionaries.</strong></p>
 <p>We often work with a list of data in real life, meaning a list of items having similar properties; for example, we might need to display a list of similar hotels near a specific location. We use Collections like Arrays, Sets, Dictionaries, etc., to store a list or group of data items together. Collections are powerful tools to store, manage and order data while running the program.</p>
 <p>Please browse to the next page to learn more about Swift Collections.</p>
-<!-- Merged from 2.1.-arrays.md -->
-<h1 id="21-arrays">2.1. Arrays<a class="anchor" href="#21-arrays">#</a></h1>
+<h3 id="arrays">Arrays<a class="anchor" href="#arrays">#</a></h3>
 <p>An array is a <em><strong>data structure</strong></em> that can store a collection of values of the same data type. An array is an ordered data structure, which means the elements are stored in a specific order, and an element stays at the same position/index until changed.</p>
 <p>In Swift, we create arrays with <code>[DataType]</code>.</p>
 <p>For example, the following code creates an empty array of strings that holds the name of car brands:</p>
@@ -707,8 +683,7 @@ The second element of carMakes: Toyota</code></pre><h3 id="removing-an-element-f
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Printing the current elements of the array...</span>
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;After removing: </span><span style="color:#e6db74">\(</span>carMakes<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)</span></span></code></pre></div><p>This code outputs:</p>
 <pre tabindex="0"><code>After removing: [&#34;Mazda&#34;, &#34;Honda&#34;]</code></pre><p>So far, we have learned the basics about Swift arrays (declaring and initializing an array, adding and removing elements). We will explore more functionalities cumulatively further down the road.</p>
-<!-- Merged from 2.2.-sets.md -->
-<h1 id="22-sets">2.2. Sets<a class="anchor" href="#22-sets">#</a></h1>
+<h3 id="sets">Sets<a class="anchor" href="#sets">#</a></h3>
 <p>A Set in Swift is a similar data structure to an Array with two differences:</p>
 <ul>
 <li>No item in a set can appear twice. Each item must be unique in a set.</li>
@@ -732,8 +707,7 @@ The second element of carMakes: Toyota</code></pre><h3 id="removing-an-element-f
 <p>Now, if you are working with a set where you will not change the elements in the future you should use <code>let</code> to create a set with predefined values.</p>
 <p>For example,</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> colors = Set([<span style="color:#e6db74">&#34;blue&#34;</span>, <span style="color:#e6db74">&#34;black&#34;</span>, <span style="color:#e6db74">&#34;red&#34;</span>])</span></span></code></pre></div><p>Note: you can remove an element from a set by calling <code>remove()</code> function. Try it yourself!</p>
-<!-- Merged from 2.3.-tuples.md -->
-<h1 id="23-tuples">2.3. Tuples<a class="anchor" href="#23-tuples">#</a></h1>
+<h3 id="tuples">Tuples<a class="anchor" href="#tuples">#</a></h3>
 <p>A Tuple is a collection of different elements of different data types stored together in the same place. It may sound like an array, but it is not exactly an array. The differences are:</p>
 <ul>
 <li>An array contains values of the same data type. <strong>However, a tuple can hold values of different data types together.</strong></li>
@@ -762,8 +736,7 @@ The second element of carMakes: Toyota</code></pre><h3 id="removing-an-element-f
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;yourTuple: </span><span style="color:#e6db74">\(</span>yourTuple<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)</span></span></code></pre></div><p>It prints:</p>
 <pre tabindex="0"><code>yourTuple: (name: &#34;Julie&#34;, age: 34)</code></pre><p><strong>Please note: you can modify the values of an element; however, you cannot change the data type.</strong></p>
 <p>Try writing: <code>yourTuple.age=&quot;thirty four&quot;</code> :wink:</p>
-<!-- Merged from 2.4.-dictionaries.md -->
-<h1 id="24-dictionaries">2.4. Dictionaries<a class="anchor" href="#24-dictionaries">#</a></h1>
+<h3 id="dictionaries">Dictionaries<a class="anchor" href="#dictionaries">#</a></h3>
 <p>When we hear the word &lsquo;dictionary,&rsquo; we imagine a book of words and their corresponding meanings where we search for the words and find their meanings. Each word has a meaning in a dictionary.</p>
 <p>In Swift, a dictionary is a similar data structure to a real-life dictionary. It is a collection of <code>key-value</code> pairs. Where each <code>key</code> is similar to a word in a dictionary book, and the corresponding <code>value</code> is similar to the meaning of the word. A dictionary in Swift has the following properties:</p>
 <ul>
@@ -800,8 +773,7 @@ The second element of carMakes: Toyota</code></pre><h3 id="removing-an-element-f
 <h3 id="accessing-a-value-for-a-key">Accessing a value for a key:<a class="anchor" href="#accessing-a-value-for-a-key">#</a></h3>
 <p>We can fetch how many Mazda cars we have by:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> mazdaCount = carCounts[<span style="color:#e6db74">&#34;Mazda&#34;</span>]</span></span></code></pre></div><p><strong>A small challenge:</strong> can you try to remove all Honda cars? (Hint: there is a <code>removeValue()</code> function).</p>
-<!-- Merged from 2.5.-reference-code.md -->
-<h1 id="25-reference-code">2.5. Reference Code<a class="anchor" href="#25-reference-code">#</a></h1>
+<h3 id="reference-code">Reference Code<a class="anchor" href="#reference-code">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/MyPlayground2.playground.zip&quot; %}</p>
 <hr>
 <h2 id="guided-practice-challenges">Guided Practice Challenges<a class="anchor" href="#guided-practice-challenges">#</a></h2>
@@ -826,7 +798,7 @@ The second element of carMakes: Toyota</code></pre><h3 id="removing-an-element-f
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="operators">Operators<a class="anchor" href="#operators">#</a></h2>
+<h3 id="operators">Operators<a class="anchor" href="#operators">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -850,10 +822,9 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-operators">Walkthrough: Exploring Operators<a class="anchor" href="#walkthrough-exploring-operators">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="3-operators">3. Operators<a class="anchor" href="#3-operators">#</a></h1>
+</blockquote><h3 id="operators-1">Operators<a class="anchor" href="#operators-1">#</a></h3>
 <p>In this section, we will learn about the usage of operators (<code>+</code>,<code>-</code>,<code>/</code>, etc.) in Swift. Please continue reading the next pages to learn about them.</p>
-<!-- Merged from 3.1.-arithmetic-operations.md -->
-<h1 id="31-arithmetic-operations">3.1. Arithmetic Operations<a class="anchor" href="#31-arithmetic-operations">#</a></h1>
+<h3 id="arithmetic-operations">Arithmetic Operations<a class="anchor" href="#arithmetic-operations">#</a></h3>
 <p>Let&rsquo;s do some arithmetic operations using Swift now. For addition, subtraction, multiplication, and division, we use <code>+</code>,<code>-</code>,<code>*</code>, and <code>/</code> respectively. Let&rsquo;s look at the following code:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> num1 = <span style="color:#ae81ff">5</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> num2 = <span style="color:#ae81ff">33</span>
@@ -896,8 +867,7 @@ Division remainder = 3</code></pre><p>From the above example, it feels very intu
 <figure><img src="/gitbook-assets/Screenshot 2023-05-02 at 3.34.04 PM (1).png" alt=""><figcaption></figcaption></figure>
 <p>Remember, <code>Double</code> is a 64-bits long number and <code>Int</code> is a 32-bits long number? We are trying to add an <code>Int</code>(<code>myInt</code>) and a <code>Double</code>(<code>myDouble</code>) together and put the result into an <code>Int</code>(<code>sum</code>). First of all, if you add an <code>Int</code> and a <code>Double</code> together, it results in a <code>Double</code> value, since <code>Double</code> has the largest capacity of the two. Now, we are trying to put that <code>Double</code> value into the constant <code>sum</code>, which is and <code>Int</code>. An <code>Int</code> doesn&rsquo;t have the capacity to hold a <code>Double</code>. So, it is yelling at us :man_facepalming:</p>
 <p>You should always be careful of the types of data before you use arithmetic operators in Swift. More on this later.</p>
-<!-- Merged from 3.2.-operator-overloading.md -->
-<h1 id="32-operator-overloading">3.2. Operator overloading<a class="anchor" href="#32-operator-overloading">#</a></h1>
+<h3 id="operator-overloading">Operator overloading<a class="anchor" href="#operator-overloading">#</a></h3>
 <p>Operator overloading is a way of saying that an arithmetic operator like <code>+</code> has another meaning depending on different data types. For example, we can concatenate two strings, or join two arrays with <code>+</code> operator. For example,</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> firstName = <span style="color:#e6db74">&#34;Sakib&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> lastName = <span style="color:#e6db74">&#34;Miazi&#34;</span>
@@ -913,8 +883,7 @@ Division remainder = 3</code></pre><p>From the above example, it feels very intu
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> listOne = [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>]
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> listTwo = [<span style="color:#e6db74">&#34;four&#34;</span>, <span style="color:#e6db74">&#34;five&#34;</span>]
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> listOneTwo = listOne <span style="color:#f92672">+</span> listTwo</span></span></code></pre></div><p>would it work? :wink:</p>
-<!-- Merged from 3.3.-more-on-operators.md -->
-<h1 id="33-more-on-operators">3.3. More on Operators<a class="anchor" href="#33-more-on-operators">#</a></h1>
+<h3 id="more-on-operators">More on Operators<a class="anchor" href="#more-on-operators">#</a></h3>
 <p>In Swift, you can take a few shortcuts when you are using operators (<code>+</code>, <code>-</code>, <code>*</code>, and <code>/</code>). For example,</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> budget = <span style="color:#ae81ff">30_000</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> expense = <span style="color:#ae81ff">5_000</span></span></span></code></pre></div><p>In the above code, we want to deduct the <code>expense</code> from our <code>budget</code>. To update our remaining budget we would usually do:</p>
@@ -940,8 +909,7 @@ budget -= expense</code></pre><p>Other examples could be:</p>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> name = <span style="color:#e6db74">&#34;Mark&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> surname = <span style="color:#e6db74">&#34;Webber&#34;</span>
 </span></span><span style="display:flex;"><span>name <span style="color:#f92672">+=</span> surname 
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// name = &#34;MarkWebber&#34;</span></span></span></code></pre></div><!-- Merged from 3.4.-comparison-operators-and-booleans.md -->
-<h1 id="34-comparison-operators-and-booleans">3.4. Comparison Operators (and Booleans)<a class="anchor" href="#34-comparison-operators-and-booleans">#</a></h1>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// name = &#34;MarkWebber&#34;</span></span></span></code></pre></div><h3 id="comparison-operators-and-booleans">Comparison Operators (and Booleans)<a class="anchor" href="#comparison-operators-and-booleans">#</a></h3>
 <p>Swift uses many comparison operators like, <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, and so on. We use the following operators the most:</p>
 <table><thead><tr><th width="118.33333333333331">Operator</th><th width="217">Description</th><th width="129">Example</th><th>Meaning</th></tr></thead><tbody><tr><td><code>==</code></td><td>Equal to</td><td><code>a == b</code></td><td>is <code>a</code> equal to <code>b</code>?</td></tr><tr><td><code>!=</code></td><td>Not equal to</td><td><code>a != b</code></td><td>is <code>a</code> not equal to <code>b</code>?</td></tr><tr><td><code>&#x3C;</code></td><td>Less than</td><td><code>a &#x3C; b</code></td><td>is <code>a</code> less than <code>b</code>?</td></tr><tr><td><code>></code></td><td>Greater than</td><td><code>a > b</code></td><td>is <code>a</code> greater than <code>b</code>?</td></tr><tr><td><code>&#x3C;=</code></td><td>Less than or equal to</td><td><code>a &#x3C;= b</code></td><td>is <code>a</code> less than or equal to <code>b</code>?</td></tr><tr><td><code>>=</code></td><td>Greater than or equal to</td><td><code>a >= b</code></td><td>is <code>a</code> greater than or equal to <code>b</code>?</td></tr></tbody></table>
 <h3 id="booleans">Booleans:<a class="anchor" href="#booleans">#</a></h3>
@@ -961,8 +929,7 @@ budget -= expense</code></pre><p>Other examples could be:</p>
 <pre tabindex="0"><code>false
 Bool</code></pre><p>It means <code>a==b</code> is comparing <code>a</code> with <code>b</code> to check if <code>a</code> is equal to <code>b,</code>and returning the decision in boolean. Since the decision is not true, it creates the constant <code>isEqual</code> with the value <code>false</code>.</p>
 <p>Comparison operators are widely used in Conditionals, Loops, and many other places where we make binary decisions.</p>
-<!-- Merged from 3.5.-reference-code.md -->
-<h1 id="35-reference-code">3.5. Reference Code<a class="anchor" href="#35-reference-code">#</a></h1>
+<h3 id="reference-code-1">Reference Code<a class="anchor" href="#reference-code-1">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/MyPlayground3.playground (1).zip&quot; %}</p>
 <hr>
 <h2 id="guided-practice-challenges-1">Guided Practice Challenges<a class="anchor" href="#guided-practice-challenges-1">#</a></h2>
@@ -987,7 +954,7 @@ Bool</code></pre><p>It means <code>a==b</code> is comparing <code>a</code> with 
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="conditionals">Conditionals<a class="anchor" href="#conditionals">#</a></h2>
+<h3 id="conditionals">Conditionals<a class="anchor" href="#conditionals">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -1011,7 +978,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-conditionals">Walkthrough: Exploring Conditionals<a class="anchor" href="#walkthrough-exploring-conditionals">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="4-conditionals">4. Conditionals<a class="anchor" href="#4-conditionals">#</a></h1>
+</blockquote><h3 id="conditionals-1">Conditionals<a class="anchor" href="#conditionals-1">#</a></h3>
 <p>Conditionals in Swift are used to make decisions in your code. They allow us to make different decisions based on the different circumstances. The condition is an expression that evaluates to a Boolean value, which can be either <code>true</code> or <code>false</code>. If the condition is true, the corresponding code block will execute; if false, that particular block won&rsquo;t execute. You can define a separate code block to execute if the condition is false.</p>
 <p>There are three types of conditionals in Swift:</p>
 <ul>
@@ -1019,16 +986,14 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li><code>if-else</code> statements</li>
 <li><code>switch</code> statements</li>
 </ul>
-<!-- Merged from 4.1.-if-statements.md -->
-<h1 id="41-if-statements">4.1. If statements<a class="anchor" href="#41-if-statements">#</a></h1>
+<h3 id="if-statements">If statements<a class="anchor" href="#if-statements">#</a></h3>
 <p><strong><code>if</code> statements</strong> are the simplest type of conditional. They allow us to specify what should happen if a condition is <code>true</code>. For example, the following code prints &ldquo;It is 5!&rdquo; if the variable <code>myNum</code> is equal to 5:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> myNum = <span style="color:#ae81ff">5</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//condition myNum==5 returns either true or false...</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> myNum == <span style="color:#ae81ff">5</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">//This code block executes if true...</span>
 </span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;It is 5!&#34;</span>)
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><!-- Merged from 4.2.-if-else-statements.md -->
-<h1 id="42-if-else-statements">4.2. If-else statements<a class="anchor" href="#42-if-else-statements">#</a></h1>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="if-else-statements">If-else statements<a class="anchor" href="#if-else-statements">#</a></h3>
 <p><strong><code>if-else</code> statements</strong> allow us to specify what should happen if a condition is <code>true</code> or <code>false</code>. So, now we can add a code block if the condition is <code>false</code>. We can modify our previous example to print &ldquo;It is not 5!&rdquo;, if <code>myNum</code> is not 5.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> myNum == <span style="color:#ae81ff">5</span> {
 </span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;It is 5!&#34;</span>)
@@ -1045,8 +1010,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>}<span style="color:#66d9ef">else</span>{
 </span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Not 1, 3, or 5!&#34;</span>)
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Here, the conditions are checked sequentially for each <code>if</code> and <code>else if</code>. If none of the conditions are true, the program switches to the <code>else</code> block.</p>
-<!-- Merged from 4.3.-switch-statements.md -->
-<h1 id="43-switch-statements">4.3. Switch statements<a class="anchor" href="#43-switch-statements">#</a></h1>
+<h3 id="switch-statements">Switch statements<a class="anchor" href="#switch-statements">#</a></h3>
 <p>Instead of <code>if-else if-else</code> chain, we can use <code>switch</code> statements if multiple statements are <code>true</code>. For example, the following code prints the name of the day of the week, depending on the value of the constant <code>day</code>. If the value of <code>day</code> is 1 through 7, the code prints the name of the day; else, it prints &ldquo;Invalid!&rdquo;</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//switch statements...</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> day = <span style="color:#ae81ff">5</span>
@@ -1072,8 +1036,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li>Each <code>case</code> in a <code>switch</code> statement is the same as <code>if</code> or <code>else if</code> in <code>if-else if-else</code> chain.</li>
 <li>The <code>default</code> block in a <code>switch</code> statement is the same as the <code>else</code> block in <code>if-else</code> statements.</li>
 </ul>
-<!-- Merged from 4.4.-combining-operators.md -->
-<h1 id="44-combining-operators">4.4. Combining operators<a class="anchor" href="#44-combining-operators">#</a></h1>
+<h3 id="combining-operators">Combining operators<a class="anchor" href="#combining-operators">#</a></h3>
 <p>Swift has two operators that let us combine multiple conditions. They are <code>&amp;&amp;</code> (<code>and</code>), and <code>||</code> (or).</p>
 <p>Let&rsquo;s look into an example:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> myAge = <span style="color:#ae81ff">24</span>
@@ -1085,8 +1048,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> myAge <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">18</span> <span style="color:#f92672">||</span> myAge <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">65</span> {
 </span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Not eligible!&#34;</span>)
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>It means if <code>myAge</code> is more than or equal to 18 <code>and</code> less than or equal to 65, print &ldquo;Eligible for the user study!&rdquo;; if <code>myAge</code> is less than 18 <code>or</code> greater than 65, print &ldquo;Not eligible!&rdquo;</p>
-<!-- Merged from 4.5.-range-operators.md -->
-<h1 id="45-range-operators">4.5. Range operators<a class="anchor" href="#45-range-operators">#</a></h1>
+<h3 id="range-operators">Range operators<a class="anchor" href="#range-operators">#</a></h3>
 <p>Swift can even represent a range of values. There are two kinds of range operators in Swift:</p>
 <ul>
 <li>Closed range operators (<code>...</code>) creates ranges up to and including the final value.</li>
@@ -1104,8 +1066,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">default</span>:
 </span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Invalid day!&#34;</span>)
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>It means that if the value of <code>today</code> is in the range 1 to 5 (including 5), <code>today</code> is a weekday; if the value is in the range 6 to less than 8, <code>today</code> is a weekend; else it is an invalid day.</p>
-<!-- Merged from 4.6.-reference-code.md -->
-<h1 id="46-reference-code">4.6. Reference Code<a class="anchor" href="#46-reference-code">#</a></h1>
+<h3 id="reference-code-2">Reference Code<a class="anchor" href="#reference-code-2">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/MyPlayground4.playground.zip&quot; %}</p>
 <hr>
 <h2 id="guided-practice-challenges-2">Guided Practice Challenges<a class="anchor" href="#guided-practice-challenges-2">#</a></h2>
@@ -1130,7 +1091,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="loops">Loops<a class="anchor" href="#loops">#</a></h2>
+<h3 id="loops">Loops<a class="anchor" href="#loops">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -1154,7 +1115,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-loops">Walkthrough: Exploring Loops<a class="anchor" href="#walkthrough-exploring-loops">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="5-loops">5. Loops<a class="anchor" href="#5-loops">#</a></h1>
+</blockquote><h3 id="loops-1">Loops<a class="anchor" href="#loops-1">#</a></h3>
 <p>If you know any programming language, you probably have heard the word <code>loop</code> most frequently. Yes, Swift, too, has loops. Basically, the structure of a loop is simple, run a block of code repeatedly while a condition is true or until the condition is false.</p>
 <p>There are three kinds of loops in Swift:</p>
 <ul>
@@ -1162,8 +1123,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li>While loops</li>
 <li>Repeat-while loops</li>
 </ul>
-<!-- Merged from 5.1.-for-loops.md -->
-<h1 id="51-for-loops">5.1. For loops<a class="anchor" href="#51-for-loops">#</a></h1>
+<h3 id="for-loops">For loops<a class="anchor" href="#for-loops">#</a></h3>
 <p>For loops are the most common loops in Swift, and you&rsquo;ll probably use this loop for more than 90% of cases. We use <code>for</code> loops to iterate over a sequence of values or a range of values.</p>
 <p>For example, the following code prints the integers in the range <code>1...10</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> range = <span style="color:#ae81ff">1.</span>..<span style="color:#ae81ff">10</span>
@@ -1179,7 +1139,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#66d9ef">_</span> <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">1.</span>..<span style="color:#ae81ff">10</span>{
 </span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Doing the task!&#34;</span>)
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Here, underscore skips create unnecessary values.</p>
-<h3 id="512-looping-through-other-collections-dictionaries-arrays-of-struct-objects-etc">5.1.2. Looping through other Collections (Dictionaries, Arrays of Struct Objects, etc.)<a class="anchor" href="#512-looping-through-other-collections-dictionaries-arrays-of-struct-objects-etc">#</a></h3>
+<h3 id="looping-through-other-collections-dictionaries-arrays-of-struct-objects-etc">Looping through other Collections (Dictionaries, Arrays of Struct Objects, etc.)<a class="anchor" href="#looping-through-other-collections-dictionaries-arrays-of-struct-objects-etc">#</a></h3>
 <p>Let&rsquo;s think about the following Dictionary:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> dictCars: [String: Int] = [<span style="color:#e6db74">&#34;Toyota&#34;</span>: <span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#34;Honda&#34;</span>: <span style="color:#ae81ff">20</span>, <span style="color:#e6db74">&#34;Ford&#34;</span>: <span style="color:#ae81ff">30</span>]</span></span></code></pre></div><p>This a dictionary for a car dealership where the keys are car brands and the values are the number of cars of the corresponding brands in their inventory. We want to loop through the dictionary and print the values from the dictionary.</p>
 <p>We will look at some of the example outputs:</p>
@@ -1212,8 +1172,7 @@ in our dealership.</code></pre><p><strong>Code:</strong></p>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>print (<span style="color:#e6db74">&#34;We got </span><span style="color:#e6db74">\(</span>total<span style="color:#e6db74">)</span><span style="color:#e6db74"> cars in our dealership.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)</span></span></code></pre></div><p><strong>Output:</strong></p>
 <pre tabindex="0"><code>We got 60 cars in our dealership.</code></pre><p><strong>Long story short, we can use parenthesis to define which component to loop through selectively in a complex Collection.</strong></p>
-<!-- Merged from 5.2.-while-loops.md -->
-<h1 id="52-while-loops">5.2. While loops<a class="anchor" href="#52-while-loops">#</a></h1>
+<h3 id="while-loops">While loops<a class="anchor" href="#while-loops">#</a></h3>
 <p>The second most common loops in Swift are <code>while</code> loops. We use a while loop to run a code block repeatedly as long as a given condition is true. A general structure of a <code>while</code> loop is:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">while</span> condition {
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">//code block</span>
@@ -1224,8 +1183,7 @@ in our dealership.</code></pre><p><strong>Code:</strong></p>
 </span></span><span style="display:flex;"><span>    print(targetNum)
 </span></span><span style="display:flex;"><span>    targetNum <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Here the condition is: if <code>targetNum</code> is less than or equal to 50.</p>
-<!-- Merged from 5.3.-repeat-loops.md -->
-<h1 id="53-repeat-loops">5.3. Repeat loops<a class="anchor" href="#53-repeat-loops">#</a></h1>
+<h3 id="repeat-loops">Repeat loops<a class="anchor" href="#repeat-loops">#</a></h3>
 <p>The third way of writing loops is <code>repeat</code> loops. It is identical to a while loop, but the condition is checked at the end of the code block. If we use the same example from before, we can write:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> myNum = <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>
@@ -1234,8 +1192,7 @@ in our dealership.</code></pre><p><strong>Code:</strong></p>
 </span></span><span style="display:flex;"><span>    print(myNum)
 </span></span><span style="display:flex;"><span>    myNum <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">while</span> myNum <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">50</span></span></span></code></pre></div><p>The point is <code>repeat</code> loops will execute the code block at least once. So, you should be careful about the cases where the first iteration may result in errors.</p>
-<!-- Merged from 5.4.-break-and-continue.md -->
-<h1 id="54-break-and-continue">5.4. Break and continue<a class="anchor" href="#54-break-and-continue">#</a></h1>
+<h3 id="break-and-continue">Break and continue<a class="anchor" href="#break-and-continue">#</a></h3>
 <h3 id="breakingexiting-loops">Breaking/exiting loops<a class="anchor" href="#breakingexiting-loops">#</a></h3>
 <p>Sometimes we want to stop repeating the code block in a loop. We use the keyword <code>break</code> to do that. Let&rsquo;s look into the example below:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> breakPoint = <span style="color:#ae81ff">4</span>
@@ -1260,8 +1217,7 @@ in our dealership.</code></pre><p><strong>Code:</strong></p>
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;This an odd number:</span><span style="color:#e6db74">\(</span>number<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Here, we wanted to print the odd integers between 1 and 10. So, we are running a for loop from 1 to 10 and skipping the even numbers.</p>
-<!-- Merged from 5.5.-reference-code.md -->
-<h1 id="55-reference-code">5.5. Reference Code<a class="anchor" href="#55-reference-code">#</a></h1>
+<h3 id="reference-code-3">Reference Code<a class="anchor" href="#reference-code-3">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/MyPlayground5.playground.zip&quot; %}</p>
 <hr>
 <h2 id="guided-practice-challenges-3">Guided Practice Challenges<a class="anchor" href="#guided-practice-challenges-3">#</a></h2>
@@ -1286,7 +1242,7 @@ in our dealership.</code></pre><p><strong>Code:</strong></p>
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="functions">Functions<a class="anchor" href="#functions">#</a></h2>
+<h3 id="functions">Functions<a class="anchor" href="#functions">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -1310,11 +1266,10 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-functions">Walkthrough: Exploring Functions<a class="anchor" href="#walkthrough-exploring-functions">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="6-functions">6. Functions<a class="anchor" href="#6-functions">#</a></h1>
+</blockquote><h3 id="functions-1">Functions<a class="anchor" href="#functions-1">#</a></h3>
 <p>Functions are the best tools for writing reusable code blocks. Whenever we write codes, we often see that we need to execute the same task in multiple places in our program. What if we could separate the code for that particular task from the main code block and call it every time we need to do it instead of writing the same code again?</p>
 <p>So, in short, a function is a code block where we can do certain tasks. We can provide it with data and receive a result from it.</p>
-<!-- Merged from 6.1.-writing-functions.md -->
-<h1 id="61-writing-functions">6.1. Writing functions<a class="anchor" href="#61-writing-functions">#</a></h1>
+<h3 id="writing-functions">Writing functions<a class="anchor" href="#writing-functions">#</a></h3>
 <p>To write a function in Swift, we use the keyword <code>func</code> followed by the function&rsquo;s name, parameter list, return data type, and body (the code block). A general structure of a Swift function is:</p>
 <pre tabindex="0"><code>func functionName(parameter1:DataType, parameter2:DataType, ...) -&gt; ReturnDataType{
     //code block
@@ -1323,8 +1278,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">printHelloWorld</span>(){
 </span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Hello World!&#34;</span>)
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>You can call the function from your code like:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>printHelloWorld()</span></span></code></pre></div><!-- Merged from 6.2.-functions-with-parameters.md -->
-<h1 id="62-functions-with-parameters">6.2. Functions with parameters<a class="anchor" href="#62-functions-with-parameters">#</a></h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>printHelloWorld()</span></span></code></pre></div><h3 id="functions-with-parameters">Functions with parameters<a class="anchor" href="#functions-with-parameters">#</a></h3>
 <p>Now, let&rsquo;s write a function that accepts parameters and do some tasks. The following code accepts the name and age of a person as parameters and prints the details.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//function definition...</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">printDetails</span>(name:String, age:Int){
@@ -1342,8 +1296,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>printDetails(name: <span style="color:#e6db74">&#34;Donald&#34;</span>, age: <span style="color:#ae81ff">25</span>)</span></span></code></pre></div><p>It prints:</p>
 <pre tabindex="0"><code>The user&#39;s name is: Donald.
 The user&#39;s age is: 25.
-Donald is awesome!</code></pre><!-- Merged from 6.3.-functions-that-return-a-value.md -->
-<h1 id="63-functions-that-return-a-value">6.3. Functions that return a value<a class="anchor" href="#63-functions-that-return-a-value">#</a></h1>
+Donald is awesome!</code></pre><h3 id="functions-that-return-a-value">Functions that return a value<a class="anchor" href="#functions-that-return-a-value">#</a></h3>
 <p>Now, let&rsquo;s think about a function that accepts an array of integers as a parameter and returns the sum of the integers.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sumOf</span>(array:[Int]) -&gt; Int{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> sum = <span style="color:#ae81ff">0</span>
@@ -1358,9 +1311,8 @@ Donald is awesome!</code></pre><!-- Merged from 6.3.-functions-that-return-a-val
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//calling the function with an integer array</span>
 </span></span><span style="display:flex;"><span>print(sumOf(array: [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>]))</span></span></code></pre></div><p>It prints:</p>
 <pre tabindex="0"><code>15</code></pre><p>You can get the returned value and store it to a constant or variable:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> sum = sumOf(array: [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>])</span></span></code></pre></div><!-- Merged from 6.4.-more-on-function-parameters.md -->
-<h1 id="64-more-on-function-parameters">6.4. More on function parameters<a class="anchor" href="#64-more-on-function-parameters">#</a></h1>
-<h2 id="parameter-labels">Parameter labels<a class="anchor" href="#parameter-labels">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> sum = sumOf(array: [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>])</span></span></code></pre></div><h3 id="more-on-function-parameters">More on function parameters<a class="anchor" href="#more-on-function-parameters">#</a></h3>
+<h3 id="parameter-labels">Parameter labels<a class="anchor" href="#parameter-labels">#</a></h3>
 <p>Swift functions have the ability to have completely separate internal and external parameter names. Instead of having a single parameter name, the function below has two. The first one, <code>with</code> is an external parameter name, which is the name that will refer to the parameter when we call the function. The second one, <code>vehicle</code> is the internal parameter name which is the name we’ll use when we need to use the parameter within the function.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//function definition...</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">navigate</span>(with vehicle:String, from source:String, to destination:String) -&gt; String{
@@ -1371,7 +1323,7 @@ Donald is awesome!</code></pre><!-- Merged from 6.3.-functions-that-return-a-val
 </span></span><span style="display:flex;"><span>print(navigate(with: <span style="color:#e6db74">&#34;car&#34;</span>, from: <span style="color:#e6db74">&#34;Boston&#34;</span>, to: <span style="color:#e6db74">&#34;NYC&#34;</span>))</span></span></code></pre></div><p>It prints:</p>
 <pre tabindex="0"><code>The user will use a car to travel from Boston to NYC.</code></pre><p>Let&rsquo;s look at the first <code>String</code> parameter the <code>navigate</code> function accepts. Here, <code>with</code> is the external name or label, and <code>vehicle</code> is the internal label for the first parameter. When we are calling the function from outside, we are using <code>with</code>, and internally we are using <code>vehicle</code>.</p>
 <p>We can use this feature to write and call a function creatively.</p>
-<h2 id="omitting-parameter-labels">Omitting parameter labels<a class="anchor" href="#omitting-parameter-labels">#</a></h2>
+<h3 id="omitting-parameter-labels">Omitting parameter labels<a class="anchor" href="#omitting-parameter-labels">#</a></h3>
 <p>We can also omit the external parameter name to call our function just by passing in a value without mentioning the parameter&rsquo;s name. We achieve this by simply replacing the external name with the underscore. Now we can call our function without using a parameter name at all. Instead, we can pass in a value that we want to use as the input.</p>
 <p>Remember <code>underscores</code>? We can use it to define the external name of a parameter to omit the need to type the parameter name when we call the function:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//function definition...</span>
@@ -1380,7 +1332,7 @@ Donald is awesome!</code></pre><!-- Merged from 6.3.-functions-that-return-a-val
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//Calling the function...</span>
-</span></span><span style="display:flex;"><span>printHello(<span style="color:#e6db74">&#34;Sakib&#34;</span>)</span></span></code></pre></div><h2 id="default-parameters">Default parameters<a class="anchor" href="#default-parameters">#</a></h2>
+</span></span><span style="display:flex;"><span>printHello(<span style="color:#e6db74">&#34;Sakib&#34;</span>)</span></span></code></pre></div><h3 id="default-parameters">Default parameters<a class="anchor" href="#default-parameters">#</a></h3>
 <p>Sometimes we want to have default values for our parameters. The default value gets activated if we do not pass any value through the parameters. We can set a default value by writing a <code>=</code> after the parameter&rsquo;s type followed by the default value. Like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//function definition</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">printHello2</span>(<span style="color:#66d9ef">_</span> name:String = <span style="color:#e6db74">&#34;Unknown&#34;</span>){
@@ -1389,7 +1341,7 @@ Donald is awesome!</code></pre><!-- Merged from 6.3.-functions-that-return-a-val
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//calling function...</span>
 </span></span><span style="display:flex;"><span>printHello2()</span></span></code></pre></div><p>It will print:</p>
 <pre tabindex="0"><code>Hello Unknown!</code></pre><p>Because the default is already set to &ldquo;Unknown.&rdquo;</p>
-<h2 id="why-and-where-do-we-use-internal-and-external-names-in-swift-functions"><mark style="color:orange;">Why and where do we use internal and external names in Swift functions?</mark><a class="anchor" href="#why-and-where-do-we-use-internal-and-external-names-in-swift-functions">#</a></h2>
+<h3 id="why-and-where-do-we-use-internal-and-external-names-in-swift-functions"><mark style="color:orange;">Why and where do we use internal and external names in Swift functions?</mark><a class="anchor" href="#why-and-where-do-we-use-internal-and-external-names-in-swift-functions">#</a></h3>
 <ol>
 <li>
 <p><strong>Improved Clarity in Function Calls:</strong></p>
@@ -1425,8 +1377,7 @@ In some cases, functions may have parameters with similar data types. Using exte
 </ol>
 <p>In summary, using internal and external names in Swift functions is a good practice for writing clean, expressive, and self-documenting code, especially when designing public APIs or functions with multiple parameters. They enhance code readability and help prevent confusion and errors when calling functions.</p>
 <p><em>These are the very basics of functions in Swift. Eventually, we will learn more about functions and their various uses.</em></p>
-<!-- Merged from 6.5.-reference-code.md -->
-<h1 id="65-reference-code">6.5. Reference Code<a class="anchor" href="#65-reference-code">#</a></h1>
+<h3 id="reference-code-4">Reference Code<a class="anchor" href="#reference-code-4">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/MyPlayground6.playground (1).zip&quot; %}</p>
 <hr>
 <h2 id="guided-practice-challenges-4">Guided Practice Challenges<a class="anchor" href="#guided-practice-challenges-4">#</a></h2>
@@ -1451,7 +1402,7 @@ In some cases, functions may have parameters with similar data types. Using exte
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="closures">Closures<a class="anchor" href="#closures">#</a></h2>
+<h3 id="closures">Closures<a class="anchor" href="#closures">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -1475,7 +1426,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-closures">Walkthrough: Exploring Closures<a class="anchor" href="#walkthrough-exploring-closures">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="7-closures">7. Closures<a class="anchor" href="#7-closures">#</a></h1>
+</blockquote><h3 id="closures-1">Closures<a class="anchor" href="#closures-1">#</a></h3>
 <p><em><mark style="color:purple;"><strong>This concept might look like a weird one. Do not worry, you&rsquo;ll understand it eventually, and I will keep it simple here.</strong></mark></em></p>
 <p>Swift allows us to define a function just like a Data Type like <code>Int</code> , <code>String</code>, etc. It means you can define and use functions like constants or variables. These functions are called closures. </p>
 <p>On a different note, closures themselves are anonymous functions or functions with no name, they are essentially a self-contained package of functionality that we can pass around and use.\</p>
@@ -1484,8 +1435,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Hello World!&#34;</span>)
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>You can call it just like a function:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//calling closure...</span>
-</span></span><span style="display:flex;"><span>printHello()</span></span></code></pre></div><!-- Merged from 7.1.-closures-with-parameters.md -->
-<h1 id="71-closures-with-parameters">7.1. Closures with parameters<a class="anchor" href="#71-closures-with-parameters">#</a></h1>
+</span></span><span style="display:flex;"><span>printHello()</span></span></code></pre></div><h3 id="closures-with-parameters">Closures with parameters<a class="anchor" href="#closures-with-parameters">#</a></h3>
 <p>We can take the help of <code>in</code> keyword to pass parameters in a closure. For example, in the following code, we define a closure to take a person&rsquo;s name as a parameter and say hello to them:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> sayHelloTo = { (name:String) <span style="color:#66d9ef">in</span>
 </span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Hello </span><span style="color:#e6db74">\(</span>name<span style="color:#e6db74">)</span><span style="color:#e6db74">!&#34;</span>)
@@ -1494,8 +1444,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//calling closure with parameter...</span>
 </span></span><span style="display:flex;"><span>sayHelloTo(<span style="color:#e6db74">&#34;Donald&#34;</span>)</span></span></code></pre></div><p>It prints:</p>
 <pre tabindex="0"><code>Hello Donald!</code></pre><p>Do you find a difference between functions and closure in handling the parameter labels? :wink:</p>
-<!-- Merged from 7.2.-closures-that-return-a-value.md -->
-<h1 id="72-closures-that-return-a-value">7.2. Closures that return a value<a class="anchor" href="#72-closures-that-return-a-value">#</a></h1>
+<h3 id="closures-that-return-a-value">Closures that return a value<a class="anchor" href="#closures-that-return-a-value">#</a></h3>
 <p>To return a value, we would use <code>-&gt;</code> followed by the return data type followed by <code>in</code> keyword. For example, let&rsquo;s convert the <code>sumOf</code> function into a closure to return the sum of integers in an array.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> sumOfArray = {(array:[Int]) -&gt; Int <span style="color:#66d9ef">in</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> sum = <span style="color:#ae81ff">0</span>
@@ -1510,8 +1459,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//calling the closure with an integer array</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> sum = sumOfArray([<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>])
 </span></span><span style="display:flex;"><span>print(sum)</span></span></code></pre></div><p>It prints:</p>
-<pre tabindex="0"><code>15</code></pre><!-- Merged from 7.3.-closures-as-parameters.md -->
-<h1 id="73-closures-as-parameters">7.3. Closures as parameters<a class="anchor" href="#73-closures-as-parameters">#</a></h1>
+<pre tabindex="0"><code>15</code></pre><h3 id="closures-as-parameters">Closures as parameters<a class="anchor" href="#closures-as-parameters">#</a></h3>
 <p>So far, we rewrote the functions as closures. So why write a closure when we can just define a function? Well, the beauty of closures is we can pass closures as parameters to a function. And iOS UIKit and SwiftUI libraries use it extensively.</p>
 <p>Let&rsquo;s define two closures, one to fly and another to drive.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> drive = {
@@ -1568,8 +1516,7 @@ I am taking a flight!</code></pre><p>See, we are calling the closure we received
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//calling function to multiply...</span>
 </span></span><span style="display:flex;"><span>print(calculate(operation: multiply, num1: <span style="color:#ae81ff">2</span>, num2: <span style="color:#ae81ff">23</span>))</span></span></code></pre></div><p>Which prints:</p>
 <pre tabindex="0"><code>46</code></pre><p>So far, we have covered the basics of closures. You need to get used to the closures. I would practice writing closures as much as I could, probably just starting with writing closures deliberately for every simple function. iOS libraries use it very extensively, so again, you need to understand the idea.</p>
-<!-- Merged from 7.4.-reference-code.md -->
-<h1 id="74-reference-code">7.4. Reference Code<a class="anchor" href="#74-reference-code">#</a></h1>
+<h3 id="reference-code-5">Reference Code<a class="anchor" href="#reference-code-5">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/MyPlayground7.playground.zip&quot; %}</p>
 <hr>
 <h2 id="guided-practice-challenges-5">Guided Practice Challenges<a class="anchor" href="#guided-practice-challenges-5">#</a></h2>
@@ -1594,7 +1541,7 @@ I am taking a flight!</code></pre><p>See, we are calling the closure we received
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="optionals">Optionals<a class="anchor" href="#optionals">#</a></h2>
+<h3 id="optionals">Optionals<a class="anchor" href="#optionals">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -1618,7 +1565,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-optionals">Walkthrough: Exploring Optionals<a class="anchor" href="#walkthrough-exploring-optionals">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="8-optionals">8. Optionals<a class="anchor" href="#8-optionals">#</a></h1>
+</blockquote><h3 id="optionals-1">Optionals<a class="anchor" href="#optionals-1">#</a></h3>
 <p>So far, we have learned about the variables and constants that we always initialize with data. What about we declare a variable without any data in it and try to use it, like the following:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> myInt:Int
 </span></span><span style="display:flex;"><span>print(myInt)</span></span></code></pre></div><p>It will give us an error:</p>
@@ -1684,8 +1631,8 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="custom-data-types">Custom Data Types<a class="anchor" href="#custom-data-types">#</a></h2>
-<h1 id="9-creating-your-own-data-types">9. Creating your own data types<a class="anchor" href="#9-creating-your-own-data-types">#</a></h1>
+<h3 id="custom-data-types">Custom Data Types<a class="anchor" href="#custom-data-types">#</a></h3>
+<h3 id="creating-your-own-data-types">Creating your own data types<a class="anchor" href="#creating-your-own-data-types">#</a></h3>
 <p>Swift allows you to create your own data types in two ways:</p>
 <ul>
 <li>Structs</li>
@@ -1697,7 +1644,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 </dl>
 
-<h2 id="protocols">Protocols<a class="anchor" href="#protocols">#</a></h2>
+<h3 id="protocols">Protocols<a class="anchor" href="#protocols">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -1721,14 +1668,13 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-protocols">Walkthrough: Exploring Protocols<a class="anchor" href="#walkthrough-exploring-protocols">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="10-protocols">10. Protocols<a class="anchor" href="#10-protocols">#</a></h1>
+</blockquote><h3 id="protocols-1">Protocols<a class="anchor" href="#protocols-1">#</a></h3>
 <p>Protocols in Swift are similar to Interfaces in many other languages like Java.</p>
 <p>Protocols are like &lsquo;standards,&rsquo; &lsquo;guidelines,&rsquo; or &lsquo;interfaces.&rsquo; A real-life example of that could be the &lsquo;USB-C&rsquo; interface. Think about your laptop, desktop, or phone having USB-C ports. See, the devices implementing these USB-C interfaces are all different, but they all have implemented a standard. The standard describes the physical properties of the interface to which a USB-C connector cable will get attached, how many channels for data communications and power will be there, and what functionalities the devices must implement to have this USB-C interface.</p>
 <p>We will cover the very basics of protocols for Swift here. A general syntax of a protocol is:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">protocol</span> <span style="color:#a6e22e">SomeProtocol</span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">//protocol definition goes here...</span>
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><!-- Merged from 10.1.-adopting-a-protocol.md -->
-<h1 id="101-adopting-a-protocol">10.1. Adopting a protocol<a class="anchor" href="#101-adopting-a-protocol">#</a></h1>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="adopting-a-protocol">Adopting a protocol<a class="anchor" href="#adopting-a-protocol">#</a></h3>
 <p>A protocol contains only the declarations of the properties and functions that are needed to be adopted and implemented by a struct or class. For example, let&rsquo;s define our own USB interface, <code>USBMad.</code></p>
 <p>We can define our own <code>USBMad</code> protocol with a few guidelines:</p>
 <ul>
@@ -1822,10 +1768,9 @@ I use ARM64 architecture.
 I have a USBMad interface with id: 1.
 I am able to charge the accessories!
 You can send/receive data to/from me!</code></pre><p>These are the CliffsNotes version of adopting/confirming a protocol. You will see extensive use of protocols in iOS development.</p>
-<h2 id="reference-code">Reference code<a class="anchor" href="#reference-code">#</a></h2>
+<h3 id="reference-code-6">Reference code<a class="anchor" href="#reference-code-6">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/MyPlayground10.1.playground.zip&quot; %}</p>
-<!-- Merged from 10.2.-creating-a-single-protocol-from-multiple-protocols.md -->
-<h1 id="102-creating-a-single-protocol-from-multiple-protocols">10.2. Creating a single protocol from multiple protocols<a class="anchor" href="#102-creating-a-single-protocol-from-multiple-protocols">#</a></h1>
+<h3 id="creating-a-single-protocol-from-multiple-protocols">Creating a single protocol from multiple protocols<a class="anchor" href="#creating-a-single-protocol-from-multiple-protocols">#</a></h3>
 <p>Let&rsquo;s assume we need to write a protocol for Teaching Assistants (TA). The TAs are paid, receive TA training, and are rated by the professors. Let&rsquo;s assume that we have protocols to pay people, conduct TA training, and rating TAs:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//protocol for payment...</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">protocol</span> <span style="color:#a6e22e">Payment</span>{
@@ -1844,8 +1789,7 @@ You can send/receive data to/from me!</code></pre><p>These are the CliffsNotes v
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">// Some code//consolidating to a single protocol...</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">protocol</span> <span style="color:#a6e22e">TeachingAssistant</span>: Payment, TATraining, RatedByProfessor{
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">//properties and methods for TeachingAssistant protocol...</span>
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><!-- Merged from 10.3.-inheriting-a-super-class-and-adopting-protocols-together.md -->
-<h1 id="103-inheriting-a-super-class-and-adopting-protocols-together">10.3. Inheriting a super class and adopting protocols together<a class="anchor" href="#103-inheriting-a-super-class-and-adopting-protocols-together">#</a></h1>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="inheriting-a-super-class-and-adopting-protocols-together">Inheriting a super class and adopting protocols together<a class="anchor" href="#inheriting-a-super-class-and-adopting-protocols-together">#</a></h3>
 <p>We are continuing with the previous example. Now let&rsquo;s expand on the idea. TAs are also students. A student can be either a graduate student or an undergrad student. Let&rsquo;s assume Alice is an undergrad TA. Let&rsquo;s see how we can write some code to define Alice:</p>
 <p>First, we need to define a class <code>Student</code> that has property <code>name</code> and an initializer method to initialize the instance.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//super class Student...</span>
@@ -1910,7 +1854,7 @@ You can send/receive data to/from me!</code></pre><p>These are the CliffsNotes v
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> Alice completed the TA training.
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span></span></span></code></pre></div><p><strong>Please try the whole thing in your own playground.</strong></p>
 <p>So now we have a basic understanding of how classes work with other classes and protocols. In iOS development, we will repeatedly face these concepts.</p>
-<h2 id="reference-code-1">Reference code<a class="anchor" href="#reference-code-1">#</a></h2>
+<h3 id="reference-code-7">Reference code<a class="anchor" href="#reference-code-7">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/MyPlayground10.3.playground (1).zip&quot; %}</p>
 <hr>
 <h2 id="guided-practice-challenges-7">Guided Practice Challenges<a class="anchor" href="#guided-practice-challenges-7">#</a></h2>
@@ -1935,7 +1879,7 @@ You can send/receive data to/from me!</code></pre><p>These are the CliffsNotes v
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="sorting-arrays">Sorting Arrays<a class="anchor" href="#sorting-arrays">#</a></h2>
+<h3 id="sorting-arrays">Sorting Arrays<a class="anchor" href="#sorting-arrays">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -1959,10 +1903,9 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-sorting-arrays">Walkthrough: Exploring Sorting Arrays<a class="anchor" href="#walkthrough-exploring-sorting-arrays">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="11-sorting-arrays">11. Sorting Arrays<a class="anchor" href="#11-sorting-arrays">#</a></h1>
+</blockquote><h3 id="sorting-arrays-1">Sorting Arrays<a class="anchor" href="#sorting-arrays-1">#</a></h3>
 <p>Here we will talk about one of the most useful lessons while developing iOS apps, sorting. First, we will start with sorting a very simple array, and then we will look into how to sort arrays of custom struct/class objects.</p>
-<!-- Merged from 11.1.-increasing-order.md -->
-<h1 id="111-increasing-order">11.1. Increasing order<a class="anchor" href="#111-increasing-order">#</a></h1>
+<h3 id="increasing-order">Increasing order<a class="anchor" href="#increasing-order">#</a></h3>
 <p>We can call <code>sorted()</code> function to sort an array with the increasing order of it&rsquo;s values.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> arrayOfInt:[Int] = [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">56</span>,<span style="color:#ae81ff">89</span>,<span style="color:#ae81ff">23</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">6</span>]
 </span></span><span style="display:flex;"><span>
@@ -1978,8 +1921,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//prints: [&#34;a&#34;, &#34;apple&#34;, &#34;b&#34;, &#34;orange&#34;, &#34;pineapple&#34;]</span></span></span></code></pre></div><p>The above code sorted the array in a lexicographical order (like how the words in a dictionary are sorted).</p>
 <h3 id=""><a class="anchor" href="#">#</a></h3>
 <h3 id=""><a class="anchor" href="#">#</a></h3>
-<!-- Merged from 11.2.-decreasing-order.md -->
-<h1 id="112-decreasing-order">11.2. Decreasing order<a class="anchor" href="#112-decreasing-order">#</a></h1>
+<h3 id="decreasing-order">Decreasing order<a class="anchor" href="#decreasing-order">#</a></h3>
 <p>Unfortunately, it is not as simple to sort an array in a reversed (decreasing) order as it is to sort it in an increasing order. We need to write a comparator function or closure and use <code>sort(by: &lt;comparator&gt;))</code> to do it.</p>
 <p>Think about how you would sort an array of items.</p>
 <ul>
@@ -2008,8 +1950,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>print(arrayOfIntC)
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//prints: [89, 78, 56, 34, 14, 6]</span></span></span></code></pre></div><p>You can shorten it even more. I did not want to give you an overdose yet. :joy:</p>
-<!-- Merged from 11.-3.-sorting-an-array-of-custom-data.md -->
-<h1 id="11-3-sorting-an-array-of-custom-data">11. 3. Sorting an array of custom data<a class="anchor" href="#11-3-sorting-an-array-of-custom-data">#</a></h1>
+<h3 id="3-sorting-an-array-of-custom-data">3. Sorting an array of custom data<a class="anchor" href="#3-sorting-an-array-of-custom-data">#</a></h3>
 <p>Let&rsquo;s look at the following example:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
 </span></span><span style="display:flex;"><span>
@@ -2084,7 +2025,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="91-structs">9.1. Structs<a class="anchor" href="#91-structs">#</a></h2>
+<h3 id="structs">Structs<a class="anchor" href="#structs">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -2108,7 +2049,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-91-structs">Walkthrough: Exploring 9.1. Structs<a class="anchor" href="#walkthrough-exploring-91-structs">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="91-structs-1">9.1. Structs<a class="anchor" href="#91-structs-1">#</a></h1>
+</blockquote><h3 id="structs-1">Structs<a class="anchor" href="#structs-1">#</a></h3>
 <p>Do you remember <a href="../../2.-collections/2.3.-tuples.md">tuples</a>? We can store different types of data together in a tuple. Structs are very similar to that. We can have any kind of variables in it. For example, a simple struct to store a person&rsquo;s details would be:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Person</span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> name:String
@@ -2155,8 +2096,7 @@ Bob Smith</code></pre><p>So we can create instances of our custom data type <cod
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>It prints:</p>
 <pre tabindex="0"><code>Person(name: &#34;Bob Smith&#34;, age: 36, city: &#34;Boston&#34;)
 Bob Smith is an adult!</code></pre><p>So depending on different values of the property <code>age</code>, it automatically computes the value of the property <code>isMinor</code>.</p>
-<!-- Merged from 9.1.1.-functions-methods-inside-structs.md -->
-<h1 id="911-functions-methods-inside-structs">9.1.1. Functions (methods) inside structs<a class="anchor" href="#911-functions-methods-inside-structs">#</a></h1>
+<h3 id="functions-methods-inside-structs">Functions (methods) inside structs<a class="anchor" href="#functions-methods-inside-structs">#</a></h3>
 <p>We can write functions inside structs. In Swift, they&rsquo;re called methods. For example, we can have a <code>printProfile</code> method in our <code>Profile</code> struct:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Person</span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> name:String
@@ -2257,10 +2197,9 @@ I am 36 years old.
 And I live in Boston!
 Happy coding!</code></pre><p>So, we can create an instance of a struct with default values by writing <code>init()</code> method. Then we have to set the values later.</p>
 <p><mark style="color:purple;"><strong>Please note: you need to write</strong></mark><mark style="color:purple;">**</mark> <code>init()</code> **<mark style="color:purple;"><strong>method before all the other methods and computed properties.</strong></mark></p>
-<h2 id="source-code-1">Source code<a class="anchor" href="#source-code-1">#</a></h2>
+<h3 id="source-code-1">Source code<a class="anchor" href="#source-code-1">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/MyPlayground9.1.1.playground (1).zip&quot; %}</p>
-<!-- Merged from 9.1.2.-initializing-structs-with-different-initializers.md -->
-<h1 id="912-initializing-structs-with-different-initializers">9.1.2. Initializing structs with different initializers<a class="anchor" href="#912-initializing-structs-with-different-initializers">#</a></h1>
+<h3 id="initializing-structs-with-different-initializers">Initializing structs with different initializers<a class="anchor" href="#initializing-structs-with-different-initializers">#</a></h3>
 <p>We can define multiple initializers in a struct. At this point, we will define a new struct <code>Car</code> to demonstrate this concept. Let&rsquo;s define <code>Car</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Car</span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> make:String
@@ -2335,10 +2274,9 @@ Happy coding!</code></pre><p>So, we can create an instance of a struct with defa
 </span></span><span style="display:flex;"><span>car3.year = <span style="color:#ae81ff">2022</span>
 </span></span><span style="display:flex;"><span>print(car3)
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//prints: Car(make: &#34;Honda&#34;, model: &#34;Civic&#34;, year: Optional(2022))</span></span></span></code></pre></div><p>Do you see an issue? <code>year</code> is wrapped with Optional. So if you want to use it anywhere, we should use an unwrapping technique like <a href="../../8.-optionals.md">if-let</a>.</p>
-<h2 id="source-code-2">Source code<a class="anchor" href="#source-code-2">#</a></h2>
+<h3 id="source-code-2">Source code<a class="anchor" href="#source-code-2">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/MyPlayground9.1.2.playground (1).zip&quot; %}</p>
-<!-- Merged from 9.1.3.-manipulating-object-properties-inherently-in-a-struct.md -->
-<h1 id="913-manipulating-object-properties-inherently-in-a-struct">9.1.3. Manipulating object properties inherently in a struct<a class="anchor" href="#913-manipulating-object-properties-inherently-in-a-struct">#</a></h1>
+<h3 id="manipulating-object-properties-inherently-in-a-struct">Manipulating object properties inherently in a struct<a class="anchor" href="#manipulating-object-properties-inherently-in-a-struct">#</a></h3>
 <p>What about we try to update a property of an object and write a function <strong>directly inside of the struct</strong>? So, potentially we will use an inherent function to update a property of the current object. </p>
 <p>So, let&rsquo;s try to add a new function inside the struct <code>Car</code> , <code>updateYear()</code> to change the year of a car.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">// updating a car&#39;s year...</span>
@@ -2441,7 +2379,7 @@ Car(make: &#34;Toyota&#34;, model: &#34;Corolla&#34;, year: Optional(2025))</cod
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="92-classes">9.2. Classes<a class="anchor" href="#92-classes">#</a></h2>
+<h3 id="classes">Classes<a class="anchor" href="#classes">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -2465,7 +2403,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-92-classes">Walkthrough: Exploring 9.2. Classes<a class="anchor" href="#walkthrough-exploring-92-classes">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="92-classes-1">9.2. Classes<a class="anchor" href="#92-classes-1">#</a></h1>
+</blockquote><h3 id="classes-1">Classes<a class="anchor" href="#classes-1">#</a></h3>
 <p>At first glance, a <code>class</code> looks the same as a <code>struct</code>. However, there are a few major differences between them.</p>
 <p>We will discuss classes using the differences they have.</p>
 <p>An example of a class is as follows:</p>
@@ -2488,8 +2426,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> car1 = Vehicle(type: <span style="color:#e6db74">&#34;Car&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> car2 = Vehicle(type: <span style="color:#e6db74">&#34;Truck&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> car3 = Vehicle(type: <span style="color:#e6db74">&#34;Minivan&#34;</span>)
-</span></span><span style="display:flex;"><span>print(car1.type) <span style="color:#75715e">//prints: Car</span></span></span></code></pre></div><!-- Merged from 9.2.1.-inheritance.md -->
-<h1 id="921-inheritance">9.2.1. Inheritance<a class="anchor" href="#921-inheritance">#</a></h1>
+</span></span><span style="display:flex;"><span>print(car1.type) <span style="color:#75715e">//prints: Car</span></span></span></code></pre></div><h3 id="inheritance">Inheritance<a class="anchor" href="#inheritance">#</a></h3>
 <p><strong>One of the most critical capabilities that a class has but a struct doesn&rsquo;t have is inheritance.</strong> Inheritance is the ability of a class to inherit the properties of another existing class and add more functionalities along with it. In other words, we can build a new class based on another existing class. For example, we can build a new class <code>Car</code> based on the <code>Vehicle</code> class we have:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//The Vehicle class....</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Vehicle</span>{
@@ -2572,10 +2509,9 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>car.describe()</span></span></code></pre></div><p>It prints:</p>
 <pre tabindex="0"><code>This is a Car.
 It is a Toyota Rav4.</code></pre><p>This is called method overriding. A class not only can inherit a method from the superclass but also can change (override) it.</p>
-<h2 id="source-code-3">Source code<a class="anchor" href="#source-code-3">#</a></h2>
+<h3 id="source-code-3">Source code<a class="anchor" href="#source-code-3">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/MyPlayground9.2.1.playground (1).zip&quot; %}</p>
-<!-- Merged from 9.2.2.-value-vs.-reference.md -->
-<h1 id="922-value-vs-reference">9.2.2. Value vs. Reference<a class="anchor" href="#922-value-vs-reference">#</a></h1>
+<h3 id="value-vs-reference">Value vs. Reference<a class="anchor" href="#value-vs-reference">#</a></h3>
 <p>Another major difference between a struct and a class is how they behave when copied. Structs are &lsquo;value types,&rsquo; and classes are &lsquo;reference types.&rsquo;</p>
 <p><mark style="color:purple;"><strong>(Structs)</strong></mark> When you copy an instance of a struct from an existing instance, both instances work independently. For example:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">User</span>{
@@ -2625,7 +2561,7 @@ User name of user2 = Bob Smith</code></pre><p>We copied the instance <code>user1
 <pre tabindex="0"><code>Name of person1 = Arya Stark
 Name of person2 = Arya Stark</code></pre><p>Do you find the difference?</p>
 <p>Here, we copied <code>person1</code> to <code>person2</code>. But when we changed the name of <code>person2</code>, it also changed the <code>name</code> of <code>person1</code>. So basically, the data is not separate for the two instances, they share the same data reference.</p>
-<h2 id="reference-code-2">Reference Code<a class="anchor" href="#reference-code-2">#</a></h2>
+<h3 id="reference-code-8">Reference Code<a class="anchor" href="#reference-code-8">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/MyPlayground9.2.2.playground (1).zip&quot; %}</p>
 <hr>
 <h2 id="guided-practice-challenges-10">Guided Practice Challenges<a class="anchor" href="#guided-practice-challenges-10">#</a></h2>
@@ -2650,7 +2586,7 @@ Name of person2 = Arya Stark</code></pre><p>Do you find the difference?</p>
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="1-variables-data-types-and-more">1.-variables-data-types-and-more.<a class="anchor" href="#1-variables-data-types-and-more">#</a></h2>
+<h3 id="1-variables-data-types-and-more">1.-variables-data-types-and-more.<a class="anchor" href="#1-variables-data-types-and-more">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -2674,20 +2610,18 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-this-topic">Walkthrough: Exploring this topic<a class="anchor" href="#walkthrough-exploring-this-topic">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="1-variables-data-types-and-more-1">1. Variables, Data types, and more.<a class="anchor" href="#1-variables-data-types-and-more-1">#</a></h1>
+</blockquote><h3 id="variables-data-types-and-more">Variables, Data types, and more.<a class="anchor" href="#variables-data-types-and-more">#</a></h3>
 <p>This is where we begin our journey with Swift. In this book section, we will go through the simple data types in Swift and see how to work with them. Please go to the next page to start!!!</p>
-<!-- Merged from 1.1.-creating-a-swift-playground.md -->
-<h1 id="11-creating-a-swift-playground">1.1. Creating a Swift Playground<a class="anchor" href="#11-creating-a-swift-playground">#</a></h1>
+<h3 id="creating-a-swift-playground">Creating a Swift Playground<a class="anchor" href="#creating-a-swift-playground">#</a></h3>
 <p>Open Xcode from your Launchpad. You should be seeing something like the following:</p>
 <figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 11.46.52 AM (1).png" alt=""><figcaption><p>Xcode launch screen</p></figcaption></figure>
 <p>Do not create an Xcode project yet; click on <em><strong>File -&gt; New -&gt; Playground</strong></em>. Select <em><strong>Blank</strong>,</em> click <em><strong>Next</strong></em>, give the playground a name, and click on <em>Create.</em> If you see something like the following, you are good to go! That is the first step toward learning Swift!!!</p>
 <figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 12.01.56 PM (2).png" alt=""><figcaption><p>Playground</p></figcaption></figure>
-<h2 id="video">Video<a class="anchor" href="#video">#</a></h2>
+<h3 id="video">Video<a class="anchor" href="#video">#</a></h3>
 <p>{% embed url=&ldquo;<a href="https://www.youtube.com/watch?v=IG9nba_A7Z4%22">https://www.youtube.com/watch?v=IG9nba_A7Z4"</a> %}
 Demo
 {% endembed %}</p>
-<!-- Merged from 1.2.-variables.md -->
-<h1 id="12-variables">1.2. Variables<a class="anchor" href="#12-variables">#</a></h1>
+<h3 id="variables">Variables<a class="anchor" href="#variables">#</a></h3>
 <p>We will write our &ldquo;Hello World&rdquo; code here. In very short, variables are the places in your code where you can store program data while the program is running. They are called variables because you can change (vary) their values.</p>
 <p>Now the Playground you created comes with a line of code:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> greeting = <span style="color:#e6db74">&#34;Hello, playground&#34;</span></span></span></code></pre></div><p>It creates a new variable called <em>greeting</em>, and gives it the value &ldquo;Hello, playground&rdquo;.</p>
@@ -2697,10 +2631,9 @@ Demo
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>greeting = <span style="color:#e6db74">&#34;Hello, Bonobos!!!!&#34;</span></span></span></code></pre></div><p>Now, you can see the new values showing on the output area!</p>
 <figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 12.35.08 PM (1).png" alt=""><figcaption></figcaption></figure>
 <p>Since greeting is a variable, we can change the values without creating a new variable for the new value!</p>
-<h2 id="video-1">Video<a class="anchor" href="#video-1">#</a></h2>
+<h3 id="video-1">Video<a class="anchor" href="#video-1">#</a></h3>
 <p>{% embed url=&ldquo;<a href="https://youtu.be/_a2NJAJg-WM%22">https://youtu.be/_a2NJAJg-WM"</a> %}</p>
-<!-- Merged from 1.3.-type-safety.md -->
-<h1 id="13-type-safety">1.3. Type safety<a class="anchor" href="#13-type-safety">#</a></h1>
+<h3 id="type-safety">Type safety<a class="anchor" href="#type-safety">#</a></h3>
 <p>Swift is a type-safe language. It means that once you create a variable, it is stuck with a specific data type, and you cannot change the data type of it. Every variable has to have a particular data type.</p>
 <p>So far in our code, we have a variable <em><strong>greeting</strong></em> having the value &ldquo;Hello, Bonobos!!!&rdquo;. What if we try to set the value of <em><strong>greeting</strong></em> to 12? Let&rsquo;s try it!</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>greeting = <span style="color:#ae81ff">12</span></span></span></code></pre></div><p>And click on play! We will see something like the following:</p>
@@ -2710,10 +2643,9 @@ Demo
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> count = <span style="color:#ae81ff">12</span></span></span></code></pre></div><p>Here it creates a variable named count, then finds that the value I am initially setting (12) is of type <strong>Int</strong> (integer). So, <em><strong>count</strong></em> can only hold <strong>Int</strong>s after the creation.</p>
 <p>There is a <em>swift</em> and usable trick for large integers. For example, if you want to store 1 million (1000000) in a variable, It is hard to read/type when you deal with a stream of consecutive zeroes together. Swift uses underscores as thousand separators. Like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> million = <span style="color:#ae81ff">1_000_000</span></span></span></code></pre></div><p><strong>To sum up, you need to be very careful about the data types of variables. You must not mix up data types for a particular variable.</strong></p>
-<h2 id="video-2">Video<a class="anchor" href="#video-2">#</a></h2>
+<h3 id="video-2">Video<a class="anchor" href="#video-2">#</a></h3>
 <p>{% embed url=&ldquo;<a href="https://youtu.be/XrHRxOiLX_o%22">https://youtu.be/XrHRxOiLX_o"</a> %}</p>
-<!-- Merged from 1.4.-strings-and-print-to-console.md -->
-<h1 id="14-strings-and-print-to-console">1.4. Strings and print to console<a class="anchor" href="#14-strings-and-print-to-console">#</a></h1>
+<h3 id="strings-and-print-to-console">Strings and print to console<a class="anchor" href="#strings-and-print-to-console">#</a></h3>
 <p>Swift allows you to write strings in two ways. The first one is, of course, the age-old String we declare inside <strong>&rdquo; &ldquo;</strong>. The next one is multiline strings which you can write inside <strong>&rdquo;&rdquo;&rdquo; &ldquo;&rdquo;&rdquo;</strong> (triple quotes on both sides).</p>
 <p>An example of the first type is the <em><strong>greeting</strong></em> variable we have. Let&rsquo;s try to see what a multi-line string is.</p>
 <p>Let&rsquo;s create a string like the following:</p>
@@ -2726,10 +2658,9 @@ Demo
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>print(multiline)</span></span></code></pre></div><p>It should display the following at the bottom (console output) of Xcode:</p>
 <figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 1.55.07 PM (1).png" alt=""><figcaption></figcaption></figure>
 <p>Now you get the full view of how a multiline String would get displayed.</p>
-<h2 id="video-3">Video<a class="anchor" href="#video-3">#</a></h2>
+<h3 id="video-3">Video<a class="anchor" href="#video-3">#</a></h3>
 <p>{% embed url=&ldquo;<a href="https://youtu.be/FEoQh4CarpM%22">https://youtu.be/FEoQh4CarpM"</a> %}</p>
-<!-- Merged from 1.5.-floating-point-numbers-and-type-annotation.md -->
-<h1 id="15-floating-point-numbers-and-type-annotation">1.5. Floating point numbers and Type annotation<a class="anchor" href="#15-floating-point-numbers-and-type-annotation">#</a></h1>
+<h3 id="floating-point-numbers-and-type-annotation">Floating point numbers and Type annotation<a class="anchor" href="#floating-point-numbers-and-type-annotation">#</a></h3>
 <p>Two basic data types in Swift handle the floating point numbers (fractional values): <strong>Double</strong> and <strong>Float.</strong></p>
 <p><strong>Double</strong> is short for &ldquo;double-precision floating point number.&rdquo; It is a 64-bit floating point number. Long story short, it can hold very large fractional values. Swift uses <strong>Double</strong> as its default data type for floating point literals.</p>
 <p>On the other hand, <strong>Float</strong> is a 32-bit floating point number, which is less precise than <strong>Double,</strong> and you do not need to use it unless you are building games or graphics applications.</p>
@@ -2745,10 +2676,9 @@ Demo
 </span></span><span style="display:flex;"><span>print(type(of: myFloat))</span></span></code></pre></div><p>Here, I am writing &lsquo;var&rsquo; to say the next one is a variable, as earlier. I give the variable a name, &lsquo;myFloat&rsquo;, and then I put a colon(:), <strong>followed by the type of the variable (Float),</strong> and finally, I assign a value, 13. This is a standard way of defining a variable in Swift. We will eventually learn about a more concrete way of declaring and defining the variables. Now the output of the code is:</p>
 <figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 3.34.11 PM (3).png" alt=""><figcaption></figcaption></figure>
 <p>One thing to note is that I put the value as 13 for myFloat, which would be interpreted as an Int if I did not specifically predefine it as a <strong>Float.</strong> If you look at the output, 13 became 13.0, which is a fractional number.</p>
-<h2 id="video-4">Video<a class="anchor" href="#video-4">#</a></h2>
+<h3 id="video-4">Video<a class="anchor" href="#video-4">#</a></h3>
 <p>{% embed url=&ldquo;<a href="https://youtu.be/TU-5-RWzJMs%22">https://youtu.be/TU-5-RWzJMs"</a> %}</p>
-<!-- Merged from 1.6.-more-print-string-interpolation.md -->
-<h1 id="16-more-print-string-interpolation">1.6. More print, String interpolation<a class="anchor" href="#16-more-print-string-interpolation">#</a></h1>
+<h3 id="more-print-string-interpolation">More print, String interpolation<a class="anchor" href="#more-print-string-interpolation">#</a></h3>
 <p>Swift allows you to insert values of variables into a String. String interpolation is useful for creating dynamic texts (labels, error messages, debug information, etc.) and formatting texts.</p>
 <p>In Swift, String interpolation is done using <code>\(...)</code> notation. Let&rsquo;s look into an example. So far, what we have in our playground are a few variables, such as <code>myNum</code>, <code>myFloat</code>, and <code>multiline</code>. (<code>myNum</code> is a Double, <code>myFloat</code> is a Float, and <code>multiline</code> is a string.)</p>
 <p>So let&rsquo;s add the following lines of code to your Playground:</p>
@@ -2777,8 +2707,7 @@ At times I could be very useful!</code></pre><p>Here we see how multiline String
 <ul>
 <li><em>Can you print the same output by calling the <code>print()</code> function without creating the <code>myString</code> variable?</em></li>
 </ul>
-<!-- Merged from 1.7.-constants.md -->
-<h1 id="17-constants">1.7. Constants<a class="anchor" href="#17-constants">#</a></h1>
+<h3 id="constants">Constants<a class="anchor" href="#constants">#</a></h3>
 <p>So far, we talked about variables. Just as a refresher, you can always change the values of a variable, maintaining the <strong>type-safety</strong>. However, in many cases, you would not want a value to be changeable and keep it unchanged while the program runs. These are called <strong>constants.</strong></p>
 <p>To write a constant in Swift, you need to use the keyword <code>let</code>. You write, <code>let</code> <code>variableName</code> : <code>DataType</code> = <code>value</code>. (Recall Type annotations?)</p>
 <p>For example, let&rsquo;s add the following line of code in our Playground:</p>
@@ -2789,15 +2718,13 @@ At times I could be very useful!</code></pre><p>Here we see how multiline String
 <figure><img src="/gitbook-assets/Screenshot 2023-05-01 at 10.56.02 PM.png" alt=""><figcaption></figcaption></figure>
 <p><strong>So, <code>myConstant</code> is not changeable (not mutable).</strong></p>
 <p>**Please note: when you will be building iOS apps, **<mark style="color:red;"><strong>use constants as much as possible.</strong></mark> It is suggested that you should declare everything as constants using <code>let</code> and then selectively change them to variables when needed.</p>
-<!-- Merged from 1.8.-type-annotations-revisited.md -->
-<h1 id="18-type-annotations-revisited">1.8. Type annotations (revisited)<a class="anchor" href="#18-type-annotations-revisited">#</a></h1>
+<h3 id="type-annotations-revisited">Type annotations (revisited)<a class="anchor" href="#type-annotations-revisited">#</a></h3>
 <p>As we have already discussed a couple of times, we can predefine the data type for a variable when you are creating it. This is called <strong>Type annotations.</strong></p>
 <p>The general format of type annotations is as follows: <code>let</code> <code>variableName</code> : <code>DataType</code> = <code>value</code>.</p>
 <p>A few examples could be:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> myName:String = <span style="color:#e6db74">&#34;Sakib Miazi&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> myAge:Int = <span style="color:#ae81ff">10</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> iUseIPhone:Bool = <span style="color:#66d9ef">false</span></span></span></code></pre></div><!-- Merged from 1.9.-comments.md -->
-<h1 id="19-comments">1.9. Comments<a class="anchor" href="#19-comments">#</a></h1>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> iUseIPhone:Bool = <span style="color:#66d9ef">false</span></span></span></code></pre></div><h3 id="comments">Comments<a class="anchor" href="#comments">#</a></h3>
 <p>We often need to write texts that are not executable programming instructions, just plain text instructions or documentation of our code. These are called comments. In swift, we can write comments in two ways.</p>
 <ul>
 <li>For a single-line comment, we use <code>//</code>.</li>
@@ -2812,8 +2739,7 @@ At times I could be very useful!</code></pre><p>Here we see how multiline String
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> myFloat is a Float.
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> myNum = <span style="color:#ae81ff">12.5</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> myFloat:Float = <span style="color:#ae81ff">13</span></span></span></code></pre></div><!-- Merged from 1.10.-reference-code.md -->
-<h1 id="110-reference-code">1.10. Reference Code<a class="anchor" href="#110-reference-code">#</a></h1>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> myFloat:Float = <span style="color:#ae81ff">13</span></span></span></code></pre></div><h3 id="reference-code-9">Reference Code<a class="anchor" href="#reference-code-9">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/MyPlayground.playground (1).zip&rdquo; %}</p>
 <hr>
 <h2 id="guided-practice-challenges-11">Guided Practice Challenges<a class="anchor" href="#guided-practice-challenges-11">#</a></h2>
@@ -2915,47 +2841,38 @@ At times I could be very useful!</code></pre><p>Here we see how multiline String
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#table-of-contents">Table of Contents</a></li>
-    <li><a href="#variables--data-types">Variables &amp; Data Types</a></li>
-    <li><a href="#table-of-contents-1">Table of Contents</a></li>
-    <li><a href="#collections">Collections</a></li>
+    <li><a href="#table-of-contents">Table of Contents</a>
+      <ul>
+        <li><a href="#variables--data-types">Variables &amp; Data Types</a></li>
+      </ul>
+    </li>
+    <li><a href="#table-of-contents-1">Table of Contents</a>
+      <ul>
+        <li><a href="#collections">Collections</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives">Learning Objectives</a></li>
     <li><a href="#the-story-so-far">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-collections">Walkthrough: Exploring Collections</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-collections">Walkthrough: Exploring Collections</a>
       <ul>
+        <li><a href="#collections-1">Collections</a></li>
+        <li><a href="#arrays">Arrays</a></li>
         <li><a href="#adding-a-new-element-to-an-existing-array"><strong>Adding a new element to an existing array:</strong></a></li>
         <li><a href="#size-of-an-existing-array"><strong>Size of an existing array:</strong></a></li>
         <li><a href="#accessing-an-element-from-a-particular-position"><strong>Accessing an element from a particular position:</strong></a></li>
         <li><a href="#removing-an-element-from-an-existing-array"><strong>Removing an element from an existing array:</strong></a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#sets">Sets</a></li>
+        <li><a href="#tuples">Tuples</a></li>
         <li><a href="#creating-a-new-tuple">Creating a new tuple:</a></li>
         <li><a href="#accessing-elements-in-a-tuple">Accessing elements in a tuple:</a></li>
         <li><a href="#changing-values">Changing values:</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#dictionaries">Dictionaries</a></li>
         <li><a href="#creating-a-dictionary">Creating a dictionary:</a></li>
         <li><a href="#adding-a-new-key-value-pair-and-updating-a-value-for-a-particular-key">Adding a new key-value pair and updating a value for a particular key:</a></li>
         <li><a href="#accessing-a-value-for-a-key">Accessing a value for a key:</a></li>
+        <li><a href="#reference-code">Reference Code</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
     <li><a href="#guided-practice-challenges">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation">Challenge 1: Experimentation</a></li>
@@ -2963,22 +2880,24 @@ At times I could be very useful!</code></pre><p>Here we see how multiline String
       </ul>
     </li>
     <li><a href="#references">References</a></li>
-    <li><a href="#getting-help">Getting Help</a></li>
-    <li><a href="#operators">Operators</a></li>
-    <li><a href="#learning-objectives-1">Learning Objectives</a></li>
-    <li><a href="#the-story-so-far-1">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-operators">Walkthrough: Exploring Operators</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#getting-help">Getting Help</a>
       <ul>
-        <li><a href="#booleans">Booleans:</a></li>
+        <li><a href="#operators">Operators</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
+    <li><a href="#learning-objectives-1">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far-1">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-operators">Walkthrough: Exploring Operators</a>
+      <ul>
+        <li><a href="#operators-1">Operators</a></li>
+        <li><a href="#arithmetic-operations">Arithmetic Operations</a></li>
+        <li><a href="#operator-overloading">Operator overloading</a></li>
+        <li><a href="#more-on-operators">More on Operators</a></li>
+        <li><a href="#comparison-operators-and-booleans">Comparison Operators (and Booleans)</a></li>
+        <li><a href="#booleans">Booleans:</a></li>
+        <li><a href="#reference-code-1">Reference Code</a></li>
+      </ul>
+    </li>
     <li><a href="#guided-practice-challenges-1">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-1">Challenge 1: Experimentation</a></li>
@@ -2986,14 +2905,24 @@ At times I could be very useful!</code></pre><p>Here we see how multiline String
       </ul>
     </li>
     <li><a href="#references-1">References</a></li>
-    <li><a href="#getting-help-1">Getting Help</a></li>
-    <li><a href="#conditionals">Conditionals</a></li>
+    <li><a href="#getting-help-1">Getting Help</a>
+      <ul>
+        <li><a href="#conditionals">Conditionals</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-2">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-2">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-conditionals">Walkthrough: Exploring Conditionals</a></li>
-  </ul>
-
-  <ul>
+    <li><a href="#walkthrough-exploring-conditionals">Walkthrough: Exploring Conditionals</a>
+      <ul>
+        <li><a href="#conditionals-1">Conditionals</a></li>
+        <li><a href="#if-statements">If statements</a></li>
+        <li><a href="#if-else-statements">If-else statements</a></li>
+        <li><a href="#switch-statements">Switch statements</a></li>
+        <li><a href="#combining-operators">Combining operators</a></li>
+        <li><a href="#range-operators">Range operators</a></li>
+        <li><a href="#reference-code-2">Reference Code</a></li>
+      </ul>
+    </li>
     <li><a href="#guided-practice-challenges-2">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-2">Challenge 1: Experimentation</a></li>
@@ -3001,31 +2930,26 @@ At times I could be very useful!</code></pre><p>Here we see how multiline String
       </ul>
     </li>
     <li><a href="#references-2">References</a></li>
-    <li><a href="#getting-help-2">Getting Help</a></li>
-    <li><a href="#loops">Loops</a></li>
+    <li><a href="#getting-help-2">Getting Help</a>
+      <ul>
+        <li><a href="#loops">Loops</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-3">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-3">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-loops">Walkthrough: Exploring Loops</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-loops">Walkthrough: Exploring Loops</a>
       <ul>
-        <li><a href="#512-looping-through-other-collections-dictionaries-arrays-of-struct-objects-etc">5.1.2. Looping through other Collections (Dictionaries, Arrays of Struct Objects, etc.)</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#loops-1">Loops</a></li>
+        <li><a href="#for-loops">For loops</a></li>
+        <li><a href="#looping-through-other-collections-dictionaries-arrays-of-struct-objects-etc">Looping through other Collections (Dictionaries, Arrays of Struct Objects, etc.)</a></li>
+        <li><a href="#while-loops">While loops</a></li>
+        <li><a href="#repeat-loops">Repeat loops</a></li>
+        <li><a href="#break-and-continue">Break and continue</a></li>
         <li><a href="#breakingexiting-loops">Breaking/exiting loops</a></li>
         <li><a href="#skipping-a-block-manually">Skipping a block manually</a></li>
+        <li><a href="#reference-code-3">Reference Code</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
     <li><a href="#guided-practice-challenges-3">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-3">Challenge 1: Experimentation</a></li>
@@ -3033,33 +2957,29 @@ At times I could be very useful!</code></pre><p>Here we see how multiline String
       </ul>
     </li>
     <li><a href="#references-3">References</a></li>
-    <li><a href="#getting-help-3">Getting Help</a></li>
-    <li><a href="#functions">Functions</a></li>
+    <li><a href="#getting-help-3">Getting Help</a>
+      <ul>
+        <li><a href="#functions">Functions</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-4">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-4">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-functions">Walkthrough: Exploring Functions</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-functions">Walkthrough: Exploring Functions</a>
       <ul>
+        <li><a href="#functions-1">Functions</a></li>
+        <li><a href="#writing-functions">Writing functions</a></li>
         <li><a href="#simple-functions">Simple functions</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#parameter-labels">Parameter labels</a></li>
-    <li><a href="#omitting-parameter-labels">Omitting parameter labels</a></li>
-    <li><a href="#default-parameters">Default parameters</a></li>
-    <li><a href="#why-and-where-do-we-use-internal-and-external-names-in-swift-functions"><mark>Why and where do we use internal and external names in Swift functions?</mark></a>
-      <ul>
+        <li><a href="#functions-with-parameters">Functions with parameters</a></li>
+        <li><a href="#functions-that-return-a-value">Functions that return a value</a></li>
+        <li><a href="#more-on-function-parameters">More on function parameters</a></li>
+        <li><a href="#parameter-labels">Parameter labels</a></li>
+        <li><a href="#omitting-parameter-labels">Omitting parameter labels</a></li>
+        <li><a href="#default-parameters">Default parameters</a></li>
+        <li><a href="#why-and-where-do-we-use-internal-and-external-names-in-swift-functions"><mark>Why and where do we use internal and external names in Swift functions?</mark></a></li>
         <li><a href="#scenarios-where-internal-and-external-names-are-useful">Scenarios where internal and external names are useful</a></li>
+        <li><a href="#reference-code-4">Reference Code</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
     <li><a href="#guided-practice-challenges-4">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-4">Challenge 1: Experimentation</a></li>
@@ -3067,22 +2987,23 @@ At times I could be very useful!</code></pre><p>Here we see how multiline String
       </ul>
     </li>
     <li><a href="#references-4">References</a></li>
-    <li><a href="#getting-help-4">Getting Help</a></li>
-    <li><a href="#closures">Closures</a></li>
-    <li><a href="#learning-objectives-5">Learning Objectives</a></li>
-    <li><a href="#the-story-so-far-5">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-closures">Walkthrough: Exploring Closures</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#getting-help-4">Getting Help</a>
       <ul>
-        <li><a href="#when-closures-accept-parameters-themselves-and-return-values">When closures accept parameters themselves and return values</a></li>
+        <li><a href="#closures">Closures</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
+    <li><a href="#learning-objectives-5">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far-5">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-closures">Walkthrough: Exploring Closures</a>
+      <ul>
+        <li><a href="#closures-1">Closures</a></li>
+        <li><a href="#closures-with-parameters">Closures with parameters</a></li>
+        <li><a href="#closures-that-return-a-value">Closures that return a value</a></li>
+        <li><a href="#closures-as-parameters">Closures as parameters</a></li>
+        <li><a href="#when-closures-accept-parameters-themselves-and-return-values">When closures accept parameters themselves and return values</a></li>
+        <li><a href="#reference-code-5">Reference Code</a></li>
+      </ul>
+    </li>
     <li><a href="#guided-practice-challenges-5">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-5">Challenge 1: Experimentation</a></li>
@@ -3090,16 +3011,16 @@ At times I could be very useful!</code></pre><p>Here we see how multiline String
       </ul>
     </li>
     <li><a href="#references-5">References</a></li>
-    <li><a href="#getting-help-5">Getting Help</a></li>
-    <li><a href="#optionals">Optionals</a></li>
+    <li><a href="#getting-help-5">Getting Help</a>
+      <ul>
+        <li><a href="#optionals">Optionals</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-6">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-6">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-optionals">Walkthrough: Exploring Optionals</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-optionals">Walkthrough: Exploring Optionals</a>
       <ul>
+        <li><a href="#optionals-1">Optionals</a></li>
         <li><a href="#if-let">If-let</a></li>
         <li><a href="#forced">Forced</a></li>
         <li><a href="#source-code">Source code</a></li>
@@ -3112,24 +3033,29 @@ At times I could be very useful!</code></pre><p>Here we see how multiline String
       </ul>
     </li>
     <li><a href="#references-6">References</a></li>
-    <li><a href="#getting-help-6">Getting Help</a></li>
-    <li><a href="#custom-data-types">Custom Data Types</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#table-of-contents-2">Table of Contents</a></li>
-    <li><a href="#protocols">Protocols</a></li>
+    <li><a href="#getting-help-6">Getting Help</a>
+      <ul>
+        <li><a href="#custom-data-types">Custom Data Types</a></li>
+        <li><a href="#creating-your-own-data-types">Creating your own data types</a></li>
+      </ul>
+    </li>
+    <li><a href="#table-of-contents-2">Table of Contents</a>
+      <ul>
+        <li><a href="#protocols">Protocols</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-7">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-7">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-protocols">Walkthrough: Exploring Protocols</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#reference-code">Reference code</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#reference-code-1">Reference code</a></li>
+    <li><a href="#walkthrough-exploring-protocols">Walkthrough: Exploring Protocols</a>
+      <ul>
+        <li><a href="#protocols-1">Protocols</a></li>
+        <li><a href="#adopting-a-protocol">Adopting a protocol</a></li>
+        <li><a href="#reference-code-6">Reference code</a></li>
+        <li><a href="#creating-a-single-protocol-from-multiple-protocols">Creating a single protocol from multiple protocols</a></li>
+        <li><a href="#inheriting-a-super-class-and-adopting-protocols-together">Inheriting a super class and adopting protocols together</a></li>
+        <li><a href="#reference-code-7">Reference code</a></li>
+      </ul>
+    </li>
     <li><a href="#guided-practice-challenges-7">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-7">Challenge 1: Experimentation</a></li>
@@ -3137,31 +3063,24 @@ At times I could be very useful!</code></pre><p>Here we see how multiline String
       </ul>
     </li>
     <li><a href="#references-7">References</a></li>
-    <li><a href="#getting-help-7">Getting Help</a></li>
-    <li><a href="#sorting-arrays">Sorting Arrays</a></li>
+    <li><a href="#getting-help-7">Getting Help</a>
+      <ul>
+        <li><a href="#sorting-arrays">Sorting Arrays</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-8">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-8">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-sorting-arrays">Walkthrough: Exploring Sorting Arrays</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-sorting-arrays">Walkthrough: Exploring Sorting Arrays</a>
       <ul>
+        <li><a href="#sorting-arrays-1">Sorting Arrays</a></li>
+        <li><a href="#increasing-order">Increasing order</a></li>
         <li></li>
         <li></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#decreasing-order">Decreasing order</a></li>
         <li><a href="#do-it-using-closures-not-functions">Do it using closures (not functions)</a></li>
+        <li><a href="#3-sorting-an-array-of-custom-data">3. Sorting an array of custom data</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
     <li><a href="#guided-practice-challenges-8">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-8">Challenge 1: Experimentation</a></li>
@@ -3169,40 +3088,26 @@ At times I could be very useful!</code></pre><p>Here we see how multiline String
       </ul>
     </li>
     <li><a href="#references-8">References</a></li>
-    <li><a href="#getting-help-8">Getting Help</a></li>
-    <li><a href="#91-structs">9.1. Structs</a></li>
+    <li><a href="#getting-help-8">Getting Help</a>
+      <ul>
+        <li><a href="#structs">Structs</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-9">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-9">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-91-structs">Walkthrough: Exploring 9.1. Structs</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-91-structs">Walkthrough: Exploring 9.1. Structs</a>
       <ul>
+        <li><a href="#structs-1">Structs</a></li>
         <li><a href="#computed-properties">Computed properties</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#functions-methods-inside-structs">Functions (methods) inside structs</a></li>
         <li><a href="#struct-initializers">Struct initializers</a></li>
-      </ul>
-    </li>
-    <li><a href="#source-code-1">Source code</a></li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#source-code-1">Source code</a></li>
+        <li><a href="#initializing-structs-with-different-initializers">Initializing structs with different initializers</a></li>
         <li><a href="#struct-initialization-and-optionals">Struct initialization and Optionals</a></li>
+        <li><a href="#source-code-2">Source code</a></li>
+        <li><a href="#manipulating-object-properties-inherently-in-a-struct">Manipulating object properties inherently in a struct</a></li>
       </ul>
     </li>
-    <li><a href="#source-code-2">Source code</a></li>
-  </ul>
-
-  <ul>
     <li><a href="#guided-practice-challenges-9">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-9">Challenge 1: Experimentation</a></li>
@@ -3210,24 +3115,23 @@ At times I could be very useful!</code></pre><p>Here we see how multiline String
       </ul>
     </li>
     <li><a href="#references-9">References</a></li>
-    <li><a href="#getting-help-9">Getting Help</a></li>
-    <li><a href="#92-classes">9.2. Classes</a></li>
-    <li><a href="#learning-objectives-10">Learning Objectives</a></li>
-    <li><a href="#the-story-so-far-10">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-92-classes">Walkthrough: Exploring 9.2. Classes</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#getting-help-9">Getting Help</a>
       <ul>
-        <li><a href="#overriding-methods">Overriding methods</a></li>
+        <li><a href="#classes">Classes</a></li>
       </ul>
     </li>
-    <li><a href="#source-code-3">Source code</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#reference-code-2">Reference Code</a></li>
+    <li><a href="#learning-objectives-10">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far-10">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-92-classes">Walkthrough: Exploring 9.2. Classes</a>
+      <ul>
+        <li><a href="#classes-1">Classes</a></li>
+        <li><a href="#inheritance">Inheritance</a></li>
+        <li><a href="#overriding-methods">Overriding methods</a></li>
+        <li><a href="#source-code-3">Source code</a></li>
+        <li><a href="#value-vs-reference">Value vs. Reference</a></li>
+        <li><a href="#reference-code-8">Reference Code</a></li>
+      </ul>
+    </li>
     <li><a href="#guided-practice-challenges-10">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-10">Challenge 1: Experimentation</a></li>
@@ -3235,34 +3139,33 @@ At times I could be very useful!</code></pre><p>Here we see how multiline String
       </ul>
     </li>
     <li><a href="#references-10">References</a></li>
-    <li><a href="#getting-help-10">Getting Help</a></li>
-    <li><a href="#1-variables-data-types-and-more">1.-variables-data-types-and-more.</a></li>
+    <li><a href="#getting-help-10">Getting Help</a>
+      <ul>
+        <li><a href="#1-variables-data-types-and-more">1.-variables-data-types-and-more.</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-11">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-11">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-this-topic">Walkthrough: Exploring this topic</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#video">Video</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#video-1">Video</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#video-2">Video</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#video-3">Video</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#video-4">Video</a></li>
-  </ul>
-
-  <ul>
+    <li><a href="#walkthrough-exploring-this-topic">Walkthrough: Exploring this topic</a>
+      <ul>
+        <li><a href="#variables-data-types-and-more">Variables, Data types, and more.</a></li>
+        <li><a href="#creating-a-swift-playground">Creating a Swift Playground</a></li>
+        <li><a href="#video">Video</a></li>
+        <li><a href="#variables">Variables</a></li>
+        <li><a href="#video-1">Video</a></li>
+        <li><a href="#type-safety">Type safety</a></li>
+        <li><a href="#video-2">Video</a></li>
+        <li><a href="#strings-and-print-to-console">Strings and print to console</a></li>
+        <li><a href="#video-3">Video</a></li>
+        <li><a href="#floating-point-numbers-and-type-annotation">Floating point numbers and Type annotation</a></li>
+        <li><a href="#video-4">Video</a></li>
+        <li><a href="#more-print-string-interpolation">More print, String interpolation</a></li>
+        <li><a href="#constants">Constants</a></li>
+        <li><a href="#type-annotations-revisited">Type annotations (revisited)</a></li>
+        <li><a href="#comments">Comments</a></li>
+        <li><a href="#reference-code-9">Reference Code</a></li>
+      </ul>
+    </li>
     <li><a href="#guided-practice-challenges-11">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-11">Challenge 1: Experimentation</a></li>

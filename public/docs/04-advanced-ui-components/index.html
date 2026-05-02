@@ -28,7 +28,7 @@ Learning Objectives# By the end of this session, you will be able to:">
   <meta itemprop="description" content="Table of Contents# UITableView# Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
 {&lt; hint info &gt;} 🎯 Topic Mission: In this module, we will explore UITableView and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {&lt; /hint &gt;}
 Learning Objectives# By the end of this session, you will be able to:">
-  <meta itemprop="wordCount" content="17765">
+  <meta itemprop="wordCount" content="17716">
 
 <title>Module 4: Advanced UI Components | iOS UIKit Course</title>
 <link rel="icon" href="/favicon.png" >
@@ -38,7 +38,7 @@ Learning Objectives# By the end of this session, you will be able to:">
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.2d8fd5e4236bd86b25ebef9673310ebe25f1df0b4aedc504172ac049ab171f38.js" integrity="sha256-LY/V5CNr2Gsl6&#43;&#43;WczEOviXx3wtK7cUEFyrASasXHzg=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.79d8fbe5c352e1e2da559b8378ff5b4507df69656d01b71c19c90d10531011a5.js" integrity="sha256-edj75cNS4eLaVZuDeP9bRQffaWVtAbccGckNEFMQEaU=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="//localhost:1313/docs/04-advanced-ui-components/index.xml" title="iOS UIKit Course" />
@@ -269,80 +269,46 @@ Learning Objectives# By the end of this session, you will be able to:">
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#table-of-contents">Table of Contents</a></li>
-    <li><a href="#uitableview">UITableView</a></li>
+    <li><a href="#table-of-contents">Table of Contents</a>
+      <ul>
+        <li><a href="#uitableview">UITableView</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives">Learning Objectives</a></li>
     <li><a href="#the-story-so-far">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-uitableview">Walkthrough: Exploring UITableView</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-uitableview">Walkthrough: Exploring UITableView</a>
       <ul>
+        <li><a href="#uitableview-and-more">UITableView, and more</a></li>
+        <li><a href="#expense-app">Expense App</a></li>
+        <li><a href="#first-screen-part-1-adding-a-bar-button">First screen, part 1: Adding a Bar Button</a></li>
+        <li><a href="#first-screen-part-2-setting-up-the-view-of-the-first-screen-with-tableview">First screen, part 2: Setting up the View of the First Screen with TableView.</a></li>
         <li><a href="#what-is-a-tableview">What is a TableView?</a></li>
         <li><a href="#creating-the-view-file-of-the-first-screen-firstscreenview">Creating the View file of the first screen, FirstScreenView</a></li>
         <li><a href="#patching-firstscreenview-with-viewcontroller">Patching FirstScreenView with ViewController</a></li>
         <li><a href="#designing-each-cellrow-of-the-tableview">Designing each Cell/Row of the TableView:</a></li>
         <li><a href="#patching-the-cell-with-the-tableview"><strong>Patching the Cell with the TableView</strong></a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#first-screen-part-3-setting-up-the-view-controller-and-populating-tableview">First screen, part 3: Setting up the View Controller and populating TableView</a></li>
         <li><a href="#creating-a-data-model-for-expenses">Creating a data model for expenses</a></li>
-      </ul>
-    </li>
-    <li><a href="#setting-up-the-controller">Setting up the Controller</a>
-      <ul>
+        <li><a href="#setting-up-the-controller">Setting up the Controller</a></li>
         <li><a href="#patching-tableview-delegate-and-data-source-with-the-controller">Patching TableView delegate and data source with the controller</a></li>
         <li><a href="#file-structures">File structures</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#second-screen-part-1-setting-up-the-view-of-the-add-expense-screen">Second screen, part 1: Setting up the View of the Add Expense Screen</a></li>
         <li><a href="#setting-up-the-view">Setting up the View</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#patching-the-pickerview-to-pick-the-type-of-expense"><strong>Patching the PickerView to pick the type of expense</strong></a>
-      <ul>
+        <li><a href="#second-screen-part-2-setting-up-add-expense-view-controller">Second screen, part 2: Setting up Add Expense View Controller</a></li>
+        <li><a href="#patching-the-pickerview-to-pick-the-type-of-expense"><strong>Patching the PickerView to pick the type of expense</strong></a></li>
         <li><a href="#defining-static-array-types">Defining static array &rsquo;types&rsquo;</a></li>
         <li><a href="#adopting-the-picker-views-protocols">Adopting the Picker View&rsquo;s protocols</a></li>
-      </ul>
-    </li>
-    <li><a href="#housekeeping-updating-navigation-controller-and-patching-utilitiestypes-in-view-controller">Housekeeping: Updating Navigation controller and patching Utilities.types in View Controller</a>
-      <ul>
+        <li><a href="#housekeeping-updating-navigation-controller-and-patching-utilitiestypes-in-view-controller">Housekeeping: Updating Navigation controller and patching Utilities.types in View Controller</a></li>
         <li><a href="#updating-viewcontroller-to-use-utilitiestypes-instead-of-the-local-array">Updating ViewController to use Utilities.types instead of the local array.</a></li>
         <li><a href="#so-far-the-updated-controller-codes-are-as-follows"><strong>So far, the updated controller codes are as follows:</strong></a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#second-screen-part-3-send-new-expense-back-to-viewcontroller-and-update-the-tableview">Second screen, part 3: Send new expense back to ViewController and update the TableView</a></li>
         <li><a href="#handling-double-inputs">(Handling Double inputs)</a></li>
         <li><a href="#delegating-the-task-to-viewcontroller">Delegating the task to ViewController</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#tapping-a-cell-in-tableview-and-practice-exercise">Tapping a cell in TableView and Practice exercise</a></li>
         <li><a href="#exercise">Exercise</a></li>
+        <li><a href="#reference-code">Reference Code</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
     <li><a href="#guided-practice-challenges">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation">Challenge 1: Experimentation</a></li>
@@ -350,22 +316,22 @@ Learning Objectives# By the end of this session, you will be able to:">
       </ul>
     </li>
     <li><a href="#references">References</a></li>
-    <li><a href="#getting-help">Getting Help</a></li>
-    <li><a href="#uiscrollview">UIScrollView</a></li>
-    <li><a href="#learning-objectives-1">Learning Objectives</a></li>
-    <li><a href="#the-story-so-far-1">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-uiscrollview">Walkthrough: Exploring UIScrollView</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#getting-help">Getting Help</a>
       <ul>
-        <li><a href="#constraints">Constraints:</a></li>
+        <li><a href="#uiscrollview">UIScrollView</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
+    <li><a href="#learning-objectives-1">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far-1">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-uiscrollview">Walkthrough: Exploring UIScrollView</a>
+      <ul>
+        <li><a href="#uiscrollview-1">UIScrollView</a></li>
+        <li><a href="#creating-the-view-of-the-screen">Creating the View of the Screen</a></li>
+        <li><a href="#constraints">Constraints:</a></li>
+        <li><a href="#creating-the-controller">Creating the Controller</a></li>
+        <li><a href="#reference-code-1">Reference Code</a></li>
+      </ul>
+    </li>
     <li><a href="#guided-practice-challenges-1">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-1">Challenge 1: Experimentation</a></li>
@@ -373,70 +339,39 @@ Learning Objectives# By the end of this session, you will be able to:">
       </ul>
     </li>
     <li><a href="#references-1">References</a></li>
-    <li><a href="#getting-help-1">Getting Help</a></li>
-    <li><a href="#uimenu--image-pickers">UIMenu &amp; Image Pickers</a></li>
+    <li><a href="#getting-help-1">Getting Help</a>
+      <ul>
+        <li><a href="#uimenu--image-pickers">UIMenu &amp; Image Pickers</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-2">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-2">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-uimenu--image-pickers">Walkthrough: Exploring UIMenu &amp; Image Pickers</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#app6-adding-more-features-on-app5">App6: Adding more features on App5</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#appendix">Appendix</a>
+    <li><a href="#walkthrough-exploring-uimenu--image-pickers">Walkthrough: Exploring UIMenu &amp; Image Pickers</a>
       <ul>
+        <li><a href="#uimenu-picking-images-from-gallery-and-camera-and-uiimageview">UIMenu, Picking Images from Gallery and Camera, and UIImageView</a></li>
+        <li><a href="#app6-adding-more-features-on-app5">App6: Adding more features on App5</a></li>
+        <li><a href="#updating-the-tableview-cell-to-accommodate-an-imageview">Updating the TableView Cell to accommodate an ImageView</a></li>
+        <li><a href="#appendix">Appendix</a></li>
         <li><a href="#installing-and-using-sf-symbols-app">Installing and using SF Symbols app</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#addexpenseview">AddExpenseView</a>
-      <ul>
+        <li><a href="#add-expense-screen">Add Expense Screen</a></li>
+        <li><a href="#addexpenseview">AddExpenseView</a></li>
         <li><a href="#setting-up-the-buttons">Setting up the Buttons</a></li>
         <li><a href="#the-constraints">The Constraints</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#addexpenseviewcontroller-uimenu-for-buttonselecttype">AddExpenseViewController: UIMenu for buttonSelectType</a></li>
         <li><a href="#uimenu-for-buttonselecttype">UIMenu for buttonSelectType</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#addexpenseviewcontroller-uimenu-for-buttontakephoto">AddExpenseViewController: UIMenu for buttonTakePhoto</a></li>
         <li><a href="#modify-the-buttontakephoto-in-addexpenseview">Modify the buttonTakePhoto in AddExpenseView</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
-        <li></li>
+        <li><a href="#using-gallery-phpicker">Using Gallery: PHPicker</a></li>
+        <li><a href="#using-camera-uiimagepickercontroller">Using Camera: UIImagePickerController</a></li>
         <li><a href="#changing-the-privacy-settings-of-the-app-to-allow-the-app-to-access-the-camera">Changing the privacy settings of the App to allow the app to access the Camera</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#getting-the-expense-back-to-viewcontroller">Getting the expense back to ViewController</a></li>
         <li><a href="#update-expense-data-model">Update Expense data model:</a></li>
         <li><a href="#update-addexpenseviewcontrollers-onaddbuttontapped-method">Update AddExpenseViewController&rsquo;s onAddButtonTapped() method:</a></li>
         <li><a href="#update-the-tableview-to-display-the-image-in-the-cell">Update the TableView to display the image in the cell</a></li>
+        <li><a href="#wrapping-up-a-bit-of-polishing">Wrapping Up: a bit of polishing</a></li>
+        <li><a href="#reference-code-2">Reference Code</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
     <li><a href="#guided-practice-challenges-2">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-2">Challenge 1: Experimentation</a></li>
@@ -444,35 +379,25 @@ Learning Objectives# By the end of this session, you will be able to:">
       </ul>
     </li>
     <li><a href="#references-2">References</a></li>
-    <li><a href="#getting-help-2">Getting Help</a></li>
-    <li><a href="#useful-ui-elements">Useful UI Elements</a></li>
-    <li><a href="#learning-objectives-3">Learning Objectives</a></li>
-    <li><a href="#the-story-so-far-3">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-useful-ui-elements">Walkthrough: Exploring Useful UI Elements</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#getting-help-2">Getting Help</a>
       <ul>
-        <li><a href="#writing-data">Writing data</a></li>
-        <li><a href="#reading-data">Reading data</a></li>
+        <li><a href="#useful-ui-elements">Useful UI Elements</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#learning-objectives-3">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far-3">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-useful-ui-elements">Walkthrough: Exploring Useful UI Elements</a>
       <ul>
+        <li><a href="#hiding-keyboard-when-tapped-outside">Hiding Keyboard when tapped outside</a></li>
+        <li><a href="#slide-up-the-view-to-accommodate-the-on-screen-keyboard">Slide Up the View to Accommodate the On-screen Keyboard</a></li>
+        <li><a href="#saving-small-data-when-the-app-is-not-running-session-or-other-state-variables">Saving small data when the App is not running (session or other state variables)</a></li>
+        <li><a href="#writing-data">Writing data</a></li>
+        <li><a href="#reading-data">Reading data</a></li>
+        <li><a href="#stack-view">Stack View</a></li>
         <li><a href="#designing-view-with-uistackview">Designing View with UIStackView:</a></li>
         <li><a href="#patching-viewcontroller">Patching ViewController</a></li>
         <li><a href="#run-the-app">Run the App</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#embed-navigation-controller-from-code-not-storyboard">Embed Navigation Controller from code (Not Storyboard)</a></li>
         <li><a href="#deleting-the-mainstoryboard">Deleting the Main.storyboard</a></li>
         <li><a href="#resource-files">Resource Files</a></li>
       </ul>
@@ -485,27 +410,24 @@ Learning Objectives# By the end of this session, you will be able to:">
       </ul>
     </li>
     <li><a href="#references-3">References</a></li>
-    <li><a href="#getting-help-3">Getting Help</a></li>
-    <li><a href="#6-search-bar">6.-search-bar</a></li>
-    <li><a href="#learning-objectives-4">Learning Objectives</a></li>
-    <li><a href="#the-story-so-far-4">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-this-topic">Walkthrough: Exploring this topic</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#mainscreenviewswift">MainScreenView.swift</a></li>
-    <li><a href="#searchtableviewcellswift">SearchTableViewCell.swift</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#getting-help-3">Getting Help</a>
       <ul>
-        <li><a href="#handling-when-the-user-is-typing-on-the-search-bar">Handling when the User is Typing on the Search Bar</a></li>
+        <li><a href="#6-search-bar">6.-search-bar</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
+    <li><a href="#learning-objectives-4">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far-4">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-this-topic">Walkthrough: Exploring this topic</a>
+      <ul>
+        <li><a href="#search-bar">Search Bar</a></li>
+        <li><a href="#setting-up-the-views">Setting up the Views</a></li>
+        <li><a href="#mainscreenviewswift">MainScreenView.swift</a></li>
+        <li><a href="#searchtableviewcellswift">SearchTableViewCell.swift</a></li>
+        <li><a href="#setting-up-the-view-controller-handling-the-search-bar">Setting up the View Controller: Handling the Search Bar</a></li>
+        <li><a href="#handling-when-the-user-is-typing-on-the-search-bar">Handling when the User is Typing on the Search Bar</a></li>
+        <li><a href="#reference-code-3">Reference Code</a></li>
+      </ul>
+    </li>
     <li><a href="#guided-practice-challenges-4">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-4">Challenge 1: Experimentation</a></li>
@@ -513,41 +435,32 @@ Learning Objectives# By the end of this session, you will be able to:">
       </ul>
     </li>
     <li><a href="#references-4">References</a></li>
-    <li><a href="#getting-help-4">Getting Help</a></li>
-    <li><a href="#5-tab-bar-controller">5.-tab-bar-controller</a></li>
+    <li><a href="#getting-help-4">Getting Help</a>
+      <ul>
+        <li><a href="#5-tab-bar-controller">5.-tab-bar-controller</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-5">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-5">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-this-topic-1">Walkthrough: Exploring this topic</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#the-tabcontrollerdemo-app">The TabControllerDemo app</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#views">Views</a>
+    <li><a href="#walkthrough-exploring-this-topic-1">Walkthrough: Exploring this topic</a>
       <ul>
+        <li><a href="#tab-bar-controller">Tab Bar Controller</a></li>
+        <li><a href="#the-tabcontrollerdemo-app">The TabControllerDemo app</a></li>
+        <li><a href="#views-of-the-screens">Views of the Screens</a></li>
+        <li><a href="#views">Views</a></li>
         <li><a href="#redviewswift">RedView.swift</a></li>
         <li><a href="#greenviewswift-and-blueviewswift">GreenView.swift and BlueView.swift</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#redviewcontrollerswift">RedViewController.swift</a></li>
-    <li><a href="#blueviewcontrollerswift">BlueViewController.swift</a></li>
-    <li><a href="#greenviewcontrollerswift">GreenViewController.swift</a></li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#controllers-of-the-screens">Controllers of the Screens</a></li>
+        <li><a href="#redviewcontrollerswift">RedViewController.swift</a></li>
+        <li><a href="#blueviewcontrollerswift">BlueViewController.swift</a></li>
+        <li><a href="#greenviewcontrollerswift">GreenViewController.swift</a></li>
+        <li><a href="#patching-the-screens-in-the-tab-bar">Patching the Screens in the Tab Bar</a></li>
         <li><a href="#setting-up-the-tab-bar-viewcontrollerswift">Setting up the Tab Bar: ViewController.swift</a></li>
+        <li><a href="#sending-data-from-one-tab-to-another">Sending data From one Tab to Another</a></li>
+        <li><a href="#reference-code-4">Reference Code</a></li>
+        <li><a href="#notes-for-tab-bar-controller">Notes for Tab Bar Controller</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
     <li><a href="#guided-practice-challenges-5">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-5">Challenge 1: Experimentation</a></li>
@@ -555,32 +468,29 @@ Learning Objectives# By the end of this session, you will be able to:">
       </ul>
     </li>
     <li><a href="#references-5">References</a></li>
-    <li><a href="#getting-help-5">Getting Help</a></li>
-    <li><a href="#bottom-sheet-view-modal-presentation">bottom-sheet-view-modal-presentation</a></li>
-    <li><a href="#learning-objectives-6">Learning Objectives</a></li>
-    <li><a href="#the-story-so-far-6">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-this-topic-2">Walkthrough: Exploring this topic</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#search-bottom-sheet-view">Search Bottom Sheet View</a></li>
-    <li><a href="#search-table-cell">Search Table Cell</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#main-screen-view">Main Screen View</a></li>
-    <li><a href="#main-screen-controller">Main Screen Controller</a>
+    <li><a href="#getting-help-5">Getting Help</a>
       <ul>
-        <li><a href="#creating-the-bottom-search-sheet">Creating the Bottom Search Sheet</a></li>
+        <li><a href="#bottom-sheet-view-modal-presentation">bottom-sheet-view-modal-presentation</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#table-view-in-bottom-search-sheet-controller-overriding-didselectrowat">Table View in Bottom Search Sheet Controller: overriding didSelectRowAt</a></li>
-  </ul>
-
-  <ul>
+    <li><a href="#learning-objectives-6">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far-6">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-this-topic-2">Walkthrough: Exploring this topic</a>
+      <ul>
+        <li><a href="#bottom-sheet-view-modal-presentation-1">Bottom Sheet View: Modal Presentation</a></li>
+        <li><a href="#creating-the-screen-for-a-bottom-sheet-view">Creating the Screen for a Bottom Sheet View</a></li>
+        <li><a href="#search-bottom-sheet-view">Search Bottom Sheet View</a></li>
+        <li><a href="#search-table-cell">Search Table Cell</a></li>
+        <li><a href="#setting-up-the-controller-for-the-search-bottom-sheet">Setting up the Controller for the Search Bottom Sheet</a></li>
+        <li><a href="#main-screen">Main Screen</a></li>
+        <li><a href="#main-screen-view">Main Screen View</a></li>
+        <li><a href="#main-screen-controller">Main Screen Controller</a></li>
+        <li><a href="#creating-the-bottom-search-sheet">Creating the Bottom Search Sheet</a></li>
+        <li><a href="#sending-data-back-to-main-screen">Sending data back to Main Screen</a></li>
+        <li><a href="#table-view-in-bottom-search-sheet-controller-overriding-didselectrowat">Table View in Bottom Search Sheet Controller: overriding didSelectRowAt</a></li>
+        <li><a href="#reference-code-5">Reference Code</a></li>
+      </ul>
+    </li>
     <li><a href="#guided-practice-challenges-6">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-6">Challenge 1: Experimentation</a></li>
@@ -602,7 +512,7 @@ Learning Objectives# By the end of this session, you will be able to:">
       
       
   <article class="markdown book-article"><h2 id="table-of-contents">Table of Contents<a class="anchor" href="#table-of-contents">#</a></h2>
-<h2 id="uitableview">UITableView<a class="anchor" href="#uitableview">#</a></h2>
+<h3 id="uitableview">UITableView<a class="anchor" href="#uitableview">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -626,23 +536,21 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-uitableview">Walkthrough: Exploring UITableView<a class="anchor" href="#walkthrough-exploring-uitableview">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="5-uitableview-and-more">5. UITableView, and more<a class="anchor" href="#5-uitableview-and-more">#</a></h1>
+</blockquote><h3 id="uitableview-and-more">UITableView, and more<a class="anchor" href="#uitableview-and-more">#</a></h3>
 <p>So far, we have worked with multiple screens and NavigationController. Now, we will learn how to display a list of data and work with some other UI elements.</p>
 <p>More specifically, we will learn about the following:</p>
 <ul>
 <li>UITableView to display a list of data.</li>
 <li>A few more key concepts like static variables and handling Double inputs.</li>
 </ul>
-<!-- Merged from 5.1.-expense-app.md -->
-<h1 id="51-expense-app">5.1. Expense App<a class="anchor" href="#51-expense-app">#</a></h1>
+<h3 id="expense-app">Expense App<a class="anchor" href="#expense-app">#</a></h3>
 <p>So, let&rsquo;s create an app called &lsquo;App5&rsquo;. Our preliminary target is to build something like the following app:</p>
 <p><img src="/gitbook-assets/Screenshot%202023-05-18%20at%2010.45.04%20AM%20%281%29.png" alt="" /> <img src="/gitbook-assets/Screenshot%202023-05-18%20at%2010.45.19%20AM%20%281%29.png" alt="" /></p>
 <p>The first screen contains a list of expenses. The user can add a new expense by tapping on the plus icon (<code>+</code>) on the navigation bar. If a user taps on <code>+</code> icon, it takes them to the next screen where they can put the details of the expense.</p>
 <p><img src="/gitbook-assets/Screenshot%202023-05-18%20at%2010.56.57%20AM%20%281%29.png" alt="" /> <img src="/gitbook-assets/Screenshot%202023-05-18%20at%2010.45.48%20AM%20%281%29.png" alt="" /></p>
 <p>Once the user puts in the details and taps the Add Expense button, it should return to the first screen and show the newly added expense.</p>
 <p>Now let&rsquo;s build the app.</p>
-<!-- Merged from 5.2.-first-screen-part-1-adding-a-bar-button.md -->
-<h1 id="52-first-screen-part-1-adding-a-bar-button">5.2. First screen, part 1: Adding a Bar Button<a class="anchor" href="#52-first-screen-part-1-adding-a-bar-button">#</a></h1>
+<h3 id="first-screen-part-1-adding-a-bar-button">First screen, part 1: Adding a Bar Button<a class="anchor" href="#first-screen-part-1-adding-a-bar-button">#</a></h3>
 <p>Let&rsquo;s create a new project, &lsquo;App5&rsquo; in Xcode.</p>
 <figure><img src="/gitbook-assets/Screenshot 2023-05-18 at 10.45.04 AM (1).png" alt="" width="343"><figcaption><p>App 5: First screen</p></figcaption></figure>
 <p>In App3 (<a href="../3.-our-first-multi-screen-app/" title="mention">3.-our-first-multi-screen-app</a>), we discussed the basics of the Navigation Controller. Navigation Controller automatically adds a top bar (Navigation Bar) on the screen, where you have seen the Back buttons. You can add more buttons there, either on the left side or right side. Usually, we add our custom buttons on the right side of the Bar since the left side is usually reserved for going back. We will add our plus button (<code>+</code>) on the right side of the Bar.</p>
@@ -675,8 +583,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>    </span></span></code></pre></div><p>In the above code, we are creating a new UIBarButtonItem and setting it to the right Bar Button of the Navigation Bar. We are also adding an action listener <code>onAddBarButtonTapped()</code> to handle the user tap. If you run it now, you will see the plus button on the Bar&rsquo;s right side.</p>
 <figure><img src="/gitbook-assets/one (1) (1).gif" alt=""><figcaption></figcaption></figure>
 <p>Now we will set up the TableView and then return to this button.</p>
-<!-- Merged from 5.3.-first-screen-part-2-setting-up-the-view-of-the-first-screen-with-tableview..md -->
-<h1 id="53-first-screen-part-2-setting-up-the-view-of-the-first-screen-with-tableview">5.3. First screen, part 2: Setting up the View of the First Screen with TableView.<a class="anchor" href="#53-first-screen-part-2-setting-up-the-view-of-the-first-screen-with-tableview">#</a></h1>
+<h3 id="first-screen-part-2-setting-up-the-view-of-the-first-screen-with-tableview">First screen, part 2: Setting up the View of the First Screen with TableView.<a class="anchor" href="#first-screen-part-2-setting-up-the-view-of-the-first-screen-with-tableview">#</a></h3>
 <p>We have to build our first TableView here in this app. Before we build one, we need to understand what it is.</p>
 <h3 id="what-is-a-tableview">What is a TableView?<a class="anchor" href="#what-is-a-tableview">#</a></h3>
 <p>According to <a href="https://developer.apple.com/documentation/uikit/uitableview">Apple developer documentation</a>: <em>Table views in iOS display rows of vertically scrolling content in a single column. Each row in the table contains one piece of your app’s content. For example, the Contacts app displays the name of each contact in a separate row, and the main page of the Settings app displays the available groups of settings. You can configure a table to display a single long list of rows, or you can group related rows into sections to make navigating the content easier.</em></p>
@@ -885,8 +792,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">self</span>.addSubview(tableViewExpense)
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Here, we are registering the <code>tableViewExpense</code> with the cell we just designed. The most important part is <code>forCellReuseIdentifier: &quot;expenses&quot; .</code> It means when we access this table view from the controller, we need to use the cells the table view holds. We set an identifier, &ldquo;expenses,&rdquo; for the cells. If you design multiple cells to display multiple kinds of information, you can later identify them with the identifier you set here.</p>
 <p>That&rsquo;s it. We set up the view of the first screen and added a TableView with a designed Cell.</p>
-<!-- Merged from 5.4.-first-screen-part-3-setting-up-the-view-controller-and-populating-tableview.md -->
-<h1 id="54-first-screen-part-3-setting-up-the-view-controller-and-populating-tableview">5.4. First screen, part 3: Setting up the View Controller and populating TableView<a class="anchor" href="#54-first-screen-part-3-setting-up-the-view-controller-and-populating-tableview">#</a></h1>
+<h3 id="first-screen-part-3-setting-up-the-view-controller-and-populating-tableview">First screen, part 3: Setting up the View Controller and populating TableView<a class="anchor" href="#first-screen-part-3-setting-up-the-view-controller-and-populating-tableview">#</a></h3>
 <p>Now we must patch the views with our controller (ViewController.swift). Before we do, let&rsquo;s create a data model for the data we will display in the TableView <code>tableViewExpense</code>. We have three data points for displaying a row in the table view: expense title, amount, and type.</p>
 <h3 id="creating-a-data-model-for-expenses">Creating a data model for expenses<a class="anchor" href="#creating-a-data-model-for-expenses">#</a></h3>
 <p>So, let&rsquo;s create a new swift file called &ldquo;Expense.&rdquo;</p>
@@ -921,7 +827,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>We created a struct <code>Expense</code> with three properties: <code>title</code>, <code>amount</code>, and <code>type</code>. We also define the <code>init()</code> method to initialize the properties.</p>
-<h2 id="setting-up-the-controller">Setting up the Controller<a class="anchor" href="#setting-up-the-controller">#</a></h2>
+<h3 id="setting-up-the-controller">Setting up the Controller<a class="anchor" href="#setting-up-the-controller">#</a></h3>
 <p>Let&rsquo;s add some dummy data to test out TableView. Add the following code in your ViewController.swift:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//  ViewController.swift</span>
@@ -1048,8 +954,7 @@ Then we set the variables of that particular cell with the data we have. <code>i
 <figure><img src="/gitbook-assets/seven (2).gif" alt=""><figcaption></figcaption></figure>
 <p>The file structure looks like this:</p>
 <p><img src="/gitbook-assets/Screenshot%202023-05-18%20at%203.01.03%20PM%20%281%29.png" alt="" /></p>
-<!-- Merged from 5.5.-second-screen-part-1-setting-up-the-view-of-the-add-expense-screen.md -->
-<h1 id="55-second-screen-part-1-setting-up-the-view-of-the-add-expense-screen">5.5. Second screen, part 1: Setting up the View of the Add Expense Screen<a class="anchor" href="#55-second-screen-part-1-setting-up-the-view-of-the-add-expense-screen">#</a></h1>
+<h3 id="second-screen-part-1-setting-up-the-view-of-the-add-expense-screen">Second screen, part 1: Setting up the View of the Add Expense Screen<a class="anchor" href="#second-screen-part-1-setting-up-the-view-of-the-add-expense-screen">#</a></h3>
 <p>When the user clicks the plus Bar button (<code>+</code>), we should populate a screen to add a new expense. So, let&rsquo;s create two new files: AddExpenseView.swift (subclass of UIView) and AddExpenseViewController.swift (subclass of UIViewController). And add them to a new group, &ldquo;Add Expense Screen.&rdquo; (<strong>Use the Cocoa Touch Class template, not a Swift file template).</strong></p>
 <figure><img src="/gitbook-assets/5.ten (1).gif" alt=""><figcaption></figcaption></figure>
 <h3 id="setting-up-the-view">Setting up the View<a class="anchor" href="#setting-up-the-view">#</a></h3>
@@ -1152,8 +1057,7 @@ Then we set the variables of that particular cell with the data we have. <code>i
 </span></span><span style="display:flex;"><span>        fatalError(<span style="color:#e6db74">&#34;init(coder:) has not been implemented&#34;</span>)
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>This file should be very straightforward to understand. Now that we have added our front end, we will now get to the controller code (AddExpenseViewController).</p>
-<!-- Merged from 5.6.-second-screen-part-2-setting-up-add-expense-view-controller.md -->
-<h1 id="56-second-screen-part-2-setting-up-add-expense-view-controller">5.6. Second screen, part 2: Setting up Add Expense View Controller<a class="anchor" href="#56-second-screen-part-2-setting-up-add-expense-view-controller">#</a></h1>
+<h3 id="second-screen-part-2-setting-up-add-expense-view-controller">Second screen, part 2: Setting up Add Expense View Controller<a class="anchor" href="#second-screen-part-2-setting-up-add-expense-view-controller">#</a></h3>
 <p>Now, let&rsquo;s open the AddExpenseViewController.swift file. We need to patch this view controller with the front-end view (AddExpenseView) we created. So, we write the following code to load the view:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//  AddExpenseViewController.swift</span>
@@ -1180,7 +1084,7 @@ Then we set the variables of that particular cell with the data we have. <code>i
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Do any additional setup after loading the view.</span>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="patching-the-pickerview-to-pick-the-type-of-expense"><strong>Patching the PickerView to pick the type of expense</strong><a class="anchor" href="#patching-the-pickerview-to-pick-the-type-of-expense">#</a></h2>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="patching-the-pickerview-to-pick-the-type-of-expense"><strong>Patching the PickerView to pick the type of expense</strong><a class="anchor" href="#patching-the-pickerview-to-pick-the-type-of-expense">#</a></h3>
 <p>Now, let&rsquo;s patch the PickerView (<code>addExpenseScreen.pickerType</code>) to the controller.</p>
 <p>We will pick the type of expense using this PickerView. We know that we added an array of four expense types in ViewController.swift. Since we need to use the same array instead of writing the array again, we can define a static array to be shared with all the classes in the project. The keyword <code>static</code> makes it persistent in the memory while the app is running. <strong>Do not make all the data static; you can keep it static if it is small shared data.</strong></p>
 <h3 id="defining-static-array-types">Defining static array &rsquo;types&rsquo;<a class="anchor" href="#defining-static-array-types">#</a></h3>
@@ -1273,7 +1177,7 @@ Then we set the variables of that particular cell with the data we have. <code>i
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> delegate:ViewController!
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">//codes omitted...</span>
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//codes omitted...</span></span></span></code></pre></div><h2 id="housekeeping-updating-navigation-controller-and-patching-utilitiestypes-in-view-controller">Housekeeping: Updating Navigation controller and patching Utilities.types in View Controller<a class="anchor" href="#housekeeping-updating-navigation-controller-and-patching-utilitiestypes-in-view-controller">#</a></h2>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//codes omitted...</span></span></span></code></pre></div><h3 id="housekeeping-updating-navigation-controller-and-patching-utilitiestypes-in-view-controller">Housekeeping: Updating Navigation controller and patching Utilities.types in View Controller<a class="anchor" href="#housekeeping-updating-navigation-controller-and-patching-utilitiestypes-in-view-controller">#</a></h3>
 <p>Open the ViewController.swift file. Now, let&rsquo;s complete the plus (<code>+</code>) button actions. When we tap on the <code>+</code> button on the Navigation Bar, we need to switch from the First Screen to Add Expense Screen. So let&rsquo;s write the following code in the method <code>@objc func onAddBarButtonTapped()</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//  ViewController.swift</span>
@@ -1438,8 +1342,7 @@ Then we set the variables of that particular cell with the data we have. <code>i
 </span></span><span style="display:flex;"><span>        selectedType = Utilities.types[row]
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Utilities.types[row]
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><!-- Merged from 5.7.-second-screen-part-3-send-new-expense-back-to-viewcontroller-and-update-the-tableview.md -->
-<h1 id="57-second-screen-part-3-send-new-expense-back-to-viewcontroller-and-update-the-tableview">5.7. Second screen, part 3: Send new expense back to ViewController and update the TableView<a class="anchor" href="#57-second-screen-part-3-send-new-expense-back-to-viewcontroller-and-update-the-tableview">#</a></h1>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="second-screen-part-3-send-new-expense-back-to-viewcontroller-and-update-the-tableview">Second screen, part 3: Send new expense back to ViewController and update the TableView<a class="anchor" href="#second-screen-part-3-send-new-expense-back-to-viewcontroller-and-update-the-tableview">#</a></h3>
 <p>Let&rsquo;s open AddExpenseViewController.swift file. Now, we will add an action for tapping on<code>addExpenseScreen.buttonAdd</code>. Once this button is tapped, we need to create an Expense object from the data the user put in and delegate the next tasks to ViewController.</p>
 <p>So, let&rsquo;s add the action target for <code>addExpenseScreen.buttonAdd</code> by writing the following code in <code>viewDidLoad()</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
@@ -1528,8 +1431,7 @@ Then we set the variables of that particular cell with the data we have. <code>i
 <p>Let&rsquo;s run the app.</p>
 <figure><img src="/gitbook-assets/5.6.1.three (1).gif" alt=""><figcaption></figcaption></figure>
 <p>One last thing to discuss before we finish this module. We can also deal with when a user clicks on a cell in the TableView.</p>
-<!-- Merged from 5.8.-tapping-a-cell-in-tableview-and-practice-exercise.md -->
-<h1 id="58-tapping-a-cell-in-tableview-and-practice-exercise">5.8. Tapping a cell in TableView and Practice exercise<a class="anchor" href="#58-tapping-a-cell-in-tableview-and-practice-exercise">#</a></h1>
+<h3 id="tapping-a-cell-in-tableview-and-practice-exercise">Tapping a cell in TableView and Practice exercise<a class="anchor" href="#tapping-a-cell-in-tableview-and-practice-exercise">#</a></h3>
 <p>Let&rsquo;s open ViewController.swift file and add the following code to the protocols adoption block:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//  ViewController.swift</span>
@@ -1553,8 +1455,7 @@ Then we set the variables of that particular cell with the data we have. <code>i
 <p>Now, you can see that you can handle it if a user taps on a cell. It&rsquo;s time for exercise.</p>
 <h3 id="exercise">Exercise<a class="anchor" href="#exercise">#</a></h3>
 <p><strong>Now your task is to build a third screen, &ldquo;DisplayExpense,&rdquo; to show the details of an expense if a user taps on it. It could be just three Labels to display the title, amount, and type of the selected expense.</strong></p>
-<!-- Merged from 5.9.-reference-code.md -->
-<h1 id="59-reference-code">5.9. Reference Code<a class="anchor" href="#59-reference-code">#</a></h1>
+<h3 id="reference-code">Reference Code<a class="anchor" href="#reference-code">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/App5 (1).zip&quot; %}</p>
 <hr>
 <h2 id="guided-practice-challenges">Guided Practice Challenges<a class="anchor" href="#guided-practice-challenges">#</a></h2>
@@ -1579,7 +1480,7 @@ Then we set the variables of that particular cell with the data we have. <code>i
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="uiscrollview">UIScrollView<a class="anchor" href="#uiscrollview">#</a></h2>
+<h3 id="uiscrollview">UIScrollView<a class="anchor" href="#uiscrollview">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -1603,7 +1504,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-uiscrollview">Walkthrough: Exploring UIScrollView<a class="anchor" href="#walkthrough-exploring-uiscrollview">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="8-uiscrollview">8. UIScrollView<a class="anchor" href="#8-uiscrollview">#</a></h1>
+</blockquote><h3 id="uiscrollview-1">UIScrollView<a class="anchor" href="#uiscrollview-1">#</a></h3>
 <p>So far, we have worked with screens that do not scroll. I think all of you faced a similar issue: if you rotate the screen, the UI elements get outside the bottom edge. The reason behind it is that the screen is not scrollable. So here, we will implement a scrollable view.</p>
 <p>Let&rsquo;s build a small app App8 to implement a ScrollView. The app should look like this:</p>
 <figure><img src="/gitbook-assets/8.11 (1).gif" alt=""><figcaption></figcaption></figure>
@@ -1613,8 +1514,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li>Next, we will have a large image covering almost the whole screen.</li>
 <li>Then two more text fields at the bottom (<code>textField1</code> and <code>textField2</code>).</li>
 </ul>
-<!-- Merged from 8.1.-creating-the-view-of-the-screen.md -->
-<h1 id="81-creating-the-view-of-the-screen">8.1. Creating the View of the Screen<a class="anchor" href="#81-creating-the-view-of-the-screen">#</a></h1>
+<h3 id="creating-the-view-of-the-screen">Creating the View of the Screen<a class="anchor" href="#creating-the-view-of-the-screen">#</a></h3>
 <p>Let&rsquo;s declare the UI elements:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//  ScrollScreenView.swift</span>
@@ -1738,8 +1638,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li>Please note the scroll view wraps the elements. So, it is important that you use these anchors of the UI elements the scroll view is wrapping.</li>
 </ul>
 <p>Now we need to patch the screen to the controller.</p>
-<!-- Merged from 8.2.-creating-the-controller.md -->
-<h1 id="82-creating-the-controller">8.2. Creating the Controller<a class="anchor" href="#82-creating-the-controller">#</a></h1>
+<h3 id="creating-the-controller">Creating the Controller<a class="anchor" href="#creating-the-controller">#</a></h3>
 <p>Let&rsquo;s put the following code in the ViewController.swift:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//  ViewController.swift</span>
@@ -1779,8 +1678,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <p>Let&rsquo;s run the app now.</p>
 <figure><img src="/gitbook-assets/8.11 (1).gif" alt=""><figcaption></figcaption></figure>
 <p><em><mark style="color:purple;">Now that you know how to use scrollable views. Use it carefully when you use it.</mark></em></p>
-<!-- Merged from 8.3.-reference-code.md -->
-<h1 id="83-reference-code">8.3. Reference Code<a class="anchor" href="#83-reference-code">#</a></h1>
+<h3 id="reference-code-1">Reference Code<a class="anchor" href="#reference-code-1">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/App8 (1).zip&quot; %}</p>
 <hr>
 <h2 id="guided-practice-challenges-1">Guided Practice Challenges<a class="anchor" href="#guided-practice-challenges-1">#</a></h2>
@@ -1805,7 +1703,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="uimenu--image-pickers">UIMenu &amp; Image Pickers<a class="anchor" href="#uimenu--image-pickers">#</a></h2>
+<h3 id="uimenu--image-pickers">UIMenu &amp; Image Pickers<a class="anchor" href="#uimenu--image-pickers">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -1829,8 +1727,8 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-uimenu--image-pickers">Walkthrough: Exploring UIMenu &amp; Image Pickers<a class="anchor" href="#walkthrough-exploring-uimenu--image-pickers">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="6-uimenu-picking-images-from-gallery-and-camera-and-uiimageview">6. UIMenu, Picking Images from Gallery and Camera, and UIImageView<a class="anchor" href="#6-uimenu-picking-images-from-gallery-and-camera-and-uiimageview">#</a></h1>
-<h2 id="app6-adding-more-features-on-app5">App6: Adding more features on App5<a class="anchor" href="#app6-adding-more-features-on-app5">#</a></h2>
+</blockquote><h3 id="uimenu-picking-images-from-gallery-and-camera-and-uiimageview">UIMenu, Picking Images from Gallery and Camera, and UIImageView<a class="anchor" href="#uimenu-picking-images-from-gallery-and-camera-and-uiimageview">#</a></h3>
+<h3 id="app6-adding-more-features-on-app5">App6: Adding more features on App5<a class="anchor" href="#app6-adding-more-features-on-app5">#</a></h3>
 <p>Let&rsquo;s create a new project, &ldquo;App6.&rdquo; Add all the codes from the current &ldquo;App5.&rdquo; For your convenience, download the project from here:</p>
 <p>{% file src=&quot;/gitbook-assets/App6_initial (1).zip&quot; %}</p>
 <p>Our goal here is to:</p>
@@ -1841,8 +1739,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </ul>
 <p>App6 would look something like this:</p>
 <figure><img src="/gitbook-assets/6.1.one.gif" alt=""><figcaption></figcaption></figure>
-<!-- Merged from 6.1.-updating-the-tableview-cell-to-accommodate-an-imageview.md -->
-<h1 id="61-updating-the-tableview-cell-to-accommodate-an-imageview">6.1. Updating the TableView Cell to accommodate an ImageView<a class="anchor" href="#61-updating-the-tableview-cell-to-accommodate-an-imageview">#</a></h1>
+<h3 id="updating-the-tableview-cell-to-accommodate-an-imageview">Updating the TableView Cell to accommodate an ImageView<a class="anchor" href="#updating-the-tableview-cell-to-accommodate-an-imageview">#</a></h3>
 <p>Let&rsquo;s open TableViewExpenseCell.swift file to add an ImageView. Let&rsquo;s add a new variable named, <code>imageViewReceipt</code> of type <code>UIImageView</code> in the file, set it up, and initialize its constraints. Add the following code to TableViewExpenseCell.swift file:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
@@ -1937,7 +1834,7 @@ It means if the wrapper&rsquo;s width is 104, the frame size of the ImageView wi
 <li>Finally, we add all the constraint values (2+32+2+32+2+32+2) and define the wrapper&rsquo;s height to 104.</li>
 </ul>
 <p>Now that we are done with the file, we move to the Add Expense Screen.</p>
-<h2 id="appendix">Appendix<a class="anchor" href="#appendix">#</a></h2>
+<h3 id="appendix">Appendix<a class="anchor" href="#appendix">#</a></h3>
 <h3 id="installing-and-using-sf-symbols-app">Installing and using SF Symbols app<a class="anchor" href="#installing-and-using-sf-symbols-app">#</a></h3>
 <ul>
 <li>Download the SF Symbols app from here: <a href="https://developer.apple.com/sf-symbols/">https://developer.apple.com/sf-symbols/</a></li>
@@ -1958,8 +1855,7 @@ It means if the wrapper&rsquo;s width is 104, the frame size of the ImageView wi
 <figure><img src="/gitbook-assets/5.6.1.six (1).gif" alt=""><figcaption></figcaption></figure>
 </li>
 </ul>
-<!-- Merged from 6.2.-add-expense-screen.md -->
-<h1 id="62-add-expense-screen">6.2. Add Expense Screen<a class="anchor" href="#62-add-expense-screen">#</a></h1>
+<h3 id="add-expense-screen">Add Expense Screen<a class="anchor" href="#add-expense-screen">#</a></h3>
 <p>The screen would be something like this:</p>
 <p><img src="/gitbook-assets/Screenshot%202023-05-19%20at%2012.47.14%20AM.png" alt="" /></p>
 <p>We have:</p>
@@ -1969,7 +1865,7 @@ It means if the wrapper&rsquo;s width is 104, the frame size of the ImageView wi
 <li>One Button (use the Camera icon as the background) to pick the image for receipt.</li>
 <li>FInally, the Add Expense Button.</li>
 </ul>
-<h2 id="addexpenseview">AddExpenseView<a class="anchor" href="#addexpenseview">#</a></h2>
+<h3 id="addexpenseview">AddExpenseView<a class="anchor" href="#addexpenseview">#</a></h3>
 <p>Let&rsquo;s open the AddExpenseView.swift file and update the code. Remove the PickerView and add two buttons (to select expense type and pick receipt image).</p>
 <p>Let&rsquo;s see the updated code in the following:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
@@ -2099,8 +1995,7 @@ It means if the wrapper&rsquo;s width is 104, the frame size of the ImageView wi
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> setting buttonTakePhoto&#39;s height and width...</span>
 </span></span><span style="display:flex;"><span>buttonTakePhoto.widthAnchor.constraint(equalToConstant: <span style="color:#ae81ff">100</span>),
 </span></span><span style="display:flex;"><span>buttonTakePhoto.heightAnchor.constraint(equalToConstant: <span style="color:#ae81ff">100</span>),</span></span></code></pre></div><p>We set the height and width of <code>buttonTakePhoto</code>. <strong>When you are working with images, you should set a frame size. The best way to set the frame size is to do it using the constraints.</strong> Use <code>widthAnchor</code> as the width and <code>heightAnchor</code> as the height of the frame.</p>
-<!-- Merged from 6.3.-addexpenseviewcontroller-uimenu-for-buttonselecttype.md -->
-<h1 id="63-addexpenseviewcontroller-uimenu-for-buttonselecttype">6.3. AddExpenseViewController: UIMenu for buttonSelectType<a class="anchor" href="#63-addexpenseviewcontroller-uimenu-for-buttonselecttype">#</a></h1>
+<h3 id="addexpenseviewcontroller-uimenu-for-buttonselecttype">AddExpenseViewController: UIMenu for buttonSelectType<a class="anchor" href="#addexpenseviewcontroller-uimenu-for-buttonselecttype">#</a></h3>
 <p>Now, it&rsquo;s time to remove the PickerView codes. After we remove the PickerView, the code looks like this:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
@@ -2233,8 +2128,7 @@ It means if the wrapper&rsquo;s width is 104, the frame size of the ImageView wi
 <p>Now let&rsquo;s run the app again:</p>
 <figure><img src="/gitbook-assets/6.2.three (1) (1).gif" alt=""><figcaption></figcaption></figure>
 <p>Now, our menu is working as intended.</p>
-<!-- Merged from 6.4.-addexpenseviewcontroller-uimenu-for-buttontakephoto.md -->
-<h1 id="64-addexpenseviewcontroller-uimenu-for-buttontakephoto">6.4. AddExpenseViewController: UIMenu for buttonTakePhoto<a class="anchor" href="#64-addexpenseviewcontroller-uimenu-for-buttontakephoto">#</a></h1>
+<h3 id="addexpenseviewcontroller-uimenu-for-buttontakephoto">AddExpenseViewController: UIMenu for buttonTakePhoto<a class="anchor" href="#addexpenseviewcontroller-uimenu-for-buttontakephoto">#</a></h3>
 <figure><img src="/gitbook-assets/6.2.three (2).gif" alt=""><figcaption><p><strong>The app so far</strong></p></figcaption></figure>
 <p>Now let&rsquo;s handle the actions for <code>buttonTakePhoto</code> (with the camera icon). If the user taps the button, it should display two options: &ldquo;Camera&rdquo; and &ldquo;Gallery.&rdquo; If the user selects the &ldquo;Camera&rdquo; option, it will open the camera and take a photo; else, if the user selects &ldquo;Gallery,&rdquo; it will open the image gallery to pick a photo. Finally, the chosen photo will be set as the image inside <code>buttonTakePhoto</code>.</p>
 <p>Let&rsquo;s open AddExpenseViewController.swift file. and add the following code in it:</p>
@@ -2296,8 +2190,7 @@ It means if the wrapper&rsquo;s width is 104, the frame size of the ImageView wi
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>buttonTakePhoto.showsMenuAsPrimaryAction = <span style="color:#66d9ef">true</span></span></span></code></pre></div><p>Let&rsquo;s run the app now.</p>
 <figure><img src="/gitbook-assets/6.3.one (1).gif" alt=""><figcaption></figcaption></figure>
 <p>Our next task is to implement the Gallery and Camera functions.</p>
-<!-- Merged from 6.5.-using-gallery-phpicker.md -->
-<h1 id="65-using-gallery-phpicker">6.5. Using Gallery: PHPicker<a class="anchor" href="#65-using-gallery-phpicker">#</a></h1>
+<h3 id="using-gallery-phpicker">Using Gallery: PHPicker<a class="anchor" href="#using-gallery-phpicker">#</a></h3>
 <p><a href="https://developer.apple.com/documentation/photokit/phpickerviewcontroller">PHPicker</a> <em>is a view controller that provides the user interface for choosing assets from the photo library.</em> We use this view controller to browse the local image assets, select the chosen image(s), and retrieve the image(s). It is a highly configurable and scalable tool and fairly easy to use. We need to import <code>PhotosUI</code> library to use the tool.</p>
 <p>So, let&rsquo;s open AddExpenseViewController.swift file. We will write codes in <code>pickPhotoFromGallery()</code> method. We also need to adopt <code>PHPickerViewControllerDelegate</code> protocol using the <code>extension</code> keyword. Let&rsquo;s add the following code in AddExpenseViewController.swift file:</p>
 <pre class="language-swift" data-line-numbers><code class="lang-swift">//
@@ -2440,8 +2333,7 @@ extension AddExpenseViewController:PHPickerViewControllerDelegate{
 </ul>
 <p>Alright! We are done setting up the PHPicker, and now it&rsquo;s time to test the app.</p>
 <figure><img src="/gitbook-assets/6.5.one (1).gif" alt=""><figcaption></figcaption></figure>
-<!-- Merged from 6.6.-using-camera-uiimagepickercontroller.md -->
-<h1 id="66-using-camera-uiimagepickercontroller">6.6. Using Camera: UIImagePickerController<a class="anchor" href="#66-using-camera-uiimagepickercontroller">#</a></h1>
+<h3 id="using-camera-uiimagepickercontroller">Using Camera: UIImagePickerController<a class="anchor" href="#using-camera-uiimagepickercontroller">#</a></h3>
 <p>Now it&rsquo;s time to build the final part of the app: integrating the camera to take a photo.</p>
 <p><mark style="color:red;"><strong>Please note: the camera doesn&rsquo;t work in the emulator; you need a physical iOS device to test it. Do not worry; picking images using the camera is not mandatory in this course. This is an example for your future reference.</strong></mark></p>
 <p>So, let&rsquo;s open AddExpenseViewController.swift file. We will write codes in <code>pickUsingCamera()</code> method. We also need to adopt <code>UINavigationControllerDelegate</code>, and <code>UIImagePickerControllerDelegate</code> protocols using the <code>extension</code> keyword. Let&rsquo;s add the following code in AddExpenseViewController.swift file:</p>
@@ -2547,8 +2439,7 @@ extension AddExpenseViewController:PHPickerViewControllerDelegate{
 <figure><img src="/gitbook-assets/6.6.two (1).gif" alt=""><figcaption></figcaption></figure>
 <p>Now let&rsquo;s run the app. I ran the app on my iPad to demonstrate it is working.</p>
 <p>{% embed url=&ldquo;<a href="https://www.youtube.com/watch?v=FnCsBWWiv0Y%22">https://www.youtube.com/watch?v=FnCsBWWiv0Y"</a> %}</p>
-<!-- Merged from 6.7.-getting-the-expense-back-to-viewcontroller.md -->
-<h1 id="67-getting-the-expense-back-to-viewcontroller">6.7. Getting the expense back to ViewController<a class="anchor" href="#67-getting-the-expense-back-to-viewcontroller">#</a></h1>
+<h3 id="getting-the-expense-back-to-viewcontroller">Getting the expense back to ViewController<a class="anchor" href="#getting-the-expense-back-to-viewcontroller">#</a></h3>
 <p>We now need to get the expense back when we press <code>buttonAdd</code>. We need to tweak the data model Expense to accommodate the image, right?</p>
 <h3 id="update-expense-data-model">Update Expense data model:<a class="anchor" href="#update-expense-data-model">#</a></h3>
 <p>Let&rsquo;s open the Expense.swift file and update the file as the following:</p>
@@ -2653,8 +2544,7 @@ extension AddExpenseViewController:PHPickerViewControllerDelegate{
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>We unwrap the image, and then set it to <code>cell.imageReceipt.image</code>.</p>
 <p>Finally, let&rsquo;s run the app!</p>
 <figure><img src="/gitbook-assets/6.7.one (1).gif" alt=""><figcaption></figcaption></figure>
-<!-- Merged from 6.8.-wrapping-up-a-bit-of-polishing.md -->
-<h1 id="68-wrapping-up-a-bit-of-polishing">6.8. Wrapping Up: a bit of polishing<a class="anchor" href="#68-wrapping-up-a-bit-of-polishing">#</a></h1>
+<h3 id="wrapping-up-a-bit-of-polishing">Wrapping Up: a bit of polishing<a class="anchor" href="#wrapping-up-a-bit-of-polishing">#</a></h3>
 <p>We will polish the TableView a little bit to make our TableView look like this:</p>
 <p><img src="/gitbook-assets/Screenshot%202023-05-20%20at%205.18.17%20PM%20%282%29.png" alt="" /></p>
 <p>Let&rsquo;s make the following changes to the code:</p>
@@ -2711,8 +2601,7 @@ extension AddExpenseViewController:PHPickerViewControllerDelegate{
 <p><strong>Now, let&rsquo;s run the app again.</strong></p>
 <figure><img src="/gitbook-assets/6.8.one (1).gif" alt=""><figcaption></figcaption></figure>
 <p>There we have a 3D effect!</p>
-<!-- Merged from 6.9.-reference-code.md -->
-<h1 id="69-reference-code">6.9. Reference Code<a class="anchor" href="#69-reference-code">#</a></h1>
+<h3 id="reference-code-2">Reference Code<a class="anchor" href="#reference-code-2">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/App6 (2).zip&rdquo; %}</p>
 <hr>
 <h2 id="guided-practice-challenges-2">Guided Practice Challenges<a class="anchor" href="#guided-practice-challenges-2">#</a></h2>
@@ -2737,7 +2626,7 @@ extension AddExpenseViewController:PHPickerViewControllerDelegate{
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="useful-ui-elements">Useful UI Elements<a class="anchor" href="#useful-ui-elements">#</a></h2>
+<h3 id="useful-ui-elements">Useful UI Elements<a class="anchor" href="#useful-ui-elements">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -2761,8 +2650,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-useful-ui-elements">Walkthrough: Exploring Useful UI Elements<a class="anchor" href="#walkthrough-exploring-useful-ui-elements">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><!-- Merged from 1.-hiding-keyboard-when-tapped-outside.md -->
-<h1 id="1-hiding-keyboard-when-tapped-outside">1. Hiding Keyboard when tapped outside<a class="anchor" href="#1-hiding-keyboard-when-tapped-outside">#</a></h1>
+</blockquote><h3 id="hiding-keyboard-when-tapped-outside">Hiding Keyboard when tapped outside<a class="anchor" href="#hiding-keyboard-when-tapped-outside">#</a></h3>
 <p>When you are building iOS apps, you might have noticed that if you put some texts into TextFields, the emulator/phone keyboard doesn&rsquo;t disappear if you tap outside the keyboard automatically, like this:</p>
 <figure><img src="/gitbook-assets/KeyboardNotHiding (1).gif" alt=""><figcaption></figcaption></figure>
 <p>Now if we want to hide the keyboard, it is very simple. Inside the ViewController of a Screen, add the following code in <code>viewDidLoad()</code> method:</p>
@@ -2784,13 +2672,11 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Here, we create a gesture recognizer that recognizes that the user taps on the app screen. Then we add the recognizer to the view. Then we add the action (<code>@objc func hideKeyboardOnTap()</code>) for reacting to that gesture that would hide the keyboard. The end result is:</p>
 <figure><img src="/gitbook-assets/KeyboardHiding (1).gif" alt=""><figcaption></figcaption></figure>
 <p>A great guide with other tricks can be found here: <a href="https://kaushalelsewhere.medium.com/how-to-dismiss-keyboard-in-a-view-controller-of-ios-3b1bfe973ad1">https://kaushalelsewhere.medium.com/how-to-dismiss-keyboard-in-a-view-controller-of-ios-3b1bfe973ad1</a> </p>
-<!-- Merged from 2.-slide-up-the-view-to-accommodate-the-on-screen-keyboard.md -->
-<h1 id="2-slide-up-the-view-to-accommodate-the-on-screen-keyboard">2. Slide Up the View to Accommodate the On-screen Keyboard<a class="anchor" href="#2-slide-up-the-view-to-accommodate-the-on-screen-keyboard">#</a></h1>
+<h3 id="slide-up-the-view-to-accommodate-the-on-screen-keyboard">Slide Up the View to Accommodate the On-screen Keyboard<a class="anchor" href="#slide-up-the-view-to-accommodate-the-on-screen-keyboard">#</a></h3>
 <p>It is a little complicated, watch the video below to understand the aspects of it:</p>
 <p>{% embed url=&ldquo;<a href="https://www.youtube.com/watch?v=O4tP7egAV1I%22">https://www.youtube.com/watch?v=O4tP7egAV1I"</a> %}</p>
 <p>Source code: <a href="https://github.com/jrasmusson/ios-professional-course/blob/main/Password-Reset/7-Dealing-Keyboards/README.md">https://github.com/jrasmusson/ios-professional-course/blob/main/Password-Reset/7-Dealing-Keyboards/README.md</a></p>
-<!-- Merged from 3.-saving-small-data-when-the-app-is-not-running-session-or-other-state-variables.md -->
-<h1 id="3-saving-small-data-when-the-app-is-not-running-session-or-other-state-variables">3. Saving small data when the App is not running (session or other state variables)<a class="anchor" href="#3-saving-small-data-when-the-app-is-not-running-session-or-other-state-variables">#</a></h1>
+<h3 id="saving-small-data-when-the-app-is-not-running-session-or-other-state-variables">Saving small data when the App is not running (session or other state variables)<a class="anchor" href="#saving-small-data-when-the-app-is-not-running-session-or-other-state-variables">#</a></h3>
 <p>We can store any data type in the local storage as long as the App is installed. It means even if the app is not running, small values can be stored in the storage, and the app can access them whenever needed, like from a database. We use <code>UserDefaults</code> for that.</p>
 <p>We can store key-value pairs using UserDefaults. For each key, the app can store a value. The value can be of many data types, like Bool, Float, Double, Int, String, URL, etc. You can also write more complex types such as arrays, dictionaries, and Date – and even Data values.</p>
 <p>The syntax is very simple. You need to instantiate user defaults by writing something like:</p>
@@ -2815,8 +2701,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li><strong>You should not use UserDefaults for inter-screen communications.</strong></li>
 </ul>
 <p><strong>For more details, please read Paul Hudson&rsquo;s explanations here:</strong> <a href="https://www.hackingwithswift.com/read/12/2/reading-and-writing-basics-userdefaults"><strong>https://www.hackingwithswift.com/read/12/2/reading-and-writing-basics-userdefaults</strong></a></p>
-<!-- Merged from 4.-stack-view.md -->
-<h1 id="4-stack-view">4. Stack View<a class="anchor" href="#4-stack-view">#</a></h1>
+<h3 id="stack-view">Stack View<a class="anchor" href="#stack-view">#</a></h3>
 <p>We often face a situation where we have more than two UI elements on a single row of the screen; then, it becomes really hard to align them proportionately with spacing using layout constraints. We can use UIStackView to deal with that situations.</p>
 <p>For example, our goal is to have something like the following:</p>
 <figure><img src="/gitbook-assets/Screenshot 2023-06-08 at 1.05.38 PM (1).png" alt=""><figcaption></figcaption></figure>
@@ -2915,8 +2800,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <figure><img src="/gitbook-assets/24.one (1).gif" alt=""><figcaption></figcaption></figure>
 <p>If we change the axis to vertical ( <code>stack.axis = .vertical</code> ), the screen will look like:</p>
 <figure><img src="/gitbook-assets/24.two (3).gif" alt=""><figcaption></figcaption></figure>
-<!-- Merged from embed-navigation-controller-from-code-not-storyboard.md -->
-<h1 id="embed-navigation-controller-from-code-not-storyboard">Embed Navigation Controller from code (Not Storyboard)<a class="anchor" href="#embed-navigation-controller-from-code-not-storyboard">#</a></h1>
+<h3 id="embed-navigation-controller-from-code-not-storyboard">Embed Navigation Controller from code (Not Storyboard)<a class="anchor" href="#embed-navigation-controller-from-code-not-storyboard">#</a></h3>
 <p>So far you have noticed, we embed the Navigation Controller using the Storyboard (refer to <a href="../3.-our-first-multi-screen-app/3.1.-navigation-controller.md" title="mention">3.1.-navigation-controller.md</a> ). What about we want to remove that process and want to add Navigation Controller by writing code? That way it&rsquo;ll be easy to change the name of the default &ldquo;ViewController.swift&rdquo; file to a more appropriate name. </p>
 <p>To start, we will create a new iOS project in Xcode named, &ldquo;NavConFromCode.&rdquo; </p>
 <figure><img src="/gitbook-assets/Screenshot 2025-10-09 at 1.22.15 PM.png" alt=""><figcaption></figcaption></figure>
@@ -2996,7 +2880,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="6-search-bar">6.-search-bar<a class="anchor" href="#6-search-bar">#</a></h2>
+<h3 id="6-search-bar">6.-search-bar<a class="anchor" href="#6-search-bar">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -3020,7 +2904,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-this-topic">Walkthrough: Exploring this topic<a class="anchor" href="#walkthrough-exploring-this-topic">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="6-search-bar-1">6. Search Bar<a class="anchor" href="#6-search-bar-1">#</a></h1>
+</blockquote><h3 id="search-bar">Search Bar<a class="anchor" href="#search-bar">#</a></h3>
 <p>The Search Bar in iOS is a very common UI element, and it is very useful to filter or search data from a list of data. In this module, we will build a demo app with a search bar. The app would look like the following:</p>
 <figure><img src="/gitbook-assets/6.one (1).gif" alt=""><figcaption></figcaption></figure>
 <p>The app will have the following:</p>
@@ -3034,14 +2918,13 @@ Open your current Xcode project or start a new Playground to follow along with t
 </li>
 </ul>
 <p>So let&rsquo;s create a new app named &ldquo;SearchBarDemo.&rdquo;</p>
-<!-- Merged from 6.1.-setting-up-the-views.md -->
-<h1 id="61-setting-up-the-views">6.1. Setting up the Views<a class="anchor" href="#61-setting-up-the-views">#</a></h1>
+<h3 id="setting-up-the-views">Setting up the Views<a class="anchor" href="#setting-up-the-views">#</a></h3>
 <p>The view of this app is very simple; we have two UI elements on the screen:</p>
 <ul>
 <li>A Search Bar</li>
 <li>A Table View</li>
 </ul>
-<h2 id="mainscreenviewswift">MainScreenView.swift<a class="anchor" href="#mainscreenviewswift">#</a></h2>
+<h3 id="mainscreenviewswift">MainScreenView.swift<a class="anchor" href="#mainscreenviewswift">#</a></h3>
 <p>Let&rsquo;s create a file named MainScreenView.swift and put the following code there:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
@@ -3092,7 +2975,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>    }   
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>{% endcode %}</p>
 <p>In the above code, on lines 19 through 23, we define the search bar. On line 21, we give a placeholder that describes what this Search Bar is about. The rest of the code is trivial, where we define the table view and the constraints.</p>
-<h2 id="searchtableviewcellswift">SearchTableViewCell.swift<a class="anchor" href="#searchtableviewcellswift">#</a></h2>
+<h3 id="searchtableviewcellswift">SearchTableViewCell.swift<a class="anchor" href="#searchtableviewcellswift">#</a></h3>
 <p>Now we define the view for each cell of the table view. The view for each cell is also very simple. We have one label that displays a name. Let&rsquo;s create a file named SearchTableViewCell.swift and put the following code there:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//  SearchTableViewCell.swift</span>
@@ -3158,8 +3041,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Configure the view for the selected state</span>
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><!-- Merged from 6.2.-setting-up-the-view-controller-handling-the-search-bar.md -->
-<h1 id="62-setting-up-the-view-controller-handling-the-search-bar">6.2. Setting up the View Controller: Handling the Search Bar<a class="anchor" href="#62-setting-up-the-view-controller-handling-the-search-bar">#</a></h1>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="setting-up-the-view-controller-handling-the-search-bar">Setting up the View Controller: Handling the Search Bar<a class="anchor" href="#setting-up-the-view-controller-handling-the-search-bar">#</a></h3>
 <p>Let&rsquo;s open ViewController.swift file and put the following code there:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
@@ -3285,8 +3167,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <p>Let&rsquo;s run the app again:</p>
 <figure><img src="/gitbook-assets/6.six (1).gif" alt=""><figcaption></figcaption></figure>
 <p>Yay! Our simple search bar is working!</p>
-<!-- Merged from 6.3.-reference-code.md -->
-<h1 id="63-reference-code">6.3. Reference Code<a class="anchor" href="#63-reference-code">#</a></h1>
+<h3 id="reference-code-3">Reference Code<a class="anchor" href="#reference-code-3">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/SearchBarDemo (1).zip&quot; %}</p>
 <hr>
 <h2 id="guided-practice-challenges-4">Guided Practice Challenges<a class="anchor" href="#guided-practice-challenges-4">#</a></h2>
@@ -3311,7 +3192,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="5-tab-bar-controller">5.-tab-bar-controller<a class="anchor" href="#5-tab-bar-controller">#</a></h2>
+<h3 id="5-tab-bar-controller">5.-tab-bar-controller<a class="anchor" href="#5-tab-bar-controller">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -3335,11 +3216,11 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-this-topic-1">Walkthrough: Exploring this topic<a class="anchor" href="#walkthrough-exploring-this-topic-1">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="5-tab-bar-controller-1">5. Tab Bar Controller<a class="anchor" href="#5-tab-bar-controller-1">#</a></h1>
+</blockquote><h3 id="tab-bar-controller">Tab Bar Controller<a class="anchor" href="#tab-bar-controller">#</a></h3>
 <p>We often see apps with bottom navigation bars, where you can tap on an icon from the bottom bar, and the app loads different screens for different buttons pressed like the following:</p>
 <figure><img src="/gitbook-assets/5.one (1).gif" alt=""><figcaption></figcaption></figure>
 <p>iOS gives us an easy-to-use and customizable tool called UITabBarController to build such screens. In this module, we will create an app that uses a Tab Bar.</p>
-<h2 id="the-tabcontrollerdemo-app">The TabControllerDemo app<a class="anchor" href="#the-tabcontrollerdemo-app">#</a></h2>
+<h3 id="the-tabcontrollerdemo-app">The TabControllerDemo app<a class="anchor" href="#the-tabcontrollerdemo-app">#</a></h3>
 <p>Let&rsquo;s create an app called TabControllerDemo in XCode. The app will have:</p>
 <ul>
 <li>A bottom Tab Bar having three Tab Bar buttons: red, green, and blue.</li>
@@ -3354,9 +3235,8 @@ Open your current Xcode project or start a new Playground to follow along with t
 </ul>
 </li>
 </ul>
-<!-- Merged from 5.1.-views-of-the-screens.md -->
-<h1 id="51-views-of-the-screens">5.1. Views of the Screens<a class="anchor" href="#51-views-of-the-screens">#</a></h1>
-<h2 id="views">Views<a class="anchor" href="#views">#</a></h2>
+<h3 id="views-of-the-screens">Views of the Screens<a class="anchor" href="#views-of-the-screens">#</a></h3>
+<h3 id="views">Views<a class="anchor" href="#views">#</a></h3>
 <p>The design of the screens is the same except for the background color of the color box. So, let&rsquo;s create the views of Red, Blue, and Green screens.</p>
 <h3 id="redviewswift">RedView.swift<a class="anchor" href="#redviewswift">#</a></h3>
 <p>Let&rsquo;s create a swift file called RedView.swift and put the following code:</p>
@@ -3412,10 +3292,9 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>In the above code, we create a boxView to display the corresponding color of the screen, a button to send data to other screens, and a label to display the received data.</p>
 <h3 id="greenviewswift-and-blueviewswift">GreenView.swift and BlueView.swift<a class="anchor" href="#greenviewswift-and-blueviewswift">#</a></h3>
 <p>The only thing different in these files compared to RedView.swift is the background color of the boxView. For GreenView.swift, it is <code>.green</code>, and for BlueView.swift, it is <code>.blue</code>.</p>
-<!-- Merged from 5.2.-controllers-of-the-screens.md -->
-<h1 id="52-controllers-of-the-screens">5.2. Controllers of the Screens<a class="anchor" href="#52-controllers-of-the-screens">#</a></h1>
+<h3 id="controllers-of-the-screens">Controllers of the Screens<a class="anchor" href="#controllers-of-the-screens">#</a></h3>
 <p>For each different screen (red, blue, and green), we need to have different Controllers. Let&rsquo;s create three controller files.</p>
-<h2 id="redviewcontrollerswift">RedViewController.swift<a class="anchor" href="#redviewcontrollerswift">#</a></h2>
+<h3 id="redviewcontrollerswift">RedViewController.swift<a class="anchor" href="#redviewcontrollerswift">#</a></h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//  RedViewController.swift</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//  TabControllerDemo</span>
@@ -3437,7 +3316,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>        view.backgroundColor = .white
 </span></span><span style="display:flex;"><span>        title = <span style="color:#e6db74">&#34;Red&#34;</span>
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="blueviewcontrollerswift">BlueViewController.swift<a class="anchor" href="#blueviewcontrollerswift">#</a></h2>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="blueviewcontrollerswift">BlueViewController.swift<a class="anchor" href="#blueviewcontrollerswift">#</a></h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//  BlueViewController.swift</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//  TabControllerDemo</span>
@@ -3459,7 +3338,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>        view.backgroundColor = .white
 </span></span><span style="display:flex;"><span>        title = <span style="color:#e6db74">&#34;Blue&#34;</span>
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="greenviewcontrollerswift">GreenViewController.swift<a class="anchor" href="#greenviewcontrollerswift">#</a></h2>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="greenviewcontrollerswift">GreenViewController.swift<a class="anchor" href="#greenviewcontrollerswift">#</a></h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//  GreenViewController.swift</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//  TabControllerDemo</span>
@@ -3481,8 +3360,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>        view.backgroundColor = .white
 </span></span><span style="display:flex;"><span>        title = <span style="color:#e6db74">&#34;Green&#34;</span>
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><!-- Merged from 5.3.-patching-the-screens-in-the-tab-bar.md -->
-<h1 id="53-patching-the-screens-in-the-tab-bar">5.3. Patching the Screens in the Tab Bar<a class="anchor" href="#53-patching-the-screens-in-the-tab-bar">#</a></h1>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="patching-the-screens-in-the-tab-bar">Patching the Screens in the Tab Bar<a class="anchor" href="#patching-the-screens-in-the-tab-bar">#</a></h3>
 <p>We have three screens. Now we want to patch these three screens in a Tab Bar Controller. Now it&rsquo;s time to use our main ViewController.swift file.</p>
 <p>Let&rsquo;s look into the logical structure of a Tab Bar:</p>
 <figure><img src="/gitbook-assets/Screenshot 2023-06-12 at 12.41.40 PM (1).png" alt=""><figcaption></figcaption></figure>
@@ -3575,8 +3453,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </ul>
 <p>If we run the app now, we will see:</p>
 <figure><img src="/gitbook-assets/5.two (1).gif" alt=""><figcaption></figcaption></figure>
-<!-- Merged from 5.4.-sending-data-from-one-tab-to-another.md -->
-<h1 id="54-sending-data-from-one-tab-to-another">5.4. Sending data From one Tab to Another<a class="anchor" href="#54-sending-data-from-one-tab-to-another">#</a></h1>
+<h3 id="sending-data-from-one-tab-to-another">Sending data From one Tab to Another<a class="anchor" href="#sending-data-from-one-tab-to-another">#</a></h3>
 <p>We will use Notification Center to send data between the tabs. If the user taps on the &ldquo;Send Hello&rdquo; button from the Red Screen, it will send all the other tabs a message, &ldquo;Hello From Red Screen.&rdquo; The other screens will display the message on the labels.</p>
 <p>We now have to write code in the view controllers to enable this feature. Let&rsquo;s open RedViewController.swift file and write the following code:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
@@ -3671,11 +3548,9 @@ Open your current Xcode project or start a new Playground to follow along with t
 <p>We write the other two view controllers regarding the Blue and Green screens similarly.</p>
 <p>Now, if we run the app now, we will see:</p>
 <figure><img src="/gitbook-assets/5.four (1).gif" alt=""><figcaption></figcaption></figure>
-<!-- Merged from 5.5.-reference-code.md -->
-<h1 id="55-reference-code">5.5. Reference Code<a class="anchor" href="#55-reference-code">#</a></h1>
+<h3 id="reference-code-4">Reference Code<a class="anchor" href="#reference-code-4">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/TabControllerDemo.zip&quot; %}</p>
-<!-- Merged from 5.6.-notes-for-tab-bar-controller.md -->
-<h1 id="56-notes-for-tab-bar-controller">5.6. Notes for Tab Bar Controller<a class="anchor" href="#56-notes-for-tab-bar-controller">#</a></h1>
+<h3 id="notes-for-tab-bar-controller">Notes for Tab Bar Controller<a class="anchor" href="#notes-for-tab-bar-controller">#</a></h3>
 <ul>
 <li><strong>Tab Bar Controller is a powerful tool.</strong></li>
 <li><strong>Each tab has its own Navigation Controller. So, you can build a separate tree of screens for each tab with its navigation.</strong></li>
@@ -3705,7 +3580,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="bottom-sheet-view-modal-presentation">bottom-sheet-view-modal-presentation<a class="anchor" href="#bottom-sheet-view-modal-presentation">#</a></h2>
+<h3 id="bottom-sheet-view-modal-presentation">bottom-sheet-view-modal-presentation<a class="anchor" href="#bottom-sheet-view-modal-presentation">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -3729,14 +3604,13 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-this-topic-2">Walkthrough: Exploring this topic<a class="anchor" href="#walkthrough-exploring-this-topic-2">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="7-bottom-sheet-view-modal-presentation">7. Bottom Sheet View: Modal Presentation<a class="anchor" href="#7-bottom-sheet-view-modal-presentation">#</a></h1>
+</blockquote><h3 id="bottom-sheet-view-modal-presentation-1">Bottom Sheet View: Modal Presentation<a class="anchor" href="#bottom-sheet-view-modal-presentation-1">#</a></h3>
 <p>You probably have seen apps where you tap a button, and a page sheet pops up from the bottom. You can then interact with that page sheet and work with the app. We can use Swift&rsquo;s SheetPresentationController for building the bottom sheet views. </p>
 <p>In this short module, we will build the following app:</p>
 <figure><img src="/gitbook-assets/7.sixty (1).gif" alt=""><figcaption></figcaption></figure>
 <p>Basically, we build this app on top of the app in the <a href="../6.-search-bar/" title="mention">6.-search-bar</a> module. We will implement SearchBar on a bottom sheet view.</p>
 <p>We have a Find button on our main screen and a label to display the selected name. If the user taps on the Find button, the app should present the bottom search sheet. The user searches for a name on the bottom search sheet and selects a name. Then, we need to dismiss the bottom sheet and set the text of the label to the selected name.</p>
-<!-- Merged from 1.-creating-the-screen-for-a-bottom-sheet-view.md -->
-<h1 id="71-creating-the-screen-for-a-bottom-sheet-view">7.1. Creating the Screen for a Bottom Sheet View<a class="anchor" href="#71-creating-the-screen-for-a-bottom-sheet-view">#</a></h1>
+<h3 id="creating-the-screen-for-a-bottom-sheet-view">Creating the Screen for a Bottom Sheet View<a class="anchor" href="#creating-the-screen-for-a-bottom-sheet-view">#</a></h3>
 <p><strong>When building a bottom sheet (presentation) view, we must remember that the page we will present as a bottom sheet is a full and independent screen. It should have its own:</strong></p>
 <ul>
 <li><strong>View Controller</strong></li>
@@ -3750,7 +3624,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </ul>
 <p><img src="/gitbook-assets/Screenshot%202023-06-13%20at%201.12.04%20PM.png" alt="" /></p>
 <p>Let&rsquo;s design the view first.</p>
-<h2 id="search-bottom-sheet-view">Search Bottom Sheet View<a class="anchor" href="#search-bottom-sheet-view">#</a></h2>
+<h3 id="search-bottom-sheet-view">Search Bottom Sheet View<a class="anchor" href="#search-bottom-sheet-view">#</a></h3>
 <p>Let&rsquo;s open the SearchBottomSheetView.swift file. <strong>The design of this view should be exactly the same as</strong> <a href="../6.-search-bar/6.1.-setting-up-the-views.md" title="mention">6.1.-setting-up-the-views.md</a><strong>.</strong> So let&rsquo;s put the following code in the file:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//  SearchBottomSheetView.swift</span>
@@ -3798,7 +3672,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">required</span> <span style="color:#66d9ef">init</span>?(coder: NSCoder) {
 </span></span><span style="display:flex;"><span>        fatalError(<span style="color:#e6db74">&#34;init(coder:) has not been implemented&#34;</span>)
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="search-table-cell">Search Table Cell<a class="anchor" href="#search-table-cell">#</a></h2>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="search-table-cell">Search Table Cell<a class="anchor" href="#search-table-cell">#</a></h3>
 <p>We will use the same table cell here as <a href="../6.-search-bar/" title="mention">6.-search-bar</a>. Let&rsquo;s open SearchTableCell.swift file and put the following code there:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//  SearchTableCell.swift</span>
@@ -3864,8 +3738,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Configure the view for the selected state</span>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><!-- Merged from 2.-setting-up-the-controller-for-the-search-bottom-sheet.md -->
-<h1 id="72-setting-up-the-controller-for-the-search-bottom-sheet">7.2. Setting up the Controller for the Search Bottom Sheet<a class="anchor" href="#72-setting-up-the-controller-for-the-search-bottom-sheet">#</a></h1>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="setting-up-the-controller-for-the-search-bottom-sheet">Setting up the Controller for the Search Bottom Sheet<a class="anchor" href="#setting-up-the-controller-for-the-search-bottom-sheet">#</a></h3>
 <p>Let&rsquo;s open SearchBottomSheetController.swift file. We will mostly use the same code here as <a href="../6.-search-bar/" title="mention">6.-search-bar</a>. We would add a few more logic to handle a tap on a row and send data back to the main screen. </p>
 <p>Let&rsquo;s write the code for setting up the table view and the search bar. Let&rsquo;s open SearchBottomSheetController.swift file, and put the following code there:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
@@ -3941,14 +3814,13 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.searchSheet.tableViewSearchResults.reloadData()
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>{% endcode %}</p>
-<!-- Merged from 3.-main-screen.md -->
-<h1 id="3-main-screen">3. Main Screen<a class="anchor" href="#3-main-screen">#</a></h1>
+<h3 id="main-screen">Main Screen<a class="anchor" href="#main-screen">#</a></h3>
 <p>The main screen is very simple to design; we have:</p>
 <ul>
 <li>A label to display the selected name from the bottom search sheet.</li>
 <li>A Find button to pop the bottom search sheet.</li>
 </ul>
-<h2 id="main-screen-view">Main Screen View<a class="anchor" href="#main-screen-view">#</a></h2>
+<h3 id="main-screen-view">Main Screen View<a class="anchor" href="#main-screen-view">#</a></h3>
 <p>Let&rsquo;s create a file named MainScreenView.swift:</p>
 <p><img src="/gitbook-assets/Screenshot%202023-06-13%20at%201.35.29%20PM.png" alt="" /></p>
 <p>Let&rsquo;s put the following code there:</p>
@@ -3998,7 +3870,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">required</span> <span style="color:#66d9ef">init</span>?(coder: NSCoder) {
 </span></span><span style="display:flex;"><span>        fatalError(<span style="color:#e6db74">&#34;init(coder:) has not been implemented&#34;</span>)
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="main-screen-controller">Main Screen Controller<a class="anchor" href="#main-screen-controller">#</a></h2>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="main-screen-controller">Main Screen Controller<a class="anchor" href="#main-screen-controller">#</a></h3>
 <p>Now it&rsquo;s time to patch the actions to pop the bottom search sheet from the view controller. Let&rsquo;s put the following code in ViewController.swift:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
@@ -4080,8 +3952,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </ul>
 <p><img src="/gitbook-assets/Screenshot%202023-06-13%20at%205.00.01%20PM.png" alt="" /></p>
 <p>Now, our app is almost ready. We just need to return the name to main screen when the user taps a name from the bottom search sheet&rsquo;s table view.</p>
-<!-- Merged from 4.-sending-data-back-to-main-screen.md -->
-<h1 id="74-sending-data-back-to-main-screen">7.4. Sending data back to Main Screen<a class="anchor" href="#74-sending-data-back-to-main-screen">#</a></h1>
+<h3 id="sending-data-back-to-main-screen">Sending data back to Main Screen<a class="anchor" href="#sending-data-back-to-main-screen">#</a></h3>
 <p>We will use Notification Center to do that. </p>
 <ul>
 <li><strong>We will observe any notifications coming from the bottom search sheet if the user selects any of the names in the main screen&rsquo;s ViewController.</strong></li>
@@ -4140,7 +4011,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </ul>
 </li>
 </ul>
-<h2 id="table-view-in-bottom-search-sheet-controller-overriding-didselectrowat">Table View in Bottom Search Sheet Controller: overriding didSelectRowAt<a class="anchor" href="#table-view-in-bottom-search-sheet-controller-overriding-didselectrowat">#</a></h2>
+<h3 id="table-view-in-bottom-search-sheet-controller-overriding-didselectrowat">Table View in Bottom Search Sheet Controller: overriding didSelectRowAt<a class="anchor" href="#table-view-in-bottom-search-sheet-controller-overriding-didselectrowat">#</a></h3>
 <p>Let&rsquo;s open SearchBottomSheetController.swift file and add the following method inside the extension where we are adopting the table view protocols:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> adopting Table View protocols...</span>
@@ -4164,8 +4035,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <p>Let&rsquo;s run the app.</p>
 <figure><img src="/gitbook-assets/seven.5.gif" alt=""><figcaption></figcaption></figure>
 <p><strong>Nice! We built our first Bottom Sheet View!</strong></p>
-<!-- Merged from 5.-reference-code.md -->
-<h1 id="75-reference-code">7.5. Reference Code<a class="anchor" href="#75-reference-code">#</a></h1>
+<h3 id="reference-code-5">Reference Code<a class="anchor" href="#reference-code-5">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/BottomSheetView.zip&quot; %}</p>
 <hr>
 <h2 id="guided-practice-challenges-6">Guided Practice Challenges<a class="anchor" href="#guided-practice-challenges-6">#</a></h2>
@@ -4267,80 +4137,46 @@ Open your current Xcode project or start a new Playground to follow along with t
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#table-of-contents">Table of Contents</a></li>
-    <li><a href="#uitableview">UITableView</a></li>
+    <li><a href="#table-of-contents">Table of Contents</a>
+      <ul>
+        <li><a href="#uitableview">UITableView</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives">Learning Objectives</a></li>
     <li><a href="#the-story-so-far">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-uitableview">Walkthrough: Exploring UITableView</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-uitableview">Walkthrough: Exploring UITableView</a>
       <ul>
+        <li><a href="#uitableview-and-more">UITableView, and more</a></li>
+        <li><a href="#expense-app">Expense App</a></li>
+        <li><a href="#first-screen-part-1-adding-a-bar-button">First screen, part 1: Adding a Bar Button</a></li>
+        <li><a href="#first-screen-part-2-setting-up-the-view-of-the-first-screen-with-tableview">First screen, part 2: Setting up the View of the First Screen with TableView.</a></li>
         <li><a href="#what-is-a-tableview">What is a TableView?</a></li>
         <li><a href="#creating-the-view-file-of-the-first-screen-firstscreenview">Creating the View file of the first screen, FirstScreenView</a></li>
         <li><a href="#patching-firstscreenview-with-viewcontroller">Patching FirstScreenView with ViewController</a></li>
         <li><a href="#designing-each-cellrow-of-the-tableview">Designing each Cell/Row of the TableView:</a></li>
         <li><a href="#patching-the-cell-with-the-tableview"><strong>Patching the Cell with the TableView</strong></a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#first-screen-part-3-setting-up-the-view-controller-and-populating-tableview">First screen, part 3: Setting up the View Controller and populating TableView</a></li>
         <li><a href="#creating-a-data-model-for-expenses">Creating a data model for expenses</a></li>
-      </ul>
-    </li>
-    <li><a href="#setting-up-the-controller">Setting up the Controller</a>
-      <ul>
+        <li><a href="#setting-up-the-controller">Setting up the Controller</a></li>
         <li><a href="#patching-tableview-delegate-and-data-source-with-the-controller">Patching TableView delegate and data source with the controller</a></li>
         <li><a href="#file-structures">File structures</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#second-screen-part-1-setting-up-the-view-of-the-add-expense-screen">Second screen, part 1: Setting up the View of the Add Expense Screen</a></li>
         <li><a href="#setting-up-the-view">Setting up the View</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#patching-the-pickerview-to-pick-the-type-of-expense"><strong>Patching the PickerView to pick the type of expense</strong></a>
-      <ul>
+        <li><a href="#second-screen-part-2-setting-up-add-expense-view-controller">Second screen, part 2: Setting up Add Expense View Controller</a></li>
+        <li><a href="#patching-the-pickerview-to-pick-the-type-of-expense"><strong>Patching the PickerView to pick the type of expense</strong></a></li>
         <li><a href="#defining-static-array-types">Defining static array &rsquo;types&rsquo;</a></li>
         <li><a href="#adopting-the-picker-views-protocols">Adopting the Picker View&rsquo;s protocols</a></li>
-      </ul>
-    </li>
-    <li><a href="#housekeeping-updating-navigation-controller-and-patching-utilitiestypes-in-view-controller">Housekeeping: Updating Navigation controller and patching Utilities.types in View Controller</a>
-      <ul>
+        <li><a href="#housekeeping-updating-navigation-controller-and-patching-utilitiestypes-in-view-controller">Housekeeping: Updating Navigation controller and patching Utilities.types in View Controller</a></li>
         <li><a href="#updating-viewcontroller-to-use-utilitiestypes-instead-of-the-local-array">Updating ViewController to use Utilities.types instead of the local array.</a></li>
         <li><a href="#so-far-the-updated-controller-codes-are-as-follows"><strong>So far, the updated controller codes are as follows:</strong></a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#second-screen-part-3-send-new-expense-back-to-viewcontroller-and-update-the-tableview">Second screen, part 3: Send new expense back to ViewController and update the TableView</a></li>
         <li><a href="#handling-double-inputs">(Handling Double inputs)</a></li>
         <li><a href="#delegating-the-task-to-viewcontroller">Delegating the task to ViewController</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#tapping-a-cell-in-tableview-and-practice-exercise">Tapping a cell in TableView and Practice exercise</a></li>
         <li><a href="#exercise">Exercise</a></li>
+        <li><a href="#reference-code">Reference Code</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
     <li><a href="#guided-practice-challenges">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation">Challenge 1: Experimentation</a></li>
@@ -4348,22 +4184,22 @@ Open your current Xcode project or start a new Playground to follow along with t
       </ul>
     </li>
     <li><a href="#references">References</a></li>
-    <li><a href="#getting-help">Getting Help</a></li>
-    <li><a href="#uiscrollview">UIScrollView</a></li>
-    <li><a href="#learning-objectives-1">Learning Objectives</a></li>
-    <li><a href="#the-story-so-far-1">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-uiscrollview">Walkthrough: Exploring UIScrollView</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#getting-help">Getting Help</a>
       <ul>
-        <li><a href="#constraints">Constraints:</a></li>
+        <li><a href="#uiscrollview">UIScrollView</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
+    <li><a href="#learning-objectives-1">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far-1">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-uiscrollview">Walkthrough: Exploring UIScrollView</a>
+      <ul>
+        <li><a href="#uiscrollview-1">UIScrollView</a></li>
+        <li><a href="#creating-the-view-of-the-screen">Creating the View of the Screen</a></li>
+        <li><a href="#constraints">Constraints:</a></li>
+        <li><a href="#creating-the-controller">Creating the Controller</a></li>
+        <li><a href="#reference-code-1">Reference Code</a></li>
+      </ul>
+    </li>
     <li><a href="#guided-practice-challenges-1">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-1">Challenge 1: Experimentation</a></li>
@@ -4371,70 +4207,39 @@ Open your current Xcode project or start a new Playground to follow along with t
       </ul>
     </li>
     <li><a href="#references-1">References</a></li>
-    <li><a href="#getting-help-1">Getting Help</a></li>
-    <li><a href="#uimenu--image-pickers">UIMenu &amp; Image Pickers</a></li>
+    <li><a href="#getting-help-1">Getting Help</a>
+      <ul>
+        <li><a href="#uimenu--image-pickers">UIMenu &amp; Image Pickers</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-2">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-2">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-uimenu--image-pickers">Walkthrough: Exploring UIMenu &amp; Image Pickers</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#app6-adding-more-features-on-app5">App6: Adding more features on App5</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#appendix">Appendix</a>
+    <li><a href="#walkthrough-exploring-uimenu--image-pickers">Walkthrough: Exploring UIMenu &amp; Image Pickers</a>
       <ul>
+        <li><a href="#uimenu-picking-images-from-gallery-and-camera-and-uiimageview">UIMenu, Picking Images from Gallery and Camera, and UIImageView</a></li>
+        <li><a href="#app6-adding-more-features-on-app5">App6: Adding more features on App5</a></li>
+        <li><a href="#updating-the-tableview-cell-to-accommodate-an-imageview">Updating the TableView Cell to accommodate an ImageView</a></li>
+        <li><a href="#appendix">Appendix</a></li>
         <li><a href="#installing-and-using-sf-symbols-app">Installing and using SF Symbols app</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#addexpenseview">AddExpenseView</a>
-      <ul>
+        <li><a href="#add-expense-screen">Add Expense Screen</a></li>
+        <li><a href="#addexpenseview">AddExpenseView</a></li>
         <li><a href="#setting-up-the-buttons">Setting up the Buttons</a></li>
         <li><a href="#the-constraints">The Constraints</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#addexpenseviewcontroller-uimenu-for-buttonselecttype">AddExpenseViewController: UIMenu for buttonSelectType</a></li>
         <li><a href="#uimenu-for-buttonselecttype">UIMenu for buttonSelectType</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#addexpenseviewcontroller-uimenu-for-buttontakephoto">AddExpenseViewController: UIMenu for buttonTakePhoto</a></li>
         <li><a href="#modify-the-buttontakephoto-in-addexpenseview">Modify the buttonTakePhoto in AddExpenseView</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
-        <li></li>
+        <li><a href="#using-gallery-phpicker">Using Gallery: PHPicker</a></li>
+        <li><a href="#using-camera-uiimagepickercontroller">Using Camera: UIImagePickerController</a></li>
         <li><a href="#changing-the-privacy-settings-of-the-app-to-allow-the-app-to-access-the-camera">Changing the privacy settings of the App to allow the app to access the Camera</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#getting-the-expense-back-to-viewcontroller">Getting the expense back to ViewController</a></li>
         <li><a href="#update-expense-data-model">Update Expense data model:</a></li>
         <li><a href="#update-addexpenseviewcontrollers-onaddbuttontapped-method">Update AddExpenseViewController&rsquo;s onAddButtonTapped() method:</a></li>
         <li><a href="#update-the-tableview-to-display-the-image-in-the-cell">Update the TableView to display the image in the cell</a></li>
+        <li><a href="#wrapping-up-a-bit-of-polishing">Wrapping Up: a bit of polishing</a></li>
+        <li><a href="#reference-code-2">Reference Code</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
     <li><a href="#guided-practice-challenges-2">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-2">Challenge 1: Experimentation</a></li>
@@ -4442,35 +4247,25 @@ Open your current Xcode project or start a new Playground to follow along with t
       </ul>
     </li>
     <li><a href="#references-2">References</a></li>
-    <li><a href="#getting-help-2">Getting Help</a></li>
-    <li><a href="#useful-ui-elements">Useful UI Elements</a></li>
-    <li><a href="#learning-objectives-3">Learning Objectives</a></li>
-    <li><a href="#the-story-so-far-3">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-useful-ui-elements">Walkthrough: Exploring Useful UI Elements</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#getting-help-2">Getting Help</a>
       <ul>
-        <li><a href="#writing-data">Writing data</a></li>
-        <li><a href="#reading-data">Reading data</a></li>
+        <li><a href="#useful-ui-elements">Useful UI Elements</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#learning-objectives-3">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far-3">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-useful-ui-elements">Walkthrough: Exploring Useful UI Elements</a>
       <ul>
+        <li><a href="#hiding-keyboard-when-tapped-outside">Hiding Keyboard when tapped outside</a></li>
+        <li><a href="#slide-up-the-view-to-accommodate-the-on-screen-keyboard">Slide Up the View to Accommodate the On-screen Keyboard</a></li>
+        <li><a href="#saving-small-data-when-the-app-is-not-running-session-or-other-state-variables">Saving small data when the App is not running (session or other state variables)</a></li>
+        <li><a href="#writing-data">Writing data</a></li>
+        <li><a href="#reading-data">Reading data</a></li>
+        <li><a href="#stack-view">Stack View</a></li>
         <li><a href="#designing-view-with-uistackview">Designing View with UIStackView:</a></li>
         <li><a href="#patching-viewcontroller">Patching ViewController</a></li>
         <li><a href="#run-the-app">Run the App</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#embed-navigation-controller-from-code-not-storyboard">Embed Navigation Controller from code (Not Storyboard)</a></li>
         <li><a href="#deleting-the-mainstoryboard">Deleting the Main.storyboard</a></li>
         <li><a href="#resource-files">Resource Files</a></li>
       </ul>
@@ -4483,27 +4278,24 @@ Open your current Xcode project or start a new Playground to follow along with t
       </ul>
     </li>
     <li><a href="#references-3">References</a></li>
-    <li><a href="#getting-help-3">Getting Help</a></li>
-    <li><a href="#6-search-bar">6.-search-bar</a></li>
-    <li><a href="#learning-objectives-4">Learning Objectives</a></li>
-    <li><a href="#the-story-so-far-4">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-this-topic">Walkthrough: Exploring this topic</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#mainscreenviewswift">MainScreenView.swift</a></li>
-    <li><a href="#searchtableviewcellswift">SearchTableViewCell.swift</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#getting-help-3">Getting Help</a>
       <ul>
-        <li><a href="#handling-when-the-user-is-typing-on-the-search-bar">Handling when the User is Typing on the Search Bar</a></li>
+        <li><a href="#6-search-bar">6.-search-bar</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
+    <li><a href="#learning-objectives-4">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far-4">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-this-topic">Walkthrough: Exploring this topic</a>
+      <ul>
+        <li><a href="#search-bar">Search Bar</a></li>
+        <li><a href="#setting-up-the-views">Setting up the Views</a></li>
+        <li><a href="#mainscreenviewswift">MainScreenView.swift</a></li>
+        <li><a href="#searchtableviewcellswift">SearchTableViewCell.swift</a></li>
+        <li><a href="#setting-up-the-view-controller-handling-the-search-bar">Setting up the View Controller: Handling the Search Bar</a></li>
+        <li><a href="#handling-when-the-user-is-typing-on-the-search-bar">Handling when the User is Typing on the Search Bar</a></li>
+        <li><a href="#reference-code-3">Reference Code</a></li>
+      </ul>
+    </li>
     <li><a href="#guided-practice-challenges-4">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-4">Challenge 1: Experimentation</a></li>
@@ -4511,41 +4303,32 @@ Open your current Xcode project or start a new Playground to follow along with t
       </ul>
     </li>
     <li><a href="#references-4">References</a></li>
-    <li><a href="#getting-help-4">Getting Help</a></li>
-    <li><a href="#5-tab-bar-controller">5.-tab-bar-controller</a></li>
+    <li><a href="#getting-help-4">Getting Help</a>
+      <ul>
+        <li><a href="#5-tab-bar-controller">5.-tab-bar-controller</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-5">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-5">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-this-topic-1">Walkthrough: Exploring this topic</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#the-tabcontrollerdemo-app">The TabControllerDemo app</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#views">Views</a>
+    <li><a href="#walkthrough-exploring-this-topic-1">Walkthrough: Exploring this topic</a>
       <ul>
+        <li><a href="#tab-bar-controller">Tab Bar Controller</a></li>
+        <li><a href="#the-tabcontrollerdemo-app">The TabControllerDemo app</a></li>
+        <li><a href="#views-of-the-screens">Views of the Screens</a></li>
+        <li><a href="#views">Views</a></li>
         <li><a href="#redviewswift">RedView.swift</a></li>
         <li><a href="#greenviewswift-and-blueviewswift">GreenView.swift and BlueView.swift</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#redviewcontrollerswift">RedViewController.swift</a></li>
-    <li><a href="#blueviewcontrollerswift">BlueViewController.swift</a></li>
-    <li><a href="#greenviewcontrollerswift">GreenViewController.swift</a></li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#controllers-of-the-screens">Controllers of the Screens</a></li>
+        <li><a href="#redviewcontrollerswift">RedViewController.swift</a></li>
+        <li><a href="#blueviewcontrollerswift">BlueViewController.swift</a></li>
+        <li><a href="#greenviewcontrollerswift">GreenViewController.swift</a></li>
+        <li><a href="#patching-the-screens-in-the-tab-bar">Patching the Screens in the Tab Bar</a></li>
         <li><a href="#setting-up-the-tab-bar-viewcontrollerswift">Setting up the Tab Bar: ViewController.swift</a></li>
+        <li><a href="#sending-data-from-one-tab-to-another">Sending data From one Tab to Another</a></li>
+        <li><a href="#reference-code-4">Reference Code</a></li>
+        <li><a href="#notes-for-tab-bar-controller">Notes for Tab Bar Controller</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
     <li><a href="#guided-practice-challenges-5">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-5">Challenge 1: Experimentation</a></li>
@@ -4553,32 +4336,29 @@ Open your current Xcode project or start a new Playground to follow along with t
       </ul>
     </li>
     <li><a href="#references-5">References</a></li>
-    <li><a href="#getting-help-5">Getting Help</a></li>
-    <li><a href="#bottom-sheet-view-modal-presentation">bottom-sheet-view-modal-presentation</a></li>
-    <li><a href="#learning-objectives-6">Learning Objectives</a></li>
-    <li><a href="#the-story-so-far-6">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-this-topic-2">Walkthrough: Exploring this topic</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#search-bottom-sheet-view">Search Bottom Sheet View</a></li>
-    <li><a href="#search-table-cell">Search Table Cell</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#main-screen-view">Main Screen View</a></li>
-    <li><a href="#main-screen-controller">Main Screen Controller</a>
+    <li><a href="#getting-help-5">Getting Help</a>
       <ul>
-        <li><a href="#creating-the-bottom-search-sheet">Creating the Bottom Search Sheet</a></li>
+        <li><a href="#bottom-sheet-view-modal-presentation">bottom-sheet-view-modal-presentation</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#table-view-in-bottom-search-sheet-controller-overriding-didselectrowat">Table View in Bottom Search Sheet Controller: overriding didSelectRowAt</a></li>
-  </ul>
-
-  <ul>
+    <li><a href="#learning-objectives-6">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far-6">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-this-topic-2">Walkthrough: Exploring this topic</a>
+      <ul>
+        <li><a href="#bottom-sheet-view-modal-presentation-1">Bottom Sheet View: Modal Presentation</a></li>
+        <li><a href="#creating-the-screen-for-a-bottom-sheet-view">Creating the Screen for a Bottom Sheet View</a></li>
+        <li><a href="#search-bottom-sheet-view">Search Bottom Sheet View</a></li>
+        <li><a href="#search-table-cell">Search Table Cell</a></li>
+        <li><a href="#setting-up-the-controller-for-the-search-bottom-sheet">Setting up the Controller for the Search Bottom Sheet</a></li>
+        <li><a href="#main-screen">Main Screen</a></li>
+        <li><a href="#main-screen-view">Main Screen View</a></li>
+        <li><a href="#main-screen-controller">Main Screen Controller</a></li>
+        <li><a href="#creating-the-bottom-search-sheet">Creating the Bottom Search Sheet</a></li>
+        <li><a href="#sending-data-back-to-main-screen">Sending data back to Main Screen</a></li>
+        <li><a href="#table-view-in-bottom-search-sheet-controller-overriding-didselectrowat">Table View in Bottom Search Sheet Controller: overriding didSelectRowAt</a></li>
+        <li><a href="#reference-code-5">Reference Code</a></li>
+      </ul>
+    </li>
     <li><a href="#guided-practice-challenges-6">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-6">Challenge 1: Experimentation</a></li>

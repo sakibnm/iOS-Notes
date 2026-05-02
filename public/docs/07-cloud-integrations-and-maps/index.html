@@ -28,7 +28,7 @@ Learning Objectives# By the end of this session, you will be able to:">
   <meta itemprop="description" content="Table of Contents# CocoaPods# Estimated effort: 1-2 hours this topic Format: Asynchronous online Prerequisites: Previous iOS topics
 {&lt; hint info &gt;} 🎯 Topic Mission: In this module, we will explore CocoaPods and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code. {&lt; /hint &gt;}
 Learning Objectives# By the end of this session, you will be able to:">
-  <meta itemprop="wordCount" content="17385">
+  <meta itemprop="wordCount" content="17354">
 
 <title>Module 7: Cloud Integrations &amp; Maps | iOS UIKit Course</title>
 <link rel="icon" href="/favicon.png" >
@@ -38,7 +38,7 @@ Learning Objectives# By the end of this session, you will be able to:">
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.2d8fd5e4236bd86b25ebef9673310ebe25f1df0b4aedc504172ac049ab171f38.js" integrity="sha256-LY/V5CNr2Gsl6&#43;&#43;WczEOviXx3wtK7cUEFyrASasXHzg=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.79d8fbe5c352e1e2da559b8378ff5b4507df69656d01b71c19c90d10531011a5.js" integrity="sha256-edj75cNS4eLaVZuDeP9bRQffaWVtAbccGckNEFMQEaU=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="//localhost:1313/docs/07-cloud-integrations-and-maps/index.xml" title="iOS UIKit Course" />
@@ -269,24 +269,20 @@ Learning Objectives# By the end of this session, you will be able to:">
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#table-of-contents">Table of Contents</a></li>
-    <li><a href="#cocoapods">CocoaPods</a></li>
-    <li><a href="#learning-objectives">Learning Objectives</a></li>
-    <li><a href="#the-story-so-far">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-cocoapods">Walkthrough: Exploring CocoaPods</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#table-of-contents">Table of Contents</a>
       <ul>
-        <li><a href="#there-are-two-ways-of-installing-cocoapods-on-your-mac"><strong>There are two ways of installing CocoaPods on your Mac:</strong></a></li>
+        <li><a href="#cocoapods">CocoaPods</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#learning-objectives">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-cocoapods">Walkthrough: Exploring CocoaPods</a>
       <ul>
+        <li><a href="#cocoa-pods">Cocoa Pods</a></li>
+        <li><a href="#installing-cocoa-pods">Installing Cocoa Pods</a></li>
+        <li><a href="#there-are-two-ways-of-installing-cocoapods-on-your-mac"><strong>There are two ways of installing CocoaPods on your Mac:</strong></a></li>
+        <li><a href="#using-the-command-in-cocoapodsorg">Using the command in cocoapods.org:</a></li>
+        <li><a href="#integrating-cocoapods-into-a-project">Integrating CocoaPods into a Project</a></li>
         <li><a href="#adding-a-cocoapod-module-alamofire-to-our-project">Adding a CocoaPod module, Alamofire, to our project</a></li>
         <li><a href="#reference-code">Reference Code</a></li>
       </ul>
@@ -298,67 +294,47 @@ Learning Objectives# By the end of this session, you will be able to:">
       </ul>
     </li>
     <li><a href="#references">References</a></li>
-    <li><a href="#getting-help">Getting Help</a></li>
-    <li><a href="#firebase-auth--firestore">Firebase Auth &amp; Firestore</a></li>
+    <li><a href="#getting-help">Getting Help</a>
+      <ul>
+        <li><a href="#firebase-auth--firestore">Firebase Auth &amp; Firestore</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-1">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-1">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-firebase-auth--firestore">Walkthrough: Exploring Firebase Auth &amp; Firestore</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#getting-started-with-firebase">Getting started with Firebase</a></li>
-    <li><a href="#enabling-authentication-firestore-and-storage">Enabling Authentication, Firestore, and Storage</a></li>
-    <li><a href="#adding-firebase-to-our-app">Adding Firebase to our App</a></li>
-    <li><a href="#firestore-data-structure">Firestore Data Structure</a></li>
-    <li><a href="#firebase-official-documentation">Firebase Official Documentation</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#app12-my-contacts-app">App12: My Contacts app</a></li>
-    <li><a href="#setting-up-your-firebase-project-in-firebases-console">Setting up your Firebase project in Firebase&rsquo;s Console</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-firebase-auth--firestore">Walkthrough: Exploring Firebase Auth &amp; Firestore</a>
       <ul>
+        <li><a href="#firebase-authentication-and-firestore">Firebase Authentication and Firestore</a></li>
+        <li><a href="#getting-started-with-firebase">Getting started with Firebase</a></li>
+        <li><a href="#enabling-authentication-firestore-and-storage">Enabling Authentication, Firestore, and Storage</a></li>
+        <li><a href="#adding-firebase-to-our-app">Adding Firebase to our App</a></li>
+        <li><a href="#firestore-data-structure">Firestore Data Structure</a></li>
+        <li><a href="#firebase-official-documentation">Firebase Official Documentation</a></li>
+        <li><a href="#app-12-with-firebase">App 12 with Firebase</a></li>
+        <li><a href="#app12-my-contacts-app">App12: My Contacts app</a></li>
+        <li><a href="#setting-up-your-firebase-project-in-firebases-console">Setting up your Firebase project in Firebase&rsquo;s Console</a></li>
+        <li><a href="#setting-up-the-main-screen-view">Setting up the Main Screen View</a></li>
         <li><a href="#mainscreenviewswift">MainScreenView.swift</a></li>
         <li><a href="#contactstableviewcellswift">ContactsTableViewCell.swift</a></li>
         <li><a href="#configsswift">Configs.swift</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#patching-the-table-view">Patching the Table View</a>
-      <ul>
+        <li><a href="#setting-up-the-viewcontroller-with-tableview">Setting up the ViewController with TableView</a></li>
+        <li><a href="#patching-the-table-view">Patching the Table View</a></li>
         <li><a href="#adopting-tableview-protocols">Adopting TableView protocols</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#if-user--nil">if user == nil</a></li>
-    <li><a href="#else-the-user-is-logged-in">else (the user is logged in)</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#addcontactviewswift">AddContactView.swift</a></li>
-    <li><a href="#addcontactviewcontrollerswift">AddContactViewController.swift</a></li>
-    <li><a href="#updating-contactswift">Updating Contact.swift</a></li>
-    <li><a href="#uploading-the-contact-to-firestore">Uploading the Contact to Firestore</a></li>
-    <li><a href="#adding-progress-activity-indicator">Adding Progress Activity Indicator</a></li>
-    <li><a href="#patching-with-the-main-screen">Patching with the Main Screen</a></li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#authentication-state-handler">Authentication State Handler</a></li>
+        <li><a href="#if-user--nil">if user == nil</a></li>
+        <li><a href="#else-the-user-is-logged-in">else (the user is logged in)</a></li>
+        <li><a href="#firestore-structure-for-storing-contacts">Firestore Structure for Storing Contacts</a></li>
+        <li><a href="#adding-a-new-contact">Adding a New Contact</a></li>
+        <li><a href="#addcontactviewswift">AddContactView.swift</a></li>
+        <li><a href="#addcontactviewcontrollerswift">AddContactViewController.swift</a></li>
+        <li><a href="#updating-contactswift">Updating Contact.swift</a></li>
+        <li><a href="#uploading-the-contact-to-firestore">Uploading the Contact to Firestore</a></li>
+        <li><a href="#adding-progress-activity-indicator">Adding Progress Activity Indicator</a></li>
+        <li><a href="#patching-with-the-main-screen">Patching with the Main Screen</a></li>
+        <li><a href="#observing-firestore-updates-updating-the-tableview">Observing Firestore Updates: Updating the TableView</a></li>
         <li><a href="#yay-we-built-our-first-app-using-firebase"><mark><strong>YAY!!! We built our first app using Firebase!!!</strong></mark></a></li>
+        <li><a href="#reference-code-1">Reference Code</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
     <li><a href="#table-of-contents-1">Table of Contents</a></li>
     <li><a href="#guided-practice-challenges-1">Guided Practice Challenges</a>
       <ul>
@@ -367,41 +343,30 @@ Learning Objectives# By the end of this session, you will be able to:">
       </ul>
     </li>
     <li><a href="#references-1">References</a></li>
-    <li><a href="#getting-help-1">Getting Help</a></li>
-    <li><a href="#firebase-storage">Firebase Storage</a></li>
+    <li><a href="#getting-help-1">Getting Help</a>
+      <ul>
+        <li><a href="#firebase-storage">Firebase Storage</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-2">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-2">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-firebase-storage">Walkthrough: Exploring Firebase Storage</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#app-12-extended-for-storage">App 12 extended for storage</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#updating-registerviewswift">Updating RegisterView.swift</a></li>
-    <li><a href="#patching-registerviewcontroller-to-pick-photo">Patching RegisterViewController to Pick Photo</a></li>
-    <li><a href="#photomanagerswift">PhotoManager.swift</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#uploading-a-file-to-storage-registerfirebasemanagerswift">Uploading a File to Storage: RegisterFirebaseManager.swift</a>
+    <li><a href="#walkthrough-exploring-firebase-storage">Walkthrough: Exploring Firebase Storage</a>
       <ul>
+        <li><a href="#firebase-storage-1">Firebase Storage</a></li>
+        <li><a href="#app-12-extended-for-storage">App 12 extended for storage</a></li>
+        <li><a href="#integrating-photo-pickers">Integrating Photo Pickers</a></li>
+        <li><a href="#updating-registerviewswift">Updating RegisterView.swift</a></li>
+        <li><a href="#patching-registerviewcontroller-to-pick-photo">Patching RegisterViewController to Pick Photo</a></li>
+        <li><a href="#photomanagerswift">PhotoManager.swift</a></li>
+        <li><a href="#uploading-the-picked-photo-to-firebase-storage">Uploading the Picked Photo to Firebase Storage</a></li>
+        <li><a href="#uploading-a-file-to-storage-registerfirebasemanagerswift">Uploading a File to Storage: RegisterFirebaseManager.swift</a></li>
         <li><a href="#registerviewcontrollerswift">RegisterViewController.swift</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#displaying-images-hosted-in-cloud">Displaying Images Hosted in Cloud</a></li>
         <li><a href="#great-we-now-know-how-to-store-and-retrieve-an-image-using-firebase-storage">Great!!! We now know how to store and retrieve an image using Firebase Storage.</a></li>
         <li><a href="#what-data-can-you-store-in-a-firebaseauth-user-object">What data can you store in a FirebaseAuth user object?</a></li>
+        <li><a href="#reference-code-2">Reference Code</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
     <li><a href="#guided-practice-challenges-2">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-2">Challenge 1: Experimentation</a></li>
@@ -409,65 +374,50 @@ Learning Objectives# By the end of this session, you will be able to:">
       </ul>
     </li>
     <li><a href="#references-2">References</a></li>
-    <li><a href="#getting-help-2">Getting Help</a></li>
-    <li><a href="#mapkit--location">MapKit &amp; Location</a></li>
+    <li><a href="#getting-help-2">Getting Help</a>
+      <ul>
+        <li><a href="#mapkit--location">MapKit &amp; Location</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-3">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-3">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-mapkit--location">Walkthrough: Exploring MapKit &amp; Location</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#setting-up-the-map-view">Setting up the Map View</a></li>
-    <li><a href="#patching-the-view-with-the-controller">Patching the View with the Controller</a></li>
-    <li><a href="#location-manager">Location Manager</a></li>
-    <li><a href="#action-when-the-current-location-button-is-tapped">Action when the Current Location button is tapped</a></li>
-    <li><a href="#extending-mkmapview-to-center-the-view-to-the-current-location">Extending MKMapView to center the view to the current location</a></li>
-    <li><a href="#setting-up-infoplist-to-allow-the-location-access">Setting up Info.plist to allow the location access</a>
+    <li><a href="#walkthrough-exploring-mapkit--location">Walkthrough: Exploring MapKit &amp; Location</a>
       <ul>
+        <li><a href="#uimapkit-working-with-location-and-maps">UIMapKit: Working with Location and Maps</a></li>
+        <li><a href="#phase-1-displaying-map-view-and-current-location">Phase 1: Displaying Map View and Current Location</a></li>
+        <li><a href="#setting-up-the-map-view">Setting up the Map View</a></li>
+        <li><a href="#patching-the-view-with-the-controller">Patching the View with the Controller</a></li>
+        <li><a href="#location-manager">Location Manager</a></li>
+        <li><a href="#action-when-the-current-location-button-is-tapped">Action when the Current Location button is tapped</a></li>
+        <li><a href="#extending-mkmapview-to-center-the-view-to-the-current-location">Extending MKMapView to center the view to the current location</a></li>
+        <li><a href="#setting-up-infoplist-to-allow-the-location-access">Setting up Info.plist to allow the location access</a></li>
         <li><a href="#setting-the-simulatoremulator-location">Setting the Simulator/Emulator location</a></li>
-      </ul>
-    </li>
-    <li><a href="#code-so-far">Code so far</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#defining-a-place-class-with-mkannotation">Defining a Place class with MKAnnotation</a>
-      <ul>
+        <li><a href="#code-so-far">Code so far</a></li>
+        <li><a href="#phase-2-annotations-and-accessories-for-a-certain-place">Phase 2: Annotations and Accessories for a certain place</a></li>
+        <li><a href="#defining-a-place-class-with-mkannotation">Defining a Place class with MKAnnotation</a></li>
         <li><a href="#what-is-guard-let">What is guard-let?</a></li>
-      </ul>
-    </li>
-    <li><a href="#display-an-annotated-place-on-map">Display an Annotated Place on Map</a></li>
-    <li><a href="#interacting-with-the-annotations">Interacting with the Annotations</a>
-      <ul>
+        <li><a href="#display-an-annotated-place-on-map">Display an Annotated Place on Map</a></li>
+        <li><a href="#interacting-with-the-annotations">Interacting with the Annotations</a></li>
         <li><a href="#creating-annotation-view">Creating Annotation View</a></li>
         <li><a href="#delegating-the-user-interaction-on-the-callout">Delegating the User Interaction on the Callout</a></li>
-      </ul>
-    </li>
-    <li><a href="#code-so-far-1">Code so far</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#setting-up-the-bottom-search-sheet">Setting up the Bottom Search Sheet</a></li>
-    <li><a href="#bottom-search-sheet">Bottom Search Sheet</a>
-      <ul>
+        <li><a href="#code-so-far-1">Code so far</a></li>
+        <li><a href="#phase-3-place-search-and-navigate">Phase 3: Place Search and Navigate</a></li>
+        <li><a href="#setting-up-the-bottom-search-sheet">Setting up the Bottom Search Sheet</a></li>
+        <li><a href="#bottom-search-sheet">Bottom Search Sheet</a></li>
         <li><a href="#searchviewcontrollerswift">SearchViewController.swift</a></li>
         <li><a href="#searchbottomsheetswift">SearchBottomSheet.swift</a></li>
         <li><a href="#searchtableviewcellswift">SearchTableViewCell.swift</a></li>
         <li><a href="#searchtableviewmanagerswift">SearchTableViewManager.swift</a></li>
-      </ul>
-    </li>
-    <li><a href="#displaying-the-bottom-search-sheet">Displaying the Bottom Search Sheet</a></li>
-    <li><a href="#searching-nearby-places">Searching Nearby Places</a></li>
-    <li><a href="#displaying-the-search-results-in-the-search-table-view">Displaying the search results in the search table view</a>
-      <ul>
+        <li><a href="#displaying-the-bottom-search-sheet">Displaying the Bottom Search Sheet</a></li>
+        <li><a href="#searching-nearby-places">Searching Nearby Places</a></li>
+        <li><a href="#displaying-the-search-results-in-the-search-table-view">Displaying the search results in the search table view</a></li>
         <li><a href="#setting-an-observer-from-the-bottom-search-sheet">Setting an observer from the bottom search sheet</a></li>
         <li><a href="#posting-notification-from-map-screen">Posting notification from Map Screen</a></li>
+        <li><a href="#code-so-far-2">Code so far</a></li>
+        <li><a href="#phase-4-display-searched-places-on-map">Phase 4: Display Searched Places on Map</a></li>
+        <li><a href="#reference-code-3">Reference Code</a></li>
       </ul>
     </li>
-    <li><a href="#code-so-far-2">Code so far</a></li>
-  </ul>
-
-  <ul>
     <li><a href="#guided-practice-challenges-3">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-3">Challenge 1: Experimentation</a></li>
@@ -475,56 +425,43 @@ Learning Objectives# By the end of this session, you will be able to:">
       </ul>
     </li>
     <li><a href="#references-3">References</a></li>
-    <li><a href="#getting-help-3">Getting Help</a></li>
-    <li><a href="#125-implementing-register-and-sign-in">12.5. Implementing Register and Sign In</a></li>
+    <li><a href="#getting-help-3">Getting Help</a>
+      <ul>
+        <li><a href="#implementing-register-and-sign-in">Implementing Register and Sign In</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-4">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-4">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-125-implementing-register-and-sign-in">Walkthrough: Exploring 12.5. Implementing Register and Sign In</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#setuprightbarbuttonisloggedin-bool">setupRightBarButton(isLoggedin: Bool)</a></li>
-    <li><a href="#onsigninbarbuttontapped">onSignInBarButtonTapped()</a></li>
-    <li><a href="#onlogoutbarbuttontapped">onLogOutBarButtonTapped()</a>
+    <li><a href="#walkthrough-exploring-125-implementing-register-and-sign-in">Walkthrough: Exploring 12.5. Implementing Register and Sign In</a>
       <ul>
+        <li><a href="#implementing-register-and-sign-in-1">Implementing Register and Sign In</a></li>
+        <li><a href="#building-the-right-bar-buttons-for-sign-in-and-logout">Building the Right Bar Button(s) for Sign In and Logout</a></li>
+        <li><a href="#setuprightbarbuttonisloggedin-bool">setupRightBarButton(isLoggedin: Bool)</a></li>
+        <li><a href="#onsigninbarbuttontapped">onSignInBarButtonTapped()</a></li>
+        <li><a href="#onlogoutbarbuttontapped">onLogOutBarButtonTapped()</a></li>
         <li><a href="#in-the-above-code-we-use-a-different-alert-controller-style"><strong>In the above code, we use a different alert controller style, “.actionSheet”. An action sheet pops up from the bottom edge.</strong></a></li>
-      </ul>
-    </li>
-    <li><a href="#patching-viewcontroller-to-display-the-right-bar-buttons">Patching ViewController to display the Right Bar Buttons</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#defining-a-progress-activity-indicator">Defining a Progress Activity Indicator</a>
-      <ul>
+        <li><a href="#patching-viewcontroller-to-display-the-right-bar-buttons">Patching ViewController to display the Right Bar Buttons</a></li>
+        <li><a href="#progress-activity-indicator">Progress Activity Indicator</a></li>
+        <li><a href="#defining-a-progress-activity-indicator">Defining a Progress Activity Indicator</a></li>
         <li><a href="#progressspinnerviewcontrollerswift">ProgressSpinnerViewController.swift</a></li>
         <li><a href="#progressspinnerdelegateswift">ProgressSpinnerDelegate.swift</a></li>
-      </ul>
-    </li>
-    <li><a href="#displaying-the-progress-indicator-view-while-registering-a-user">Displaying the Progress Indicator View while Registering a User</a>
-      <ul>
+        <li><a href="#displaying-the-progress-indicator-view-while-registering-a-user">Displaying the Progress Indicator View while Registering a User</a></li>
         <li><a href="#first-open-the-registerviewcontrollerswift-file"><strong>First</strong>, open the ‘RegisterViewController.swift’ file.</a></li>
         <li><a href="#secondly-lets-create-a-new-file-registerprogressindicatormanagerswift-in-the-register-screen-group"><strong>Secondly,</strong> let’s create a new file, ‘RegisterProgressIndicatorManager.swift’ in the ‘Register Screen’ group.</a></li>
         <li><a href="#thirdly-edit-registerfirebasemanagerswift-file">Thirdly, edit RegisterFirebaseManager.swift file</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#registerviewswift">RegisterView.swift</a></li>
-    <li><a href="#registerviewcontrollerswift-1">RegisterViewController.swift</a></li>
-    <li><a href="#registerfirebasemanagerswift">RegisterFirebaseManager.swift</a>
-      <ul>
+        <li><a href="#register-screen-create-a-user-in-firebase">Register Screen: Create a user in Firebase</a></li>
+        <li><a href="#registerviewswift">RegisterView.swift</a></li>
+        <li><a href="#registerviewcontrollerswift-1">RegisterViewController.swift</a></li>
+        <li><a href="#registerfirebasemanagerswift">RegisterFirebaseManager.swift</a></li>
         <li><a href="#firebase-authentication">Firebase Authentication</a></li>
         <li><a href="#creating-a-new-user-in-firebase"><mark>(Creating a new User in Firebase)</mark></a></li>
         <li><a href="#updating-a-user-profile-in-firebase"><mark>(Updating a User Profile in Firebase)</mark></a></li>
         <li><a href="#registerviewcontrollerswift-2">RegisterViewController.swift</a></li>
+        <li><a href="#patching-the-main-screen-to-show-register-screen">Patching the Main Screen to Show Register Screen</a></li>
+        <li><a href="#implementing-sign-in">Implementing Sign In</a></li>
+        <li><a href="#app12-code-so-far">App12 code so far:</a></li>
       </ul>
     </li>
-    <li><a href="#patching-the-main-screen-to-show-register-screen">Patching the Main Screen to Show Register Screen</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#app12-code-so-far">App12 code so far:</a></li>
     <li><a href="#guided-practice-challenges-4">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-4">Challenge 1: Experimentation</a></li>
@@ -546,7 +483,7 @@ Learning Objectives# By the end of this session, you will be able to:">
       
       
   <article class="markdown book-article"><h2 id="table-of-contents">Table of Contents<a class="anchor" href="#table-of-contents">#</a></h2>
-<h2 id="cocoapods">CocoaPods<a class="anchor" href="#cocoapods">#</a></h2>
+<h3 id="cocoapods">CocoaPods<a class="anchor" href="#cocoapods">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -570,7 +507,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-cocoapods">Walkthrough: Exploring CocoaPods<a class="anchor" href="#walkthrough-exploring-cocoapods">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="9-cocoa-pods">9. Cocoa Pods<a class="anchor" href="#9-cocoa-pods">#</a></h1>
+</blockquote><h3 id="cocoa-pods">Cocoa Pods<a class="anchor" href="#cocoa-pods">#</a></h3>
 <p>UIKit has thousands of modules, and we cannot learn all of them (you don&rsquo;t even need to). You only need to learn the most important, common, and useful ones. Then you can learn the others if you need them to solve a problem you are facing in real life.</p>
 <p>Also, many developers build third-party modules that give generalized solutions to tricky problems, like making HTTP connections to talk to remote APIs over the Internet, building reactive screens that can deal with different sensors, etc. So, these community-built modules are also shared with others through Cocoa Pods, so you do not have to reinvent the wheels. (<a href="https://cocoapods.org/">https://cocoapods.org/</a>).</p>
 <p><mark style="color:orange;"><strong>Caution: You must be cautious since CocoaPods are not developed and released by Apple.</strong></mark></p>
@@ -581,8 +518,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </ul>
 <p>(Enough of being cautious) However, Cocoa Pods have some of the very best modules; those are even used in the industry. For example, AlamoFire is a beginner-friendly module that can be used to connect your app to the Internet and talk to the API servers. It is a general-purpose module that is used by millions of developers and very often gets updates and support from many contributors worldwide.</p>
 <p>Here we will see how to integrate Cocoa Pod modules into our app.</p>
-<!-- Merged from 9.1.-installing-cocoa-pods.md -->
-<h1 id="91-installing-cocoa-pods">9.1. Installing Cocoa Pods<a class="anchor" href="#91-installing-cocoa-pods">#</a></h1>
+<h3 id="installing-cocoa-pods">Installing Cocoa Pods<a class="anchor" href="#installing-cocoa-pods">#</a></h3>
 <p>Let&rsquo;s visit the web page <a href="https://cocoapods.org/">https://cocoapods.org/</a>.</p>
 <p>{% embed url=&ldquo;<a href="https://cocoapods.org/%22">https://cocoapods.org/"</a> %}</p>
 <p>It should open a page like this:</p>
@@ -595,7 +531,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </ul>
 <figure><img src="/gitbook-assets/9.1 (1).gif" alt=""><figcaption></figcaption></figure>
 <h3 id="there-are-two-ways-of-installing-cocoapods-on-your-mac"><strong>There are two ways of installing CocoaPods on your Mac:</strong><a class="anchor" href="#there-are-two-ways-of-installing-cocoapods-on-your-mac">#</a></h3>
-<h4 id="1-using-the-command-in-cocoapodsorg">1. Using the command in cocoapods.org:<a class="anchor" href="#1-using-the-command-in-cocoapodsorg">#</a></h4>
+<h3 id="using-the-command-in-cocoapodsorg">Using the command in cocoapods.org:<a class="anchor" href="#using-the-command-in-cocoapodsorg">#</a></h3>
 <ul>
 <li>Copy the command (<code>sudo gem install cocoapods</code>) from the CocoaPods webpage and paste it into the Terminal. Put in your password and press return. It should install CocoaPods. After installation is done, put the command <code>pod --version</code> into your terminal. It should show something like: <code>1.12.1</code>. If you see that, you are done installing CocoaPods on your Mac.</li>
 </ul>
@@ -625,8 +561,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </li>
 </ul>
 <figure><img src="/gitbook-assets/9.two (2).gif" alt=""><figcaption></figcaption></figure>
-<!-- Merged from 9.2.-integrating-cocoapods-into-a-project.md -->
-<h1 id="92-integrating-cocoapods-into-a-project">9.2. Integrating CocoaPods into a Project<a class="anchor" href="#92-integrating-cocoapods-into-a-project">#</a></h1>
+<h3 id="integrating-cocoapods-into-a-project">Integrating CocoaPods into a Project<a class="anchor" href="#integrating-cocoapods-into-a-project">#</a></h3>
 <p>Let&rsquo;s create a new project App9 in Xcode. We will not write any code here; we will just use it to see how we can integrate cocoa pods into the project.</p>
 <p><strong>The setup part might look a little bit tricky, but it&rsquo;s really easy.</strong></p>
 <ul>
@@ -703,7 +638,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="firebase-auth--firestore">Firebase Auth &amp; Firestore<a class="anchor" href="#firebase-auth--firestore">#</a></h2>
+<h3 id="firebase-auth--firestore">Firebase Auth &amp; Firestore<a class="anchor" href="#firebase-auth--firestore">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -727,31 +662,30 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-firebase-auth--firestore">Walkthrough: Exploring Firebase Auth &amp; Firestore<a class="anchor" href="#walkthrough-exploring-firebase-auth--firestore">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="12-firebase-authentication-and-firestore">12. Firebase Authentication and Firestore<a class="anchor" href="#12-firebase-authentication-and-firestore">#</a></h1>
+</blockquote><h3 id="firebase-authentication-and-firestore">Firebase Authentication and Firestore<a class="anchor" href="#firebase-authentication-and-firestore">#</a></h3>
 <p>Firebase is a Google service portal through which Google provides users with many useful Cloud services. Firebase services are very fast, reliable, and easy to use. They have comprehensive guides for developers to integrate and build systems using their services on a plethora of platforms, like, iOS, Android, NodeJS, Flutter, Unity, etc.</p>
 <p><strong>The landing portal of Firebase services is:</strong> <a href="https://firebase.google.com/">https://firebase.google.com/</a></p>
-<h2 id="getting-started-with-firebase">Getting started with Firebase<a class="anchor" href="#getting-started-with-firebase">#</a></h2>
+<h3 id="getting-started-with-firebase">Getting started with Firebase<a class="anchor" href="#getting-started-with-firebase">#</a></h3>
 <p>{% embed url=&ldquo;<a href="https://youtu.be/1I9KMcQ_XCg%22">https://youtu.be/1I9KMcQ_XCg"</a> %}</p>
-<h2 id="enabling-authentication-firestore-and-storage">Enabling Authentication, Firestore, and Storage<a class="anchor" href="#enabling-authentication-firestore-and-storage">#</a></h2>
+<h3 id="enabling-authentication-firestore-and-storage">Enabling Authentication, Firestore, and Storage<a class="anchor" href="#enabling-authentication-firestore-and-storage">#</a></h3>
 <p>{% embed url=&ldquo;<a href="https://youtu.be/gdQDxqoTT5U%22">https://youtu.be/gdQDxqoTT5U"</a> %}</p>
-<h2 id="adding-firebase-to-our-app">Adding Firebase to our App<a class="anchor" href="#adding-firebase-to-our-app">#</a></h2>
+<h3 id="adding-firebase-to-our-app">Adding Firebase to our App<a class="anchor" href="#adding-firebase-to-our-app">#</a></h3>
 <p>{% embed url=&ldquo;<a href="https://youtu.be/W0RGrDo4Bv4%22">https://youtu.be/W0RGrDo4Bv4"</a> %}</p>
-<h2 id="firestore-data-structure">Firestore Data Structure<a class="anchor" href="#firestore-data-structure">#</a></h2>
+<h3 id="firestore-data-structure">Firestore Data Structure<a class="anchor" href="#firestore-data-structure">#</a></h3>
 <p>{% embed url=&ldquo;<a href="https://youtu.be/eqW7KNChx5A%22">https://youtu.be/eqW7KNChx5A"</a> %}</p>
-<h2 id="firebase-official-documentation">Firebase Official Documentation<a class="anchor" href="#firebase-official-documentation">#</a></h2>
+<h3 id="firebase-official-documentation">Firebase Official Documentation<a class="anchor" href="#firebase-official-documentation">#</a></h3>
 <ul>
 <li><a href="https://firebase.google.com/docs/auth/ios/start"><strong>Firebase Authentication for iOS</strong></a></li>
 <li><a href="https://firebase.google.com/docs/firestore/quickstart#ios&#43;"><strong>Firebase Firestore for iOS</strong></a></li>
 <li><a href="https://firebase.google.com/docs/storage/ios/start"><strong>Firebase Storage for iOS</strong></a></li>
 </ul>
-<!-- Merged from 12.1.-app-12-with-firebase.md -->
-<h1 id="121-app-12-with-firebase">12.1. App 12 with Firebase<a class="anchor" href="#121-app-12-with-firebase">#</a></h1>
+<h3 id="app-12-with-firebase">App 12 with Firebase<a class="anchor" href="#app-12-with-firebase">#</a></h3>
 <p>In this module, we will build App 12, which will be a contacts list app using,</p>
 <ul>
 <li>Firebase Authentication</li>
 <li>Firebase Firestore</li>
 </ul>
-<h2 id="app12-my-contacts-app">App12: My Contacts app<a class="anchor" href="#app12-my-contacts-app">#</a></h2>
+<h3 id="app12-my-contacts-app">App12: My Contacts app<a class="anchor" href="#app12-my-contacts-app">#</a></h3>
 <p>The overall goal is to build an app like the following:</p>
 <figure><img src="/gitbook-assets/12.one (1).gif" alt=""><figcaption></figcaption></figure>
 <p>The app has the following features:</p>
@@ -762,7 +696,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li>They can log out.</li>
 <li>Each authenticated user will have a separate contacts list.</li>
 </ul>
-<h2 id="setting-up-your-firebase-project-in-firebases-console">Setting up your Firebase project in Firebase&rsquo;s Console<a class="anchor" href="#setting-up-your-firebase-project-in-firebases-console">#</a></h2>
+<h3 id="setting-up-your-firebase-project-in-firebases-console">Setting up your Firebase project in Firebase&rsquo;s Console<a class="anchor" href="#setting-up-your-firebase-project-in-firebases-console">#</a></h3>
 <ul>
 <li>Please set up your own Firebase project.</li>
 <li>Create your own App12 in Xcode.</li>
@@ -773,8 +707,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li>Then use the code provided.</li>
 <li><strong>Otherwise, you cannot see what is happening in Firebase.</strong></li>
 </ul>
-<!-- Merged from 12.2.-setting-up-the-main-screen-view.md -->
-<h1 id="122-setting-up-the-main-screen-view">12.2. Setting up the Main Screen View<a class="anchor" href="#122-setting-up-the-main-screen-view">#</a></h1>
+<h3 id="setting-up-the-main-screen-view">Setting up the Main Screen View<a class="anchor" href="#setting-up-the-main-screen-view">#</a></h3>
 <p>In this Project, we will keep the codes as modular as possible. So, let&rsquo;s create a new Group called &lsquo;Main Screen.&rsquo; Put ViewController.swift file inside &lsquo;Main Screen.&rsquo;</p>
 <p>Then we create a new Group called &lsquo;Views&rsquo; inside &lsquo;Main Screen.&rsquo; Add a new file named MainScreenView.swift inside &lsquo;Views.&rsquo; The structure looks like this:</p>
 <p><img src="/gitbook-assets/Screenshot%202023-06-02%20at%202.39.45%20PM.png" alt="" /></p>
@@ -1002,8 +935,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>The file structure looks like the following:</p>
 <p><img src="/gitbook-assets/Screenshot%202023-06-02%20at%202.59.59%20PM%20%281%29.png" alt="" /></p>
 <p>Great! Now that our view is set up, we can start patching the ViewController.</p>
-<!-- Merged from 12.3.-setting-up-the-viewcontroller-with-tableview.md -->
-<h1 id="123-setting-up-the-viewcontroller-with-tableview">12.3. Setting up the ViewController with TableView<a class="anchor" href="#123-setting-up-the-viewcontroller-with-tableview">#</a></h1>
+<h3 id="setting-up-the-viewcontroller-with-tableview">Setting up the ViewController with TableView<a class="anchor" href="#setting-up-the-viewcontroller-with-tableview">#</a></h3>
 <p>Now we will patch up the view to the controller. Let&rsquo;s open up <code>MainScreen -&gt; ViewController.swift</code> file, and add the following code there:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
@@ -1043,7 +975,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </ul>
 <p>If you run the app now, it&rsquo;d look like this:</p>
 <p><img src="/gitbook-assets/Screenshot%202023-06-02%20at%203.09.07%20PM%20%281%29.png" alt="" /></p>
-<h2 id="patching-the-table-view">Patching the Table View<a class="anchor" href="#patching-the-table-view">#</a></h2>
+<h3 id="patching-the-table-view">Patching the Table View<a class="anchor" href="#patching-the-table-view">#</a></h3>
 <p>We need to create a data model for the contacts to display them. Let&rsquo;s create a data model (a struct) Contact in <code>Data Models -&gt; Contact.swift</code> file.</p>
 <p>Create a new Group named &lsquo;Data Models&rsquo; and add Contact.swift file inside.</p>
 <p><img src="/gitbook-assets/Screenshot%202023-06-02%20at%203.17.58%20PM%20%282%29.png" alt="" /></p>
@@ -1132,8 +1064,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>        
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">//codes omitted...</span>
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><!-- Merged from 12.4.-authentication-state-handler.md -->
-<h1 id="124-authentication-state-handler">12.4. Authentication State Handler<a class="anchor" href="#124-authentication-state-handler">#</a></h1>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="authentication-state-handler">Authentication State Handler<a class="anchor" href="#authentication-state-handler">#</a></h3>
 <p>Now, it&rsquo;s time to set up the authentication for the app. We will use the right navigation bar buttons to manage the sign-in, register, and logout operations. Before we set up those buttons, let&rsquo;s write the logic to handle the authentication states in the app. Let&rsquo;s open ViewCOntroller.swift file and write the following code there:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
@@ -1194,7 +1125,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li>In <code>viewWillAppear</code> method, we define <code>handleAuth</code> handler with a closure to handle the authentication state changes. This closure will be automatically called every time a user signs in or logs out. In the closure, you see that we have two parameters: <code>auth</code>, and <code>user</code>. If the user is nil, there is no authenticated user; else, there is a signed-in user in the app.</li>
 <li>In <code>viewWillDisappear</code> method, we remove the listener from the app so that we do not run the listener infinitely.</li>
 </ul>
-<h2 id="if-user--nil">if user == nil<a class="anchor" href="#if-user--nil">#</a></h2>
+<h3 id="if-user--nil">if user == nil<a class="anchor" href="#if-user--nil">#</a></h3>
 <p>If the user is nil, meaning there is no signed-in user, we will write the following logic:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>handleAuth = Auth.auth().addStateDidChangeListener{ auth, user <span style="color:#66d9ef">in</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> user == <span style="color:#66d9ef">nil</span>{
@@ -1217,7 +1148,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li>Then we also need to clear the local array for contacts by removing all the array elements.</li>
 <li>Then finally, we reload the table view to reflect the authentication state change.</li>
 </ul>
-<h2 id="else-the-user-is-logged-in">else (the user is logged in)<a class="anchor" href="#else-the-user-is-logged-in">#</a></h2>
+<h3 id="else-the-user-is-logged-in">else (the user is logged in)<a class="anchor" href="#else-the-user-is-logged-in">#</a></h3>
 <p>To handle if the user is signed in, we write logic inside the <code>else</code> closure:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>handleAuth = Auth.auth().addStateDidChangeListener{ auth, user <span style="color:#66d9ef">in</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> user == <span style="color:#66d9ef">nil</span>{
@@ -1232,8 +1163,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.mainScreen.floatingButtonAddContact.isHidden = <span style="color:#66d9ef">false</span>   
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Here we update the local <code>currentUser</code> instance with the signed-in user. We then update the label to display the signed-in user&rsquo;s name and enable and display the floating add contact button.</p>
-<!-- Merged from 12.6.-firestore-structure-for-storing-contacts.md -->
-<h1 id="126-firestore-structure-for-storing-contacts">12.6. Firestore Structure for Storing Contacts<a class="anchor" href="#126-firestore-structure-for-storing-contacts">#</a></h1>
+<h3 id="firestore-structure-for-storing-contacts">Firestore Structure for Storing Contacts<a class="anchor" href="#firestore-structure-for-storing-contacts">#</a></h3>
 <p>At this point, our authentication service is working great. Now have to design our Firestore structure to accommodate a contacts list for each user.</p>
 <p>So, we can design the Firestore database with the following structure:</p>
 <ul>
@@ -1269,13 +1199,12 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li>If you are confused, please revisit the video here: <a href="./#firestore-data-structure" title="mention">#firestore-data-structure</a>.</li>
 </ol>
 <p>When we implement the functionalities in our app, we need to make sure we store and retrieve data following the above Firestore structure.</p>
-<!-- Merged from 12.7.-adding-a-new-contact.md -->
-<h1 id="127-adding-a-new-contact">12.7. Adding a New Contact<a class="anchor" href="#127-adding-a-new-contact">#</a></h1>
+<h3 id="adding-a-new-contact">Adding a New Contact<a class="anchor" href="#adding-a-new-contact">#</a></h3>
 <p>Let&rsquo;s focus on building the functionalities to add a new contact for a signed-in user in the app.</p>
 <p>Let&rsquo;s add a new group in the file navigator, &lsquo;Add Contact Screen.&rsquo; Create a file named &lsquo;AddContactViewController.swift&rsquo; inside it.</p>
 <p>Create a sub-group of &lsquo;Add Contact Screen&rsquo; named &lsquo;Views&rsquo; and create &lsquo;AddContactView.swift&rsquo; file inside it.</p>
 <p><img src="/gitbook-assets/Screenshot%202023-06-02%20at%2011.30.10%20PM%20%281%29.png" alt="" /></p>
-<h2 id="addcontactviewswift">AddContactView.swift<a class="anchor" href="#addcontactviewswift">#</a></h2>
+<h3 id="addcontactviewswift">AddContactView.swift<a class="anchor" href="#addcontactviewswift">#</a></h3>
 <p>Let&rsquo;s open &lsquo;AddContactView.swift&rsquo; file and write the following code there:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//  AddContactView.swift</span>
@@ -1361,7 +1290,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>The above code is straightforward as well. We have four UI elements, three text fields for the contact&rsquo;s name, email, and phone, and an add button to store the contact.</p>
-<h2 id="addcontactviewcontrollerswift">AddContactViewController.swift<a class="anchor" href="#addcontactviewcontrollerswift">#</a></h2>
+<h3 id="addcontactviewcontrollerswift">AddContactViewController.swift<a class="anchor" href="#addcontactviewcontrollerswift">#</a></h3>
 <p>Open the &lsquo;AddContactViewController.swift&rsquo; file. Now let&rsquo;s put the following code there:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
@@ -1435,7 +1364,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li>We now have to update the Contact struct a little bit to conform to the Firestore structure.</li>
 <li>Then we will define <code>func saveContactToFireStore(contact: Contact)</code> method.</li>
 </ul>
-<h2 id="updating-contactswift">Updating Contact.swift<a class="anchor" href="#updating-contactswift">#</a></h2>
+<h3 id="updating-contactswift">Updating Contact.swift<a class="anchor" href="#updating-contactswift">#</a></h3>
 <p>Open <code>DataModels -&gt; Contact.swift</code> and update it like the following:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
@@ -1466,7 +1395,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li>We adopt the Codable protocol to enable encoding and decoding.</li>
 <li>On line 12, you see that we added <code>@DocumentID var id: String?</code>. Do you remember that Firebase has two options for setting a document ID? You can either give an ID manually or auto-generate an ID. We need to put that declaration line to enable both to conform properly to the Firestore document structure. We are saying that the document ID of the Firestore document will be an optional string. For more clarification visit: <a href="https://firebase.google.com/docs/firestore/solutions/swift-codable-data-mapping">https://firebase.google.com/docs/firestore/solutions/swift-codable-data-mapping</a>.</li>
 </ul>
-<h2 id="uploading-the-contact-to-firestore">Uploading the Contact to Firestore<a class="anchor" href="#uploading-the-contact-to-firestore">#</a></h2>
+<h3 id="uploading-the-contact-to-firestore">Uploading the Contact to Firestore<a class="anchor" href="#uploading-the-contact-to-firestore">#</a></h3>
 <p>Now, let&rsquo;s put the following code to AddContactViewController.swift file:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
@@ -1526,7 +1455,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li>On line 26, we call <code>collectionContacts.addDocument(from: contact, completion:...)</code> to add a contact document to <code>collectionContacts</code> reference. If you notice, we are directly uploading the data from a Swift Contact object.</li>
 <li>If there is no error, the add is successful, and we can now close this screen and go back to Main Screen.</li>
 </ul>
-<h2 id="adding-progress-activity-indicator">Adding Progress Activity Indicator<a class="anchor" href="#adding-progress-activity-indicator">#</a></h2>
+<h3 id="adding-progress-activity-indicator">Adding Progress Activity Indicator<a class="anchor" href="#adding-progress-activity-indicator">#</a></h3>
 <p>We can easily add the progress indicator view when storing the contact in Firestore. Let&rsquo;s add the following code to AddContactViewController.swift:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
@@ -1593,7 +1522,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li>On line 25, we show the indicator before we start storing the contact in Firestore.</li>
 <li>On line 31, we hide the indicator after we complete storing the contact.</li>
 </ul>
-<h2 id="patching-with-the-main-screen">Patching with the Main Screen<a class="anchor" href="#patching-with-the-main-screen">#</a></h2>
+<h3 id="patching-with-the-main-screen">Patching with the Main Screen<a class="anchor" href="#patching-with-the-main-screen">#</a></h3>
 <p>Once the floating add contact button is tapped, we need to display the add contact screen. So, let&rsquo;s add the following lines of code to ViewController.swift file:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
@@ -1644,8 +1573,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li>Inside the &ldquo;contacts&rdquo; collection, we have contact documents (with auto-generated IDs).</li>
 <li>Inside each contact document, we have details of that contact as fields.</li>
 </ul>
-<!-- Merged from 12.8.-observing-firestore-updates-updating-the-tableview.md -->
-<h1 id="128-observing-firestore-updates-updating-the-tableview">12.8. Observing Firestore Updates: Updating the TableView<a class="anchor" href="#128-observing-firestore-updates-updating-the-tableview">#</a></h1>
+<h3 id="observing-firestore-updates-updating-the-tableview">Observing Firestore Updates: Updating the TableView<a class="anchor" href="#observing-firestore-updates-updating-the-tableview">#</a></h3>
 <p>We need to update our local array of contacts if anything changes in Firestore, right? If the user adds or removes a contact, we need to update the TableView.</p>
 <p>So we need to add an observer for Firestore contacts list updates when there is a logged-in user. The observer for Firestore data change is called a <code>SnapshotListener</code>. (<a href="https://firebase.google.com/docs/firestore/query-data/listen?hl=en%5c&amp;authuser=0#swift">https://firebase.google.com/docs/firestore/query-data/listen?hl=en&amp;authuser=0#swift</a>).</p>
 <p>We need to update <code>handleAuth</code> (the handler to handle authentication state changes) in ViewController.swift to add an observer. Open ViewController.swift and add the following code:</p>
@@ -1729,8 +1657,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <p>Now let&rsquo;s run the app again.</p>
 <figure><img src="/gitbook-assets/12.ten (1).gif" alt=""><figcaption></figcaption></figure>
 <h3 id="yay-we-built-our-first-app-using-firebase"><mark style="color:purple;"><strong>YAY!!! We built our first app using Firebase!!!</strong></mark><a class="anchor" href="#yay-we-built-our-first-app-using-firebase">#</a></h3>
-<!-- Merged from 12.9.-reference-code.md -->
-<h1 id="129-reference-code">12.9. Reference Code<a class="anchor" href="#129-reference-code">#</a></h1>
+<h3 id="reference-code-1">Reference Code<a class="anchor" href="#reference-code-1">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/App12 (1).zip&rdquo; %}</p>
 <h2 id="table-of-contents-1">Table of Contents<a class="anchor" href="#table-of-contents-1">#</a></h2>
 <dl>
@@ -1760,7 +1687,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="firebase-storage">Firebase Storage<a class="anchor" href="#firebase-storage">#</a></h2>
+<h3 id="firebase-storage">Firebase Storage<a class="anchor" href="#firebase-storage">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -1784,9 +1711,9 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-firebase-storage">Walkthrough: Exploring Firebase Storage<a class="anchor" href="#walkthrough-exploring-firebase-storage">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="13-firebase-storage">13. Firebase Storage<a class="anchor" href="#13-firebase-storage">#</a></h1>
+</blockquote><h3 id="firebase-storage-1">Firebase Storage<a class="anchor" href="#firebase-storage-1">#</a></h3>
 <p>In this module, we will extend App12 to store images in FIrebase storage. Please review <a href="https://github.com/sakibnm/iOS/blob/main/12.-firebase-authentication-and-firestore" title="mention">https://github.com/sakibnm/iOS/blob/main/12.-firebase-authentication-and-firestore</a> section to set up your Firebase Storage service in your Firebase services.</p>
-<h2 id="app-12-extended-for-storage">App 12 extended for storage<a class="anchor" href="#app-12-extended-for-storage">#</a></h2>
+<h3 id="app-12-extended-for-storage">App 12 extended for storage<a class="anchor" href="#app-12-extended-for-storage">#</a></h3>
 <p>We will extend App 12 to store images in Firestore Storage. We will do the following:</p>
 <ul>
 <li>In the Register Screen, we will have the option to pick a profile photo.</li>
@@ -1794,9 +1721,8 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li>Then, when we are on the main screen, we should see the profile photo loaded on the Screen. Like the following:</li>
 </ul>
 <figure><img src="/gitbook-assets/13.one (1).gif" alt=""><figcaption></figcaption></figure>
-<!-- Merged from 13.1.-integrating-photo-pickers.md -->
-<h1 id="131-integrating-photo-pickers">13.1. Integrating Photo Pickers<a class="anchor" href="#131-integrating-photo-pickers">#</a></h1>
-<h2 id="updating-registerviewswift">Updating RegisterView.swift<a class="anchor" href="#updating-registerviewswift">#</a></h2>
+<h3 id="integrating-photo-pickers">Integrating Photo Pickers<a class="anchor" href="#integrating-photo-pickers">#</a></h3>
+<h3 id="updating-registerviewswift">Updating RegisterView.swift<a class="anchor" href="#updating-registerviewswift">#</a></h3>
 <p>Let&rsquo;s open App 12</p>
 <p>We need to update the Register Screen&rsquo;s view to accommodate the profile photo. Let&rsquo;s open the <code>Register Screen -&gt; RegisterView.swift</code> file. Let&rsquo;s add a couple of UI elements to the view:</p>
 <ul>
@@ -1889,7 +1815,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">//codes omitted...</span>
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>{% endcode %}</p>
-<h2 id="patching-registerviewcontroller-to-pick-photo">Patching RegisterViewController to Pick Photo<a class="anchor" href="#patching-registerviewcontroller-to-pick-photo">#</a></h2>
+<h3 id="patching-registerviewcontroller-to-pick-photo">Patching RegisterViewController to Pick Photo<a class="anchor" href="#patching-registerviewcontroller-to-pick-photo">#</a></h3>
 <p>Now we update the RegisterViewController.swift:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
@@ -1962,7 +1888,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li>Then as we did in <a href="https://github.com/sakibnm/iOS/blob/main/6.-uimenu-picking-images-from-gallery-and-camera-and-uiimageview" title="mention">https://github.com/sakibnm/iOS/blob/main/6.-uimenu-picking-images-from-gallery-and-camera-and-uiimageview</a>, we define <code>pickUsingCamera()</code> and <code>pickPhotoFromGallery()</code> methods.</li>
 </ul>
 <p>We still need to adopt the protocols related to PHPickerView, and UIImagePicker. We will separate the adoption of protocols from RegisterViewController.swift file.</p>
-<h2 id="photomanagerswift">PhotoManager.swift<a class="anchor" href="#photomanagerswift">#</a></h2>
+<h3 id="photomanagerswift">PhotoManager.swift<a class="anchor" href="#photomanagerswift">#</a></h3>
 <p>Let&rsquo;s create a new file PhotoManager.swift in <code>Register Screen</code> group and put the following code in it:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
@@ -2025,8 +1951,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <p>Now that the Photo Pickers are integrated let&rsquo;s run the app. We should see the following:</p>
 <figure><img src="/gitbook-assets/13.two (1).gif" alt=""><figcaption></figcaption></figure>
 <p><strong>Note: we are making &lsquo;pick a profile photo&rsquo; for the new user optional. So, a user can be created without even picking a photo.</strong></p>
-<!-- Merged from 13.2.-uploading-the-picked-photo-to-firebase-storage.md -->
-<h1 id="132-uploading-the-picked-photo-to-firebase-storage">13.2. Uploading the Picked Photo to Firebase Storage<a class="anchor" href="#132-uploading-the-picked-photo-to-firebase-storage">#</a></h1>
+<h3 id="uploading-the-picked-photo-to-firebase-storage">Uploading the Picked Photo to Firebase Storage<a class="anchor" href="#uploading-the-picked-photo-to-firebase-storage">#</a></h3>
 <p>We need to update the RegisterFirebaseManager.swift file to upload the picked photo to Firebase Storage.</p>
 <p><strong>Firebase operations are asynchronous network calls. So we have to be very careful about the sequence of operations. We need to maintain the following sequence:</strong></p>
 <ol>
@@ -2048,7 +1973,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">//codes omitted...</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> storage = Storage.storage()
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">//codes omitted...</span>
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="uploading-a-file-to-storage-registerfirebasemanagerswift">Uploading a File to Storage: RegisterFirebaseManager.swift<a class="anchor" href="#uploading-a-file-to-storage-registerfirebasemanagerswift">#</a></h2>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="uploading-a-file-to-storage-registerfirebasemanagerswift">Uploading a File to Storage: RegisterFirebaseManager.swift<a class="anchor" href="#uploading-a-file-to-storage-registerfirebasemanagerswift">#</a></h3>
 <p>Let&rsquo;s open the RegisterFirebaseManager.swift file and write the following code:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
@@ -2173,8 +2098,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <p>Let&rsquo;s look into the FirebaseStorage console:</p>
 <figure><img src="/gitbook-assets/13.five (2).gif" alt=""><figcaption></figcaption></figure>
 <p>So the files are getting uploaded. Now we need to display the images, and then it&rsquo;s done.</p>
-<!-- Merged from 13.3.-displaying-images-hosted-in-cloud.md -->
-<h1 id="133-displaying-images-hosted-in-cloud">13.3. Displaying Images Hosted in Cloud<a class="anchor" href="#133-displaying-images-hosted-in-cloud">#</a></h1>
+<h3 id="displaying-images-hosted-in-cloud">Displaying Images Hosted in Cloud<a class="anchor" href="#displaying-images-hosted-in-cloud">#</a></h3>
 <p>Now, we know the download URL of the profile photo of the logged-in user. We will now display it in an ImageView.</p>
 <p>We first add a custom utility for the UIImageView class using <code>extension</code> keyword. Let&rsquo;s create a file named &lsquo;ImageViewUtils.swift&rsquo;.</p>
 <figure><img src="/gitbook-assets/Screenshot 2023-06-05 at 6.52.34 PM (1).png" alt="" width="345"><figcaption></figcaption></figure>
@@ -2262,8 +2186,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <ul>
 <li>Firebase users have a fixed set of basic properties—a unique ID, a primary email address, a name and a photo URL—stored in the project&rsquo;s user database, that can be updated by the user (iOS, Android, web). <strong>You cannot add other properties to the user object directly; instead, you can store the additional properties in any other storage services, like Google Cloud Firestore.</strong></li>
 </ul>
-<!-- Merged from 13.4.-reference-code.md -->
-<h1 id="134-reference-code">13.4. Reference Code<a class="anchor" href="#134-reference-code">#</a></h1>
+<h3 id="reference-code-2">Reference Code<a class="anchor" href="#reference-code-2">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/App13(App 12 extension with Storage) (1).zip&rdquo; %}</p>
 <hr>
 <h2 id="guided-practice-challenges-2">Guided Practice Challenges<a class="anchor" href="#guided-practice-challenges-2">#</a></h2>
@@ -2288,7 +2211,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="mapkit--location">MapKit &amp; Location<a class="anchor" href="#mapkit--location">#</a></h2>
+<h3 id="mapkit--location">MapKit &amp; Location<a class="anchor" href="#mapkit--location">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -2312,12 +2235,11 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-mapkit--location">Walkthrough: Exploring MapKit &amp; Location<a class="anchor" href="#walkthrough-exploring-mapkit--location">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="14-uimapkit-working-with-location-and-maps">14. UIMapKit: Working with Location and Maps<a class="anchor" href="#14-uimapkit-working-with-location-and-maps">#</a></h1>
+</blockquote><h3 id="uimapkit-working-with-location-and-maps">UIMapKit: Working with Location and Maps<a class="anchor" href="#uimapkit-working-with-location-and-maps">#</a></h3>
 <p>In this module, we will learn how to use location services in iOS and build a few basic utilities of UIMapKit. Our end goal is to search places nearby on a Map View and navigate to the selected place using Apple Maps.</p>
 <p>Let&rsquo;s create a new project on XCode and name it App14.</p>
-<!-- Merged from 14.1.-phase-1-displaying-map-view-and-current-location.md -->
-<h1 id="141-phase-1-displaying-map-view-and-current-location">14.1. Phase 1: Displaying Map View and Current Location<a class="anchor" href="#141-phase-1-displaying-map-view-and-current-location">#</a></h1>
-<h2 id="setting-up-the-map-view">Setting up the Map View<a class="anchor" href="#setting-up-the-map-view">#</a></h2>
+<h3 id="phase-1-displaying-map-view-and-current-location">Phase 1: Displaying Map View and Current Location<a class="anchor" href="#phase-1-displaying-map-view-and-current-location">#</a></h3>
+<h3 id="setting-up-the-map-view">Setting up the Map View<a class="anchor" href="#setting-up-the-map-view">#</a></h3>
 <p>Our landing screen will be a Map screen. In the first step, we will have a button to show the current location on the map. </p>
 <p>Let&rsquo;s create a file named MapView.swift. </p>
 <p><img src="/gitbook-assets/Screenshot%202023-06-14%20at%2011.20.25%20AM%20%281%29.png" alt="" /></p>
@@ -2433,7 +2355,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </ul>
 </li>
 </ul>
-<h2 id="patching-the-view-with-the-controller">Patching the View with the Controller<a class="anchor" href="#patching-the-view-with-the-controller">#</a></h2>
+<h3 id="patching-the-view-with-the-controller">Patching the View with the Controller<a class="anchor" href="#patching-the-view-with-the-controller">#</a></h3>
 <p>Let&rsquo;s open the ViewController.swift file and put the following code there:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//  ViewController.swift</span>
@@ -2458,7 +2380,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Let&rsquo;s run the app now.</p>
 <figure><img src="/gitbook-assets/Screenshot 2023-06-14 at 11.38.02 AM.png" alt="" width="188"><figcaption></figcaption></figure>
-<h2 id="location-manager">Location Manager<a class="anchor" href="#location-manager">#</a></h2>
+<h3 id="location-manager">Location Manager<a class="anchor" href="#location-manager">#</a></h3>
 <p>Now we will work on fetching the current location and moving the camera (map frame) to that location. Let&rsquo;s create a new file named LocationManager.swift. <img src="/gitbook-assets/Screenshot%202023-06-14%20at%2012.15.25%20PM.png" alt="" /></p>
 <p>Let&rsquo;s add the following code to the file:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
@@ -2530,7 +2452,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </ul>
 </li>
 </ul>
-<h2 id="action-when-the-current-location-button-is-tapped">Action when the Current Location button is tapped<a class="anchor" href="#action-when-the-current-location-button-is-tapped">#</a></h2>
+<h3 id="action-when-the-current-location-button-is-tapped">Action when the Current Location button is tapped<a class="anchor" href="#action-when-the-current-location-button-is-tapped">#</a></h3>
 <p>We need to implement the logic when the <code>buttonCurrentLocation</code> is tapped by the user. So we write <code>mapView.mapView.centerToLocation(location: locationManager.location!)</code> inside the <code>@objc func onButtonCurrentLocationTapped()</code> method in ViewController.swift file. </p>
 <p>The code so far in ViewController.swift file is:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
@@ -2572,7 +2494,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <ul>
 <li>Now, it should yell at you saying could not find method <code>centerToLocation()</code>. Because MKMapView does not have <code>centerToLocation()</code> method by default. We need to extend MKMapView to center the view.</li>
 </ul>
-<h2 id="extending-mkmapview-to-center-the-view-to-the-current-location">Extending MKMapView to center the view to the current location<a class="anchor" href="#extending-mkmapview-to-center-the-view-to-the-current-location">#</a></h2>
+<h3 id="extending-mkmapview-to-center-the-view-to-the-current-location">Extending MKMapView to center the view to the current location<a class="anchor" href="#extending-mkmapview-to-center-the-view-to-the-current-location">#</a></h3>
 <p>Let&rsquo;s open ViewController.swift file and add the following extension to enable centering to the current location:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
@@ -2619,7 +2541,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@objc</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">onButtonCurrentLocationTapped</span>(){
 </span></span><span style="display:flex;"><span>        mapView.mapView.centerToLocation(location: locationManager.location!)
-</span></span><span style="display:flex;"><span>    }</span></span></code></pre></div><h2 id="setting-up-infoplist-to-allow-the-location-access">Setting up Info.plist to allow the location access<a class="anchor" href="#setting-up-infoplist-to-allow-the-location-access">#</a></h2>
+</span></span><span style="display:flex;"><span>    }</span></span></code></pre></div><h3 id="setting-up-infoplist-to-allow-the-location-access">Setting up Info.plist to allow the location access<a class="anchor" href="#setting-up-infoplist-to-allow-the-location-access">#</a></h3>
 <figure><img src="/gitbook-assets/14.one.gif" alt=""><figcaption></figcaption></figure>
 <ul>
 <li>Let&rsquo;s open Info.plist of the project. </li>
@@ -2641,13 +2563,12 @@ Open your current Xcode project or start a new Playground to follow along with t
 </ul>
 <p>Let&rsquo;s run the app now.</p>
 <figure><img src="/gitbook-assets/14.six.gif" alt=""><figcaption></figcaption></figure>
-<h2 id="code-so-far">Code so far<a class="anchor" href="#code-so-far">#</a></h2>
+<h3 id="code-so-far">Code so far<a class="anchor" href="#code-so-far">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/App14_phase1.zip&rdquo; %}</p>
-<!-- Merged from 14.2.-phase-2-annotations-and-accessories-for-a-certain-place.md -->
-<h1 id="142-phase-2-annotations-and-accessories-for-a-certain-place">14.2. Phase 2: Annotations and Accessories for a certain place<a class="anchor" href="#142-phase-2-annotations-and-accessories-for-a-certain-place">#</a></h1>
+<h3 id="phase-2-annotations-and-accessories-for-a-certain-place">Phase 2: Annotations and Accessories for a certain place<a class="anchor" href="#phase-2-annotations-and-accessories-for-a-certain-place">#</a></h3>
 <p>In this module, we will learn how to annotate a place in a particular coordinate on the map view. For example, we can annotate Northeastern University on the map view like the following:</p>
 <figure><img src="/gitbook-assets/14.sixty.gif" alt=""><figcaption></figcaption></figure>
-<h2 id="defining-a-place-class-with-mkannotation">Defining a Place class with MKAnnotation<a class="anchor" href="#defining-a-place-class-with-mkannotation">#</a></h2>
+<h3 id="defining-a-place-class-with-mkannotation">Defining a Place class with MKAnnotation<a class="anchor" href="#defining-a-place-class-with-mkannotation">#</a></h3>
 <p>We will define a class named Place, adopting the MKAnnotation protocol to annotate places on the map view. So let&rsquo;s create a new file named &lsquo;Place.swift&rsquo; and put the following code there:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
@@ -2707,7 +2628,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </ul>
 <h3 id="what-is-guard-let">What is guard-let?<a class="anchor" href="#what-is-guard-let">#</a></h3>
 <p><strong>guard-let</strong> is very similar to if-let to unwrap an optional value. <code>guard-let</code> is often used when you do not need to deal with the unwrapped value immediately and would use it later. So, we get the unwrapped value and store it in a constant for later use. For more, visit: <a href="https://www.hackingwithswift.com/quick-start/understanding-swift/when-to-use-guard-let-rather-than-if-let">https://www.hackingwithswift.com/quick-start/understanding-swift/when-to-use-guard-let-rather-than-if-let</a></p>
-<h2 id="display-an-annotated-place-on-map">Display an Annotated Place on Map<a class="anchor" href="#display-an-annotated-place-on-map">#</a></h2>
+<h3 id="display-an-annotated-place-on-map">Display an Annotated Place on Map<a class="anchor" href="#display-an-annotated-place-on-map">#</a></h3>
 <p>Let&rsquo;s open the ViewController.swift file, and put the following code there:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
@@ -2749,7 +2670,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <p>Let&rsquo;s run the app. </p>
 <figure><img src="/gitbook-assets/14.sixty1.gif" alt=""><figcaption></figcaption></figure>
 <p>You can see there is a red bubble on the place <code>northeastern</code>. That is the placemark we talked about thus far.</p>
-<h2 id="interacting-with-the-annotations">Interacting with the Annotations<a class="anchor" href="#interacting-with-the-annotations">#</a></h2>
+<h3 id="interacting-with-the-annotations">Interacting with the Annotations<a class="anchor" href="#interacting-with-the-annotations">#</a></h3>
 <p>Now to be able to interact with the bubble, we need to adopt a protocol <code>MKMapViewDelegate</code>. We  need to implement two adopted <code>mapView()</code> methods with parameters <code>viewFor</code> and <code>calloutAccessoryControlTapped</code>. </p>
 <p>Let&rsquo;s create a new file MapAnnotationDelegate.swift and put the following code there:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
@@ -2862,12 +2783,11 @@ Open your current Xcode project or start a new Playground to follow along with t
 <p>Let&rsquo;s run the app. </p>
 <figure><img src="/gitbook-assets/14.sixty4.gif" alt=""><figcaption></figcaption></figure>
 <p>We first load the screen and display the annotation for Northeastern. Then we change the current simulator location to Apple&rsquo;s headquarters location.  Then we try the navigation with annotation. It opens the Apple Map, and we can drive!</p>
-<h2 id="code-so-far-1">Code so far<a class="anchor" href="#code-so-far-1">#</a></h2>
+<h3 id="code-so-far-1">Code so far<a class="anchor" href="#code-so-far-1">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/App14 Phase2.zip&rdquo; %}</p>
-<!-- Merged from 14.3.-phase-3-place-search-and-navigate.md -->
-<h1 id="143-phase-3-place-search-and-navigate">14.3. Phase 3: Place Search and Navigate<a class="anchor" href="#143-phase-3-place-search-and-navigate">#</a></h1>
+<h3 id="phase-3-place-search-and-navigate">Phase 3: Place Search and Navigate<a class="anchor" href="#phase-3-place-search-and-navigate">#</a></h3>
 <p>At this point, we will add a Bottom Search Sheet to find the places around and navigate there.</p>
-<h2 id="setting-up-the-bottom-search-sheet">Setting up the Bottom Search Sheet<a class="anchor" href="#setting-up-the-bottom-search-sheet">#</a></h2>
+<h3 id="setting-up-the-bottom-search-sheet">Setting up the Bottom Search Sheet<a class="anchor" href="#setting-up-the-bottom-search-sheet">#</a></h3>
 <p>First, let&rsquo;s add a search button at the bottom of the Map Screen. Open MapView.swift file, and put the following code to add the search button and its constraints:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
@@ -2922,7 +2842,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <p>Now, let&rsquo;s create the files related to the Bottom Search Sheet in the project: SearchViewController.swift, SearchBottomSheet.swift, SearchTableViewCell.swift, and SearchTableViewManager.swift. </p>
 <p><img src="/gitbook-assets/Screenshot%202023-06-15%20at%201.31.59%20PM.png" alt="" /></p>
 <p>Then we set up the Bottom Search Sheet following the example in <a href="broken-reference" title="mention">Broken link</a>. </p>
-<h2 id="bottom-search-sheet">Bottom Search Sheet<a class="anchor" href="#bottom-search-sheet">#</a></h2>
+<h3 id="bottom-search-sheet">Bottom Search Sheet<a class="anchor" href="#bottom-search-sheet">#</a></h3>
 <h3 id="searchviewcontrollerswift">SearchViewController.swift<a class="anchor" href="#searchviewcontrollerswift">#</a></h3>
 <p>Let&rsquo;s add the following code to the file:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
@@ -3106,7 +3026,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>        
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>{% endcode %}</p>
-<h2 id="displaying-the-bottom-search-sheet">Displaying the Bottom Search Sheet<a class="anchor" href="#displaying-the-bottom-search-sheet">#</a></h2>
+<h3 id="displaying-the-bottom-search-sheet">Displaying the Bottom Search Sheet<a class="anchor" href="#displaying-the-bottom-search-sheet">#</a></h3>
 <p>We need to add an action to the search button in ViewController. And then display the bottom search sheet.</p>
 <p>Let&rsquo;s add the following code in ViewController.swift file:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
@@ -3163,7 +3083,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <p>If we run the app now:</p>
 <figure><img src="/gitbook-assets/14.seventy.gif" alt=""><figcaption></figcaption></figure>
 <p>So, our bottom search sheet is working!</p>
-<h2 id="searching-nearby-places">Searching Nearby Places<a class="anchor" href="#searching-nearby-places">#</a></h2>
+<h3 id="searching-nearby-places">Searching Nearby Places<a class="anchor" href="#searching-nearby-places">#</a></h3>
 <p>Here we have to type something on the search bar, and depending on what we type, it should display the list of related places in the search results table view. So, let&rsquo;s open SearchViewController.swift and put in the following code to add a delegate to mapview:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
@@ -3307,7 +3227,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <p>Let&rsquo;s run the app.</p>
 <figure><img src="/gitbook-assets/14.seventy1.gif" alt=""><figcaption></figcaption></figure>
 <p>The results are getting printed in the output area in the above demo. The results are related to the search query &ldquo;coffee.&rdquo; It fetches all the coffee shops around.</p>
-<h2 id="displaying-the-search-results-in-the-search-table-view">Displaying the search results in the search table view<a class="anchor" href="#displaying-the-search-results-in-the-search-table-view">#</a></h2>
+<h3 id="displaying-the-search-results-in-the-search-table-view">Displaying the search results in the search table view<a class="anchor" href="#displaying-the-search-results-in-the-search-table-view">#</a></h3>
 <p>Now we have the search results in the map screen, so we need to send them back to the search result table view. We will use Notification Center for that. We need to observe the data from the search bottom sheet. We post the notification from the map screen.</p>
 <h3 id="setting-an-observer-from-the-bottom-search-sheet">Setting an observer from the bottom search sheet<a class="anchor" href="#setting-an-observer-from-the-bottom-search-sheet">#</a></h3>
 <p>Open SearchViewController.swift file, and put the following code there:</p>
@@ -3449,10 +3369,9 @@ Open your current Xcode project or start a new Playground to follow along with t
 <p>Let&rsquo;s run the app again:</p>
 <figure><img src="/gitbook-assets/14.seventy3.gif" alt=""><figcaption></figcaption></figure>
 <p><strong>Great! We can see the search results!!! Now can we show the place on the map when we select it on the table view?</strong></p>
-<h2 id="code-so-far-2">Code so far<a class="anchor" href="#code-so-far-2">#</a></h2>
+<h3 id="code-so-far-2">Code so far<a class="anchor" href="#code-so-far-2">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/App14_phase3.zip&quot; %}</p>
-<!-- Merged from 14.4.-phase-4-display-searched-places-on-map.md -->
-<h1 id="144-phase-4-display-searched-places-on-map">14.4. Phase 4: Display Searched Places on Map<a class="anchor" href="#144-phase-4-display-searched-places-on-map">#</a></h1>
+<h3 id="phase-4-display-searched-places-on-map">Phase 4: Display Searched Places on Map<a class="anchor" href="#phase-4-display-searched-places-on-map">#</a></h3>
 <p>The last part of our app is to show a place selected from the search results on the map and navigate to it.</p>
 <p>The task seems complicated, but we already have the code to display the annotations for a place, right? The rest of it is pretty straightforward.</p>
 <p>Let&rsquo;s open ViewController.swift file and add a method <code>showSelectedPlace(placeItem: MKMapItem)</code> there:</p>
@@ -3510,8 +3429,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <p>Nice! Let&rsquo;s try our app now.</p>
 <figure><img src="/gitbook-assets/14.seventy6.gif" alt=""><figcaption></figcaption></figure>
 <p>Awesome!!! Now we built a pretty useful basic place search application!</p>
-<!-- Merged from 14.5.-reference-code.md -->
-<h1 id="145-reference-code">14.5. Reference Code<a class="anchor" href="#145-reference-code">#</a></h1>
+<h3 id="reference-code-3">Reference Code<a class="anchor" href="#reference-code-3">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/App14.zip&quot; %}</p>
 <hr>
 <h2 id="guided-practice-challenges-3">Guided Practice Challenges<a class="anchor" href="#guided-practice-challenges-3">#</a></h2>
@@ -3536,7 +3454,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li><strong>TA office hours</strong> — check the Canvas calendar. Show up, share your screen, and get help.</li>
 <li><strong>Instructor office hours</strong> — by appointment for deeper issues (design questions, project direction).</li>
 </ul>
-<h2 id="125-implementing-register-and-sign-in">12.5. Implementing Register and Sign In<a class="anchor" href="#125-implementing-register-and-sign-in">#</a></h2>
+<h3 id="implementing-register-and-sign-in">Implementing Register and Sign In<a class="anchor" href="#implementing-register-and-sign-in">#</a></h3>
 <p><strong>Estimated effort:</strong> 1-2 hours this topic
 <strong>Format:</strong> Asynchronous online
 <strong>Prerequisites:</strong> Previous iOS topics</p>
@@ -3560,7 +3478,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <h2 id="walkthrough-exploring-125-implementing-register-and-sign-in">Walkthrough: Exploring 12.5. Implementing Register and Sign In<a class="anchor" href="#walkthrough-exploring-125-implementing-register-and-sign-in">#</a></h2>
 <blockquote class='book-hint '>
 <p>📁 <strong>Target Project</strong> — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.</p>
-</blockquote><h1 id="125-implementing-register-and-sign-in-1">12.5. Implementing Register and Sign In<a class="anchor" href="#125-implementing-register-and-sign-in-1">#</a></h1>
+</blockquote><h3 id="implementing-register-and-sign-in-1">Implementing Register and Sign In<a class="anchor" href="#implementing-register-and-sign-in-1">#</a></h3>
 <p>Our next goal is to build the functionalities so that a user can register a new account and sign in to the account like the following:</p>
 <figure><img src="/gitbook-assets/12.two.gif" alt=""><figcaption></figcaption></figure>
 <ul>
@@ -3569,8 +3487,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li>If the user clicks the &lsquo;Sign in&rsquo; button, it should sign the user in using Firebase authentication.</li>
 <li>If the user clicks on the &lsquo;Register&rsquo; button, it should open the registration screen to allow the user to create a new account.</li>
 </ul>
-<!-- Merged from 12.3.1.-building-the-right-bar-button-s-for-sign-in-and-logout.md -->
-<h1 id="1231-building-the-right-bar-buttons-for-sign-in-and-logout">12.3.1. Building the Right Bar Button(s) for Sign In and Logout<a class="anchor" href="#1231-building-the-right-bar-buttons-for-sign-in-and-logout">#</a></h1>
+<h3 id="building-the-right-bar-buttons-for-sign-in-and-logout">Building the Right Bar Button(s) for Sign In and Logout<a class="anchor" href="#building-the-right-bar-buttons-for-sign-in-and-logout">#</a></h3>
 <p>We add two buttons on the right navigation bar, triggering the same action. We do it to display an image and text to explain to the user what to do. (This is not standard practice, you can design your own buttons.)</p>
 <p>We will separate the logic of creating and handling the right bar button actions from the ViewController. So, let&rsquo;s create a new file <code>Main Screen -&gt; RightBarButtonManager.swift</code> and write the following code there:</p>
 <p><img src="/gitbook-assets/Screenshot%202023-06-02%20at%204.37.14%20PM%20%281%29.png" alt="" /></p>
@@ -3632,14 +3549,14 @@ Open your current Xcode project or start a new Playground to follow along with t
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>{% endcode %}</p>
-<h2 id="setuprightbarbuttonisloggedin-bool">setupRightBarButton(isLoggedin: Bool)<a class="anchor" href="#setuprightbarbuttonisloggedin-bool">#</a></h2>
+<h3 id="setuprightbarbuttonisloggedin-bool">setupRightBarButton(isLoggedin: Bool)<a class="anchor" href="#setuprightbarbuttonisloggedin-bool">#</a></h3>
 <p>In the above code:</p>
 <ul>
 <li>Depending on whether there is a signed-in user or not, we change the appearance and behavior of the right bar button. If the user is signed in, we display the logout button; else, we display the sign-in button.</li>
 <li>In both cases, we add two buttons to do the same tasks. If you look at lines 28 and 45, we add the pair of buttons together.</li>
 <li>For the logout buttons, the action would be <code>onLogOutBarButtonTapped()</code> method, and for the sign-in buttons, the action would be <code>onSignInBarButtonTapped()</code> method.</li>
 </ul>
-<h2 id="onsigninbarbuttontapped">onSignInBarButtonTapped()<a class="anchor" href="#onsigninbarbuttontapped">#</a></h2>
+<h3 id="onsigninbarbuttontapped">onSignInBarButtonTapped()<a class="anchor" href="#onsigninbarbuttontapped">#</a></h3>
 <p>When the sign-in bar button is tapped, we need to display an alert with the text fields to let the user sign in. It should have two buttons: &lsquo;SIgn In&rsquo; and &lsquo;Logout.</p>
 <p>So we will write the following logic inside the <code>onSignInBarButtonTapped()</code> method.</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
@@ -3701,7 +3618,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li>Then we present the alert controller (lines 40-46). In the completion closure, we write logic to handle if the user taps outside the alert. We need to dismiss the alert if the user taps outside. So, we add a Gesture Recognizer on the <code>superview</code> (the screen which popped this alert) of the alert controller. If the user taps on the super view, the alert gets dismissed.</li>
 </ul>
 <p><mark style="color:orange;"><strong>We will keep the sign-in and register logic empty and return to that momentarily.</strong></mark></p>
-<h2 id="onlogoutbarbuttontapped">onLogOutBarButtonTapped()<a class="anchor" href="#onlogoutbarbuttontapped">#</a></h2>
+<h3 id="onlogoutbarbuttontapped">onLogOutBarButtonTapped()<a class="anchor" href="#onlogoutbarbuttontapped">#</a></h3>
 <p>Now, when the user taps on the logout right bar button, we need to confirm that the user really wants to log out. So we need to show another alert to confirm the log-out operation. Let&rsquo;s write the following code in <code>onLogOutBarButtonTapped()</code> method:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">@objc</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">onLogOutBarButtonTapped</span>(){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> logoutAlert = UIAlertController(title: <span style="color:#e6db74">&#34;Logging out!&#34;</span>, message: <span style="color:#e6db74">&#34;Are you sure want to log out?&#34;</span>, 
@@ -3722,7 +3639,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li>If the user taps on the action &lsquo;Yes, Log out!&rsquo; we call the Firebase authentication service to log the current user out.</li>
 <li>If the user wats to stay logged in, they can tap &lsquo;Cancel.&rsquo;</li>
 </ul>
-<h2 id="patching-viewcontroller-to-display-the-right-bar-buttons">Patching ViewController to display the Right Bar Buttons<a class="anchor" href="#patching-viewcontroller-to-display-the-right-bar-buttons">#</a></h2>
+<h3 id="patching-viewcontroller-to-display-the-right-bar-buttons">Patching ViewController to display the Right Bar Buttons<a class="anchor" href="#patching-viewcontroller-to-display-the-right-bar-buttons">#</a></h3>
 <p>We still need to display the Right Bar buttons on the Main Screen. So open up the ViewController.swift file and update the <code>handleAuth</code> closures to manage the sign-in and logout bar buttons:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//  ViewController.swift</span>
@@ -3759,11 +3676,10 @@ Open your current Xcode project or start a new Playground to follow along with t
 </ul>
 <p>Now run the app again!</p>
 <figure><img src="/gitbook-assets/12.three (1).gif" alt=""><figcaption></figcaption></figure>
-<!-- Merged from 12.3.2.-progress-activity-indicator.md -->
-<h1 id="1232-progress-activity-indicator">12.3.2. Progress Activity Indicator<a class="anchor" href="#1232-progress-activity-indicator">#</a></h1>
+<h3 id="progress-activity-indicator">Progress Activity Indicator<a class="anchor" href="#progress-activity-indicator">#</a></h3>
 <p>If you noticed, when we clicked on the Register button, the UI was stuck for a few seconds as we were waiting for the create user operation to complete. In these cases, the user may get confused if we do not give the users a cue that the backend is working on their request. So we want to implement a loading screen with a progress indicator so that the user can understand the app is working in the backend to complete their request. Like this:</p>
 <figure><img src="/gitbook-assets/123.four (1).gif" alt=""><figcaption></figcaption></figure>
-<h2 id="defining-a-progress-activity-indicator">Defining a Progress Activity Indicator<a class="anchor" href="#defining-a-progress-activity-indicator">#</a></h2>
+<h3 id="defining-a-progress-activity-indicator">Defining a Progress Activity Indicator<a class="anchor" href="#defining-a-progress-activity-indicator">#</a></h3>
 <p>We will use a UI element in iOS called <code>UIActivityIndicatorView</code> to display the loading screen. Since we may reuse the same <code>UIActivityIndicatorView</code> for multiple backend tasks, we will write separate code to create the instance of it.</p>
 <p>Let&rsquo;s create a new group called &lsquo;Progress Indicator&rsquo; in the files navigator of Xcode. Then add two files in the group: ProgressSpinnerViewController.swift and ProgressSpinnerDelegate.swift.</p>
 <p><img src="/gitbook-assets/Screenshot%202023-06-02%20at%209.23.32%20PM%20%281%29.png" alt="" /></p>
@@ -3828,7 +3744,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 <li>showActivityIndicator()</li>
 <li>hideActivityIndicator()</li>
 </ul>
-<h2 id="displaying-the-progress-indicator-view-while-registering-a-user">Displaying the Progress Indicator View while Registering a User<a class="anchor" href="#displaying-the-progress-indicator-view-while-registering-a-user">#</a></h2>
+<h3 id="displaying-the-progress-indicator-view-while-registering-a-user">Displaying the Progress Indicator View while Registering a User<a class="anchor" href="#displaying-the-progress-indicator-view-while-registering-a-user">#</a></h3>
 <p>In our case, when a user clicks on the register button, the app should display the indicator view, and when the user is created, and their profile is updated, we will remove it.</p>
 <p>We need to do a few tasks.</p>
 <h3 id="first-open-the-registerviewcontrollerswift-file"><strong>First</strong>, open the &lsquo;RegisterViewController.swift&rsquo; file.<a class="anchor" href="#first-open-the-registerviewcontrollerswift-file">#</a></h3>
@@ -3960,12 +3876,11 @@ class RegisterViewController: UIViewController {
 </ul>
 <p>If you run the application now, you will see that the progress indicator is working!</p>
 <figure><img src="/gitbook-assets/12.five (1).gif" alt=""><figcaption></figcaption></figure>
-<!-- Merged from 12.3.2.-register-screen-create-a-user-in-firebase.md -->
-<h1 id="1252-register-screen-create-a-user-in-firebase">12.5.2. Register Screen: Create a user in Firebase<a class="anchor" href="#1252-register-screen-create-a-user-in-firebase">#</a></h1>
+<h3 id="register-screen-create-a-user-in-firebase">Register Screen: Create a user in Firebase<a class="anchor" href="#register-screen-create-a-user-in-firebase">#</a></h3>
 <p>Let&rsquo;s design the Register Screen to let the user create an account. It will look like the following:</p>
 <figure><img src="/gitbook-assets/12.three.2 (1).gif" alt=""><figcaption></figcaption></figure>
 <p>The Register Screen design is very simple; we have three text fields to put the name, email, and password so that the user can create an account with them.</p>
-<h2 id="registerviewswift">RegisterView.swift<a class="anchor" href="#registerviewswift">#</a></h2>
+<h3 id="registerviewswift">RegisterView.swift<a class="anchor" href="#registerviewswift">#</a></h3>
 <p>Let&rsquo;s create a new Group named &ldquo;Register Screen.&rdquo; Create another group &ldquo;Views&rdquo; inside the &ldquo;Register Screen&rdquo; group. Add a file named &ldquo;RegisterView.swift&rdquo; in it.</p>
 <p><img src="/gitbook-assets/Screenshot%202023-06-02%20at%205.55.46%20PM%20%282%29.png" alt="" /></p>
 <p>Put the following code to create the view for the Register screen:</p>
@@ -4054,7 +3969,7 @@ class RegisterViewController: UIViewController {
 </span></span><span style="display:flex;"><span>        fatalError(<span style="color:#e6db74">&#34;init(coder:) has not been implemented&#34;</span>)
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>The above code is very straightforward to display three text fields: name, email, password, and a register button.</p>
-<h2 id="registerviewcontrollerswift-1">RegisterViewController.swift<a class="anchor" href="#registerviewcontrollerswift-1">#</a></h2>
+<h3 id="registerviewcontrollerswift-1">RegisterViewController.swift<a class="anchor" href="#registerviewcontrollerswift-1">#</a></h3>
 <p>Then let&rsquo;s create RegisterViewController.swift file to write code for controlling the Register screen.</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
@@ -4093,7 +4008,7 @@ class RegisterViewController: UIViewController {
 <ul>
 <li>We have added the <code>onRegisterTapped()</code> method to handle if the Register button is tapped. We need to patch the Firebase code on line 30.</li>
 </ul>
-<h2 id="registerfirebasemanagerswift">RegisterFirebaseManager.swift<a class="anchor" href="#registerfirebasemanagerswift">#</a></h2>
+<h3 id="registerfirebasemanagerswift">RegisterFirebaseManager.swift<a class="anchor" href="#registerfirebasemanagerswift">#</a></h3>
 <p>We will separate the code for Firebase from the controller. Let&rsquo;s create a new file <code>Register Screen -&gt; RegisterFirebaseManager.swift</code>.</p>
 <p><img src="/gitbook-assets/Screenshot%202023-06-02%20at%207.09.24%20PM%20%281%29.png" alt="" /></p>
 <p>In this file, we will handle the Firebase Authentication procedures.</p>
@@ -4197,7 +4112,7 @@ class RegisterViewController: UIViewController {
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">@objc</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">onRegisterTapped</span>(){
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">//</span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> creating a new user on Firebase...</span>
 </span></span><span style="display:flex;"><span>    registerNewAccount()
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="patching-the-main-screen-to-show-register-screen">Patching the Main Screen to Show Register Screen<a class="anchor" href="#patching-the-main-screen-to-show-register-screen">#</a></h2>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="patching-the-main-screen-to-show-register-screen">Patching the Main Screen to Show Register Screen<a class="anchor" href="#patching-the-main-screen-to-show-register-screen">#</a></h3>
 <p>Open RightBarButtonManager.swift file. Now, we need to write the logic for opening the Register Screen in <code>registerAction</code> AlertAction. We will add the following codes:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//  RightBarButtonManager.swift</span>
@@ -4230,8 +4145,7 @@ class RegisterViewController: UIViewController {
 <figure><img src="/gitbook-assets/12.three.3 (1).gif" alt=""><figcaption></figcaption></figure>
 <p>If you now look into the Firebase Authentication portal,</p>
 <figure><img src="/gitbook-assets/Screenshot 2023-06-02 at 9.06.25 PM (1).png" alt=""><figcaption></figcaption></figure>
-<!-- Merged from 12.3.3.-implementing-sign-in.md -->
-<h1 id="1233-implementing-sign-in">12.3.3. Implementing Sign In<a class="anchor" href="#1233-implementing-sign-in">#</a></h1>
+<h3 id="implementing-sign-in">Implementing Sign In<a class="anchor" href="#implementing-sign-in">#</a></h3>
 <p>Now it&rsquo;s time to sign in with an already created user.</p>
 <p>We just need to add a few lines of code inside <code>RightBarButtonManager.swift</code> file inside the <code>signInAction</code> alert action:</p>
 <p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
@@ -4285,7 +4199,7 @@ class RegisterViewController: UIViewController {
 <p>If we run the app now, you will see:</p>
 <figure><img src="/gitbook-assets/12.six (1).gif" alt=""><figcaption></figcaption></figure>
 <p><em><mark style="color:purple;"><strong>Can you display a progress indicator while the login operation is happening?</strong></mark></em></p>
-<h2 id="app12-code-so-far">App12 code so far:<a class="anchor" href="#app12-code-so-far">#</a></h2>
+<h3 id="app12-code-so-far">App12 code so far:<a class="anchor" href="#app12-code-so-far">#</a></h3>
 <p>{% file src=&quot;/gitbook-assets/App12_auth.zip&quot; %}</p>
 <hr>
 <h2 id="guided-practice-challenges-4">Guided Practice Challenges<a class="anchor" href="#guided-practice-challenges-4">#</a></h2>
@@ -4382,24 +4296,20 @@ class RegisterViewController: UIViewController {
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#table-of-contents">Table of Contents</a></li>
-    <li><a href="#cocoapods">CocoaPods</a></li>
-    <li><a href="#learning-objectives">Learning Objectives</a></li>
-    <li><a href="#the-story-so-far">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-cocoapods">Walkthrough: Exploring CocoaPods</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#table-of-contents">Table of Contents</a>
       <ul>
-        <li><a href="#there-are-two-ways-of-installing-cocoapods-on-your-mac"><strong>There are two ways of installing CocoaPods on your Mac:</strong></a></li>
+        <li><a href="#cocoapods">CocoaPods</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#learning-objectives">Learning Objectives</a></li>
+    <li><a href="#the-story-so-far">The Story So Far&hellip;</a></li>
+    <li><a href="#walkthrough-exploring-cocoapods">Walkthrough: Exploring CocoaPods</a>
       <ul>
+        <li><a href="#cocoa-pods">Cocoa Pods</a></li>
+        <li><a href="#installing-cocoa-pods">Installing Cocoa Pods</a></li>
+        <li><a href="#there-are-two-ways-of-installing-cocoapods-on-your-mac"><strong>There are two ways of installing CocoaPods on your Mac:</strong></a></li>
+        <li><a href="#using-the-command-in-cocoapodsorg">Using the command in cocoapods.org:</a></li>
+        <li><a href="#integrating-cocoapods-into-a-project">Integrating CocoaPods into a Project</a></li>
         <li><a href="#adding-a-cocoapod-module-alamofire-to-our-project">Adding a CocoaPod module, Alamofire, to our project</a></li>
         <li><a href="#reference-code">Reference Code</a></li>
       </ul>
@@ -4411,67 +4321,47 @@ class RegisterViewController: UIViewController {
       </ul>
     </li>
     <li><a href="#references">References</a></li>
-    <li><a href="#getting-help">Getting Help</a></li>
-    <li><a href="#firebase-auth--firestore">Firebase Auth &amp; Firestore</a></li>
+    <li><a href="#getting-help">Getting Help</a>
+      <ul>
+        <li><a href="#firebase-auth--firestore">Firebase Auth &amp; Firestore</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-1">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-1">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-firebase-auth--firestore">Walkthrough: Exploring Firebase Auth &amp; Firestore</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#getting-started-with-firebase">Getting started with Firebase</a></li>
-    <li><a href="#enabling-authentication-firestore-and-storage">Enabling Authentication, Firestore, and Storage</a></li>
-    <li><a href="#adding-firebase-to-our-app">Adding Firebase to our App</a></li>
-    <li><a href="#firestore-data-structure">Firestore Data Structure</a></li>
-    <li><a href="#firebase-official-documentation">Firebase Official Documentation</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#app12-my-contacts-app">App12: My Contacts app</a></li>
-    <li><a href="#setting-up-your-firebase-project-in-firebases-console">Setting up your Firebase project in Firebase&rsquo;s Console</a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#walkthrough-exploring-firebase-auth--firestore">Walkthrough: Exploring Firebase Auth &amp; Firestore</a>
       <ul>
+        <li><a href="#firebase-authentication-and-firestore">Firebase Authentication and Firestore</a></li>
+        <li><a href="#getting-started-with-firebase">Getting started with Firebase</a></li>
+        <li><a href="#enabling-authentication-firestore-and-storage">Enabling Authentication, Firestore, and Storage</a></li>
+        <li><a href="#adding-firebase-to-our-app">Adding Firebase to our App</a></li>
+        <li><a href="#firestore-data-structure">Firestore Data Structure</a></li>
+        <li><a href="#firebase-official-documentation">Firebase Official Documentation</a></li>
+        <li><a href="#app-12-with-firebase">App 12 with Firebase</a></li>
+        <li><a href="#app12-my-contacts-app">App12: My Contacts app</a></li>
+        <li><a href="#setting-up-your-firebase-project-in-firebases-console">Setting up your Firebase project in Firebase&rsquo;s Console</a></li>
+        <li><a href="#setting-up-the-main-screen-view">Setting up the Main Screen View</a></li>
         <li><a href="#mainscreenviewswift">MainScreenView.swift</a></li>
         <li><a href="#contactstableviewcellswift">ContactsTableViewCell.swift</a></li>
         <li><a href="#configsswift">Configs.swift</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#patching-the-table-view">Patching the Table View</a>
-      <ul>
+        <li><a href="#setting-up-the-viewcontroller-with-tableview">Setting up the ViewController with TableView</a></li>
+        <li><a href="#patching-the-table-view">Patching the Table View</a></li>
         <li><a href="#adopting-tableview-protocols">Adopting TableView protocols</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#if-user--nil">if user == nil</a></li>
-    <li><a href="#else-the-user-is-logged-in">else (the user is logged in)</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#addcontactviewswift">AddContactView.swift</a></li>
-    <li><a href="#addcontactviewcontrollerswift">AddContactViewController.swift</a></li>
-    <li><a href="#updating-contactswift">Updating Contact.swift</a></li>
-    <li><a href="#uploading-the-contact-to-firestore">Uploading the Contact to Firestore</a></li>
-    <li><a href="#adding-progress-activity-indicator">Adding Progress Activity Indicator</a></li>
-    <li><a href="#patching-with-the-main-screen">Patching with the Main Screen</a></li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#authentication-state-handler">Authentication State Handler</a></li>
+        <li><a href="#if-user--nil">if user == nil</a></li>
+        <li><a href="#else-the-user-is-logged-in">else (the user is logged in)</a></li>
+        <li><a href="#firestore-structure-for-storing-contacts">Firestore Structure for Storing Contacts</a></li>
+        <li><a href="#adding-a-new-contact">Adding a New Contact</a></li>
+        <li><a href="#addcontactviewswift">AddContactView.swift</a></li>
+        <li><a href="#addcontactviewcontrollerswift">AddContactViewController.swift</a></li>
+        <li><a href="#updating-contactswift">Updating Contact.swift</a></li>
+        <li><a href="#uploading-the-contact-to-firestore">Uploading the Contact to Firestore</a></li>
+        <li><a href="#adding-progress-activity-indicator">Adding Progress Activity Indicator</a></li>
+        <li><a href="#patching-with-the-main-screen">Patching with the Main Screen</a></li>
+        <li><a href="#observing-firestore-updates-updating-the-tableview">Observing Firestore Updates: Updating the TableView</a></li>
         <li><a href="#yay-we-built-our-first-app-using-firebase"><mark><strong>YAY!!! We built our first app using Firebase!!!</strong></mark></a></li>
+        <li><a href="#reference-code-1">Reference Code</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
     <li><a href="#table-of-contents-1">Table of Contents</a></li>
     <li><a href="#guided-practice-challenges-1">Guided Practice Challenges</a>
       <ul>
@@ -4480,41 +4370,30 @@ class RegisterViewController: UIViewController {
       </ul>
     </li>
     <li><a href="#references-1">References</a></li>
-    <li><a href="#getting-help-1">Getting Help</a></li>
-    <li><a href="#firebase-storage">Firebase Storage</a></li>
+    <li><a href="#getting-help-1">Getting Help</a>
+      <ul>
+        <li><a href="#firebase-storage">Firebase Storage</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-2">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-2">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-firebase-storage">Walkthrough: Exploring Firebase Storage</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#app-12-extended-for-storage">App 12 extended for storage</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#updating-registerviewswift">Updating RegisterView.swift</a></li>
-    <li><a href="#patching-registerviewcontroller-to-pick-photo">Patching RegisterViewController to Pick Photo</a></li>
-    <li><a href="#photomanagerswift">PhotoManager.swift</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#uploading-a-file-to-storage-registerfirebasemanagerswift">Uploading a File to Storage: RegisterFirebaseManager.swift</a>
+    <li><a href="#walkthrough-exploring-firebase-storage">Walkthrough: Exploring Firebase Storage</a>
       <ul>
+        <li><a href="#firebase-storage-1">Firebase Storage</a></li>
+        <li><a href="#app-12-extended-for-storage">App 12 extended for storage</a></li>
+        <li><a href="#integrating-photo-pickers">Integrating Photo Pickers</a></li>
+        <li><a href="#updating-registerviewswift">Updating RegisterView.swift</a></li>
+        <li><a href="#patching-registerviewcontroller-to-pick-photo">Patching RegisterViewController to Pick Photo</a></li>
+        <li><a href="#photomanagerswift">PhotoManager.swift</a></li>
+        <li><a href="#uploading-the-picked-photo-to-firebase-storage">Uploading the Picked Photo to Firebase Storage</a></li>
+        <li><a href="#uploading-a-file-to-storage-registerfirebasemanagerswift">Uploading a File to Storage: RegisterFirebaseManager.swift</a></li>
         <li><a href="#registerviewcontrollerswift">RegisterViewController.swift</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#displaying-images-hosted-in-cloud">Displaying Images Hosted in Cloud</a></li>
         <li><a href="#great-we-now-know-how-to-store-and-retrieve-an-image-using-firebase-storage">Great!!! We now know how to store and retrieve an image using Firebase Storage.</a></li>
         <li><a href="#what-data-can-you-store-in-a-firebaseauth-user-object">What data can you store in a FirebaseAuth user object?</a></li>
+        <li><a href="#reference-code-2">Reference Code</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
     <li><a href="#guided-practice-challenges-2">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-2">Challenge 1: Experimentation</a></li>
@@ -4522,65 +4401,50 @@ class RegisterViewController: UIViewController {
       </ul>
     </li>
     <li><a href="#references-2">References</a></li>
-    <li><a href="#getting-help-2">Getting Help</a></li>
-    <li><a href="#mapkit--location">MapKit &amp; Location</a></li>
+    <li><a href="#getting-help-2">Getting Help</a>
+      <ul>
+        <li><a href="#mapkit--location">MapKit &amp; Location</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-3">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-3">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-mapkit--location">Walkthrough: Exploring MapKit &amp; Location</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#setting-up-the-map-view">Setting up the Map View</a></li>
-    <li><a href="#patching-the-view-with-the-controller">Patching the View with the Controller</a></li>
-    <li><a href="#location-manager">Location Manager</a></li>
-    <li><a href="#action-when-the-current-location-button-is-tapped">Action when the Current Location button is tapped</a></li>
-    <li><a href="#extending-mkmapview-to-center-the-view-to-the-current-location">Extending MKMapView to center the view to the current location</a></li>
-    <li><a href="#setting-up-infoplist-to-allow-the-location-access">Setting up Info.plist to allow the location access</a>
+    <li><a href="#walkthrough-exploring-mapkit--location">Walkthrough: Exploring MapKit &amp; Location</a>
       <ul>
+        <li><a href="#uimapkit-working-with-location-and-maps">UIMapKit: Working with Location and Maps</a></li>
+        <li><a href="#phase-1-displaying-map-view-and-current-location">Phase 1: Displaying Map View and Current Location</a></li>
+        <li><a href="#setting-up-the-map-view">Setting up the Map View</a></li>
+        <li><a href="#patching-the-view-with-the-controller">Patching the View with the Controller</a></li>
+        <li><a href="#location-manager">Location Manager</a></li>
+        <li><a href="#action-when-the-current-location-button-is-tapped">Action when the Current Location button is tapped</a></li>
+        <li><a href="#extending-mkmapview-to-center-the-view-to-the-current-location">Extending MKMapView to center the view to the current location</a></li>
+        <li><a href="#setting-up-infoplist-to-allow-the-location-access">Setting up Info.plist to allow the location access</a></li>
         <li><a href="#setting-the-simulatoremulator-location">Setting the Simulator/Emulator location</a></li>
-      </ul>
-    </li>
-    <li><a href="#code-so-far">Code so far</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#defining-a-place-class-with-mkannotation">Defining a Place class with MKAnnotation</a>
-      <ul>
+        <li><a href="#code-so-far">Code so far</a></li>
+        <li><a href="#phase-2-annotations-and-accessories-for-a-certain-place">Phase 2: Annotations and Accessories for a certain place</a></li>
+        <li><a href="#defining-a-place-class-with-mkannotation">Defining a Place class with MKAnnotation</a></li>
         <li><a href="#what-is-guard-let">What is guard-let?</a></li>
-      </ul>
-    </li>
-    <li><a href="#display-an-annotated-place-on-map">Display an Annotated Place on Map</a></li>
-    <li><a href="#interacting-with-the-annotations">Interacting with the Annotations</a>
-      <ul>
+        <li><a href="#display-an-annotated-place-on-map">Display an Annotated Place on Map</a></li>
+        <li><a href="#interacting-with-the-annotations">Interacting with the Annotations</a></li>
         <li><a href="#creating-annotation-view">Creating Annotation View</a></li>
         <li><a href="#delegating-the-user-interaction-on-the-callout">Delegating the User Interaction on the Callout</a></li>
-      </ul>
-    </li>
-    <li><a href="#code-so-far-1">Code so far</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#setting-up-the-bottom-search-sheet">Setting up the Bottom Search Sheet</a></li>
-    <li><a href="#bottom-search-sheet">Bottom Search Sheet</a>
-      <ul>
+        <li><a href="#code-so-far-1">Code so far</a></li>
+        <li><a href="#phase-3-place-search-and-navigate">Phase 3: Place Search and Navigate</a></li>
+        <li><a href="#setting-up-the-bottom-search-sheet">Setting up the Bottom Search Sheet</a></li>
+        <li><a href="#bottom-search-sheet">Bottom Search Sheet</a></li>
         <li><a href="#searchviewcontrollerswift">SearchViewController.swift</a></li>
         <li><a href="#searchbottomsheetswift">SearchBottomSheet.swift</a></li>
         <li><a href="#searchtableviewcellswift">SearchTableViewCell.swift</a></li>
         <li><a href="#searchtableviewmanagerswift">SearchTableViewManager.swift</a></li>
-      </ul>
-    </li>
-    <li><a href="#displaying-the-bottom-search-sheet">Displaying the Bottom Search Sheet</a></li>
-    <li><a href="#searching-nearby-places">Searching Nearby Places</a></li>
-    <li><a href="#displaying-the-search-results-in-the-search-table-view">Displaying the search results in the search table view</a>
-      <ul>
+        <li><a href="#displaying-the-bottom-search-sheet">Displaying the Bottom Search Sheet</a></li>
+        <li><a href="#searching-nearby-places">Searching Nearby Places</a></li>
+        <li><a href="#displaying-the-search-results-in-the-search-table-view">Displaying the search results in the search table view</a></li>
         <li><a href="#setting-an-observer-from-the-bottom-search-sheet">Setting an observer from the bottom search sheet</a></li>
         <li><a href="#posting-notification-from-map-screen">Posting notification from Map Screen</a></li>
+        <li><a href="#code-so-far-2">Code so far</a></li>
+        <li><a href="#phase-4-display-searched-places-on-map">Phase 4: Display Searched Places on Map</a></li>
+        <li><a href="#reference-code-3">Reference Code</a></li>
       </ul>
     </li>
-    <li><a href="#code-so-far-2">Code so far</a></li>
-  </ul>
-
-  <ul>
     <li><a href="#guided-practice-challenges-3">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-3">Challenge 1: Experimentation</a></li>
@@ -4588,56 +4452,43 @@ class RegisterViewController: UIViewController {
       </ul>
     </li>
     <li><a href="#references-3">References</a></li>
-    <li><a href="#getting-help-3">Getting Help</a></li>
-    <li><a href="#125-implementing-register-and-sign-in">12.5. Implementing Register and Sign In</a></li>
+    <li><a href="#getting-help-3">Getting Help</a>
+      <ul>
+        <li><a href="#implementing-register-and-sign-in">Implementing Register and Sign In</a></li>
+      </ul>
+    </li>
     <li><a href="#learning-objectives-4">Learning Objectives</a></li>
     <li><a href="#the-story-so-far-4">The Story So Far&hellip;</a></li>
-    <li><a href="#walkthrough-exploring-125-implementing-register-and-sign-in">Walkthrough: Exploring 12.5. Implementing Register and Sign In</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#setuprightbarbuttonisloggedin-bool">setupRightBarButton(isLoggedin: Bool)</a></li>
-    <li><a href="#onsigninbarbuttontapped">onSignInBarButtonTapped()</a></li>
-    <li><a href="#onlogoutbarbuttontapped">onLogOutBarButtonTapped()</a>
+    <li><a href="#walkthrough-exploring-125-implementing-register-and-sign-in">Walkthrough: Exploring 12.5. Implementing Register and Sign In</a>
       <ul>
+        <li><a href="#implementing-register-and-sign-in-1">Implementing Register and Sign In</a></li>
+        <li><a href="#building-the-right-bar-buttons-for-sign-in-and-logout">Building the Right Bar Button(s) for Sign In and Logout</a></li>
+        <li><a href="#setuprightbarbuttonisloggedin-bool">setupRightBarButton(isLoggedin: Bool)</a></li>
+        <li><a href="#onsigninbarbuttontapped">onSignInBarButtonTapped()</a></li>
+        <li><a href="#onlogoutbarbuttontapped">onLogOutBarButtonTapped()</a></li>
         <li><a href="#in-the-above-code-we-use-a-different-alert-controller-style"><strong>In the above code, we use a different alert controller style, “.actionSheet”. An action sheet pops up from the bottom edge.</strong></a></li>
-      </ul>
-    </li>
-    <li><a href="#patching-viewcontroller-to-display-the-right-bar-buttons">Patching ViewController to display the Right Bar Buttons</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#defining-a-progress-activity-indicator">Defining a Progress Activity Indicator</a>
-      <ul>
+        <li><a href="#patching-viewcontroller-to-display-the-right-bar-buttons">Patching ViewController to display the Right Bar Buttons</a></li>
+        <li><a href="#progress-activity-indicator">Progress Activity Indicator</a></li>
+        <li><a href="#defining-a-progress-activity-indicator">Defining a Progress Activity Indicator</a></li>
         <li><a href="#progressspinnerviewcontrollerswift">ProgressSpinnerViewController.swift</a></li>
         <li><a href="#progressspinnerdelegateswift">ProgressSpinnerDelegate.swift</a></li>
-      </ul>
-    </li>
-    <li><a href="#displaying-the-progress-indicator-view-while-registering-a-user">Displaying the Progress Indicator View while Registering a User</a>
-      <ul>
+        <li><a href="#displaying-the-progress-indicator-view-while-registering-a-user">Displaying the Progress Indicator View while Registering a User</a></li>
         <li><a href="#first-open-the-registerviewcontrollerswift-file"><strong>First</strong>, open the ‘RegisterViewController.swift’ file.</a></li>
         <li><a href="#secondly-lets-create-a-new-file-registerprogressindicatormanagerswift-in-the-register-screen-group"><strong>Secondly,</strong> let’s create a new file, ‘RegisterProgressIndicatorManager.swift’ in the ‘Register Screen’ group.</a></li>
         <li><a href="#thirdly-edit-registerfirebasemanagerswift-file">Thirdly, edit RegisterFirebaseManager.swift file</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#registerviewswift">RegisterView.swift</a></li>
-    <li><a href="#registerviewcontrollerswift-1">RegisterViewController.swift</a></li>
-    <li><a href="#registerfirebasemanagerswift">RegisterFirebaseManager.swift</a>
-      <ul>
+        <li><a href="#register-screen-create-a-user-in-firebase">Register Screen: Create a user in Firebase</a></li>
+        <li><a href="#registerviewswift">RegisterView.swift</a></li>
+        <li><a href="#registerviewcontrollerswift-1">RegisterViewController.swift</a></li>
+        <li><a href="#registerfirebasemanagerswift">RegisterFirebaseManager.swift</a></li>
         <li><a href="#firebase-authentication">Firebase Authentication</a></li>
         <li><a href="#creating-a-new-user-in-firebase"><mark>(Creating a new User in Firebase)</mark></a></li>
         <li><a href="#updating-a-user-profile-in-firebase"><mark>(Updating a User Profile in Firebase)</mark></a></li>
         <li><a href="#registerviewcontrollerswift-2">RegisterViewController.swift</a></li>
+        <li><a href="#patching-the-main-screen-to-show-register-screen">Patching the Main Screen to Show Register Screen</a></li>
+        <li><a href="#implementing-sign-in">Implementing Sign In</a></li>
+        <li><a href="#app12-code-so-far">App12 code so far:</a></li>
       </ul>
     </li>
-    <li><a href="#patching-the-main-screen-to-show-register-screen">Patching the Main Screen to Show Register Screen</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#app12-code-so-far">App12 code so far:</a></li>
     <li><a href="#guided-practice-challenges-4">Guided Practice Challenges</a>
       <ul>
         <li><a href="#challenge-1-experimentation-4">Challenge 1: Experimentation</a></li>
