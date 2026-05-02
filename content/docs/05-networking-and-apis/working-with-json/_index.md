@@ -3,6 +3,37 @@ title: "Working with JSON"
 weight: 20
 ---
 
+**Estimated effort:** 1-2 hours this topic
+**Format:** Asynchronous online
+**Prerequisites:** Previous iOS topics
+
+{< hint info >}
+**🎯 Topic Mission:** 
+In this module, we will explore **Working with JSON** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+{< /hint >}
+
+---
+
+## Learning Objectives
+
+By the end of this session, you will be able to:
+1. Understand the core concepts of Working with JSON.
+2. Implement Working with JSON in an Xcode project.
+3. Apply best practices to ensure clean and maintainable code.
+
+---
+
+## The Story So Far...
+
+We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Working with JSON. 
+Open your current Xcode project or start a new Playground to follow along with the hands-on material.
+
+---
+
+## Walkthrough: Exploring Working with JSON
+
+> 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
+
 # 11. Working with APIs and JSON
 
 JSON stands for JavaScript Object Notation. It is a standard text-based format for representing structured data. It follows the JavaScript object syntax. It is the most popular standard of text data for web APIs nowadays. That means almost all the APIs you will work with or build will be structured in JSON. So it is paramount to learn how to parse JSON data and use them in iOS.
@@ -1146,4 +1177,35 @@ Now, the code is more modular and more manageable.
 **Note: You can make it even more modular by putting the table view protocol codes into a separate file from the ViewController.**
 
 {% file src="/gitbook-assets/App11_modular (2).zip" %}
+
+---
+
+## Guided Practice Challenges
+
+Before moving on to the next topic, try these low-stakes practice challenges in Xcode. They will build the exact muscle memory you need:
+
+### Challenge 1: Experimentation
+**The Scenario:** You've just learned about Working with JSON.
+**The Task:** Experiment with the code snippets provided above. Can you alter the behavior by changing the parameters or combining it with concepts from previous modules?
+
+### Challenge 2: From Scratch
+**The Task:** Try implementing the core feature of this module in a completely blank Xcode project without looking at the reference code. Rely on Xcode's autocomplete and standard Apple documentation.
+
+---
+
+## References
+
+1. [Apple Developer Documentation](https://developer.apple.com/documentation/)
+2. [Swift Language Guide](https://docs.swift.org/swift-book/)
+3. [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/)
+
+---
+
+## Getting Help
+
+Because this course is fully asynchronous, here's how to get unstuck:
+
+- **Piazza** is the primary help channel. When asking a question, include: (1) what you're trying to do, (2) what you've tried, (3) the exact Xcode error message.
+- **TA office hours** — check the Canvas calendar. Show up, share your screen, and get help.
+- **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 

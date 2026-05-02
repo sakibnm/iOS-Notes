@@ -3,6 +3,37 @@ title: "Designing Without Storyboards"
 weight: 20
 ---
 
+**Estimated effort:** 1-2 hours this topic
+**Format:** Asynchronous online
+**Prerequisites:** Previous iOS topics
+
+{< hint info >}
+**🎯 Topic Mission:** 
+In this module, we will explore **Designing Without Storyboards** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+{< /hint >}
+
+---
+
+## Learning Objectives
+
+By the end of this session, you will be able to:
+1. Understand the core concepts of Designing Without Storyboards.
+2. Implement Designing Without Storyboards in an Xcode project.
+3. Apply best practices to ensure clean and maintainable code.
+
+---
+
+## The Story So Far...
+
+We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Designing Without Storyboards. 
+Open your current Xcode project or start a new Playground to follow along with the hands-on material.
+
+---
+
+## Walkthrough: Exploring Designing Without Storyboards
+
+> 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
+
 # 2. Designing without Storyboards
 
 In our first app, we dragged and dropped the UI elements on Storyboard and set up the constraints using the Interface Builder's tools. Now, I said we would ditch this approach and start designing the UI with codes.
@@ -483,4 +514,35 @@ If you run the app, you can see that we replicated the whole App1 by just writin
 # 2.2. Reference Code
 
 {% file src="/gitbook-assets/App1_NoStory.zip" %}
+
+---
+
+## Guided Practice Challenges
+
+Before moving on to the next topic, try these low-stakes practice challenges in Xcode. They will build the exact muscle memory you need:
+
+### Challenge 1: Experimentation
+**The Scenario:** You've just learned about Designing Without Storyboards.
+**The Task:** Experiment with the code snippets provided above. Can you alter the behavior by changing the parameters or combining it with concepts from previous modules?
+
+### Challenge 2: From Scratch
+**The Task:** Try implementing the core feature of this module in a completely blank Xcode project without looking at the reference code. Rely on Xcode's autocomplete and standard Apple documentation.
+
+---
+
+## References
+
+1. [Apple Developer Documentation](https://developer.apple.com/documentation/)
+2. [Swift Language Guide](https://docs.swift.org/swift-book/)
+3. [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/)
+
+---
+
+## Getting Help
+
+Because this course is fully asynchronous, here's how to get unstuck:
+
+- **Piazza** is the primary help channel. When asking a question, include: (1) what you're trying to do, (2) what you've tried, (3) the exact Xcode error message.
+- **TA office hours** — check the Canvas calendar. Show up, share your screen, and get help.
+- **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
 
