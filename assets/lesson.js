@@ -471,7 +471,7 @@
           pre.replaceWith(div);
           return;
         }
-        try { hljs.highlightElement(el); } catch (_e) {}
+        try { hljs.highlightElement(el); hljs.lineNumbersBlock(el); } catch (_e) {}
       });
     }
 
