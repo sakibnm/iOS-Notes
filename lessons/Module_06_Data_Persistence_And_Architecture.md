@@ -1,4 +1,4 @@
-# Module 06: Data Persistence And Architecture
+# Module 06: Data Persistence and Architecture
 
 ## Table of Contents
 
@@ -13,7 +13,7 @@
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **Notification Center** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **Notification Center** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -56,7 +56,7 @@ For example, there are two screens in an app. Screen2 takes text input from the 
 * At this point, Screen1, as an observer of that particular text, receives the notification that the text has been updated.
 * Finally, Screen1 reacts to the notification and updates it's local UI elements accordingly, such as updating it's Label with the updated text.
 
-So, let's build a small App to test it out.
+Let's build a small App to test it out.
 
 
 
@@ -461,7 +461,7 @@ class SecondScreenViewController: UIViewController {
 
 ### Posting data to Notification Center
 
-Now, when the user puts some text in `textFieldSendBack`, and taps `buttonSendBack`, we need to fetch the text and post the text to Notification Center. So, let's write the following codes in `onButtonSendBackTapped()` method:
+Now, when the user puts some text in `textFieldSendBack`, and taps `buttonSendBack`, we need to fetch the text and post the text to Notification Center. Let's write the following codes in `onButtonSendBackTapped()` method:
 
 
 ```swift
@@ -582,7 +582,7 @@ Now let's run the app.
 
 In real life, the Notification Center is used very frequently, especially when we fetch data from the internet and wait for data to update. Oftentimes, it's pretty common to create tens of observers in a single app. So, just writing the names/identifiers of the notifications, as we did before, is not a good way of dealing with it. If the names do not match on both sides, notifications won't work. So, keeping the names in a separate class as static variables is better.
 
-So, let's create a new Swift file (not a Cocoa touch class) called NotificationNames.swift.
+Let's create a new Swift file (not a Cocoa touch class) called NotificationNames.swift.
 
 ![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-22 at 7.42.36 PM (1).png>)
 
@@ -694,7 +694,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **Clean Code & Async** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **Clean Code & Async** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -889,7 +889,7 @@ start()
 
 ## Table of Contents
 
-{{< section >}}
+
 
 ---
 
@@ -931,7 +931,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **1. Writing Clean Code For Asynchronous Operations** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **1. Writing Clean Code For Asynchronous Operations** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---

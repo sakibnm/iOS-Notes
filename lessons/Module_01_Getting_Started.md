@@ -13,7 +13,7 @@
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **Getting Started** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **Getting Started** and establish our development environment. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---

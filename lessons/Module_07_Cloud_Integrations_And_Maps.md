@@ -1,4 +1,4 @@
-# Module 07: Cloud Integrations And Maps
+# Module 07: Cloud Integrations and Maps
 
 ## Table of Contents
 
@@ -13,7 +13,7 @@
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **CocoaPods** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **CocoaPods** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -203,7 +203,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **Firebase Auth & Firestore** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **Firebase Auth & Firestore** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -295,7 +295,7 @@ The app has the following features:
 
 ### Setting up the Main Screen View
 
-In this Project, we will keep the codes as modular as possible. So, let's create a new Group called 'Main Screen.' Put ViewController.swift file inside 'Main Screen.'
+In this Project, we will keep the codes as modular as possible. Let's create a new Group called 'Main Screen.' Put ViewController.swift file inside 'Main Screen.'
 
 Then we create a new Group called 'Views' inside 'Main Screen.' Add a new file named MainScreenView.swift inside 'Views.' The structure looks like this:
 
@@ -651,7 +651,7 @@ class ViewController: UIViewController {
 
 ### Adopting TableView protocols
 
-Let's separate the adoption of the protocols from ViewController.swift. So, let's create a file `Main Screen -> ContactsTableViewManager.swift` and write the following code there:
+Let's separate the adoption of the protocols from ViewController.swift. Let's create a file `Main Screen -> ContactsTableViewManager.swift` and write the following code there:
 
 ![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-06-02 at 3.24.55 PM (1).png>)
 
@@ -1208,7 +1208,7 @@ In the above code:
 
 ### Patching with the Main Screen
 
-Once the floating add contact button is tapped, we need to display the add contact screen. So, let's add the following lines of code to ViewController.swift file:
+Once the floating add contact button is tapped, we need to display the add contact screen. Let's add the following lines of code to ViewController.swift file:
 
 
 ```swift
@@ -1371,7 +1371,7 @@ Now let's run the app again.
 
 ## Table of Contents
 
-{{< section >}}
+
 
 ---
 
@@ -1413,7 +1413,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **Firebase Storage** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **Firebase Storage** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -2027,7 +2027,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **MapKit & Location** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **MapKit & Location** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -3013,7 +3013,7 @@ So, our bottom search sheet is working!
 
 ### Searching Nearby Places
 
-Here we have to type something on the search bar, and depending on what we type, it should display the list of related places in the search results table view. So, let's open SearchViewController.swift and put in the following code to add a delegate to mapview:
+Here we have to type something on the search bar, and depending on what we type, it should display the list of related places in the search results table view. Let's open SearchViewController.swift and put in the following code to add a delegate to mapview:
 
 
 ```swift
@@ -3142,7 +3142,7 @@ extension SearchViewController: UISearchBarDelegate{
 
 In the above code, on line 18, we call the `loadPlacesAround(query: searchText)` method of map screen using the delegate. We send the text the user writes on the search bar.
 
-We need to update ViewController.swift file to initialize the delegateToMapView variable. So, let's initialize it as the following code:
+We need to update ViewController.swift file to initialize the delegateToMapView variable. Let's initialize it as the following code:
 
 
 ```swift
@@ -3403,7 +3403,7 @@ In the above code:
 * On lines 23 through 27, we create a Place object from the map item.
 * On line 28, we add the annotation view to the place.
 
-Now we need to call `showSelectedPlace()` method when a search result cell is tapped from the bottom search sheet. So, let's open SearchTableViewManager.swift file and update the tableView() method with parameter `didSelectRowAt.`
+Now we need to call `showSelectedPlace()` method when a search result cell is tapped from the bottom search sheet. Let's open SearchTableViewManager.swift file and update the tableView() method with parameter `didSelectRowAt.`
 
 
 ```swift
@@ -3472,7 +3472,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **12.5. Implementing Register and Sign In** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **12.5. Implementing Register and Sign In** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -3515,7 +3515,7 @@ Our next goal is to build the functionalities so that a user can register a new 
 
 We add two buttons on the right navigation bar, triggering the same action. We do it to display an image and text to explain to the user what to do. (This is not standard practice, you can design your own buttons.)
 
-We will separate the logic of creating and handling the right bar button actions from the ViewController. So, let's create a new file `Main Screen -> RightBarButtonManager.swift` and write the following code there:
+We will separate the logic of creating and handling the right bar button actions from the ViewController. Let's create a new file `Main Screen -> RightBarButtonManager.swift` and write the following code there:
 
 ![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-06-02 at 4.37.14 PM (1).png>)
 
@@ -4139,7 +4139,7 @@ We have to do the following tasks:
 * We need to register the user using email and password.
 * Then we will update the profile's display name.
 
-So, let's write the following code in RegisterFirebaseManager.swift file:
+Let's write the following code in RegisterFirebaseManager.swift file:
 
 
 ```swift

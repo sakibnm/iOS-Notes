@@ -1,4 +1,4 @@
-# Module 04: Advanced Ui Components
+# Module 04: Advanced UI Components
 
 ## Table of Contents
 
@@ -13,7 +13,7 @@
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **UITableView** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **UITableView** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -52,7 +52,7 @@ More specifically, we will learn about the following:
 
 ### Expense App
 
-So, let's create an app called 'App5'. Our preliminary target is to build something like the following app:
+Let's create an app called 'App5'. Our preliminary target is to build something like the following app:
 
 ![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-18 at 10.45.04 AM (1).png>) ![Educational illustration for iOS concept](</gitbook-assets/Screenshot 2023-05-18 at 10.45.19 AM (1).png>)
 
@@ -382,7 +382,7 @@ Now we must patch the views with our controller (ViewController.swift). Before w
 
 ### Creating a data model for expenses
 
-So, let's create a new swift file called "Expense."
+Let's create a new swift file called "Expense."
 
 * **File -> New -> File...**
 * Select **iOS**
@@ -581,7 +581,7 @@ The file structure looks like this:
 
 ### Second screen, part 1: Setting up the View of the Add Expense Screen
 
-When the user clicks the plus Bar button (`+`), we should populate a screen to add a new expense. So, let's create two new files: AddExpenseView.swift (subclass of UIView) and AddExpenseViewController.swift (subclass of UIViewController). And add them to a new group, "Add Expense Screen." (**Use the Cocoa Touch Class template, not a Swift file template).**
+When the user clicks the plus Bar button (`+`), we should populate a screen to add a new expense. Let's create two new files: AddExpenseView.swift (subclass of UIView) and AddExpenseViewController.swift (subclass of UIViewController). And add them to a new group, "Add Expense Screen." (**Use the Cocoa Touch Class template, not a Swift file template).**
 
 <figure><img src="/gitbook-assets/5.ten (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
@@ -834,7 +834,7 @@ class AddExpenseViewController: UIViewController {
 
 ```
 
-Now, we need to update ViewController.swift file to be able to navigate to AddExpenseViewController.swift and get back with the new expense. So, let's add an instance variable of ViewController named "delegate" to AddExpenseViewController.
+Now, we need to update ViewController.swift file to be able to navigate to AddExpenseViewController.swift and get back with the new expense. Let's add an instance variable of ViewController named "delegate" to AddExpenseViewController.
 
 ```swift
 //
@@ -1059,7 +1059,7 @@ extension AddExpenseViewController: UIPickerViewDelegate, UIPickerViewDataSource
 
 Let's open AddExpenseViewController.swift file. Now, we will add an action for tapping on`addExpenseScreen.buttonAdd`. Once this button is tapped, we need to create an Expense object from the data the user put in and delegate the next tasks to ViewController.
 
-So, let's add the action target for `addExpenseScreen.buttonAdd` by writing the following code in `viewDidLoad()`:
+Let's add the action target for `addExpenseScreen.buttonAdd` by writing the following code in `viewDidLoad()`:
 
 ```swift
 //
@@ -1248,7 +1248,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **UIScrollView** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **UIScrollView** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -1337,7 +1337,7 @@ We also need a large image. I used the following image to load inside the screen
 
 ![Educational illustration for iOS concept](</gitbook-assets/image@3x (1).jpg>)
 
-So, let's import the image into the project:
+Let's import the image into the project:
 
 <figure><img src="/gitbook-assets/Screenshot 2023-05-24 at 10.59.28 AM (1).png" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
@@ -1538,7 +1538,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **UIMenu & Image Pickers** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **UIMenu & Image Pickers** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -2028,7 +2028,7 @@ for type in Utilities.types{
 
 Here, we are creating a menu item using the `Utilities.types` array. The `handler` closure defines the on-select actions for that item. We are saying that if the user selects this particular menu item, set the value of `selectedType` to the corresponding type of expense. And set the title of the button to the selected item.
 
-So, let's run the app now.
+Let's run the app now.
 
 <figure><img src="/gitbook-assets/6.2.two (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
@@ -2142,7 +2142,7 @@ Our next task is to implement the Gallery and Camera functions.
 
 [PHPicker](https://developer.apple.com/documentation/photokit/phpickerviewcontroller) _is a view controller that provides the user interface for choosing assets from the photo library._ We use this view controller to browse the local image assets, select the chosen image(s), and retrieve the image(s). It is a highly configurable and scalable tool and fairly easy to use. We need to import `PhotosUI` library to use the tool.
 
-So, let's open AddExpenseViewController.swift file. We will write codes in `pickPhotoFromGallery()` method. We also need to adopt `PHPickerViewControllerDelegate` protocol using the `extension` keyword. Let's add the following code in AddExpenseViewController.swift file:
+Let's open AddExpenseViewController.swift file. We will write codes in `pickPhotoFromGallery()` method. We also need to adopt `PHPickerViewControllerDelegate` protocol using the `extension` keyword. Let's add the following code in AddExpenseViewController.swift file:
 
 <pre class="language-swift" data-line-numbers><code class="lang-swift">//
 //  AddExpenseViewController.swift
@@ -2284,7 +2284,7 @@ Now it's time to build the final part of the app: integrating the camera to take
 
 **Please note: the camera doesn't work in the emulator; you need a physical iOS device to test it. Do not worry; picking images using the camera is not mandatory in this course. This is an example for your future reference.**
 
-So, let's open AddExpenseViewController.swift file. We will write codes in `pickUsingCamera()` method. We also need to adopt `UINavigationControllerDelegate`, and `UIImagePickerControllerDelegate` protocols using the `extension` keyword. Let's add the following code in AddExpenseViewController.swift file:
+Let's open AddExpenseViewController.swift file. We will write codes in `pickUsingCamera()` method. We also need to adopt `UINavigationControllerDelegate`, and `UIImagePickerControllerDelegate` protocols using the `extension` keyword. Let's add the following code in AddExpenseViewController.swift file:
 
 ```swift
 //
@@ -2655,7 +2655,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **Useful UI Elements** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **Useful UI Elements** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -2968,7 +2968,7 @@ Now, if we run the app, it should run as the FirstScreenViewController being the
 
 ## Table of Contents
 
-{{< section >}}
+
 
 ---
 
@@ -3010,7 +3010,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **this topic** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **this topic** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -3370,7 +3370,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **this topic** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **this topic** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -3423,7 +3423,7 @@ Let's create an app called TabControllerDemo in XCode. The app will have:
 
 ### Views
 
-The design of the screens is the same except for the background color of the color box. So, let's create the views of Red, Blue, and Green screens.
+The design of the screens is the same except for the background color of the color box. Let's create the views of Red, Blue, and Green screens.
 
 ### RedView.swift
 
@@ -3826,7 +3826,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **this topic** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **this topic** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -3873,7 +3873,7 @@ We have a Find button on our main screen and a label to display the selected nam
 * **View Controller**
 * **Navigation Controller**
 
-&#x20;So, let's design a separate screen for our search bottom sheet. Let's create the following three Swift files:
+&#x20;Let's design a separate screen for our search bottom sheet. Let's create the following three Swift files:
 
 * SearchBottomSheetController.swift
 * SearchBottomSheetView.swift

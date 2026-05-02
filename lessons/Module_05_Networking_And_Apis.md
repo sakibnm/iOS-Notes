@@ -1,4 +1,4 @@
-# Module 05: Networking And Apis
+# Module 05: Networking And APIs
 
 ## Table of Contents
 
@@ -13,7 +13,7 @@
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **HTTP & Networking** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **HTTP & Networking** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -152,7 +152,7 @@ Open the workspace (not the xcodeproject).
   * The bottom add view contains three text fields for name, email, and phone.
 * At the top, we will have a table view displaying current contacts.
 
-So, let's add the following files:
+Let's add the following files:
 
 * MainScreenView.swift
 * ContactsTableView.swift
@@ -556,7 +556,7 @@ Let's look at the function `getAllContacs()` method definition:
   * **200-level codes mean the request was valid, and we received a desirable response.**
   * **400-level codes mean the request was incorrect, so we must handle the response appropriately to manage the UI elements properly.**
 
-So, let's write the following code in the `completionHandler` closure taking care of the status codes and network errors:
+Let's write the following code in the `completionHandler` closure taking care of the status codes and network errors:
 
 
 ```swift
@@ -1108,7 +1108,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **Working with JSON** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **Working with JSON** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -2032,7 +2032,7 @@ Let's first separate the code we used to call the Contacts API. The methods we h
 
 ### Defining a Protocol for the API Calls
 
-So, let's write a protocol where we will declare the methods we will use to call the Contacts API. Let's create a new Swift file ContactsProtocol.swift, inside the 'Contact API Configs' folder.
+Let's write a protocol where we will declare the methods we will use to call the Contacts API. Let's create a new Swift file ContactsProtocol.swift, inside the 'Contact API Configs' folder.
 
 ```swift
 //

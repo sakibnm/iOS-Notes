@@ -1,4 +1,4 @@
-# Module 03: Introduction To Uikit
+# Module 03: Introduction To UIKit
 
 ## Table of Contents
 
@@ -9,7 +9,7 @@
 
 ## Table of Contents
 
-{{< section >}}
+
 
 
 ### Designing Without Storyboards
@@ -20,7 +20,7 @@
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **Designing Without Storyboards** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **Designing Without Storyboards** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -98,7 +98,7 @@ Please note you do not need to add all four constraints to anchor an object on t
 
 ### Converting the storyboard to code
 
-So, let's convert the Storyboard to Swift code!
+Let's convert the Storyboard to Swift code!
 
 The following image is how the grid on the device screen is defined.
 
@@ -562,7 +562,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **Multi-Screen Apps** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **Multi-Screen Apps** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -591,7 +591,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 At this point, we will make a multi-screen application. After the end of lesson 3, we will understand the basics of Navigation Controller, UIImageViews, and Image Assets.
 
-So let's create a new App named 'App3.'
+Let's create a new project named 'App3.'
 
 I will be designing the interface without the Storyboard here.
 
@@ -633,7 +633,7 @@ Let's add UI elements to our View Controller (ViewController.swift). Let's progr
 * The user puts a text in the TextField in the first ViewController and clicks on the Button.
 * On clicking the Button, the screen switches from the ViewController to another screen, ShowViewController (which we will create momentarily), and displays the text the user put before.
 
-So, let's add the TextField and the Button programmatically. First, we initialize the UI elements and set proper attributes, like the following:
+Let's add the TextField and the Button programmatically. First, we initialize the UI elements and set proper attributes, like the following:
 
 
 ```swift
@@ -835,7 +835,7 @@ We can see that there is a Back button on the left top of the ShowViewController
 
 Now it's time to send data from our first screen (ViewController) to the second screen (ShowViewController). Remember, we created a variable named `messageFromFirstScreen`? We have to access that variable from the first screen (ViewController) and set the text the user puts in `textFieldMessage` to `messageFromFirstScreen`.
 
-So, let's get back to ViewController.swift. Scroll down to the button event action method `onButtonSendTapped()`. And add the following code in `onButtonSendTapped()` after we initialize the ShowViewController:
+Let's get back to ViewController.swift. Scroll down to the button event action method `onButtonSendTapped()`. And add the following code in `onButtonSendTapped()` after we initialize the ShowViewController:
 
 
 ```swift
@@ -883,7 +883,7 @@ So, we can see that we can send data from one screen to the next.
 
 ## Table of Contents
 
-{{< section >}}
+
 
 ---
 
@@ -925,7 +925,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **MVC Architecture** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **MVC Architecture** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -952,7 +952,7 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 ### Separating the View from the Controller code
 
-One of the better ways of coding is to separate the Views (front-end codes) from the Controllers (back-end codes). That way, we can make ViewControllers less cluttered.
+A best practice in software design is to separate the Views (front-end codes) from the Controllers (back-end codes). That way, we can make ViewControllers less cluttered.
 
 We have been keeping all the codes for a screen on a single file (ViewController.swift). We can easily separate the View codes from the ViewController. After we separate the Views, we willwillwillwillwillwillwillwill only have Control and Data access codes in ViewController.&#x20;
 
@@ -1677,7 +1677,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **3.3. Send data back from Screen 2 to Screen 1** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **3.3. Send data back from Screen 2 to Screen 1** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -1931,7 +1931,7 @@ extension ShowViewController: UIPickerViewDelegate, UIPickerViewDataSource{
 
 The keyword **`extension`** allows you to write code inside the same context of a class. You are writing code literally inside a class if you use an extension. &#x20;
 
-We will choose the second option, where we can keep the code separated. So, let's implement or adopt the methods in the protocols and define them. You need to write code for three methods to properly set up the `moodPicker:`
+We will choose the second option, where we can keep the code separated. Let's implement or adopt the methods in the protocols and define them. You need to write code for three methods to properly set up the `moodPicker:`
 
 ```swift
 // MARK: Conforming required PickerView protocols...
@@ -2533,7 +2533,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **this topic** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **this topic** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -2837,7 +2837,7 @@ You'll see that at the bottom right of Xcode, "Button clicked!!" is printed on t
 
 ### Displaying an Alert
 
-Now, we will display an alert instead of just printing "Button clicked!!" So, let's define an AlertController when the button is clicked. We want to display the text the user added in `textFieldUser`. So, we can write the code below to fetch what the user typed in the text field.
+Now, we will display an alert instead of just printing "Button clicked!!" Let's define an AlertController when the button is clicked. We want to display the text the user added in `textFieldUser`. So, we can write the code below to fetch what the user typed in the text field.
 
 ```swift
 @objc func onButtonClickMeTapped(){

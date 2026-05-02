@@ -9,7 +9,7 @@
 
 ## Table of Contents
 
-{{< section >}}
+
 
 
 ### Collections
@@ -20,7 +20,7 @@
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **Collections** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **Collections** to manage and organize data in our applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -419,7 +419,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **Operators** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **Operators** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -689,7 +689,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **Conditionals** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **Conditionals** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -901,7 +901,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **Loops** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **Loops** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -1177,7 +1177,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **Functions** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **Functions** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -1442,7 +1442,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **Closures** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **Closures** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -1695,7 +1695,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **Optionals** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **Optionals** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -1856,7 +1856,7 @@ We will first talk about structs and then move into classes.
 
 ## Table of Contents
 
-{{< section >}}
+
 
 
 ### Protocols
@@ -1867,7 +1867,7 @@ We will first talk about structs and then move into classes.
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **Protocols** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **Protocols** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -2204,7 +2204,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **Sorting Arrays** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **Sorting Arrays** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -2428,7 +2428,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **9.1. Structs** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **9.1. Structs** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -2467,7 +2467,7 @@ struct Person{
 
 Here the struct `Person` holds three properties (we call the variables inside structs properties): two strings `name` and `city`, and one integer `age`. **Please note that** in Swift the name of a struct or class should start with an uppercase character, like **P****erson.**
 
-Now since struct creates a custom data type for us, we can use `Person` as a data type everywhere. So, let's create a new variable (or instance, more appropriately) of type `Person`.
+Now since struct creates a custom data type for us, we can use `Person` as a data type everywhere. Let's create a new variable (or instance, more appropriately) of type `Person`.
 
 ```swift
 var newPerson: Person = Person(name: "Bob Smith", age: 30, city: "Boston")
@@ -2827,7 +2827,7 @@ Do you see an issue? `year` is wrapped with Optional. So if you want to use it a
 
 What about we try to update a property of an object and write a function **directly inside of the struct**? So, potentially we will use an inherent function to update a property of the current object.&#x20;
 
-So, let's try to add a new function inside the struct `Car` , `updateYear()` to change the year of a car.
+Let's try to add a new function inside the struct `Car` , `updateYear()` to change the year of a car.
 
 ```swift
 // updating a car's year...
@@ -2978,7 +2978,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **9.2. Classes** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **9.2. Classes** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
@@ -3283,7 +3283,7 @@ Because this course is fully asynchronous, here's how to get unstuck:
 
 
 **🎯 Topic Mission:** 
-In this module, we will explore **this topic** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+In this module, we will explore **this topic** and understand its fundamental mechanics. Your mission is to understand the mechanics behind this concept and write robust Swift code.
 
 
 ---
