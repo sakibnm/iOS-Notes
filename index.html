@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iOS Application Development</title>
+  <meta name="description"
+    content="iOS & Swift course materials. Fifteen topics plus an optional Kotlin Multiplatform module." />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <link rel="stylesheet" href="/assets/search.css" />
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23007AFF'%3E%3Cpath d='M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z'/%3E%3C/svg%3E" />
+  <script src="/assets/theme.js"></script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="masthead">
+    <div class="rule">
+      <span>iOS Development</span>
+      <span>
+        <a href="#topics">Topics</a>
+        <a href="#about">About</a>
+        <button class="search-trigger" aria-label="Open search">Search</button>
+        <button class="theme-toggle" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">
+          <svg class="theme-toggle-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+          <svg class="theme-toggle-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <span class="theme-toggle-label">Theme</span>
+        </button>
+      </span>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow">Course materials · iOS · Swift</p>
+      <h1 id="hero-title">iOS Application Development</h1>
+      <p class="lede">
+        <strong>Note:</strong> This is a complete restructure of the course with Kotlin. Prof Miazi will be continuously
+        updating the materials of the course.<br /><br />
+        A introductory mobile application development course using Swift and UIKit, delivered fully online
+        and asynchronously.
+        Each topic covers objectives, preparation, lecture videos, a guided self-paced lab, a code
+        walkthrough, and a graded assignment. An optional Kotlin Multiplatform module extends the
+        curriculum to iOS.
+      </p>
+      <dl class="hero-meta">
+        <div>
+          <dt>Stack</dt>
+          <dd>Swift · UIKit · Firebase</dd>
+        </div>
+        <div>
+          <dt>Effort</dt>
+          <dd>7 modules · 6–9h each</dd>
+        </div>
+        <div>
+          <dt>Format</dt>
+          <dd>Fully online · Asynchronous</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="section" id="roadmap" aria-labelledby="roadmap-label">
+      <h2 class="section-label" id="roadmap-label">Course Roadmap</h2>
+      <p class="section-title">
+        Learning Roadmap
+      </p>
+
+      <div class="mermaid-container"
+        style="background: var(--paper-raised); padding: 1rem; border-radius: 8px; border: 1px solid var(--rule); margin-bottom: 2rem; overflow-x: auto; text-align: center;">
+        <pre class="mermaid">
+      graph LR
+          A[Foundations<br>Swift] --> B[Architecture<br>UIKit & MVC]
+          B --> C[Data & Network<br>APIs & JSON]
+          C --> D[Advanced<br>Persistence & CoreData]
+          D --> E[Cloud<br>Firebase & Maps]
+    </pre>
+      </div>
+    </section>
+
+    <section class="section" id="topics" aria-labelledby="topics-label">
+      <h2 class="section-label" id="topics-label">The syllabus</h2>
+
+      <div class="topics">
+      <a href="/week.html?w=01" class="topic-card">
+        <div class="num">01</div>
+        <h3>Getting Started</h3>
+        <div class="kicker">Xcode, Playgrounds, and the Basics.</div>
+      </a>
+      <a href="/week.html?w=02" class="topic-card">
+        <div class="num">02</div>
+        <h3>Swift Fundamentals</h3>
+        <div class="kicker">Variables, Collections, and Control Flow.</div>
+      </a>
+      <a href="/week.html?w=03" class="topic-card">
+        <div class="num">03</div>
+        <h3>Introduction to UIKit</h3>
+        <div class="kicker">ViewControllers, MVC, and IB.</div>
+      </a>
+      <a href="/week.html?w=04" class="topic-card">
+        <div class="num">04</div>
+        <h3>Advanced UI Components</h3>
+        <div class="kicker">TableViews, ScrollViews, and Menus.</div>
+      </a>
+      <a href="/week.html?w=05" class="topic-card">
+        <div class="num">05</div>
+        <h3>Networking & APIs</h3>
+        <div class="kicker">HTTP, JSON parsing, and Alamofire.</div>
+      </a>
+      <a href="/week.html?w=06" class="topic-card">
+        <div class="num">06</div>
+        <h3>Data Persistence</h3>
+        <div class="kicker">NotificationCenter and Local Storage.</div>
+      </a>
+      <a href="/week.html?w=07" class="topic-card">
+        <div class="num">07</div>
+        <h3>Cloud & Maps</h3>
+        <div class="kicker">Firebase Auth, Firestore, and MapKit.</div>
+      </a>
+    </div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-label">
+      <div class="inner">
+        <h2>About this course</h2>
+        <div>
+          <p>
+            Welcome to CS&nbsp;4520/5520! In this course, you're going to learn how to build Android apps from the
+            ground up using the modern Kotlin-first stack. We'll be diving into tools like Jetpack&nbsp;Compose,
+            Material&nbsp;3, coroutines with Flow, and ViewModels with StateFlow. You'll also get hands-on experience
+            with Retrofit, Firebase (Auth, Firestore, and Storage), Room, DataStore, Maps, CameraX, and basic testing.
+          </p>
+          <p>
+            The course is completely online and asynchronous, meaning you can learn at your own pace! Each module covers
+            a new topic and includes lecture videos, reading materials, a guided lab, a code walkthrough, and a graded
+            assignment. While there are no mandatory live sessions, our instructional team—TAs and your instructor—holds
+            weekly drop-in Zoom office hours whenever you need help. You can also always jump into Piazza, our main
+            discussion hub. Everything builds up to a semester-long team project where you'll submit a demo
+            video showcasing what you've built.
+          </p>
+          <p>
+            Want to take things a step further? There's an <a href="/week.html?w=kmp">optional Kotlin Multiplatform
+              module</a> if you're interested in extending your shared code to run on iOS.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div>
+      <div>CS&nbsp;4520/5520 · iOS Application Development · Summer&nbsp;I&nbsp;2026</div>
+      <div>Northeastern University · Boston</div>
+    </div>
+    <div class="footer-credits">
+      <div>This site was masterminded by Sakib Miazi, who generously allowed a few AI bots to type out the boilerplate
+        code. 🧠✨</div>
+    </div>
+  </footer>
+
+  <script src="/assets/search.js" defer></script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: isDark ? 'dark' : 'default',
+      fontFamily: 'inherit'
+    });
+  </script>
+</body>
+
+</html>
