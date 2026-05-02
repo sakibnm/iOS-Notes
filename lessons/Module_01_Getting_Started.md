@@ -54,7 +54,9 @@ Open your current Xcode project or start a new Playground to follow along with t
 
 There are a few options to rent a cloud MacOS VM, like, Mac Stadium, AWS, and Mac in Cloud. I personally prefer **Mac In Cloud** ([https://macincloud.com](https://www.macincloud.com)). Please watch the following video to set up a Mac In Cloud instance and start using it on your Windows or Linux computer.
 
-[View Resource](https://youtu.be/mOuH4u0rlyM)
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 1.5rem; border-radius: 8px; border: 1px solid var(--rule);">
+  <iframe src="https://www.youtube.com/embed/mOuH4u0rlyM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+</div>
 
 
 

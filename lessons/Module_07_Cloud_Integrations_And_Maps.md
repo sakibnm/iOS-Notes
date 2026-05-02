@@ -236,19 +236,27 @@ Firebase is a Google service portal through which Google provides users with man
 
 ### Getting started with Firebase
 
-[View Resource](https://youtu.be/1I9KMcQ_XCg)
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 1.5rem; border-radius: 8px; border: 1px solid var(--rule);">
+  <iframe src="https://www.youtube.com/embed/1I9KMcQ_XCg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+</div>
 
 ### Enabling Authentication, Firestore, and Storage
 
-[View Resource](https://youtu.be/gdQDxqoTT5U)
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 1.5rem; border-radius: 8px; border: 1px solid var(--rule);">
+  <iframe src="https://www.youtube.com/embed/gdQDxqoTT5U" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+</div>
 
 ### Adding Firebase to our App
 
-[View Resource](https://youtu.be/W0RGrDo4Bv4)
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 1.5rem; border-radius: 8px; border: 1px solid var(--rule);">
+  <iframe src="https://www.youtube.com/embed/W0RGrDo4Bv4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+</div>
 
 ### Firestore Data Structure
 
-[View Resource](https://youtu.be/eqW7KNChx5A)
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 1.5rem; border-radius: 8px; border: 1px solid var(--rule);">
+  <iframe src="https://www.youtube.com/embed/eqW7KNChx5A" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+</div>
 
 ### Firebase Official Documentation
 

@@ -96,7 +96,9 @@ HTTP stands for HyperText Transfer Protocol. It is used by two parties to transm
 
 ### Installing Postman
 
-[View Resource](https://www.youtube.com/watch?v=v62mZZ6HG8Y)
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 1.5rem; border-radius: 8px; border: 1px solid var(--rule);">
+  <iframe src="https://www.youtube.com/embed/v62mZZ6HG8Y" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+</div>
 
 * Visit [this link](https://www.postman.com/downloads/?utm\_source=postman-home) to download Postman. Install it on your Mac by copying the extracted file into the Applications folder. Open it, create an account, and log in.
 * Then create a new collection by clicking on `+` icon on the top left corner. Then add requests to start testing.
@@ -107,7 +109,9 @@ HTTP stands for HyperText Transfer Protocol. It is used by two parties to transm
 
 Please watch the video to learn how to use Postman with an API.
 
-[View Resource](https://www.youtube.com/watch?v=0kQbmIaIvVk)
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 1.5rem; border-radius: 8px; border: 1px solid var(--rule);">
+  <iframe src="https://www.youtube.com/embed/0kQbmIaIvVk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+</div>
 
 ### Contacts API details
 

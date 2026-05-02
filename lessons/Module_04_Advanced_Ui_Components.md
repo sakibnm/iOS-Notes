@@ -2395,7 +2395,9 @@ You need to update the privacy description for Camera Usage in the app 'Info' co
 
 Now let's run the app. I ran the app on my iPad to demonstrate it is working.
 
-[View Resource](https://www.youtube.com/watch?v=FnCsBWWiv0Y)
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 1.5rem; border-radius: 8px; border: 1px solid var(--rule);">
+  <iframe src="https://www.youtube.com/embed/FnCsBWWiv0Y" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+</div>
 
 
 
@@ -2721,7 +2723,9 @@ A great guide with other tricks can be found here: [https://kaushalelsewhere.med
 
 It is a little complicated, watch the video below to understand the aspects of it:
 
-[View Resource](https://www.youtube.com/watch?v=O4tP7egAV1I)
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 1.5rem; border-radius: 8px; border: 1px solid var(--rule);">
+  <iframe src="https://www.youtube.com/embed/O4tP7egAV1I" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+</div>
 
 Source code: [https://github.com/jrasmusson/ios-professional-course/blob/main/Password-Reset/7-Dealing-Keyboards/README.md](https://github.com/jrasmusson/ios-professional-course/blob/main/Password-Reset/7-Dealing-Keyboards/README.md)
 

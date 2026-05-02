@@ -3327,7 +3327,9 @@ Do not create an Xcode project yet; click on _**File -> New -> Playground**_. Se
 
 ### Video
 
-[View Resource](https://www.youtube.com/watch?v=IG9nba_A7Z4)
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 1.5rem; border-radius: 8px; border: 1px solid var(--rule);">
+  <iframe src="https://www.youtube.com/embed/IG9nba_A7Z4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+</div>
 Demo
 
 
@@ -3363,7 +3365,9 @@ Since greeting is a variable, we can change the values without creating a new va
 
 ### Video
 
-[View Resource](https://youtu.be/_a2NJAJg-WM)
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 1.5rem; border-radius: 8px; border: 1px solid var(--rule);">
+  <iframe src="https://www.youtube.com/embed/_a2NJAJg-WM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+</div>
 
 
 
@@ -3401,7 +3405,9 @@ var million = 1_000_000
 
 ### Video
 
-[View Resource](https://youtu.be/XrHRxOiLX_o)
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 1.5rem; border-radius: 8px; border: 1px solid var(--rule);">
+  <iframe src="https://www.youtube.com/embed/XrHRxOiLX_o" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+</div>
 
 
 
@@ -3437,7 +3443,9 @@ Now you get the full view of how a multiline String would get displayed.
 
 ### Video
 
-[View Resource](https://youtu.be/FEoQh4CarpM)
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 1.5rem; border-radius: 8px; border: 1px solid var(--rule);">
+  <iframe src="https://www.youtube.com/embed/FEoQh4CarpM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+</div>
 
 
 
@@ -3479,7 +3487,9 @@ One thing to note is that I put the value as 13 for myFloat, which would be inte
 
 ### Video
 
-[View Resource](https://youtu.be/TU-5-RWzJMs)
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 1.5rem; border-radius: 8px; border: 1px solid var(--rule);">
+  <iframe src="https://www.youtube.com/embed/TU-5-RWzJMs" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+</div>
 
 
 

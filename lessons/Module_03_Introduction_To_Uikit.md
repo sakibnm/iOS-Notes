@@ -612,7 +612,9 @@ This is called the Navigation of the app, where you define how the screen transi
 
 Navigation Controller is a Stack data structure. The user sees the screen from the top of the Stack. If we want to navigate from one screen to another screen, the user can call the `push()` method of the Navigation Controller to push Screen 2 on top of Screen 1. Since the user sees the Stack from above the Stack, the user will see Screen 2 now. Whenever the user is done dealing with screen 2, and they want to get back to screen 1, they have to basically use the Navigation Controller to `pop()` Screen 2 from the Stack. Then Screen 1 will be at the top of the Stack again
 
-[View Resource](https://www.youtube.com/watch?v=JozvVb4QyvE)
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 1.5rem; border-radius: 8px; border: 1px solid var(--rule);">
+  <iframe src="https://www.youtube.com/embed/JozvVb4QyvE" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+</div>
 Navigation Controller Stack
 
 
@@ -3028,7 +3030,9 @@ Now, our first app 'App1' is complete!
 
 ### TA Arpan created the video on this module for us:
 
-[View Resource](https://www.youtube.com/watch?v=pEwhCh9j8wo)
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 1.5rem; border-radius: 8px; border: 1px solid var(--rule);">
+  <iframe src="https://www.youtube.com/embed/pEwhCh9j8wo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+</div>
 
 ---
 
