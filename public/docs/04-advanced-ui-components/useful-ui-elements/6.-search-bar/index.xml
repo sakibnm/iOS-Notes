@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>iOS UIKit Course</title><link>/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/</link><description>Recent content on iOS UIKit Course</description><generator>Hugo</generator><language>en-us</language><atom:link href="/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/index.xml" rel="self" type="application/rss+xml"/><item><title>6.1. Setting up the Views</title><link>/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/6.1.-setting-up-the-views/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/6.1.-setting-up-the-views/</guid><description>&lt;h1 id="61-setting-up-the-views"&gt;6.1. Setting up the Views&lt;a class="anchor" href="#61-setting-up-the-views"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;The view of this app is very simple; we have two UI elements on the screen:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A Search Bar&lt;/li&gt;
+&lt;li&gt;A Table View&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="mainscreenviewswift"&gt;MainScreenView.swift&lt;a class="anchor" href="#mainscreenviewswift"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s create a file named MainScreenView.swift and put the following code there:&lt;/p&gt;
+&lt;p&gt;{% code lineNumbers=&amp;ldquo;true&amp;rdquo; %}&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-swift" data-lang="swift"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;//&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// MainScreenView.swift&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// SearchBarDemo&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;//&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// Created by Sakib Miazi on 6/12/23.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;//&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;import&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;UIKit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;MainScreenView&lt;/span&gt;: UIView {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; searchBar: UISearchBar!
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; tableViewSearchResults: UITableView!
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;override&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;init&lt;/span&gt;(frame: CGRect) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;super&lt;/span&gt;.&lt;span style="color:#66d9ef"&gt;init&lt;/span&gt;(frame: frame)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;self&lt;/span&gt;.backgroundColor = .white
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;//&lt;/span&gt;&lt;span style="color:#75715e"&gt;MARK:&lt;/span&gt;&lt;span style="color:#75715e"&gt; Search Bar...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; searchBar = UISearchBar()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; searchBar.placeholder = &lt;span style="color:#e6db74"&gt;&amp;#34;Search names..&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; searchBar.translatesAutoresizingMaskIntoConstraints = &lt;span style="color:#66d9ef"&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;self&lt;/span&gt;.addSubview(searchBar)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;//&lt;/span&gt;&lt;span style="color:#75715e"&gt;MARK:&lt;/span&gt;&lt;span style="color:#75715e"&gt; Table view...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; tableViewSearchResults = UITableView()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; tableViewSearchResults.register(SearchTableViewCell.&lt;span style="color:#66d9ef"&gt;self&lt;/span&gt;, forCellReuseIdentifier: Configs.searchTableViewID)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; tableViewSearchResults.translatesAutoresizingMaskIntoConstraints = &lt;span style="color:#66d9ef"&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;self&lt;/span&gt;.addSubview(tableViewSearchResults)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;//&lt;/span&gt;&lt;span style="color:#75715e"&gt;MARK:&lt;/span&gt;&lt;span style="color:#75715e"&gt; constraints...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; NSLayoutConstraint.activate([
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; searchBar.topAnchor.constraint(equalTo: &lt;span style="color:#66d9ef"&gt;self&lt;/span&gt;.safeAreaLayoutGuide.topAnchor),
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; searchBar.leadingAnchor.constraint(equalTo: &lt;span style="color:#66d9ef"&gt;self&lt;/span&gt;.safeAreaLayoutGuide.leadingAnchor, constant: &lt;span style="color:#ae81ff"&gt;16&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; searchBar.trailingAnchor.constraint(equalTo: &lt;span style="color:#66d9ef"&gt;self&lt;/span&gt;.safeAreaLayoutGuide.trailingAnchor, constant: &lt;span style="color:#f92672"&gt;-&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;16&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; tableViewSearchResults.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: &lt;span style="color:#ae81ff"&gt;8&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; tableViewSearchResults.bottomAnchor.constraint(equalTo: &lt;span style="color:#66d9ef"&gt;self&lt;/span&gt;.safeAreaLayoutGuide.bottomAnchor),
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; tableViewSearchResults.widthAnchor.constraint(equalTo: &lt;span style="color:#66d9ef"&gt;self&lt;/span&gt;.safeAreaLayoutGuide.widthAnchor),
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; tableViewSearchResults.widthAnchor.constraint(equalTo: &lt;span style="color:#66d9ef"&gt;self&lt;/span&gt;.safeAreaLayoutGuide.widthAnchor),
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ])
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;required&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;init&lt;/span&gt;?(coder: NSCoder) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; fatalError(&lt;span style="color:#e6db74"&gt;&amp;#34;init(coder:) has not been implemented&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; } 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;{% endcode %}&lt;/p&gt;</description></item><item><title>6.2. Setting up the View Controller: Handling the Search Bar</title><link>/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/6.2.-setting-up-the-view-controller-handling-the-search-bar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/6.2.-setting-up-the-view-controller-handling-the-search-bar/</guid><description>&lt;h1 id="62-setting-up-the-view-controller-handling-the-search-bar"&gt;6.2. Setting up the View Controller: Handling the Search Bar&lt;a class="anchor" href="#62-setting-up-the-view-controller-handling-the-search-bar"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Let&amp;rsquo;s open ViewController.swift file and put the following code there:&lt;/p&gt;
+&lt;p&gt;{% code lineNumbers=&amp;ldquo;true&amp;rdquo; %}&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-swift" data-lang="swift"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;//&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// ViewController.swift&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// SearchBarDemo&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;//&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// Created by Sakib Miazi on 6/12/23.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;//&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;import&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;UIKit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;ViewController&lt;/span&gt;: UIViewController {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;let&lt;/span&gt; mainScreen = MainScreenView()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;//&lt;/span&gt;&lt;span style="color:#75715e"&gt;MARK:&lt;/span&gt;&lt;span style="color:#75715e"&gt; the list of names...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; namesDatabase = [
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;Marvin Cook&amp;#34;&lt;/span&gt;,&lt;span style="color:#e6db74"&gt;&amp;#34;Samira Jimenez&amp;#34;&lt;/span&gt;,&lt;span style="color:#e6db74"&gt;&amp;#34;Coral Hancock&amp;#34;&lt;/span&gt;,&lt;span style="color:#e6db74"&gt;&amp;#34;Xander Wade&amp;#34;&lt;/span&gt;,&lt;span style="color:#e6db74"&gt;&amp;#34;Terence Mcneil&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;Dewey Buckley&amp;#34;&lt;/span&gt;,&lt;span style="color:#e6db74"&gt;&amp;#34;Ophelia Higgins&amp;#34;&lt;/span&gt;,&lt;span style="color:#e6db74"&gt;&amp;#34;Asiya Anthony&amp;#34;&lt;/span&gt;,&lt;span style="color:#e6db74"&gt;&amp;#34;Francesco Knight&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;Claude Gonzalez&amp;#34;&lt;/span&gt;,&lt;span style="color:#e6db74"&gt;&amp;#34;Demi Decker&amp;#34;&lt;/span&gt;,&lt;span style="color:#e6db74"&gt;&amp;#34;Casey Park&amp;#34;&lt;/span&gt;,&lt;span style="color:#e6db74"&gt;&amp;#34;Jon Hendrix&amp;#34;&lt;/span&gt;,&lt;span style="color:#e6db74"&gt;&amp;#34;Hope Harvey&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;Richie Alexander&amp;#34;&lt;/span&gt;,&lt;span style="color:#e6db74"&gt;&amp;#34;Carmen Proctor&amp;#34;&lt;/span&gt;,&lt;span style="color:#e6db74"&gt;&amp;#34;Mercedes Callahan&amp;#34;&lt;/span&gt;,&lt;span style="color:#e6db74"&gt;&amp;#34;Yahya Gibbs&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;Julian Pittman&amp;#34;&lt;/span&gt;,&lt;span style="color:#e6db74"&gt;&amp;#34;Shauna Ray&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;//&lt;/span&gt;&lt;span style="color:#75715e"&gt;MARK:&lt;/span&gt;&lt;span style="color:#75715e"&gt; the array to display the table view...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; namesForTableView = [String]()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;override&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;func&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;loadView&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; view = mainScreen
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;override&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;func&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;viewDidLoad&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;super&lt;/span&gt;.viewDidLoad()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;//&lt;/span&gt;&lt;span style="color:#75715e"&gt;MARK:&lt;/span&gt;&lt;span style="color:#75715e"&gt; sorting the names list...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; namesDatabase.sort()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;//&lt;/span&gt;&lt;span style="color:#75715e"&gt;MARK:&lt;/span&gt;&lt;span style="color:#75715e"&gt; setting up Table View data source and delegate...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; mainScreen.tableViewSearchResults.delegate = &lt;span style="color:#66d9ef"&gt;self&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; mainScreen.tableViewSearchResults.dataSource = &lt;span style="color:#66d9ef"&gt;self&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;//&lt;/span&gt;&lt;span style="color:#75715e"&gt;MARK:&lt;/span&gt;&lt;span style="color:#75715e"&gt; setting up Search Bar delegate...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; mainScreen.searchBar.delegate = &lt;span style="color:#66d9ef"&gt;self&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;//&lt;/span&gt;&lt;span style="color:#75715e"&gt;MARK:&lt;/span&gt;&lt;span style="color:#75715e"&gt; initializing the array for the table view with all the names...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; namesForTableView = namesDatabase
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;//&lt;/span&gt;&lt;span style="color:#75715e"&gt;MARK:&lt;/span&gt;&lt;span style="color:#75715e"&gt; adopting Table View protocols...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;extension&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;ViewController&lt;/span&gt;: UITableViewDelegate, UITableViewDataSource{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;func&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;tableView&lt;/span&gt;(&lt;span style="color:#66d9ef"&gt;_&lt;/span&gt; tableView: UITableView, numberOfRowsInSection section: Int) -&amp;gt; Int {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; namesForTableView.count
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;func&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;tableView&lt;/span&gt;(&lt;span style="color:#66d9ef"&gt;_&lt;/span&gt; tableView: UITableView, cellForRowAt indexPath: IndexPath) -&amp;gt; UITableViewCell {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;let&lt;/span&gt; cell = tableView.dequeueReusableCell(
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; withIdentifier: Configs.searchTableViewID, &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt;: indexPath) &lt;span style="color:#66d9ef"&gt;as&lt;/span&gt;! SearchTableViewCell
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; cell.labelTitle.text = namesForTableView[indexPath.row]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; cell
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;//&lt;/span&gt;&lt;span style="color:#75715e"&gt;MARK:&lt;/span&gt;&lt;span style="color:#75715e"&gt; adopting the search bar protocol...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;extension&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;ViewController&lt;/span&gt;: UISearchBarDelegate{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;func&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;searchBar&lt;/span&gt;(&lt;span style="color:#66d9ef"&gt;_&lt;/span&gt; searchBar: UISearchBar, textDidChange searchText: String) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;{% endcode %}&lt;/p&gt;</description></item><item><title>6.3. Reference Code</title><link>/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/6.3.-reference-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/6.3.-reference-code/</guid><description>&lt;h1 id="63-reference-code"&gt;6.3. Reference Code&lt;a class="anchor" href="#63-reference-code"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;{% file src=&amp;quot;/gitbook-assets/SearchBarDemo (1).zip&amp;quot; %}&lt;/p&gt;</description></item></channel></rss>

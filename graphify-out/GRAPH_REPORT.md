@@ -1,12 +1,12 @@
 # Graph Report - iOS-Notes  (2026-05-01)
 
 ## Corpus Check
-- 18 files · ~133,309,346 words
+- 20 files · ~133,703,729 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 5139 nodes · 18173 edges · 48 communities detected
-- Extraction: 92% EXTRACTED · 8% INFERRED · 0% AMBIGUOUS · INFERRED: 1488 edges (avg confidence: 0.8)
+- 5149 nodes · 18197 edges · 48 communities detected
+- Extraction: 92% EXTRACTED · 8% INFERRED · 0% AMBIGUOUS · INFERRED: 1500 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
@@ -67,13 +67,13 @@
 5. `e()` - 167 edges
 6. `get()` - 103 edges
 7. `get()` - 103 edges
-8. `forEach()` - 98 edges
+8. `forEach()` - 99 edges
 9. `Ht()` - 95 edges
 10. `forEach()` - 84 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Xwe()` --calls--> `O()`  [INFERRED]
-  public/mermaid.min.js → themes/hugo-book/static/asciinema/asciinema-player.min.js
+- `main()` --calls--> `exists()`  [INFERRED]
+  scratch/sequence.py → themes/hugo-book/static/mermaid.min.js
 - `e()` --calls--> `apply()`  [INFERRED]
   public/fuse.min.js → themes/hugo-book/static/mermaid.min.js
 - `e()` --calls--> `forEach()`  [INFERRED]
@@ -87,191 +87,191 @@
 
 ### Community 0 - "Community 0"
 Cohesion: 0.01
-Nodes (199): addEntry(), aI(), alternatives(), AT_LEAST_ONE(), AT_LEAST_ONE1(), AT_LEAST_ONE2(), AT_LEAST_ONE3(), AT_LEAST_ONE4() (+191 more)
+Nodes (241): addToResyncTokens(), alternatives(), AN(), AT_LEAST_ONE(), AT_LEAST_ONE1(), AT_LEAST_ONE2(), AT_LEAST_ONE3(), AT_LEAST_ONE4() (+233 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.01
-Nodes (182): alternatives(), AQ(), AT_LEAST_ONE(), AT_LEAST_ONE1(), AT_LEAST_ONE2(), AT_LEAST_ONE3(), AT_LEAST_ONE4(), AT_LEAST_ONE5() (+174 more)
+Nodes (231): addToResyncTokens(), alternatives(), AQ(), AT_LEAST_ONE(), AT_LEAST_ONE1(), AT_LEAST_ONE2(), AT_LEAST_ONE3(), AT_LEAST_ONE4() (+223 more)
 
 ### Community 2 - "Community 2"
 Cohesion: 0.01
-Nodes (393): O(), pt(), Bwe(), cMe(), d5(), eD(), nq(), RMe() (+385 more)
+Nodes (375): $A(), e(), each(), I, II(), O(), s(), t() (+367 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.02
-Nodes (195): _, $A(), AA(), Ag(), B, bA(), Bg(), BI() (+187 more)
+Nodes (268): $2(), _7e(), $9(), AAe(), aC(), accept(), addAstNodeRegionWithAssignmentsTo(), _Ae() (+260 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.03
-Nodes (234): Ht(), mt(), A2(), ad(), addVertex(), AEe(), Ah(), AL() (+226 more)
+Cohesion: 0.02
+Nodes (241): $2(), $9(), AAe(), aC(), accept(), _Ae(), aF(), aFe() (+233 more)
 
 ### Community 5 - "Community 5"
-Cohesion: 0.03
-Nodes (82): F, element(), focusSearchFieldOnKeyPress(), init(), isHotkey(), search(), _, an() (+74 more)
+Cohesion: 0.02
+Nodes (143): _, AA(), Ag(), B, bA(), Bg(), BI(), C() (+135 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.03
-Nodes (185): $2(), $9(), AAe(), aC(), accept(), _Ae(), aF(), aFe() (+177 more)
+Cohesion: 0.02
+Nodes (91): F, element(), focusSearchFieldOnKeyPress(), init(), isHotkey(), search(), _, an() (+83 more)
 
 ### Community 7 - "Community 7"
 Cohesion: 0.03
-Nodes (164): II(), ie(), _5(), $8e(), A0(), A5(), aa(), AK() (+156 more)
+Nodes (215): Ht(), mt(), generate_index_md(), main(), prepend_frontmatter(), A2(), ad(), AEe() (+207 more)
 
 ### Community 8 - "Community 8"
-Cohesion: 0.02
-Nodes (158): $6e(), Abe(), addActor(), addAll(), addAnnotation(), addClass(), addClassesToNamespace(), addDescription() (+150 more)
+Cohesion: 0.05
+Nodes (142): _7e(), A2(), ad(), AEe(), ar(), arc(), assign(), Bc() (+134 more)
 
 ### Community 9 - "Community 9"
-Cohesion: 0.03
-Nodes (156): $6e(), addActor(), addAll(), addAnnotation(), addClass(), addClassesToNamespace(), addDescription(), addDocument() (+148 more)
+Cohesion: 0.02
+Nodes (139): $6e(), A7e(), addActor(), addAll(), addAnnotation(), addAttributes(), addClass(), addClassesToNamespace() (+131 more)
 
 ### Community 10 - "Community 10"
-Cohesion: 0.06
-Nodes (128): A2(), Abe(), ad(), AEe(), AL(), ar(), arc(), Bc() (+120 more)
+Cohesion: 0.03
+Nodes (129): $6e(), addAll(), addAnnotation(), addAttributes(), addClass(), addClassesToNamespace(), addCssStyles(), addDescription() (+121 more)
 
 ### Community 11 - "Community 11"
-Cohesion: 0.03
-Nodes (115): activationCount(), addAttributes(), addBox(), addCssStyles(), addHiddenNodes(), addMessage(), addNote(), addRelationship() (+107 more)
+Cohesion: 0.02
+Nodes (130): __(), _0(), A7e(), ACTION(), activationCount(), addActor(), addBox(), addMessage() (+122 more)
 
 ### Community 12 - "Community 12"
 Cohesion: 0.03
-Nodes (110): A_e(), addAstNodeRegionWithAssignmentsTo(), all(), allElements(), b2(), b_e(), bK(), Bse() (+102 more)
+Nodes (106): A_e(), addMembers(), addParents(), ADe(), autolink(), b$(), bindFunctions(), bLe() (+98 more)
 
 ### Community 13 - "Community 13"
 Cohesion: 0.03
-Nodes (107): _0(), A7e(), activationCount(), addAttributes(), addBox(), addCssStyles(), addMessage(), addNote() (+99 more)
+Nodes (100): A_e(), addMembers(), ADe(), b$(), b2(), b_e(), bindFunctions(), bK() (+92 more)
 
 ### Community 14 - "Community 14"
 Cohesion: 0.03
-Nodes (102): addEntry(), AK(), bBe(), bl(), Bn(), buildKeywordPattern(), buildKeywordToken(), c6e() (+94 more)
+Nodes (99): acquireParserWorker(), ACTION(), addNode(), addTokenUsingPush(), after(), assignWithoutOverride(), before(), buildCompositeNode() (+91 more)
 
 ### Community 15 - "Community 15"
 Cohesion: 0.03
-Nodes (97): $0e(), _7e(), a(), a8(), ale(), Am(), ap(), B7e() (+89 more)
+Nodes (98): addEntry(), AK(), bBe(), buildKeywordPattern(), buildKeywordToken(), cM(), cN(), computeIsSubtype() (+90 more)
 
 ### Community 16 - "Community 16"
 Cohesion: 0.03
-Nodes (96): A_e(), addAstNodeRegionWithAssignmentsTo(), addMembers(), allElements(), bindFunctions(), bLe(), Bse(), buildKeywordTokens() (+88 more)
+Nodes (94): addEntry(), bBe(), Bn(), buildKeywordPattern(), buildKeywordToken(), c6e(), cN(), computeIsSubtype() (+86 more)
 
 ### Community 17 - "Community 17"
 Cohesion: 0.06
-Nodes (92): alternative(), assertion(), atom(), atomEscape(), characterClass(), characterClassEscape(), classAtom(), classEscape() (+84 more)
+Nodes (90): alternative(), assertion(), atom(), atomEscape(), characterClass(), characterClassEscape(), classAtom(), classEscape() (+82 more)
 
 ### Community 18 - "Community 18"
-Cohesion: 0.03
-Nodes (90): aSe(), b2(), b_e(), bK(), bnt(), buildTerminalToken(), c8e(), cd() (+82 more)
+Cohesion: 0.05
+Nodes (84): acquireParserWorker(), addHiddenNodes(), AG(), atLeastOneInternalLogic(), atLeastOneSepFirstInternalLogic(), attemptInRepetitionRecovery(), beginGroup(), bh() (+76 more)
 
 ### Community 19 - "Community 19"
-Cohesion: 0.03
-Nodes (84): e(), aMe(), checkSingleRoot(), f7e(), gy(), H1(), H3(), Iie() (+76 more)
+Cohesion: 0.04
+Nodes (78): addDocument(), addPoints(), Am(), AU(), buildDocuments(), computeExports(), computeExportsForNode(), createAsync() (+70 more)
 
 ### Community 20 - "Community 20"
-Cohesion: 0.04
-Nodes (78): addLink(), addSingleLink(), autolink(), Bg(), blockquote(), blockTokens(), code(), codespan() (+70 more)
+Cohesion: 0.03
+Nodes (77): Abe(), activationCount(), addBox(), addDocument(), addMessage(), addNote(), addPoints(), addSignal() (+69 more)
 
 ### Community 21 - "Community 21"
-Cohesion: 0.06
-Nodes (72): hx(), i8e(), z8(), $4(), _5(), $8e(), A0(), A5() (+64 more)
+Cohesion: 0.03
+Nodes (74): $(), __(), _0(), add(), ale(), B4e(), bW(), cI() (+66 more)
 
 ### Community 22 - "Community 22"
 Cohesion: 0.04
-Nodes (73): acquireParserWorker(), addLink(), addParents(), addSingleLink(), autolink(), blockquote(), blockTokens(), buildRootNode() (+65 more)
+Nodes (76): all(), allElements(), ap(), BI(), buildReference(), computeLocalScopes(), createDescription(), createLinkingError() (+68 more)
 
 ### Community 23 - "Community 23"
-Cohesion: 0.07
-Nodes (72): acquireParserWorker(), addHiddenNodes(), addParents(), AG(), beginGroup(), bh(), buildLeafNode(), buildRootNode() (+64 more)
+Cohesion: 0.08
+Nodes (67): addHiddenNodes(), addParents(), AG(), beginGroup(), bh(), buildLeafNode(), buildRootNode(), callFunction() (+59 more)
 
 ### Community 24 - "Community 24"
 Cohesion: 0.04
-Nodes (70): addToResyncTokens(), atLeastOneInternalLogic(), atLeastOneSepFirstInternalLogic(), attemptInRepetitionRecovery(), BACKTRACK(), buildEarlyExitMessage(), buildFullFollowKeyStack(), buildMismatchTokenMessage() (+62 more)
+Nodes (65): addALink(), addDetails(), addLinks(), addNode(), addProperties(), bEe(), BI(), Bxe() (+57 more)
 
 ### Community 25 - "Community 25"
-Cohesion: 0.04
-Nodes (70): all(), _be(), build(), Bv(), calculateHorizontalSpace(), calculateSpace(), calculateSpaceIfDrawnHorizontally(), calculateSpaceIfDrawnVertical() (+62 more)
+Cohesion: 0.07
+Nodes (63): ie(), aa(), b2(), b_e(), bK(), c1(), Cp(), Di() (+55 more)
 
 ### Community 26 - "Community 26"
-Cohesion: 0.04
-Nodes (68): gA(), bLe(), bM(), buildLeftRecursionError(), buildRuleNotFoundError(), C2(), C_e(), checkIsTarget() (+60 more)
+Cohesion: 0.05
+Nodes (62): Bse(), buildKeywordTokens(), buildTerminalToken(), buildTerminalTokens(), buildTokens(), calculateHorizontalSpace(), calculateSpace(), calculateSpaceIfDrawnHorizontally() (+54 more)
 
 ### Community 27 - "Community 27"
-Cohesion: 0.04
-Nodes (60): U, Ah(), c_(), Ch(), clamp(), cwe(), dD(), dH() (+52 more)
+Cohesion: 0.07
+Nodes (60): _5(), $8e(), A0(), A5(), b8e(), bl(), C5(), clamp() (+52 more)
 
 ### Community 28 - "Community 28"
 Cohesion: 0.04
-Nodes (60): __(), add(), addALink(), addDetails(), addLinks(), addProperties(), bW(), c_() (+52 more)
+Nodes (60): add(), aI(), Ax(), B4e(), bCe(), Bse(), bt(), buildTokens() (+52 more)
 
 ### Community 29 - "Community 29"
-Cohesion: 0.08
-Nodes (61): AG(), beginGroup(), bh(), callFunction(), cG(), consume(), consumeArg(), consumeArgs() (+53 more)
+Cohesion: 0.05
+Nodes (57): ap(), buildReference(), cI(), computeLocalScopes(), createDescription(), createLinkingError(), createScope(), createScopeForNodes() (+49 more)
 
 ### Community 30 - "Community 30"
-Cohesion: 0.05
-Nodes (58): ACTION(), after(), assignWithoutOverride(), before(), buildCompositeNode(), buildReference(), construct(), createDehyrationContext() (+50 more)
+Cohesion: 0.07
+Nodes (56): _5(), $8e(), A0(), A5(), Ah(), b8e(), bl(), C5() (+48 more)
 
 ### Community 31 - "Community 31"
-Cohesion: 0.05
-Nodes (56): add(), B4e(), bW(), calculate(), cancel(), clear(), constructor(), create() (+48 more)
+Cohesion: 0.06
+Nodes (55): _be(), build(), buildKeywordTokens(), calculateHorizontalSpace(), calculateSpace(), calculateSpaceIfDrawnHorizontally(), calculateSpaceIfDrawnVertical(), calculateVerticalSpace() (+47 more)
 
 ### Community 32 - "Community 32"
-Cohesion: 0.05
-Nodes (51): __(), _0(), A7e(), a8(), addALink(), addDetails(), addLinks(), addProperties() (+43 more)
+Cohesion: 0.06
+Nodes (52): autolink(), blockquote(), blockTokens(), checkbox(), code(), codespan(), def(), del() (+44 more)
 
 ### Community 33 - "Community 33"
-Cohesion: 0.06
-Nodes (51): ACTION(), after(), ap(), assign(), assignWithoutOverride(), before(), Bq(), buildCompositeNode() (+43 more)
+Cohesion: 0.05
+Nodes (47): buildTerminalToken(), buildTerminalTokens(), cd(), createIndentationTokenInstance(), dedentMatcher(), every(), exists(), Fg() (+39 more)
 
 ### Community 34 - "Community 34"
-Cohesion: 0.05
-Nodes (50): AN(), B4e(), BI(), bt(), calculate(), clear(), constructor(), df() (+42 more)
+Cohesion: 0.06
+Nodes (43): blockquote(), blockTokens(), checkbox(), code(), codespan(), def(), del(), Dxe() (+35 more)
 
 ### Community 35 - "Community 35"
-Cohesion: 0.05
-Nodes (48): addMembers(), ADe(), bindFunctions(), cancel(), cancelWrite(), D2(), dashedLine(), _De() (+40 more)
+Cohesion: 0.06
+Nodes (37): aI(), Ax(), bCe(), Bg(), c6e(), computeLookaheadFunc(), cramp(), disableRecording() (+29 more)
 
 ### Community 36 - "Community 36"
-Cohesion: 0.05
-Nodes (48): aI(), Ax(), bCe(), Bg(), cramp(), eT(), finalize(), fontMetrics() (+40 more)
+Cohesion: 0.09
+Nodes (36): $4(), Axe(), Bn(), Cl(), dEe(), dit(), Exe(), F4() (+28 more)
 
 ### Community 37 - "Community 37"
-Cohesion: 0.05
-Nodes (47): addNode(), bEe(), Bxe(), c1e(), consumeInternalRecord(), count(), cW(), decorateNode() (+39 more)
+Cohesion: 0.07
+Nodes (34): Am(), B7e(), bMe(), BS(), bue(), C2e(), cde(), E2e() (+26 more)
 
 ### Community 38 - "Community 38"
-Cohesion: 0.06
-Nodes (44): age(), bje(), Ch(), cke(), cqe(), dqe(), E_(), FJe() (+36 more)
+Cohesion: 0.08
+Nodes (33): Ah(), Bg(), cramp(), escape(), eT(), fillSketch(), finalize(), fontMetrics() (+25 more)
 
 ### Community 39 - "Community 39"
-Cohesion: 0.06
-Nodes (41): bezierCurveTo(), closePath(), cW(), eet(), Eje(), g1e(), Gb(), gC() (+33 more)
+Cohesion: 0.1
+Nodes (28): bezierCurveTo(), closePath(), cW(), _drawToContext(), eet(), Eje(), htt(), j0() (+20 more)
 
 ### Community 40 - "Community 40"
-Cohesion: 0.13
-Nodes (27): $4(), Axe(), Cxe(), dit(), Exe(), F4(), getDisplayDetails(), IC() (+19 more)
+Cohesion: 0.08
+Nodes (26): a8(), c1e(), c8(), consumeInternalRecord(), ETe(), f_(), hM(), iMe() (+18 more)
 
 ### Community 41 - "Community 41"
-Cohesion: 0.1
-Nodes (26): addNode(), bEe(), count(), decorateNode(), _Ee(), eSe(), gEe(), getParent() (+18 more)
+Cohesion: 0.11
+Nodes (25): bezierCurveTo(), closePath(), cW(), eet(), Eje(), htt(), j0(), Jje() (+17 more)
 
 ### Community 42 - "Community 42"
-Cohesion: 0.1
-Nodes (26): aUe(), bue(), C2e(), cde(), E2e(), eH(), eUe(), iue() (+18 more)
+Cohesion: 0.12
+Nodes (23): aUe(), bue(), C2e(), cde(), eH(), eUe(), iue(), jVe() (+15 more)
 
 ### Community 43 - "Community 43"
-Cohesion: 0.13
-Nodes (26): calculateHorizontalSpace(), calculateSpace(), calculateSpaceIfDrawnHorizontally(), calculateSpaceIfDrawnVertical(), calculateVerticalSpace(), getAxisOuterPadding(), getDrawableElement(), getDrawableElements() (+18 more)
+Cohesion: 0.19
+Nodes (22): $4(), Axe(), Cl(), dit(), Exe(), F4(), H5(), IC() (+14 more)
 
 ### Community 44 - "Community 44"
-Cohesion: 0.1
-Nodes (26): aUe(), bue(), C2e(), cde(), E2e(), eH(), eUe(), iue() (+18 more)
+Cohesion: 0.11
+Nodes (22): age(), bje(), cqe(), dqe(), FJe(), fqe(), Gb(), Hge() (+14 more)
 
 ### Community 45 - "Community 45"
-Cohesion: 0.11
-Nodes (24): age(), bje(), cqe(), dqe(), FJe(), fqe(), Hge(), hje() (+16 more)
+Cohesion: 0.12
+Nodes (20): addALink(), addDetails(), addLinks(), addProperties(), deserialize(), fromModel(), fue(), getActor() (+12 more)
 
 ### Community 46 - "Community 46"
-Cohesion: 0.19
-Nodes (13): addRelationship(), drt(), frt(), getType(), Hve(), Uve(), Wve(), drt() (+5 more)
+Cohesion: 0.28
+Nodes (9): aSe(), bnt(), cSe(), D9(), hf(), hN(), k2e(), oBe() (+1 more)
 
 ### Community 47 - "Community 47"
 Cohesion: 0.67
@@ -284,12 +284,12 @@ Nodes (1): r()
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Js()` connect `Community 0` to `Community 2`, `Community 3`, `Community 4`, `Community 5`, `Community 6`, `Community 7`, `Community 8`, `Community 12`, `Community 13`, `Community 15`, `Community 17`, `Community 19`, `Community 20`, `Community 21`, `Community 23`, `Community 24`, `Community 26`, `Community 28`, `Community 30`, `Community 34`, `Community 35`, `Community 38`, `Community 39`, `Community 40`, `Community 41`, `Community 42`, `Community 43`, `Community 46`?**
-  _High betweenness centrality (0.582) - this node is a cross-community bridge._
-- **Why does `O()` connect `Community 2` to `Community 0`, `Community 1`, `Community 3`, `Community 4`, `Community 6`, `Community 7`, `Community 8`, `Community 9`, `Community 10`, `Community 11`, `Community 12`, `Community 13`, `Community 14`, `Community 15`, `Community 16`, `Community 17`, `Community 18`, `Community 19`, `Community 20`, `Community 21`, `Community 23`, `Community 24`, `Community 25`, `Community 27`, `Community 28`, `Community 29`, `Community 30`, `Community 31`, `Community 32`, `Community 33`, `Community 34`, `Community 35`, `Community 36`, `Community 37`, `Community 38`, `Community 39`, `Community 41`, `Community 42`, `Community 43`, `Community 44`, `Community 46`?**
-  _High betweenness centrality (0.284) - this node is a cross-community bridge._
-- **Why does `e()` connect `Community 19` to `Community 0`, `Community 1`, `Community 2`, `Community 3`, `Community 4`, `Community 6`, `Community 7`, `Community 8`, `Community 9`, `Community 10`, `Community 11`, `Community 12`, `Community 13`, `Community 14`, `Community 15`, `Community 16`, `Community 18`, `Community 20`, `Community 21`, `Community 22`, `Community 24`, `Community 25`, `Community 26`, `Community 27`, `Community 28`, `Community 30`, `Community 32`, `Community 33`, `Community 35`, `Community 37`, `Community 38`, `Community 39`, `Community 41`, `Community 43`?**
-  _High betweenness centrality (0.049) - this node is a cross-community bridge._
+- **Why does `Js()` connect `Community 1` to `Community 2`, `Community 4`, `Community 5`, `Community 6`, `Community 8`, `Community 10`, `Community 11`, `Community 12`, `Community 16`, `Community 17`, `Community 18`, `Community 19`, `Community 24`, `Community 25`, `Community 27`, `Community 28`, `Community 29`, `Community 31`, `Community 33`, `Community 34`, `Community 38`, `Community 39`, `Community 42`, `Community 43`, `Community 46`?**
+  _High betweenness centrality (0.600) - this node is a cross-community bridge._
+- **Why does `O()` connect `Community 2` to `Community 0`, `Community 1`, `Community 3`, `Community 4`, `Community 5`, `Community 7`, `Community 8`, `Community 9`, `Community 10`, `Community 11`, `Community 12`, `Community 13`, `Community 15`, `Community 16`, `Community 17`, `Community 18`, `Community 19`, `Community 20`, `Community 21`, `Community 22`, `Community 23`, `Community 25`, `Community 26`, `Community 27`, `Community 28`, `Community 29`, `Community 30`, `Community 31`, `Community 32`, `Community 33`, `Community 34`, `Community 36`, `Community 37`, `Community 38`, `Community 39`, `Community 40`, `Community 41`, `Community 42`, `Community 43`?**
+  _High betweenness centrality (0.302) - this node is a cross-community bridge._
+- **Why does `e()` connect `Community 2` to `Community 0`, `Community 1`, `Community 3`, `Community 4`, `Community 5`, `Community 7`, `Community 8`, `Community 9`, `Community 10`, `Community 11`, `Community 12`, `Community 13`, `Community 14`, `Community 16`, `Community 19`, `Community 20`, `Community 22`, `Community 24`, `Community 25`, `Community 26`, `Community 27`, `Community 28`, `Community 29`, `Community 30`, `Community 33`, `Community 37`, `Community 39`, `Community 40`, `Community 41`, `Community 45`?**
+  _High betweenness centrality (0.033) - this node is a cross-community bridge._
 - **Are the 235 inferred relationships involving `O()` (e.g. with `b$()` and `w$()`) actually correct?**
   _`O()` has 235 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 160 inferred relationships involving `e()` (e.g. with `UV()` and `iTe()`) actually correct?**
