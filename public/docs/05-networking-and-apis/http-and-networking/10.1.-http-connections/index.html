@@ -1,15 +1,3389 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content='10.1. HTTP connections# Intro to HTTP
-{% embed url=“https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d52f70dc-ac38-4530-9e9a-ae9e01243cec" %}
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="10.1. HTTP connections# Intro to HTTP
+{% embed url=“https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d52f70dc-ac38-4530-9e9a-ae9e01243cec&#34; %}
 HTTP stands for HyperText Transfer Protocol. It is used by two parties to transmit data between themselves over the Internet. For example, When you browse the web, your browser uses HTTP. The two parties are called:
 Client: who requests data. For example, an app is requesting information about the user. Server: who responds with the requested data. For example, the database server who responds to the app by sending the user information. The request from a client: When a client sends a request to the server, it includes the following:
-'><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="/docs/05-networking-and-apis/http-and-networking/10.1.-http-connections/"><meta property="og:site_name" content="iOS UIKit Course"><meta property="og:title" content="10.1. HTTP connections"><meta property="og:description" content='10.1. HTTP connections# Intro to HTTP
-{% embed url=“https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d52f70dc-ac38-4530-9e9a-ae9e01243cec" %}
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="//localhost:1313/docs/05-networking-and-apis/http-and-networking/10.1.-http-connections/">
+  <meta property="og:site_name" content="iOS UIKit Course">
+  <meta property="og:title" content="10.1. HTTP connections">
+  <meta property="og:description" content="10.1. HTTP connections# Intro to HTTP
+{% embed url=“https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d52f70dc-ac38-4530-9e9a-ae9e01243cec&#34; %}
 HTTP stands for HyperText Transfer Protocol. It is used by two parties to transmit data between themselves over the Internet. For example, When you browse the web, your browser uses HTTP. The two parties are called:
-Client: who requests data. For example, an app is requesting information about the user. Server: who responds with the requested data. For example, the database server who responds to the app by sending the user information. The request from a client: When a client sends a request to the server, it includes the following:'><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta itemprop=name content="10.1. HTTP connections"><meta itemprop=description content='10.1. HTTP connections# Intro to HTTP
-{% embed url=“https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d52f70dc-ac38-4530-9e9a-ae9e01243cec" %}
+Client: who requests data. For example, an app is requesting information about the user. Server: who responds with the requested data. For example, the database server who responds to the app by sending the user information. The request from a client: When a client sends a request to the server, it includes the following:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="10.1. HTTP connections">
+  <meta itemprop="description" content="10.1. HTTP connections# Intro to HTTP
+{% embed url=“https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d52f70dc-ac38-4530-9e9a-ae9e01243cec&#34; %}
 HTTP stands for HyperText Transfer Protocol. It is used by two parties to transmit data between themselves over the Internet. For example, When you browse the web, your browser uses HTTP. The two parties are called:
-Client: who requests data. For example, an app is requesting information about the user. Server: who responds with the requested data. For example, the database server who responds to the app by sending the user information. The request from a client: When a client sends a request to the server, it includes the following:'><meta itemprop=wordCount content="504"><title>10.1. HTTP connections | iOS UIKit Course</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=/docs/05-networking-and-apis/http-and-networking/10.1.-http-connections/><link rel=stylesheet href=/book.min.4d6d5ad3b0ae85d2a15b20ab217863f70db543e46314629e239ced759e674898.css><script defer src=/fuse.min.js></script><script defer src=/en.search.min.e6a1a3fb88e89103ded2947d8fb82dac991cdb25b0fd74298b4577ffa07dfdff.js></script></head><body dir=ltr class="book-kind-page book-type-docs"><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>iOS UIKit Course</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a>Module 1: Getting Started</a><ul><li><a>Getting Started</a><ul><li><a href=/docs/01-getting-started/getting-started/preparing-your-development-environment/>Preparing Your Development Environment</a></li><li><a href=/docs/01-getting-started/getting-started/setting-up-xcode/>Setting Up Xcode</a></li></ul></li></ul></li><li><a>Module 2: Swift Fundamentals</a><ul><li><a>Variables & Data Types</a><ul><li><a href=/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./>1. Variables Data Types and More.</a><ul><li><a href=/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.1.-creating-a-swift-playground/>1.1. Creating a Swift Playground</a></li><li><a href=/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.2.-variables/>1.2. Variables</a></li><li><a href=/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.3.-type-safety/>1.3. Type safety</a></li><li><a href=/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.4.-strings-and-print-to-console/>1.4. Strings and print to console</a></li><li><a href=/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.5.-floating-point-numbers-and-type-annotation/>1.5. Floating point numbers and Type annotation</a></li><li><a href=/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.6.-more-print-string-interpolation/>1.6. More print, String interpolation</a></li><li><a href=/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.7.-constants/>1.7. Constants</a></li><li><a href=/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.8.-type-annotations-revisited/>1.8. Type annotations (revisited)</a></li><li><a href=/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.9.-comments/>1.9. Comments</a></li><li><a href=/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.10.-reference-code/>1.10. Reference Code</a></li></ul></li></ul></li><li><a href=/docs/02-swift-fundamentals/collections/>Collections</a><ul><li><a href=/docs/02-swift-fundamentals/collections/2.1.-arrays/>2.1. Arrays</a></li><li><a href=/docs/02-swift-fundamentals/collections/2.2.-sets/>2.2. Sets</a></li><li><a href=/docs/02-swift-fundamentals/collections/2.3.-tuples/>2.3. Tuples</a></li><li><a href=/docs/02-swift-fundamentals/collections/2.4.-dictionaries/>2.4. Dictionaries</a></li><li><a href=/docs/02-swift-fundamentals/collections/2.5.-reference-code/>2.5. Reference Code</a></li></ul></li><li><a href=/docs/02-swift-fundamentals/operators/>Operators</a><ul><li><a href=/docs/02-swift-fundamentals/operators/3.1.-arithmetic-operations/>3.1. Arithmetic Operations</a></li><li><a href=/docs/02-swift-fundamentals/operators/3.2.-operator-overloading/>3.2. Operator overloading</a></li><li><a href=/docs/02-swift-fundamentals/operators/3.3.-more-on-operators/>3.3. More on Operators</a></li><li><a href=/docs/02-swift-fundamentals/operators/3.4.-comparison-operators-and-booleans/>3.4. Comparison Operators (and Booleans)</a></li><li><a href=/docs/02-swift-fundamentals/operators/3.5.-reference-code/>3.5. Reference Code</a></li></ul></li><li><a href=/docs/02-swift-fundamentals/conditionals/>Conditionals</a><ul><li><a href=/docs/02-swift-fundamentals/conditionals/4.1.-if-statements/>4.1. If statements</a></li><li><a href=/docs/02-swift-fundamentals/conditionals/4.2.-if-else-statements/>4.2. If-else statements</a></li><li><a href=/docs/02-swift-fundamentals/conditionals/4.3.-switch-statements/>4.3. Switch statements</a></li><li><a href=/docs/02-swift-fundamentals/conditionals/4.4.-combining-operators/>4.4. Combining operators</a></li><li><a href=/docs/02-swift-fundamentals/conditionals/4.5.-range-operators/>4.5. Range operators</a></li><li><a href=/docs/02-swift-fundamentals/conditionals/4.6.-reference-code/>4.6. Reference Code</a></li></ul></li><li><a href=/docs/02-swift-fundamentals/loops/>Loops</a><ul><li><a href=/docs/02-swift-fundamentals/loops/5.1.-for-loops/>5.1. For loops</a></li><li><a href=/docs/02-swift-fundamentals/loops/5.2.-while-loops/>5.2. While loops</a></li><li><a href=/docs/02-swift-fundamentals/loops/5.3.-repeat-loops/>5.3. Repeat loops</a></li><li><a href=/docs/02-swift-fundamentals/loops/5.4.-break-and-continue/>5.4. Break and continue</a></li><li><a href=/docs/02-swift-fundamentals/loops/5.5.-reference-code/>5.5. Reference Code</a></li></ul></li><li><a href=/docs/02-swift-fundamentals/functions/>Functions</a><ul><li><a href=/docs/02-swift-fundamentals/functions/6.1.-writing-functions/>6.1. Writing functions</a></li><li><a href=/docs/02-swift-fundamentals/functions/6.2.-functions-with-parameters/>6.2. Functions with parameters</a></li><li><a href=/docs/02-swift-fundamentals/functions/6.3.-functions-that-return-a-value/>6.3. Functions that return a value</a></li><li><a href=/docs/02-swift-fundamentals/functions/6.4.-more-on-function-parameters/>6.4. More on function parameters</a></li><li><a href=/docs/02-swift-fundamentals/functions/6.5.-reference-code/>6.5. Reference Code</a></li></ul></li><li><a href=/docs/02-swift-fundamentals/closures/>Closures</a><ul><li><a href=/docs/02-swift-fundamentals/closures/7.1.-closures-with-parameters/>7.1. Closures with parameters</a></li><li><a href=/docs/02-swift-fundamentals/closures/7.2.-closures-that-return-a-value/>7.2. Closures that return a value</a></li><li><a href=/docs/02-swift-fundamentals/closures/7.3.-closures-as-parameters/>7.3. Closures as parameters</a></li><li><a href=/docs/02-swift-fundamentals/closures/7.4.-reference-code/>7.4. Reference Code</a></li></ul></li><li><a href=/docs/02-swift-fundamentals/optionals/>Optionals</a><ul></ul></li><li><a href=/docs/02-swift-fundamentals/custom-data-types/>Custom Data Types</a><ul><li><a href=/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/>9.1. Structs</a><ul><li><a href=/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/9.1.1.-functions-methods-inside-structs/>9.1.1. Functions (methods) inside structs</a></li><li><a href=/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/9.1.2.-initializing-structs-with-different-initializers/>9.1.2. Initializing structs with different initializers</a></li><li><a href=/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/9.1.3.-manipulating-object-properties-inherently-in-a-struct/>9.1.3. Manipulating object properties inherently in a struct</a></li></ul></li><li><a href=/docs/02-swift-fundamentals/custom-data-types/9.2.-classes/>9.2. Classes</a><ul><li><a href=/docs/02-swift-fundamentals/custom-data-types/9.2.-classes/9.2.1.-inheritance/>9.2.1. Inheritance</a></li><li><a href=/docs/02-swift-fundamentals/custom-data-types/9.2.-classes/9.2.2.-value-vs.-reference/>9.2.2. Value vs. Reference</a></li></ul></li></ul></li><li><a href=/docs/02-swift-fundamentals/protocols/>Protocols</a><ul><li><a href=/docs/02-swift-fundamentals/protocols/10.1.-adopting-a-protocol/>10.1. Adopting a protocol</a></li><li><a href=/docs/02-swift-fundamentals/protocols/10.2.-creating-a-single-protocol-from-multiple-protocols/>10.2. Creating a single protocol from multiple protocols</a></li><li><a href=/docs/02-swift-fundamentals/protocols/10.3.-inheriting-a-super-class-and-adopting-protocols-together/>10.3. Inheriting a super class and adopting protocols together</a></li></ul></li><li><a href=/docs/02-swift-fundamentals/sorting-arrays/>Sorting Arrays</a><ul><li><a href=/docs/02-swift-fundamentals/sorting-arrays/11.1.-increasing-order/>11.1. Increasing order</a></li><li><a href=/docs/02-swift-fundamentals/sorting-arrays/11.2.-decreasing-order/>11.2. Decreasing order</a></li><li><a href=/docs/02-swift-fundamentals/sorting-arrays/11.-3.-sorting-an-array-of-custom-data/>11. 3. Sorting an array of custom data</a></li></ul></li></ul></li><li><a>Module 3: Introduction to UIKit</a><ul><li><a>Creating Our First App</a><ul><li><a href=/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/>1. Creating Our First App</a><ul><li><a href=/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/1.1.-project-structure-overview/>1.1. Project structure overview</a></li><li><a href=/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/1.2.-uilabel-our-first-ui-element/>1.2. UILabel, our first UI element</a></li><li><a href=/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/1.3.-uitextfield-and-constraints/>1.3. UITextField, and constraints</a></li><li><a href=/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/1.4.-uibutton-and-uialertcontroller/>1.4. UIButton, and UIAlertController</a></li><li><a href=/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/1.5.-wrapping-up-appicon/>1.5. Wrapping up: AppIcon</a></li><li><a href=/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/1.6.-reference-code-and-video/>1.6. Reference Code and Video</a></li></ul></li></ul></li><li><a href=/docs/03-introduction-to-uikit/designing-without-storyboards/>Designing Without Storyboards</a><ul><li><a href=/docs/03-introduction-to-uikit/designing-without-storyboards/2.1.-converting-the-storyboard-to-code/>2.1. Converting the storyboard to code</a></li><li><a href=/docs/03-introduction-to-uikit/designing-without-storyboards/2.2.-reference-code/>2.2. Reference Code</a></li></ul></li><li><a href=/docs/03-introduction-to-uikit/multi-screen-apps/>Multi-Screen Apps</a><ul><li><a href=/docs/03-introduction-to-uikit/multi-screen-apps/3.1.-navigation-controller/>3.1. Navigation Controller and UI setup</a></li><li><a href=/docs/03-introduction-to-uikit/multi-screen-apps/3.2.-send-data-from-screen-1-viewcontroller-to-screen2-showviewcontroller/>3.2. Send data from Screen 1 (ViewController) to Screen2 (ShowViewController)</a></li><li><a href=/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/>3.3. Send data back from Screen 2 to Screen 1</a><ul><li><a href=/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/3.4.-send-data-back-from-screen-2-to-screen-1-part-2-uipickerview/>3.3.1. Send data back from Screen 2 to Screen 1: UIPickerView</a></li><li><a href=/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/3.5.-send-data-back-from-screen-2-to-screen-1-part-3-delegating-to-viewcontroller/>3.3.2. Send data back from Screen 2 to Screen 1: delegating to ViewController</a></li><li><a href=/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/3.6.-send-data-back-from-screen-2-to-screen-1-part-4-uiimageview/>3.3.3. Send data back from Screen 2 to Screen 1: UIImageView</a></li></ul></li><li><a href=/docs/03-introduction-to-uikit/multi-screen-apps/3.7.-reference-code/>3.4. Reference Code</a></li></ul></li><li><a href=/docs/03-introduction-to-uikit/mvc-architecture/>MVC Architecture</a><ul><li><a href=/docs/03-introduction-to-uikit/mvc-architecture/4.1.-creating-a-separate-view-code-file/>4.1. Creating a separate View code file</a></li><li><a href=/docs/03-introduction-to-uikit/mvc-architecture/4.2.-patching-the-view-class-with-the-viewcontroller/>4.2. Patching the View class with the ViewController</a></li><li><a href=/docs/03-introduction-to-uikit/mvc-architecture/4.3.-creating-the-display-screen/>4.3. Creating the Display Screen</a></li><li><a href=/docs/03-introduction-to-uikit/mvc-architecture/4.4.-navigation-controller-and-sending-data-from-screen-1-to-screen-2/>4.4. Navigation Controller and sending data from screen 1 to screen 2</a></li><li><a href=/docs/03-introduction-to-uikit/mvc-architecture/4.5.-wrapping-up-structuring-the-files/>4.5. Wrapping up: structuring the files</a></li><li><a href=/docs/03-introduction-to-uikit/mvc-architecture/4.6.-reference-code/>4.6. Reference Code</a></li></ul></li></ul></li><li><a>Module 4: Advanced UI Components</a><ul><li><a href=/docs/04-advanced-ui-components/uitableview/>UITableView</a><ul><li><a href=/docs/04-advanced-ui-components/uitableview/5.1.-expense-app/>5.1. Expense App</a></li><li><a href=/docs/04-advanced-ui-components/uitableview/5.2.-first-screen-part-1-adding-a-bar-button/>5.2. First screen, part 1: Adding a Bar Button</a></li><li><a href=/docs/04-advanced-ui-components/uitableview/5.3.-first-screen-part-2-setting-up-the-view-of-the-first-screen-with-tableview./>5.3. First screen, part 2: Setting up the View of the First Screen with TableView.</a></li><li><a href=/docs/04-advanced-ui-components/uitableview/5.4.-first-screen-part-3-setting-up-the-view-controller-and-populating-tableview/>5.4. First screen, part 3: Setting up the View Controller and populating TableView</a></li><li><a href=/docs/04-advanced-ui-components/uitableview/5.5.-second-screen-part-1-setting-up-the-view-of-the-add-expense-screen/>5.5. Second screen, part 1: Setting up the View of the Add Expense Screen</a></li><li><a href=/docs/04-advanced-ui-components/uitableview/5.6.-second-screen-part-2-setting-up-add-expense-view-controller/>5.6. Second screen, part 2: Setting up Add Expense View Controller</a></li><li><a href=/docs/04-advanced-ui-components/uitableview/5.7.-second-screen-part-3-send-new-expense-back-to-viewcontroller-and-update-the-tableview/>5.7. Second screen, part 3: Send new expense back to ViewController and update the TableView</a></li><li><a href=/docs/04-advanced-ui-components/uitableview/5.8.-tapping-a-cell-in-tableview-and-practice-exercise/>5.8. Tapping a cell in TableView and Practice exercise</a></li><li><a href=/docs/04-advanced-ui-components/uitableview/5.9.-reference-code/>5.9. Reference Code</a></li></ul></li><li><a href=/docs/04-advanced-ui-components/uiscrollview/>UIScrollView</a><ul><li><a href=/docs/04-advanced-ui-components/uiscrollview/8.1.-creating-the-view-of-the-screen/>8.1. Creating the View of the Screen</a></li><li><a href=/docs/04-advanced-ui-components/uiscrollview/8.2.-creating-the-controller/>8.2. Creating the Controller</a></li><li><a href=/docs/04-advanced-ui-components/uiscrollview/8.3.-reference-code/>8.3. Reference Code</a></li></ul></li><li><a href=/docs/04-advanced-ui-components/uimenu-and-image-pickers/>UIMenu & Image Pickers</a><ul><li><a href=/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.1.-updating-the-tableview-cell-to-accommodate-an-imageview/>6.1. Updating the TableView Cell to accommodate an ImageView</a></li><li><a href=/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.2.-add-expense-screen/>6.2. Add Expense Screen</a></li><li><a href=/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.3.-addexpenseviewcontroller-uimenu-for-buttonselecttype/>6.3. AddExpenseViewController: UIMenu for buttonSelectType</a></li><li><a href=/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.4.-addexpenseviewcontroller-uimenu-for-buttontakephoto/>6.4. AddExpenseViewController: UIMenu for buttonTakePhoto</a></li><li><a href=/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.5.-using-gallery-phpicker/>6.5. Using Gallery: PHPicker</a></li><li><a href=/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.6.-using-camera-uiimagepickercontroller/>6.6. Using Camera: UIImagePickerController</a></li><li><a href=/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.7.-getting-the-expense-back-to-viewcontroller/>6.7. Getting the expense back to ViewController</a></li><li><a href=/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.8.-wrapping-up-a-bit-of-polishing/>6.8. Wrapping Up: a bit of polishing</a></li><li><a href=/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.9.-reference-code/>6.9. Reference Code</a></li></ul></li><li><a>Useful UI Elements</a><ul><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/embed-navigation-controller-from-code-not-storyboard/>Embed Navigation Controller from code (Not Storyboard)</a></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/1.-hiding-keyboard-when-tapped-outside/>1. Hiding Keyboard When Tapped Outside</a></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/2.-slide-up-the-view-to-accommodate-the-on-screen-keyboard/>2. Slide Up the View to Accommodate the on Screen Keyboard</a></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/3.-saving-small-data-when-the-app-is-not-running-session-or-other-state-variables/>3. Saving Small Data When the App Is Not Running Session or Other State Variables</a></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/4.-stack-view/>4. Stack View</a></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/>5. Tab Bar Controller</a><ul><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/5.1.-views-of-the-screens/>1. Views of the Screens</a></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/5.2.-controllers-of-the-screens/>2. Controllers of the Screens</a></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/5.3.-patching-the-screens-in-the-tab-bar/>3. Patching the Screens in the Tab Bar</a></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/5.4.-sending-data-from-one-tab-to-another/>4. Sending data From one Tab to Another</a></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/5.5.-reference-code/>5. Reference Code</a></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/5.6.-notes-for-tab-bar-controller/>6. Notes for Tab Bar Controller</a></li></ul></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/>6. Search Bar</a><ul><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/6.1.-setting-up-the-views/>6.1. Setting up the Views</a></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/6.2.-setting-up-the-view-controller-handling-the-search-bar/>6.2. Setting up the View Controller: Handling the Search Bar</a></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/6.3.-reference-code/>6.3. Reference Code</a></li></ul></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/>Bottom Sheet View Modal Presentation</a><ul><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/1.-creating-the-screen-for-a-bottom-sheet-view/>1. Creating the Screen for a Bottom Sheet View</a></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/2.-setting-up-the-controller-for-the-search-bottom-sheet/>2. Setting up the Controller for the Search Bottom Sheet</a></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/3.-main-screen/>3. Main Screen</a></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/4.-sending-data-back-to-main-screen/>4. Sending data back to Main Screen</a></li><li><a href=/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/5.-reference-code/>5. Reference Code</a></li></ul></li></ul></li></ul></li><li><a>Module 5: Networking & APIs</a><ul><li><a href=/docs/05-networking-and-apis/http-and-networking/>HTTP & Networking</a><ul><li><a href=/docs/05-networking-and-apis/http-and-networking/10.1.-http-connections/ class=active>10.1. HTTP connections</a></li><li><a href=/docs/05-networking-and-apis/http-and-networking/10.2.-postman-a-useful-tool-to-test-web-services/>10.2. Postman: a Useful Tool to Test Web Services</a></li><li><a href=/docs/05-networking-and-apis/http-and-networking/10.3.-testing-our-simple-custom-api-with-postman/>10.3. Testing our Simple Custom API with Postman</a></li><li><a href=/docs/05-networking-and-apis/http-and-networking/10.4.-app-that-uses-our-contact-api/>10.4. App that Uses Our Contact API</a></li><li><a href=/docs/05-networking-and-apis/http-and-networking/10.5.-setting-up-the-view-of-app10/>10.5. Setting up the View of App10</a></li><li><a href=/docs/05-networking-and-apis/http-and-networking/10.9.-reference-code/>10.9. Reference Code</a></li><li><a href=/docs/05-networking-and-apis/http-and-networking/10.6.-fetching-data-with-alamofire-get/>10.6. Fetching Data With Alamofire Get</a></li><li><a href=/docs/05-networking-and-apis/http-and-networking/10.7.-posting-data-with-alamofire-post/>10.7. Posting Data With Alamofire Post</a></li><li><a href=/docs/05-networking-and-apis/http-and-networking/10.8.-fetching-data-with-alamofire-details-endpoint/>10.8. Fetching Data With Alamofire Details Endpoint</a></li></ul></li><li><a href=/docs/05-networking-and-apis/working-with-json/>Working with JSON</a><ul><li><a href=/docs/05-networking-and-apis/working-with-json/11.1.-the-json-api-for-the-contact-app/>11.1. The JSON API for the Contact App</a></li><li><a href=/docs/05-networking-and-apis/working-with-json/11.3.-app11-getting-the-details-of-a-selected-contact-details-endpoint/>11.3. App11: Getting the Details of a Selected Contact (details endpoint)</a></li><li><a href=/docs/05-networking-and-apis/working-with-json/11.4.-must-dos-while-decoding-json-adopting-codable/>11.4. 'Must Do's While Decoding JSON adopting Codable</a></li><li><a href=/docs/05-networking-and-apis/working-with-json/11.5.-app11-add-a-new-contact/>11.5. App11: Add a new Contact</a></li><li><a href=/docs/05-networking-and-apis/working-with-json/11.6.-adding-accessory-button-to-table-view-edit-delete-a-contact/>11.6. Adding Accessory Button to Table View (Edit/Delete a Contact)</a></li><li><a href=/docs/05-networking-and-apis/working-with-json/11.7.-reference-code/>11.7. Reference Code</a></li><li><a href=/docs/05-networking-and-apis/working-with-json/useful-extra-11.8.-decluttering-codes-from-view-controller/>11.8. Decluttering codes from View Controller (Recommended Read)</a></li><li><a href=/docs/05-networking-and-apis/working-with-json/11.2.-app11-getting-all-the-contact-names-getall-endpoint/>11.2. App11 Getting All the Contact Names Getall Endpoint</a></li></ul></li></ul></li><li><a>Module 6: Architecture & Data Flow</a><ul><li><a href=/docs/06-data-persistence-and-architecture/notification-center/>Notification Center</a><ul><li><a href=/docs/06-data-persistence-and-architecture/notification-center/7.1.-app-7/>7.1. App 7</a></li><li><a href=/docs/06-data-persistence-and-architecture/notification-center/7.1.-add-an-observer/>7.1. Add an Observer</a></li><li><a href=/docs/06-data-persistence-and-architecture/notification-center/7.2.-posting-data-to-notification-center/>7.2. Posting Data to Notification Center</a></li><li><a href=/docs/06-data-persistence-and-architecture/notification-center/7.3.-defining-the-names-identifiers-of-the-notifications-in-a-better-way/>7.3. Defining the names (identifiers) of the Notifications in a Better Way</a></li><li><a href=/docs/06-data-persistence-and-architecture/notification-center/7.4.-reference-code/>7.4. Reference Code</a></li></ul></li><li><a>Clean Code & Async</a><ul><li><a href=/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/>1. Writing clean code for Asynchronous operations</a></li><li><a href=/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/1.1.-decluttering-our-app11-contacts-app-with-json/>1.1. Decluttering our App11 (Contacts App with JSON)</a></li><li><a href=/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/1.2.-decluttering-continues.../>1.2. Decluttering continues...</a></li><li><a href=/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/1.3.-reference-code/>1.3. Reference Code</a></li></ul></li></ul></li><li><a>Module 7: Cloud Integrations & Maps</a><ul><li><a href=/docs/07-cloud-integrations-and-maps/cocoapods/>CocoaPods</a><ul><li><a href=/docs/07-cloud-integrations-and-maps/cocoapods/9.1.-installing-cocoa-pods/>9.1. Installing Cocoa Pods</a></li><li><a href=/docs/07-cloud-integrations-and-maps/cocoapods/9.2.-integrating-cocoapods-into-a-project/>9.2. Integrating CocoaPods into a Project</a></li></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/>Firebase Auth & Firestore</a><ul><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.1.-app-12-with-firebase/>12.1. App 12 with Firebase</a></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.2.-setting-up-the-main-screen-view/>12.2. Setting up the Main Screen View</a></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.3.-setting-up-the-viewcontroller-with-tableview/>12.3. Setting up the ViewController with TableView</a></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.4.-authentication-state-handler/>12.4. Authentication State Handler</a></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/>12.5. Implementing Register and Sign In</a><ul><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/12.3.1.-building-the-right-bar-button-s-for-sign-in-and-logout/>12.5.1. Building the Right Bar Button(s) for Sign In and Logout</a></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/12.3.2.-register-screen-create-a-user-in-firebase/>12.5.2. Register Screen: Create a user in Firebase</a></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/12.3.2.-progress-activity-indicator/>12.5.2. Progress Activity Indicator</a></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/12.3.3.-implementing-sign-in/>12.5.3. Implementing Sign In</a></li></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.6.-firestore-structure-for-storing-contacts/>12.6. Firestore Structure for Storing Contacts</a></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.7.-adding-a-new-contact/>12.7. Adding a New Contact</a></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.8.-observing-firestore-updates-updating-the-tableview/>12.8. Observing Firestore Updates: Updating the TableView</a></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.9.-reference-code/>12.9. Reference Code</a></li></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-storage/>Firebase Storage</a><ul><li><a href=/docs/07-cloud-integrations-and-maps/firebase-storage/13.1.-integrating-photo-pickers/>13.1. Integrating Photo Pickers</a></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-storage/13.2.-uploading-the-picked-photo-to-firebase-storage/>13.2. Uploading the Picked Photo to Firebase Storage</a></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-storage/13.3.-displaying-images-hosted-in-cloud/>13.3. Displaying Images Hosted in Cloud</a></li><li><a href=/docs/07-cloud-integrations-and-maps/firebase-storage/13.4.-reference-code/>13.4. Reference Code</a></li></ul></li><li><a href=/docs/07-cloud-integrations-and-maps/mapkit-and-location/>MapKit & Location</a><ul><li><a href=/docs/07-cloud-integrations-and-maps/mapkit-and-location/14.1.-phase-1-displaying-map-view-and-current-location/>14.1. Phase 1: Displaying Map View and Current Location</a></li><li><a href=/docs/07-cloud-integrations-and-maps/mapkit-and-location/14.2.-phase-2-annotations-and-accessories-for-a-certain-place/>14.2. Phase 2: Annotations and Accessories for a certain place</a></li><li><a href=/docs/07-cloud-integrations-and-maps/mapkit-and-location/14.3.-phase-3-place-search-and-navigate/>14.3. Phase 3: Place Search and Navigate</a></li><li><a href=/docs/07-cloud-integrations-and-maps/mapkit-and-location/14.4.-phase-4-display-searched-places-on-map/>14.4. Phase 4: Display Searched Places on Map</a></li><li><a href=/docs/07-cloud-integrations-and-maps/mapkit-and-location/14.5.-reference-code/>14.5. Reference Code</a></li></ul></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><label for=menu-control><img src=/icons/menu.svg class=book-icon alt=Menu></label><h3>10.1. HTTP connections</h3><label for=toc-control></label></div></header><article class="markdown book-article"><h1 id=101-http-connections>10.1. HTTP connections<a class=anchor href=#101-http-connections>#</a></h1><p>Intro to HTTP</p><p>{% embed url=&ldquo;<a href="https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d52f70dc-ac38-4530-9e9a-ae9e01243cec%22">https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d52f70dc-ac38-4530-9e9a-ae9e01243cec"</a> %}</p><p>HTTP stands for HyperText Transfer Protocol. It is used by two parties to transmit data between themselves over the Internet. For example, When you browse the web, your browser uses HTTP. The two parties are called:</p><ul><li><strong>Client</strong>: who requests data. For example, an app is requesting information about the user.</li><li><strong>Server</strong>: who responds with the requested data. For example, the database server who responds to the app by sending the user information.</li></ul><figure><img src="/gitbook-assets/Screenshot 2023-05-25 at 1.09.07 PM (2).png" alt><figcaption></figcaption></figure><p><strong>The request from a client:</strong> When a client sends a request to the server, it includes the following:</p><ul><li><strong>URL (Host/path): Uniform Resource Locator (URL)</strong> is the server&rsquo;s web address/IP address so that the client can locate it over the Internet.</li><li><strong>Method:</strong> There are <a href=https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods>a few kinds of requests</a> a client can make to the server:<ul><li><strong>GET:</strong> this method is used if a client wants to get some data from the server. This method is the most used one in real life.</li><li><strong>POST:</strong> This method is used if a client wants to send some data to the server.</li><li><strong>PUT:</strong> Similar to POST, the system admins often use PUT to update the database servers.</li><li>We will use <strong>GET and POST</strong> methods more than 99% of the time in real life.</li><li>There are other methods, like PUT and DELETE, which we will not discuss here.</li></ul></li><li><strong>Headers:</strong> the metadata a client can send to the server, where a client gives additional details for the request they are sending. For example, a header can hold the client&rsquo;s authentication token to prove the client&rsquo;s authenticity to the server.</li><li><strong>Query String:</strong> If you noticed in real life, many websites have <code>?</code> in their URLs when you browse. For example: <code>http://example.com?q=test&amp;state=MA</code>.<ul><li>Here the URL is <code>http://example.com</code></li><li>After <code>?</code> we have <code>q=test</code> and <code>state=MA</code> separated by <code>&</code>.</li><li>These are key-value pairs. In <code>q=test</code>, q is the key, and test is the value.</li><li>A client can send information to the server using these key-value pairs. The whole thing after <code>?</code> is the query string.</li></ul></li><li><strong>Body:</strong> the body is the rest of the request. There is no limit to the body. A client can send additional information to the server using the request&rsquo;s body—for example, form data, JSON data, etc.</li></ul><p><strong>The server&rsquo;s response:</strong> A typical response from the server includes:</p><ul><li><strong>Status code:</strong> it indicates whether a specific HTTP request has been successfully completed.<ul><li>Informational (100-199)</li><li><strong>Successful (200-299)</strong></li><li>Redirects (300-399)</li><li><strong>Client errors (400-499)</strong></li><li><strong>Server errors (500-599)</strong></li><li>You have probably seen the error 404 at some point in your cyber life. The 400-level codes usually mean the request the client sent was invalid.</li><li>500-level codes are also pretty common. It means the request was correct, yet the server failed to execute properly to process the request.</li><li>200-level codes are the most common, and usually, we don&rsquo;t see them in our browsers because they indicate a successful response.</li></ul></li><li><strong>Body:</strong> the response from the server comes as a part of the body.</li><li><strong>Headers:</strong> SImilar to the request headers, server may use headers to send additional meta data.</li></ul></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=/docs/05-networking-and-apis/http-and-networking/ class="flex align-center"><img src=/icons/backward.svg class=book-icon alt=Backward>
-<span>HTTP & Networking</span>
-</a></span><span><a href=/docs/05-networking-and-apis/http-and-networking/10.2.-postman-a-useful-tool-to-test-web-services/ class="flex align-center"><span>10.2. Postman: a Useful Tool to Test Web Services</span>
-<img src=/icons/forward.svg class=book-icon alt=Forward></a></span></div><div class=book-comments></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div></main></body></html>
+Client: who requests data. For example, an app is requesting information about the user. Server: who responds with the requested data. For example, the database server who responds to the app by sending the user information. The request from a client: When a client sends a request to the server, it includes the following:">
+  <meta itemprop="wordCount" content="504">
+
+<title>10.1. HTTP connections | iOS UIKit Course</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="//localhost:1313/docs/05-networking-and-apis/http-and-networking/10.1.-http-connections/">
+<link rel="stylesheet" href="/book.min.4d6d5ad3b0ae85d2a15b20ab217863f70db543e46314629e239ced759e674898.css" integrity="sha256-TW1a07CuhdKhWyCrIXhj9w21Q&#43;RjFGKeI5ztdZ5nSJg=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.e6a1a3fb88e89103ded2947d8fb82dac991cdb25b0fd74298b4577ffa07dfdff.js" integrity="sha256-5qGj&#43;4jokQPe0pR9j7gtrJkc2yWw/XQpi0V3/6B9/f8=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>iOS UIKit Course</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Module 1: Getting Started</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Getting Started</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/01-getting-started/getting-started/preparing-your-development-environment/" class="">
+      Preparing Your Development Environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/01-getting-started/getting-started/setting-up-xcode/" class="">
+      Setting Up Xcode</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Module 2: Swift Fundamentals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Variables &amp; Data Types</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./" class="">
+      1. Variables Data Types and More.</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.1.-creating-a-swift-playground/" class="">
+      1.1. Creating a Swift Playground</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.2.-variables/" class="">
+      1.2. Variables</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.3.-type-safety/" class="">
+      1.3. Type safety</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.4.-strings-and-print-to-console/" class="">
+      1.4. Strings and print to console</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.5.-floating-point-numbers-and-type-annotation/" class="">
+      1.5. Floating point numbers and Type annotation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.6.-more-print-string-interpolation/" class="">
+      1.6. More print, String interpolation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.7.-constants/" class="">
+      1.7. Constants</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.8.-type-annotations-revisited/" class="">
+      1.8. Type annotations (revisited)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.9.-comments/" class="">
+      1.9. Comments</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/swift-the-programming-language/1.-variables-data-types-and-more./1.10.-reference-code/" class="">
+      1.10. Reference Code</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/collections/" class="">
+      Collections</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/collections/2.1.-arrays/" class="">
+      2.1. Arrays</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/collections/2.2.-sets/" class="">
+      2.2. Sets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/collections/2.3.-tuples/" class="">
+      2.3. Tuples</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/collections/2.4.-dictionaries/" class="">
+      2.4. Dictionaries</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/collections/2.5.-reference-code/" class="">
+      2.5. Reference Code</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/operators/" class="">
+      Operators</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/operators/3.1.-arithmetic-operations/" class="">
+      3.1. Arithmetic Operations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/operators/3.2.-operator-overloading/" class="">
+      3.2. Operator overloading</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/operators/3.3.-more-on-operators/" class="">
+      3.3. More on Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/operators/3.4.-comparison-operators-and-booleans/" class="">
+      3.4. Comparison Operators (and Booleans)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/operators/3.5.-reference-code/" class="">
+      3.5. Reference Code</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/conditionals/" class="">
+      Conditionals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/conditionals/4.1.-if-statements/" class="">
+      4.1. If statements</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/conditionals/4.2.-if-else-statements/" class="">
+      4.2. If-else statements</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/conditionals/4.3.-switch-statements/" class="">
+      4.3. Switch statements</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/conditionals/4.4.-combining-operators/" class="">
+      4.4. Combining operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/conditionals/4.5.-range-operators/" class="">
+      4.5. Range operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/conditionals/4.6.-reference-code/" class="">
+      4.6. Reference Code</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/loops/" class="">
+      Loops</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/loops/5.1.-for-loops/" class="">
+      5.1. For loops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/loops/5.2.-while-loops/" class="">
+      5.2. While loops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/loops/5.3.-repeat-loops/" class="">
+      5.3. Repeat loops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/loops/5.4.-break-and-continue/" class="">
+      5.4. Break and continue</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/loops/5.5.-reference-code/" class="">
+      5.5. Reference Code</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/functions/" class="">
+      Functions</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/functions/6.1.-writing-functions/" class="">
+      6.1. Writing functions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/functions/6.2.-functions-with-parameters/" class="">
+      6.2. Functions with parameters</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/functions/6.3.-functions-that-return-a-value/" class="">
+      6.3. Functions that return a value</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/functions/6.4.-more-on-function-parameters/" class="">
+      6.4. More on function parameters</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/functions/6.5.-reference-code/" class="">
+      6.5. Reference Code</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/closures/" class="">
+      Closures</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/closures/7.1.-closures-with-parameters/" class="">
+      7.1. Closures with parameters</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/closures/7.2.-closures-that-return-a-value/" class="">
+      7.2. Closures that return a value</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/closures/7.3.-closures-as-parameters/" class="">
+      7.3. Closures as parameters</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/closures/7.4.-reference-code/" class="">
+      7.4. Reference Code</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/optionals/" class="">
+      Optionals</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/custom-data-types/" class="">
+      Custom Data Types</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/" class="">
+      9.1. Structs</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/9.1.1.-functions-methods-inside-structs/" class="">
+      9.1.1. Functions (methods) inside structs</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/9.1.2.-initializing-structs-with-different-initializers/" class="">
+      9.1.2. Initializing structs with different initializers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/custom-data-types/9.1.-structs/9.1.3.-manipulating-object-properties-inherently-in-a-struct/" class="">
+      9.1.3. Manipulating object properties inherently in a struct</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/custom-data-types/9.2.-classes/" class="">
+      9.2. Classes</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/custom-data-types/9.2.-classes/9.2.1.-inheritance/" class="">
+      9.2.1. Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/custom-data-types/9.2.-classes/9.2.2.-value-vs.-reference/" class="">
+      9.2.2. Value vs. Reference</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/protocols/" class="">
+      Protocols</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/protocols/10.1.-adopting-a-protocol/" class="">
+      10.1. Adopting a protocol</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/protocols/10.2.-creating-a-single-protocol-from-multiple-protocols/" class="">
+      10.2. Creating a single protocol from multiple protocols</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/protocols/10.3.-inheriting-a-super-class-and-adopting-protocols-together/" class="">
+      10.3. Inheriting a super class and adopting protocols together</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/sorting-arrays/" class="">
+      Sorting Arrays</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/sorting-arrays/11.1.-increasing-order/" class="">
+      11.1. Increasing order</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/sorting-arrays/11.2.-decreasing-order/" class="">
+      11.2. Decreasing order</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-swift-fundamentals/sorting-arrays/11.-3.-sorting-an-array-of-custom-data/" class="">
+      11. 3. Sorting an array of custom data</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Module 3: Introduction to UIKit</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Creating Our First App</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/" class="">
+      1. Creating Our First App</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/1.1.-project-structure-overview/" class="">
+      1.1. Project structure overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/1.2.-uilabel-our-first-ui-element/" class="">
+      1.2. UILabel, our first UI element</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/1.3.-uitextfield-and-constraints/" class="">
+      1.3. UITextField, and constraints</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/1.4.-uibutton-and-uialertcontroller/" class="">
+      1.4. UIButton, and UIAlertController</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/1.5.-wrapping-up-appicon/" class="">
+      1.5. Wrapping up: AppIcon</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/creating-our-first-app/1.-creating-our-first-app/1.6.-reference-code-and-video/" class="">
+      1.6. Reference Code and Video</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/designing-without-storyboards/" class="">
+      Designing Without Storyboards</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/designing-without-storyboards/2.1.-converting-the-storyboard-to-code/" class="">
+      2.1. Converting the storyboard to code</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/designing-without-storyboards/2.2.-reference-code/" class="">
+      2.2. Reference Code</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/" class="">
+      Multi-Screen Apps</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.1.-navigation-controller/" class="">
+      3.1. Navigation Controller and UI setup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.2.-send-data-from-screen-1-viewcontroller-to-screen2-showviewcontroller/" class="">
+      3.2. Send data from Screen 1 (ViewController) to Screen2 (ShowViewController)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/" class="">
+      3.3. Send data back from Screen 2 to Screen 1</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/3.4.-send-data-back-from-screen-2-to-screen-1-part-2-uipickerview/" class="">
+      3.3.1. Send data back from Screen 2 to Screen 1: UIPickerView</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/3.5.-send-data-back-from-screen-2-to-screen-1-part-3-delegating-to-viewcontroller/" class="">
+      3.3.2. Send data back from Screen 2 to Screen 1: delegating to ViewController</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.3.-send-data-back-from-screen-2-to-screen-1-part-1/3.6.-send-data-back-from-screen-2-to-screen-1-part-4-uiimageview/" class="">
+      3.3.3. Send data back from Screen 2 to Screen 1: UIImageView</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/multi-screen-apps/3.7.-reference-code/" class="">
+      3.4. Reference Code</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/mvc-architecture/" class="">
+      MVC Architecture</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/mvc-architecture/4.1.-creating-a-separate-view-code-file/" class="">
+      4.1. Creating a separate View code file</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/mvc-architecture/4.2.-patching-the-view-class-with-the-viewcontroller/" class="">
+      4.2. Patching the View class with the ViewController</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/mvc-architecture/4.3.-creating-the-display-screen/" class="">
+      4.3. Creating the Display Screen</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/mvc-architecture/4.4.-navigation-controller-and-sending-data-from-screen-1-to-screen-2/" class="">
+      4.4. Navigation Controller and sending data from screen 1 to screen 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/mvc-architecture/4.5.-wrapping-up-structuring-the-files/" class="">
+      4.5. Wrapping up: structuring the files</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/03-introduction-to-uikit/mvc-architecture/4.6.-reference-code/" class="">
+      4.6. Reference Code</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Module 4: Advanced UI Components</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uitableview/" class="">
+      UITableView</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uitableview/5.1.-expense-app/" class="">
+      5.1. Expense App</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uitableview/5.2.-first-screen-part-1-adding-a-bar-button/" class="">
+      5.2. First screen, part 1: Adding a Bar Button</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uitableview/5.3.-first-screen-part-2-setting-up-the-view-of-the-first-screen-with-tableview./" class="">
+      5.3. First screen, part 2: Setting up the View of the First Screen with TableView.</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uitableview/5.4.-first-screen-part-3-setting-up-the-view-controller-and-populating-tableview/" class="">
+      5.4. First screen, part 3: Setting up the View Controller and populating TableView</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uitableview/5.5.-second-screen-part-1-setting-up-the-view-of-the-add-expense-screen/" class="">
+      5.5. Second screen, part 1: Setting up the View of the Add Expense Screen</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uitableview/5.6.-second-screen-part-2-setting-up-add-expense-view-controller/" class="">
+      5.6. Second screen, part 2: Setting up Add Expense View Controller</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uitableview/5.7.-second-screen-part-3-send-new-expense-back-to-viewcontroller-and-update-the-tableview/" class="">
+      5.7. Second screen, part 3: Send new expense back to ViewController and update the TableView</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uitableview/5.8.-tapping-a-cell-in-tableview-and-practice-exercise/" class="">
+      5.8. Tapping a cell in TableView and Practice exercise</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uitableview/5.9.-reference-code/" class="">
+      5.9. Reference Code</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uiscrollview/" class="">
+      UIScrollView</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uiscrollview/8.1.-creating-the-view-of-the-screen/" class="">
+      8.1. Creating the View of the Screen</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uiscrollview/8.2.-creating-the-controller/" class="">
+      8.2. Creating the Controller</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uiscrollview/8.3.-reference-code/" class="">
+      8.3. Reference Code</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/" class="">
+      UIMenu &amp; Image Pickers</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.1.-updating-the-tableview-cell-to-accommodate-an-imageview/" class="">
+      6.1. Updating the TableView Cell to accommodate an ImageView</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.2.-add-expense-screen/" class="">
+      6.2. Add Expense Screen</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.3.-addexpenseviewcontroller-uimenu-for-buttonselecttype/" class="">
+      6.3. AddExpenseViewController: UIMenu for buttonSelectType</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.4.-addexpenseviewcontroller-uimenu-for-buttontakephoto/" class="">
+      6.4. AddExpenseViewController: UIMenu for buttonTakePhoto</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.5.-using-gallery-phpicker/" class="">
+      6.5. Using Gallery: PHPicker</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.6.-using-camera-uiimagepickercontroller/" class="">
+      6.6. Using Camera: UIImagePickerController</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.7.-getting-the-expense-back-to-viewcontroller/" class="">
+      6.7. Getting the expense back to ViewController</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.8.-wrapping-up-a-bit-of-polishing/" class="">
+      6.8. Wrapping Up: a bit of polishing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/uimenu-and-image-pickers/6.9.-reference-code/" class="">
+      6.9. Reference Code</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Useful UI Elements</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/embed-navigation-controller-from-code-not-storyboard/" class="">
+      Embed Navigation Controller from code (Not Storyboard)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/1.-hiding-keyboard-when-tapped-outside/" class="">
+      1. Hiding Keyboard When Tapped Outside</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/2.-slide-up-the-view-to-accommodate-the-on-screen-keyboard/" class="">
+      2. Slide Up the View to Accommodate the on Screen Keyboard</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/3.-saving-small-data-when-the-app-is-not-running-session-or-other-state-variables/" class="">
+      3. Saving Small Data When the App Is Not Running Session or Other State Variables</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/4.-stack-view/" class="">
+      4. Stack View</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/" class="">
+      5. Tab Bar Controller</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/5.1.-views-of-the-screens/" class="">
+      1. Views of the Screens</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/5.2.-controllers-of-the-screens/" class="">
+      2. Controllers of the Screens</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/5.3.-patching-the-screens-in-the-tab-bar/" class="">
+      3. Patching the Screens in the Tab Bar</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/5.4.-sending-data-from-one-tab-to-another/" class="">
+      4. Sending data From one Tab to Another</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/5.5.-reference-code/" class="">
+      5. Reference Code</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/5.-tab-bar-controller/5.6.-notes-for-tab-bar-controller/" class="">
+      6. Notes for Tab Bar Controller</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/" class="">
+      6. Search Bar</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/6.1.-setting-up-the-views/" class="">
+      6.1. Setting up the Views</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/6.2.-setting-up-the-view-controller-handling-the-search-bar/" class="">
+      6.2. Setting up the View Controller: Handling the Search Bar</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/6.-search-bar/6.3.-reference-code/" class="">
+      6.3. Reference Code</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/" class="">
+      Bottom Sheet View Modal Presentation</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/1.-creating-the-screen-for-a-bottom-sheet-view/" class="">
+      1. Creating the Screen for a Bottom Sheet View</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/2.-setting-up-the-controller-for-the-search-bottom-sheet/" class="">
+      2. Setting up the Controller for the Search Bottom Sheet</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/3.-main-screen/" class="">
+      3. Main Screen</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/4.-sending-data-back-to-main-screen/" class="">
+      4. Sending data back to Main Screen</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/04-advanced-ui-components/useful-ui-elements/bottom-sheet-view-modal-presentation/5.-reference-code/" class="">
+      5. Reference Code</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Module 5: Networking &amp; APIs</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/http-and-networking/" class="">
+      HTTP &amp; Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/http-and-networking/10.1.-http-connections/" class="active">
+      10.1. HTTP connections</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/http-and-networking/10.2.-postman-a-useful-tool-to-test-web-services/" class="">
+      10.2. Postman: a Useful Tool to Test Web Services</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/http-and-networking/10.3.-testing-our-simple-custom-api-with-postman/" class="">
+      10.3. Testing our Simple Custom API with Postman</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/http-and-networking/10.4.-app-that-uses-our-contact-api/" class="">
+      10.4. App that Uses Our Contact API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/http-and-networking/10.5.-setting-up-the-view-of-app10/" class="">
+      10.5. Setting up the View of App10</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/http-and-networking/10.9.-reference-code/" class="">
+      10.9. Reference Code</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/http-and-networking/10.6.-fetching-data-with-alamofire-get/" class="">
+      10.6. Fetching Data With Alamofire Get</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/http-and-networking/10.7.-posting-data-with-alamofire-post/" class="">
+      10.7. Posting Data With Alamofire Post</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/http-and-networking/10.8.-fetching-data-with-alamofire-details-endpoint/" class="">
+      10.8. Fetching Data With Alamofire Details Endpoint</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/working-with-json/" class="">
+      Working with JSON</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/working-with-json/11.1.-the-json-api-for-the-contact-app/" class="">
+      11.1. The JSON API for the Contact App</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/working-with-json/11.3.-app11-getting-the-details-of-a-selected-contact-details-endpoint/" class="">
+      11.3. App11: Getting the Details of a Selected Contact (details endpoint)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/working-with-json/11.4.-must-dos-while-decoding-json-adopting-codable/" class="">
+      11.4. &#39;Must Do&#39;s While Decoding JSON adopting Codable</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/working-with-json/11.5.-app11-add-a-new-contact/" class="">
+      11.5. App11: Add a new Contact</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/working-with-json/11.6.-adding-accessory-button-to-table-view-edit-delete-a-contact/" class="">
+      11.6. Adding Accessory Button to Table View (Edit/Delete a Contact)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/working-with-json/11.7.-reference-code/" class="">
+      11.7. Reference Code</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/working-with-json/useful-extra-11.8.-decluttering-codes-from-view-controller/" class="">
+      11.8. Decluttering codes from View Controller (Recommended Read)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/05-networking-and-apis/working-with-json/11.2.-app11-getting-all-the-contact-names-getall-endpoint/" class="">
+      11.2. App11 Getting All the Contact Names Getall Endpoint</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Module 6: Architecture &amp; Data Flow</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/notification-center/" class="">
+      Notification Center</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/notification-center/7.1.-app-7/" class="">
+      7.1. App 7</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/notification-center/7.1.-add-an-observer/" class="">
+      7.1. Add an Observer</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/notification-center/7.2.-posting-data-to-notification-center/" class="">
+      7.2. Posting Data to Notification Center</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/notification-center/7.3.-defining-the-names-identifiers-of-the-notifications-in-a-better-way/" class="">
+      7.3. Defining the names (identifiers) of the Notifications in a Better Way</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/notification-center/7.4.-reference-code/" class="">
+      7.4. Reference Code</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Clean Code &amp; Async</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/" class="">
+      1. Writing clean code for Asynchronous operations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/1.1.-decluttering-our-app11-contacts-app-with-json/" class="">
+      1.1. Decluttering our App11 (Contacts App with JSON)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/1.2.-decluttering-continues.../" class="">
+      1.2. Decluttering continues...</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/06-data-persistence-and-architecture/clean-code-and-async/1.-writing-clean-code-for-asynchronous-operations/1.3.-reference-code/" class="">
+      1.3. Reference Code</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Module 7: Cloud Integrations &amp; Maps</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/cocoapods/" class="">
+      CocoaPods</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/cocoapods/9.1.-installing-cocoa-pods/" class="">
+      9.1. Installing Cocoa Pods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/cocoapods/9.2.-integrating-cocoapods-into-a-project/" class="">
+      9.2. Integrating CocoaPods into a Project</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/" class="">
+      Firebase Auth &amp; Firestore</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.1.-app-12-with-firebase/" class="">
+      12.1. App 12 with Firebase</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.2.-setting-up-the-main-screen-view/" class="">
+      12.2. Setting up the Main Screen View</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.3.-setting-up-the-viewcontroller-with-tableview/" class="">
+      12.3. Setting up the ViewController with TableView</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.4.-authentication-state-handler/" class="">
+      12.4. Authentication State Handler</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/" class="">
+      12.5. Implementing Register and Sign In</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/12.3.1.-building-the-right-bar-button-s-for-sign-in-and-logout/" class="">
+      12.5.1. Building the Right Bar Button(s) for Sign In and Logout</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/12.3.2.-register-screen-create-a-user-in-firebase/" class="">
+      12.5.2. Register Screen: Create a user in Firebase</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/12.3.2.-progress-activity-indicator/" class="">
+      12.5.2. Progress Activity Indicator</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.5.-implementing-register-and-sign-in/12.3.3.-implementing-sign-in/" class="">
+      12.5.3. Implementing Sign In</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.6.-firestore-structure-for-storing-contacts/" class="">
+      12.6. Firestore Structure for Storing Contacts</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.7.-adding-a-new-contact/" class="">
+      12.7. Adding a New Contact</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.8.-observing-firestore-updates-updating-the-tableview/" class="">
+      12.8. Observing Firestore Updates: Updating the TableView</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-auth-and-firestore/12.9.-reference-code/" class="">
+      12.9. Reference Code</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-storage/" class="">
+      Firebase Storage</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-storage/13.1.-integrating-photo-pickers/" class="">
+      13.1. Integrating Photo Pickers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-storage/13.2.-uploading-the-picked-photo-to-firebase-storage/" class="">
+      13.2. Uploading the Picked Photo to Firebase Storage</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-storage/13.3.-displaying-images-hosted-in-cloud/" class="">
+      13.3. Displaying Images Hosted in Cloud</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/firebase-storage/13.4.-reference-code/" class="">
+      13.4. Reference Code</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/mapkit-and-location/" class="">
+      MapKit &amp; Location</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/mapkit-and-location/14.1.-phase-1-displaying-map-view-and-current-location/" class="">
+      14.1. Phase 1: Displaying Map View and Current Location</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/mapkit-and-location/14.2.-phase-2-annotations-and-accessories-for-a-certain-place/" class="">
+      14.2. Phase 2: Annotations and Accessories for a certain place</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/mapkit-and-location/14.3.-phase-3-place-search-and-navigate/" class="">
+      14.3. Phase 3: Place Search and Navigate</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/mapkit-and-location/14.4.-phase-4-display-searched-places-on-map/" class="">
+      14.4. Phase 4: Display Searched Places on Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/07-cloud-integrations-and-maps/mapkit-and-location/14.5.-reference-code/" class="">
+      14.5. Reference Code</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>10.1. HTTP connections</h3>
+
+  <label for="toc-control">
+    
+  </label>
+</div>
+
+
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="101-http-connections">10.1. HTTP connections<a class="anchor" href="#101-http-connections">#</a></h1>
+<p>Intro to HTTP</p>
+<p>{% embed url=&ldquo;<a href="https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d52f70dc-ac38-4530-9e9a-ae9e01243cec%22">https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d52f70dc-ac38-4530-9e9a-ae9e01243cec"</a> %}</p>
+<p>HTTP stands for HyperText Transfer Protocol. It is used by two parties to transmit data between themselves over the Internet. For example, When you browse the web, your browser uses HTTP. The two parties are called:</p>
+<ul>
+<li><strong>Client</strong>: who requests data. For example, an app is requesting information about the user.</li>
+<li><strong>Server</strong>: who responds with the requested data. For example, the database server who responds to the app by sending the user information.</li>
+</ul>
+<figure><img src="/gitbook-assets/Screenshot 2023-05-25 at 1.09.07 PM (2).png" alt=""><figcaption></figcaption></figure>
+<p><strong>The request from a client:</strong> When a client sends a request to the server, it includes the following:</p>
+<ul>
+<li><strong>URL (Host/path): Uniform Resource Locator (URL)</strong> is the server&rsquo;s web address/IP address so that the client can locate it over the Internet.</li>
+<li><strong>Method:</strong> There are <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods">a few kinds of requests</a> a client can make to the server:
+<ul>
+<li><strong>GET:</strong> this method is used if a client wants to get some data from the server. This method is the most used one in real life.</li>
+<li><strong>POST:</strong> This method is used if a client wants to send some data to the server.</li>
+<li><strong>PUT:</strong> Similar to POST, the system admins often use PUT to update the database servers.</li>
+<li>We will use <strong>GET and POST</strong> methods more than 99% of the time in real life.</li>
+<li>There are other methods, like PUT and DELETE, which we will not discuss here.</li>
+</ul>
+</li>
+<li><strong>Headers:</strong> the metadata a client can send to the server, where a client gives additional details for the request they are sending. For example, a header can hold the client&rsquo;s authentication token to prove the client&rsquo;s authenticity to the server.</li>
+<li><strong>Query String:</strong> If you noticed in real life, many websites have <code>?</code> in their URLs when you browse. For example: <code>http://example.com?q=test&amp;state=MA</code>.
+<ul>
+<li>Here the URL is <code>http://example.com</code></li>
+<li>After <code>?</code> we have <code>q=test</code> and <code>state=MA</code> separated by <code>&amp;</code>.</li>
+<li>These are key-value pairs. In <code>q=test</code>, q is the key, and test is the value.</li>
+<li>A client can send information to the server using these key-value pairs. The whole thing after <code>?</code> is the query string.</li>
+</ul>
+</li>
+<li><strong>Body:</strong> the body is the rest of the request. There is no limit to the body. A client can send additional information to the server using the request&rsquo;s body—for example, form data, JSON data, etc.</li>
+</ul>
+<p><strong>The server&rsquo;s response:</strong> A typical response from the server includes:</p>
+<ul>
+<li><strong>Status code:</strong> it indicates whether a specific HTTP request has been successfully completed.
+<ul>
+<li>Informational (100-199)</li>
+<li><strong>Successful (200-299)</strong></li>
+<li>Redirects (300-399)</li>
+<li><strong>Client errors (400-499)</strong></li>
+<li><strong>Server errors (500-599)</strong></li>
+<li>You have probably seen the error 404 at some point in your cyber life. The 400-level codes usually mean the request the client sent was invalid.</li>
+<li>500-level codes are also pretty common. It means the request was correct, yet the server failed to execute properly to process the request.</li>
+<li>200-level codes are the most common, and usually, we don&rsquo;t see them in our browsers because they indicate a successful response.</li>
+</ul>
+</li>
+<li><strong>Body:</strong> the response from the server comes as a part of the body.</li>
+<li><strong>Headers:</strong> SImilar to the request headers, server may use headers to send additional meta data.</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/05-networking-and-apis/http-and-networking/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>HTTP &amp; Networking</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/05-networking-and-apis/http-and-networking/10.2.-postman-a-useful-tool-to-test-web-services/" class="flex align-center">
+        <span>10.2. Postman: a Useful Tool to Test Web Services</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
