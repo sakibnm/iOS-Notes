@@ -1,0 +1,548 @@
+---
+title: "Designing Without Storyboards"
+weight: 20
+---
+
+**Estimated effort:** 1-2 hours this topic
+**Format:** Asynchronous online
+**Prerequisites:** Previous iOS topics
+
+{< hint info >}
+**🎯 Topic Mission:** 
+In this module, we will explore **Designing Without Storyboards** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+{< /hint >}
+
+---
+
+## Learning Objectives
+
+By the end of this session, you will be able to:
+1. Understand the core concepts of Designing Without Storyboards.
+2. Implement Designing Without Storyboards in an Xcode project.
+3. Apply best practices to ensure clean and maintainable code.
+
+---
+
+## The Story So Far...
+
+We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Designing Without Storyboards. 
+Open your current Xcode project or start a new Playground to follow along with the hands-on material.
+
+---
+
+## Walkthrough: Exploring Designing Without Storyboards
+
+> 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
+
+# 2. Designing without Storyboards
+
+In our first app, we dragged and dropped the UI elements on Storyboard and set up the constraints using the Interface Builder's tools. Now, I said we would ditch this approach and start designing the UI with codes.
+
+### Why don't we use storyboards?
+
+There are several reasons for it, as this blog post discusses: [https://kissdigital.com/blog/why-we-stopped-using-storyboards](https://kissdigital.com/blog/why-we-stopped-using-storyboards). However, long story short, Storyboards automatically create the XML tags for the UI elements. Since they are machine generated, the resource IDs of the UI elements change very frequently. So, if you run your friend's code on your computer, the IDs will change. Think about you are collaborating with a friend using GitHub. It will probably be fine if you do not work concurrently in different branches. However, it will be a massive pain if you work on the same project concurrently and want to merge the updates. Using codes to generate the UIs programmatically doesn't have this issue.
+
+**Constraints and Attributes**
+
+Before we start, let's have a quick look at the UI we had from 'App1':
+
+![](</gitbook-assets/Screenshot 2023-05-09 at 10.25.49 PM.png>)
+
+Let's look into the constraints of the UI:
+
+![](</gitbook-assets/Screenshot 2023-05-09 at 10.50.48 PM (1) (1).png>)
+
+So the Label ("Hello World!") has two constraints:
+
+* Centered to the x-axis (horizontal axis).
+* There is a gap of 32 points between the screen's top edge and the Label's top edge.
+
+The TextField ("Put some text") has two constraints:
+
+* Centered to the x-axis (horizontal axis).
+* There is a gap of 16 points between the Label's bottom edge and the TextField's top edge.
+
+Similarly, the Button ("Click me!") has two constraints:
+
+* Centered to the x-axis (horizontal axis).
+* There is a gap of 16 points between TextField's bottom edge and Button's top edge.
+
+### Understanding the constraint notations
+
+Let's look at the following grid:
+
+<figure><img src="/gitbook-assets/grid (2).png" alt=""><figcaption><p>The grid on a screen</p></figcaption></figure>
+
+The above grid is similar to a mobile screen. **The origin of the grid `(0, 0)` above is the top-left point,** unlike to the regular grid we use in our regular visualizations. So, when we want to anchor the object on the screen, there are four constraints we may need to set:
+
+* Leading constraint - how far the object is from the reference point at its left.
+* Trailing constraint - how far the object is from the reference point at its right.
+* Top constraint - how far the object is from the reference point above it.
+* Bottom constraint - how far the object is from the reference point below it.
+
+Please note you do not need to add all four constraints to anchor an object on the screen. For example, the UI elements of 'App1' do not have all four anchors. They all have top, leading, and trailing anchors. _Centering an element takes care of two constraints: leading and trailing together._
+
+
+
+
+<!-- Merged from 2.1.-converting-the-storyboard-to-code.md -->
+
+# 2.1. Converting the storyboard to code
+
+So, let's convert the Storyboard to Swift code!
+
+The following image is how the grid on the device screen is defined.
+
+<figure><img src="/gitbook-assets/grid (1) (1).png" alt=""><figcaption><p>Grid of a screen</p></figcaption></figure>
+
+<figure><img src="/gitbook-assets/Screenshot 2023-05-09 at 10.50.48 PM (2).png" alt="" width="375"><figcaption><p>App1 design</p></figcaption></figure>
+
+In the above image, we can see how the UI elements are placed on the device's screen in our App1.
+
+We will add the code directly to ViewController.
+
+## Understanding the attributes
+
+### Label attributes
+
+If you remember, In App1, we dragged and dropped a Label from the Objects Library and changed a few things. Let's go back to the Storyboard and click on the "Hello World!" label.
+
+<figure><img src="/gitbook-assets/Screenshot 2023-05-10 at 10.09.48 AM.png" alt=""><figcaption></figcaption></figure>
+
+* We changed the text to "Hello World!"
+* The color of the text is Blue (accent color).
+* The font is the system's default font, and the size is 24.
+
+There are many other attributes we have in a Label that we can edit.
+
+Okay, let's programmatically create a Label. And then set the Attributes. For this purpose, we will create a new project named "App\_NoStory." We will not touch the Main storyboard here.
+
+Open the ViewController code directly and add a variable `labelHello` of the `UILabel.`
+
+```swift
+//
+//  ViewController.swift
+//  App1_NoStory
+//
+//  Created by Sakib Miazi on 5/9/23.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+    
+    //MARK: declaring the UI elements...
+    var labelHello:UILabel! //"Hello World!" Label...
+ 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        
+    }
+
+}
+```
+
+Then inside `viewDidLoad()` we will have to define the attributes for `labelHello`.
+
+```swift
+import UIKit
+
+class ViewController: UIViewController {
+    
+    //MARK: declaring the UI elements...
+    var labelHello:UILabel! //"Hello World!" Label...
+ 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        
+        //MARK: call methods to setup the attributes of UI elements...
+        setupLabelHello()
+        
+    }
+    
+    //Defining the Label attributes...
+    func setupLabelHello(){
+        labelHello = UILabel()
+        labelHello.text = "Hello World!"
+        labelHello.font = UIFont.systemFont(ofSize: 24)
+        labelHello.textColor = .systemBlue
+        labelHello.textAlignment = .center
+        labelHello.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(labelHello)
+    }
+
+}
+```
+
+In the above code, we defined the attributes for the label:
+
+* `labelHello.text` is the text inside the Label.
+* `labelHello.font` is the font of the Label. We created a UIFont object with the system's default font of size `24.0`. Then set the Label's font to that object.
+* `labelHello.textColor` is the color of the text of the Label. We set the color to system's default Blue color. You can put a `.` and choose other options.
+* `labelHello.textAlignment` is the alignment of the text. We set the alignment to center. You can put a `.` and choose other options.
+* `labelHello.translatesAutoresizingMaskIntoConstraints` is set to `false` which is a default and fail-safe attribute for all the UI elements. The storyboard sets it automatically. If you write codes to edit the attributes, you have to set it to `false` manually for every UI element. This attribute says to the iOS system that you are dynamically using your own constraints to display the contents on the screen. Otherwise, the system will try to pack all the UI elements together to display them on the screen without your choices.
+* `view.addSubview(labelHello)` is where you add the logical view of `labelHello` you created as a subview of the screen. Here `view` is the logical view of the screen. Since `labelHello` is a child view of `view`, we write this line of code.
+
+## Setting the constraints
+
+Now that we have created a logical view of `labelHello`, we have to define the constraints. We can use `NSLayoutConstraint` system class to set the constraints. `NSLayoutConstraint.activate()` takes in an array of constraints and activate them on the current view. We know that `labelHello` has two constraints:
+
+* Centered to the x-axis (horizontal axis).
+* There is a gap of 32 points between the screen's top edge and the Label's top edge.
+
+So, we can create the array of constraints with the above constraints and activate them by writing:
+
+```swift
+NSLayoutConstraint.activate(
+    [
+        labelHello.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32),
+        labelHello.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
+    ]
+)
+```
+
+`labelHello.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32)` means:
+
+* Set the `labelHello`'s top anchor to the top anchor of the _**safe area.** (Remember,_ [_'safe area'_](../ios-development-with-uikit/1.-creating-our-first-app/1.2.-uilabel-our-first-ui-element.md)_?)_ We wanted to have a 32 points gap, `constant` is the gap here.
+* Set the `centerXAnchor` (horizontal center point) of `labelHello` to the horizontal center point of the safe area.
+
+Now let's see the entire code:
+
+```swift
+import UIKit
+
+class ViewController: UIViewController {
+    
+    //MARK: declaring the UI elements...
+    var labelHello:UILabel! //"Hello World!" Label...
+ 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        
+        //MARK: call methods to setup the attributes of UI elements...
+        setupLabelHello()
+        
+        //MARK: initializing the constraints...
+        initConstraints()
+        
+    }
+    
+    //Defining the Label attributes...
+    func setupLabelHello(){
+        labelHello = UILabel()
+        labelHello.text = "Hello World!"
+        labelHello.font = UIFont.systemFont(ofSize: 24)
+        labelHello.textColor = .systemBlue
+        labelHello.textAlignment = .center
+        labelHello.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(labelHello)
+    }
+    
+    //Initializing the constraints...
+    func initConstraints(){
+        NSLayoutConstraint.activate(
+            [
+                //Constraints for labelHello....
+                labelHello.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32),
+                labelHello.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
+            ]
+        )
+    }
+
+}
+```
+
+So we write a separate method `initConstraints()` to activate the constraints and call it from `viewDidLoad()`. Now let's run the app:
+
+![](</gitbook-assets/Screenshot 2023-05-10 at 11.20.58 AM (1).png>)
+
+So, our program rendered a "Hello World!" label on screen!
+
+Now, let's add all the constraints for the other two UI elements.
+
+Let's see the code after we add all the constraints:
+
+```swift
+//
+//  ViewController.swift
+//  App1_NoStory
+//
+//  Created by Sakib Miazi on 5/9/23.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+    
+    //MARK: declaring the UI elements...
+    var labelHello:UILabel! //"Hello World!" Label...
+    var textFieldUser: UITextField! //TextField...
+    var buttonClickMe: UIButton! //Button...
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        
+        //MARK: setting up UI elements...
+        setupLabelHello()
+        setupTextFieldUser()
+        setupButtonClickMe()
+        
+        //MARK: initializing the constraints...
+        initConstraints()
+    }
+    
+    //Defining the Label attributes...
+    func setupLabelHello(){
+        labelHello = UILabel()
+        labelHello.text = "Hello World!"
+        labelHello.font = UIFont.systemFont(ofSize: 24)
+        labelHello.textColor = .systemBlue
+        labelHello.textAlignment = .center
+        labelHello.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(labelHello)
+    }
+    
+    //Defining the TextField attributes...
+    func setupTextFieldUser(){
+        textFieldUser = UITextField()
+        textFieldUser.placeholder = "Put some text"
+        textFieldUser.borderStyle = .roundedRect
+        textFieldUser.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(textFieldUser)
+    }
+    
+    //Defining the Button attributes...
+    func setupButtonClickMe(){
+        buttonClickMe = UIButton(type: .system) //You need to set the type when you create a Button. We use default system button...
+        buttonClickMe.setTitle("Click Me!", for: .normal)
+        buttonClickMe.tintColor = .systemBlue
+        buttonClickMe.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(buttonClickMe)
+    }
+    
+    //MARK: Initializing the constraints...
+    func initConstraints(){
+        NSLayoutConstraint.activate(
+            [
+                //MARK: constraints for labelHello...
+                labelHello.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32),
+                labelHello.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+                
+                //MARK: constraints for textFieldUser...
+                textFieldUser.topAnchor.constraint(equalTo: labelHello.bottomAnchor, constant: 16),
+                textFieldUser.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+                
+                //MARK: constraints for buttonClickMe...
+                buttonClickMe.topAnchor.constraint(equalTo: textFieldUser.bottomAnchor, constant: 16),
+                buttonClickMe.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
+            ]
+        )
+    }
+    
+}
+```
+
+So, we call the methods to define the attributes of UI elements first, then activate the constraints.
+
+**Hint:** _You can still use the Storyboard to check what attributes to set up. When you are designing by coding for the first time, you can go to the Storyboard, place a UI element from the Objects Library on the Storyboard, and design it as you like. Then, use the attributes you edited to setup the design programmatically in ViewController. Then, delete the object from the storyboard. The Storyboard potentially becomes your draft design pad._
+
+## Adding button action
+
+Remember, we added an event listener for the button tap using `buttonClickMe.addtarget()`? Where do you think we should add that target?
+
+We can do that in the `viewDidLoad()` method since that is the logical Controller of the app:
+
+```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+    // Do any additional setup after loading the view.
+    
+    //MARK: setting up UI elements...
+    setupLabelHello()
+    setupTextFieldUser()
+    setupButtonClickMe()
+    
+    //MARK: adding action...
+    buttonClickMe.addTarget(self, 
+        action: #selector(onButtonClickMeTapped), 
+        for: .touchUpInside
+    )
+    
+    //MARK: initializing the constraints...
+    initConstraints()
+}
+```
+
+And then, we use the same methods we wrote in 'App1'.
+
+So the full code is:
+
+```swift
+//
+//  ViewController.swift
+//  App1_NoStory
+//
+//  Created by Sakib Miazi on 5/9/23.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+    
+    //MARK: declaring the UI elements...
+    var labelHello:UILabel! //"Hello World!" Label...
+    var textFieldUser: UITextField! //TextField...
+    var buttonClickMe: UIButton! //Button...
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        
+        //MARK: setting up UI elements...
+        setupLabelHello()
+        setupTextFieldUser()
+        setupButtonClickMe()
+        
+        //MARK: adding action...
+        buttonClickMe.addTarget(self, 
+            action: #selector(onButtonClickMeTapped), 
+            for: .touchUpInside
+        )
+           
+        //MARK: initializing the constraints...
+        initConstraints()
+    }
+    
+    //Defining the Label attributes...
+    func setupLabelHello(){
+        labelHello = UILabel()
+        labelHello.text = "Hello World!"
+        labelHello.font = UIFont.systemFont(ofSize: 24)
+        labelHello.textColor = .systemBlue
+        labelHello.textAlignment = .center
+        labelHello.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(labelHello)
+    }
+    
+    //Defining the TextField attributes...
+    func setupTextFieldUser(){
+        textFieldUser = UITextField()
+        textFieldUser.placeholder = "Put some text"
+        textFieldUser.borderStyle = .roundedRect
+        textFieldUser.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(textFieldUser)
+    }
+    
+    //Defining the Button attributes...
+    func setupButtonClickMe(){
+        buttonClickMe = UIButton(type: .system) //You need to set the type when you create a Button. We use default system button...
+        buttonClickMe.setTitle("Click Me!", for: .normal)
+        buttonClickMe.tintColor = .systemBlue
+        buttonClickMe.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(buttonClickMe)
+    }
+    
+    //MARK: Initializing the constraints...
+    func initConstraints(){
+        NSLayoutConstraint.activate(
+            [
+                //MARK: constraints for labelHello...
+                labelHello.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32),
+                labelHello.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+                
+                //MARK: constraints for textFieldUser...
+                textFieldUser.topAnchor.constraint(equalTo: labelHello.bottomAnchor, constant: 16),
+                textFieldUser.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+                
+                //MARK: constraints for buttonClickMe...
+                buttonClickMe.topAnchor.constraint(equalTo: textFieldUser.bottomAnchor, constant: 16),
+                buttonClickMe.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
+            ]
+        )
+    }
+    
+    //MARK: buttonClickMe tap action...
+    @objc func onButtonClickMeTapped(){
+        //print("Button Clicked!!")
+        // MARK: fetching the text the user typed...
+        let text = textFieldUser.text
+        
+        //Unwrapping the optional text...
+        if let unwrappedText = text{
+            //print(unwrappedText)
+            
+            if(unwrappedText.isEmpty){ //The user didn't put anything...
+                showErrorAlert()
+            } else{ //The user put some texts...
+                showAlertText(text: unwrappedText)
+            }
+        }
+    }
+    
+    //MARK: Alert controller logics...
+    func showErrorAlert(){
+        let alert = UIAlertController(title: "Error!", message: "Text Field must not be empty!", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        
+        self.present(alert, animated: true)
+    }
+    
+    func showAlertText(text:String){
+        let alert = UIAlertController(title: "You said:", message: "\(text)", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        
+        self.present(alert, animated: true)
+    }
+    
+}
+```
+
+If you run the app, you can see that we replicated the whole App1 by just writing codes. You should start practicing this early since almost everyone in the industry got rid of Storyboards.
+
+
+
+<!-- Merged from 2.2.-reference-code.md -->
+
+# 2.2. Reference Code
+
+{% file src="/gitbook-assets/App1_NoStory.zip" %}
+
+---
+
+## Guided Practice Challenges
+
+Before moving on to the next topic, try these low-stakes practice challenges in Xcode. They will build the exact muscle memory you need:
+
+### Challenge 1: Experimentation
+**The Scenario:** You've just learned about Designing Without Storyboards.
+**The Task:** Experiment with the code snippets provided above. Can you alter the behavior by changing the parameters or combining it with concepts from previous modules?
+
+### Challenge 2: From Scratch
+**The Task:** Try implementing the core feature of this module in a completely blank Xcode project without looking at the reference code. Rely on Xcode's autocomplete and standard Apple documentation.
+
+---
+
+## References
+
+1. [Apple Developer Documentation](https://developer.apple.com/documentation/)
+2. [Swift Language Guide](https://docs.swift.org/swift-book/)
+3. [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/)
+
+---
+
+## Getting Help
+
+Because this course is fully asynchronous, here's how to get unstuck:
+
+- **Piazza** is the primary help channel. When asking a question, include: (1) what you're trying to do, (2) what you've tried, (3) the exact Xcode error message.
+- **TA office hours** — check the Canvas calendar. Show up, share your screen, and get help.
+- **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
+

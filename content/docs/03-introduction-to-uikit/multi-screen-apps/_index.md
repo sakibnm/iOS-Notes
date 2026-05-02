@@ -1,0 +1,371 @@
+---
+title: "Multi-Screen Apps"
+weight: 30
+---
+
+**Estimated effort:** 1-2 hours this topic
+**Format:** Asynchronous online
+**Prerequisites:** Previous iOS topics
+
+{< hint info >}
+**🎯 Topic Mission:** 
+In this module, we will explore **Multi-Screen Apps** and learn how to integrate it into our iOS applications. Your mission is to understand the mechanics behind this concept and write robust Swift code.
+{< /hint >}
+
+---
+
+## Learning Objectives
+
+By the end of this session, you will be able to:
+1. Understand the core concepts of Multi-Screen Apps.
+2. Implement Multi-Screen Apps in an Xcode project.
+3. Apply best practices to ensure clean and maintainable code.
+
+---
+
+## The Story So Far...
+
+We have been progressively building our knowledge of iOS and Swift. In this module, we will expand our toolkit by diving into Multi-Screen Apps. 
+Open your current Xcode project or start a new Playground to follow along with the hands-on material.
+
+---
+
+## Walkthrough: Exploring Multi-Screen Apps
+
+> 📁 **Target Project** — Follow along by building the mini-app presented in the steps below, or integrate these concepts into your own ongoing projects.
+
+# 3. Our first Multi-screen App
+
+At this point, we will make a multi-screen application. After the end of lesson 3, we will understand the basics of Navigation Controller, UIImageViews, and Image Assets.
+
+So let's create a new App named 'App3.'
+
+I will be designing the interface without the Storyboard here.
+
+
+
+
+<!-- Merged from 3.1.-navigation-controller.md -->
+
+# 3.1. Navigation Controller
+
+If you are an iPhone or iPad user, you must have used apps with multiple screens, where you go from one screen to another and return to the previous screen with a back button on the top left corner.
+
+For example, the Settings app's navigation looks like this:
+
+<figure><img src="/gitbook-assets/one_ (1).gif" alt=""><figcaption></figcaption></figure>
+
+This is called the Navigation of the app, where you define how the screen transitions are managed in an app.
+
+## Understanding the data Structure behind NavigationController
+
+Navigation Controller is a Stack data structure. The user sees the screen from the top of the Stack. If we want to navigate from one screen to another screen, the user can call the `push()` method of the Navigation Controller to push Screen 2 on top of Screen 1. Since the user sees the Stack from above the Stack, the user will see Screen 2 now. Whenever the user is done dealing with screen 2, and they want to get back to screen 1, they have to basically use the Navigation Controller to `pop()` Screen 2 from the Stack. Then Screen 1 will be at the top of the Stack again
+
+{% embed url="https://www.youtube.com/watch?v=JozvVb4QyvE" %}
+Navigation Controller Stack
+{% endembed %}
+
+In our case, the ViewController is Screen 1, and ShowViewController is Screen 2. We need to push ShowViewController on top of ViewController.
+
+## Embedding the Navigation Controller
+
+So let's create our new project, 'App3.' _<mark style="color:purple;">**We will not entirely discard our Storyboard here. We will use it to attach the NavigationController to our app.**</mark>_ So, open the Main storyboard in your project, Select the ViewController (the preview screen), click on the Embed In button at the bottom right corner of the middle pane, and select 'Navigation Controller.'
+
+<figure><img src="/gitbook-assets/two_ (1).gif" alt=""><figcaption></figcaption></figure>
+
+Once you embed the ViewController into the NavigationController, our tasks with Storyboard are done.
+
+### Adding UI elements on the ViewController
+
+Let's add UI elements to our View Controller (ViewController.swift). Let's programmatically add two UI elements to the 'ViewController': a UITextField and a UIButton (often called as just 'TextField' and 'Button'). Our next goal is to build another screen, ShowViewController. Our app will do the following:
+
+* The user puts a text in the TextField in the first ViewController and clicks on the Button.
+* On clicking the Button, the screen switches from the ViewController to another screen, ShowViewController (which we will create momentarily), and displays the text the user put before.
+
+So, let's add the TextField and the Button programmatically. First, we initialize the UI elements and set proper attributes, like the following:
+
+{% code lineNumbers="true" %}
+```swift
+//
+//  ViewController.swift
+//  App3
+//
+
+class ViewController: UIViewController {
+
+    var textFieldMessage: UITextField!
+    var buttonSend: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        
+        //MARK: initializing the UI elements...
+        setupTextFieldMessage()
+        setupButtonSend()
+        
+        //MARK: initializing the constraints...
+        initConstraints()
+    }
+    
+    func setupTextFieldMessage(){
+        textFieldMessage = UITextField()
+        textFieldMessage.placeholder = "Put your message here"
+        textFieldMessage.borderStyle = .roundedRect
+        textFieldMessage.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(textFieldMessage)
+    }
+    
+    func setupButtonSend(){
+        buttonSend = UIButton(type: .system)
+        buttonSend.setTitle("Send", for: .normal)
+        buttonSend.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(buttonSend)
+    }
+}
+```
+{% endcode %}
+
+Then initialize the constraints:
+
+{% code lineNumbers="true" %}
+```swift
+func initConstraints(){
+    
+    NSLayoutConstraint.activate([
+        // textFieldMessage constraints...
+        textFieldMessage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+        textFieldMessage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32),
+        // buttonSend constraints...
+        buttonSend.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+        buttonSend.topAnchor.constraint(equalTo: textFieldMessage.bottomAnchor, constant: 16),
+        
+    ])
+    
+}
+```
+{% endcode %}
+
+Now let's run the app:
+
+<figure><img src="/gitbook-assets/three (2) (1).gif" alt=""><figcaption></figcaption></figure>
+
+### Creating ShowViewController and adding UI elements
+
+Now, let's create the second View Controller, 'ShowViewController.'
+
+* Click on **File -> New -> File.**
+* Select Cocoa Touch Class, and click **Next.**
+* Put ShowViewController as the Class name.
+* Select UIViewController at Sublass of (it should be already selected).
+* Language should be Swift.
+* Click **Next.**
+* Finally, click on **Create.**
+
+<figure><img src="/gitbook-assets/four (3) (1).gif" alt=""><figcaption></figcaption></figure>
+
+It should create a new ShowViewController swift file, where we will design our second screen.
+
+Now let's add a Label in ShowViewController to display the message the user sent from the first screen (ViewController).
+
+```swift
+//
+//  ShowViewController.swift
+//  App3
+//
+
+import UIKit
+
+class ShowViewController: UIViewController {
+    var messageFromFirstScreen:String? = "No message received!" //First screen can set this variable...
+    var labelMessage: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupLabelMessage()
+        
+        initConstraints()
+    }
+    
+
+    func setupLabelMessage(){
+        labelMessage = UILabel()
+        labelMessage.textColor = .systemBlue
+        labelMessage.text = messageFromFirstScreen
+        labelMessage.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(labelMessage)
+    }
+    
+    func initConstraints(){
+        NSLayoutConstraint.activate([
+            labelMessage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            labelMessage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32)
+        ])
+    }
+
+}
+```
+
+_In the above code, I also added a variable called `messageFromFirstScreen` to receive the message from the first screen. We set the variable's default value to "No message received!". This text will be displayed on the second screen if a user does not put anything on the first screen._
+
+Now, it's time to patch the ShowViewController with the NavigationController.
+
+### Pushing ShowViewController on the Button tap
+
+So let's add an event action for `buttonSend` to push ShowViewController on the Stack. Open ViewController.swift file. Put the following code to `viewDidLoad()` method.&#x20;
+
+```swift
+//
+//  ViewController.swift
+//  App3
+//    
+override func viewDidLoad() {
+    super.viewDidLoad()
+    // Do any additional setup after loading the view.
+    
+    //MARK: initializing the UI elements...
+    setupTextFieldMessage()
+    setupButtonSend()
+    
+    //MARK: initializing the constraints...
+    initConstraints()
+    
+    //MARK: on buttonSend tap...
+    buttonSend.addTarget(self, action: #selector(onButtonSendTapped), 
+                        for: .touchUpInside)
+}
+```
+
+Then we define the `onButtonSendTapped()` method to delegate button tap events:
+
+```swift
+@objc func onButtonSendTapped(){
+    //initializing a new screen with ShowViewController...
+    var showViewController = ShowViewController()
+    //push the screen to Stack...
+    navigationController?.pushViewController(showViewController, animated: true)
+}
+```
+
+In the above code, we create a new instance of ShowViewController, then push it to the navigation stack. Now, let's run the app:
+
+<figure><img src="/gitbook-assets/six (1) (1).gif" alt=""><figcaption></figcaption></figure>
+
+Now, there is a problem here. We can see that tapping the Send button opens the ShowViewController, but the background is black. Well, by default, iOS gives a ViewController a transparent background. The system has no background; the transparent background makes it look black. Now we can set the background color to white by writing `view.backgroundColor = .white` inside the `viewDidLoad()` method in **ShowViewController.swift** file.
+
+```swift
+//
+//  ShowViewController.swift
+//  App3
+//
+//  Created by Sakib Miazi on 5/10/23.
+//
+override func viewDidLoad() {
+    super.viewDidLoad()
+    //setting the view background to white...
+    view.backgroundColor = .white
+    
+    setupLabelMessage()
+    
+    initConstraints()
+}
+```
+
+Now let's run the app:
+
+<figure><img src="/gitbook-assets/seven (1) (1).gif" alt=""><figcaption></figcaption></figure>
+
+We can see that there is a Back button on the left top of the ShowViewController screen. When we tap on Back, the navigation controller automatically calls the `pop()` method, and pops ShowViewController.
+
+
+
+<!-- Merged from 3.2.-send-data-from-screen-1-viewcontroller-to-screen2-showviewcontroller.md -->
+
+# 3.2. Send data from Screen 1 (ViewController) to Screen2 (ShowViewController)
+
+Now it's time to send data from our first screen (ViewController) to the second screen (ShowViewController). Remember, we created a variable named `messageFromFirstScreen`? We have to access that variable from the first screen (ViewController) and set the text the user puts in `textFieldMessage` to `messageFromFirstScreen`.
+
+So, let's get back to ViewController.swift. Scroll down to the button event action method `onButtonSendTapped()`. And add the following code in `onButtonSendTapped()` after we initialize the ShowViewController:
+
+{% code lineNumbers="true" %}
+```swift
+//
+//  ViewController.swift
+//  App3
+//
+//  Created by Sakib Miazi on 5/10/23.
+//
+// MARK: On button tapped...
+    @objc func onButtonSendTapped(){
+        //initializing a new screen with ShowViewController...
+        var showViewController = ShowViewController()
+        
+        //set the message to ShowViewController's messageFromFirstScreen variable...
+        if let unwrappedMessage = textFieldMessage.text{
+            if !unwrappedMessage.isEmpty{ // checking if the user has put any message...
+                //Sending data...
+                showViewController.messageFromFirstScreen = unwrappedMessage
+                
+                //push the screen to Stack...
+                navigationController?.pushViewController(showViewController, animated: true)
+            }else{
+                //Alert the user to put message....
+            }
+            
+        }
+    }
+```
+{% endcode %}
+
+Now let's run the code:
+
+<figure><img src="/gitbook-assets/eight (1).gif" alt=""><figcaption></figcaption></figure>
+
+So, we can see that we can send data from one screen to the next.
+
+
+
+<!-- Merged from 3.7.-reference-code.md -->
+
+# 3.7. Reference Code
+
+{% file src="/gitbook-assets/App3 (1).zip" %}
+
+
+
+## Table of Contents
+
+{{< section >}}
+
+---
+
+## Guided Practice Challenges
+
+Before moving on to the next topic, try these low-stakes practice challenges in Xcode. They will build the exact muscle memory you need:
+
+### Challenge 1: Experimentation
+**The Scenario:** You've just learned about Multi-Screen Apps.
+**The Task:** Experiment with the code snippets provided above. Can you alter the behavior by changing the parameters or combining it with concepts from previous modules?
+
+### Challenge 2: From Scratch
+**The Task:** Try implementing the core feature of this module in a completely blank Xcode project without looking at the reference code. Rely on Xcode's autocomplete and standard Apple documentation.
+
+---
+
+## References
+
+1. [Apple Developer Documentation](https://developer.apple.com/documentation/)
+2. [Swift Language Guide](https://docs.swift.org/swift-book/)
+3. [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/)
+
+---
+
+## Getting Help
+
+Because this course is fully asynchronous, here's how to get unstuck:
+
+- **Piazza** is the primary help channel. When asking a question, include: (1) what you're trying to do, (2) what you've tried, (3) the exact Xcode error message.
+- **TA office hours** — check the Canvas calendar. Show up, share your screen, and get help.
+- **Instructor office hours** — by appointment for deeper issues (design questions, project direction).
+
