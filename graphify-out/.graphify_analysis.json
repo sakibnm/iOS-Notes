@@ -1,0 +1,194 @@
+{
+  "communities": {
+    "0": [
+      "assets_lesson_activatetab",
+      "assets_lesson_buildtoc",
+      "assets_lesson_ensureheadingids",
+      "assets_lesson_headingtoid",
+      "assets_lesson_highlightactivenav",
+      "assets_lesson_setactivetocitem",
+      "assets_lesson_setupscrollspy",
+      "lesson_js"
+    ],
+    "1": [
+      "assets_lesson_attachcopybuttons",
+      "assets_lesson_attachexternallinks",
+      "assets_lesson_attachheadinganchors",
+      "assets_lesson_boot",
+      "assets_lesson_configuremarked",
+      "assets_lesson_getparam",
+      "assets_lesson_runhighlight"
+    ],
+    "2": [
+      "assets_search_buildmodal",
+      "assets_search_buildsnippet",
+      "assets_search_closesearch",
+      "assets_search_fetchindex",
+      "assets_search_opensearch",
+      "search_js"
+    ],
+    "3": [
+      "assets_theme_applytheme",
+      "assets_theme_getstoredtheme",
+      "assets_theme_systemprefersdark",
+      "theme_js"
+    ],
+    "4": [
+      "assets_search_escapehtml",
+      "assets_search_highlight",
+      "assets_search_render",
+      "assets_search_slug"
+    ],
+    "5": [
+      "assets_search_escaperegex",
+      "assets_search_runsearch",
+      "assets_search_score",
+      "assets_search_tokenize"
+    ],
+    "6": [
+      "assets_lesson",
+      "assets_lesson_rendererror",
+      "assets_lesson_settext"
+    ],
+    "7": [
+      "assets_lesson_buildbottomnav",
+      "assets_lesson_escapehtml"
+    ]
+  },
+  "cohesion": {
+    "0": 0.29,
+    "1": 0.29,
+    "2": 0.47,
+    "3": 0.5,
+    "4": 0.67,
+    "5": 0.5,
+    "6": 1.0,
+    "7": 1.0
+  },
+  "gods": [
+    {
+      "id": "assets_lesson_boot",
+      "label": "boot()",
+      "degree": 15
+    },
+    {
+      "id": "assets_search_render",
+      "label": "render()",
+      "degree": 6
+    },
+    {
+      "id": "assets_lesson",
+      "label": "$()",
+      "degree": 5
+    },
+    {
+      "id": "assets_lesson_settext",
+      "label": "setText()",
+      "degree": 4
+    },
+    {
+      "id": "assets_lesson_rendererror",
+      "label": "renderError()",
+      "degree": 4
+    },
+    {
+      "id": "assets_lesson_buildbottomnav",
+      "label": "buildBottomNav()",
+      "degree": 4
+    },
+    {
+      "id": "assets_search_runsearch",
+      "label": "runSearch()",
+      "degree": 4
+    },
+    {
+      "id": "assets_lesson_escapehtml",
+      "label": "escapeHtml()",
+      "degree": 3
+    },
+    {
+      "id": "assets_lesson_buildtoc",
+      "label": "buildToc()",
+      "degree": 3
+    },
+    {
+      "id": "assets_search_opensearch",
+      "label": "openSearch()",
+      "degree": 3
+    }
+  ],
+  "surprises": [
+    {
+      "source": "$()",
+      "target": "buildBottomNav()",
+      "source_files": [
+        "lesson.js",
+        "lesson.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "note": "Bridges community 6 \u2192 community 7"
+    },
+    {
+      "source": "$()",
+      "target": "boot()",
+      "source_files": [
+        "lesson.js",
+        "lesson.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "note": "Bridges community 6 \u2192 community 1"
+    },
+    {
+      "source": "escapeHtml()",
+      "target": "boot()",
+      "source_files": [
+        "lesson.js",
+        "lesson.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "note": "Bridges community 7 \u2192 community 1"
+    },
+    {
+      "source": "ensureHeadingIds()",
+      "target": "boot()",
+      "source_files": [
+        "lesson.js",
+        "lesson.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "note": "Bridges community 0 \u2192 community 1"
+    },
+    {
+      "source": "buildSnippet()",
+      "target": "render()",
+      "source_files": [
+        "search.js",
+        "search.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "note": "Bridges community 2 \u2192 community 4"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `boot()` connect `Community 1` to `Community 0`, `Community 6`, `Community 7`?",
+      "why": "High betweenness centrality (0.064) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `render()` connect `Community 4` to `Community 2`, `Community 5`?",
+      "why": "High betweenness centrality (0.007) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `runSearch()` connect `Community 5` to `Community 2`, `Community 4`?",
+      "why": "High betweenness centrality (0.002) - this node is a cross-community bridge."
+    }
+  ]
+}
