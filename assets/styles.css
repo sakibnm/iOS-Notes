@@ -1017,6 +1017,30 @@ a:hover { color: var(--accent-hover); }
   font-feature-settings: "liga" 0;
 }
 
+/* Line numbers plugin styling */
+.article pre code.hljs-ln {
+  padding: 0;
+}
+.hljs-ln td.hljs-ln-numbers {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  text-align: right;
+  color: var(--ink-faint);
+  vertical-align: top;
+  padding-right: 0.75rem !important;
+  padding-left: 0 !important;
+  width: 1%;
+  white-space: nowrap;
+}
+.hljs-ln td.hljs-ln-code {
+  padding-left: 1rem !important;
+}
+
 .article pre .copy-btn {
   position: absolute;
   top: 0.5rem;

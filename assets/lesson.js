@@ -389,7 +389,15 @@
         const code = pre.querySelector('code');
         if (!code) return;
         try {
-          await navigator.clipboard.writeText(code.innerText);
+          let textToCopy = '';
+          const lines = code.querySelectorAll('.hljs-ln-code');
+          if (lines.length > 0) {
+            // Extract only the code parts, omitting line numbers
+            textToCopy = Array.from(lines).map(td => td.textContent).join('\n');
+          } else {
+            textToCopy = code.innerText;
+          }
+          await navigator.clipboard.writeText(textToCopy);
           btn.textContent = 'Copied';
           btn.classList.add('copied');
           setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1600);
@@ -471,7 +479,24 @@
           pre.replaceWith(div);
           return;
         }
-        try { hljs.highlightElement(el); } catch (_e) {}
+        try { 
+          hljs.highlightElement(el); 
+          if (typeof hljs.lineNumbersBlock === 'function') {
+            let isOutput = el.className.match(/language-(text|plaintext|output|out|bash|sh|none)/i) || !el.className.includes('language-');
+            
+            const prev = el.parentElement ? el.parentElement.previousElementSibling : null;
+            if (prev) {
+              const prevText = prev.textContent.trim().toLowerCase();
+              if (prevText.endsWith('outputs:') || prevText.endsWith('outputs') || prevText.endsWith('prints:') || prevText.endsWith('prints') || prevText.endsWith('following:')) {
+                isOutput = true;
+              }
+            }
+            
+            if (!isOutput) {
+              hljs.lineNumbersBlock(el);
+            }
+          }
+        } catch (_e) {}
       });
     }
 
