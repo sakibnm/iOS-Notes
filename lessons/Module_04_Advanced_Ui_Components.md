@@ -657,6 +657,8 @@ class AddExpenseView: UIView {
     }
     func setupbuttonAdd(){
         buttonAdd = UIButton(type: .system)
+        var config = UIButton.Configuration.filled()
+        buttonAdd.configuration = config
         buttonAdd.setTitle("Add Expense", for: .normal)
         buttonAdd.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(buttonAdd)
@@ -1774,12 +1776,16 @@ class AddExpenseView: UIView {
     }
     func setupbuttonSelectType(){
         buttonSelectType = UIButton(type: .system)
+        var config = UIButton.Configuration.filled()
+        buttonSelectType.configuration = config
         buttonSelectType.setTitle("Select the type of expense:", for: .normal)
         buttonSelectType.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(buttonSelectType)
     }
     func setupbuttonTakePhoto(){
         buttonTakePhoto = UIButton(type: .system)
+        var config = UIButton.Configuration.filled()
+        buttonTakePhoto.configuration = config
         buttonTakePhoto.setTitle("", for: .normal)
         buttonTakePhoto.setImage(UIImage(systemName: "camera.fill"), for: .normal)
         buttonTakePhoto.contentHorizontalAlignment = .fill
@@ -1790,6 +1796,8 @@ class AddExpenseView: UIView {
     }
     func setupbuttonAdd(){
         buttonAdd = UIButton(type: .system)
+        var config = UIButton.Configuration.filled()
+        buttonAdd.configuration = config
         buttonAdd.setTitle("Add Expense", for: .normal)
         buttonAdd.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(buttonAdd)
@@ -1837,6 +1845,8 @@ Let's look into the setup method for `buttonSelectType`:
 ```swift
 func setupbuttonSelectType(){
     buttonSelectType = UIButton(type: .system)
+        var config = UIButton.Configuration.filled()
+        buttonSelectType.configuration = config
     buttonSelectType.setTitle("Select the type of expense:", for: .normal)
     buttonSelectType.translatesAutoresizingMaskIntoConstraints = false
     self.addSubview(buttonSelectType)
@@ -1854,6 +1864,8 @@ Let's look into the setup method:
 ```swift
 func setupbuttonTakePhoto(){
     buttonTakePhoto = UIButton(type: .system)
+        var config = UIButton.Configuration.filled()
+        buttonTakePhoto.configuration = config
     buttonTakePhoto.setTitle("", for: .normal)
     buttonTakePhoto.setImage(UIImage(systemName: "camera.fill"), for: .normal)
     buttonTakePhoto.contentHorizontalAlignment = .fill
@@ -2038,6 +2050,8 @@ See, if we long tap on `buttonSelectType` then a menu pops up, and we can select
 ```swift
 func setupbuttonSelectType(){
     buttonSelectType = UIButton(type: .system)
+        var config = UIButton.Configuration.filled()
+        buttonSelectType.configuration = config
     buttonSelectType.setTitle("Select the type of expense:", for: .normal)
     //MARK: the on-tap primary action will pop up the menu...
     buttonSelectType.showsMenuAsPrimaryAction = true
@@ -2836,20 +2850,26 @@ class StackView: UIView {
     }
     func setupButton1(){
         button1 = UIButton(type: .system)
+        var config = UIButton.Configuration.filled()
+        button1.configuration = config
         button1.setImage(.add, for: .normal)
         button1.setTitle("Button 1", for: .normal)
         //button1.translatesAutoresizingMaskIntoConstraints = false
         stack.addArrangedSubview(button1)
     }
     func setupButton2(){
-        button2 = UIButton(type: .infoDark)
+        button2 = UIButton(type: .system)
+        var config = UIButton.Configuration.tinted()
+        button2.configuration = config
         button2.setImage(.checkmark, for: .normal)
         button2.setTitle("Button 1", for: .normal)
         //button2.translatesAutoresizingMaskIntoConstraints = false
         stack.addArrangedSubview(button2)
     }
     func setupButton3(){
-        button3 = UIButton(type: .infoDark)
+        button3 = UIButton(type: .system)
+        var config = UIButton.Configuration.tinted()
+        button3.configuration = config
         button3.setImage(.remove, for: .normal)
         button3.setTitle("Button 1", for: .normal)
         //button3.translatesAutoresizingMaskIntoConstraints = false
@@ -3456,6 +3476,8 @@ class RedView: UIView {
         self.addSubview(boxView)
         
         buttonSend = UIButton(type: .system)
+        var config = UIButton.Configuration.filled()
+        buttonSend.configuration = config
         buttonSend.setTitle("Send Hello", for: .normal)
         buttonSend.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(buttonSend)
@@ -4145,6 +4167,8 @@ class MainScreenView: UIView {
         
         //MARK: initializing buttonSelect...
         buttonSelect = UIButton(type: .system)
+        var config = UIButton.Configuration.filled()
+        buttonSelect.configuration = config
         buttonSelect.setTitle("Find", for: .normal)
         buttonSelect.setImage(UIImage(systemName: "magnifyingglass.circle.fill"), for: .normal)
         buttonSelect.translatesAutoresizingMaskIntoConstraints = false

@@ -140,7 +140,7 @@ Our app should look like the following at the end.:
 
 <figure><img src="/gitbook-assets/10.one (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
-Let's create a new project in Xcode, "App10." And add Alamofire to the project using Cocoapods. ( See [9.-cocoa-pods](../9.-cocoa-pods/ "mention")).
+Let's create a new project in Xcode, "App10." 
 
 Open the workspace (not the xcodeproject).
 
@@ -407,7 +407,6 @@ Let's add load the view in the controller. Let's add the following code to ViewC
 //
 
 import UIKit
-import Alamofire
 
 class ViewController: UIViewController {
     
@@ -433,13 +432,13 @@ If we run the app now, it will look like:
 
 
 
-### Fetching Data with AlamoFire: GET
+### Fetching Data with URLSession & Async/Await: GET
 
 It's time to fetch the contacts' names and display them in our table view. We will call the API with `getall` endpoint when the app starts, and display the response on the table view ([10.3.-testing-our-simple-custom-api-with-postman.md](10.3.-testing-our-simple-custom-api-with-postman.md "mention")).
 
-### Using Alamofire for text responses
+### Using URLSession for text responses
 
-If you noticed, in our API, we are getting back text responses from the server. We will use Alamofire to process the responses. Before we do, let's define an array of Strings in our ViewController for populating the table view. That array will hold the names of the contacts returned by the API endpoint `getall`.
+If you noticed, in our API, we are getting back text responses from the server. We will use `URLSession` to process the responses. Before we do, let's define an array of Strings in our ViewController for populating the table view. That array will hold the names of the contacts returned by the API endpoint `getall`.
 
 
 ```swift
@@ -451,7 +450,6 @@ If you noticed, in our API, we are getting back text responses from the server. 
 //
 
 import UIKit
-import Alamofire
 
 class ViewController: UIViewController {
     
@@ -494,7 +492,7 @@ class APIConfigs{
 
 You can access the base URL by writing `APIConfigs.baseURL` from anywhere in the project.
 
-### The 'getall' endpoint with Alamofire
+### The 'getall' endpoint with Async/Await
 
 Now, let's write a function to call the `getall` API endpoint and load the names in `contactNames` array.
 
@@ -505,7 +503,6 @@ Now, let's write a function to call the `getall` API endpoint and load the names
 //  Created by Sakib Miazi on 5/25/23.
 //
 import UIKit
-import Alamofire
 
 <strong>class ViewController: UIViewController {
 </strong>    
@@ -528,25 +525,29 @@ import Alamofire
     }
     
     //MARK: get all contacts...
-    func getAllContacts(){
-        if let url = URL(string: APIConfigs.baseURL + "getall"){
-            AF.request(url, method: .get)
-                .responseString(completionHandler: { response in
-                        print(response.result)
-                    }
-                )
+    func getAllContacts() {
+        guard let url = URL(string: APIConfigs.baseURL + "getall") else { return }
+        Task {
+            do {
+                let (data, _) = try await URLSession.shared.data(from: url)
+                if let dataString = String(data: data, encoding: .utf8) {
+                    print("Received string: \(dataString)")
+                }
+            } catch {
+                print(error)
+            }
         }
     }
 }
 
 </code></pre>
 
-First of all, you need to **import the Alamofire library**.
+We will use native `URLSession` along with `async/await`.
 
 Let's look at the function `getAllContacs()` method definition:
 
 * First, we build the URL with the `baseURL` and the `getall` endpoint using URL() initializer. URL() returns a URL wrapped with optional (in case it cannot create a valid URL, it returns an Optional(nil)). We have to unwrap it. So we unwrap it and put it in the constant `url`.
-* Then we use `url` to make a request with Alamofire. We use `AF` to use Alamofire functions. So, here we are creating an Alamofire request with the `url` we built.
+* Then we use `url` to make a request with `URLSession`. We use `URLSession.shared.data(from: url)` to fetch the data asynchronously.
 * If you noticed, we set the method of the request to `.get`. Remember, `getall` endpoint of the API server expects a GET request.
 * Then we call the `responseString()` method for the request. We are handling text responses, right? So, we need to catch String-type data from the response we get from the server.
 * Then we write a closure `completionHandler` to deal with the data after we receive the response.\
@@ -565,46 +566,35 @@ Let's write the following code in the `completionHandler` closure taking care of
 
 ```swift
 //MARK: get all contacts...
-func getAllContacts(){
-    if let url = URL(string: APIConfigs.baseURL + "getall"){
-        AF.request(url, method: .get).responseString(completionHandler: { response in
-            //MARK: retrieving the status code...
-            let status = response.response?.statusCode
+func getAllContacts() {
+    guard let url = URL(string: APIConfigs.baseURL + "getall") else { return }
+    
+    Task {
+        do {
+            let (data, response) = try await URLSession.shared.data(from: url)
             
-            switch response.result{
-            case .success(let data):
-                //MARK: there was no network error...
-                
-                //status code is Optional, so unwrapping it...
-                if let uwStatusCode = status{
-                    switch uwStatusCode{
-                        case 200...299:
-                        //MARK: the request was valid 200-level...
-                            var names = data.components(separatedBy: "\n")
-                            self.contactNames = names
-                            print(self.contactNames)
-                            break
-                
-                        case 400...499:
-                        //MARK: the request was not valid 400-level...
-                            print(data)
-                            break
-                
-                        default:
-                        //MARK: probably a 500-level error...
-                            print(data)
-                            break
-                
-                    }
+            //MARK: retrieving the status code...
+            guard let httpResponse = response as? HTTPURLResponse else { return }
+            
+            switch httpResponse.statusCode {
+            case 200...299:
+                //MARK: the request was valid 200-level...
+                if let dataString = String(data: data, encoding: .utf8) {
+                    var names = dataString.components(separatedBy: "\n")
+                    self.contactNames = names
+                    print(self.contactNames)
                 }
-                break
-                
-            case .failure(let error):
-                //MARK: there was a network error...
-                print(error)
-                break
+            case 400...499:
+                //MARK: the request was not valid 400-level...
+                if let dataString = String(data: data, encoding: .utf8) { print(dataString) }
+            default:
+                //MARK: probably a 500-level error...
+                if let dataString = String(data: data, encoding: .utf8) { print(dataString) }
             }
-        })
+        } catch {
+            //MARK: there was a network error...
+            print(error)
+        }
     }
 }
 ```
@@ -712,47 +702,38 @@ The final `getAllContacts()` method looks as follows:
 ```swift
 //MARK: get all contacts...
 func getAllContacts(){
-    if let url = URL(string: APIConfigs.baseURL + "getall"){
-        AF.request(url, method: .get).responseString(completionHandler: { response in
-            //MARK: retrieving the status code...
-            let status = response.response?.statusCode
+    guard let url = URL(string: APIConfigs.baseURL + "getall") else { return }
+    
+    Task {
+        do {
+            let (data, response) = try await URLSession.shared.data(from: url)
             
-            switch response.result{
-            case .success(let data):
-                //MARK: there was no network error...
-                
-                //MARK: status code is Optional, so unwrapping it...
-                if let uwStatusCode = status{
-                    switch uwStatusCode{
-                        case 200...299:
-                        //MARK: the request was valid 200-level...
-                            var names = data.components(separatedBy: "\n")
-                            self.contactNames = names
-                            self.contactNames.removeLast()
-                            self.mainScreen.tableViewContacts.reloadData()
-                            print(self.contactNames)
-                            break
-                
-                        case 400...499:
-                        //MARK: the request was not valid 400-level...
-                            print(data)
-                            break
-                
-                        default:
-                        //MARK: probably a 500-level error...
-                            print(data)
-                            break
-                
-                    }
+            //MARK: retrieving the status code...
+            guard let httpResponse = response as? HTTPURLResponse else { return }
+            
+            switch httpResponse.statusCode {
+            case 200...299:
+                //MARK: the request was valid 200-level...
+                if let dataString = String(data: data, encoding: .utf8) {
+                    var names = dataString.components(separatedBy: "\n")
+                    self.contactNames = names
+                    self.contactNames.removeLast()
+                    self.mainScreen.tableViewContacts.reloadData()
+                    print(self.contactNames)
                 }
-                break
                 
-            case .failure(let error):
-                //MARK: there was a network error...
-                print(error)
-                break
+            case 400...499:
+                //MARK: the request was not valid 400-level...
+                print("Client error: \(httpResponse.statusCode)")
+                
+            default:
+                //MARK: probably a 500-level error...
+                print("Server error: \(httpResponse.statusCode)")
             }
-        })
+        } catch {
+            //MARK: there was a network error...
+            print(error)
+        }
     }
 }
 ```
@@ -766,7 +747,7 @@ Let's run the app again. It should look like this:
 
 ### Posting Data with AlamoFire: POST
 
-Now it's time to add a new contact. We need to read the name, email, and phone number the user puts into the bottom add view. Then when the user taps the Add Contact button, we need to use Alamofire to post the data to the API server.
+Now it's time to add a new contact. We need to read the name, email, and phone number the user puts into the bottom add view. Then when the user taps the Add Contact button, we need to use `URLSession` to post the data to the API server.
 
 ### Fetching the user inputs and creating a new Contact object
 
@@ -782,7 +763,6 @@ Let's open ViewController.swift file. Then add an action to `mainScreen.buttonAd
 //
 
 import UIKit
-import Alamofire
 
 class ViewController: UIViewController {
     
@@ -870,59 +850,37 @@ We unwrapped the optional values from the text fields and fetched the strings. T
 
 ### Making the API call for the endpoint 'add.'
 
-We need to use Alamofire to POST the new contact we created above to the server. We now write the following code in `addANewContact(contact: Contact)` method:
+We need to use `URLSession` to POST the new contact we created above to the server. We now write the following code in `addANewContact(contact: Contact)` method:
 
 
 ```swift
 //MARK: add a new contact call: add endpoint...
-func addANewContact(contact: Contact){
-    if let url = URL(string: APIConfigs.baseURL+"add"){
-        
-        AF.request(url, method:.post, parameters:
-                    [
-                        "name": contact.name,
-                        "email": contact.email,
-                        "phone": contact.phone
-                    ])
-            .responseString(completionHandler: { response in
-                //MARK: retrieving the status code...
-                let status = response.response?.statusCode
-                
-                switch response.result{
-                case .success(let data):
-                    //MARK: there was no network error...
-                    
-                    //MARK: status code is Optional, so unwrapping it...
-                    if let uwStatusCode = status{
-                        switch uwStatusCode{
-                            case 200...299:
-                            //MARK: the request was valid 200-level...
-                            self.getAllContacts()
-                            self.clearAddViewFields()
-                                break
-                    
-                            case 400...499:
-                            //MARK: the request was not valid 400-level...
-                                print(data)
-                                break
-                    
-                            default:
-                            //MARK: probably a 500-level error...
-                                print(data)
-                                break
-                    
-                        }
-                    }
-                    break
-                    
-                case .failure(let error):
-                    //MARK: there was a network error...
-                    print(error)
-                    break
-                }
-            })
-    }else{
-        //alert that the URL is invalid...
+func addANewContact(contact: Contact) {
+    guard let url = URL(string: APIConfigs.baseURL + "add") else { return }
+    var request = URLRequest(url: url)
+    request.httpMethod = "POST"
+    request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+    
+    let parameters = "name=\(contact.name)&email=\(contact.email)&phone=\(contact.phone)"
+    request.httpBody = parameters.data(using: .utf8)
+    
+    Task {
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            
+            guard let httpResponse = response as? HTTPURLResponse else { return }
+            switch httpResponse.statusCode {
+            case 200...299:
+                self.getAllContacts()
+                self.clearAddViewFields()
+            case 400...499:
+                if let dataString = String(data: data, encoding: .utf8) { print(dataString) }
+            default:
+                if let dataString = String(data: data, encoding: .utf8) { print(dataString) }
+            }
+        } catch {
+            print(error)
+        }
     }
 }
 ```
@@ -930,8 +888,9 @@ func addANewContact(contact: Contact){
 
 In the above code:
 
-* We use Alamofire to create a POST request (at line 5) and add the body parameters. In the Postman testing, we used body form parameters to send data to post to the API server, right? We create a dictionary to create key-value pairs here in Alamofire and post them with the request.
-* The handler closure is pretty straightforward. We first check if there is any network error or not. If the network is OK, then we check the status code. If the code is 200-level, we know that our request was valid and the response is desirable.
+* We use `URLSession` to create a POST request and add the body parameters. We encode the parameters as a URL-encoded string and attach it to the `httpBody` of the request.
+* We then wrap the asynchronous call in a `Task` block and use `try await`.
+* If there is no network error, we check the status code. If the code is 200-level, we know that our request was valid and the response is desirable.
   * If it is a 200-level code, we will get the updated contacts by calling `getAllContacts()` again.
   * Also, we clear the text fields to empty after we complete adding the new user by calling `clearAddViewFields()` method.
 
@@ -951,7 +910,7 @@ Yay! we are done adding a new contact!
 
 
 
-### Fetching Data with AlamoFire: 'details' endpoint
+### Fetching Data with URLSession & Async/Await: 'details' endpoint
 
 Let's get the details of a selected user when the user taps on a cell on the table view.
 
@@ -976,50 +935,35 @@ Let's define the `getContactDetails()` method:
 
 ```swift
 //MARK: get details of a contact...
-    func getContactDetails(name: String){
-        let parameters = ["name":name]
-        if let url = URL(string: APIConfigs.baseURL+"details"){
-            AF.request(url, method:.get,
-                       parameters: ["name":name],
-                       encoding: URLEncoding.queryString)
-                .responseString(completionHandler: { response in
+    func getContactDetails(name: String) {
+        guard var urlComponents = URLComponents(string: APIConfigs.baseURL + "details") else { return }
+        urlComponents.queryItems = [URLQueryItem(name: "name", value: name)]
+        guard let url = urlComponents.url else { return }
+        
+        Task {
+            do {
+                let (data, response) = try await URLSession.shared.data(from: url)
                 
                 //MARK: retrieving the status code...
-                let status = response.response?.statusCode
+                guard let httpResponse = response as? HTTPURLResponse else { return }
                 
-                switch response.result{
-                case .success(let data):
-                    //MARK: there was no network error...
-                    
-                    //MARK: status code is Optional, so unwrapping it...
-                    if let uwStatusCode = status{
-                        switch uwStatusCode{
-                            case 200...299:
-                            //MARK: the request was valid 200-level...
-                                //MARK: show alert with details...
-                                self.showDetailsInAlert(data: data)
-                                break
-                    
-                            case 400...499:
-                            //MARK: the request was not valid 400-level...
-                                print(data)
-                                break
-                    
-                            default:
-                            //MARK: probably a 500-level error...
-                                print(data)
-                                break
-                    
-                        }
+                switch httpResponse.statusCode {
+                case 200...299:
+                    //MARK: the request was valid 200-level...
+                    if let dataString = String(data: data, encoding: .utf8) {
+                        self.showDetailsInAlert(data: dataString)
                     }
-                    break
-                    
-                case .failure(let error):
-                    //MARK: there was a network error...
-                    print(error)
-                    break
+                case 400...499:
+                    //MARK: the request was not valid 400-level...
+                    if let dataString = String(data: data, encoding: .utf8) { print(dataString) }
+                default:
+                    //MARK: probably a 500-level error...
+                    if let dataString = String(data: data, encoding: .utf8) { print(dataString) }
                 }
-            })
+            } catch {
+                //MARK: there was a network error...
+                print(error)
+            }
         }
     }
 ```
@@ -1027,9 +971,9 @@ Let's define the `getContactDetails()` method:
 
 Here in the above code:
 
-* We set the method of the request to **GET.**
-* If you remember from the Postman test, we added the name parameter with the API call for the details API endpoint. Here, we are doing it using the `parameters` attribute to the Alamofire request (at line 6).
-* The response closure for this case is pretty straightforward too. If there is no network error and the status code is a 200-level code, we call the method `showDetailsInAlert(data: data)` to show an alert with the received data (line 23).
+* We set the method of the request to **GET** simply by using `URLSession.shared.data(from: url)`.
+* We added the name parameter as a URL query string using `URLComponents`. This is the native, safe way to construct URLs with query parameters in Swift.
+* The response block is encapsulated in a Swift Concurrency `Task`. If there is no network error and the status code is a 200-level code, we call the method `showDetailsInAlert(data: dataString)` to show an alert with the received data.
 
 Now let's write the code to display the alert in method `showDetailsInAlert():`
 
@@ -1418,7 +1362,7 @@ struct ContactNames{
 
 ### Parsing JSON
 
-Let's write the code to parse the JSON response we receive after calling `getall`. Let's create a new Xcode project, App11, and integrate Alamofire into the project using CocoaPods.
+Let's write the code to parse the JSON response we receive after calling `getall`. Let's create a new Xcode project, App11.
 
 **Set up the same Views, Data Models and APIConfigs (MainScreenView.swift, ContactsTableViewCell.swift, APIConfigs.swift, and Contact.swift) as App10.**
 
@@ -1455,7 +1399,6 @@ Let's open the View Controller and write the initial controller code similar to 
 //
 
 import UIKit
-import Alamofire
 
 class ViewController: UIViewController {
     let mainScreen = MainScreenView()
@@ -1573,64 +1516,46 @@ struct ContactNames{
 }
 ```
 
-### Creating the 'getall' request using Alamofire
+### Creating the 'getall' request using URLSession
 
 Open ViewController.swift file, and let's write the following code in `getAllContacts()`:
 
 
 ```swift
 //MARK: get all contacts call: getall endpoint...
-func getAllContacts(){
-    if let url = URL(string: APIConfigs.baseURL + "getall"){
-        AF.request(url, method: .get).responseData(completionHandler: { response in
-            //MARK: retrieving the status code...
-            let status = response.response?.statusCode
+func getAllContacts() {
+    guard let url = URL(string: APIConfigs.baseURL + "getall") else { return }
+    
+    Task {
+        do {
+            let (data, response) = try await URLSession.shared.data(from: url)
             
-            switch response.result{
-            case .success(let data):
-                //MARK: there was no network error...
-                
-                //MARK: status code is Optional, so unwrapping it...
-                if let uwStatusCode = status{
-                    switch uwStatusCode{
-                        case 200...299:
-                        //MARK: the request was valid 200-level...
-                            self.contactNames.removeAll()
-                            let decoder = JSONDecoder()
-                            do{
-                                let receivedData =
-                                    try decoder
-                                    .decode(ContactNames.self, from: data)
-                                    
-                                for item in receivedData.contacts{
-                                    self.contactNames.append(item.name)
-                                }
-                                self.mainScreen.tableViewContacts.reloadData()
-                            }catch{
-                                print("JSON couldn't be decoded.")
-                            }
-                            break
-                
-                        case 400...499:
-                        //MARK: the request was not valid 400-level...
-                            print(data)
-                            break
-                
-                        default:
-                        //MARK: probably a 500-level error...
-                            print(data)
-                            break
-                
+            guard let httpResponse = response as? HTTPURLResponse else { return }
+            
+            switch httpResponse.statusCode {
+            case 200...299:
+                //MARK: the request was valid 200-level...
+                self.contactNames.removeAll()
+                let decoder = JSONDecoder()
+                do {
+                    let receivedData = try decoder.decode(ContactNames.self, from: data)
+                    for item in receivedData.contacts {
+                        self.contactNames.append(item.name)
                     }
+                    self.mainScreen.tableViewContacts.reloadData()
+                } catch {
+                    print("JSON couldn't be decoded.")
                 }
-                break
-                
-            case .failure(let error):
-                //MARK: there was a network error...
-                print(error)
-                break
+            case 400...499:
+                //MARK: the request was not valid 400-level...
+                if let dataString = String(data: data, encoding: .utf8) { print(dataString) }
+            default:
+                //MARK: probably a 500-level error...
+                if let dataString = String(data: data, encoding: .utf8) { print(dataString) }
             }
-        })
+        } catch {
+            print(error)
+        }
     }
 }
 ```
@@ -1729,55 +1654,37 @@ Now, let's update the `getContactDetails(name: String)` method:
 
 ```swift
 //MARK: get details of a contact...
-func getContactDetails(name: String){
+func getContactDetails(name: String) {
     print(name)
-    if let url = URL(string: APIConfigs.baseURL+"details"){
-        AF.request(url, method: .get, parameters: ["name":name])
-            .responseData(completionHandler: { response in
-            //MARK: retrieving the status code...
-            let status = response.response?.statusCode
+    guard var urlComponents = URLComponents(string: APIConfigs.baseURL + "details") else { return }
+    urlComponents.queryItems = [URLQueryItem(name: "name", value: name)]
+    guard let url = urlComponents.url else { return }
+    
+    Task {
+        do {
+            let (data, response) = try await URLSession.shared.data(from: url)
             
-            switch response.result{
-            case .success(let data):
-                print(data)
-                //MARK: there was no network error...
-                
-                //MARK: status code is Optional, so unwrapping it...
-                if let uwStatusCode = status{
-                    switch uwStatusCode{
-                        case 200...299:
-                        //MARK: the request was valid 200-level...
-                            let decoder = JSONDecoder()
-                            do{
-                                let receivedData = try decoder
-                                    .decode(Contact.self, from: data)
-                                print(receivedData)
-                                self.showDetailsInAlert(data: receivedData)
-                            }catch{
-
-                            }
-                            break
-                
-                        case 400...499:
-                        //MARK: the request was not valid 400-level...
-                            print(data)
-                            break
-                
-                        default:
-                        //MARK: probably a 500-level error...
-                            print(data)
-                            break
-                
-                    }
+            guard let httpResponse = response as? HTTPURLResponse else { return }
+            
+            switch httpResponse.statusCode {
+            case 200...299:
+                //MARK: the request was valid 200-level...
+                let decoder = JSONDecoder()
+                do {
+                    let receivedData = try decoder.decode(Contact.self, from: data)
+                    print(receivedData)
+                    self.showDetailsInAlert(data: receivedData)
+                } catch {
+                    print("JSON decoding error: \(error)")
                 }
-                break
-                
-            case .failure(let error):
-                //MARK: there was a network error...
-                print(error)
-                break
+            case 400...499:
+                if let dataString = String(data: data, encoding: .utf8) { print(dataString) }
+            default:
+                if let dataString = String(data: data, encoding: .utf8) { print(dataString) }
             }
-        })
+        } catch {
+            print(error)
+        }
     }
 }
 
@@ -1853,55 +1760,36 @@ So let's put the code from App10 to `addANewContact(contact: Contact)` and `onBu
 
 ```swift
 //MARK: add a new contact call: add endpoint...
-func addANewContact(contact: Contact){
-    if let url = URL(string: APIConfigs.baseURL+"add"){
-        
-        AF.request(url, method:.post, parameters:
-                    [
-                        //MARK: we can unwrap them here since we made sure they are not null above...
-                        "name": contact.name,
-                        "email": contact.email,
-                        "phone": contact.phone
-                    ])
-            .responseString(completionHandler: { response in
-                //MARK: retrieving the status code...
-                let status = response.response?.statusCode
-                
-                switch response.result{
-                case .success(let data):
-                    //MARK: there was no network error...
-                    
-                    //MARK: status code is Optional, so unwrapping it...
-                    if let uwStatusCode = status{
-                        switch uwStatusCode{
-                            case 200...299:
-                            //MARK: the request was valid 200-level...
-                            self.getAllContacts()
-                            self.clearAddViewFields()
-                                break
-                    
-                            case 400...499:
-                            //MARK: the request was not valid 400-level...
-                                print(data)
-                                break
-                    
-                            default:
-                            //MARK: probably a 500-level error...
-                                print(data)
-                                break
-                    
-                        }
-                    }
-                    break
-                    
-                case .failure(let error):
-                    //MARK: there was a network error...
-                    print(error)
-                    break
-                }
-            })
-    }else{
-        //alert that the URL is invalid...
+func addANewContact(contact: Contact) {
+    guard let url = URL(string: APIConfigs.baseURL + "add") else { return }
+    var request = URLRequest(url: url)
+    request.httpMethod = "POST"
+    request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+    
+    //MARK: we can unwrap them here since we made sure they are not null above...
+    let parameters = "name=\(contact.name)&email=\(contact.email)&phone=\(contact.phone)"
+    request.httpBody = parameters.data(using: .utf8)
+    
+    Task {
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            
+            guard let httpResponse = response as? HTTPURLResponse else { return }
+            switch httpResponse.statusCode {
+            case 200...299:
+                //MARK: the request was valid 200-level...
+                self.getAllContacts()
+                self.clearAddViewFields()
+            case 400...499:
+                //MARK: the request was not valid 400-level...
+                if let dataString = String(data: data, encoding: .utf8) { print(dataString) }
+            default:
+                //MARK: probably a 500-level error...
+                if let dataString = String(data: data, encoding: .utf8) { print(dataString) }
+            }
+        } catch {
+            print(error)
+        }
     }
 }
 ```
@@ -2057,7 +1945,7 @@ protocol ContactsProtocol{
 
 ### Adopting the Protocol
 
-Awesome, now that we have a protocol, let's create another Swift file, ContactsAPICalls.swift, in the MainScreen folder. Import UIKit and Alamofire in this file. Let's write the following code in the file:
+Awesome, now that we have a protocol, let's create another Swift file, ContactsAPICalls.swift, in the MainScreen folder. Import UIKit in this file. Let's write the following code in the file:
 
 ```swift
 //
@@ -2069,7 +1957,6 @@ Awesome, now that we have a protocol, let's create another Swift file, ContactsA
 
 import Foundation
 import UIKit
-import Alamofire
 
 extension ViewController: ContactsProtocol{
     
@@ -2089,165 +1976,101 @@ In the above code, we use the extension magic to adopt the ContactsProtocol from
 
 import Foundation
 import UIKit
-import Alamofire
 
 extension ViewController:ContactsProtocol{
     //MARK: get all contacts call: getall endpoint...
-    func getAllContacts(){
-        if let url = URL(string: APIConfigs.baseURL + "getall"){
-            AF.request(url, method: .get).responseData(completionHandler: { response in
-                //MARK: retrieving the status code...
-                let status = response.response?.statusCode
+    func getAllContacts() {
+        guard let url = URL(string: APIConfigs.baseURL + "getall") else { return }
+        
+        Task {
+            do {
+                let (data, response) = try await URLSession.shared.data(from: url)
+                guard let httpResponse = response as? HTTPURLResponse else { return }
                 
-                switch response.result{
-                case .success(let data):
-                    //MARK: there was no network error...
-                    
-                    //MARK: status code is Optional, so unwrapping it...
-                    if let uwStatusCode = status{
-                        switch uwStatusCode{
-                            case 200...299:
-                            //MARK: the request was valid 200-level...
-                                self.contactNames.removeAll()
-                                let decoder = JSONDecoder()
-                                do{
-                                    let receivedData =
-                                        try decoder
-                                        .decode(ContactNames.self, from: data)
-                                    for item in receivedData.contacts{
-                                        self.contactNames.append(item.name)
-                                    }
-                                    self.mainScreen.tableViewContacts.reloadData()
-                                }catch{
-                                    print("JSON couldn't be decoded.")
-                                }
-                                break
-                    
-                            case 400...499:
-                            //MARK: the request was not valid 400-level...
-                                print(data)
-                                break
-                    
-                            default:
-                            //MARK: probably a 500-level error...
-                                print(data)
-                                break
-                    
+                switch httpResponse.statusCode {
+                case 200...299:
+                    self.contactNames.removeAll()
+                    let decoder = JSONDecoder()
+                    do {
+                        let receivedData = try decoder.decode(ContactNames.self, from: data)
+                        for item in receivedData.contacts {
+                            self.contactNames.append(item.name)
                         }
+                        self.mainScreen.tableViewContacts.reloadData()
+                    } catch {
+                        print("JSON couldn't be decoded.")
                     }
-                    break
-                    
-                case .failure(let error):
-                    //MARK: there was a network error...
-                    print(error)
-                    break
+                case 400...499:
+                    if let dataString = String(data: data, encoding: .utf8) { print(dataString) }
+                default:
+                    if let dataString = String(data: data, encoding: .utf8) { print(dataString) }
                 }
-            })
+            } catch {
+                print(error)
+            }
         }
     }
     
     //MARK: get details of a contact...
-    func getContactDetails(name: String){
+    func getContactDetails(name: String) {
         print(name)
-        if let url = URL(string: APIConfigs.baseURL+"details"){
-            AF.request(url, method: .get, parameters: ["name":name])
-                .responseData(completionHandler: { response in
-                //MARK: retrieving the status code...
-                let status = response.response?.statusCode
+        guard var urlComponents = URLComponents(string: APIConfigs.baseURL + "details") else { return }
+        urlComponents.queryItems = [URLQueryItem(name: "name", value: name)]
+        guard let url = urlComponents.url else { return }
+        
+        Task {
+            do {
+                let (data, response) = try await URLSession.shared.data(from: url)
+                guard let httpResponse = response as? HTTPURLResponse else { return }
                 
-                switch response.result{
-                case .success(let data):
-                    print(data)
-                    //MARK: there was no network error...
-                    
-                    //MARK: status code is Optional, so unwrapping it...
-                    if let uwStatusCode = status{
-                        switch uwStatusCode{
-                            case 200...299:
-                            //MARK: the request was valid 200-level...
-                                let decoder = JSONDecoder()
-                                do{
-                                    let receivedData = try decoder.decode(Contact.self, from: data)
-                                    print(receivedData)
-                                    self.showDetailsInAlert(data: receivedData)
-                                }catch{
-
-                                }
-                                break
-                    
-                            case 400...499:
-                            //MARK: the request was not valid 400-level...
-                                print(data)
-                                break
-                    
-                            default:
-                            //MARK: probably a 500-level error...
-                                print(data)
-                                break
-                    
-                        }
+                switch httpResponse.statusCode {
+                case 200...299:
+                    let decoder = JSONDecoder()
+                    do {
+                        let receivedData = try decoder.decode(Contact.self, from: data)
+                        print(receivedData)
+                        self.showDetailsInAlert(data: receivedData)
+                    } catch {
+                        print("JSON decoding error: \(error)")
                     }
-                    break
-                    
-                case .failure(let error):
-                    //MARK: there was a network error...
-                    print(error)
-                    break
+                case 400...499:
+                    if let dataString = String(data: data, encoding: .utf8) { print(dataString) }
+                default:
+                    if let dataString = String(data: data, encoding: .utf8) { print(dataString) }
                 }
-            })
+            } catch {
+                print(error)
+            }
         }
     }
     
     //MARK: add a new contact call: add endpoint...
-    func addANewContact(contact: Contact){
-        if let url = URL(string: APIConfigs.baseURL+"add"){
-            
-            AF.request(url, method:.post, parameters:
-                        [
-                            //MARK: we can unwrap them here since we made sure they are not null above...
-                            "name": contact.name,
-                            "email": contact.email,
-                            "phone": contact.phone
-                        ])
-                .responseString(completionHandler: { response in
-                    //MARK: retrieving the status code...
-                    let status = response.response?.statusCode
-                    
-                    switch response.result{
-                    case .success(let data):
-                        //MARK: there was no network error...
-                        
-                        //MARK: status code is Optional, so unwrapping it...
-                        if let uwStatusCode = status{
-                            switch uwStatusCode{
-                                case 200...299:
-                                //MARK: the request was valid 200-level...
-                                self.getAllContacts()
-                                self.clearAddViewFields()
-                                    break
-                        
-                                case 400...499:
-                                //MARK: the request was not valid 400-level...
-                                    print(data)
-                                    break
-                        
-                                default:
-                                //MARK: probably a 500-level error...
-                                    print(data)
-                                    break
-                        
-                            }
-                        }
-                        break
-                        
-                    case .failure(let error):
-                        //MARK: there was a network error...
-                        print(error)
-                        break
-                    }
-                })
-        }else{
-            //alert that the URL is invalid...
+    func addANewContact(contact: Contact) {
+        guard let url = URL(string: APIConfigs.baseURL + "add") else { return }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        
+        let parameters = "name=\(contact.name)&email=\(contact.email)&phone=\(contact.phone)"
+        request.httpBody = parameters.data(using: .utf8)
+        
+        Task {
+            do {
+                let (data, response) = try await URLSession.shared.data(for: request)
+                guard let httpResponse = response as? HTTPURLResponse else { return }
+                
+                switch httpResponse.statusCode {
+                case 200...299:
+                    self.getAllContacts()
+                    self.clearAddViewFields()
+                case 400...499:
+                    if let dataString = String(data: data, encoding: .utf8) { print(dataString) }
+                default:
+                    if let dataString = String(data: data, encoding: .utf8) { print(dataString) }
+                }
+            } catch {
+                print(error)
+            }
         }
     }
 }

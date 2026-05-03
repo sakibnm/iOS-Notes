@@ -327,7 +327,9 @@ class ViewController: UIViewController {
     
     //Defining the Button attributes...
     func setupButtonClickMe(){
-        buttonClickMe = UIButton(type: .system) //You need to set the type when you create a Button. We use default system button...
+        buttonClickMe = UIButton(type: .system)
+        var config = UIButton.Configuration.filled()
+        buttonClickMe.configuration = config //You need to set the type when you create a Button. We use default system button...
         buttonClickMe.setTitle("Click Me!", for: .normal)
         buttonClickMe.tintColor = .systemBlue
         buttonClickMe.translatesAutoresizingMaskIntoConstraints = false
@@ -450,7 +452,9 @@ class ViewController: UIViewController {
     
     //Defining the Button attributes...
     func setupButtonClickMe(){
-        buttonClickMe = UIButton(type: .system) //You need to set the type when you create a Button. We use default system button...
+        buttonClickMe = UIButton(type: .system)
+        var config = UIButton.Configuration.filled()
+        buttonClickMe.configuration = config //You need to set the type when you create a Button. We use default system button...
         buttonClickMe.setTitle("Click Me!", for: .normal)
         buttonClickMe.tintColor = .systemBlue
         buttonClickMe.translatesAutoresizingMaskIntoConstraints = false
@@ -671,6 +675,8 @@ class ViewController: UIViewController {
     
     func setupButtonSend(){
         buttonSend = UIButton(type: .system)
+        var config = UIButton.Configuration.filled()
+        buttonSend.configuration = config
         buttonSend.setTitle("Send", for: .normal)
         buttonSend.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(buttonSend)
@@ -1081,6 +1087,8 @@ class FirstScreenView: UIView {
     }
     func setupButtonSubmit(){
         buttonSubmit = UIButton(type: .system)
+        var config = UIButton.Configuration.filled()
+        buttonSubmit.configuration = config
         buttonSubmit.setTitle("Submit", for: .normal)
         buttonSubmit.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(buttonSubmit)
@@ -1840,6 +1848,8 @@ class ShowViewController: UIViewController {
     // setting up buttonSendMood...
     func setupButtonSendMood(){
         buttonSendMood = UIButton(type: .system)
+        var config = UIButton.Configuration.filled()
+        buttonSendMood.configuration = config
         buttonSendMood.setTitle("Send Mood back!", for: .normal)
         buttonSendMood.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(buttonSendMood)
@@ -2049,6 +2059,8 @@ class ShowViewController: UIViewController {
     // setting up buttonSendMood...
     func setupButtonSendMood(){
         buttonSendMood = UIButton(type: .system)
+        var config = UIButton.Configuration.filled()
+        buttonSendMood.configuration = config
         buttonSendMood.setTitle("Send Mood back!", for: .normal)
         buttonSendMood.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(buttonSendMood)
@@ -2152,6 +2164,8 @@ class ViewController: UIViewController {
     //buttonSend...
     func setupButtonSend(){
         buttonSend = UIButton(type: .system)
+        var config = UIButton.Configuration.filled()
+        buttonSend.configuration = config
         buttonSend.setTitle("Send", for: .normal)
         buttonSend.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(buttonSend)

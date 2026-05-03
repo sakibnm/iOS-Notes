@@ -1080,55 +1080,44 @@ So, the updated code becomes something like:
 
 ```swift
 //MARK: get all contacts...
-func getAllContacts() async -> Bool{
-    if let url = URL(string: APIConfigs.baseURL + "getall") {
+func getAllContacts() async -> Bool {
+    guard let url = URL(string: APIConfigs.baseURL + "getall") else { return false }
+    
+    do {
+        let (data, response) = try await URLSession.shared.data(from: url)
+        guard let httpResponse = response as? HTTPURLResponse else { return false }
         
-        let response = await AF.request(url, method: .get)
-            .serializingData()
-            .response
-        
-        let statusCode = response.response?.statusCode
-        
-        switch response.result {
-        case .success(let data):
-            if let uwStatusCode = statusCode {
-                switch uwStatusCode {
-                case 200...299:
-                    //MARK: the request was valid 200-level...
-                    self.contactNames.removeAll()
-                    let decoder = JSONDecoder()
-                    do {
-                        let receivedData = try decoder.decode(ContactNames.self, from: data)
-                        for item in receivedData.contacts {
-                            self.contactNames.append(item.name)
-                        }
-                        return true
-                    } catch {
-                        print("JSON couldn't be decoded.")
-                        return false
-                    }
-                    
-                case 400...499:
-                    //MARK: the request was not valid 400-level...
-                    print(data)
-                    return false
-                    
-                default:
-                    //MARK: probably a 500-level error...
-                    print(data)
-                    return false
+        switch httpResponse.statusCode {
+        case 200...299:
+            //MARK: the request was valid 200-level...
+            self.contactNames.removeAll()
+            let decoder = JSONDecoder()
+            do {
+                let receivedData = try decoder.decode(ContactNames.self, from: data)
+                for item in receivedData.contacts {
+                    self.contactNames.append(item.name)
                 }
+                return true
+            } catch {
+                print("JSON couldn't be decoded.")
+                return false
             }
             
-        case .failure(let error):
-            //MARK: there was a network error...
-            print(error)
+        case 400...499:
+            //MARK: the request was not valid 400-level...
+            if let dataString = String(data: data, encoding: .utf8) { print(dataString) }
+            return false
+            
+        default:
+            //MARK: probably a 500-level error...
+            if let dataString = String(data: data, encoding: .utf8) { print(dataString) }
             return false
         }
-    } else {
+    } catch {
+        //MARK: there was a network error...
+        print(error)
         return false
     }
-    return false
 }
 ```
 
@@ -1149,7 +1138,6 @@ Now, let's see how we can call getAllContacts using the Task{} block from the Vi
 
 ```swift
 import UIKit
-import Alamofire
 
 class ContactsViewController: UIViewController {
     
@@ -1211,43 +1199,28 @@ Let's look at the updated delete and add contact API calls:
 
 ```swift
 //MARK: add a new contact call: add endpoint...
-func addANewContact(contact: Contact) async -> Bool{
-    if let url = URL(string: APIConfigs.baseURL + "add") {
+func addANewContact(contact: Contact) async -> Bool {
+    guard let url = URL(string: APIConfigs.baseURL + "add") else { return false }
+    
+    var request = URLRequest(url: url)
+    request.httpMethod = "POST"
+    request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+    
+    let parameters = "name=\(contact.name)&email=\(contact.email)&phone=\(contact.phone)"
+    request.httpBody = parameters.data(using: .utf8)
+    
+    do {
+        let (_, response) = try await URLSession.shared.data(for: request)
+        guard let httpResponse = response as? HTTPURLResponse else { return false }
         
-        let response = await AF.request(
-            url,
-            method: .post,
-            parameters: [
-                "name": contact.name,
-                "email": contact.email,
-                "phone": contact.phone
-            ]
-        )
-        .serializingData()
-        .response
-        
-        let statusCode = response.response?.statusCode
-        
-        switch response.result {
-        case .success(let data):
-            if let uwStatusCode = statusCode {
-                switch uwStatusCode {
-                case 200...299:
-                    return true
-                    
-                case 400...499:
-                    return false
-                    
-                default:
-                    return false
-                }
-            }
-            return false
-            
-        case .failure(_):
+        switch httpResponse.statusCode {
+        case 200...299:
+            return true
+        default:
             return false
         }
-    } else {
+    } catch {
+        print(error)
         return false
     }
 }
@@ -1259,40 +1232,23 @@ func addANewContact(contact: Contact) async -> Bool{
 
 ```swift
 //MARK: delete the selected contact...
-func deleteContact(name: String) async -> Bool{
+func deleteContact(name: String) async -> Bool {
+    guard var urlComponents = URLComponents(string: APIConfigs.baseURL + "delete") else { return false }
+    urlComponents.queryItems = [URLQueryItem(name: "name", value: name)]
+    guard let url = urlComponents.url else { return false }
     
-    if let url = URL(string: APIConfigs.baseURL + "delete") {
+    do {
+        let (_, response) = try await URLSession.shared.data(from: url)
+        guard let httpResponse = response as? HTTPURLResponse else { return false }
         
-        let response = await AF.request(
-            url,
-            method: .get,
-            parameters: ["name": name]
-        )
-        .serializingData()
-        .response
-        
-        let statusCode = response.response?.statusCode
-        
-        switch response.result {
-        case .success(let data):
-            if let uwStatusCode = statusCode {
-                switch uwStatusCode {
-                case 200...299:
-                    return true
-                    
-                case 400...499:
-                    return false
-                    
-                default:
-                    return false
-                }
-            }
-            return false
-            
-        case .failure(_):
+        switch httpResponse.statusCode {
+        case 200...299:
+            return true
+        default:
             return false
         }
-    } else {
+    } catch {
+        print(error)
         return false
     }
 }

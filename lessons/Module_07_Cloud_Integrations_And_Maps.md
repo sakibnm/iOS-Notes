@@ -127,18 +127,18 @@ Let's create a new project App9 in Xcode. We will not write any code here; we wi
 
 <figure><img src="/gitbook-assets/9.5 (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
-### Adding a CocoaPod module, Alamofire, to our project
+### Adding a CocoaPod module, SDWebImage, to our project
 
-As I said before, Alamofire is a widely used module for beginners to manage Internet data transmission. We will integrate Alamofire to App9.
+SDWebImage is a widely used module for downloading and caching images from the internet. We will integrate SDWebImage to App9 as an example.
 
 * Visit [https://cocoapods.org](https://cocoapods.org).
-* Search for Alamofire. On top of the search results, you will see something like '**Alamofire 5.6.4.'**
+* Search for SDWebImage. On top of the search results, you will see something like '**SDWebImage 5.x.x.'**
 * Click on the button to the right, 'Site.'
 * It will load the main project site in Github.
 
 <figure><img src="/gitbook-assets/9.6 (2).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
-* If you scroll down to **Installation,** you will see the instructions of how to install Alamofire using CocoaPods. Copy the line that says: `pod 'Alamofire'`.
+* If you scroll down to **Installation,** you will see the instructions of how to install SDWebImage using CocoaPods. Copy the line that says: `pod 'SDWebImage'`.
 * Open the Podfile we have seen before.
 * Paste the line after `# Pods for App9`.
 
@@ -146,7 +146,7 @@ As I said before, Alamofire is a widely used module for beginners to manage Inte
 
 * Now go back to the Terminal again. Go to the project directory if you are not there (see above if you forgot how to).
 * Put the following command onto the Terminal: `pod install`.
-* You will see, depending on the modules you added to the Podfile, it will install them. When it's done installing the pods, in this case, it is Alamofire, your project can use this CocoaPod module.
+* You will see, depending on the modules you added to the Podfile, it will install them. When it's done installing the pods, in this case, it is SDWebImage, your project can use this CocoaPod module.
 
 **Now, the final step is to be able to use the module. The following part is very important. We often forget to do that and the modules do not work in code.**
 
@@ -157,7 +157,7 @@ As I said before, Alamofire is a widely used module for beginners to manage Inte
 
 <figure><img src="/gitbook-assets/9.9 (1).gif" alt="Educational illustration for iOS concept"><figcaption></figcaption></figure>
 
-**Now, we have completed adding the 'Alamofire' module to our project using CocoaPods.**
+**Now, we have completed adding the 'SDWebImage' module to our project using CocoaPods.**
 
 ### Reference Code
 
@@ -359,6 +359,8 @@ class MainScreenView: UIView {
     
     func setupFloatingButtonAddContact(){
         floatingButtonAddContact = UIButton(type: .system)
+        var config = UIButton.Configuration.filled()
+        floatingButtonAddContact.configuration = config
         floatingButtonAddContact.setTitle("", for: .normal)
         floatingButtonAddContact.setImage(UIImage(systemName: "person.crop.circle.fill.badge.plus")?.withRenderingMode(.alwaysOriginal), for: .normal)
         floatingButtonAddContact.contentHorizontalAlignment = .fill
@@ -936,6 +938,8 @@ class AddContactView: UIView {
     
     func setupButtonAdd(){
         buttonAdd = UIButton(type: .system)
+        var config = UIButton.Configuration.filled()
+        buttonAdd.configuration = config
         buttonAdd.setTitle("Add", for: .normal)
         buttonAdd.setImage(.add, for: .normal)
         buttonAdd.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
@@ -1519,6 +1523,8 @@ class RegisterView: UIView {
     
     func setupbuttonTakePhoto(){
         buttonTakePhoto = UIButton(type: .system)
+        var config = UIButton.Configuration.filled()
+        buttonTakePhoto.configuration = config
         buttonTakePhoto.setTitle("", for: .normal)
         buttonTakePhoto.setImage(UIImage(systemName: "camera.fill")?.withRenderingMode(.alwaysOriginal), for: .normal)
         //buttonTakePhoto.setImage(UIImage(systemName: "camera.fill")?.withRenderingMode(.alwaysOriginal), for: .normal)
@@ -2116,6 +2122,8 @@ class MapView: UIView {
     
     func setupButtonLoading(){
         buttonLoading = UIButton(type: .system)
+        var config = UIButton.Configuration.filled()
+        buttonLoading.configuration = config
         buttonLoading.setTitle(" Fetching Location...  ", for: .normal)
         buttonLoading.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         buttonLoading.setImage(UIImage(systemName: "circle.dotted"), for: .normal)
@@ -2135,6 +2143,8 @@ class MapView: UIView {
     
     func setupButtonCurrentLocation(){
         buttonCurrentLocation = UIButton(type: .system)
+        var config = UIButton.Configuration.filled()
+        buttonCurrentLocation.configuration = config
         buttonCurrentLocation.setImage(UIImage(systemName: "location.circle"), for: .normal)
         buttonCurrentLocation.layer.backgroundColor = UIColor.lightGray.cgColor
         buttonCurrentLocation.tintColor = .blue
@@ -2710,6 +2720,8 @@ class MapView: UIView {
     
     func setupButtonSearch(){
         buttonSearch = UIButton(type: .system)
+        var config = UIButton.Configuration.filled()
+        buttonSearch.configuration = config
         buttonSearch.setTitle(" Search places...  ", for: .normal)
         buttonSearch.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
         buttonSearch.setImage(UIImage(systemName: "magnifyingglass.circle.fill"), for: .normal)
@@ -4052,6 +4064,8 @@ class RegisterView: UIView {
     
     func setupbuttonRegister(){
         buttonRegister = UIButton(type: .system)
+        var config = UIButton.Configuration.filled()
+        buttonRegister.configuration = config
         buttonRegister.setTitle("Register", for: .normal)
         buttonRegister.titleLabel?.font = .boldSystemFont(ofSize: 16)
         buttonRegister.translatesAutoresizingMaskIntoConstraints = false

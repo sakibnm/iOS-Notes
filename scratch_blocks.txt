@@ -1,0 +1,1439 @@
+File: lessons/Module_01_Getting_Started.md
+====================================
+File: lessons/Module_02_Swift_Fundamentals.md
+--- Block 1 ---
+var carMakes = [String]()
+------------------
+
+--- Block 2 ---
+var carMakesSecond = ["Toyota", "Honda"]
+------------------
+
+--- Block 3 ---
+carMakes.append("Mazda")
+
+// Print the current elements of the array...
+print(carMakes)
+------------------
+
+--- Block 4 ---
+carMakes.append("Toyota")
+carMakes.append("Honda")
+
+// Print the current elements of the array...
+print("After appending: \(carMakes)")
+------------------
+
+--- Block 5 ---
+print("Number of elements in carMakes: \(carMakes.count)")
+------------------
+
+--- Block 6 ---
+// Accessing a particular element from the Array...
+print("The first element of carMakes: \(carMakes[0])")
+print("The second element of carMakes: \(carMakes[1])")
+------------------
+
+--- Block 7 ---
+carMakes.remove(at: 1)
+
+// Printing the current elements of the array...
+print("After removing: \(carMakes)")
+------------------
+
+--- Block 8 ---
+colors.insert("black")
+// prints the current Set...
+print(colors)
+------------------
+
+--- Block 9 ---
+colors.insert("blue")
+colors.insert("black")
+
+// prints the current Set...
+print(colors)
+------------------
+
+--- Block 10 ---
+let colors = Set(["blue", "black", "red"])
+------------------
+
+--- Block 11 ---
+// Simple tuple
+var myTuple = ("Mark", 20)
+// We can also define the names of the elements
+var yourTuple = (name:"Julie", age:23)
+
+//print tuples
+print("myTuple: \(myTuple), yourTuple: \(yourTuple)")
+------------------
+
+--- Block 12 ---
+// accessing tuple elements
+print("yourTuple's elements:\n first element = \(yourTuple.0),\n second element = \(yourTuple.age)")
+------------------
+
+--- Block 13 ---
+yourTuple.age = 34
+// or, yourTuple.1 = 34
+print("yourTuple: \(yourTuple)")
+------------------
+
+--- Block 14 ---
+var carCounts = [String: Int]()
+------------------
+
+--- Block 15 ---
+var carCounts = [
+    "Toyota": 2,
+    "Mazda": 1,
+    "Honda":10
+]
+
+print(carCounts)
+------------------
+
+--- Block 16 ---
+carCounts.updateValue(5, forKey: "Chevy")
+print(carCounts)
+------------------
+
+--- Block 17 ---
+carCounts["Chevy"] = 5
+------------------
+
+--- Block 18 ---
+carCounts.updateValue(9, forKey: "Honda")
+print(carCounts)
+------------------
+
+--- Block 19 ---
+let mazdaCount = carCounts["Mazda"]
+------------------
+
+--- Block 20 ---
+let num1 = 5
+let num2 = 33
+
+//Addition...
+let sum = num1 + num2
+
+//Subtraction...
+let difference = num2 - num1
+
+//Multiplication...
+let product = num1 * num2
+
+//Division (and remainder)...
+let divided = num2 / num1
+let remainder = num2 % num1
+
+print(
+    """
+    Results:
+    Sum = \(sum)
+    Difference = \(difference)
+    Product = \(product)
+    Division result = \(divided)
+    Division remainder = \(remainder)
+    """
+)
+------------------
+
+--- Block 21 ---
+let myInt:Int = 20
+let myDouble:Double = 30.5
+
+let sum:Int = myInt + myDouble
+------------------
+
+--- Block 22 ---
+let firstName = "Sakib"
+let lastName = "Miazi"
+let fullName = firstName + " " + lastName
+print(fullName)
+
+let listNumOne = [1,2,3]
+let listNumTwo = [4,5,6]
+let listNum = listNumOne + listNumTwo
+print(listNum)
+------------------
+
+--- Block 23 ---
+let listOne = [1,2,3]
+let listTwo = ["four", "five"]
+let listOneTwo = listOne + listTwo
+------------------
+
+--- Block 24 ---
+var budget = 30_000
+let expense = 5_000
+------------------
+
+--- Block 25 ---
+budget = budget - expense
+------------------
+
+--- Block 26 ---
+//Increment...
+var count = 0
+count += 1 
+// count = 1
+
+//Multiply...
+var number = 5
+number *= 4 
+// number = 20
+
+//Divide...
+var number2 = 10
+number2 /= 2 
+// number2 = 5
+
+//String operations (concatenation)...
+var name = "Mark"
+var surname = "Webber"
+name += surname 
+// name = "MarkWebber"
+------------------
+
+--- Block 27 ---
+// Either with type annotations
+var myBool: Bool = false
+// Or without type annotations
+var yourBool = true 
+------------------
+
+--- Block 28 ---
+// Comparison operators and Booleans...
+let a = 10
+let b = 12
+
+let isEqual = a == b
+
+print(isEqual)
+print(type(of: isEqual))
+------------------
+
+--- Block 29 ---
+let myNum = 5
+//condition myNum==5 returns either true or false...
+if myNum == 5 {
+    //This code block executes if true...
+    print("It is 5!")
+}
+------------------
+
+--- Block 30 ---
+if myNum == 5 {
+    print("It is 5!")
+}else{
+    print("It is not 5!")
+}
+------------------
+
+--- Block 31 ---
+//if-else-if-else chain ...
+if myNum == 1 {
+    print("It is \(myNum)!")
+}else if myNum == 3{
+    print("It is \(myNum)!")
+}else if myNum == 5{
+    print("It is \(myNum)!")
+}else{
+    print("Not 1, 3, or 5!")
+}
+------------------
+
+--- Block 32 ---
+//switch statements...
+let day = 5
+switch day {
+case 1:
+    print("Sunday")
+case 2:
+    print("Monday")
+case 3:
+    print("Tuesday")
+case 4:
+    print("Wednesday")
+case 5:
+    print("Thursday")
+case 6:
+    print("Friday")
+case 7:
+    print("Saturday")
+default:
+    print("Invalid day")
+}
+------------------
+
+--- Block 33 ---
+let myAge = 24
+
+if myAge >= 18 && myAge <= 65 {
+    print("Eligible for the user study!")
+}
+
+if myAge < 18 || myAge > 65 {
+    print("Not eligible!")
+}
+------------------
+
+--- Block 34 ---
+let today = 8
+
+switch today{
+    case 1...5:
+        print("Weekday!")
+    case 6..<8:
+        print("Weekend!")
+    default:
+        print("Invalid day!")
+}
+------------------
+
+--- Block 35 ---
+let range = 1...10
+
+for number in range{
+    print(number)
+}
+------------------
+
+--- Block 36 ---
+var carMakesSecond = ["Toyota", "Honda", "Mazda", "Chevy"]
+
+for item in carMakesSecond{
+    print(item)
+}
+------------------
+
+--- Block 37 ---
+for _ in 1...10{
+    print("Doing the task!")
+}
+------------------
+
+--- Block 38 ---
+let dictCars: [String: Int] = ["Toyota": 10, "Honda": 20, "Ford": 30]
+------------------
+
+--- Block 39 ---
+print("We got:")
+for (model, count) in dictCars {
+    print("\(count) \(model)s")
+}
+print ("in our dealership.\n")
+------------------
+
+--- Block 40 ---
+print("We got:")
+//Omitting values from a dictionary...
+for (model, _) in dictCars {
+    print("\(model)s")
+}
+print ("in our dealership.\n")
+------------------
+
+--- Block 41 ---
+//MARK: Omitting keys...
+var total = 0
+for (_, count) in dictCars {
+    total += count
+}
+print ("We got \(total) cars in our dealership.\n")
+------------------
+
+--- Block 42 ---
+while condition {
+    //code block
+}
+------------------
+
+--- Block 43 ---
+var targetNum = 1
+while targetNum <= 50{
+    //code block
+    print(targetNum)
+    targetNum += 1
+}
+------------------
+
+--- Block 44 ---
+var myNum = 1
+
+repeat{
+    //code block
+    print(myNum)
+    myNum += 1
+} while myNum <= 50
+
+------------------
+
+--- Block 45 ---
+let breakPoint = 4
+var countDown = 1
+while breakPoint >= 0 {
+    print("I will run!")
+    
+//  activating break point
+    if countDown == breakPoint{
+        print("I am tired now!")
+        break
+    }
+    countDown += 1
+}
+------------------
+
+--- Block 46 ---
+for number in 1...10 {
+    //skipping the even numbers
+    if number%2 == 0{
+        continue
+    }
+    
+    print("This an odd number:\(number)")
+}
+------------------
+
+--- Block 47 ---
+func printHelloWorld(){
+    print("Hello World!")
+}
+------------------
+
+--- Block 48 ---
+printHelloWorld()
+------------------
+
+--- Block 49 ---
+//function definition...
+func printDetails(name:String, age:Int){
+    print(
+        """
+        The user's name is: \(name).
+        The user's age is: \(age).
+        \(name) is awesome!
+        """
+    )
+}
+
+
+//calling the function...
+printDetails(name: "Donald", age: 25)
+------------------
+
+--- Block 50 ---
+func sumOf(array:[Int]) -> Int{
+    var sum = 0
+    for item in array{
+        sum += item
+    }
+    
+    //returns the value...
+    return sum
+}
+
+//calling the function with an integer array
+print(sumOf(array: [1,2,3,4,5]))
+------------------
+
+--- Block 51 ---
+let sum = sumOf(array: [1,2,3,4,5])
+------------------
+
+--- Block 52 ---
+//function definition...
+func navigate(with vehicle:String, from source:String, to destination:String) -> String{
+    return "The user will use a \(vehicle) to travel from \(source) to \(destination)."
+}
+
+//calling the function
+print(navigate(with: "car", from: "Boston", to: "NYC"))
+------------------
+
+--- Block 53 ---
+//function definition...
+func printHello(_ name:String){
+    print("Hello \(name)!")
+}
+
+//Calling the function...
+printHello("Sakib")
+------------------
+
+--- Block 54 ---
+//function definition
+func printHello2(_ name:String = "Unknown"){
+    print("Hello \(name)!")
+}
+//calling function...
+printHello2()
+------------------
+
+--- Block 55 ---
+let printHello = {
+    print("Hello World!")
+}
+------------------
+
+--- Block 56 ---
+//calling closure...
+printHello()
+------------------
+
+--- Block 57 ---
+let sayHelloTo = { (name:String) in
+    print("Hello \(name)!")
+}
+
+//calling closure with parameter...
+sayHelloTo("Donald")
+------------------
+
+--- Block 58 ---
+let sumOfArray = {(array:[Int]) -> Int in
+    var sum = 0
+    for item in array{
+        sum += item
+    }
+    
+    //returns the value...
+    return sum
+}
+
+//calling the closure with an integer array
+let sum = sumOfArray([1,2,3,4,5])
+print(sum)
+------------------
+
+--- Block 59 ---
+let drive = {
+    print("I am driving!")
+}
+
+let fly = {
+    print("I am taking a flight!")
+}
+------------------
+
+--- Block 60 ---
+//taking a closure as the parameter 'how'
+func travel(from source:String, to destination:String, how: ()->Void){
+    
+    print("I need to travel from \(source) to \(destination).")
+    how()
+}
+------------------
+
+--- Block 61 ---
+//calling the function
+travel(from: "San Francisco", to: "Boston", how: fly)
+------------------
+
+--- Block 62 ---
+//defining three closures to add, subtract, and multiply two numbers
+let add = {(num1:Int, num2:Int) -> Int in
+    return num1+num2
+}
+
+let subtract = {(num1:Int, num2:Int) -> Int in
+    return num1-num2
+}
+
+let multiply = {(num1:Int, num2:Int) -> Int in
+    return num1*num2
+}
+------------------
+
+--- Block 63 ---
+// calculate function...
+func calculate(operation: (_:Int, _:Int)-> Int, num1:Int, num2:Int) -> Int{
+    
+    let result = operation(num1, num2)
+    
+    return result
+}
+------------------
+
+--- Block 64 ---
+//calling function to multiply...
+print(calculate(operation: multiply, num1: 2, num2: 23))
+------------------
+
+--- Block 65 ---
+var myInt:Int
+print(myInt)
+------------------
+
+--- Block 66 ---
+var myInt:Int? //Optional Int
+print(myInt)
+------------------
+
+--- Block 67 ---
+var myInt:Int?
+//assigning a value...
+myInt = 10
+print(myInt) //prints Optional(10)
+------------------
+
+--- Block 68 ---
+var myInt:Int?
+//assigning a value...
+myInt = 10
+
+//optional binding with if-let...
+if let unwrappedMyInt = myInt{
+    //value present
+    print(unwrappedMyInt)
+}else{
+    // handling nil
+    print("Optional value myInt must be initialized!")
+}
+------------------
+
+--- Block 69 ---
+//forced unwrapping...
+print(myInt!)
+// prints 10
+------------------
+
+--- Block 70 ---
+protocol SomeProtocol{
+    //protocol definition goes here...
+}
+------------------
+
+--- Block 71 ---
+protocol USBMad{
+    var id:Int{get}
+    var supportsDisplayAdapter:Bool{get}
+    var supportsAudio:Bool{get}
+    func chargeAccessories()
+    func transferData()
+}
+------------------
+
+--- Block 72 ---
+struct MyLaptop: USBMad{
+    //struct's own properties
+    var name:String
+    var architecture:String
+    
+    //adopted/conformed variables and methods
+    var id: Int
+    var supportsDisplayAdapter: Bool
+    var supportsAudio: Bool
+    
+    //adopted and to be implemented methods
+    func chargeAccessories() {
+        //MyLaptop's implementation of adopted method
+        print("I am able to charge the accessories!")
+    }
+    func transferData() {
+        //MyLaptop's implementation of adopted method
+        print("You can send/receive data to/from me!")
+    }   
+}
+------------------
+
+--- Block 73 ---
+let myLaptop = MyLaptop(
+    name: "Sakib's Macbook",
+    architecture: "ARM64",
+    id: 1,
+    supportsDisplayAdapter: true,
+    supportsAudio: true
+)
+
+myLaptop.chargeAccessories()
+//prints: I am able to charge the accessories!
+
+myLaptop.transferData()
+//prints: You can send/receive data to/from me!
+------------------
+
+--- Block 74 ---
+struct MyLaptop: USBMad{
+    //struct's own properties
+    var name:String
+    var architecture:String
+    
+    //adopted/conformed variables and methods
+    var id: Int
+    var supportsDisplayAdapter: Bool
+    var supportsAudio: Bool
+    
+    //adopted and to be implemented methods
+    func chargeAccessories() {
+        //MyLaptop's implementation of adopted method
+        print("I am able to charge the accessories!")
+    }
+    func transferData() {
+        //MyLaptop's implementation of adopted method
+        print("You can send/receive data to/from me!")
+    }
+    
+    //MyLaptop's own method...
+    func describe(){
+        print(
+            """
+            My name is \(name).
+            I use \(architecture) architecture.
+            I have a USBMad interface with id: \(id).
+            """
+        )
+        self.chargeAccessories()
+        self.transferData()
+    }
+}
+------------------
+
+--- Block 75 ---
+//protocol for payment...
+protocol Payment{
+    func biweeklyPayment() -> Double
+}
+
+//protocol for TA training...
+protocol TATraining{
+    func completeTraining()
+}
+
+//protocol for TA rating...
+protocol RatedByProfessor{
+    func rate() -> Int
+}
+------------------
+
+--- Block 76 ---
+// Some code//consolidating to a single protocol...
+protocol TeachingAssistant: Payment, TATraining, RatedByProfessor{
+    //properties and methods for TeachingAssistant protocol...
+}
+------------------
+
+--- Block 77 ---
+//super class Student...
+class Student{
+    var name: String
+    init(name:String) {
+        self.name = name
+    }
+}
+------------------
+
+--- Block 78 ---
+//UndergradTA inherits Student, and adopts/conforms TeachingAssistant protocol...
+
+class UndergradTA: Student, TeachingAssistant{
+    //own property course...
+    var course:String
+    
+    //initializer for UndergradTA...
+    init(name: String, course:String) {
+        self.course = course
+        super.init(name: name)
+    }
+    
+    //defining adopted methods from TeachingAssistant...
+    func biweeklyPayment() -> Double {
+        return 1_500.00
+    }
+    
+    func completeTraining() {
+        print("\(name) completed the TA training.")
+    }
+    
+    func rate() -> Int {
+        return 5
+    }
+    
+    // own describe method of UndergradTA...
+    func describe(){
+        print(
+            """
+            \(name) is a TA of \(course) course.
+            They were rated \(self.rate())/5 by the professor.
+            They are paid \(self.biweeklyPayment()) biweekly.
+            """
+        )
+        self.completeTraining()
+    }
+}
+
+------------------
+
+--- Block 79 ---
+let alice = UndergradTA(
+    name: "Alice",
+    course: "Mobile App Development"
+)
+
+alice.describe()
+
+/*
+ alice.describe() prints:
+ Alice is a TA of Mobile App Development course.
+ They were rated 5/5 by the professor.
+ They are paid 1500.0 biweekly.
+ Alice completed the TA training.
+ */
+------------------
+
+--- Block 80 ---
+var arrayOfInt:[Int] = [1,56,89,23,4,6]
+
+print(arrayOfInt.sorted())
+
+// prints: [1, 4, 6, 23, 56, 89]
+------------------
+
+--- Block 81 ---
+//array of Strings ...
+
+var arrayOfStrings = ["apple", "orange", "pineapple", "a", "b"]
+
+print(arrayOfStrings.sorted())
+
+//prints: ["a", "apple", "b", "orange", "pineapple"]
+------------------
+
+--- Block 82 ---
+//function to compare two values to find which if value1 is greater than value2...
+func decreasing(value1:Int, value2:Int)->Bool{
+    return value1 > value2
+}
+------------------
+
+--- Block 83 ---
+var arrayOfInt:[Int] = [1,56,89,23,4,6]
+
+//sort the array by using the comparator function decreasing...
+arrayOfInt.sort(by: decreasing)
+
+print(arrayOfInt)
+//prints: [89, 56, 23, 6, 4, 1]
+------------------
+
+--- Block 84 ---
+arrayOfIntC.sort(by: { (value1:Int, value2:Int) -> Bool in
+    return value1 > value2
+})
+------------------
+
+--- Block 85 ---
+var arrayOfIntC = [34,6,89,56,78,14]
+
+print(arrayOfIntC)
+//prints: [89, 78, 56, 34, 14, 6]
+------------------
+
+--- Block 86 ---
+import UIKit
+
+struct User{
+    var name: String
+    var age: Int
+    var city: String
+}
+
+var users = [
+    User(name: "Alice", age: 12, city: "Boston"),
+    User(name: "Bob", age: 21, city: "Charlotte"),
+    User(name: "Chris", age: 45, city: "NYC"),
+    User(name: "David", age: 23, city: "Boston"),
+    User(name: "Dillon", age: 89, city: "San Francisco"),
+]
+
+//MARK: sort by name in decreasing order
+users.sort(by: { (user1:User, user2:User)-> Bool in
+    return user1.name > user2.name
+})
+
+for user in users{
+    print(user)
+}
+/*prints:
+User(name: "Dillon", age: 89, city: "San Francisco")
+User(name: "David", age: 23, city: "Boston")
+User(name: "Chris", age: 45, city: "NYC")
+User(name: "Bob", age: 21, city: "Charlotte")
+User(name: "Alice", age: 12, city: "Boston")
+ */
+
+//MARK: sort by age in increasing order
+users.sort(by: { (user1:User, user2:User)-> Bool in
+    return user1.age < user2.age
+})
+
+for user in users{
+    print(user)
+}
+/* prints:
+User(name: "Alice", age: 12, city: "Boston")
+User(name: "Bob", age: 21, city: "Charlotte")
+User(name: "David", age: 23, city: "Boston")
+User(name: "Chris", age: 45, city: "NYC")
+User(name: "Dillon", age: 89, city: "San Francisco")
+*/
+
+------------------
+
+--- Block 87 ---
+struct Person{
+    var name:String
+    var age:Int
+    var city:String
+}
+------------------
+
+--- Block 88 ---
+var newPerson: Person = Person(name: "Bob Smith", age: 30, city: "Boston")
+
+//print the variable person of type Person...
+print(newPerson)
+//print newPerson's name...
+print(newPerson.name)
+------------------
+
+--- Block 89 ---
+//modifying the inner variables of newPerson
+newPerson.age = 36
+//printing newPerson after changing the age...
+print(newPerson)
+------------------
+
+--- Block 90 ---
+struct Person{
+    var name:String
+    var age:Int
+    var city:String
+    
+//    computed property .....
+    var isMinor:Bool{
+        if age < 18{
+            return true
+        }else{
+            return false
+        }
+    }
+}
+------------------
+
+--- Block 91 ---
+print(newPerson)
+
+if(newPerson.isMinor){
+    print("\(newPerson.name) is a minor!")
+}else{
+    print("\(newPerson.name) is an adult!")
+}
+------------------
+
+--- Block 92 ---
+struct Person{
+    var name:String
+    var age:Int
+    var city:String
+    
+//    computed property .....
+    var isMinor:Bool{
+        if age < 18{
+            return true
+        }else{
+            return false
+        }
+    }
+//    method printProfile...
+    
+    func printProfile(){
+        print(
+            """
+            Hi! I am \(name).
+            I am \(age) years old.
+            And I live in \(city)!
+            Happy coding!
+            """
+        )
+    }
+}
+------------------
+
+--- Block 93 ---
+//printing the profile intro using the method printProfile...
+newPerson.printProfile()
+------------------
+
+--- Block 94 ---
+struct Person{
+    var name:String
+    var age:Int
+    var city:String
+    
+//    initializer method...
+    init() {
+        name = "Unknown"
+        age = 18
+        city = "Not Given"
+    }
+    
+//    computed property .....
+    var isMinor:Bool{
+        if age < 18{
+            return true
+        }else{
+            return false
+        }
+    }
+    
+//    method printProfile...
+    
+    func printProfile(){
+        print(
+            """
+            Hi! I am \(name).
+            I am \(age) years old.
+            And I live in \(city)!
+            Happy coding!
+            """
+        )
+    }
+}
+------------------
+
+--- Block 95 ---
+//Creating an instance using the init()
+var newPerson = Person()
+
+//print the variable person of type Person...
+print(newPerson) 
+
+//modifying the properties of newPerson...
+newPerson.name = "Bob Smith"
+newPerson.age = 36
+newPerson.city = "Boston"
+
+//printing newPerson after modifying the properties...
+print(newPerson)
+
+//printing the computed property...
+if(newPerson.isMinor){
+    print("\(newPerson.name) is a minor!")
+}else{
+    print("\(newPerson.name) is an adult!")
+    //prints 
+}
+
+//printing the profile intro using the method printProfile...
+newPerson.printProfile()
+------------------
+
+--- Block 96 ---
+struct Car{
+    var make:String
+    var model:String
+    var year:Int
+    
+    init(){
+        make = "Not set"
+        model = "Not set"
+        year = 0
+    }
+}
+
+//creating an instance of Car...
+var car = Car()
+
+//printing the instance...
+print(car)
+
+------------------
+
+--- Block 97 ---
+struct Car{
+    var make:String
+    var model:String
+    var year:Int
+    
+    //default init...
+    init(){
+        make = "Not set"
+        model = "Not set"
+        year = 0
+    }
+    //custom init...
+    init(make:String, model:String, year:Int) {
+        self.make = make
+        self.model = model
+        self.year = year
+    }
+}
+------------------
+
+--- Block 98 ---
+//creating an instance of Car using the custom init()...
+var car2 = Car(make: "Toyota", model: "Corolla", year: 2020)
+print(car2)
+------------------
+
+--- Block 99 ---
+init(make:String, model:String){
+    self.make = make
+    self.model = model
+    //year is left uninitialized...
+}
+------------------
+
+--- Block 100 ---
+struct Car{
+    var make:String
+    var model:String
+    var year:Int? //Optional
+    
+    //omitted other codes...
+    init(make:String, model:String){
+        self.make = make
+        self.model = model
+    }
+}
+------------------
+
+--- Block 101 ---
+//creating an instance of Car...
+var car3 = Car(make: "Honda", model: "Civic")
+print(car3)
+//prints: Car(make: "Honda", model: "Civic", year: nil)
+
+//Assigning a value of year after we create the instance
+car3.year = 2022
+print(car3)
+//prints: Car(make: "Honda", model: "Civic", year: Optional(2022))
+
+------------------
+
+--- Block 102 ---
+// updating a car's year...
+func updateYear(_ year:Int){
+    self.year = year
+}
+------------------
+
+--- Block 103 ---
+struct Car{
+    var make:String
+    var model:String
+    var year:Int?
+    
+    init(){
+        make = "Not set"
+        model = "Not set"
+        year = 0
+    }
+    
+    init(make:String, model:String, year:Int) {
+        self.make = make
+        self.model = model
+        self.year = year
+    }
+    
+    init(make:String, model:String){
+        self.make = make
+        self.model = model
+    }
+    
+    func updateYear(_ year:Int){
+        self.year = year
+    }
+}
+------------------
+
+--- Block 104 ---
+mutating func updateYear(_ year:Int){
+    self.year = year
+}
+------------------
+
+--- Block 105 ---
+import UIKit
+
+//MARK: 9.1.2 initializers...
+struct Car{
+    var make:String
+    var model:String
+    var year:Int?
+    
+    init(){
+        make = "Not set"
+        model = "Not set"
+        year = 0
+    }
+    
+    init(make:String, model:String, year:Int) {
+        self.make = make
+        self.model = model
+        self.year = year
+    }
+    
+    init(make:String, model:String){
+        self.make = make
+        self.model = model
+    }
+    
+    mutating func updateYear(_ year:Int){
+        self.year = year
+    }
+}
+
+//creating an instance of Car using the custom init()...
+var car2 = Car(make: "Toyota", model: "Corolla", year: 2020)
+print(car2)
+car2.updateYear(2025)
+print(car2)
+------------------
+
+--- Block 106 ---
+class Vehicle{
+    var type:String
+}
+------------------
+
+--- Block 107 ---
+class Vehicle{
+    var type:String
+    
+    //mandatory init() method
+    init(type:String){
+        self.type = type
+    }
+    
+}
+
+var car1 = Vehicle(type: "Car")
+var car2 = Vehicle(type: "Truck")
+var car3 = Vehicle(type: "Minivan")
+print(car1.type) //prints: Car
+------------------
+
+--- Block 108 ---
+//The Vehicle class....
+class Vehicle{
+    var type:String
+    
+    init(type:String){
+        self.type = type
+    }
+    
+}
+// defining a new class inheriting Vehicle class
+class Car:Vehicle{
+    var make:String
+    var model:String
+    
+    init(type:String, make:String, model:String) {
+        //initializing this instance's properties...
+        self.make = make
+        self.model = model
+        
+        //Calling super class's initializer...
+        super.init(type: type)
+    }
+}
+------------------
+
+--- Block 109 ---
+class Vehicle{
+    var type:String
+    
+    init(type:String){
+        self.type = type
+    }
+    
+    //method describing a Vehicle...
+    func describe(){
+        print("This is a \(type).")
+    }
+    
+}
+// creating an instance of class Vehicle...
+var vehicle = Vehicle(type: "Car")
+
+vehicle.describe() // prints: This is a Car.
+------------------
+
+--- Block 110 ---
+//creating an instance of Car...
+var car = Car(type: "Car", make: "Toyota", model: "Rav4")
+
+car.describe() //prints: This is a Car.
+------------------
+
+--- Block 111 ---
+class Car:Vehicle{
+    var make:String
+    var model:String
+    
+    init(type:String, make:String, model:String) {
+        //initializing this instance's properties...
+        self.make = make
+        self.model = model
+        
+        //Calling super class's initializer...
+        super.init(type: type)
+    }
+    
+    //overriding super.describe()...
+    override func describe() {
+        print(
+            """
+            This is a \(type).
+            It is a \(make) \(model).
+            """
+        )
+    }
+}
+
+//creating an instance of Car...
+var car = Car(type: "Car", make: "Toyota", model: "Rav4")
+car.describe()
+------------------
+
+--- Block 112 ---
+struct User{
+    var name:String
+}
+
+//creating an instance of User...
+var user1 = User(name: "John Smith")
+
+//copying the instance to a new instance...
+var user2 = user1
+
+//changing the name in the copied instance...
+user2.name = "Bob Smith"
+
+print(
+    """
+    User name of user1 = \(user1.name)
+    User name of user2 = \(user2.name)
+    """
+)
+
+------------------
+
+--- Block 113 ---
+class Person{
+    var name:String
+    init(name:String){
+        self.name = name
+    }
+}
+
+//creating an instance of Person...
+var person1 = Person(name: "John Snow")
+
+//copying the instance to a new instance...
+var person2 = person1
+
+//changing the name in the copied instance...
+person2.name = "Arya Stark"
+
+print(
+    """
+    Name of person1 = \(person1.name)
+    Name of person2 = \(person2.name)
+    """
+)
+------------------
+
+--- Block 114 ---
+var greeting = "Hello, playground"
+------------------
+
+--- Block 115 ---
+greeting = "Hello, Bonobos!!!!"
+------------------
+
+--- Block 116 ---
+greeting = 12
+------------------
+
+--- Block 117 ---
+var count = 12
+------------------
+
+--- Block 118 ---
+var million = 1_000_000
+------------------
+
+--- Block 119 ---
+var multiline = """
+I am a multiline String.
+I might look weird, but I am really very simple.
+At times I could be very useful!
+"""
+------------------
+
+--- Block 120 ---
+print(multiline)
+------------------
+
+--- Block 121 ---
+var myNum = 12.5
+print(myNum)
+print(type(of: myNum))
+------------------
+
+--- Block 122 ---
+var myFloat:Float = 13
+print(myFloat)
+print(type(of: myFloat))
+------------------
+
+--- Block 123 ---
+var myString = 
+    "My Double number is \(myNum). My Float number is \(myFloat). And, my multiline string is \(multiline)"
+print(myString)
+------------------
+
+--- Block 124 ---
+var myString = """
+My Double number is \(myNum).
+My Float number is \(myFloat).
+And, my multiline string is
+\(multiline)
+"""
+
+print(myString)
+------------------
+
+--- Block 125 ---
+let myConstant:Int = 14
+print("My constant is \(myConstant)")
+------------------
+
+--- Block 126 ---
+myConstant = 20
+------------------
+
+--- Block 127 ---
+let myName:String = "Sakib Miazi"
+var myAge:Int = 10
+let iUseIPhone:Bool = false
+------------------
+
+--- Block 128 ---
+// This is a single-line comment before I create a variable...
+var str:String = "Nothing"
+
+/* This is a multi-line comment describing the following:
+ myNum is a Double.
+ myFloat is a Float.
+*/
+var myNum = 12.5
+var myFloat:Float = 13
+------------------
+
